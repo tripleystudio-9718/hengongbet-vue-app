@@ -4,59 +4,82 @@
     <section class="hero-banner">
       <img :src="homeBanner" alt="Gaming Banner" class="banner-image" />
     </section>
-
     <div class="max-w-7xl mx-auto items-center justify-between">
-
     <PromotionSection />
-
     <section class="main-content">
       <div class="content-container">
         <div class="brand-section">
           <p class="trust-text">Trusted Online Casino</p>
           <h2 class="brand-title">Heng Ong Bet Official</h2>
           <p class="brand-subtitle">Heng Ong Bet - Malaysia's Trusted Online Casino Platform</p>
-          
+                    
           <div class="description">
             <p>Founded in 2015, Heng Ong Bet is Malaysia's first all-in-one online entertainment platform. With world-class gaming systems and highest technical support team committed to delivering safe, reliable, and high-quality gaming services to all users.</p>
             <p>As one of the leading online gaming platforms in Malaysia, we offer a comprehensive range of gaming options including:</p>
-            
+                        
             <ul class="features-list">
               <li>• Sports betting</li>
               <li>• Live casino</li>
               <li>• Slot games</li>
               <li>• 4D lottery and more</li>
             </ul>
-            
+                        
             <p>Players enjoy a fair, secure, and seamless gaming experience, with fast deposits and withdrawals.</p>
           </div>
         </div>
-
         <FeaturesSection />
-
         <div class="platform-section">
           <h3>Play Anywhere, Anytime</h3>
           <p>With the Heng Ong Bet mobile app (iOS & Android supported), you can enjoy all your favorite games on the go — from slots and sportsbook to live dealer and 4D games. Join Heng Ong Bet today and experience Malaysia's most reliable and exciting online gaming platform!</p>
         </div>
       </div>
     </section>
-
     <GamesSection />
-
     <div class="steps-section">
           <p class="steps-text">Welcome to Heng Ong Bet - Trusted Online Casino</p>
           <h2 class="steps-title">Start Playing and Earning</h2>
     </div>
-
     <StepsSection />
-
     <AppGuide />
-
     <div class="why-section">
-          <h2 class="why-title">Why Choose <span style="color: #F2B240;">Heng Ong Bet ?</span></h2>
+      <h2 class="why-title">Why Choose <span style="color: #F2B240;">Heng Ong Bet ?</span></h2>
     </div>
-
     <WhySection />
-
+    <div class="become-section">
+      <div class="become-section-img">
+        <img :src="becomeImg" alt="HengOngBet Logo" class="become-image" />
+      </div>
+      <div class="become-section-text">
+        <h2 class="why-title">Become a <span style="color: #F2B240;">Heng Ong Bet</span> Affiliate Today</h2>
+        <p class="steps-text">Join HengOngBet's official affiliate program and earn high commissions by promoting Malaysia's top online casino platform. Whether you're a seasoned marketer or just getting started, our tools, tracking system, and support team help you succeed</p>
+        
+        <ul class="affiliate-benefits">
+          <li>• Real-time tracking & reports</li>
+          <li>• Up to 50% revenue share</li>
+          <li>• Weekly payout system</li>
+          <li>• Custom promotional banners</li>
+          <li>• Telegram bot & link generator</li>
+          <li>• Dedicated affiliate support</li>
+          <li>• Zero cost to join</li>
+          <li>• Trusted by thousands of agents in Malaysia</li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Global Expansion Section -->
+    <div class="global-section">
+      <h3 class="global-brand">Heng Ong Bet</h3>
+      <h2 class="global-title">We Are Global</h2>
+      <h4 class="global-subtitle">Heng Ong Bet is Now Expanding Globally</h4>
+      <p class="global-description">
+        Heng Ong Bet is now available in Singapore, with our talented global team supporting growth across Malaysia and Singapore. 
+        What unites us? A passion for delivering the best gaming experience. We're also actively expanding into Thailand, Vietnam, 
+        Indonesia, Cambodia, the UK, and the USA.
+      </p>
+    </div>
+    
+    <ProviderSection />
+    <ReviewSection />
     </div>
   </div>
 </template>
@@ -68,7 +91,10 @@ import GamesSection from '@/components/Home-Comp/GamesSection.vue'
 import StepsSection from '@/components/Home-Comp/StepsSection.vue'
 import AppGuide from '@/components/Home-Comp/AppGuide.vue'
 import WhySection from '@/components/Home-Comp/WhySection.vue'
+import ProviderSection from '@/components/Home-Comp/ProviderSection.vue'
+import ReviewSection from '@/components/Home-Comp/ReviewSection.vue'
 import homeBanner from '@/assets/home-banner.png'
+import becomeImg from '@/assets/become-img.png'
 
 export default {
   name: 'Home',
@@ -78,11 +104,14 @@ export default {
     GamesSection,
     StepsSection,
     AppGuide,
-    WhySection
+    WhySection,
+    ProviderSection,
+    ReviewSection
   },
   data() {
     return {
-      homeBanner
+      homeBanner,
+      becomeImg
     }
   }
 }
@@ -214,15 +243,105 @@ export default {
   margin: 0 auto;
 }
 
+.become-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 60px 0;
+  gap: 40px;
+}
+
+.become-section-img {
+  width: 40%;
+}
+
+.become-section-text {
+  width: 60%;
+}
+
+.become-image {
+  width: 100%;
+  height: auto;
+}
+
+/* Global Section */
+.global-section {
+  text-align: center;
+}
+
+.global-brand {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: normal;
+}
+
+.global-title {
+  color: #F2B240;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.global-subtitle {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  font-weight: normal;
+}
+
+.global-description {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Affiliate Benefits List */
+.affiliate-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.affiliate-benefits li {
+  margin-bottom: 0.8rem;
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-content {
     flex-direction: column;
     text-align: center;
   }
-  
+    
   .hero-title {
     font-size: 2.5rem;
+  }
+
+  .become-section {
+    flex-direction: column;
+    width: 100%;
+    padding: 40px 20px;
+  }
+
+  .become-section-img,
+  .become-section-text {
+    width: 100%;
+  }
+
+  .global-title {
+    font-size: 2.5rem;
+  }
+
+  .global-section {
+    padding: 60px 20px;
   }
 }
 </style>
