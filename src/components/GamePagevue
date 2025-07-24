@@ -1,0 +1,36 @@
+<template>
+  <div class="game-overall">
+    <div class="game-banner">
+      <img
+        :src="require('@/assets/gamepage-banner.png')"
+        alt="Game page promotional banner"
+      />
+    </div>
+  </div>
+</template>
+
+<script>
+import Games from "@/components/games.vue";
+
+export default {
+  components: { Games }
+}
+
+</script>
+
+<style>
+.game-overall {
+  width: 100%;
+  height: auto;
+}
+
+.game-banner {
+  width: 100%;
+  height: auto;
+}
+
+.game-banner img {
+  width: 100%;
+  height: auto;
+}
+</style>
