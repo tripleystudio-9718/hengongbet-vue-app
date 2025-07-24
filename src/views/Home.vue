@@ -5,6 +5,8 @@
       <img :src="homeBanner" alt="Gaming Banner" class="banner-image" />
     </section>
 
+    <div class="max-w-7xl mx-auto items-center justify-between">
+
     <PromotionSection />
 
     <section class="main-content">
@@ -38,8 +40,24 @@
       </div>
     </section>
 
-    <!-- Hot Games Section Component -->
     <GamesSection />
+
+    <div class="steps-section">
+          <p class="steps-text">Welcome to Heng Ong Bet - Trusted Online Casino</p>
+          <h2 class="steps-title">Start Playing and Earning</h2>
+    </div>
+
+    <StepsSection />
+
+    <AppGuide />
+
+    <div class="why-section">
+          <h2 class="why-title">Why Choose <span style="color: #F2B240;">Heng Ong Bet ?</span></h2>
+    </div>
+
+    <WhySection />
+
+    </div>
   </div>
 </template>
 
@@ -47,6 +65,9 @@
 import PromotionSection from '@/components/Home-Comp/PromotionSection.vue'
 import FeaturesSection from '@/components/Home-Comp/FeaturesSection.vue'
 import GamesSection from '@/components/Home-Comp/GamesSection.vue'
+import StepsSection from '@/components/Home-Comp/StepsSection.vue'
+import AppGuide from '@/components/Home-Comp/AppGuide.vue'
+import WhySection from '@/components/Home-Comp/WhySection.vue'
 import homeBanner from '@/assets/home-banner.png'
 
 export default {
@@ -54,7 +75,10 @@ export default {
   components: {
     PromotionSection,
     FeaturesSection,
-    GamesSection
+    GamesSection,
+    StepsSection,
+    AppGuide,
+    WhySection
   },
   data() {
     return {
@@ -91,7 +115,6 @@ export default {
 }
 
 .content-container {
-  width: 1400px;
   margin: 0 auto;
   color: white;
 }
@@ -109,6 +132,38 @@ export default {
 
 .brand-title {
   font-size: 3rem;
+  font-weight: bold;
+  color: #fbbf24;
+  margin-bottom: 1rem;
+  margin: 0;
+}
+
+.steps-section {
+  text-align: center;
+  margin-bottom: 60px;
+  margin: 40px 0;
+}
+
+.steps-text {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.why-section {
+  text-align: center;
+  margin-bottom: 60px;
+  margin: 40px 0;
+}
+
+.why-text {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.steps-title {
+  font-size: 1.2rem;
   font-weight: bold;
   color: #fbbf24;
   margin-bottom: 1rem;

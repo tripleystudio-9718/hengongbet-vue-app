@@ -1,29 +1,29 @@
 <template>
   <section class="games-section">
     <div class="games-container">
-      <h2 class="games-title">Hot Games</h2>
-      
-      <!-- Game Categories -->
-      <div class="game-categories">
-        <button 
-          v-for="category in gameCategories" 
-          :key="category"
-          @click="activeCategory = category"
-          :class="['category-btn', { active: activeCategory === category }]"
-        >
-          {{ category }}
-        </button>
+      <div class="games-top">
+        <h2 class="games-title">Hot Games</h2>
+        
+        <!-- Game Categories -->
+        <div class="game-categories">
+          <button 
+            v-for="category in gameCategories"
+            :key="category"
+            @click="activeCategory = category"
+            :class="['category-btn', { active: activeCategory === category }]"
+          >
+            {{ category }}
+          </button>
+        </div>
       </div>
-
-      <!-- Games Grid -->
+      
       <div class="games-grid">
-        <!-- Featured Game Slider -->
         <div class="featured-game">
           <div class="featured-slider">
             <div 
-              v-for="(featuredGame, index) in featuredGames" 
+              v-for="(featuredGame, index) in featuredGames"
               :key="featuredGame.id"
-              class="game-card featured-card"
+              class="featured-slide-card"
               :class="{ active: currentSlide === index }"
               v-show="currentSlide === index"
             >
@@ -32,35 +32,43 @@
                   <path d="M5 16L3 12L5.5 7L10 10L12 4L14 10L18.5 7L21 12L19 16H5ZM7 14H17L18 12.5L16.5 9L13.5 11.5L12 6.5L10.5 11.5L7.5 9L6 12.5L7 14Z"/>
                 </svg>
               </div>
-              <div class="featured-image">
-                <img :src="featuredGame.image" :alt="featuredGame.name" class="featured-game-image" />
+              <div class="featured-image-container">
+                <img 
+                  :src="featuredGame.image"
+                  :alt="featuredGame.name"
+                  class="featured-slide-image"
+                />
               </div>
-              <div class="game-info">
-                <h3>{{ featuredGame.name }}</h3>
-                <p class="game-provider">{{ featuredGame.provider }}</p>
-                <div class="game-rating">
-                  <span class="stars">{{ featuredGame.rating }}</span>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Slider Indicators -->
-            <div class="slider-indicators">
-              <button 
-                v-for="(game, index) in featuredGames" 
-                :key="index"
-                @click="currentSlide = index"
-                :class="['indicator', { active: currentSlide === index }]"
-              ></button>
             </div>
           </div>
+          
+          <!-- Game Info Outside Card -->
+          <div class="featured-game-info">
+            <h3>{{ currentFeaturedGame.name }}</h3>
+            <p class="game-provider">{{ currentFeaturedGame.provider }}</p>
+          </div>
+          
+          <!-- Slider Indicators -->
+          <div class="slider-indicators">
+            <button 
+              v-for="(game, index) in featuredGames"
+              :key="index"
+              @click="setCurrentSlide(index)"
+              :class="['indicator', { active: currentSlide === index }]"
+            ></button>
+          </div>
         </div>
-
-        <!-- Regular Games Grid -->
+        
         <div class="regular-games">
-          <div v-for="game in displayedGames" :key="game.id" class="game-card">
-            <img :src="game.image" :alt="game.name" class="game-image" />
-            <div class="game-overlay">
+          <div v-for="game in displayedGames" :key="game.id" class="game-card-wrapper">
+            <div class="game-card">
+              <img 
+                :src="game.image"
+                :alt="game.name"
+                class="game-image"
+              />
+            </div>
+            <div class="game-info-external">
               <h4>{{ game.name }}</h4>
               <p>{{ game.provider }}</p>
             </div>
@@ -72,6 +80,25 @@
 </template>
 
 <script>
+import superAceIcon from '@/assets/super-ace-icon.png'
+import lucky365Icon from '@/assets/lucky-365-icon.png'
+import jdbSlotIcon from '@/assets/jdb-slot-icon.png'
+import evolutionIcon from '@/assets/evolution-icon.png'
+import askmeslotIcon from '@/assets/askmeslot-icon.png'
+import monkeyKingSlot from '@/assets/monkey-king-slot.png'
+import jiliSlot from '@/assets/jili-slot.png'
+import microslotIcon from '@/assets/micro-slot-icon.png'
+import hotRoad from '@/assets/hot-road.png'
+import maxbetIcon from '@/assets/maxbet-icon.png'
+import sv388Icon from '@/assets/sv388-icon.png'
+import rcb988Icon from '@/assets/rcb988-icon.png'
+import ekorIcon from '@/assets/ekor-icon.png'
+import bigGamingIcon from '@/assets/big-gaming-icon.png'
+import sexyIcon from '@/assets/sexy-icon.png'
+
+const GAME_CATEGORIES = ['All', 'Slots', 'Casino', 'Sports', 'Lottery']
+const AUTO_SLIDE_INTERVAL = 4000
+
 export default {
   name: 'GamesSection',
   data() {
@@ -79,52 +106,48 @@ export default {
       activeCategory: 'All',
       currentSlide: 0,
       autoSlideInterval: null,
-      gameCategories: ['All', 'Slots', 'Casino', 'Sports', 'Lottery'],
+      gameCategories: GAME_CATEGORIES,
       featuredGames: [
         {
           id: 'featured-1',
           name: 'Super Ace',
           provider: 'Microgaming',
-          image: 'https://via.placeholder.com/160x160/fbbf24/000000?text=SUPER+ACE',
-          rating: '★★★★★'
+          image: superAceIcon
         },
         {
           id: 'featured-2',
           name: 'Lucky 365',
           provider: 'Lucky 365',
-          image: 'https://via.placeholder.com/160x160/ff6b35/ffffff?text=LUCKY+365',
-          rating: '★★★★☆'
+          image: lucky365Icon
         },
         {
           id: 'featured-3',
-          name: 'Mega Win',
+          name: 'JDB',
           provider: 'JDB',
-          image: 'https://via.placeholder.com/160x160/e74c3c/ffffff?text=MEGA+WIN',
-          rating: '★★★★★'
+          image: jdbSlotIcon
         },
         {
           id: 'featured-4',
-          name: 'Golden Tiger',
+          name: 'Evolution',
           provider: 'Evolution',
-          image: 'https://via.placeholder.com/160x160/f39c12/000000?text=GOLDEN+TIGER',
-          rating: '★★★★☆'
+          image: evolutionIcon
         }
       ],
       games: [
-        { id: 1, name: 'LUCKY 365', provider: 'Lucky 365', image: 'https://via.placeholder.com/120x120/ff6b35/ffffff?text=LUCKY+365', category: 'Slots' },
-        { id: 2, name: 'ASKMESLOT', provider: 'Askmeslot', image: 'https://via.placeholder.com/120x120/4ecdc4/ffffff?text=ASKMESLOT', category: 'Slots' },
-        { id: 3, name: 'JDB', provider: 'JDB', image: 'https://via.placeholder.com/120x120/ff6b35/ffffff?text=JDB', category: 'Slots' },
-        { id: 4, name: 'MONKEY KING', provider: 'Monkey King', image: 'https://via.placeholder.com/120x120/2c3e50/ffffff?text=MONKEY+KING', category: 'Slots' },
-        { id: 5, name: 'JILI', provider: 'Jili', image: 'https://via.placeholder.com/120x120/e74c3c/ffffff?text=JILI', category: 'Slots' },
-        { id: 6, name: 'MICROSLOT', provider: 'Microslot', image: 'https://via.placeholder.com/120x120/9b59b6/ffffff?text=MICROSLOT', category: 'Slots' },
-        { id: 7, name: 'EVOLUTION', provider: 'Evolution', image: 'https://via.placeholder.com/120x120/34495e/ffffff?text=EVOLUTION', category: 'Casino' },
-        { id: 8, name: 'HOT ROAD', provider: 'Hot Road', image: 'https://via.placeholder.com/120x120/e67e22/ffffff?text=HOT+ROAD', category: 'Casino' },
-        { id: 9, name: 'MAXBET', provider: 'Maxbet', image: 'https://via.placeholder.com/120x120/3498db/ffffff?text=MAXBET', category: 'Sports' },
-        { id: 10, name: 'SV388', provider: 'SV388', image: 'https://via.placeholder.com/120x120/1abc9c/ffffff?text=SV388', category: 'Sports' },
-        { id: 11, name: 'RCB988', provider: 'RCB988', image: 'https://via.placeholder.com/120x120/f39c12/ffffff?text=RCB988', category: 'Sports' },
-        { id: 12, name: 'EKOR', provider: 'Ekor', image: 'https://via.placeholder.com/120x120/8e44ad/ffffff?text=EKOR', category: 'Lottery' },
-        { id: 13, name: 'BIG GAMING', provider: 'Big Gaming', image: 'https://via.placeholder.com/120x120/27ae60/ffffff?text=BIG+GAMING', category: 'Casino' },
-        { id: 14, name: 'SEXY', provider: 'Sexy', image: 'https://via.placeholder.com/120x120/e91e63/ffffff?text=SEXY', category: 'Casino' }
+        { id: 1, name: 'LUCKY 365', image: lucky365Icon, category: 'Slots' },
+        { id: 2, name: 'ASKMESLOT', image: askmeslotIcon, category: 'Slots' },
+        { id: 3, name: 'JDB', image: jdbSlotIcon, category: 'Slots' },
+        { id: 4, name: 'MONKEY KING', image: monkeyKingSlot, category: 'Slots' },
+        { id: 5, name: 'JILI', image: jiliSlot, category: 'Slots' },
+        { id: 6, name: 'MICROSLOT', image: microslotIcon, category: 'Slots' },
+        { id: 7, name: 'EVOLUTION', image: evolutionIcon, category: 'Casino' },
+        { id: 8, name: 'HOT ROAD', image: hotRoad, category: 'Casino' },
+        { id: 9, name: 'MAXBET', image: maxbetIcon, category: 'Sports' },
+        { id: 10, name: 'SV388', image: sv388Icon, category: 'Sports' },
+        { id: 11, name: 'RCB988', image: rcb988Icon, category: 'Sports' },
+        { id: 12, name: 'EKOR', image: ekorIcon, category: 'Lottery' },
+        { id: 13, name: 'BIG GAMING', image: bigGamingIcon, category: 'Casino' },
+        { id: 14, name: 'SEXY', image: sexyIcon, category: 'Casino' }
       ]
     }
   },
@@ -134,30 +157,34 @@ export default {
   beforeUnmount() {
     this.stopAutoSlide()
   },
+  computed: {
+    displayedGames() {
+      return this.activeCategory === 'All' 
+        ? this.games 
+        : this.games.filter(game => game.category === this.activeCategory)
+    },
+    currentFeaturedGame() {
+      return this.featuredGames[this.currentSlide]
+    }
+  },
   methods: {
     startAutoSlide() {
-      this.autoSlideInterval = setInterval(() => {
-        this.nextSlide()
-      }, 4000) // Change slide every 4 seconds
+      this.autoSlideInterval = setInterval(this.nextSlide, AUTO_SLIDE_INTERVAL)
     },
+    
     stopAutoSlide() {
       if (this.autoSlideInterval) {
         clearInterval(this.autoSlideInterval)
+        this.autoSlideInterval = null
       }
     },
+    
     nextSlide() {
       this.currentSlide = (this.currentSlide + 1) % this.featuredGames.length
     },
-    prevSlide() {
-      this.currentSlide = this.currentSlide === 0 ? this.featuredGames.length - 1 : this.currentSlide - 1
-    }
-  },
-  computed: {
-    displayedGames() {
-      if (this.activeCategory === 'All') {
-        return this.games.slice(0, 14)
-      }
-      return this.games.filter(game => game.category === this.activeCategory).slice(0, 14)
+    
+    setCurrentSlide(index) {
+      this.currentSlide = index
     }
   }
 }
@@ -166,8 +193,7 @@ export default {
 <style scoped>
 /* Games Section */
 .games-section {
-  padding: 60px 20px;
-  background: #0f172a;
+  padding: 20px;
 }
 
 .games-container {
@@ -175,89 +201,114 @@ export default {
   margin: 0 auto;
 }
 
+.games-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 0;
+  position: relative;
+}
+
 .games-title {
   color: white;
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin: 20px 0 10px 0;
 }
 
-/* Game Categories */
 .game-categories {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
-  margin-bottom: 40px;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .category-btn {
   padding: 8px 20px;
-  background: #334155;
+  background-color: transparent;
   color: #cbd5e1;
   border: none;
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
+  position: relative;
+  margin: 26px 0 10px;
 }
 
 .category-btn.active,
 .category-btn:hover {
-  background: #fbbf24;
-  color: #0f172a;
+  color: #F1AE3D;
+}
+
+.category-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(90deg, #F2B240 0%, #ED9226 100%);
+  border-radius: 2px;
+  z-index: 10;
 }
 
 /* Games Grid */
 .games-grid {
   display: grid;
   grid-template-columns: 300px 1fr;
-  gap: 30px;
+  gap: 50px;
+  padding: 20px 0;
 }
 
 /* Featured Game Slider */
 .featured-game {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
 }
 
 .featured-slider {
   border-radius: 15px;
-  height: 280px;
+  height: 250px;
   position: relative;
+  width: 280px;
+  flex-shrink: 0;
 }
 
-.featured-card {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-  border-radius: 15px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #0f172a;
+.featured-slide-card {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
   opacity: 0;
   transform: scale(0.95);
   transition: all 0.5s ease;
 }
 
-.featured-card.active {
+.featured-slide-card.active {
   opacity: 1;
   transform: scale(1);
 }
 
 .crown-icon {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 30px;
-  height: 30px;
-  color: #0f172a;
-  opacity: 0.4;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  color: #F1AE3D;
+  z-index: 3;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.8));
 }
 
 .crown-svg {
@@ -265,46 +316,46 @@ export default {
   height: 100%;
 }
 
-.featured-image {
-  margin-bottom: 15px;
+.featured-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
-.featured-game-image {
-  width: 80px;
-  height: 80px;
-  border-radius: 12px;
+.featured-slide-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
   object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.featured-card .game-info {
+/* Featured Game Info Outside Card */
+.featured-game-info {
   text-align: center;
-  z-index: 2;
+  color: white;
 }
 
-.featured-card h3 {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 5px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-}
-
-.featured-card .game-provider {
-  font-size: 0.9rem;
-  margin-bottom: 10px;
-  opacity: 0.8;
-}
-
-.stars {
-  color: #0f172a;
+.featured-game-info h3 {
   font-size: 1.2rem;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.featured-game-info .game-provider {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 /* Slider Indicators */
 .slider-indicators {
   position: absolute;
-  bottom: 15px;
+  bottom: -30px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -315,36 +366,45 @@ export default {
 .indicator {
   width: 8px;
   height: 8px;
-  border-radius: 50%;
+  border-radius: 4px;
   border: none;
-  background: rgba(15, 23, 42, 0.4);
+  background: rgba(255, 255, 255, 0.4);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .indicator.active {
-  background: #0f172a;
-  transform: scale(1.2);
+  background: #F1AE3D;
+  width: 24px;
+  height: 8px;
 }
 
 /* Regular Games */
 .regular-games {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 15px;
+  height: 320px;
+}
+
+.game-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .game-card {
-  background: #1e293b;
   border-radius: 12px;
   overflow: hidden;
-  position: relative;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  aspect-ratio: 1;
+  width: 100%;
+  height: 120px;
+  flex-shrink: 0;
 }
 
-.game-card:not(.featured-card):hover {
+.game-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
@@ -356,25 +416,20 @@ export default {
   border-radius: 12px;
 }
 
-.game-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(transparent, rgba(0,0,0,0.9));
+.game-info-external {
+  margin-top: 8px;
+  text-align: center;
   color: white;
-  padding: 20px 12px 12px;
-  border-radius: 0 0 12px 12px;
 }
 
-.game-overlay h4 {
+.game-info-external h4 {
   font-size: 0.9rem;
   font-weight: bold;
   margin-bottom: 4px;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
-.game-overlay p {
+.game-info-external p {
   font-size: 0.75rem;
   opacity: 0.9;
   margin: 0;
@@ -389,16 +444,22 @@ export default {
   }
   
   .featured-slider {
-    height: 200px;
+    height: 320px;
+    width: 240px;
   }
   
-  .featured-card h3 {
-    font-size: 1.4rem;
+  .featured-game-info h3 {
+    font-size: 1.1rem;
   }
   
-  .featured-game-image {
-    width: 60px;
-    height: 60px;
+  .regular-games {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 240px;
+  }
+  
+  .game-card {
+    height: 100px;
   }
 }
 
@@ -412,13 +473,22 @@ export default {
     order: -1;
   }
   
-  .featured-card {
-    height: 200px;
+  .featured-slider {
+    height: 280px;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
   }
   
   .regular-games {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     gap: 12px;
+    height: 280px;
+  }
+  
+  .game-card {
+    height: 60px;
   }
   
   .game-categories {
@@ -436,24 +506,34 @@ export default {
     padding: 40px 15px;
   }
   
-  .featured-card h3 {
-    font-size: 1.4rem;
+  .featured-game-info h3 {
+    font-size: 1rem;
+  }
+  
+  .featured-slider {
+    height: 240px;
   }
   
   .regular-games {
-    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     gap: 10px;
+    height: 320px;
   }
   
-  .game-overlay {
-    padding: 15px 8px 8px;
+  .game-card {
+    height: 50px;
   }
   
-  .game-overlay h4 {
+  .game-info-external {
+    margin-top: 6px;
+  }
+  
+  .game-info-external h4 {
     font-size: 0.8rem;
   }
   
-  .game-overlay p {
+  .game-info-external p {
     font-size: 0.7rem;
   }
 }

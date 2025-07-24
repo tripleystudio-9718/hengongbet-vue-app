@@ -1,5 +1,5 @@
 <template>
-  <div class="promotion-section">
+  <div class="promotion-section max-w-7xl mx-auto items-center justify-between">
 
     <div class="notice-bar">
       <div class="notice-content">
@@ -246,6 +246,7 @@ export default {
 .promotion-section {
   background-color: #27272A;
   padding: 0;
+  width: 1200px;
 }
 
 /* Notice Bar */
@@ -256,8 +257,7 @@ export default {
 .notice-content {
   display: flex;
   align-items: center;
-  padding: 12px 20px;
-  max-width: 1200px;
+  padding: 12px 0;
   margin: 0 auto;
 }
 
@@ -365,9 +365,8 @@ export default {
 /* Promotion Swiper */
 .promotion-swiper-container {
   position: relative;
-  padding: 10px 40px 0 40px;
+  padding: 10px 20px 0 20px;
   overflow: hidden;
-  max-width: 1100px;
   margin: 0 auto;
   cursor: grab;
   user-select: none;

@@ -12,7 +12,6 @@
       </button>
     </div>
 
-    <!-- Tab Content -->
     <div class="tab-content">
       <div class="features-list">
         <div 
@@ -147,11 +146,11 @@ export default {
   display: flex;
   justify-content: center;
   margin: 60px 0;
+  width: 1000px;
   background: #242424;
   border-radius: 24px;
   overflow: hidden;
   padding: 15px;
-  width: 1100px;
   margin: auto;
   gap: 0;
   box-shadow: 0px 5.528px 5.528px 0px rgba(0, 0, 0, 0.25);
@@ -214,7 +213,6 @@ export default {
   color: #ffffff;
   font-weight: 600;
   font-size: 0.95rem;
-  min-width: 200px;
   flex-shrink: 0;
 }
 

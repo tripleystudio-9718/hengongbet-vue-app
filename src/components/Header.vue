@@ -195,7 +195,6 @@ export default {
   background-color: #615F5C;
 }
 
-/* Logo Styles */
 .logo-container {
   display: flex;
   align-items: center;
@@ -209,7 +208,6 @@ export default {
   object-fit: contain;
 }
 
-/* Header Right Section - Updated Design */
 .header-right-section {
   display: flex;
   align-items: center;
