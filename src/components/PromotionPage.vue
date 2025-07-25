@@ -19,29 +19,24 @@
         class="promotion-card"
         :class="`card-${index + 1}`"
       >
-        <div class="card-content">
-            
-          <!-- Left Side - Percentage/Bonus -->
-          <div class="bonus-section">
-            <div class="bonus-label">{{ promo.bonusLabel }}</div>
-            <div class="bonus-amount">{{ promo.bonusAmount }}</div>
-            <div class="bonus-subtitle">{{ promo.bonusSubtitle }}</div>
-        <button 
-          class="promo-button"
-          :class="`button-${index + 1}`"
-          :style="{ backgroundImage: `url(${promo.buttonBg})` }"
-          @click="handlePromoClick(promo)"
-        >
-          {{ promo.buttonText }}
-        </button>
-          </div>
+       <div 
+  class="card-content"
+  :style="{ backgroundImage: `url(${promo.image})` }"
+>
+  <div class="overlay-left">
+    <div class="bonus-label">{{ promo.bonusLabel }}</div>
+    <div class="bonus-amount">{{ promo.bonusAmount }}</div>
+    <div class="bonus-subtitle">{{ promo.bonusSubtitle }}</div>
+    <button 
+      class="promo-button"
+      :class="`button-${index + 1}`"
+      @click="handlePromoClick(promo)"
+    >
+      {{ promo.buttonText }}
+    </button>
+  </div>
+</div>
 
-
-          <!-- Right Side - Promotion Image -->
-          <div class="image-section">
-            <img :src="promo.image" :alt="promo.title" class="promo-image" />
-          </div>
-        </div>
 
         
       </div>
@@ -56,54 +51,49 @@ export default {
     return {
       promotions: [
         {
-          bonusLabel: 'New Bonus',
+          bonusLabel: 'Top-up Bonus',
           bonusAmount: '68%',
-          bonusSubtitle: 'Bonus with No Limit!',
+          bonusSubtitle: 'Get a Maximum Bonus Up To 200',
           title: 'Top-up Bonus 68%',
           description: 'Get a maximum bonus up to 200',
           buttonText: 'Invite & Earn Now',
           image: new URL('@/assets/promotion1.png', import.meta.url).href,
-          buttonBg: new URL('@/assets/button1.png', import.meta.url).href
         },
         {
-          bonusLabel: 'Rebate Bonus',
+          bonusLabel: 'Top-up Rebate',
           bonusAmount: '0.5%',
-          bonusSubtitle: 'Bonus with No Limit!',
+          bonusSubtitle: 'Bonus with No Limit',
           title: 'Top-up Rebate 0.5%',
           description: 'Bonus with No Limit',
           buttonText: 'Share & Win More',
           image: new URL('@/assets/promotion2.png', import.meta.url).href,
-          buttonBg: new URL('@/assets/button2.png', import.meta.url).href
         },
         {
-          bonusLabel: 'Sign-up Bonus',
+          bonusLabel: 'Top-up Bonus',
           bonusAmount: '200%',
-          bonusSubtitle: '',
+          bonusSubtitle: 'Get a Maximum Bonus Up To 100',
           title: 'Top-up Bonus 200%',
           description: 'Get a maximum bonus up to 100',
           buttonText: 'Start Referring Now',
           image: new URL('@/assets/promotion3.png', import.meta.url).href,
-          buttonBg: new URL('@/assets/button3.png', import.meta.url).href
         },
         {
-          bonusLabel: 'Daily Rebate Up to',
+          bonusLabel: 'Daily Rebate Up To',
           bonusAmount: '3%',
-          bonusSubtitle: '',
+          bonusSubtitle: 'The More You Play, The More You Earn!',
           title: 'Daily Rebate Up to 3%!',
           description: 'The more you play, the more you earn!',
           buttonText: 'Get Your Rebate',
           image: new URL('@/assets/promotion4.png', import.meta.url).href,
-          buttonBg: new URL('@/assets/button4.png', import.meta.url).href
         },
         {
-          bonusLabel: 'Referral Rebate',
+          bonusLabel: 'Referral Rebate Up To',
           bonusAmount: '10%',
           bonusSubtitle: 'The More You Invite, The More You Bet!',
           title: 'Referral Rebate Up to 10%!',
           description: 'The more you invite, the more you bet, and the more rebates you get!',
           buttonText: 'Get Your Rebate',
           image: new URL('@/assets/promotion5.png', import.meta.url).href,
-          buttonBg: new URL('@/assets/button5.png', import.meta.url).href
         }
       ]
     }
@@ -125,7 +115,7 @@ export default {
   font-family: 'Rubik', sans-serif;
 }
 
-/* Header Styles */
+/* Header Section */
 .promotion-header {
   text-align: center;
   margin-bottom: 50px;
@@ -135,22 +125,22 @@ export default {
 }
 
 .main-title {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 600;
   color: #ffffff;
   margin-bottom: 10px;
   line-height: 1.2;
 }
 
 .highlight {
-  color: #ff8c00;
+  color: #F2B240;
 }
 
 .subtitle {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 40px;
+  font-weight: 400;
   color: #ffffff;
-  margin-bottom: 20px;
+  margin: 0 0 14px 0;
 }
 
 .description {
@@ -164,11 +154,10 @@ export default {
 /* Promotion Cards */
 .promotion-cards {
   width: 60%;
-  height:100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 35px;
 }
 
 .promotion-card {
@@ -178,115 +167,128 @@ export default {
   transition: transform 0.3s ease;
 }
 
-
-
-/* Card Themes */
-.card-1,.card-2,.card-3,.card-4,.card-5 {
+.card-1,
+.card-2,
+.card-3,
+.card-4,
+.card-5 {
   background: transparent;
 }
 
-
+/* Card Content with Background Image */
 .card-content {
   display: flex;
+  align-items: center;
   width: 100%;
-  height: 200px; /* or adjust based on your actual image height */
-  padding: 0;
-  gap: 0;
+  height: 250px;
   border-radius: 16px;
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  position: relative;
   overflow: hidden;
 }
 
-
-
-.bonus-section {
+.overlay-left {
   width: 30%;
-  background-color: #1f1f1f;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Stick content top + button bottom */
-  align-items: center;
+  height: 100%;
+  padding: 0 10px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  grid-template-rows: auto auto auto auto;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
 }
-
 
 
 .bonus-label {
+  margin-top: 12px;
   font-size: 0.9rem;
-  font-weight: 500;
-  margin-bottom: 10px;
-  opacity: 0.9;
+  opacity: 0.8;
+  color: inherit; /* <-- Use color from parent .card-X */
 }
 
 .bonus-amount {
-  font-size: 4rem;
+  font-size: 100px;
   font-weight: 900;
   line-height: 1;
-  margin-bottom: 5px;
 }
 
 .bonus-subtitle {
-  font-size: 0.8rem;
-  opacity: 0.8;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  color: inherit; /* <-- Use color from parent .card-X */
+}
+
+.card-1 .bonus-label,
+.card-1 .bonus-subtitle {
+  color: #14C570;
+}
+
+.card-2 .bonus-label,
+.card-2 .bonus-subtitle {
+  color: #FAC701;
+}
+
+.card-3 .bonus-label,
+.card-3 .bonus-subtitle {
+  color: #DC60DF;
+}
+
+.card-4 .bonus-label,
+.card-4 .bonus-subtitle {
+  color: #0BE7FF;
+}
+
+.card-5 .bonus-label,
+.card-5 .bonus-subtitle {
+  color: #8A64FF;
 }
 
 
-.image-section {
-  width: 70%;
-  height: 100%;
-  overflow: hidden;
-}
-
-
-
-.promo-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 0;
-}
-
-
+/* CTA Button */
 .promo-button {
-  width: 90%;
-  height: 50px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   background-color: transparent;
   border: none;
-  font-size: 16px;
-  font-weight: 600;
+  padding: 32px 16px;
+  font-size: 26px;
+  font-weight: 100;
   color: white;
+  border-radius: 8px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
-  transition: transform 0.3s ease;
-}
-
-
-.promo-button:hover {
-  transform: scale(1.05);
+  width: fit-content;
+  transition: background 0.3s ease;
+  
 }
 
 .promo-button:active {
   transform: scale(0.98);
 }
 
+/* Button Shape Styling */
+.button-1,
+.button-2,
+.button-3,
+.button-4,
+.button-5 {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+}
 
 /* Responsive Design */
 @media (max-width: 1024px) {
   .card-content {
-    grid-template-columns: 150px 1fr 200px;
     padding: 25px;
     gap: 20px;
   }
-  
+
   .bonus-amount {
     font-size: 3rem;
   }
-  
+
   .promo-title {
     font-size: 1.3rem;
   }
@@ -296,29 +298,30 @@ export default {
   .promotion-container {
     padding: 20px 15px;
   }
-  
+
   .main-title {
     font-size: 2rem;
   }
-  
+
   .subtitle {
     font-size: 1.2rem;
   }
-  
+
   .card-content {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     text-align: center;
-    gap: 20px;
+    height: auto;
   }
-  
+
+  .overlay-left {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
   .bonus-amount {
     font-size: 2.5rem;
   }
-  
-  .promo-image {
-    height: 120px;
-  }
-  
+
   .promo-button {
     position: static;
     margin-top: 15px;
@@ -330,22 +333,17 @@ export default {
   .main-title {
     font-size: 1.5rem;
   }
-  
+
   .card-content {
     padding: 20px;
   }
-  
+
   .bonus-amount {
     font-size: 2rem;
   }
-  
+
   .promo-title {
     font-size: 1.1rem;
-  }
-  
-  .feature-logos {
-    flex-wrap: wrap;
-    justify-content: center;
   }
 }
 </style>
