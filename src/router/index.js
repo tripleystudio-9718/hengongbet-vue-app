@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import GamePage from '@/components/GamePage.vue';
 import PromotionPage from '@/components/PromotionPage.vue';
+import FAQ from '@/components/FAQ.vue';
+import FourDResult from '@/components/FourDResult.vue';
 
 const routes = [
   {
@@ -21,6 +23,16 @@ const routes = [
     path: '/promotion',
     name: 'PromotionPage',
     component: PromotionPage,
+  },
+  {
+    path: '/faqs',
+    name: 'FAQ',
+    component: FAQ,
+  },
+    {
+    path: '/4d-results',
+    name: 'FourDResult',
+    component: FourDResult,
   }
 ]
 
