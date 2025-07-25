@@ -26,6 +26,12 @@
       </div>
     </div>
   </div>
+  
+  <!-- Platform Section -->
+  <div class="platform-section">
+    <h3 class="platform-title">{{ platformContent.title }}</h3>
+    <p class="platform-description">{{ platformContent.description }}</p>
+  </div>
 </template>
 
 <script>
@@ -130,6 +136,10 @@ export default {
             description: 'RNG certified games ensuring fair play'
           }
         ]
+      },
+      platformContent: {
+        title: "Play Anywhere, Anytime",
+        description: "With the Heng Ong Bet mobile app (iOS & Android supported), you can enjoy all your favorite games on the go — from slots and sportsbook to live dealer and 4D games. Join Heng Ong Bet today and experience Malaysia's most reliable and exciting online gaming platform!"
       }
     }
   },
@@ -170,8 +180,8 @@ export default {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-weight: 500;
-  font-size: 0.95rem;
+  font-weight: 600;
+  font-size: 18px;
   border-radius: 50px;
   position: relative;   
   width: 85%;
@@ -210,9 +220,9 @@ export default {
 }
 
 .feature-title {
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 0.95rem;
+  color: #C0BEBE;
+  font-weight: 700;
+  font-size: 18px;
   flex-shrink: 0;
 }
 
@@ -223,14 +233,40 @@ export default {
 }
 
 .feature-description {
-  color: #cccccc;
-  font-size: 0.9rem;
+  color: #C0BEBE;
+  font-size: 18px;
   line-height: 1.4;
+  font-weight: 400;
   flex: 1;
+}
+
+/* Platform Section */
+.platform-section {
+  text-align: center;
+}
+
+.platform-title {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.platform-description {
+  color: #C0BEBE;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.8;
+  margin: 0 auto;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .features-section {
+    width: 100%;
+    margin: 40px auto;
+  }
+  
   .tab-navigation {
     flex-direction: column;
   }
@@ -274,6 +310,19 @@ export default {
   .feature-description {
     padding-left: 0;
   }
+  
+  .platform-section {
+    margin: 40px 0;
+    padding: 0 20px;
+  }
+  
+  .platform-title {
+    font-size: 1.3rem;
+  }
+  
+  .platform-description {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -292,6 +341,14 @@ export default {
   
   .feature-description {
     font-size: 0.85rem;
+  }
+  
+  .platform-title {
+    font-size: 1.2rem;
+  }
+  
+  .platform-description {
+    font-size: 0.95rem;
   }
 }
 </style>

@@ -1,65 +1,57 @@
 <template>
-  <div class="testimonials-section">
-    <div class="max-w-7xl mx-auto">
+  <div class="section-container">
+    <div class="content-wrapper">
       <!-- Header -->
-      <div class="text-center mb-12">
-        <h2 class="main-title">Testimonials</h2>
-        <h3 class="subtitle">Real stories. Real wins. Real excitement.</h3>
-        <div class="rating-header">
-          <span class="rating-score">4.8/5</span>
-          <div class="stars-container">
-            <span v-for="n in 5" :key="n" class="star">★</span>
+      <div class="header-wrapper">
+        <h2 class="main-title">{{ headerContent.title }}</h2>
+        <h3 class="accent-subtitle">{{ headerContent.subtitle }}</h3>
+        <div class="rating-display">
+          <span class="rating-value">{{ headerContent.rating }}</span>
+          <div class="stars-group">
+            <span v-for="n in 5" :key="n" class="star-icon">★</span>
           </div>
-          <span class="review-count">Based On 1200 reviews</span>
+          <span class="rating-description">{{ headerContent.reviewCount }}</span>
         </div>
       </div>
 
       <!-- Main Content -->
-      <div class="main-content">
+      <div class="two-column-layout">
         <!-- Left Side - Quote and Title -->
-        <div class="left-panel">
-          <div class="quote-icon">
-            <img :src="quotationIcon" alt="Quotation" class="quote-image" />
+        <div class="control-panel">
+          <div class="quote-display">
+            <img :src="quotationIcon" alt="Quotation" class="quote-icon" />
           </div>
-          <h2 class="section-title">
-            What Our<br />
-            customers are<br />
-            saying
+          <h2 class="panel-title">
+            {{ controlContent.title }}
           </h2>
           
           <!-- Progress Bar -->
-          <div class="controls-container">
+          <div class="navigation-controls">
             <button 
               @click="prevSlide"
-              class="nav-button"
-              :disabled="isTransitioning"
+              class="control-button"
             >
-              <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-              </svg>
+              <img :src="nextRightArrow" alt="Previous" class="control-arrow-icon left-arrow" />
             </button>
             
-            <div class="progress-bar">
+            <div class="progress-container">
               <div 
-                class="progress-fill"
+                class="progress-indicator"
                 :style="{ width: progressWidth + '%' }"
               />
             </div>
             
             <button 
               @click="nextSlide"
-              class="nav-button"
-              :disabled="isTransitioning"
+              class="control-button"
             >
-              <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
+              <img :src="nextRightArrow" alt="Next" class="control-arrow-icon" />
             </button>
           </div>
         </div>
 
         <!-- Right Side - Testimonials Slider -->
-        <div class="slider-container" ref="sliderContainer">
+        <div class="slider-wrapper" ref="sliderContainer">
           <div 
             class="slider-track"
             ref="sliderTrack"
@@ -70,7 +62,7 @@
             <div 
               v-for="(testimonial, index) in displayTestimonials"
               :key="`testimonial-${testimonial.id}-${index}`"
-              class="testimonial-wrapper"
+              class="slide-item"
             >
               <!-- Testimonial Card -->
               <div 
@@ -79,48 +71,43 @@
                   backgroundImage: `url(${messageBg})`
                 }"
               >
-                <!-- Quote Icon -->
-                <div class="card-quote-icon">
-                  <img :src="quotationIcon" alt="Quote" class="quote-icon-small" />
-                </div>
-                
-                <!-- Content Area matching message bubble shape -->
-                <div class="card-content">
-                  <!-- Stars -->
-                  <div class="card-stars">
+                <!-- Content Area -->
+                <div class="card-body">
+                  <!-- Testimonial Text -->
+                  <p class="review-text">
+                    {{ testimonial.text }}
+                  </p>
+                  
+                  <!-- Stars at bottom -->
+                  <div class="rating-stars">
                     <span 
                       v-for="n in 5" 
                       :key="n" 
-                      class="card-star"
-                      :class="{ 'active': n <= testimonial.rating }"
+                      class="star-rating"
+                      :class="{ 'star-active': n <= testimonial.rating }"
                     >★</span>
                   </div>
-                  
-                  <!-- Testimonial Text -->
-                  <p class="testimonial-text">
-                    {{ testimonial.text }}
-                  </p>
                 </div>
               </div>
               
-              <!-- User Info - Outside the message background -->
-              <div class="user-info">
-                <div class="avatar">
+              <!-- User Info -->
+              <div class="user-profile">
+                <div class="profile-avatar">
                   <img 
                     v-if="testimonial.avatar"
                     :src="testimonial.avatar" 
                     :alt="testimonial.name"
-                    class="avatar-image"
+                    class="avatar-photo"
                   />
                   <span v-else class="avatar-initial">
                     {{ testimonial.name.charAt(0) }}
                   </span>
                 </div>
-                <div class="user-details">
-                  <div class="user-name">
+                <div class="profile-info">
+                  <div class="profile-name">
                     {{ testimonial.name }}
                   </div>
-                  <div class="time-ago">
+                  <div class="profile-timestamp">
                     {{ testimonial.timeAgo }}
                   </div>
                 </div>
@@ -136,19 +123,20 @@
 <script>
 import messageBg from '@/assets/message-bg.png'
 import quotationIcon from '@/assets/quotation_icon.svg'
+import nextRightArrow from '@/assets/next-right-arrow.svg'
 
 export default {
   name: 'CustomerTestimonials',
   data() {
     return {
       currentSlide: 0,
-      targetSlide: 0,
       isAutoPlay: true,
       autoPlayInterval: null,
       cardWidth: 320,
       cardGap: 24,
       messageBg,
       quotationIcon,
+      nextRightArrow,
       
       // Drag state
       isDragging: false,
@@ -157,9 +145,16 @@ export default {
       initialTransform: 0,
       currentTransform: 0,
       
-      // Animation state
-      isTransitioning: false,
-      animationId: null,
+      headerContent: {
+        title: "Testimonials",
+        subtitle: "Real stories. Real wins. Real excitement.",
+        rating: "4.8/5",
+        reviewCount: "Based On 1200 reviews"
+      },
+      
+      controlContent: {
+        title: "What Our Customers Are Saying"
+      },
       
       testimonials: [
         {
@@ -207,7 +202,6 @@ export default {
   },
   computed: {
     displayTestimonials() {
-      // Create 3 sets for smooth infinite scrolling
       return [...this.testimonials, ...this.testimonials, ...this.testimonials];
     },
     totalSlides() {
@@ -236,9 +230,7 @@ export default {
     }
   },
   mounted() {
-    // Start from middle set for smooth bi-directional scrolling
     this.currentSlide = this.totalSlides;
-    this.targetSlide = this.totalSlides;
     this.setupEventListeners();
     this.startAutoPlay();
   },
@@ -247,12 +239,8 @@ export default {
   },
   methods: {
     setupEventListeners() {
-      // Mouse events
       document.addEventListener('mousemove', this.handleMove, { passive: false });
       document.addEventListener('mouseup', this.handleEnd);
-      document.addEventListener('mouseleave', this.handleEnd);
-      
-      // Touch events
       document.addEventListener('touchmove', this.handleMove, { passive: false });
       document.addEventListener('touchend', this.handleEnd);
       document.addEventListener('touchcancel', this.handleEnd);
@@ -260,24 +248,14 @@ export default {
     
     cleanup() {
       this.stopAutoPlay();
-      
-      // Remove event listeners
       document.removeEventListener('mousemove', this.handleMove);
       document.removeEventListener('mouseup', this.handleEnd);
-      document.removeEventListener('mouseleave', this.handleEnd);
       document.removeEventListener('touchmove', this.handleMove);
       document.removeEventListener('touchend', this.handleEnd);
       document.removeEventListener('touchcancel', this.handleEnd);
-      
-      // Cancel any ongoing animation
-      if (this.animationId) {
-        cancelAnimationFrame(this.animationId);
-      }
     },
     
     handleStart(event) {
-      if (this.isTransitioning) return;
-      
       this.isDragging = true;
       this.stopAutoPlay();
       
@@ -306,21 +284,20 @@ export default {
       this.isDragging = false;
       
       const clientX = event.type === 'mouseup' ? event.clientX : 
-                     event.changedTouches ? event.changedTouches[0].clientX : this.dragStartX;
+                     (event.changedTouches ? event.changedTouches[0].clientX : this.dragStartX);
       const deltaX = clientX - this.dragStartX;
       const deltaTime = Date.now() - this.dragStartTime;
-      const velocity = Math.abs(deltaX) / deltaTime; // pixels per ms
+      const velocity = Math.abs(deltaX) / deltaTime;
       
-      // Determine if we should slide based on distance or velocity
       const distanceThreshold = this.slideDistance * 0.3;
-      const velocityThreshold = 0.5; // pixels per ms
+      const velocityThreshold = 0.5;
       
       let shouldSlide = false;
       let direction = 0;
       
       if (Math.abs(deltaX) > distanceThreshold || velocity > velocityThreshold) {
         shouldSlide = true;
-        direction = deltaX > 0 ? -1 : 1; // opposite to drag direction
+        direction = deltaX > 0 ? -1 : 1;
       }
       
       if (shouldSlide) {
@@ -330,65 +307,43 @@ export default {
           this.goToSlide(this.currentSlide - 1);
         }
       } else {
-        // Snap back to current slide
         this.goToSlide(this.currentSlide);
       }
       
-      // Restart autoplay after a delay
       setTimeout(() => {
         this.startAutoPlay();
       }, 3000);
     },
     
     goToSlide(targetSlide) {
-      if (this.isTransitioning) return;
-      
-      this.isTransitioning = true;
       this.currentSlide = targetSlide;
-      this.targetSlide = targetSlide;
       
-      // Handle infinite loop boundaries
       setTimeout(() => {
         this.handleInfiniteLoop();
-      }, 800); // Match transition duration
+      }, 100);
     },
     
     handleInfiniteLoop() {
-      let needsReset = false;
       let newPosition = this.currentSlide;
       
-      // Check if we need to reset position for seamless loop
       if (this.currentSlide >= this.totalSlides * 2) {
         newPosition = this.totalSlides;
-        needsReset = true;
       } else if (this.currentSlide < this.totalSlides) {
         newPosition = this.totalSlides;
-        needsReset = true;
       }
       
-      if (needsReset) {
-        // Instantly move to equivalent position without transition
-        setTimeout(() => {
+      if (newPosition !== this.currentSlide) {
+        this.$nextTick(() => {
           this.currentSlide = newPosition;
-          this.targetSlide = newPosition;
-          
-          // Re-enable transitions after reset
-          this.$nextTick(() => {
-            this.isTransitioning = false;
-          });
-        }, 50);
-      } else {
-        this.isTransitioning = false;
+        });
       }
     },
     
     nextSlide() {
-      if (this.isTransitioning) return;
       this.goToSlide(this.currentSlide + 1);
     },
     
     prevSlide() {
-      if (this.isTransitioning) return;
       this.goToSlide(this.currentSlide - 1);
     },
     
@@ -396,7 +351,7 @@ export default {
       this.stopAutoPlay();
       if (this.isAutoPlay && !this.isDragging) {
         this.autoPlayInterval = setInterval(() => {
-          if (!this.isDragging && !this.isTransitioning) {
+          if (!this.isDragging) {
             this.nextSlide();
           }
         }, 5000);
@@ -414,12 +369,30 @@ export default {
 </script>
 
 <style scoped>
-.testimonials-section {
+/* Global Layout Classes */
+.section-container {
   background: #27272A;
-  padding: 4rem 1rem;
+  padding: 1rem 1rem;
   color: white;
 }
 
+.content-wrapper {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.header-wrapper {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.two-column-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* Global Typography Classes */
 .main-title {
   color: white;
   font-size: 3rem;
@@ -427,65 +400,14 @@ export default {
   margin-bottom: 1rem;
 }
 
-.subtitle {
+.accent-subtitle {
   color: #F2B240;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 2rem;
 }
 
-.rating-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.rating-score {
-  color: #F2B240;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.stars-container {
-  display: flex;
-}
-
-.star {
-  color: #F2B240;
-  font-size: 1.125rem;
-}
-
-.review-count {
-  color: #9CA3AF;
-}
-
-.main-content {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-}
-
-.left-panel {
-  flex-shrink: 0;
-  width: 20rem;
-}
-
-.quote-icon {
-  margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.quote-image {
-  width: 4rem;
-  height: 4rem;
-  object-fit: contain;
-}
-
-.section-title {
+.panel-title {
   color: white;
   font-size: 2.5rem;
   font-weight: bold;
@@ -493,60 +415,113 @@ export default {
   margin-bottom: 2rem;
 }
 
-.controls-container {
+/* Rating Components */
+.rating-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.rating-value {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.stars-group {
+  display: flex;
+}
+
+.star-icon {
+  color: #F2B240;
+  font-size: 1.125rem;
+}
+
+.rating-description {
+  color: #9CA3AF;
+}
+
+/* Control Panel */
+.control-panel {
+  flex-shrink: 0;
+  width: 20rem;
+}
+
+.quote-display {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.quote-icon {
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+}
+
+/* Navigation Controls */
+.navigation-controls {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-top: 2rem;
 }
 
-.nav-button {
+.control-button {
   padding: 0.5rem;
   border-radius: 9999px;
-  background: #374151;
+  background-color: transparent;
   border: none;
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
-.nav-button:hover:not(:disabled) {
+.control-button:hover:not(:disabled) {
   background: #4B5563;
 }
 
-.nav-button:disabled {
+.control-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.nav-icon {
+.control-arrow-icon {
   width: 1.25rem;
   height: 1.25rem;
-  color: white;
+  filter: brightness(0) saturate(100%) invert(100%);
 }
 
-.progress-bar {
+.left-arrow {
+  transform: scaleX(-1);
+}
+
+.progress-container {
   flex: 1;
   height: 0.25rem;
-  background: #374151;
+  background: #ffffff;
   border-radius: 9999px;
   overflow: hidden;
 }
 
-.progress-fill {
+.progress-indicator {
   height: 100%;
   background: #F2B240;
   border-radius: 9999px;
   transition: width 0.3s ease-out;
 }
 
-.slider-container {
+/* Slider Components */
+.slider-wrapper {
   flex: 1;
   overflow: hidden;
   cursor: grab;
   user-select: none;
 }
 
-.slider-container:active {
+.slider-wrapper:active {
   cursor: grabbing;
 }
 
@@ -558,7 +533,7 @@ export default {
   perspective: 1000px;
 }
 
-.testimonial-wrapper {
+.slide-item {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -566,6 +541,7 @@ export default {
   width: 320px;
 }
 
+/* Testimonial Card */
 .testimonial-card {
   background-size: 100% 100%;
   background-position: center;
@@ -580,65 +556,67 @@ export default {
   align-items: stretch;
 }
 
-.card-quote-icon {
+.card-quote-display {
   position: absolute;
   top: 1.25rem;
   right: 1.25rem;
   z-index: 2;
 }
 
-.quote-icon-small {
+.mini-quote-icon {
   width: 1.75rem;
   height: 1.75rem;
   opacity: 0.7;
 }
 
-.card-content {
+.card-body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding: 1.75rem 2rem 1.5rem 1.75rem;
+  justify-content: space-between;
+  padding: 1rem 2rem 3rem 1.75rem;
   margin: 0.5rem;
   position: relative;
   z-index: 1;
 }
 
-.card-stars {
+.rating-stars {
   display: flex;
-  margin-bottom: 1rem;
   gap: 0.125rem;
+  justify-content: flex-start;
+  margin-top: 1rem;
 }
 
-.card-star {
+.star-rating {
   font-size: 1rem;
   color: #4B5563;
   line-height: 1;
 }
 
-.card-star.active {
+.star-active {
   color: #F2B240;
 }
 
-.testimonial-text {
+.review-text {
   color: #E5E7EB;
   font-size: 0.875rem;
   line-height: 1.5;
   margin: 0;
-  flex: 1;
   word-wrap: break-word;
   hyphens: auto;
   white-space: pre-wrap;
 }
 
-.user-info {
+/* User Profile */
+.user-profile {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding-left: 0.5rem;
+  padding-left: 2.5rem;
+  margin-top: -25px;
 }
 
-.avatar {
+.profile-avatar {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 9999px;
@@ -652,46 +630,46 @@ export default {
   flex-shrink: 0;
 }
 
-.avatar-image {
+.avatar-photo {
   width: 100%;
   height: 100%;
   border-radius: 9999px;
   object-fit: cover;
 }
 
-.user-details {
+.profile-info {
   flex: 1;
 }
 
-.user-name {
+.profile-name {
   color: white;
   font-weight: 600;
   font-size: 0.875rem;
   margin-bottom: 0.25rem;
 }
 
-.time-ago {
+.profile-timestamp {
   color: #9CA3AF;
   font-size: 0.75rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .main-content {
+  .two-column-layout {
     flex-direction: column;
     gap: 2rem;
   }
   
-  .left-panel {
+  .control-panel {
     width: 100%;
     text-align: center;
   }
   
-  .section-title {
+  .panel-title {
     font-size: 2rem;
   }
   
-  .testimonial-wrapper {
+  .slide-item {
     width: 280px;
   }
   
@@ -699,13 +677,13 @@ export default {
     min-height: 260px;
   }
   
-  .card-content {
+  .card-body {
     padding: 1.5rem 1.75rem 1.25rem 1.5rem;
   }
 }
 
 @media (max-width: 640px) {
-  .testimonials-section {
+  .section-container {
     padding: 2rem 1rem;
   }
   
@@ -713,7 +691,7 @@ export default {
     gap: 1rem;
   }
   
-  .testimonial-wrapper {
+  .slide-item {
     width: 260px;
   }
 }

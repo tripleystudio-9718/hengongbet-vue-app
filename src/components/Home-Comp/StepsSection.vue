@@ -1,5 +1,11 @@
 <template>
   <section>
+    <!-- Header Section -->
+    <div class="header-section">
+      <p class="header-subtitle">{{ headerContent.subtitle }}</p>
+      <h2 class="header-title">{{ headerContent.title }}</h2>
+    </div>
+
     <div class="max-w-7xl mx-auto px-6 py-8">
       <!-- Steps Container -->
       <div class="steps-container">
@@ -95,6 +101,10 @@ export default {
       winningIcon,
       rewardIcon,
       stepNumbers: [firstIcon, secondIcon, thirdIcon, fourIcon],
+      headerContent: {
+        subtitle: "Welcome to Heng Ong Bet - Trusted Online Casino",
+        title: "Start Playing and Earning"
+      },
       stepsData: [
         {
           title: 'Create Account',
@@ -119,6 +129,49 @@ export default {
 </script>
 
 <style scoped>
+/* Header Section */
+.header-section {
+  text-align: center;
+  padding: 60px 0 40px 0;
+}
+
+.header-subtitle {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 30px;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
+}
+
+.header-title {
+  font-size: 40px;
+  font-weight: 500;
+  color: #F2B240;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Utility Classes */
+.max-w-7xl {
+  max-width: 80rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Steps Container */
 .steps-container {
   display: flex;
   justify-content: center;
@@ -152,7 +205,7 @@ export default {
 
 .num-img {
   width: 60px;
-  height: 60px;
+  height: 90px;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -211,6 +264,18 @@ export default {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .header-section {
+    padding: 40px 20px 30px 20px;
+  }
+  
+  .header-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .header-title {
+    font-size: 2.5rem;
+  }
+  
   .steps-container {
     flex-direction: column;
     gap: 3rem;
@@ -245,6 +310,16 @@ export default {
   .num-img {
     width: 50px;
     height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-title {
+    font-size: 2rem;
+  }
+  
+  .header-subtitle {
+    font-size: 1rem;
   }
 }
 </style>

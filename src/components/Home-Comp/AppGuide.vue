@@ -1,69 +1,77 @@
 <template>
-  <div class="app-guide-features-section">
-    <!-- Tab Navigation -->
-    <div class="app-guide-tab-navigation">
-      <button
-        v-for="tab in tabs"
-        :key="tab.id"
-        @click="activeTab = tab.id"
-        :class="['app-guide-tab-btn', { 'app-guide-active': activeTab === tab.id }]"
-      >
-        <i :class="tab.icon"></i>
-        {{ tab.title }}
-      </button>
+  <div class="app-guide-container">
+    <!-- Header Section -->
+    <div class="app-guide-header-section">
+      <p class="app-guide-header-subtitle">{{ headerContent.subtitle }}</p>
+      <h2 class="app-guide-header-title">{{ headerContent.title }}</h2>
     </div>
 
-    <div class="app-guide-tab-content">
-      <!-- Slides Container -->
-      <div class="app-guide-slides-wrapper">
-        <div 
-          class="app-guide-slides" 
-          :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
+    <div class="app-guide-features-section">
+      <!-- Tab Navigation -->
+      <div class="app-guide-tab-navigation">
+        <button
+          v-for="tab in tabs"
+          :key="tab.id"
+          @click="activeTab = tab.id"
+          :class="['app-guide-tab-btn', { 'app-guide-active': activeTab === tab.id }]"
         >
+          <i :class="tab.icon"></i>
+          {{ tab.title }}
+        </button>
+      </div>
+
+      <div class="app-guide-tab-content">
+        <!-- Slides Container -->
+        <div class="app-guide-slides-wrapper">
           <div 
-            v-for="(slide, index) in slides" 
-            :key="index"
-            class="app-guide-slide"
+            class="app-guide-slides" 
+            :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
           >
-            <div class="app-guide-features-list">
-              <div 
-                v-for="feature in slide" 
-                :key="feature.id"
-                class="app-guide-feature-item"
-              >
-                <div class="app-guide-feature-title">{{ feature.title }}</div>
-                <div class="app-guide-feature-separator">–</div>
-                <div class="app-guide-feature-description">{{ feature.description }}</div>
+            <div 
+              v-for="(slide, index) in slides" 
+              :key="index"
+              class="app-guide-slide"
+            >
+              <div class="app-guide-features-list">
+                <div 
+                  v-for="feature in slide" 
+                  :key="feature.id"
+                  class="app-guide-feature-item"
+                >
+                  <div class="app-guide-feature-title">{{ feature.title }}</div>
+                  <div class="app-guide-feature-separator">–</div>
+                  <div class="app-guide-feature-description">{{ feature.description }}</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Bottom Navigation -->
-      <div class="app-guide-bottom-navigation">
-        <!-- Left Arrow -->
-        <button 
-          class="app-guide-nav-arrow app-guide-nav-arrow-left" 
-          @click="previousSlide"
-          :disabled="currentSlide === 0"
-        >
-          <i class="fas fa-arrow-left"></i>
-        </button>
+        <!-- Bottom Navigation -->
+        <div class="app-guide-bottom-navigation">
+          <!-- Left Arrow -->
+          <button 
+            class="app-guide-nav-arrow app-guide-nav-arrow-left" 
+            @click="previousSlide"
+            :disabled="currentSlide === 0"
+          >
+            <i class="fas fa-arrow-left"></i>
+          </button>
 
-        <!-- Page Counter -->
-        <span class="app-guide-page-counter">
-          {{ currentSlide + 1 }}/{{ maxSlides }}
-        </span>
+          <!-- Page Counter -->
+          <span class="app-guide-page-counter">
+            {{ currentSlide + 1 }}/{{ maxSlides }}
+          </span>
 
-        <!-- Right Arrow -->
-        <button 
-          class="app-guide-nav-arrow app-guide-nav-arrow-right" 
-          @click="nextSlide"
-          :disabled="currentSlide === maxSlides - 1"
-        >
-          <i class="fas fa-arrow-right"></i>
-        </button>
+          <!-- Right Arrow -->
+          <button 
+            class="app-guide-nav-arrow app-guide-nav-arrow-right" 
+            @click="nextSlide"
+            :disabled="currentSlide === maxSlides - 1"
+          >
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -71,11 +79,15 @@
 
 <script>
 export default {
-  name: 'FeaturesSection',
+  name: 'AppGuide',
   data() {
     return {
       activeTab: 'Android',
       currentSlide: 0,
+      headerContent: {
+        subtitle: "All - New Heng Ong Bet App",
+        title: "Premium Games & Support"
+      },
       tabs: [
         {
           id: 'Android',
@@ -269,6 +281,32 @@ export default {
 /* Font Awesome CDN - Add this to your main HTML file */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
+.app-guide-container {
+  width: 100%;
+}
+
+/* Header Section */
+.app-guide-header-section {
+  text-align: center;
+  padding: 60px 0 40px 0;
+}
+
+.app-guide-header-subtitle {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 500;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
+}
+
+.app-guide-header-title {
+  font-size: 40px;
+  font-weight: 500;
+  color: #F2B240;
+  margin: 0;
+  line-height: 1.2;
+}
+
 .app-guide-features-section {
   display: flex;
   flex-direction: column;
@@ -279,7 +317,7 @@ export default {
   overflow: hidden;
   padding: 15px;
   margin: auto;
-  margin-top: 60px;
+  margin-top: 0;
   margin-bottom: 60px;
   gap: 20px;
 }
@@ -306,7 +344,7 @@ export default {
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 18px;
   border-radius: 50px;
   position: relative;   
   width: 100%;
@@ -415,7 +453,7 @@ export default {
 .app-guide-feature-title {
   color: #ffffff;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 18px;
   flex-shrink: 0;
 }
 
@@ -432,36 +470,26 @@ export default {
   flex: 1;
 }
 
-.app-guide-pagination {
-  display: none;
-}
-
-.app-guide-pagination-text {
-  display: none;
-}
-
-.app-guide-pagination-dots {
-  display: none;
-}
-
-.app-guide-pagination-dot {
-  display: none;
-}
-
-.app-guide-pagination-dot.app-guide-active {
-  display: none;
-}
-
-.app-guide-pagination-dot:hover {
-  display: none;
-}
-
-.app-guide-pagination-dot.app-guide-active:hover {
-  display: none;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
+  .app-guide-header-section {
+    padding: 40px 20px 30px 20px;
+  }
+  
+  .app-guide-header-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .app-guide-header-title {
+    font-size: 2.5rem;
+  }
+  
+  .app-guide-features-section {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+  
   .app-guide-tab-navigation {
     flex-direction: column;
     width: 80%;
@@ -477,14 +505,6 @@ export default {
   .app-guide-tab-content {
     padding: 25px 20px;
     width: 90%;
-  }
-  
-  .app-guide-slider-container {
-    display: none;
-  }
-  
-  .app-guide-arrow {
-    display: none;
   }
   
   .app-guide-nav-arrow {
@@ -524,6 +544,14 @@ export default {
 }
 
 @media (max-width: 480px) {
+  .app-guide-header-title {
+    font-size: 2rem;
+  }
+  
+  .app-guide-header-subtitle {
+    font-size: 1rem;
+  }
+  
   .app-guide-features-section {
     width: 95%;
   }
@@ -549,10 +577,6 @@ export default {
   
   .app-guide-feature-description {
     font-size: 0.85rem;
-  }
-  
-  .app-guide-arrow {
-    display: none;
   }
   
   .app-guide-nav-arrow {

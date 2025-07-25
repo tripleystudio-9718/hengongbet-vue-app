@@ -212,7 +212,7 @@ export default {
 
 .games-title {
   color: white;
-  font-size: 2rem;
+  font-size: 22px;
   font-weight: bold;
   margin: 20px 0 10px 0;
 }
@@ -234,7 +234,7 @@ export default {
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 1rem;
+  font-size: 18px;
   font-weight: 500;
   position: relative;
   margin: 26px 0 10px;

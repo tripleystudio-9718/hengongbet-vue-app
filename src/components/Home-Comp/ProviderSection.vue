@@ -1,5 +1,13 @@
 <template>
   <section>
+    <!-- Global Header Section -->
+    <div class="global-header-section">
+      <h3 class="global-brand">{{ globalContent.brand }}</h3>
+      <h2 class="global-title">{{ globalContent.title }}</h2>
+      <h4 class="global-subtitle">{{ globalContent.subtitle }}</h4>
+      <p class="global-description">{{ globalContent.description }}</p>
+    </div>
+
     <div class="max-w-7xl mx-auto px-6 py-8">
       <div class="provider-container">
         <div 
@@ -37,6 +45,12 @@ export default {
   name: 'ProviderShowcase',
   data() {
     return {
+      globalContent: {
+        brand: "Heng Ong Bet",
+        title: "We Are Global",
+        subtitle: "Heng Ong Bet is Now Expanding Globally",
+        description: "Heng Ong Bet is now available in Singapore, with our talented global team supporting growth across Malaysia and Singapore. What unites us? A passion for delivering the best gaming experience. We're also actively expanding into Thailand, Vietnam, Indonesia, Cambodia, the UK, and the USA."
+      },
       providers: [
         new GameProvider(
           'Slots', 
@@ -69,6 +83,68 @@ export default {
 </script>
 
 <style scoped>
+/* Global Header Section */
+.global-header-section {
+  text-align: center;
+  padding: 40px 20px 40px 20px;
+}
+
+.global-brand {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: normal;
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+}
+
+.global-title {
+  color: #F2B240;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.global-subtitle {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin: 0 0 2rem 0;
+  font-weight: normal;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.global-description {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Utility Classes */
+.max-w-7xl {
+  max-width: 80rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.py-8 {
+  padding-bottom: 2rem;
+}
+
+/* Provider Container */
 .provider-container {
   display: flex;
   justify-content: center;
@@ -86,12 +162,13 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: flex-start;
+  align-items: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  text-align: center;
 }
 
 .provider-card::before {
@@ -114,10 +191,12 @@ export default {
   z-index: 1;
   position: relative;
   width: 100%;
-  min-height: 140px;
+  height: 185px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
+  text-align: center;
 }
 
 .provider-title {
@@ -130,7 +209,8 @@ export default {
   height: 40px;
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
+  width: 100%;
 }
 
 .provider-description {
@@ -141,6 +221,7 @@ export default {
   line-height: 1.35;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   font-weight: 400;
+  width: 100%;
 }
 
 /* Responsive design */
@@ -156,6 +237,22 @@ export default {
 }
 
 @media (max-width: 768px) {
+  .global-header-section {
+    padding: 0px 15px 0px 15px;
+  }
+  
+  .global-title {
+    font-size: 2.5rem;
+  }
+  
+  .global-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .global-description {
+    font-size: 1rem;
+  }
+  
   .provider-container {
     flex-direction: column;
     align-items: center;
@@ -169,6 +266,18 @@ export default {
 }
 
 @media (max-width: 480px) {
+  .global-title {
+    font-size: 2rem;
+  }
+  
+  .global-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .global-description {
+    font-size: 0.95rem;
+  }
+  
   .provider-card {
     height: 250px;
     padding: 15px;
