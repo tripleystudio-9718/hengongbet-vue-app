@@ -80,21 +80,28 @@
 </template>
 
 <script>
-import superAceIcon from '@/assets/super-ace-icon.png'
-import lucky365Icon from '@/assets/lucky-365-icon.png'
-import jdbSlotIcon from '@/assets/jdb-slot-icon.png'
-import evolutionIcon from '@/assets/evolution-icon.png'
-import askmeslotIcon from '@/assets/askmeslot-icon.png'
-import monkeyKingSlot from '@/assets/monkey-king-slot.png'
-import jiliSlot from '@/assets/jili-slot.png'
-import microslotIcon from '@/assets/micro-slot-icon.png'
-import hotRoad from '@/assets/hot-road.png'
-import maxbetIcon from '@/assets/maxbet-icon.png'
-import sv388Icon from '@/assets/sv388-icon.png'
-import rcb988Icon from '@/assets/rcb988-icon.png'
-import ekorIcon from '@/assets/ekor-icon.png'
-import bigGamingIcon from '@/assets/big-gaming-icon.png'
-import sexyIcon from '@/assets/sexy-icon.png'
+import icelandGameIcon from '@/assets/iceland-game-icon.jpg'
+import pantherMoonGameIcon from '@/assets/panther-moon-game-icon.jpg'
+import fafafaGameIcon from '@/assets/fafafa-game-icon.jpg'
+import sugarBlissGameIcon from '@/assets/sugar-bliss-game-icon.jpg'
+import superAceGameIcon from '@/assets/super-ace-game-icon.jpg'
+
+// Regular games images from game tabs
+import game1 from '@/assets/game1.png'
+import game2 from '@/assets/game2.png'
+import game3 from '@/assets/game3.png'
+import game4 from '@/assets/game4.png'
+import game5 from '@/assets/game5.png'
+import game6 from '@/assets/game6.png'
+import game7 from '@/assets/game7.png'
+import game8 from '@/assets/game8.png'
+import game9 from '@/assets/game9.png'
+import game10 from '@/assets/game10.png'
+import game11 from '@/assets/game11.png'
+import game12 from '@/assets/game12.png'
+import game13 from '@/assets/game13.png'
+import game14 from '@/assets/game14.png'
+import game15 from '@/assets/game15.png'
 
 const GAME_CATEGORIES = ['All', 'Slots', 'Casino', 'Sports', 'Lottery']
 const AUTO_SLIDE_INTERVAL = 4000
@@ -110,44 +117,50 @@ export default {
       featuredGames: [
         {
           id: 'featured-1',
-          name: 'Super Ace',
-          provider: 'Microgaming',
-          image: superAceIcon
+          name: 'Iceland',
+          provider: 'Endorphina',
+          image: icelandGameIcon
         },
         {
           id: 'featured-2',
-          name: 'Lucky 365',
-          provider: 'Lucky 365',
-          image: lucky365Icon
+          name: 'Panther Moon',
+          provider: 'Novomatic',
+          image: pantherMoonGameIcon
         },
         {
           id: 'featured-3',
-          name: 'JDB',
-          provider: 'JDB',
-          image: jdbSlotIcon
+          name: 'Fa Fa Fa',
+          provider: 'Golden Hero',
+          image: fafafaGameIcon
         },
         {
           id: 'featured-4',
-          name: 'Evolution',
-          provider: 'Evolution',
-          image: evolutionIcon
+          name: 'Sugar Bliss',
+          provider: 'Sweet Gaming',
+          image: sugarBlissGameIcon
+        },
+        {
+          id: 'featured-5',
+          name: 'Super Ace',
+          provider: 'Pragmatic Play',
+          image: superAceGameIcon
         }
       ],
       games: [
-        { id: 1, name: 'LUCKY 365', image: lucky365Icon, category: 'Slots' },
-        { id: 2, name: 'ASKMESLOT', image: askmeslotIcon, category: 'Slots' },
-        { id: 3, name: 'JDB', image: jdbSlotIcon, category: 'Slots' },
-        { id: 4, name: 'MONKEY KING', image: monkeyKingSlot, category: 'Slots' },
-        { id: 5, name: 'JILI', image: jiliSlot, category: 'Slots' },
-        { id: 6, name: 'MICROSLOT', image: microslotIcon, category: 'Slots' },
-        { id: 7, name: 'EVOLUTION', image: evolutionIcon, category: 'Casino' },
-        { id: 8, name: 'HOT ROAD', image: hotRoad, category: 'Casino' },
-        { id: 9, name: 'MAXBET', image: maxbetIcon, category: 'Sports' },
-        { id: 10, name: 'SV388', image: sv388Icon, category: 'Sports' },
-        { id: 11, name: 'RCB988', image: rcb988Icon, category: 'Sports' },
-        { id: 12, name: 'EKOR', image: ekorIcon, category: 'Lottery' },
-        { id: 13, name: 'BIG GAMING', image: bigGamingIcon, category: 'Casino' },
-        { id: 14, name: 'SEXY', image: sexyIcon, category: 'Casino' }
+        { id: 1, name: 'Lucky 365', image: game1, category: 'Slots'},
+        { id: 2, name: 'Askmeslot', image: game2, category: 'Slots'},
+        { id: 3, name: 'JDB', image: game3, category: 'Slots'},
+        { id: 4, name: 'Monkey King', image: game4, category: 'Slots'},
+        { id: 5, name: 'Hot Road', image: game5, category: 'Casino'},
+        { id: 6, name: 'Maxbet', image: game6, category: 'Sports'},
+        { id: 7, name: 'Sv388', image: game7, category: 'Sports'},
+        { id: 8, name: 'Rcb988', image: game8, category: 'Sports'},
+        { id: 9, name: 'Jili', image: game9, category: 'Slots'},
+        { id: 10, name: 'Microslot', image: game10, category: 'Slots'},
+        { id: 11, name: 'Evolution', image: game11, category: 'Casino'},
+        { id: 12, name: 'Sexy', image: game12, category: 'Casino'},
+        { id: 13, name: 'Ekor', image: game13, category: 'Lottery'},
+        { id: 14, name: 'Big Gaming', image: game14, category: 'Casino'}
       ]
     }
   },

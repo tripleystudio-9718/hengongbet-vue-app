@@ -13,14 +13,36 @@
     </div>
 
     <div class="tab-content">
-      <div class="features-list">
+      <!-- Games Library Tab with bullet points -->
+      <div v-if="activeTab === 'games-library'" class="games-library-content">
+        <p class="library-header">We've partnered with top providers including:</p>
+        <ul class="providers-list">
+          <li><strong>Live Casinos:</strong> PEGASUS LIVE, CTG855, AE SEXY, ASIA GAMING, EVOLUTION & more</li>
+          <li><strong>Slots:</strong> 918KISS, PUSSY888, NAGA GAMES, JILI, PLAYTECH, and many others</li>
+          <li><strong>Sports Betting:</strong> SBOBET, SBOVS, BET33</li>
+        </ul>
+      </div>
+      
+      <!-- Secure & Rewarding Tab with bullet points -->
+      <div v-else-if="activeTab === 'secure-rewarding'" class="secure-content">
+        <p class="secure-header">With over 10 years in the industry, Heng Ong Bet is known for:</p>
+        <ul class="secure-list">
+          <li>Game fairness</li>
+          <li>SSL-encrypted security</li>
+          <li>Regular deposit bonuses and free credit offers</li>
+          <li>A private, stable, and trusted environment</li>
+        </ul>
+      </div>
+      
+      <!-- Why Choose tab with original format -->
+      <div v-else class="features-list">
         <div 
           v-for="feature in currentTabFeatures" 
           :key="feature.id"
           class="feature-item"
         >
           <div class="feature-title">{{ feature.title }}</div>
-          <div class="feature-separator">–</div>
+          <div class="feature-separator" v-if="feature.description">–</div>
           <div class="feature-description">{{ feature.description }}</div>
         </div>
       </div>
@@ -83,58 +105,10 @@ export default {
           }
         ],
         'games-library': [
-          {
-            id: 1,
-            title: 'Extensive Slot Collection',
-            description: 'Over 1000+ premium slot games from top providers'
-          },
-          {
-            id: 2,
-            title: 'Live Casino Games',
-            description: 'Real-time gaming with professional dealers'
-          },
-          {
-            id: 3,
-            title: 'Sports Betting',
-            description: 'Comprehensive sportsbook with competitive odds'
-          },
-          {
-            id: 4,
-            title: '4D Lottery',
-            description: 'Traditional Malaysian lottery games'
-          },
-          {
-            id: 5,
-            title: 'Regular Updates',
-            description: 'New games added weekly to keep experience fresh'
-          }
+          // This tab now uses a different format with bullet points
         ],
         'secure-rewarding': [
-          {
-            id: 1,
-            title: 'SSL Encryption',
-            description: 'Bank-level security for all transactions'
-          },
-          {
-            id: 2,
-            title: 'Licensed & Regulated',
-            description: 'Fully licensed gaming platform'
-          },
-          {
-            id: 3,
-            title: 'Fast Withdrawals',
-            description: 'Quick and secure payout processing'
-          },
-          {
-            id: 4,
-            title: 'Loyalty Rewards',
-            description: 'Earn points and bonuses for regular play'
-          },
-          {
-            id: 5,
-            title: 'Fair Gaming',
-            description: 'RNG certified games ensuring fair play'
-          }
+          // This tab now uses bullet points format
         ]
       },
       platformContent: {
@@ -238,6 +212,50 @@ export default {
   line-height: 1.4;
   font-weight: 400;
   flex: 1;
+}
+
+/* Games Library and Secure tabs styles */
+.games-library-content,
+.secure-content {
+  color: #C0BEBE;
+}
+
+.library-header,
+.secure-header {
+  font-size: 18px;
+  font-weight: 400;
+  color: #C0BEBE;
+  margin-bottom: 20px;
+}
+
+.providers-list,
+.secure-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.providers-list li,
+.secure-list li {
+  font-size: 18px;
+  font-weight: 400;
+  color: #C0BEBE;
+  margin-bottom: 16px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.providers-list li::before,
+.secure-list li::before {
+  content: '•';
+  color: #C0BEBE;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.providers-list li strong {
+  font-weight: 700;
 }
 
 /* Platform Section */

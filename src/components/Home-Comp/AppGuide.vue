@@ -21,56 +21,59 @@
       </div>
 
       <div class="app-guide-tab-content">
-        <!-- Slides Container -->
-        <div class="app-guide-slides-wrapper">
-          <div 
-            class="app-guide-slides" 
-            :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
-          >
+        <!-- Instruction Section -->
+        <div class="instruction-section">
+          <h2 class="instruction-title">Instruction</h2>
+          
+          <!-- Slides Container -->
+          <div class="app-guide-slides-wrapper">
             <div 
-              v-for="(slide, index) in slides" 
-              :key="index"
-              class="app-guide-slide"
+              class="app-guide-slides" 
+              :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
             >
-              <div class="app-guide-features-list">
-                <div 
-                  v-for="feature in slide" 
-                  :key="feature.id"
-                  class="app-guide-feature-item"
-                >
-                  <div class="app-guide-feature-title">{{ feature.title }}</div>
-                  <div class="app-guide-feature-separator">–</div>
-                  <div class="app-guide-feature-description">{{ feature.description }}</div>
+              <div 
+                v-for="(step, index) in currentTabSteps" 
+                :key="index"
+                class="app-guide-slide"
+              >
+                <div class="step-content">
+                  <h3 class="step-title">Step {{ index + 1 }}</h3>
+                  <p class="step-description">{{ step.description }}</p>
+                  
+                  <!-- Step Image -->
+                  <div class="step-image-container">
+                    <img :src="step.image" :alt="`Step ${index + 1}`" class="step-image" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Bottom Navigation -->
-        <div class="app-guide-bottom-navigation">
-          <!-- Left Arrow -->
-          <button 
-            class="app-guide-nav-arrow app-guide-nav-arrow-left" 
-            @click="previousSlide"
-            :disabled="currentSlide === 0"
-          >
-            <i class="fas fa-arrow-left"></i>
-          </button>
+          <!-- Bottom Navigation -->
+          <div class="app-guide-bottom-navigation">
+            <!-- Left Arrow -->
+            <button 
+              class="app-guide-nav-arrow app-guide-nav-arrow-left" 
+              @click="previousSlide"
+              :disabled="currentSlide === 0"
+            >
+              <i class="fas fa-arrow-left"></i>
+            </button>
 
-          <!-- Page Counter -->
-          <span class="app-guide-page-counter">
-            {{ currentSlide + 1 }}/{{ maxSlides }}
-          </span>
+            <!-- Page Counter -->
+            <span class="app-guide-page-counter">
+              {{ currentSlide + 1 }}/{{ maxSlides }}
+            </span>
 
-          <!-- Right Arrow -->
-          <button 
-            class="app-guide-nav-arrow app-guide-nav-arrow-right" 
-            @click="nextSlide"
-            :disabled="currentSlide === maxSlides - 1"
-          >
-            <i class="fas fa-arrow-right"></i>
-          </button>
+            <!-- Right Arrow -->
+            <button 
+              class="app-guide-nav-arrow app-guide-nav-arrow-right" 
+              @click="nextSlide"
+              :disabled="currentSlide === maxSlides - 1"
+            >
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -105,153 +108,54 @@ export default {
           icon: 'fas fa-desktop'
         }
       ],
-      tabFeatures: {
+      tabSteps: {
         'Android': [
           {
-            id: 1,
-            title: 'Expert Team',
-            description: 'Constantly improving games and user experience'
+            description: 'Tap dotted setting icon at top right of the address bar.',
+            image: '/src/assets/step1-image.webp'
           },
           {
-            id: 2,
-            title: 'Secure Platform',
-            description: 'Advanced encryption for data protection'
+            description: 'Tap Add to Home Screen to pop up installation for HENG ONG BET App.',
+            image: '/src/assets/step2-image.webp'
           },
           {
-            id: 3,
-            title: '24/7 Support',
-            description: 'Help available anytime'
-          },
-          {
-            id: 4,
-            title: 'Responsible Gaming',
-            description: 'Promoting safe and healthy play'
-          },
-          {
-            id: 5,
-            title: 'Community Focused',
-            description: 'Supporting local welfare initiatives'
-          },
-          {
-            id: 6,
-            title: 'Fast Performance',
-            description: 'Optimized for mobile devices'
-          },
-          {
-            id: 7,
-            title: 'Easy Installation',
-            description: 'Simple APK installation process'
-          },
-          {
-            id: 8,
-            title: 'Regular Updates',
-            description: 'Frequent feature improvements'
+            description: 'Tap Install to own the HENG ONG BET App, launch & enjoy your game!',
+            image: '/src/assets/step3-image.webp'
           }
         ],
         'iOS': [
           {
-            id: 1,
-            title: 'Extensive Slot Collection',
-            description: 'Over 1000+ premium slot games from top providers'
+            description: 'Tap share button at the bottom of the address bar.',
+            image: '/src/assets/ios-step1-image.webp'
           },
           {
-            id: 2,
-            title: 'Live Casino Games',
-            description: 'Real-time gaming with professional dealers'
+            description: 'Tap Add to Home Screen to pop up installation for HENG ONG BET App.',
+            image: '/src/assets/ios-step2-image.webp'
           },
           {
-            id: 3,
-            title: 'Sports Betting',
-            description: 'Comprehensive sportsbook with competitive odds'
-          },
-          {
-            id: 4,
-            title: '4D Lottery',
-            description: 'Traditional Malaysian lottery games'
-          },
-          {
-            id: 5,
-            title: 'Regular Updates',
-            description: 'New games added weekly to keep experience fresh'
-          },
-          {
-            id: 6,
-            title: 'Touch ID Support',
-            description: 'Secure biometric authentication'
-          },
-          {
-            id: 7,
-            title: 'iOS Optimization',
-            description: 'Perfect integration with iOS ecosystem'
+            description: 'Tap Add to own the HENG ONG BET App, launch & enjoy your game!',
+            image: '/src/assets/ios-step3-image.webp'
           }
         ],
         'Desktop': [
           {
-            id: 1,
-            title: 'SSL Encryption',
-            description: 'Bank-level security for all transactions'
+            description: 'Click desktop download button at right side of the address bar to pop up installation for HENG ONG BET App.',
+            image: '/src/assets/desk-step1-image.webp'
           },
           {
-            id: 2,
-            title: 'Licensed & Regulated',
-            description: 'Fully licensed gaming platform'
-          },
-          {
-            id: 3,
-            title: 'Fast Withdrawals',
-            description: 'Quick and secure payout processing'
-          },
-          {
-            id: 4,
-            title: 'Loyalty Rewards',
-            description: 'Earn points and bonuses for regular play'
-          },
-          {
-            id: 5,
-            title: 'Fair Gaming',
-            description: 'RNG certified games ensuring fair play'
-          },
-          {
-            id: 6,
-            title: 'Multi-Monitor Support',
-            description: 'Enhanced gaming across multiple screens'
-          },
-          {
-            id: 7,
-            title: 'Keyboard Shortcuts',
-            description: 'Quick access to favorite features'
-          },
-          {
-            id: 8,
-            title: 'High Performance',
-            description: 'Optimized for desktop processors'
-          },
-          {
-            id: 9,
-            title: 'Browser Compatibility',
-            description: 'Works on all major browsers'
+            description: 'Click Install to own the HENG ONG BET App, launch & enjoy your game!',
+            image: '/src/assets/desk-step2-image.webp'
           }
         ]
       }
     }
   },
   computed: {
-    currentTabFeatures() {
-      return this.tabFeatures[this.activeTab] || []
-    },
-    slides() {
-      const features = this.currentTabFeatures
-      const slides = []
-      const itemsPerSlide = 3
-      
-      for (let i = 0; i < features.length; i += itemsPerSlide) {
-        slides.push(features.slice(i, i + itemsPerSlide))
-      }
-      
-      return slides
+    currentTabSteps() {
+      return this.tabSteps[this.activeTab] || []
     },
     maxSlides() {
-      return this.slides.length
+      return this.currentTabSteps.length
     }
   },
   watch: {
@@ -377,6 +281,18 @@ export default {
   height: 100%;
 }
 
+.instruction-section {
+  width: 100%;
+}
+
+.instruction-title {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 500;
+  margin: 0 0 30px 0;
+  text-align: left;
+}
+
 .app-guide-slides-wrapper {
   overflow: hidden;
   border-radius: 12px;
@@ -434,40 +350,48 @@ export default {
 
 .app-guide-slide {
   min-width: 100%;
-  flex-shrink: 0;
 }
 
-.app-guide-features-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.step-content {
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.app-guide-feature-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 0;
+.step-title {
+  color: #F2B240;
+  font-size: 28px;
+  font-weight: 500;
+  margin: 0 0 20px 0;
 }
 
-.app-guide-feature-title {
+.step-description {
   color: #ffffff;
-  font-weight: 600;
-  font-size: 18px;
-  flex-shrink: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0 0 30px 0;
 }
 
-.app-guide-feature-separator {
-  color: #888888;
-  font-weight: 300;
-  font-size: 1rem;
+.step-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  width: 100%;
+  overflow: hidden;
 }
 
-.app-guide-feature-description {
-  color: #cccccc;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  flex: 1;
+.step-image {
+  max-width: 70%;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  object-fit: contain;
+  display: block;
 }
 
 /* Responsive Design */
@@ -477,11 +401,11 @@ export default {
   }
   
   .app-guide-header-subtitle {
-    font-size: 1.1rem;
+    font-size: 24px;
   }
   
   .app-guide-header-title {
-    font-size: 2.5rem;
+    font-size: 32px;
   }
   
   .app-guide-features-section {
@@ -498,13 +422,28 @@ export default {
   .app-guide-tab-btn {
     text-align: center;
     padding: 15px 20px;
-    font-size: 0.9rem;
+    font-size: 16px;
     border-radius: 13px !important;
   }
   
   .app-guide-tab-content {
     padding: 25px 20px;
     width: 90%;
+  }
+  
+  .instruction-title {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .step-title {
+    font-size: 22px;
+    text-align: center;
+  }
+  
+  .step-description {
+    font-size: 16px;
+    text-align: center;
   }
   
   .app-guide-nav-arrow {
@@ -516,40 +455,15 @@ export default {
   .app-guide-page-counter {
     font-size: 1rem;
   }
-  
-  .app-guide-feature-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    padding: 12px 0;
-    border-bottom: 1px solid #4a4a4a;
-  }
-  
-  .app-guide-feature-item:last-child {
-    border-bottom: none;
-  }
-  
-  .app-guide-feature-title {
-    min-width: auto;
-    width: 100%;
-  }
-  
-  .app-guide-feature-separator {
-    display: none;
-  }
-  
-  .app-guide-feature-description {
-    padding-left: 0;
-  }
 }
 
 @media (max-width: 480px) {
   .app-guide-header-title {
-    font-size: 2rem;
+    font-size: 28px;
   }
   
   .app-guide-header-subtitle {
-    font-size: 1rem;
+    font-size: 20px;
   }
   
   .app-guide-features-section {
@@ -563,7 +477,7 @@ export default {
   
   .app-guide-tab-btn {
     padding: 12px 16px;
-    font-size: 0.85rem;
+    font-size: 14px;
   }
   
   .app-guide-tab-content {
@@ -571,12 +485,16 @@ export default {
     width: 95%;
   }
   
-  .app-guide-feature-title {
-    font-size: 0.9rem;
+  .instruction-title {
+    font-size: 20px;
   }
   
-  .app-guide-feature-description {
-    font-size: 0.85rem;
+  .step-title {
+    font-size: 18px;
+  }
+  
+  .step-description {
+    font-size: 14px;
   }
   
   .app-guide-nav-arrow {

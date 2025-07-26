@@ -3,35 +3,57 @@
     <!-- Top Header -->
     <div class="top-header bg-gray-800 px-6 py-5">
       <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <!-- Mobile: Hamburger Menu -->
+        <button @click="toggleMobileMenu" class="mobile-hamburger">
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+          <div class="hamburger-line"></div>
+        </button>
+
         <!-- Logo Section -->
         <div class="flex items-center space-x-2">
-          <!-- Logo Image using imported asset -->
           <div class="logo-container">
             <img :src="logoImage" alt="HengOngBet Logo" class="logo-image" />
           </div>
         </div>
-        <!-- Right Side - Login/Register -->
+
+        <!-- Right Side - Desktop: Login/Register, Mobile: Language -->
         <div class="auth-buttons flex items-center space-x-2">
-          <button @click="goToRegister" class="login-btn"
-          >
-            Login
-          </button>
-           <button @click="goToRegister" class="register-btn">
-            Register
-          </button>
+          <!-- Desktop Login/Register -->
+          <button @click="goToLogin" class="login-btn desktop-only">Login</button>
+          <button @click="goToRegister" class="register-btn desktop-only">Register</button>
+          
+          <!-- Mobile Language Selector -->
+          <div class="mobile-language-selector">
+            <button @click="toggleLanguageDropdown" class="mobile-language-btn">
+              <img :src="selectedLanguage.flag" :alt="selectedLanguage.code" class="mobile-flag" />
+            </button>
+            
+            <!-- Mobile Language Dropdown -->
+            <div v-if="showLanguageDropdown" class="mobile-language-dropdown">
+              <div
+                v-for="language in availableLanguages"
+                :key="language.code"
+                @click.stop="selectLanguage(language)"
+                class="mobile-language-item"
+                :class="{ 'selected': language.code === selectedLanguage.code }"
+              >
+                <img :src="language.flag" :alt="language.code" class="dropdown-flag-mobile" />
+                <span>{{ language.name }}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <!-- Navigation Header -->
-    <div class="nav-header bg-gray-700 px-6 py-2">
+
+    <!-- Navigation Header - Desktop Only -->
+    <div class="nav-header bg-gray-700 px-6 py-2 desktop-only">
       <div class="max-w-7xl mx-auto flex items-center justify-between">
-
         <nav class="flex items-center space-x-8">
-
           <router-link to="/" class="nav-item home-icon">
             <img :src="homeIcon" alt="Home" class="home-icon-image" />
           </router-link>
-          <!-- Navigation Links -->
           <router-link to="/affiliate" class="nav-item">Affiliate</router-link>
           <router-link to="/promotion" class="nav-item">Promotion</router-link>
           <router-link to="/download" class="nav-item">Download</router-link>
@@ -40,17 +62,11 @@
           <router-link to="/faqs" class="nav-item">FAQS</router-link>
           <router-link to="/help" class="nav-item">Help</router-link>
         </nav>
-        <!-- Right Side - Time and Language -->
+
         <div class="header-right-section">
-          <!-- Date and Time -->
-          <div class="date-time-display">
-            {{ currentDateTime }}
-          </div>
-          
-          <!-- Separator -->
+          <div class="date-time-display">{{ currentDateTime }}</div>
           <div class="separator-line">|</div>
           
-          <!-- Language Selector -->
           <div class="language-selector-container">
             <div class="language-selector-button" @click="toggleLanguageDropdown">
               <img :src="selectedLanguage.flag" :alt="selectedLanguage.code" class="flag-image" />
@@ -65,7 +81,6 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
               
-              <!-- Language Dropdown -->
               <div v-if="showLanguageDropdown" class="language-dropdown-menu">
                 <div
                   v-for="language in availableLanguages"
@@ -83,6 +98,109 @@
         </div>
       </div>
     </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div v-if="showMobileMenu" class="mobile-overlay" @click="closeMobileMenu"></div>
+
+    <!-- Mobile Menu Sidebar -->
+    <div class="mobile-sidebar" :class="{ 'mobile-sidebar-open': showMobileMenu }">
+      <!-- Mobile Menu Header -->
+      <div class="mobile-menu-header">
+        <img :src="logoImage" alt="HengOngBet Logo" class="mobile-logo" />
+      </div>
+
+      <!-- Mobile Menu Items -->
+      <nav class="mobile-nav">
+        <!-- Home -->
+        <router-link to="/" @click="closeMobileMenu" class="mobile-nav-item home-active">
+          <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+          </svg>
+          <span>Home</span>
+        </router-link>
+
+        <!-- Agent -->
+        <router-link to="/agent" @click="closeMobileMenu" class="mobile-nav-item">
+          <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+          </svg>
+          <span>Agent</span>
+        </router-link>
+
+        <!-- Download -->
+        <router-link to="/download" @click="closeMobileMenu" class="mobile-nav-item">
+          <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>
+          <span>Download</span>
+        </router-link>
+
+        <!-- Promotion -->
+        <router-link to="/promotion" @click="closeMobileMenu" class="mobile-nav-item">
+          <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+          </svg>
+          <span>Promotion</span>
+        </router-link>
+
+        <!-- Game -->
+        <div class="mobile-game-section">
+          <button @click="toggleGameMenu" class="mobile-nav-item game-item" :class="{ 'game-active': showGameMenu }">
+            <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Game</span>
+            <svg class="game-arrow" :class="{ 'game-arrow-rotated': showGameMenu }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+
+          <!-- Game Submenu -->
+          <div v-if="showGameMenu" class="game-submenu">
+            <router-link to="/games/slot" @click="closeMobileMenu" class="game-sub-item">
+              <span>Slot</span>
+              <svg class="chevron-right" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </router-link>
+            <router-link to="/games/casino" @click="closeMobileMenu" class="game-sub-item">
+              <span>Casino</span>
+              <svg class="chevron-right" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </router-link>
+            <router-link to="/games/sports" @click="closeMobileMenu" class="game-sub-item">
+              <span>Sports</span>
+              <svg class="chevron-right" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </router-link>
+            <router-link to="/games/lottery" @click="closeMobileMenu" class="game-sub-item">
+              <span>Lottery</span>
+              <svg class="chevron-right" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </router-link>
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <router-link to="/faq" @click="closeMobileMenu" class="mobile-nav-item">
+          <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
+          </svg>
+          <span>FAQ</span>
+        </router-link>
+
+        <!-- Help -->
+        <router-link to="/help" @click="closeMobileMenu" class="mobile-nav-item">
+          <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-1.106-1.106A6.002 6.002 0 004 10c0 .898.241 1.738.668 2.566l1.49-1.449zm4.259-5.644l-1.227-1.227A5.989 5.989 0 0110 4c.898 0 1.738.241 2.566.668l-1.449 1.49a4.01 4.01 0 00-2.08-.041zM9 9a1 1 0 012 0v4a1 1 0 11-2 0V9z" clip-rule="evenodd"></path>
+          </svg>
+          <span>Help</span>
+        </router-link>
+      </nav>
+    </div>
   </header>
 </template>
 
@@ -98,6 +216,8 @@ export default {
       logoImage,
       homeIcon,
       currentDateTime: '',
+      showMobileMenu: false,
+      showGameMenu: false,
       showLanguageDropdown: false,
       selectedLanguage: {
         code: 'EN',
@@ -156,6 +276,26 @@ export default {
       this.currentDateTime = `${formatted} (GMT +8)`
     },
 
+    toggleMobileMenu() {
+      this.showMobileMenu = !this.showMobileMenu
+      if (this.showMobileMenu) {
+        document.body.style.overflow = 'hidden'
+      } else {
+        document.body.style.overflow = ''
+        this.showGameMenu = false
+      }
+    },
+
+    closeMobileMenu() {
+      this.showMobileMenu = false
+      this.showGameMenu = false
+      document.body.style.overflow = ''
+    },
+
+    toggleGameMenu() {
+      this.showGameMenu = !this.showGameMenu
+    },
+
     toggleLanguageDropdown() {
       this.showLanguageDropdown = !this.showLanguageDropdown
     },
@@ -175,14 +315,13 @@ export default {
     },
 
     closeLanguageDropdown(event) {
-      if (!event.target.closest('.language-selector-container')) {
+      if (!event.target.closest('.language-selector-container') && !event.target.closest('.mobile-language-selector')) {
         this.showLanguageDropdown = false
       }
     }
   }
 }
 </script>
-
 
 <style scoped>
 .header-container {
@@ -213,6 +352,225 @@ export default {
   object-fit: contain;
 }
 
+/* Mobile Hamburger */
+.mobile-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 3px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.hamburger-line {
+  width: 20px;
+  height: 3px;
+  background-color: #F1AE3D;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Language Selector */
+.mobile-language-selector {
+  display: none;
+  position: relative;
+}
+
+.mobile-language-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.mobile-flag {
+  width: 24px;
+  height: 16px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.mobile-language-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #2d3748;
+  border: 1px solid #4a5568;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  min-width: 160px;
+  overflow: hidden;
+}
+
+.mobile-language-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  color: #e2e8f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+}
+
+.mobile-language-item:hover {
+  background: #4a5568;
+  color: #F1AE3D;
+}
+
+.mobile-language-item.selected {
+  background: rgba(237, 137, 54, 0.1);
+  color: #F1AE3D;
+}
+
+.dropdown-flag-mobile {
+  width: 16px;
+  height: 12px;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+/* Mobile Menu Overlay */
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Mobile Sidebar */
+.mobile-sidebar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: auto;
+  max-height: 85vh;
+  background: #2d3748;
+  z-index: 1000;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  border-radius: 0 0 16px 0;
+}
+
+.mobile-sidebar-open {
+  transform: translateX(0);
+}
+
+.mobile-menu-header {
+  padding: 24px;
+  border-bottom: 1px solid #4a5568;
+}
+
+.mobile-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.mobile-nav {
+  padding: 16px 0;
+}
+
+.mobile-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  color: #F1AE3D;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mobile-nav-item:hover {
+  background: rgba(113, 113, 113, 0.1);
+}
+
+.mobile-nav-item.home-active {
+  background: #F1AE3D;
+  color: #000;
+  border-radius: 25px;
+  margin: 0 16px;
+  width: auto;
+}
+
+.mobile-nav-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Game Section */
+.mobile-game-section {
+  position: relative;
+}
+
+.game-item {
+  justify-content: space-between;
+}
+
+.game-active {
+  background: #F1AE3D;
+  color: #000;
+  border-radius: 25px;
+  margin: 0 16px;
+  width: auto;
+}
+
+.game-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+  margin-left: auto;
+}
+
+.game-arrow-rotated {
+  transform: rotate(180deg);
+}
+
+.game-submenu {
+  background: rgba(0, 0, 0, 0.2);
+  margin: 8px 16px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.game-sub-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  color: #cbd5e0;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.game-sub-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #F1AE3D;
+}
+
+.chevron-right {
+  width: 14px;
+  height: 14px;
+}
+
+/* Desktop styles - keep original */
 .header-right-section {
   display: flex;
   align-items: center;
@@ -234,7 +592,6 @@ export default {
   margin: 0 4px;
 }
 
-/* Language Selector - Redesigned */
 .language-selector-container {
   position: relative;
 }
@@ -284,7 +641,6 @@ export default {
   transform: rotate(180deg);
 }
 
-/* Language Dropdown - Enhanced */
 .language-dropdown-menu {
   position: absolute;
   top: calc(100% + 6px);
@@ -333,7 +689,6 @@ export default {
   letter-spacing: 0.2px;
 }
 
-/* Auth Buttons */
 .login-btn {
   padding: 6px 16px;
   border: 1px solid #F1AE3D;
@@ -373,7 +728,6 @@ export default {
   box-shadow: 0 4px 8px rgba(237, 137, 54, 0.3);
 }
 
-/* Navigation Items with Active Bottom Border */
 .nav-item {
   color: #e2e8f0;
   text-decoration: none;
@@ -383,7 +737,6 @@ export default {
   border-radius: 4px;
   transition: all 0.2s ease;
   position: relative;
-  /* Add space for the bottom border */
   margin-bottom: 3px;
 }
 
@@ -391,7 +744,6 @@ export default {
   color: #F1AE3D;
 }
 
-/* Active state with bottom border */
 .nav-item.router-link-active {
   color: #F1AE3D;
 }
@@ -406,10 +758,8 @@ export default {
   height: 3px;
   background: linear-gradient(90deg, #F2B240 0%, #ED9226 100%);
   border-radius: 2px;
-  animation: borderSlideIn 0.3s ease-out;
 }
 
-/* Home icon specific styling */
 .home-icon {
   padding: 8px;
   display: flex;
@@ -445,100 +795,56 @@ export default {
   border-radius: 2px;
 }
 
-/* Responsive Design */
+/* Mobile Responsive */
 @media (max-width: 768px) {
-  .top-header .flex {
-    flex-wrap: wrap;
-    gap: 1rem;
+  .desktop-only {
+    display: none !important;
   }
   
-  .nav-header .flex {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start;
+  .mobile-hamburger {
+    display: flex;
   }
   
-  .nav-header nav {
-    flex-wrap: wrap;
-    gap: 0.5rem;
+  .mobile-language-selector {
+    display: block;
   }
   
-  .nav-item {
-    font-size: 0.75rem;
-    padding: 6px 8px;
+  .mobile-overlay {
+    display: block;
   }
   
-  .nav-item.router-link-active::after,
-  .home-icon.router-link-active::after {
-    bottom: -8px;
-    height: 2px;
+  .mobile-sidebar {
+    display: block;
   }
   
   .logo-image {
     height: 32px;
+    max-width: 150px;
   }
   
-  .header-right-section {
-    font-size: 11px;
-    gap: 8px;
-  }
-  
-  .language-selector-button {
-    padding: 4px 8px;
-  }
-  
-  .flag-image {
-    width: 16px;
-    height: 11px;
-  }
-  
-  .language-label {
-    font-size: 11px;
-  }
-  
-  .auth-buttons {
-    gap: 0.5rem;
-  }
-  
-  .login-btn, .register-btn {
-    padding: 4px 12px;
-    font-size: 0.75rem;
+  .top-header {
+    padding: 12px 16px;
   }
 }
 
 @media (max-width: 480px) {
-  .top-header, .nav-header {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  .mobile-sidebar {
+    width: 260px;
   }
   
-  .nav-header .flex {
-    align-items: stretch;
+  .logo-image {
+    height: 28px;
+    max-width: 120px;
   }
   
-  .nav-header nav {
-    justify-content: space-between;
-    width: 100%;
+  .mobile-nav-item {
+    padding: 14px 20px;
+    font-size: 15px;
   }
   
-  .nav-item {
-    font-size: 0.7rem;
-    padding: 4px 6px;
-  }
-  
-  .nav-header .flex > div:last-child {
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .header-right-section {
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-  }
-  
-  .separator-line {
-    display: none;
+  .mobile-nav-icon {
+    width: 18px;
+    height: 18px;
   }
 }
 
