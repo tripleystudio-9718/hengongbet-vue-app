@@ -35,32 +35,57 @@
     </div>
 
     <!-- Promotion Cards Swiper -->
-    <div 
-      class="promotion-swiper-container"
-      @mousedown="startDrag"
-      @mousemove="drag"
-      @mouseup="endDrag"
-      @mouseleave="endDrag"
-      @touchstart="startDrag"
-      @touchmove="drag"
-      @touchend="endDrag"
-    >
-      <div class="swiper-track" ref="swiperTrack">
-        <div 
-          v-for="(promo, index) in infinitePromotions" 
-          :key="`${promo.id}-${index}`"
+    <div class="promotion-swiper-container">
+      <Swiper
+        :modules="modules"
+        :slides-per-view="4.5"
+        :space-between="20"
+        :loop="true"
+        :autoplay="{
+          delay: 2500,
+          disableOnInteraction: false,
+        }"
+        :speed="500"
+        :grab-cursor="true"
+        :allow-touch-move="true"
+        :centeredSlides="false"
+        :slides-per-group="1"
+        :threshold="20"
+        :longSwipesRatio="0.2"
+        :longSwipesMs="200"
+        :followFinger="true"
+        :touchRatio="1"
+        :watchSlidesProgress="true"
+        :simulateTouch="true"
+        :touchStartPreventDefault="false"
+        :slideToClickedSlide="false"
+        class="promotion-swiper"
+        @swiper="onSwiper"
+        @slideChange="onSlideChange"
+      >
+        <SwiperSlide
+          v-for="(promo, index) in promotions"
+          :key="`slide-${promo.id}`"
           class="swiper-slide"
         >
-          <img :src="promo.image" :alt="promo.title" class="promo-image" />
-        </div>
-      </div>
+          <div class="promo-card">
+            <img :src="promo.image" :alt="promo.title" class="promo-image" />
+          </div>
+        </SwiperSlide>
+      </Swiper>
     </div>
   </div>
 </template>
 
 <script>
-import soundIcon from '@/assets/sound-icon.svg'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Autoplay } from 'swiper/modules'
 
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/autoplay'
+
+import soundIcon from '@/assets/sound-icon.svg'
 import promotion1 from '@/assets/promotion-1.png'
 import promotion2 from '@/assets/promotion-2.png'
 import promotion3 from '@/assets/promotion-3.png'
@@ -69,20 +94,15 @@ import promotion5 from '@/assets/promotion-5.png'
 
 export default {
   name: 'PromotionSection',
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
   data() {
     return {
       showNoticePopup: false,
-      currentSlide: 0,
-      autoPlayInterval: null,
-      slideWidth: 0,
-      containerWidth: 0,
-      isTransitioning: false,
-      // Drag functionality
-      isDragging: false,
-      startX: 0,
-      currentX: 0,
-      dragOffset: 0,
-      initialTransform: 0,
+      swiperInstance: null,
+      modules: [Autoplay],
       noticeText: "Notice: The following games will not count the amount of code played only the winnings and losses: MONKEY KING - 'Dragon Tiger Blue', 'Dragon Tiger', 'Single Pick', 'Roulette73', 'Baccarat' EVOLUTION - 'First Person Craps', 'Craps', 'First Person Video Poker'...",
       fullNoticeText: "Notice: The following games will not count the amount of code played only the winnings and losses: MONKEY KING - 'Dragon Tiger Blue', 'Dragon Tiger', 'Single Pick', 'Roulette73', 'Baccarat' EVOLUTION - 'First Person Craps', 'Craps', 'First Person Video Poker', 'Video Poker', 'Caribbean Stud Poker', 'Texas Hold'em Bonus Poker', 'Three Card Poker', 'Pai Gow Poker', 'Red Dog', 'War', 'Hi-Lo', 'Andar Bahar', 'Teen Patti', 'Dragon Tiger', 'Sic Bo', 'Craps Live', 'Monopoly Live', 'Dream Catcher', 'Cash or Crash', 'Crazy Time', 'Mega Ball', 'Football Studio', 'Side Bet City', 'Lightning Dice', 'Lightning Roulette', 'Lightning Blackjack', 'Lightning Baccarat'.",
       promotions: [
@@ -95,148 +115,15 @@ export default {
       soundIcon
     }
   },
-  computed: {
-    infinitePromotions() {
-      return [...this.promotions, ...this.promotions, ...this.promotions]
-    }
-  },
-  mounted() {
-    this.calculateDimensions()
-    this.startAutoPlay()
-    this.setupInfiniteLoop()
-    window.addEventListener('resize', this.calculateDimensions)
-  },
-  beforeUnmount() {
-    if (this.autoPlayInterval) {
-      clearInterval(this.autoPlayInterval)
-    }
-    window.removeEventListener('resize', this.calculateDimensions)
-  },
   methods: {
     toggleNoticePopup() {
       this.showNoticePopup = !this.showNoticePopup
     },
-    calculateDimensions() {
-      this.$nextTick(() => {
-        const container = this.$refs.swiperTrack?.parentElement
-        if (container) {
-          this.containerWidth = container.offsetWidth
-          // Calculate slide width to show 4.5 items
-          this.slideWidth = (this.containerWidth - 80) / 4.5 // 80px for padding
-          this.updateSliderPosition()
-        }
-      })
+    onSwiper(swiper) {
+      this.swiperInstance = swiper
     },
-    setupInfiniteLoop() {
-      // Start from the middle set to allow seamless looping
-      this.currentSlide = this.promotions.length
-      this.$nextTick(() => {
-        this.updateSliderPosition(false)
-      })
-    },
-    startAutoPlay() {
-      this.autoPlayInterval = setInterval(() => {
-        if (!this.isDragging) {
-          this.nextSlide()
-        }
-      }, 2000) // Changed to 1 second
-    },
-    nextSlide() {
-      if (this.isTransitioning) return
-      
-      this.isTransitioning = true
-      this.currentSlide++
-      this.updateSliderPosition()
-      
-      // Reset to beginning of middle set when reaching end
-      setTimeout(() => {
-        if (this.currentSlide >= this.promotions.length * 2) {
-          this.currentSlide = this.promotions.length
-          this.updateSliderPosition(false)
-        }
-        this.isTransitioning = false
-      }, 300) // Reduced transition time for smoother auto-play
-    },
-    updateSliderPosition(withTransition = true) {
-      const track = this.$refs.swiperTrack
-      if (track && this.slideWidth > 0) {
-        const offset = -this.currentSlide * (this.slideWidth + 20) + this.dragOffset // 20px gap
-        track.style.transition = withTransition ? 'transform 0.3s ease' : 'none'
-        track.style.transform = `translateX(${offset}px)`
-      }
-    },
-    // Drag functionality
-    getClientX(event) {
-      return event.touches ? event.touches[0].clientX : event.clientX
-    },
-    startDrag(event) {
-      this.isDragging = true
-      this.startX = this.getClientX(event)
-      this.currentX = this.startX
-      this.dragOffset = 0
-      this.initialTransform = -this.currentSlide * (this.slideWidth + 20)
-      
-      // Pause auto-play while dragging
-      if (this.autoPlayInterval) {
-        clearInterval(this.autoPlayInterval)
-      }
-      
-      // Prevent default to avoid text selection
-      event.preventDefault()
-    },
-    drag(event) {
-      if (!this.isDragging) return
-      
-      event.preventDefault()
-      this.currentX = this.getClientX(event)
-      this.dragOffset = this.currentX - this.startX
-      
-      // Update position with drag offset
-      this.updateSliderPosition(false)
-    },
-    endDrag() {
-      if (!this.isDragging) return
-      
-      this.isDragging = false
-      const dragDistance = this.currentX - this.startX
-      const threshold = this.slideWidth * 0.3 // 30% of slide width
-      
-      // Determine if we should move to next/prev slide
-      if (Math.abs(dragDistance) > threshold) {
-        if (dragDistance > 0) {
-          // Dragged right - go to previous slide
-          this.prevSlide()
-        } else {
-          // Dragged left - go to next slide
-          this.nextSlide()
-        }
-      } else {
-        // Snap back to current position
-        this.dragOffset = 0
-        this.updateSliderPosition()
-      }
-      
-      // Reset drag offset
-      this.dragOffset = 0
-      
-      // Resume auto-play
-      this.startAutoPlay()
-    },
-    prevSlide() {
-      if (this.isTransitioning) return
-      
-      this.isTransitioning = true
-      this.currentSlide--
-      this.updateSliderPosition()
-      
-      // Reset to end of middle set when reaching beginning
-      setTimeout(() => {
-        if (this.currentSlide < this.promotions.length) {
-          this.currentSlide = this.promotions.length * 2 - 1
-          this.updateSliderPosition(false)
-        }
-        this.isTransitioning = false
-      }, 300)
+    onSlideChange(swiper) {
+      console.log('Slide changed to:', swiper.activeIndex)
     }
   }
 }
@@ -368,31 +255,28 @@ export default {
   padding: 10px 20px 0 20px;
   overflow: hidden;
   margin: 0 auto;
-  cursor: grab;
-  user-select: none;
 }
 
-.promotion-swiper-container:active {
-  cursor: grabbing;
-}
-
-.swiper-track {
-  display: flex;
-  gap: 20px;
-  transition: transform 0.3s ease;
+.promotion-swiper {
+  width: 100%;
+  padding: 0;
+  overflow: visible;
 }
 
 .swiper-slide {
   flex-shrink: 0;
+}
+
+.promo-card {
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease;
-  height: 150px;
-  pointer-events: none; 
+  height: 100px;
+  box-sizing: border-box;
 }
 
-.swiper-slide:hover {
+.promo-card:hover {
   transform: translateY(-5px);
 }
 
@@ -401,17 +285,27 @@ export default {
   height: 80%;
   object-fit: cover;
   display: block;
-  pointer-events: none; 
   user-select: none;
+  border-radius: 12px;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
 }
 
 .sound-icon-image {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 /* Responsive Design */
 @media (max-width: 1200px) {
+  .promotion-section {
+    width: 100%;
+    max-width: 1200px;
+  }
+  
   .promotion-swiper-container {
     padding: 30px 20px;
   }
@@ -430,7 +324,7 @@ export default {
     padding: 30px 15px;
   }
   
-  .swiper-slide {
+  .promo-card {
     height: 120px;
   }
 }
@@ -440,8 +334,30 @@ export default {
     padding: 20px 10px;
   }
   
-  .swiper-slide {
+  .promo-card {
     height: 100px;
   }
+}
+
+/* Perfect Swiper Styles */
+.promotion-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.promotion-swiper.swiper-grab {
+  cursor: grab;
+}
+
+.promotion-swiper.swiper-grabbing {
+  cursor: grabbing;
+}
+
+/* Ensure smooth infinite loop */
+.promotion-swiper .swiper-slide {
+  opacity: 1 !important;
+}
+
+.promotion-swiper .swiper-slide-duplicate {
+  opacity: 1 !important;
 }
 </style>

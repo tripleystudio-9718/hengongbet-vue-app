@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import Affiliate from '@/components/Affiliate.vue';
+import Login from '@/components/Login.vue';
 import GamePage from '@/components/GamePage.vue';
 import PromotionPage from '@/components/PromotionPage.vue';
 import FAQ from '@/components/FAQ.vue';
@@ -13,6 +15,16 @@ const routes = [
     meta: {
       title: 'Home - HengOngBet'
     }
+  },
+  {
+    path: '/affiliate',
+    name: 'Affiliate',
+    component: Affiliate,
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login,
   },
   {
     path: '/games',
