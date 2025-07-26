@@ -12,16 +12,11 @@
         </div>
         <!-- Right Side - Login/Register -->
         <div class="auth-buttons flex items-center space-x-2">
-          <button 
-            @click="$emit('login')"
-            class="login-btn"
+          <button @click="goToRegister" class="login-btn"
           >
             Login
           </button>
-          <button 
-            @click="$emit('register')"
-            class="register-btn"
-          >
+           <button @click="goToRegister" class="register-btn">
             Register
           </button>
         </div>
@@ -100,7 +95,6 @@ export default {
   emits: ['login', 'register', 'language-changed'],
   data() {
     return {
-      // Make imported images available to template
       logoImage,
       homeIcon,
       currentDateTime: '',
@@ -134,16 +128,17 @@ export default {
       ]
     }
   },
+
   mounted() {
     this.updateDateTime()
-    // Update time every second for real-time display
     setInterval(this.updateDateTime, 1000)
-    // Close dropdown when clicking outside
     document.addEventListener('click', this.closeLanguageDropdown)
   },
+
   beforeUnmount() {
     document.removeEventListener('click', this.closeLanguageDropdown)
   },
+
   methods: {
     updateDateTime() {
       const now = new Date()
@@ -158,18 +153,27 @@ export default {
         timeZone: 'Asia/Kuala_Lumpur'
       }
       const formatted = now.toLocaleString('en-GB', options)
-      // Format: 21/7/2025 3:16:03 (GMT +8)
       this.currentDateTime = `${formatted} (GMT +8)`
     },
+
     toggleLanguageDropdown() {
       this.showLanguageDropdown = !this.showLanguageDropdown
     },
+
     selectLanguage(language) {
       this.selectedLanguage = language
       this.showLanguageDropdown = false
-      // Emit language change event for parent component
       this.$emit('language-changed', language)
     },
+
+    goToRegister() {
+      this.$router.push('/register')
+    },
+
+    goToLogin() {
+      this.$router.push('/login')
+    },
+
     closeLanguageDropdown(event) {
       if (!event.target.closest('.language-selector-container')) {
         this.showLanguageDropdown = false
@@ -178,6 +182,7 @@ export default {
   }
 }
 </script>
+
 
 <style scoped>
 .header-container {
