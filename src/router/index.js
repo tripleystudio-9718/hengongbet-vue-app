@@ -4,6 +4,8 @@ import GamePage from '@/components/GamePage.vue';
 import PromotionPage from '@/components/PromotionPage.vue';
 import FAQ from '@/components/FAQ.vue';
 import FourDResult from '@/components/FourDResult.vue';
+import DownloadPage from '@/components/DownloadPage.vue';
+import Register from '@/components/Register.vue';
 
 const routes = [
   {
@@ -33,6 +35,16 @@ const routes = [
     path: '/4d-results',
     name: 'FourDResult',
     component: FourDResult,
+  },
+      {
+    path: '/download',
+    name: 'DownloadPage',
+    component: DownloadPage,
+  },
+    {
+    path: '/register',
+    name: 'Register',
+    component: Register,
   }
 ]
 
