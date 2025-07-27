@@ -38,8 +38,8 @@
     <div class="promotion-swiper-container">
       <Swiper
         :modules="modules"
-        :slides-per-view="4.5"
-        :space-between="20"
+        :slides-per-view="'auto'"
+        :space-between="swiperSpaceBetween"
         :loop="true"
         :autoplay="{
           delay: 2500,
@@ -59,6 +59,7 @@
         :simulateTouch="true"
         :touchStartPreventDefault="false"
         :slideToClickedSlide="false"
+        :breakpoints="swiperBreakpoints"
         class="promotion-swiper"
         @swiper="onSwiper"
         @slideChange="onSlideChange"
@@ -115,6 +116,52 @@ export default {
       soundIcon
     }
   },
+  computed: {
+    swiperBreakpoints() {
+      return {
+        // Mobile devices (320px and up)
+        320: {
+          slidesPerView: 1.5,
+          spaceBetween: 12,
+          centeredSlides: false,
+        },
+        // Small mobile devices (480px and up)
+        480: {
+          slidesPerView: 1.8,
+          spaceBetween: 15,
+          centeredSlides: false,
+        },
+        // Tablets (640px and up)
+        640: {
+          slidesPerView: 2.5,
+          spaceBetween: 16,
+          centeredSlides: false,
+        },
+        // Large tablets (768px and up)
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 18,
+          centeredSlides: false,
+        },
+        // Desktop (1024px and up)
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+          centeredSlides: false,
+        },
+        // Large desktop (1200px and up)
+        1200: {
+          slidesPerView: 4.5,
+          spaceBetween: 20,
+          centeredSlides: false,
+        }
+      }
+    },
+    swiperSpaceBetween() {
+      // Default space between slides
+      return 20
+    }
+  },
   methods: {
     toggleNoticePopup() {
       this.showNoticePopup = !this.showNoticePopup
@@ -133,7 +180,9 @@ export default {
 .promotion-section {
   background-color: #27272A;
   padding: 0;
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
+  overflow: hidden;
 }
 
 /* Notice Bar */
@@ -144,7 +193,7 @@ export default {
 .notice-content {
   display: flex;
   align-items: center;
-  padding: 12px 0;
+  padding: 12px 20px;
   margin: 0 auto;
 }
 
@@ -252,7 +301,7 @@ export default {
 /* Promotion Swiper */
 .promotion-swiper-container {
   position: relative;
-  padding: 10px 20px 0 20px;
+  padding: 20px;
   overflow: hidden;
   margin: 0 auto;
 }
@@ -265,6 +314,7 @@ export default {
 
 .swiper-slide {
   flex-shrink: 0;
+  width: auto;
 }
 
 .promo-card {
@@ -274,6 +324,7 @@ export default {
   transition: transform 0.3s ease;
   height: 100px;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .promo-card:hover {
@@ -282,7 +333,7 @@ export default {
 
 .promo-image {
   width: 100%;
-  height: 80%;
+  height: 100%;
   object-fit: cover;
   display: block;
   user-select: none;
@@ -299,21 +350,14 @@ export default {
   height: 20px;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
   .promotion-section {
-    width: 100%;
-    max-width: 1200px;
+    padding: 0;
   }
   
-  .promotion-swiper-container {
-    padding: 30px 20px;
-  }
-}
-
-@media (max-width: 768px) {
   .notice-content {
-    padding: 10px 15px;
+    padding: 10px 0;
   }
   
   .marquee-text {
@@ -321,17 +365,59 @@ export default {
   }
   
   .promotion-swiper-container {
-    padding: 30px 15px;
+    padding: 0 15px;
   }
   
   .promo-card {
-    height: 120px;
+    height: 80px;
+    border-radius: 8px;
+  }
+  
+  .promo-image {
+    border-radius: 8px;
+  }
+  
+  /* Ensure 1.5 items are clearly visible */
+  .swiper-slide {
+    width: calc(66.66% - 8px) !important;
   }
 }
 
-@media (max-width: 480px) {
+/* Very small mobile devices */
+@media (max-width: 360px) {
   .promotion-swiper-container {
-    padding: 20px 10px;
+    padding: 15px 10px;
+  }
+  
+  .notice-content {
+    padding: 8px 10px;
+  }
+  
+  .promo-card {
+    height: 70px;
+  }
+  
+  /* Ensure 1.5 items fit properly on very small screens */
+  .swiper-slide {
+    width: calc(66.66% - 6px) !important;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 481px) and (max-width: 768px) {
+  .promotion-swiper-container {
+    padding: 25px 20px;
+  }
+  
+  .promo-card {
+    height: 90px;
+  }
+}
+
+/* Desktop adjustments */
+@media (min-width: 769px) {
+  .promotion-swiper-container {
+    padding: 30px 20px;
   }
   
   .promo-card {
@@ -359,5 +445,22 @@ export default {
 
 .promotion-swiper .swiper-slide-duplicate {
   opacity: 1 !important;
+}
+
+/* Touch-friendly improvements for mobile */
+@media (hover: none) and (pointer: coarse) {
+  .promo-card:hover {
+    transform: none;
+  }
+  
+  .promo-card:active {
+    transform: scale(0.98);
+  }
+  
+  .dropdown-arrow {
+    padding: 8px;
+    min-width: 32px;
+    min-height: 32px;
+  }
 }
 </style>

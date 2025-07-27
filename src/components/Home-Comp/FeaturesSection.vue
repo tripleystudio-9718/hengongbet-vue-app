@@ -11,7 +11,6 @@
         {{ tab.title }}
       </button>
     </div>
-
     <div class="tab-content">
       <!-- Games Library Tab with bullet points -->
       <div v-if="activeTab === 'games-library'" class="games-library-content">
@@ -22,7 +21,7 @@
           <li><strong>Sports Betting:</strong> SBOBET, SBOVS, BET33</li>
         </ul>
       </div>
-      
+            
       <!-- Secure & Rewarding Tab with bullet points -->
       <div v-else-if="activeTab === 'secure-rewarding'" class="secure-content">
         <p class="secure-header">With over 10 years in the industry, Heng Ong Bet is known for:</p>
@@ -33,11 +32,11 @@
           <li>A private, stable, and trusted environment</li>
         </ul>
       </div>
-      
+            
       <!-- Why Choose tab with original format -->
       <div v-else class="features-list">
-        <div 
-          v-for="feature in currentTabFeatures" 
+        <div
+          v-for="feature in currentTabFeatures"
           :key="feature.id"
           class="feature-item"
         >
@@ -48,7 +47,7 @@
       </div>
     </div>
   </div>
-  
+    
   <!-- Platform Section -->
   <div class="platform-section">
     <h3 class="platform-title">{{ platformContent.title }}</h3>
@@ -157,7 +156,7 @@ export default {
   font-weight: 600;
   font-size: 18px;
   border-radius: 50px;
-  position: relative;   
+  position: relative;     
   width: 85%;
   text-align: left;
 }
@@ -176,7 +175,7 @@ export default {
   background: #27272A;
   min-height: 200px;
   width: 60%;
-  padding:20px 20px 40px 20px;
+  padding: 20px 20px 40px 20px;
   border-radius: 24px;
 }
 
@@ -278,95 +277,236 @@ export default {
   margin: 0 auto;
 }
 
-/* Responsive Design */
+/* Mobile-First Responsive Design */
 @media (max-width: 768px) {
   .features-section {
-    width: 100%;
+    width: calc(100% - 32px);
+    max-width: 600px;
     margin: 40px auto;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+    gap: 20px;
   }
   
   .tab-navigation {
-    flex-direction: column;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 0;
   }
   
   .tab-btn {
+    flex: 1 1 calc(50% - 4px); /* Two tabs per row with gap */
+    max-width: calc(50% - 4px);
     text-align: center;
-    padding: 15px 20px;
-    font-size: 0.9rem;
-    border-radius: 0 !important;
+    padding: 12px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 25px;
+    background: #3a3a3a;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
-  .tab-btn:first-child {
-    border-radius: 16px 16px 0 0 !important;
+  /* Third tab takes full width on second row */
+  .tab-btn:nth-child(3) {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  
+  .tab-btn.active {
+    background: #F2B240;
+    color: #000000;
   }
   
   .tab-content {
-    padding: 25px 20px;
+    width: 100%;
+    padding: 24px 20px;
+    border-radius: 16px;
+    background: #27272A;
+    min-height: auto;
+  }
+  
+  .features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 100%;
   }
   
   .feature-item {
-    flex-direction: column;
+    display: flex;
     align-items: flex-start;
-    gap: 6px;
-    padding: 12px 0;
-    border-bottom: 1px solid #4a4a4a;
-  }
-  
-  .feature-item:last-child {
-    border-bottom: none;
-  }
-  
-  .feature-title {
-    min-width: auto;
+    gap: 12px;
+    padding: 0;
     width: 100%;
   }
   
+  .feature-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #C0BEBE;
+    flex-shrink: 0;
+    min-width: fit-content;
+  }
+  
   .feature-separator {
-    display: none;
+    color: #888888;
+    font-weight: 300;
+    font-size: 16px;
+    flex-shrink: 0;
   }
   
   .feature-description {
-    padding-left: 0;
+    font-size: 16px;
+    color: #C0BEBE;
+    line-height: 1.5;
+    flex: 1;
+  }
+  
+  /* Mobile bullet point content */
+  .library-header,
+  .secure-header {
+    font-size: 16px;
+    margin-bottom: 16px;
+    color: #C0BEBE;
+  }
+  
+  .providers-list li,
+  .secure-list li {
+    font-size: 14px;
+    margin-bottom: 12px;
+    line-height: 1.5;
   }
   
   .platform-section {
-    margin: 40px 0;
-    padding: 0 20px;
+    margin: 40px auto 20px auto;
+    padding: 0 16px;
+    max-width: 600px;
   }
   
   .platform-title {
-    font-size: 1.3rem;
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: #ffffff;
   }
   
   .platform-description {
-    font-size: 1rem;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #C0BEBE;
   }
 }
 
 @media (max-width: 480px) {
+  .features-section {
+    margin: 30px auto;
+    padding: 16px;
+    border-radius: 12px;
+  }
+  
   .tab-btn {
-    padding: 12px 16px;
-    font-size: 0.85rem;
+    padding: 10px 6px;
+    font-size: 11px;
   }
   
   .tab-content {
     padding: 20px 16px;
+    border-radius: 12px;
+  }
+  
+  .feature-item {
+    gap: 8px;
   }
   
   .feature-title {
-    font-size: 0.9rem;
+    font-size: 14px;
   }
   
   .feature-description {
-    font-size: 0.85rem;
+    font-size: 14px;
+  }
+  
+  .feature-separator {
+    font-size: 14px;
+  }
+  
+  .library-header,
+  .secure-header {
+    font-size: 15px;
+  }
+  
+  .providers-list li,
+  .secure-list li {
+    font-size: 13px;
+  }
+  
+  .platform-section {
+    padding: 0 12px;
+    margin: 30px auto 15px auto;
   }
   
   .platform-title {
-    font-size: 1.2rem;
+    font-size: 18px;
   }
   
   .platform-description {
-    font-size: 0.95rem;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .features-section {
+    width: calc(100% - 20px);
+    padding: 12px;
+  }
+  
+  .tab-btn {
+    padding: 8px 4px;
+    font-size: 10px;
+  }
+  
+  .tab-content {
+    padding: 16px 12px;
+  }
+  
+  .feature-title {
+    font-size: 13px;
+  }
+  
+  .feature-description {
+    font-size: 13px;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  .tab-btn {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .tab-btn:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+  .features-section {
+    margin: 20px auto;
+  }
+  
+  .platform-section {
+    margin: 20px auto 10px auto;
   }
 }
 </style>

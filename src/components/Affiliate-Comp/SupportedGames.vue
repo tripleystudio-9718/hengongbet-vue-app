@@ -3,49 +3,52 @@
     <h2 class="section-title">Supported Game Types</h2>
         
     <!-- Swiper Implementation -->
-    <swiper
-      :modules="modules"
-      :slides-per-view="getSlidesPerView()"
-      :space-between="getSpaceBetween()"
-      :loop="false"
-      :autoplay="{
-        delay: 3500,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true
-      }"
-      :grab-cursor="true"
-      :breakpoints="breakpoints"
-      :speed="400"
-      :allow-touch-move="true"
-      :resistance="true"
-      :resistance-ratio="0.3"
-      :free-mode="false"
-      :watch-slides-progress="true"
-      :slides-offset-before="0"
-      :slides-offset-after="0"
-      :normalize-slide-index="true"
-      class="games-swiper"
-    >
-      <swiper-slide 
-        v-for="(game, index) in gameTypes" 
-        :key="index"
-        class="games-slide"
+    <div class="swiper-container">
+      <swiper
+        :modules="modules"
+        :slides-per-view="'auto'"
+        :space-between="15"
+        :loop="false"
+        :autoplay="{
+          delay: 3500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        }"
+        :grab-cursor="true"
+        :breakpoints="breakpoints"
+        :speed="400"
+        :allow-touch-move="true"
+        :resistance="true"
+        :resistance-ratio="0.3"
+        :free-mode="false"
+        :watch-slides-progress="true"
+        :centered-slides="false"
+        class="games-swiper"
       >
-        <div class="game-card">
-          <div class="game-icon">
-            <img :src="game.icon" :alt="game.title" class="icon-image" />
+        <swiper-slide 
+          v-for="(game, index) in gameTypes" 
+          :key="index"
+          class="games-slide"
+        >
+          <div class="game-card">
+            <div class="game-icon">
+              <img :src="game.icon" :alt="game.title" class="icon-image" />
+            </div>
+            <h3 class="game-title">{{ game.title }}</h3>
+            <p class="game-subtitle">{{ game.subtitle }}</p>
           </div>
-          <h3 class="game-title">{{ game.title }}</h3>
-          <p class="game-subtitle">{{ game.subtitle }}</p>
-        </div>
-      </swiper-slide>
-    </swiper>
+        </swiper-slide>
+      </swiper>
+    </div>
   </div>
 </template>
 
 <script>
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Autoplay } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
 
 // Import game icons - using the actual icons from the provided image
 import cockfightingIcon from '@/assets/cockfighting-icon.png';
@@ -99,65 +102,47 @@ export default {
         },
       ],
       
-      // Responsive breakpoints
+      // Updated responsive breakpoints to match WhyChooseUs
       breakpoints: {
-        // when window width is >= 320px
         320: {
-          slidesPerView: 1,
-          spaceBetween: 20
+          slidesPerView: 'auto',
+          spaceBetween: 10
         },
-        // when window width is >= 480px
         480: {
-          slidesPerView: 2,
+          slidesPerView: 'auto',
+          spaceBetween: 12
+        },
+        640: {
+          slidesPerView: 'auto',
+          spaceBetween: 15
+        },
+        768: {
+          slidesPerView: 'auto',
           spaceBetween: 20
         },
-        // when window width is >= 640px
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 25
-        },
-        // when window width is >= 768px
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 25
-        },
-        // when window width is >= 1024px
         1024: {
-          slidesPerView: 4,
-          spaceBetween: 30
+          slidesPerView: 'auto',
+          spaceBetween: 25
         },
-        // when window width is >= 1200px
         1200: {
-          slidesPerView: 5,
-          spaceBetween: 20,
-          slidesOffsetBefore: 0,
-          slidesOffsetAfter: 0
+          slidesPerView: 'auto',
+          spaceBetween: 20
         }
       }
-    }
-  },
-  methods: {
-    getSlidesPerView() {
-      const width = window.innerWidth;
-      if (width < 480) return 1;
-      if (width < 640) return 2;
-      if (width < 768) return 2;
-      if (width < 1024) return 3;
-      if (width < 1200) return 4;
-      return 5;
-    },
-    getSpaceBetween() {
-      const width = window.innerWidth;
-      if (width < 768) return 20;
-      if (width < 1024) return 25;
-      if (width >= 1200) return 20;
-      return 30;
     }
   }
 }
 </script>
 
 <style scoped>
+/* Prevent horizontal scroll on section */
+.games-section {
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
 /* Section Title */
 .section-title {
   font-size: 36px;
@@ -168,40 +153,58 @@ export default {
   line-height: 1.2;
 }
 
-/* Swiper Container */
+/* Container to control overflow */
+.swiper-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Swiper Container - Prevent overflow */
 .games-swiper {
   width: 100%;
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px 20px 20px;
-  overflow: hidden;
+  max-width: none;
+  margin: 40px 0;
+  padding: 0 0 20px 0;
+  overflow: visible;
   position: relative;
 }
 
+/* Override swiper wrapper */
+.games-swiper :deep(.swiper-wrapper) {
+  display: flex !important;
+  flex-direction: row !important;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  align-items: stretch;
+}
+
+/* Slide sizing with auto width */
 .games-slide {
-  display: flex;
+  flex-shrink: 0 !important;
+  width: 220px !important; /* Match WhyChooseUs default width */
+  height: auto !important;
+  display: flex !important;
   justify-content: center;
   align-items: center;
-  height: auto;
 }
 
 /* Game Card - Updated with feature card styling */
 .game-card {
   background: linear-gradient(135deg, #F2B240 0%, #E6A635 100%);
-  padding: 30px 20px;
+  padding: 25px 15px; /* Match WhyChooseUs padding */
   border-radius: 12px;
   text-align: center;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   width: 100%;
-  max-width: 250px;
-  height: 200px;
+  height: 200px; /* Match WhyChooseUs height */
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .game-card::before {
@@ -219,30 +222,27 @@ export default {
   left: 100%;
 }
 
-/* Removed transform on hover, only shadow changes */
 .game-card:hover {
   box-shadow: 0 15px 35px rgba(242, 178, 64, 0.4);
 }
 
 .game-icon {
-  width: 60px;
-  height: 60px;
-  margin: 0 auto 15px auto;
+  width: 50px; /* Match WhyChooseUs icon size */
+  height: 50px;
+  margin: 0 auto 12px auto; /* Match WhyChooseUs margin */
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  backdrop-filter: blur(10px);
 }
 
 .game-card:hover .game-icon {
   transform: scale(1.15) rotate(5deg);
   background: rgba(255, 255, 255, 0.3);
-  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .icon-image {
-  width: 100px;
+  width: 60px; /* Match WhyChooseUs icon image size */
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
@@ -254,10 +254,10 @@ export default {
 }
 
 .game-title {
-  font-size: 18px;
+  font-size: 16px; /* Match WhyChooseUs title size */
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 8px; /* Match WhyChooseUs margin */
   line-height: 1.2;
   transition: all 0.3s ease;
 }
@@ -268,11 +268,11 @@ export default {
 }
 
 .game-subtitle {
-  font-size: 14px;
+  font-size: 13px; /* Match WhyChooseUs description size */
   color: #ffffff;
   font-weight: 400;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.3; /* Match WhyChooseUs line-height */
   transition: all 0.3s ease;
 }
 
@@ -281,98 +281,117 @@ export default {
   transform: translateY(-1px);
 }
 
-/* Responsive Design */
+/* Mobile Responsive Design - Match WhyChooseUs exactly */
 @media (max-width: 768px) {
   .section-title {
     font-size: 28px;
     margin: 40px 0 30px 0;
   }
   
+  .swiper-container {
+    padding: 0 15px;
+  }
+  
   .games-swiper {
-    padding: 0 15px 15px 15px;
+    margin: 20px 0;
+    padding: 0 0 15px 0;
+  }
+  
+  .games-slide {
+    width: 200px !important; /* Match WhyChooseUs mobile width */
   }
   
   .game-card {
-    max-width: 200px;
-    height: 200px;
-    padding: 25px 15px;
-  }
-  
-  .game-icon {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .icon-image {
-    width: 28px;
-    height: 28px;
+    height: 190px; /* Match WhyChooseUs mobile height */
+    padding: 20px 12px; /* Match WhyChooseUs mobile padding */
   }
   
   .game-title {
-    font-size: 16px;
+    font-size: 15px; /* Match WhyChooseUs mobile title */
+    margin-bottom: 6px;
   }
   
   .game-subtitle {
-    font-size: 12px;
+    font-size: 12px; /* Match WhyChooseUs mobile description */
+  }
+  
+  .game-icon {
+    width: 45px; /* Match WhyChooseUs mobile icon container */
+    height: 45px;
+    margin-bottom: 10px;
+  }
+  
+  .icon-image {
+    width: 55px; /* Match WhyChooseUs mobile icon image */
   }
 }
 
 @media (max-width: 480px) {
+  .section-title {
+    font-size: 24px;
+    margin: 30px 0 25px 0;
+  }
+
+  .swiper-container {
+    padding: 0 10px;
+  }
+  
   .games-swiper {
-    padding: 0 10px 10px 10px;
+    margin: 20px 0;
+    padding: 0 0 10px 0;
+  }
+  
+  .games-slide {
+    width: 170px !important; /* Match WhyChooseUs small mobile width */
   }
   
   .game-card {
-    max-width: 180px;
-    height: 180px;
-    padding: 20px 10px;
-  }
-  
-  .game-icon {
-    width: 45px;
-    height: 45px;
-  }
-  
-  .icon-image {
-    width: 24px;
-    height: 24px;
+    height: 180px; /* Match WhyChooseUs small mobile height */
+    padding: 18px 10px; /* Match WhyChooseUs small mobile padding */
   }
   
   .game-title {
-    font-size: 14px;
+    font-size: 14px; /* Match WhyChooseUs small mobile title */
+    margin-bottom: 5px;
   }
   
   .game-subtitle {
-    font-size: 10px;
+    font-size: 11px; /* Match WhyChooseUs small mobile description */
+  }
+  
+  .game-icon {
+    width: 40px; /* Match WhyChooseUs small mobile icon container */
+    height: 40px;
+    margin-bottom: 8px;
+  }
+  
+  .icon-image {
+    width: 50px; /* Match WhyChooseUs small mobile icon image */
   }
 }
 
-/* Swiper overrides for smooth experience */
-:deep(.swiper-wrapper) {
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  align-items: center;
+/* Ensure swiper overrides any conflicting styles */
+:deep(.swiper) {
+  overflow: visible !important;
+  width: 100% !important;
 }
 
 :deep(.swiper-slide) {
   transition: transform 0.3s ease;
   will-change: transform;
+  display: flex !important;
+  flex-shrink: 0 !important;
 }
 
-/* Ensure no partial slides on the left */
-:deep(.swiper-container-horizontal > .swiper-pagination-bullets) {
-  display: none;
-}
-
-:deep(.swiper) {
-  overflow: hidden;
-}
-
-/* Prevent slides from being cut off on the left */
-:deep(.swiper-slide:first-child) {
-  margin-left: 0 !important;
-}
-
+/* Remove any grid styling that might interfere */
 :deep(.swiper-wrapper) {
-  transform-origin: left center;
+  grid-template-columns: none !important;
+  grid-gap: none !important;
+  gap: none !important;
+}
+
+/* Prevent horizontal scroll on the entire component */
+* {
+  box-sizing: border-box;
 }
 </style>

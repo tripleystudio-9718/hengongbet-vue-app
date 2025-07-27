@@ -39,12 +39,10 @@
             <button class="signup-button">Sign Up Now !</button>
           </div>
         </div>
-
         <!-- Center - Empty space for phone visibility -->
         <div class="center-content">
           <!-- This space allows the background phone to be visible -->
         </div>
-
         <!-- Right Side - Features Grid -->
         <div class="right-content">
           <div class="features-grid">
@@ -100,17 +98,16 @@
         </div>
       </div>
     </div>
-
     <!-- Section 2: Android Download Guide (No Background) -->
     <div class="download-guide-container">
       <!-- Header Tabs -->
       <div class="header-tabs">
         <button 
-          class="tab-button" 
+          class="tab-button"
           :class="{ active: activeTab === 'android' }"
           @click="switchTab('android')"
         >
-          <img src="@/assets/android-icon.svg" alt="iOS Logo" class="platform-icon" />
+          <img src="@/assets/android-icon.svg" alt="Android Logo" class="platform-icon" />
           Android
         </button>
         <button 
@@ -126,16 +123,14 @@
           :class="{ active: activeTab === 'desktop' }"
           @click="switchTab('desktop')"
         >
-          <img src="@/assets/desktop-icon.svg" alt="iOS Logo" class="platform-icon" />
+          <img src="@/assets/desktop-icon.svg" alt="Desktop Logo" class="platform-icon" />
           Desktop
         </button>
       </div>
-
       <!-- Download Guide Content -->
       <div v-if="activeTab === 'android'" class="guide-content">
         <!-- Title -->
         <h1 class="guide-title">Android Download</h1>
-
         <!-- Step 1 -->
         <div class="step-section">
           <div class="step-badge">1</div>
@@ -148,19 +143,16 @@
           <div class="browser-mockup">
               <img src="@/assets/step1-image.webp" alt="iOS Logo" class="platform-icon" />
           </div>
-
           <!-- Dotted Arrow -->
           <div class="dotted-arrow">
            <img src="@/assets/download-arrow.png" alt="iOS Logo" class="platform-icon" />
-        </div>
- </div>
+        </div> </div>
       <!-- Step 2 -->
         <div class="step-section">
           <div class="step-badge">2</div>
           <h2 class="step-title">Step 2</h2>
           <p class="step-description">
             Tap Add to Home Screen to pop up installation for HENG ONG BET App.
-
           </p>
           
           <!-- Mobile Installation Dialog -->
@@ -170,14 +162,12 @@
           <!-- Dotted Arrow -->
           <div class="dotted-arrow">
            <img src="@/assets/download-arrow.png" alt="iOS Logo" class="platform-icon" />
-        </div>
- </div>
+        </div> </div>
         <!-- Step 3 -->
         <div class="step-section">
           <div class="step-badge">3</div>
           <h2 class="step-title">Step 3</h2>
-          <p class="step-description">
-Tap Install to own the HENG ONG BET App, launch & enjoy your game!
+          <p class="step-description">Tap Install to own the HENG ONG BET App, launch & enjoy your game!
           </p>
           
           <!-- Mobile Installation Dialog -->
@@ -186,7 +176,6 @@ Tap Install to own the HENG ONG BET App, launch & enjoy your game!
           </div>
         </div>
       </div>
-
       <!-- iOS Guide Content -->
       <div v-else-if="activeTab === 'ios'" class="guide-content">
         <h1 class="guide-title">iOS Download</h1>
@@ -202,12 +191,10 @@ Tap Install to own the HENG ONG BET App, launch & enjoy your game!
           <div class="browser-mockup">
               <img src="@/assets/ios-step1-image.webp" alt="iOS Logo" class="platform-icon" />
           </div>
-
           <!-- Dotted Arrow -->
           <div class="dotted-arrow">
            <img src="@/assets/download-arrow.png" alt="iOS Logo" class="platform-icon" />
-        </div>
- </div>
+        </div> </div>
         <!-- Step 2 -->
         <div class="step-section">
           <div class="step-badge">2</div>
@@ -223,8 +210,7 @@ Tap Install to own the HENG ONG BET App, launch & enjoy your game!
           <!-- Dotted Arrow -->
           <div class="dotted-arrow">
            <img src="@/assets/download-arrow.png" alt="iOS Logo" class="platform-icon" />
-        </div>
- </div>
+        </div> </div>
         <!-- Step 3 -->
         <div class="step-section">
           <div class="step-badge">3</div>
@@ -238,9 +224,7 @@ Tap Install to own the HENG ONG BET App, launch & enjoy your game!
         <img src="@/assets/ios-step3-image.webp" alt="iOS Logo" class="platform-icon" />
           </div>
         </div>
-        
-      </div>
-
+              </div>
       <!-- Desktop Guide Content -->
       <div v-else-if="activeTab === 'desktop'" class="guide-content">
         <h1 class="guide-title">Desktop Download</h1>
@@ -248,36 +232,30 @@ Tap Install to own the HENG ONG BET App, launch & enjoy your game!
         <div class="step-section">
           <div class="step-badge">1</div>
           <h2 class="step-title">Step 1</h2>
-          <p class="step-description">
-Click desktop download button at right side of the address bar to pop up installation for HENG ONG BET App.
+          <p class="step-description">Click desktop download button at right side of the address bar to pop up installation for HENG ONG BET App.
           </p>
           
           <!-- Browser Address Bar Mockup -->
           <div class="browser-mockup">
               <img src="@/assets/desk-step1-image.webp" alt="iOS Logo" class="platform-icon" />
           </div>
-
           <!-- Dotted Arrow -->
           <div class="dotted-arrow">
            <img src="@/assets/download-arrow.png" alt="iOS Logo" class="platform-icon" />
-        </div>
- </div>
+        </div> </div>
         <!-- Step 2 -->
         <div class="step-section">
           <div class="step-badge">2</div>
           <h2 class="step-title">Step 2</h2>
-          <p class="step-description">
-Click Install to own the HENG ONG BET App, launch & enjoy your game!
+          <p class="step-description">Click Install to own the HENG ONG BET App, launch & enjoy your game!
           </p>
           
           <!-- Mobile Installation Dialog -->
           <div class="mobile-dialog">
         <img src="@/assets/desk-step2-image.webp" alt="iOS Logo" class="platform-icon" />
           </div>
-   
- </div>
-     
-      </div>
+    </div>
+           </div>
     </div>
   </div>
 </template>
@@ -417,6 +395,7 @@ export default {
   cursor: pointer;
   transition: transform 0.2s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  border: none;
 }
 
 .download-button:hover {
@@ -675,8 +654,6 @@ export default {
 .tab-icon {
   font-size: 20px;
 }
-
-
 
 /* Guide Content */
 .guide-content {
@@ -978,29 +955,41 @@ export default {
     flex-direction: column;
     gap: 40px;
     padding: 40px 20px;
+    min-height: auto;
   }
   
-  .left-content,
+  .left-content {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+  }
+  
   .right-content {
     width: 100%;
     max-width: 100%;
+    height: auto;
+  }
+  
+  .center-content {
+    display: none; /* Hide empty space on mobile */
   }
   
   .features-grid {
     max-width: 400px;
     gap: 15px;
+    height: auto;
+    margin: 0 auto;
   }
   
-  .short-card {
-    min-height: 130px;
+  .qr-codes {
+    margin: 0;
+    justify-content: center;
   }
   
-  .tall-card {
-    min-height: 180px;
-  }
-  
-  .center-content {
-    min-height: 200px;
+  .affiliate-section {
+    width: 100%;
+    text-align: center;
   }
   
   .download-guide-container {
@@ -1010,41 +999,76 @@ export default {
 
 @media (max-width: 768px) {
   .app-title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  
+  .app-subtitle {
     font-size: 1.8rem;
+    text-align: center;
+  }
+  
+  .left-content {
+    align-items: center;
+    text-align: center;
+    order: 3;
+  }
+
+  .center-content{
+    order: 1;
+  }
+  
+  .right-content {
+    order: 2;
   }
   
   .qr-codes {
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 0;
+    flex-wrap: wrap;
+  }
+  
+  .qr-code-item {
+    align-items: center;
+  }
+  
+  .qr-placeholder img {
+    width: 120px;
+    height: 120px;
   }
   
   .features-grid {
-    max-width: 300px;
-    gap: 12px;
+    max-width: 350px;
+    gap: 15px;
+  }
+  
+  .feature-card {
+    padding: 20px 15px;
+    min-height: auto;
   }
   
   .short-card {
-    min-height: 110px;
+    min-height: 120px;
   }
   
   .tall-card {
-    min-height: 150px;
+    min-height: 120px;
   }
   
   .feature-icon {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
   }
   
   .feature-title {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   
   .feature-subtitle {
-    font-size: 0.9rem;
-  }
-  
-  .center-content {
-    min-height: 150px;
+    font-size: 1rem;
   }
   
   .guide-title {
@@ -1054,13 +1078,15 @@ export default {
   .header-tabs {
     width: 100%;
     max-width: 400px;
+    gap: 8px;
   }
   
   .tab-button {
     flex: 1;
     justify-content: center;
-    padding: 10px 16px;
-    font-size: 13px;
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 8px !important;
   }
   
   .browser-mockup {
@@ -1068,49 +1094,82 @@ export default {
   }
   
   .mobile-dialog {
-    max-width: 280px;
+    max-width: 300px;
   }
 }
 
 @media (max-width: 480px) {
   .content-overlay {
-    padding: 30px 15px;
+    padding: 20px 15px;
+    gap: 30px;
   }
   
   .app-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  .app-subtitle {
+    font-size: 1.3rem;
+    text-align: center;
   }
   
   .qr-codes {
-    flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
+  }
+  
+  .qr-placeholder img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .download-button {
+    padding: 8px 12px;
+    font-size: 14px;
   }
   
   .features-grid {
-    flex-direction: column;
-    max-width: 250px;
-    gap: 10px;
+    max-width: 280px;
+    gap: 12px;
   }
   
   .left-column,
   .right-column {
-    flex-direction: row;
-    gap: 10px;
+    gap: 12px;
   }
   
   .feature-card {
-    min-height: 100px;
     padding: 15px 10px;
+    min-height: 100px;
+    width: 100%;
   }
   
   .feature-icon {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
   }
   
-  .center-content {
-    min-height: 100px;
+  .feature-title {
+    font-size: 1rem;
+  }
+  
+  .feature-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .affiliate-section {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .affiliate-text {
+    font-size: 16px;
+  }
+  
+  .signup-button {
+    padding: 12px 24px;
+    font-size: 16px;
   }
   
   .guide-title {
@@ -1118,22 +1177,31 @@ export default {
   }
   
   .tab-button {
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-  
-  .tab-icon {
+    padding: 10px 12px;
     font-size: 14px;
   }
   
   .step-badge {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
   }
   
   .step-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+  }
+  
+  .step-description {
+    font-size: 14px;
+    max-width: 280px;
+  }
+  
+  .browser-mockup {
+    max-width: 280px;
+  }
+  
+  .mobile-dialog {
+    max-width: 250px;
   }
 }
 </style>

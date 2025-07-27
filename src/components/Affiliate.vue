@@ -1,23 +1,32 @@
 <template>
   <div class="affiliate-section">
-    <!-- Your existing design - unchanged -->
+    <!-- Hero Banner -->
     <section class="affiliate-hero-banner">
       <img :src="affiliateBanner" alt="Gaming Banner" class="affiliate-banner-image" />
     </section>
+    
     <div class="affiliate-container">
-      <h1 class="main-title">{{ content.brandSection.title1 }} <span style="color: #F2B240;">{{ content.brandSection.hengOngBet }}</span> {{ content.brandSection.title2 }}</h1>
+      <!-- Main Title Section -->
+      <h1 class="main-title">
+        {{ content.brandSection.title1 }} 
+        <span style="color: #F2B240;">{{ content.brandSection.hengOngBet }}</span> 
+        {{ content.brandSection.title2 }}
+      </h1>
       <p class="description-text">{{ content.brandSection.tagline }}</p>
+      
       <!-- Join Button -->
       <div class="join-button-container">
         <button class="join-button">Join Us</button>
       </div>
+      
+      <!-- Join Steps -->
       <div class="join-steps">
         <div class="steps-num" :style="{ backgroundImage: `url(${stepImage})` }">
           <div class="steps-des">
             <img :src="num1Icon" class="num-image" />
             <div class="steps-t">
-                <p class="steps-p">Step 1</p>
-                <h2 class="steps-h2">Register</h2>
+              <p class="steps-p">Step 1</p>
+              <h2 class="steps-h2">Register</h2>
             </div>
           </div>
         </div>
@@ -25,8 +34,8 @@
           <div class="steps-des">
             <img :src="num2Icon" class="num-image" />
             <div class="steps-t">
-                <p class="steps-p">Step 2</p>
-                <h2 class="steps-h2">Promote</h2>
+              <p class="steps-p">Step 2</p>
+              <h2 class="steps-h2">Promote</h2>
             </div>
           </div>
         </div>
@@ -34,16 +43,20 @@
           <div class="steps-des">
             <img :src="num3Icon" class="num-image" />
             <div class="steps-t">
-                <p class="steps-p">Step 3</p>
-                <h2 class="steps-h2">Earn</h2>
+              <p class="steps-p">Step 3</p>
+              <h2 class="steps-h2">Earn</h2>
             </div>
           </div>
         </div>
       </div>
+      
+      <!-- Why Choose Us Component -->
       <WhyChooseUs :features="features" />
+      
+      <!-- Commission Section -->
       <div class="commission-section">
         <h2 class="section-title">Dual Commission Models</h2>
-        <p class="section-description">Switch anytime. Total control over how you earn. </p>
+        <p class="section-description">Switch anytime. Total control over how you earn.</p>
         <div class="commission-cards">
           <div class="commission-card" v-for="(model, index) in commissionModels" :key="index">
             <div class="commission-icon">
@@ -54,24 +67,32 @@
           </div>
         </div>
       </div>
+      
+      <!-- Levels Section -->
       <div class="levels-section">
         <h2 class="section-title">User Levels & Rebate System</h2>
-        <div class="levels-table">
-          <div class="table-header">
-            <div class="table-cell">User Level</div>
-            <div class="table-cell">Benefits</div>
-            <div class="table-cell">Rebate</div>
-          </div>
-          <div class="table-row" v-for="(level, index) in userLevels" :key="index">
-            <div class="table-cell">{{ level.name }}</div>
-            <div class="table-cell">{{ level.benefits }}</div>
-            <div class="table-cell">{{ level.rebate }}</div>
+        
+        <!-- Table (responsive for all devices) -->
+        <div class="levels-table-container">
+          <div class="levels-table">
+            <div class="table-header">
+              <div class="table-cell">User Level</div>
+              <div class="table-cell">Benefits</div>
+              <div class="table-cell">Rebate</div>
+            </div>
+            <div class="table-row" v-for="(level, index) in userLevels" :key="index">
+              <div class="table-cell">{{ level.name }}</div>
+              <div class="table-cell">{{ level.benefits }}</div>
+              <div class="table-cell">{{ level.rebate }}</div>
+            </div>
           </div>
         </div>
       </div>
 
+      <!-- Supported Games Component -->
       <SupportedGames />
 
+      <!-- Final CTA Section -->
       <div class="cta-section">
         <h2 class="cta-title">Final Call To Action</h2>
         <p class="cta-subtitle">Join the <span style="color: #F2B240;">Heng Ong Bet</span> Agent Network and take control of your financial future!</p>
@@ -146,7 +167,6 @@ export default {
           description: 'Professional banners & links'
         }
       ],
-      // Commission models
       commissionModels: [
         {
           icon: dual1Icon,
@@ -176,22 +196,29 @@ export default {
           rebate: '0.5% on every bet placed'
         }
       ]
-      // Removed gameTypes array - now handled by SupportedGames component
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
+/* Global box-sizing and overflow prevention */
+* {
+  box-sizing: border-box;
+}
+
 .affiliate-section {
   background: #27272A;
   min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .affiliate-hero-banner {
   position: relative;
   overflow: hidden;
   background: #0a0e1a;
+  width: 100%;
 }
 
 .affiliate-banner-image {
@@ -199,12 +226,15 @@ export default {
   height: auto;
   display: block;
   object-fit: cover;
+  max-width: 100%;
 }
 
 .affiliate-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .main-title {
@@ -214,6 +244,7 @@ export default {
   margin: 1rem 0;
   line-height: 1.2;
   text-align: center;
+  word-wrap: break-word;
 }
 
 .description-text {
@@ -223,6 +254,7 @@ export default {
   margin: 1rem 0 2rem 0;
   line-height: 1.4;
   text-align: center;
+  word-wrap: break-word;
 }
 
 .join-steps {
@@ -230,13 +262,16 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 0;
+  margin-bottom: 40px;
+  width: 100%;
 }
 
 .steps-des {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
 }
 
 .steps-num {
@@ -244,7 +279,8 @@ export default {
   background-repeat: no-repeat;
   background-size: contain;
   height: 250px;
-  width: 33%;
+  width: 100%;
+  max-width: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -268,25 +304,29 @@ export default {
 .num-image {
   width: 90px;
   height: auto;
+  max-width: 100%;
 }
 
 .join-button-container {
   text-align: center;
+  margin-bottom: 40px;
+  width: 100%;
 }
 
 .join-button {
   border-radius: 59px;
-    background: linear-gradient(180deg, #F2B341 0%, #ED8F23 100%);
+  background: linear-gradient(180deg, #F2B341 0%, #ED8F23 100%);
   color: #000;
   border: none;
-  padding: 10px 60px;
+  padding: 12px 60px;
   font-size: 20px;
   font-weight: 600;
-  border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
+  min-height: 44px;
+  max-width: 100%;
 }
 
 .join-button:hover {
@@ -302,14 +342,16 @@ export default {
   text-align: center;
   margin: 60px 0 20px 0;
   line-height: 1.2;
+  word-wrap: break-word;
 }
 
 .section-description {
-    font-size: 16px;
+  font-size: 16px;
   font-weight: 400;
   color: #F2B240;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  word-wrap: break-word;
 }
 
 .commission-cards {
@@ -317,9 +359,12 @@ export default {
   justify-content: center;
   align-items: center;
   gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
-/* Updated Commission Card with Feature Card Styling */
+/* Commission Card Styling */
 .commission-card {
   background: linear-gradient(135deg, #F2B240 0%, #E6A635 100%);
   padding: 30px 20px;
@@ -327,7 +372,8 @@ export default {
   text-align: center;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   width: 100%;
-  max-width: 220px;
+  max-width: 280px;
+  min-width: 200px;
   height: 200px;
   display: flex;
   flex-direction: column;
@@ -335,6 +381,8 @@ export default {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+  flex: 1;
 }
 
 .commission-card::before {
@@ -352,7 +400,6 @@ export default {
   left: 100%;
 }
 
-/* Removed transform on hover, only shadow changes */
 .commission-card:hover {
   box-shadow: 0 15px 35px rgba(242, 178, 64, 0.4);
 }
@@ -365,13 +412,10 @@ export default {
   align-items: center;
   justify-content: center;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  backdrop-filter: blur(10px);
 }
 
 .commission-card:hover .commission-icon {
   transform: scale(1.15) rotate(5deg);
-  background: rgba(255, 255, 255, 0.3);
-  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .commission-icon .icon-image {
@@ -380,6 +424,7 @@ export default {
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
   transition: all 0.3s ease;
+  max-width: 100%;
 }
 
 .commission-card:hover .commission-icon .icon-image {
@@ -393,6 +438,7 @@ export default {
   margin-bottom: 10px;
   line-height: 1.2;
   transition: all 0.3s ease;
+  word-wrap: break-word;
 }
 
 .commission-card:hover .commission-title {
@@ -407,6 +453,7 @@ export default {
   margin: 0;
   line-height: 1.4;
   transition: all 0.3s ease;
+  word-wrap: break-word;
 }
 
 .commission-card:hover .commission-description {
@@ -414,24 +461,32 @@ export default {
   transform: translateY(-1px);
 }
 
-/* Levels Table */
+/* Levels Table Container - Prevent overflow */
+.levels-table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin: 0 auto 40px auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Levels Table - Responsive */
 .levels-table {
   background: #333;
   border-radius: 36px;
   overflow: hidden;
+  width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
-  width: 1000px;
+  min-width: 600px;
 }
 
 .table-header {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  border-radius: 36px 36px 0 0;
   background: linear-gradient(180deg, #F1AF3E 52.88%, #ED8F23 100%);
   box-shadow: 0 3.466px 3.466px 0 rgba(0, 0, 0, 0.25);
   font-weight: 700;
   color: #000;
-  border: none;
 }
 
 .table-row {
@@ -451,10 +506,13 @@ export default {
   border-right: 1px solid #F1AF3E;
   background: linear-gradient(180deg, rgba(241, 175, 62, 0.10) 52.88%, rgba(237, 143, 35, 0.10) 100%);
   box-shadow: 0 3.466px 3.466px 0 rgba(0, 0, 0, 0.25);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .table-cell:last-child {
-    border-right: none;
+  border-right: none;
 }
 
 .table-header .table-cell {
@@ -465,7 +523,8 @@ export default {
 /* CTA Section */
 .cta-section {
   text-align: center;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
+  width: 100%;
 }
 
 .cta-title {
@@ -473,6 +532,7 @@ export default {
   font-weight: 500;
   color: #F2B240;
   margin-bottom: 20px;
+  word-wrap: break-word;
 }
 
 .cta-subtitle {
@@ -480,6 +540,7 @@ export default {
   color: #FFF;
   margin-bottom: 15px;
   font-weight: 400;
+  word-wrap: break-word;
 }
 
 .cta-description {
@@ -487,6 +548,7 @@ export default {
   color: #FFFFFF;
   margin-bottom: 40px;
   font-weight: 700;
+  word-wrap: break-word;
 }
 
 .cta-buttons {
@@ -494,10 +556,11 @@ export default {
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .cta-button {
-  padding: 10px 60px;
+  padding: 12px 60px;
   font-size: 20px;
   font-weight: 600;
   border-radius: 25px;
@@ -506,21 +569,22 @@ export default {
   text-transform: uppercase;
   letter-spacing: 1px;
   border: 2px solid #F2B240;
+  min-height: 44px;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .cta-button.primary {
-  border-radius: 13.142px;
   background: linear-gradient(180deg, #F2B341 0%, #ED8F23 100%);
   color: black;
 }
 
 .cta-button.secondary {
-    border-radius: 13.142px;
-    border: 2.628px solid #F2B240;
-    background: linear-gradient(180deg, #F1B03F 0%, #ED9326 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  border: 2.628px solid #F2B240;
+  background: linear-gradient(180deg, #F1B03F 0%, #ED9326 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .cta-button:hover {
@@ -530,37 +594,257 @@ export default {
 
 .cta-button.secondary:hover {
   color: #000;
+  background: linear-gradient(180deg, #F2B341 0%, #ED8F23 100%);
+  -webkit-text-fill-color: initial;
 }
 
-/* Responsive Design */
+/* Mobile Responsive Design */
 @media (max-width: 768px) {
-  .section-title {
-    font-size: 28px;
+  .affiliate-container {
+    padding: 0 15px;
   }
-  
-  .table-header,
-  .table-row {
-    grid-template-columns: 1fr;
-    text-align: left;
+
+  .affiliate-banner-image {
+    object-fit: cover;
   }
-  
-  .cta-buttons {
+
+  .main-title {
+    font-size: 24px;
+    margin: 20px 0 15px 0;
+    padding: 0 10px;
+  }
+
+  .description-text {
+    font-size: 16px;
+    margin: 15px 0 25px 0;
+    padding: 0 10px;
+  }
+
+  .join-button {
+    width: 100%;
+    max-width: 280px;
+    padding: 15px 30px;
+    font-size: 18px;
+  }
+
+  .join-steps {
     flex-direction: column;
-    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
   }
-  
-  .cta-button {
-    width: 200px;
+
+  .steps-num {
+    width: 100%;
+    max-width: 100%;
+    height: 180px;
+    border-radius: 12px;
+    margin: 0;
   }
-  
+
+  .steps-des {
+    gap: 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .steps-h2 {
+    font-size: 24px;
+  }
+
+  .steps-p {
+    font-size: 14px;
+  }
+
+  .num-image {
+    width: 60px;
+  }
+
+  .section-title {
+    font-size: 24px;
+    margin: 40px 0 15px 0;
+    padding: 0 10px;
+  }
+
+  .section-description {
+    font-size: 14px;
+    padding: 0 15px;
+    margin-bottom: 25px;
+  }
+
   .commission-cards {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
   }
-  
+
   .commission-card {
-    max-width: 200px;
+    max-width: 100%;
+    width: 100%;
+    height: 180px;
+    padding: 25px 15px;
+  }
+
+  .commission-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 12px;
+  }
+
+  .commission-icon .icon-image {
+    width: 70px;
+  }
+
+  .commission-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .commission-description {
+    font-size: 13px;
+  }
+
+  /* Make table more mobile friendly */
+  .levels-table-container {
+    padding: 0 5px;
+  }
+
+  .levels-table {
+    border-radius: 20px;
+    min-width: 320px;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+
+  .table-cell {
+    padding: 12px 8px;
+    font-size: 12px;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .table-header .table-cell {
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .cta-title {
+    font-size: 26px;
+    padding: 0 10px;
+  }
+
+  .cta-subtitle {
+    font-size: 16px;
+    padding: 0 15px;
+  }
+
+  .cta-description {
+    font-size: 20px;
+    padding: 0 15px;
+    margin-bottom: 30px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 0 20px;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 280px;
+    padding: 15px 30px;
+    font-size: 16px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .affiliate-container {
+    padding: 0 10px;
+  }
+
+  .main-title {
+    font-size: 20px;
+  }
+
+  .description-text {
+    font-size: 14px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .commission-card {
+    max-width: 100%;
+  }
+
+  .cta-title {
+    font-size: 22px;
+  }
+
+  .cta-subtitle {
+    font-size: 14px;
+  }
+
+  .cta-description {
+    font-size: 18px;
+  }
+
+  .levels-table {
+    min-width: 300px;
+  }
+
+  .table-cell {
+    padding: 10px 5px;
+    font-size: 11px;
+  }
+
+  /* Keep steps vertical and full-width on small screens */
+  .join-steps {
+    gap: 15px;
+  }
+
+  .steps-num {
+    height: 150px;
+  }
+
+  .steps-h2 {
+    font-size: 20px;
+  }
+
+  .steps-p {
+    font-size: 12px;
+  }
+
+  .num-image {
+    width: 50px;
+  }
+}
+
+/* Large mobile devices */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .commission-cards {
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+
+  .commission-card {
+    max-width: 300px;
+    flex: 0 1 calc(50% - 12.5px);
+  }
+
+  .levels-table {
+    width: 90%;
+  }
+
+  .table-cell {
+    padding: 15px;
+    font-size: 14px;
   }
 }
 </style>

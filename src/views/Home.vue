@@ -147,6 +147,7 @@ export default {
 .home-page {
   background: #27272A;
   min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .home-container {
@@ -160,6 +161,7 @@ export default {
   position: relative;
   overflow: hidden;
   background: #0a0e1a;
+  width: 100%;
 }
 
 .banner-image {
@@ -172,15 +174,16 @@ export default {
 
 /* Global Typography Classes */
 .main-title {
-  font-size: 40px;
-  font-weight: 500 ;
+  font-size: clamp(1.8rem, 4vw, 2.5rem); /* Responsive font size */
+  font-weight: 500;
   color: #FFFFFF;
   margin: 1rem 0;
   line-height: 1.2;
+  word-wrap: break-word;
 }
 
 .accent-title {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: bold;
   color: #F2B240;
   margin: 1rem 0;
@@ -188,7 +191,7 @@ export default {
 }
 
 .section-title {
-  font-size: 18px;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
   font-weight: 400;
   color: #D5D3CF;
   margin: 1rem 0;
@@ -196,7 +199,7 @@ export default {
 }
 
 .subtitle-text {
-  font-size: 18px;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
   font-weight: 400;
   color: #D5D3CF;
   margin: 0.5rem 0;
@@ -204,7 +207,7 @@ export default {
 }
 
 .description-text {
-  font-size: 18px;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
   font-weight: 600;
   color: #ffffff;
   margin: 1rem 0 2rem 0;
@@ -213,7 +216,7 @@ export default {
 }
 
 .text-content {
-  font-size: 18px;
+  font-size: clamp(0.9rem, 2.2vw, 1.125rem);
   color: #C0BEBE;
   line-height: 1.8;
   margin: 1rem 0;
@@ -227,7 +230,7 @@ export default {
 /* Global Layout Classes */
 .section-wrapper {
   text-align: center;
-  padding: 0;
+  padding: 2rem 0;
 }
 
 .two-column-section {
@@ -240,15 +243,18 @@ export default {
 
 .column-image {
   width: 40%;
+  flex-shrink: 0;
 }
 
 .column-text {
   width: 60%;
+  flex-shrink: 1;
 }
 
 .responsive-image {
   width: 100%;
   height: auto;
+  max-width: 100%;
 }
 
 .limited-width {
@@ -272,23 +278,18 @@ export default {
   padding: 0;
   margin: 2rem 0;
   text-align: left;
-  max-width: 600px;
+  max-width: 100%;
 }
 
-.feature-list li {
-  margin-bottom: 0.8rem;
-  color: #C0BEBE;
-  font-size: 18px;
-  line-height: 1.6;
-  font-weight: 400;
-}
-
+.feature-list li,
 .feature-list-1 li {
   margin-bottom: 0.8rem;
   color: #C0BEBE;
-  font-size: 18px;
+  font-size: clamp(0.9rem, 2.2vw, 1.125rem);
   line-height: 1.6;
   font-weight: 400;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 /* Content Specific */
@@ -300,74 +301,124 @@ export default {
   color: white;
 }
 
-/* Responsive Design */
-@media (max-width: 1240px) {
-  .home-container {
-    padding: 0 20px;
-  }
-}
-
+/* Mobile First Responsive Design */
 @media (max-width: 768px) {
-  /* Typography Scaling */
-  .main-title,
-  .accent-title {
-    font-size: 2.5rem;
+  .home-container {
+    padding: 0 16px;
   }
   
-  .section-title {
-    font-size: 1.3rem;
+  .banner-image {
+    max-height: 300px;
   }
   
-  .subtitle-text,
-  .description-text {
-    font-size: 1.1rem;
+  .section-wrapper {
+    padding: 1.5rem 0;
   }
   
-  .text-content {
-    font-size: 1rem;
-  }
-  
-  /* Layout Adjustments */
   .two-column-section {
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
+    padding: 40px 0;
   }
 
   .column-image,
   .column-text {
     width: 100%;
   }
-
-  .section-wrapper {
-    padding: 40px 0;
-  }
-
-  .home-container {
-    padding: 0 15px;
+  
+  .column-text {
+    text-align: center;
   }
   
-  .feature-list {
+  .feature-list-1 {
     text-align: center;
+    max-width: 100%;
+  }
+  
+  .text-content {
+    padding: 0 10px;
   }
 }
 
 @media (max-width: 480px) {
-  .main-title,
-  .accent-title {
-    font-size: 2rem;
+  .home-container {
+    padding: 0 12px;
   }
   
-  .section-title {
-    font-size: 1.2rem;
+  .banner-image {
+    max-height: 250px;
   }
   
-  .subtitle-text,
-  .description-text {
-    font-size: 1rem;
+  .section-wrapper {
+    padding: 1rem 0;
+  }
+  
+  .two-column-section {
+    gap: 20px;
+    padding: 30px 0;
   }
   
   .text-content {
-    font-size: 0.95rem;
+    padding: 0 5px;
+  }
+  
+  .feature-list,
+  .feature-list-1 {
+    margin: 1.5rem 0;
+  }
+  
+  .feature-list li,
+  .feature-list-1 li {
+    margin-bottom: 0.6rem;
+    padding: 0 5px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .home-container {
+    padding: 0 10px;
+  }
+  
+  .banner-image {
+    max-height: 200px;
+  }
+  
+  .section-wrapper {
+    padding: 0.8rem 0;
+  }
+  
+  .two-column-section {
+    padding: 20px 0;
+    gap: 16px;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .banner-image {
+    max-height: 200px;
+  }
+  
+  .section-wrapper {
+    padding: 1rem 0;
+  }
+}
+
+/* High DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .banner-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  .feature-list li,
+  .feature-list-1 li {
+    padding: 8px 4px;
+    margin-bottom: 1rem;
   }
 }
 </style>

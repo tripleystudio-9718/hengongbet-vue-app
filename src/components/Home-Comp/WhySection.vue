@@ -41,6 +41,45 @@
           </div>
         </div>
       </div>
+
+      <!-- Mobile Slider Container -->
+      <div class="mobile-slider-container">
+        <div class="mobile-slider" ref="mobileSlider">
+          <div class="mobile-card mobile-card-1">
+            <img :src="computerIcon" alt="Computer Icon" class="mobile-image" />
+            <div class="mobile-card-content">
+              <h3 class="mobile-title">{{ cardContent[0].title }}</h3>
+              <p class="mobile-p">{{ cardContent[0].description }}</p>
+            </div>  
+          </div>
+
+          <div class="mobile-card mobile-card-2">
+            <img :src="trustedIcon" alt="Trusted Icon" class="mobile-image" />
+            <div class="mobile-card-content">
+              <h3 class="mobile-title">{{ cardContent[1].title }}</h3>
+              <p class="mobile-p">{{ cardContent[1].description }}</p>
+            </div>
+          </div>
+
+          <div class="mobile-card mobile-card-3">
+            <img :src="registrationIcon" alt="Registration Icon" class="mobile-image" />
+            <div class="mobile-card-content">
+              <h3 class="mobile-title" style="color: black;">{{ cardContent[2].title }}</h3>
+              <p class="mobile-p" style="color: black;">{{ cardContent[2].description }}</p>
+            </div>
+          </div>
+
+          <div class="mobile-card mobile-card-4">
+            <img :src="supportIcon" alt="Support Icon" class="mobile-image" />
+            <div class="mobile-card-content">
+              <h3 class="mobile-title">{{ cardContent[3].title }}</h3>
+              <p class="mobile-p">{{ cardContent[3].description }}</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
     </div>
   </section>
 </template>
@@ -59,6 +98,7 @@ export default {
       trustedIcon,
       registrationIcon,
       supportIcon,
+      currentSlide: 0,
       headerContent: {
         prefix: "Why Choose",
         brand: "Heng Ong Bet",
@@ -82,6 +122,130 @@ export default {
           description: "Our Heng Ong Bet support team is available 24/7 via live chat, phone, and email to assist you quickly with any issues."
         }
       ]
+    }
+  },
+  mounted() {
+    this.initMobileSlider()
+  },
+  methods: {
+    initMobileSlider() {
+      const slider = this.$refs.mobileSlider
+      if (!slider) return
+
+      let startX = 0
+      let currentX = 0
+      let isDragging = false
+      let startTransform = 0
+
+      slider.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX
+        isDragging = true
+        startTransform = -this.currentSlide * 70
+        slider.style.transition = 'none'
+      })
+
+      slider.addEventListener('touchmove', (e) => {
+        if (!isDragging) return
+        e.preventDefault()
+        currentX = e.touches[0].clientX
+        const diffX = currentX - startX
+        const movePercent = (diffX / window.innerWidth) * 100
+        const newTransform = startTransform + movePercent
+        
+        const maxTransform = 0
+        const minTransform = -(this.cardContent.length - 1) * 70
+        
+        let finalTransform = newTransform
+        if (newTransform > maxTransform) {
+          finalTransform = maxTransform + (newTransform - maxTransform) * 0.3
+        } else if (newTransform < minTransform) {
+          finalTransform = minTransform + (newTransform - minTransform) * 0.3
+        }
+        
+        slider.style.transform = `translateX(${finalTransform}%)`
+      })
+
+      slider.addEventListener('touchend', (e) => {
+        if (!isDragging) return
+        isDragging = false
+        slider.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        
+        const diffX = currentX - startX
+        const threshold = window.innerWidth * 0.15 // 15% of screen width
+        const velocity = Math.abs(diffX) / 100 // Simple velocity calculation
+
+        if (Math.abs(diffX) > threshold || velocity > 2) {
+          if (diffX > 0 && this.currentSlide > 0) {
+            this.currentSlide--
+          } else if (diffX < 0 && this.currentSlide < this.cardContent.length - 1) {
+            this.currentSlide++
+          }
+        }
+
+        this.updateSliderPosition()
+      })
+
+      // Mouse events for desktop testing
+      slider.addEventListener('mousedown', (e) => {
+        startX = e.clientX
+        isDragging = true
+        startTransform = -this.currentSlide * 70
+        slider.style.transition = 'none'
+        e.preventDefault()
+      })
+
+      slider.addEventListener('mousemove', (e) => {
+        if (!isDragging) return
+        currentX = e.clientX
+        const diffX = currentX - startX
+        const movePercent = (diffX / window.innerWidth) * 100
+        const newTransform = startTransform + movePercent
+        
+        const maxTransform = 0
+        const minTransform = -(this.cardContent.length - 1) * 70
+        
+        let finalTransform = newTransform
+        if (newTransform > maxTransform) {
+          finalTransform = maxTransform + (newTransform - maxTransform) * 0.3
+        } else if (newTransform < minTransform) {
+          finalTransform = minTransform + (newTransform - minTransform) * 0.3
+        }
+        
+        slider.style.transform = `translateX(${finalTransform}%)`
+      })
+
+      slider.addEventListener('mouseup', (e) => {
+        if (!isDragging) return
+        isDragging = false
+        slider.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        
+        const diffX = currentX - startX
+        const threshold = window.innerWidth * 0.15
+
+        if (Math.abs(diffX) > threshold) {
+          if (diffX > 0 && this.currentSlide > 0) {
+            this.currentSlide--
+          } else if (diffX < 0 && this.currentSlide < this.cardContent.length - 1) {
+            this.currentSlide++
+          }
+        }
+
+        this.updateSliderPosition()
+      })
+
+      slider.addEventListener('mouseleave', (e) => {
+        if (isDragging) {
+          isDragging = false
+          slider.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+          this.updateSliderPosition()
+        }
+      })
+    },
+    updateSliderPosition() {
+      const slider = this.$refs.mobileSlider
+      if (slider) {
+        slider.style.transform = `translateX(-${this.currentSlide * 70}%)`
+      }
     }
   }
 }
@@ -126,7 +290,7 @@ export default {
   padding-bottom: 2rem;
 }
 
-/* Why Container */
+/* Desktop Why Container */
 .why-container {
   display: flex;
   justify-content: center;
@@ -209,6 +373,110 @@ export default {
   justify-content: center;
 }
 
+/* Mobile Slider Styles */
+.mobile-slider-container {
+  display: none;
+}
+
+.mobile-slider {
+  display: flex;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  touch-action: pan-y;
+  cursor: grab;
+  padding-right: 30%;
+}
+
+.mobile-slider:active {
+  cursor: grabbing;
+}
+
+.mobile-card {
+  flex: 0 0 70%;
+  margin-right: 20px;
+  height: 280px;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2.609px 3.001px 0 rgba(0, 0, 0, 0.13);
+}
+
+.mobile-card:last-child {
+  margin-right: 0;
+}
+
+.mobile-card-1 {
+  background: linear-gradient(to right, #484848 0%, #303033 100%);
+}
+
+.mobile-card-2 {
+  background: linear-gradient(180deg, #33DAFF 0%, #033DBC 100%);
+}
+
+.mobile-card-3 {
+  background: linear-gradient(180deg, #F9F9F9 0%, #E8E8E8 100%);
+}
+
+.mobile-card-4 {
+  background: linear-gradient(0deg, #ED9226 0%, #FFEA00 100%);
+}
+
+.mobile-image {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 15px;
+  flex-shrink: 0;
+}
+
+.mobile-card-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.mobile-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0 0 15px 0;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.mobile-p {
+  color: #ffffff;
+  font-size: 12px;
+  margin: 0;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.4;
+  max-width: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Dots Indicator */
+.dots-container {
+  display: none;
+}
+
+.dot {
+  display: none;
+}
+
+.dot.active {
+  display: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .why-header-section {
@@ -220,41 +488,52 @@ export default {
   }
   
   .why-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    max-width: 100%;
+    display: none;
   }
   
-  .why-card-1, .why-card-2, .why-card-3, .why-card-4 {
-    width: 90%;
-    max-width: 400px;
-    min-height: 250px;
+  .mobile-slider-container {
+    display: block;
+    overflow: hidden;
+    padding: 0 20px;
+  }
+  
+  .py-8 {
+    padding-bottom: 40px;
   }
 }
 
 @media (max-width: 480px) {
   .why-header-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
-  .why-container {
-    padding: 0 10px;
+  .px-6 {
+    padding: 0;
   }
   
-  .why-card-1, .why-card-2, .why-card-3, .why-card-4 {
-    width: 95%;
-    min-height: 220px;
-    padding: 20px 15px;
+  .mobile-slider-container {
+    padding: 0 16px;
   }
   
-  .why-title {
-    font-size: 18px;
-    margin-bottom: 15px;
+  .mobile-card {
+    height: 260px;
+    padding: 16px;
+    border-radius: 16px;
   }
   
-  .why-p {
+  .mobile-image {
+    width: 100px;
+    margin-bottom: 12px;
+  }
+  
+  .mobile-title {
     font-size: 14px;
+    margin-bottom: 12px;
+  }
+  
+  .mobile-p {
+    font-size: 11px;
+    line-height: 1.3;
   }
 }
 </style>

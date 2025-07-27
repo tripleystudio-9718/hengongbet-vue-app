@@ -3,49 +3,52 @@
     <h2 class="section-title">Why Choose Us?</h2>
     
     <!-- Swiper Implementation -->
-    <swiper
-      :modules="modules"
-      :slides-per-view="getSlidesPerView()"
-      :space-between="getSpaceBetween()"
-      :loop="false"
-      :autoplay="{
-        delay: 3000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true
-      }"
-      :grab-cursor="true"
-      :breakpoints="breakpoints"
-      :speed="400"
-      :allow-touch-move="true"
-      :resistance="true"
-      :resistance-ratio="0.3"
-      :free-mode="false"
-      :watch-slides-progress="true"
-      :slides-offset-before="0"
-      :slides-offset-after="0"
-      :normalize-slide-index="true"
-      class="why-swiper"
-    >
-      <swiper-slide 
-        v-for="(feature, index) in features" 
-        :key="index"
-        class="why-slide"
+    <div class="swiper-container">
+      <swiper
+        :modules="modules"
+        :slides-per-view="'auto'"
+        :space-between="15"
+        :loop="false"
+        :autoplay="{
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
+        }"
+        :grab-cursor="true"
+        :breakpoints="breakpoints"
+        :speed="400"
+        :allow-touch-move="true"
+        :resistance="true"
+        :resistance-ratio="0.3"
+        :free-mode="false"
+        :watch-slides-progress="true"
+        :centered-slides="false"
+        class="why-swiper"
       >
-        <div class="feature-card">
-          <div class="feature-icon">
-            <img :src="feature.icon" :alt="feature.title" class="icon-image" />
+        <swiper-slide 
+          v-for="(feature, index) in features" 
+          :key="index"
+          class="why-slide"
+        >
+          <div class="feature-card">
+            <div class="feature-icon">
+              <img :src="feature.icon" :alt="feature.title" class="icon-image" />
+            </div>
+            <h3 class="feature-title">{{ feature.title }}</h3>
+            <p class="feature-description">{{ feature.description }}</p>
           </div>
-          <h3 class="feature-title">{{ feature.title }}</h3>
-          <p class="feature-description">{{ feature.description }}</p>
-        </div>
-      </swiper-slide>
-    </swiper>
+        </swiper-slide>
+      </swiper>
+    </div>
   </div>
 </template>
 
 <script>
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Autoplay } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
 
 // Import icons
 import why1Icon from '@/assets/why1-icon.png';
@@ -99,61 +102,47 @@ export default {
         }
       ],
 
-      // Responsive breakpoints
+      // Responsive breakpoints - using 'auto' for better control
       breakpoints: {
-        // when window width is >= 320px
         320: {
-          slidesPerView: 1,
-          spaceBetween: 20
+          slidesPerView: 'auto',
+          spaceBetween: 10
         },
-        // when window width is >= 640px
+        480: {
+          slidesPerView: 'auto',
+          spaceBetween: 12
+        },
         640: {
-          slidesPerView: 2,
+          slidesPerView: 'auto',
+          spaceBetween: 15
+        },
+        768: {
+          slidesPerView: 'auto',
           spaceBetween: 20
         },
-        // when window width is >= 768px
-        768: {
-          slidesPerView: 3,
+        1024: {
+          slidesPerView: 'auto',
           spaceBetween: 25
         },
-        // when window width is >= 1024px
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 30
-        },
-        // when window width is >= 1200px
         1200: {
-          slidesPerView: 4.5,
-          spaceBetween: 20,
-          slidesOffsetBefore: 0,
-          slidesOffsetAfter: 0
+          slidesPerView: 'auto',
+          spaceBetween: 20
         }
       }
-    }
-  },
-
-  methods: {
-    getSlidesPerView() {
-      const width = window.innerWidth;
-      if (width < 640) return 1;
-      if (width < 768) return 2;
-      if (width < 1024) return 3;
-      if (width < 1200) return 4;
-      return 5.5;
-    },
-
-    getSpaceBetween() {
-      const width = window.innerWidth;
-      if (width < 768) return 20;
-      if (width < 1024) return 25;
-      if (width >= 1200) return 20;
-      return 30;
     }
   }
 }
 </script>
 
 <style scoped>
+/* Prevent horizontal scroll on body */
+.why-section {
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
 /* Section Title */
 .section-title {
   font-size: 36px;
@@ -164,31 +153,49 @@ export default {
   line-height: 1.2;
 }
 
-/* Swiper Container */
+/* Container to control overflow */
+.swiper-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Swiper Container - Prevent overflow */
 .why-swiper {
   width: 100%;
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px 20px 20px;
-  overflow: hidden;
+  max-width: none;
+  margin: 40px 0;
+  padding: 0 0 20px 0;
+  overflow: visible;
   position: relative;
 }
 
+/* Override swiper wrapper */
+.why-swiper :deep(.swiper-wrapper) {
+  display: flex !important;
+  flex-direction: row !important;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  align-items: stretch;
+}
+
+/* Slide sizing with auto width */
 .why-slide {
-  display: flex;
+  flex-shrink: 0 !important;
+  width: 220px !important; /* Fixed width for consistency */
+  height: auto !important;
+  display: flex !important;
   justify-content: center;
   align-items: center;
-  height: auto;
 }
 
 .feature-card {
   background: linear-gradient(135deg, #F2B240 0%, #E6A635 100%);
-  padding: 30px 20px;
+  padding: 25px 15px;
   border-radius: 12px;
   text-align: center;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   width: 100%;
-  max-width: 250px;
   height: 200px;
   display: flex;
   flex-direction: column;
@@ -196,7 +203,7 @@ export default {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
-  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .feature-card::before {
@@ -219,24 +226,22 @@ export default {
 }
 
 .feature-icon {
-  width: 60px;
-  height: 60px;
-  margin: 0 auto 15px auto;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 12px auto;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  backdrop-filter: blur(10px);
 }
 
 .feature-card:hover .feature-icon {
   transform: scale(1.15) rotate(5deg);
   background: rgba(255, 255, 255, 0.3);
-  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .icon-image {
-  width: 100px;
+  width: 60px;
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
@@ -248,10 +253,10 @@ export default {
 }
 
 .feature-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   line-height: 1.2;
   transition: all 0.3s ease;
 }
@@ -262,11 +267,11 @@ export default {
 }
 
 .feature-description {
-  font-size: 14px;
+  font-size: 13px;
   color: #ffffff;
   font-weight: 400;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.3;
   transition: all 0.3s ease;
 }
 
@@ -275,47 +280,34 @@ export default {
   transform: translateY(-1px);
 }
 
-/* Responsive Design */
+/* Mobile Responsive Design */
 @media (max-width: 768px) {
   .section-title {
     font-size: 28px;
     margin: 40px 0 30px 0;
   }
   
+  .swiper-container {
+    padding: 0 15px;
+  }
+  
   .why-swiper {
-    padding: 0 15px 15px 15px;
+    margin: 20px 0;
+    padding: 0 0 15px 0;
+  }
+  
+  .why-slide {
+    width: 200px !important;
   }
   
   .feature-card {
-    max-width: 200px;
-    height: 200px;
-    padding: 25px 15px;
-  }
-  
-  .feature-icon {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .icon-image {
-    width: 28px;
-    height: 28px;
-  }
-}
-
-@media (max-width: 480px) {
-  .why-swiper {
-    padding: 0 10px 10px 10px;
-  }
-  
-  .feature-card {
-    max-width: 180px;
-    height: 180px;
-    padding: 20px 10px;
+    height: 190px;
+    padding: 20px 12px;
   }
   
   .feature-title {
-    font-size: 16px;
+    font-size: 15px;
+    margin-bottom: 6px;
   }
   
   .feature-description {
@@ -325,40 +317,80 @@ export default {
   .feature-icon {
     width: 45px;
     height: 45px;
+    margin-bottom: 10px;
   }
   
   .icon-image {
-    width: 24px;
-    height: 24px;
+    width: 55px;
   }
 }
 
-/* Swiper overrides for smooth experience */
-:deep(.swiper-wrapper) {
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  align-items: center;
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 24px;
+    margin: 30px 0 25px 0;
+  }
+
+  .swiper-container {
+    padding: 0 10px;
+  }
+  
+  .why-swiper {
+    margin: 20px 0;
+    padding: 0 0 10px 0;
+  }
+  
+  .why-slide {
+    width: 170px !important;
+  }
+  
+  .feature-card {
+    height: 180px;
+    padding: 18px 10px;
+  }
+  
+  .feature-title {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .feature-description {
+    font-size: 11px;
+  }
+  
+  .feature-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+  }
+  
+  .icon-image {
+    width: 50px;
+  }
+}
+
+/* Ensure swiper overrides any conflicting styles */
+:deep(.swiper) {
+  overflow: visible !important;
+  width: 100% !important;
 }
 
 :deep(.swiper-slide) {
   transition: transform 0.3s ease;
   will-change: transform;
+  display: flex !important;
+  flex-shrink: 0 !important;
 }
 
-/* Ensure no partial slides on the left */
-:deep(.swiper-container-horizontal > .swiper-pagination-bullets) {
-  display: none;
-}
-
-:deep(.swiper) {
-  overflow: hidden;
-}
-
-/* Prevent slides from being cut off on the left */
-:deep(.swiper-slide:first-child) {
-  margin-left: 0 !important;
-}
-
+/* Remove any grid styling that might interfere */
 :deep(.swiper-wrapper) {
-  transform-origin: left center;
+  grid-template-columns: none !important;
+  grid-gap: none !important;
+  gap: none !important;
+}
+
+/* Prevent horizontal scroll on the entire page */
+* {
+  box-sizing: border-box;
 }
 </style>
