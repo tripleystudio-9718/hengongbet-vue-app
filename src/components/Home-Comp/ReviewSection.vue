@@ -549,7 +549,7 @@ export default {
   border-radius: 0.5rem;
   position: relative;
   width: 100%;
-  min-height: 280px;
+  min-height: 300px;
   height: auto;
   margin-bottom: 0.75rem;
   display: flex;
@@ -574,8 +574,8 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem 2rem 3rem 1.75rem;
-  margin: 0.5rem;
+  padding: 1.5rem 2rem 2.5rem 2rem;
+  margin: 0.75rem;
   position: relative;
   z-index: 1;
 }
@@ -599,12 +599,17 @@ export default {
 
 .review-text {
   color: #E5E7EB;
-  font-size: 0.875rem;
-  line-height: 1.5;
+  font-size: 0.9rem;
+  line-height: 1.6;
   margin: 0;
   word-wrap: break-word;
+  overflow-wrap: break-word;
   hyphens: auto;
   white-space: pre-wrap;
+  text-align: left;
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 /* User Profile */
@@ -655,18 +660,41 @@ export default {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .section-container {
+    text-align: center;
+  }
+  
   .two-column-layout {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
+    align-items: center;
   }
   
   .control-panel {
     width: 100%;
     text-align: center;
+    order: 2; /* Move control panel below slider on mobile */
+  }
+  
+  .slider-wrapper {
+    order: 1; /* Move slider above control panel on mobile */
+    width: 100%;
+  }
+  
+  /* Hide quote image on mobile */
+  .quote-display {
+    display: none;
   }
   
   .panel-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .navigation-controls {
+    justify-content: center;
+    margin-top: 1rem;
   }
   
   .slide-item {
@@ -678,13 +706,46 @@ export default {
   }
   
   .card-body {
-    padding: 1.5rem 1.75rem 1.25rem 1.5rem;
+    padding: 1.75rem 2rem 2rem 1.75rem;
+  }
+  
+  .review-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  
+  .user-profile {
+    padding-left: 1.5rem;
+    justify-content: center;
+  }
+  
+  /* Center all text content */
+  .main-title,
+  .accent-subtitle {
+    text-align: center;
   }
 }
 
 @media (max-width: 640px) {
   .section-container {
     padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  .header-wrapper {
+    margin-bottom: 2rem;
+  }
+  
+  .main-title {
+    font-size: 2rem;
+  }
+  
+  .accent-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .panel-title {
+    font-size: 1.5rem;
   }
   
   .slider-track {
@@ -693,6 +754,85 @@ export default {
   
   .slide-item {
     width: 260px;
+  }
+  
+  .testimonial-card {
+    min-height: 260px;
+  }
+  
+  .card-body {
+    padding: 1.25rem 1.5rem 1.5rem 1.25rem;
+  }
+  
+  .review-text {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+  
+  .user-profile {
+    padding-left: 1.25rem;
+    margin-top: -20px;
+  }
+  
+  .review-text {
+    font-size: 0.8rem;
+  }
+  
+  /* Ensure everything is centered */
+  .content-wrapper {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-container {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .main-title {
+    font-size: 28px;
+    margin: 0;
+  }
+  
+  .accent-subtitle {
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  .panel-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .slide-item {
+    width: 240px;
+  }
+  
+  .testimonial-card {
+    min-height: 240px;
+  }
+  
+  .card-body {
+    padding: 0rem 1.25rem 2.25rem 1rem;
+  }
+  
+  .review-text {
+    font-size: 0.7rem;
+    line-height: 1.3;
+  }
+  
+  .navigation-controls {
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .control-button {
+    padding: 0.4rem;
+  }
+  
+  .control-arrow-icon {
+    width: 1rem;
+    height: 1rem;
   }
 }
 </style>

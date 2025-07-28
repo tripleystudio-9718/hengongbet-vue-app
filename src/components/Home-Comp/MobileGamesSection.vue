@@ -57,7 +57,7 @@
           </div>
         </div>
         
-        <!-- Pagination Dots -->
+        <!-- Pagination Dots
         <div class="carousel-pagination">
           <button
             v-for="(game, index) in featuredGames"
@@ -65,7 +65,7 @@
             @click="goToSlide(index)"
             :class="['pagination-dot', { active: index === currentRealIndex }]"
           ></button>
-        </div>
+        </div> -->
                 
         <!-- Featured Game Info -->
         <div class="featured-info">
@@ -353,7 +353,7 @@ export default {
 }
 
 .mobile-container {
-  padding: 20px 0;
+  padding: 0;
   max-width: 100%;
 }
 

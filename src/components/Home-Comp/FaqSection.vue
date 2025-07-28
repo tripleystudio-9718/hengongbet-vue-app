@@ -128,7 +128,7 @@ export default {
 
 .header-section {
   text-align: center;
-  padding: 60px 20px 40px 20px;
+  padding: 40px 20px;
   margin-bottom: 2rem;
 }
 
@@ -279,19 +279,11 @@ export default {
 /* Responsive Design */
 @media (max-width: 768px) {
   .header-section {
-    padding: 40px 15px 30px 15px;
-  }
-  
-  .main-title {
-    font-size: 2.5rem;
-  }
-  
-  .header-description {
-    font-size: 1rem;
+    padding: 0 15px 0 15px;
   }
   
   .section-container {
-    padding: 1rem;
+    padding: 0;
   }
   
   .accordion-trigger {
@@ -355,11 +347,17 @@ export default {
 
 @media (max-width: 480px) {
   .main-title {
-    font-size: 1.8rem;
+    font-size: 28px;
+    margin: 0;
   }
   
   .header-label {
-    font-size: 1.3rem;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .header-description {
+    font-size: 10px;
   }
 }
 </style>

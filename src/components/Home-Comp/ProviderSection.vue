@@ -229,7 +229,7 @@ export default {
 /* Global Header Section */
 .global-header-section {
   text-align: center;
-  padding: 40px 20px 40px 20px;
+  padding: 0 20px;
 }
 
 .global-brand {
@@ -472,19 +472,7 @@ export default {
 
 @media (max-width: 768px) {
   .global-header-section {
-    padding: 0px 15px 0px 15px;
-  }
-  
-  .global-title {
-    font-size: 2.5rem;
-  }
-  
-  .global-subtitle {
-    font-size: 1.2rem;
-  }
-  
-  .global-description {
-    font-size: 1rem;
+    padding: 15px;
   }
   
   .provider-container {
@@ -504,15 +492,16 @@ export default {
 
 @media (max-width: 480px) {
   .global-title {
-    font-size: 2rem;
+    font-size: 28px;
   }
   
   .global-subtitle {
-    font-size: 1.1rem;
+    font-size: 16px;
+    margin: 10px;
   }
   
   .global-description {
-    font-size: 0.95rem;
+    font-size: 10px;
   }
   
   .px-6 {
@@ -534,13 +523,13 @@ export default {
   }
   
   .mobile-provider-title {
-    font-size: 1.2rem;
+    font-size: 12px;
     margin-bottom: 8px;
     height: 25px;
   }
   
   .mobile-provider-description {
-    font-size: 0.65rem;
+    font-size: 10px;
     line-height: 1.2;
     -webkit-line-clamp: 6;
   }

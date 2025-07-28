@@ -51,7 +51,7 @@
           </h2>
           <p class="subtitle-text">{{ content.affiliateSection.description }}</p>
           
-          <ul class="feature-list-1">
+          <ul class="feature-list-1" style="flex-direction: column;">
             <li v-for="(benefit, index) in content.affiliateSection.benefits" :key="index">
               • {{ benefit }}
             </li>
@@ -305,6 +305,7 @@ export default {
 @media (max-width: 768px) {
   .home-container {
     padding: 0 16px;
+    text-align: center; /* Center all content in mobile */
   }
   
   .banner-image {
@@ -313,64 +314,131 @@ export default {
   
   .section-wrapper {
     padding: 1.5rem 0;
+    text-align: center;
   }
   
   .two-column-section {
     flex-direction: column;
     gap: 24px;
     padding: 40px 0;
+    text-align: center; /* Center two-column content */
   }
 
   .column-image,
   .column-text {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   
   .column-text {
     text-align: center;
   }
+
+  .description-text {
+    margin: 0;
+  }
   
   .feature-list-1 {
-    text-align: center;
+    text-align: center; 
     max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .text-content {
     padding: 0 10px;
+    text-align: center;
+  }
+  
+  /* Center all titles and text */
+  .main-title,
+  .accent-title,
+  .section-title,
+  .subtitle-text,
+  .description-text {
+    text-align: center;
+  }
+  
+  /* Center all sections */
+  .main-content,
+  .content-container {
+    text-align: center;
+  }
+  
+  /* Ensure images are centered */
+  .responsive-image {
+    display: block;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 480px) {
   .home-container {
     padding: 0 12px;
+    text-align: center;
   }
   
   .banner-image {
     max-height: 250px;
   }
+
+  .main-title {
+    margin: 0;
+  }
+
+  .subtitle-text {
+    font-size: 12px;
+    margin: 0;
+  }
   
   .section-wrapper {
     padding: 1rem 0;
+    text-align: center;
   }
   
   .two-column-section {
+    padding: 20px 0;
     gap: 20px;
-    padding: 30px 0;
+    text-align: center;
   }
   
   .text-content {
     padding: 0 5px;
+    text-align: center;
+    font-size: 10px;
   }
   
   .feature-list,
   .feature-list-1 {
-    margin: 1.5rem 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
   }
   
   .feature-list li,
   .feature-list-1 li {
-    margin-bottom: 0.6rem;
+    margin: 0;
     padding: 0 5px;
+    text-align: center;
+    font-size: 10px;
+  }
+  
+  /* Force center alignment for all content */
+  * {
+    text-align: center !important;
+  }
+  
+  /* Exception for maintaining left alignment where needed */
+  .feature-list li::before,
+  .feature-list-1 li::before {
+    text-align: left;
   }
 }
 
@@ -378,6 +446,7 @@ export default {
 @media (max-width: 360px) {
   .home-container {
     padding: 0 10px;
+    text-align: center;
   }
   
   .banner-image {
@@ -386,11 +455,25 @@ export default {
   
   .section-wrapper {
     padding: 0.8rem 0;
+    text-align: center;
   }
   
   .two-column-section {
     padding: 20px 0;
     gap: 16px;
+    text-align: center;
+  }
+  
+  /* Ensure everything is centered on very small screens */
+  .main-title,
+  .accent-title,
+  .section-title,
+  .subtitle-text,
+  .description-text,
+  .text-content {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -402,6 +485,11 @@ export default {
   
   .section-wrapper {
     padding: 1rem 0;
+    text-align: center;
+  }
+  
+  .home-container {
+    text-align: center;
   }
 }
 
@@ -419,6 +507,7 @@ export default {
   .feature-list-1 li {
     padding: 8px 4px;
     margin-bottom: 1rem;
+    text-align: center;
   }
 }
 </style>

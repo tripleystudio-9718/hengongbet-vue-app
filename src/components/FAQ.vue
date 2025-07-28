@@ -567,15 +567,27 @@ export default {
 
 @media (max-width: 480px) {
   .main-title {
-    font-size: 1.3rem;
+    font-size: 28px;
   }
 
   .section-title {
-    font-size: 1.1rem;
+    font-size: 16px;
+  }
+
+  .final-note-content p{
+    font-size: 10px;
   }
 
   .search-box {
     width: 120px;
+  }
+
+  .search-container-input {
+    font-size: 12px;
+  }
+
+  .search-container {
+    padding: 0;
   }
 }
 </style>

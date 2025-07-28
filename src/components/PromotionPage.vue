@@ -11,34 +11,47 @@
       </p>
     </div>
 
-    <!-- Promotion Cards -->
-    <div class="promotion-cards">
+    <!-- Desktop Promotion Cards -->
+    <div v-if="!isMobile" class="promotion-cards">
       <div 
         v-for="(promo, index) in promotions" 
         :key="index"
         class="promotion-card"
         :class="`card-${index + 1}`"
       >
-       <div 
-  class="card-content"
-  :style="{ backgroundImage: `url(${promo.image})` }"
->
-  <div class="overlay-left">
-    <div class="bonus-label">{{ promo.bonusLabel }}</div>
-    <div class="bonus-amount">{{ promo.bonusAmount }}</div>
-    <div class="bonus-subtitle">{{ promo.bonusSubtitle }}</div>
-    <button 
-      class="promo-button"
-      :class="`button-${index + 1}`"
-      @click="handlePromoClick(promo)"
-    >
-      {{ promo.buttonText }}
-    </button>
-  </div>
-</div>
+        <div 
+          class="card-content"
+          :style="{ backgroundImage: `url(${promo.image})` }"
+        >
+          <div class="overlay-left">
+            <div class="bonus-label">{{ promo.bonusLabel }}</div>
+            <div class="bonus-amount">{{ promo.bonusAmount }}</div>
+            <div class="bonus-subtitle">{{ promo.bonusSubtitle }}</div>
+            <button 
+              class="promo-button"
+              :class="`button-${index + 1}`"
+              @click="handlePromoClick(promo)"
+            >
+              {{ promo.buttonText }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-
-        
+    <!-- Mobile Promotion Images -->
+    <div v-if="isMobile" class="mobile-promotion-grid">
+      <div 
+        v-for="(promo, index) in mobilePromotions" 
+        :key="index"
+        class="mobile-promo-item"
+        @click="handlePromoClick(promo)"
+      >
+        <img 
+          :src="promo.mobileImage" 
+          :alt="promo.alt"
+          class="mobile-promo-image"
+        />
       </div>
     </div>
   </div>
@@ -49,6 +62,7 @@ export default {
   name: 'PromotionSection',
   data() {
     return {
+      isMobile: false,
       promotions: [
         {
           bonusLabel: 'Top-up Bonus',
@@ -95,10 +109,47 @@ export default {
           buttonText: 'Get Your Rebate',
           image: new URL('@/assets/promotion5.png', import.meta.url).href,
         }
+      ],
+      mobilePromotions: [
+        {
+          mobileImage: new URL('@/assets/mobile-promotion-1.png', import.meta.url).href,
+          alt: 'Mobile Promotion 1',
+          title: 'Top-up Bonus 68%'
+        },
+        {
+          mobileImage: new URL('@/assets/mobile-promotion-2.png', import.meta.url).href,
+          alt: 'Mobile Promotion 2',
+          title: 'Top-up Rebate 0.5%'
+        },
+        {
+          mobileImage: new URL('@/assets/mobile-promotion-3.png', import.meta.url).href,
+          alt: 'Mobile Promotion 3',
+          title: 'Top-up Bonus 200%'
+        },
+        {
+          mobileImage: new URL('@/assets/mobile-promotion-4.png', import.meta.url).href,
+          alt: 'Mobile Promotion 4',
+          title: 'Daily Rebate Up to 3%'
+        },
+        {
+          mobileImage: new URL('@/assets/mobile-promotion-5.png', import.meta.url).href,
+          alt: 'Mobile Promotion 5',
+          title: 'Referral Rebate Up to 10%'
+        }
       ]
     }
   },
+  mounted() {
+    this.checkMobile()
+    window.addEventListener('resize', this.checkMobile)
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkMobile)
+  },
   methods: {
+    checkMobile() {
+      this.isMobile = window.innerWidth <= 768
+    },
     handlePromoClick(promo) {
       console.log('Promotion clicked:', promo.title);
       // Add your click handling logic here
@@ -151,7 +202,7 @@ export default {
   margin: 0 auto;
 }
 
-/* Promotion Cards */
+/* Desktop Promotion Cards */
 .promotion-cards {
   width: 60%;
   margin: 0 auto;
@@ -201,12 +252,11 @@ export default {
   border-bottom-left-radius: 16px;
 }
 
-
 .bonus-label {
   margin-top: 12px;
   font-size: 0.9rem;
   opacity: 0.8;
-  color: inherit; /* <-- Use color from parent .card-X */
+  color: inherit;
 }
 
 .bonus-amount {
@@ -218,7 +268,7 @@ export default {
 .bonus-subtitle {
   font-size: 0.9rem;
   opacity: 0.85;
-  color: inherit; /* <-- Use color from parent .card-X */
+  color: inherit;
 }
 
 .card-1 .bonus-label,
@@ -246,7 +296,6 @@ export default {
   color: #8A64FF;
 }
 
-
 /* CTA Button */
 .promo-button {
   background-color: transparent;
@@ -259,7 +308,6 @@ export default {
   cursor: pointer;
   width: fit-content;
   transition: background 0.3s ease;
-  
 }
 
 .promo-button:active {
@@ -278,6 +326,39 @@ export default {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 calc(100% - 20px));
 }
 
+/* Mobile Promotion Grid */
+.mobile-promotion-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.mobile-promo-item {
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.mobile-promo-item:hover {
+  transform: scale(1.02);
+}
+
+.mobile-promo-item:active {
+  transform: scale(0.98);
+}
+
+.mobile-promo-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .card-content {
@@ -288,10 +369,6 @@ export default {
   .bonus-amount {
     font-size: 3rem;
   }
-
-  .promo-title {
-    font-size: 1.3rem;
-  }
 }
 
 @media (max-width: 768px) {
@@ -299,51 +376,82 @@ export default {
     padding: 20px 15px;
   }
 
+  .promotion-header {
+    margin-bottom: 30px;
+  }
+
   .main-title {
-    font-size: 2rem;
+    font-size: 24px;
   }
 
   .subtitle {
-    font-size: 1.2rem;
+    font-size: 28px;
   }
 
-  .card-content {
-    flex-direction: column;
-    text-align: center;
-    height: auto;
+  .description {
+    font-size: 14px;
+    padding: 0 10px;
   }
 
-  .overlay-left {
-    width: 100%;
-    padding: 30px 20px;
+  .mobile-promotion-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 12px;
+    padding: 0 16px;
   }
 
-  .bonus-amount {
-    font-size: 2.5rem;
-  }
-
-  .promo-button {
-    position: static;
-    margin-top: 15px;
-    width: 100%;
+  .mobile-promo-image {
+    border-radius: 8px;
   }
 }
 
 @media (max-width: 480px) {
+  .promotion-container {
+    padding: 16px 12px;
+  }
+
   .main-title {
-    font-size: 1.5rem;
+    font-size: 20px;
   }
 
-  .card-content {
-    padding: 20px;
+  .subtitle {
+    font-size: 24px;
   }
 
-  .bonus-amount {
-    font-size: 2rem;
+  .description {
+    font-size: 13px;
+    padding: 0 8px;
   }
 
-  .promo-title {
-    font-size: 1.1rem;
+  .mobile-promotion-grid {
+    gap: 10px;
+    padding: 0 12px;
+  }
+
+  .mobile-promo-item {
+    border-radius: 8px;
+  }
+
+  .mobile-promo-image {
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 360px) {
+  .main-title {
+    font-size: 18px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .mobile-promotion-grid {
+    gap: 8px;
+    padding: 0 8px;
   }
 }
 </style>

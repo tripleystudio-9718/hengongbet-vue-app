@@ -16,14 +16,14 @@
           :class="['app-guide-tab-btn', { 'app-guide-active': activeTab === tab.id }]"
         >
           <i :class="tab.icon"></i>
-          {{ tab.title }}
+          <span class="tab-text">{{ tab.title }}</span>
         </button>
       </div>
 
       <div class="app-guide-tab-content">
         <!-- Instruction Section -->
         <div class="instruction-section">
-          <h2 class="instruction-title">Instruction</h2>
+          <h2 class="instruction-title">Instructions</h2>
           
           <!-- Slides Container -->
           <div class="app-guide-slides-wrapper">
@@ -74,6 +74,17 @@
               <i class="fas fa-arrow-right"></i>
             </button>
           </div>
+
+          <!-- Dot indicators for mobile -->
+          <!-- <div class="slide-indicators">
+            <button
+              v-for="(step, index) in currentTabSteps"
+              :key="index"
+              @click="goToSlide(index)"
+              :class="['slide-dot', { active: currentSlide === index }]"
+            >
+            </button>
+          </div> -->
         </div>
       </div>
     </div>
@@ -182,21 +193,42 @@ export default {
 </script>
 
 <style scoped>
-/* Font Awesome CDN - Add this to your main HTML file */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+/* CSS Custom Properties for consistent theming */
+:root {
+  --primary-gold: #F2B240;
+  --primary-gold-light: #F0AD3C;
+  --primary-gold-dark: #ED9326;
+  --bg-dark: #242424;
+  --bg-secondary: #27272A;
+  --text-light: #ffffff;
+  --text-muted: #C0BEBE;
+  --border-color: #666666;
+  --border-radius: 24px;
+  --border-radius-small: 12px;
+}
 
 .app-guide-container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 /* Header Section */
 .app-guide-header-section {
   text-align: center;
-  padding: 60px 0 40px 0;
+  padding: 40px 0 30px 0;
+  width: 100%;
 }
 
 .app-guide-header-subtitle {
-  color: #ffffff;
+  color: var(--text-light);
   font-size: 32px;
   font-weight: 500;
   margin: 0 0 0.5rem 0;
@@ -216,69 +248,67 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 60px 0;
   width: 1000px;
-  border-radius: 24px;
   overflow: hidden;
   padding: 15px;
   margin: auto;
-  margin-top: 0;
-  margin-bottom: 60px;
   gap: 20px;
 }
 
 .app-guide-tab-navigation {
   display: flex;
+  flex-direction: row;
   gap: 10px;
-  justify-content: center;
-  align-items: center;
-  background-color: #242424;
-  padding: 15px;
   width: 60%;
+  padding: 10px;
+  justify-content: center;
   border-radius: 16px;
+border: 2.031px solid #242424;
+background: #242424;
 }
 
 .app-guide-tab-btn {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 16px;
-  background-color: transparent;
-  color: #ffffff;
+  padding: 10px;
+  background: transparent;
+  color: var(--text-light);
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-weight: 500;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 16px;
   border-radius: 50px;
   position: relative;   
-  width: 100%;
+  flex: 1;
   text-align: center;
   justify-content: center;
 }
 
 .app-guide-tab-btn i {
   font-size: 1.1rem;
+  flex-shrink: 0;
 }
 
 .app-guide-tab-btn:hover {
-  background: linear-gradient(to right, #F0AD3C 0%, #ED9326 100%);
-  border-radius: 13px;
+  background: transparent;
 }
 
 .app-guide-tab-btn.app-guide-active {
-  background: linear-gradient(to right, #F0AD3C 0%, #ED9326 100%);
-  border-radius: 13px;
+  border-radius: 12.943px;
+background: linear-gradient(180deg, #F0AD3C 0%, #ED9326 100%);
+background-blend-mode: plus-darker;
   color: #000000;
   font-weight: 600;
 }
 
 .app-guide-tab-content {
-  background: #242424;
-  min-height: 200px;
-  width: 85%;
-  padding: 20px;
-  border-radius: 24px;
-  height: 100%;
+  padding: 20px 20px 40px 20px;
+border-radius: 24.388px;
+background: #242424;
+box-shadow: 0 5.528px 5.528px 0 rgba(0, 0, 0, 0.25);
 }
 
 .instruction-section {
@@ -286,7 +316,7 @@ export default {
 }
 
 .instruction-title {
-  color: #ffffff;
+  color: var(--text-light);
   font-size: 32px;
   font-weight: 500;
   margin: 0 0 30px 0;
@@ -295,52 +325,8 @@ export default {
 
 .app-guide-slides-wrapper {
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: var(--border-radius-small);
   margin-bottom: 30px;
-}
-
-.app-guide-bottom-navigation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.app-guide-nav-arrow {
-  background: transparent;
-  border: 2px solid #666666;
-  border-radius: 8px;
-  width: 50px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  color: #ffffff;
-  font-size: 0.9rem;
-}
-
-.app-guide-nav-arrow:hover:not(:disabled) {
-  border-color: #F0AD3C;
-  color: #F0AD3C;
-  background: rgba(240, 173, 60, 0.1);
-}
-
-.app-guide-nav-arrow:disabled {
-  border-color: #333333;
-  color: #555555;
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.app-guide-page-counter {
-  color: #ffffff;
-  font-size: 1.1rem;
-  font-weight: 600;
-  min-width: 50px;
-  text-align: center;
 }
 
 .app-guide-slides {
@@ -360,14 +346,14 @@ export default {
 }
 
 .step-title {
-  color: #F2B240;
+  color: var(--primary-gold);
   font-size: 28px;
   font-weight: 500;
   margin: 0 0 20px 0;
 }
 
 .step-description {
-  color: #ffffff;
+  color: var(--text-light);
   font-size: 20px;
   font-weight: 400;
   line-height: 1.5;
@@ -388,123 +374,350 @@ export default {
   max-height: 300px;
   width: auto;
   height: auto;
-  border-radius: 12px;
+  border-radius: var(--border-radius-small);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   object-fit: contain;
   display: block;
 }
 
-/* Responsive Design */
+.app-guide-bottom-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.app-guide-nav-arrow {
+  background: transparent;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  width: 50px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.app-guide-nav-arrow:hover:not(:disabled) {
+  border-color: var(--primary-gold-light);
+  color: var(--primary-gold-light);
+  background: rgba(240, 173, 60, 0.1);
+}
+
+.app-guide-nav-arrow:disabled {
+  border-color: #333333;
+  color: #555555;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.app-guide-page-counter {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  font-weight: 600;
+  min-width: 50px;
+  text-align: center;
+}
+
+.slide-indicators {
+  display: none; /* Hidden on desktop, shown on mobile */
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.slide-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #666666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slide-dot.active {
+  background: var(--primary-gold);
+  transform: scale(1.2);
+}
+
+/* Mobile-First Responsive Design */
 @media (max-width: 768px) {
-  .app-guide-header-section {
-    padding: 40px 20px 30px 20px;
+  .app-guide-container {
+    padding: 0;
   }
-  
+
+  .app-guide-header-section {
+    padding: 20px 0;
+  }
+
   .app-guide-header-subtitle {
     font-size: 24px;
+    margin-bottom: 8px;
   }
-  
+
   .app-guide-header-title {
-    font-size: 32px;
+    font-size: 28px;
   }
-  
+
   .app-guide-features-section {
-    width: 100%;
-    margin-top: 0;
-    margin-bottom: 40px;
-  }
-  
-  .app-guide-tab-navigation {
+    width: calc(100% - 40px);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
     flex-direction: column;
-    width: 80%;
+    align-items: center;
+    border-radius: 16px;
+    gap: 10px;
   }
-  
+
+  .app-guide-tab-navigation {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin-bottom: 0;
+  }
+
   .app-guide-tab-btn {
+    flex: 1;
     text-align: center;
-    padding: 15px 20px;
-    font-size: 16px;
-    border-radius: 13px !important;
+    padding: 12px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 25px;
+    color: var(--text-light);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 44px;
+    justify-content: center;
   }
-  
+
   .app-guide-tab-content {
-    padding: 25px 20px;
-    width: 90%;
+    width: 100%;
+    padding: 24px 24px;
+    border-radius: 16px;
+    min-height: auto;
   }
-  
+
   .instruction-title {
     font-size: 24px;
+    margin-bottom: 20px;
     text-align: center;
   }
-  
+
+  .step-content {
+    padding: 16px;
+  }
+
   .step-title {
-    font-size: 22px;
+    font-size: 20px;
+    margin-bottom: 12px;
     text-align: center;
   }
-  
+
   .step-description {
     font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
     text-align: center;
   }
-  
+
+  .step-image-container {
+    padding: 16px 0;
+  }
+
+  .step-image {
+    max-width: 90%;
+    max-height: 250px;
+    border-radius: 8px;
+  }
+
+  .app-guide-bottom-navigation {
+    gap: 16px;
+    margin-top: 16px;
+  }
+
   .app-guide-nav-arrow {
-    width: 45px;
-    height: 35px;
+    width: 44px;
+    height: 44px;
     font-size: 0.8rem;
   }
-  
+
   .app-guide-page-counter {
     font-size: 1rem;
+    min-width: 40px;
+  }
+
+  .slide-indicators {
+    display: flex;
+  }
+
+  .app-guide-slides-wrapper {
+    margin-bottom: 20px;
   }
 }
 
 @media (max-width: 480px) {
+  .app-guide-container {
+    padding: 0;
+  }
+
+  .app-guide-header-subtitle {
+    font-size: 16px;
+  }
+
   .app-guide-header-title {
     font-size: 28px;
   }
-  
-  .app-guide-header-subtitle {
-    font-size: 20px;
-  }
-  
-  .app-guide-features-section {
-    width: 95%;
-  }
-  
+
   .app-guide-tab-navigation {
-    width: 95%;
-    padding: 15px;
+    padding: 8px;
+    gap: 4px;
   }
-  
+
   .app-guide-tab-btn {
-    padding: 12px 16px;
-    font-size: 14px;
+    padding: 8px 6px;
+    font-size: 12px;
+    gap: 4px;
+    flex-direction: row;
   }
-  
+
+  .app-guide-tab-btn i {
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+  }
+
+  .tab-text {
+    font-size: 10px;
+    line-height: 1;
+  }
+
   .app-guide-tab-content {
-    padding: 20px 16px;
-    width: 95%;
+    padding: 12px;
   }
-  
+
   .instruction-title {
     font-size: 20px;
+    margin-bottom: 16px;
   }
-  
+
+  .step-content {
+    padding: 12px;
+  }
+
   .step-title {
     font-size: 18px;
+    margin-bottom: 10px;
   }
-  
+
   .step-description {
     font-size: 14px;
+    margin-bottom: 16px;
   }
-  
+
+  .step-image {
+    max-width: 95%;
+    max-height: 200px;
+  }
+
+  .app-guide-bottom-navigation {
+    gap: 12px;
+    margin-top: 12px;
+  }
+
   .app-guide-nav-arrow {
     width: 40px;
-    height: 30px;
+    height: 40px;
     font-size: 0.7rem;
   }
-  
+
   .app-guide-page-counter {
     font-size: 0.9rem;
+    min-width: 35px;
+  }
+
+  .slide-indicators {
+    gap: 6px;
+    margin-top: 16px;
+  }
+
+  .slide-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .app-guide-header-subtitle {
+    font-size: 18px;
+  }
+
+  .app-guide-header-title {
+    font-size: 22px;
+  }
+
+  .app-guide-tab-btn {
+    min-height: 48px;
+    padding: 6px 4px;
+  }
+
+  .tab-text {
+    font-size: 9px;
+  }
+
+  .instruction-title {
+    font-size: 18px;
+  }
+
+  .step-title {
+    font-size: 16px;
+  }
+
+  .step-description {
+    font-size: 13px;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  .app-guide-tab-btn:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+
+  .app-guide-nav-arrow:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+
+  .slide-dot:active {
+    transform: scale(1.3);
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+  .app-guide-header-section {
+    padding: 16px 0;
+  }
+
+  .step-image {
+    max-height: 180px;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .step-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
   }
 }
 </style>

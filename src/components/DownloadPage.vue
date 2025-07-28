@@ -1,6 +1,6 @@
 <template>
   <div class="app-download-section">
-    <!-- Section 1: App Download with Background -->
+    <!-- Section 1: App Download -->
     <div class="app-section-with-background">
       <div class="content-overlay">
         <!-- Left Side - App Info and QR Codes -->
@@ -39,9 +39,9 @@
             <button class="signup-button">Sign Up Now !</button>
           </div>
         </div>
-        <!-- Center - Empty space for phone visibility -->
+        <!-- Center - Phone Image for Mobile -->
         <div class="center-content">
-          <!-- This space allows the background phone to be visible -->
+          <img :src="MobileDownloadBanner" alt="Phone Download" class="center-phone-image" />
         </div>
         <!-- Right Side - Features Grid -->
         <div class="right-content">
@@ -141,11 +141,11 @@
           
           <!-- Browser Address Bar Mockup -->
           <div class="browser-mockup">
-              <img src="@/assets/step1-image.webp" alt="iOS Logo" class="platform-icon" />
+              <img src="@/assets/step1-image.webp" alt="Step 1" class="step-image" />
           </div>
           <!-- Dotted Arrow -->
           <div class="dotted-arrow">
-           <img src="@/assets/download-arrow.png" alt="iOS Logo" class="platform-icon" />
+           <img src="@/assets/download-arrow.png" alt="Arrow" class="arrow-image" />
         </div> </div>
       <!-- Step 2 -->
         <div class="step-section">
@@ -157,11 +157,11 @@
           
           <!-- Mobile Installation Dialog -->
           <div class="mobile-dialog">
-        <img src="@/assets/step2-image.webp" alt="iOS Logo" class="platform-icon" />
+        <img src="@/assets/step2-image.webp" alt="Step 2" class="step-image" />
           </div>
           <!-- Dotted Arrow -->
           <div class="dotted-arrow">
-           <img src="@/assets/download-arrow.png" alt="iOS Logo" class="platform-icon" />
+           <img src="@/assets/download-arrow.png" alt="Arrow" class="arrow-image" />
         </div> </div>
         <!-- Step 3 -->
         <div class="step-section">
@@ -172,7 +172,7 @@
           
           <!-- Mobile Installation Dialog -->
           <div class="mobile-dialog">
-        <img src="@/assets/step3-image.webp" alt="iOS Logo" class="platform-icon" />
+        <img src="@/assets/step3-image.webp" alt="Step 3" class="step-image" />
           </div>
         </div>
       </div>
@@ -189,11 +189,11 @@
           
           <!-- Browser Address Bar Mockup -->
           <div class="browser-mockup">
-              <img src="@/assets/ios-step1-image.webp" alt="iOS Logo" class="platform-icon" />
+              <img src="@/assets/ios-step1-image.webp" alt="iOS Step 1" class="step-image" />
           </div>
           <!-- Dotted Arrow -->
           <div class="dotted-arrow">
-           <img src="@/assets/download-arrow.png" alt="iOS Logo" class="platform-icon" />
+           <img src="@/assets/download-arrow.png" alt="Arrow" class="arrow-image" />
         </div> </div>
         <!-- Step 2 -->
         <div class="step-section">
@@ -205,11 +205,11 @@
           
           <!-- Mobile Installation Dialog -->
           <div class="mobile-dialog">
-        <img src="@/assets/ios-step2-image.webp" alt="iOS Logo" class="platform-icon" />
+        <img src="@/assets/ios-step2-image.webp" alt="iOS Step 2" class="step-image" />
           </div>
           <!-- Dotted Arrow -->
           <div class="dotted-arrow">
-           <img src="@/assets/download-arrow.png" alt="iOS Logo" class="platform-icon" />
+           <img src="@/assets/download-arrow.png" alt="Arrow" class="arrow-image" />
         </div> </div>
         <!-- Step 3 -->
         <div class="step-section">
@@ -221,7 +221,7 @@
           
           <!-- Mobile Installation Dialog -->
           <div class="mobile-dialog">
-        <img src="@/assets/ios-step3-image.webp" alt="iOS Logo" class="platform-icon" />
+        <img src="@/assets/ios-step3-image.webp" alt="iOS Step 3" class="step-image" />
           </div>
         </div>
               </div>
@@ -237,11 +237,11 @@
           
           <!-- Browser Address Bar Mockup -->
           <div class="browser-mockup">
-              <img src="@/assets/desk-step1-image.webp" alt="iOS Logo" class="platform-icon" />
+              <img src="@/assets/desk-step1-image.webp" alt="Desktop Step 1" class="step-image" />
           </div>
           <!-- Dotted Arrow -->
           <div class="dotted-arrow">
-           <img src="@/assets/download-arrow.png" alt="iOS Logo" class="platform-icon" />
+           <img src="@/assets/download-arrow.png" alt="Arrow" class="arrow-image" />
         </div> </div>
         <!-- Step 2 -->
         <div class="step-section">
@@ -252,7 +252,7 @@
           
           <!-- Mobile Installation Dialog -->
           <div class="mobile-dialog">
-        <img src="@/assets/desk-step2-image.webp" alt="iOS Logo" class="platform-icon" />
+        <img src="@/assets/desk-step2-image.webp" alt="Desktop Step 2" class="step-image" />
           </div>
     </div>
            </div>
@@ -266,6 +266,7 @@ import iosIcon from '@/assets/ios-code.png'
 import androidIcon from '@/assets/android-code.png'
 import desktopIcon from '@/assets/desktop-icon.svg'
 import downloadBackground from '@/assets/download-background.png'
+import MobileDownloadBanner from '@/assets/mobile-download-banner.png'
 import yellowClock from '@/assets/yellow-clock.png'
 import giftIcon from '@/assets/gift-icon.png'
 import moneyIcon from '@/assets/money-icon.png'
@@ -282,6 +283,8 @@ export default {
       giftIcon,
       moneyIcon,
       yellowHuman,
+      downloadBackground,
+      MobileDownloadBanner,
       // Download guide state
       activeTab: 'android'
     }
@@ -304,16 +307,23 @@ export default {
   position: relative;
 }
 
-/* Section 1: App Section with Phone Background */
+/* Section 1: App Section */
 .app-section-with-background {
-  background-image: url('@/assets/download-background.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: #1a1a1a;
   min-height: 600px;
   width: 100%;
   position: relative;
   overflow: hidden;
+}
+
+/* Desktop: Background Image */
+@media (min-width: 1025px) {
+  .app-section-with-background {
+    background-image: url('@/assets/download-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 
 .content-overlay {
@@ -455,7 +465,7 @@ export default {
   transform: translateY(-2px);
 }
 
-/* Center Content - Empty space for phone visibility */
+/* Center Content - Phone Image */
 .center-content {
   flex: 1;
   display: flex;
@@ -463,7 +473,22 @@ export default {
   align-items: center;
   width: 40%;
   min-height: 600px;
-  /* This space allows the background phone image to be visible */
+}
+
+.center-phone-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: none; /* Hidden on desktop */
+}
+
+/* Mobile: Show center phone image */
+@media (max-width: 1024px) {
+  .center-phone-image {
+    display: block;
+    max-width: 300px;
+    width: 100%;
+  }
 }
 
 /* Right Content - Features Grid */
@@ -732,71 +757,11 @@ export default {
   margin-bottom: 30px;
 }
 
-.browser-mockup img{
+.step-image {
   width: 80%;
-  height:auto;
-  margin:0 auto;
-}
-
-.address-bar {
-  background: white;
-  border-radius: 8px;
-  padding: 12px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.url-section {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex: 1;
-}
-
-.protocol {
-  font-size: 14px;
-}
-
-.url-text {
-  color: #333;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.download-icon {
-  margin-right: 12px;
-}
-
-.download-button-guide {
-  width: 32px;
-  height: 32px;
-  background: #fee2e2;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.download-button-guide:hover {
-  background: #fecaca;
-}
-
-.close-button {
-  background: none;
-  border: none;
-  color: #666;
-  font-size: 16px;
-  cursor: pointer;
-  padding: 4px;
-  border-radius: 4px;
-}
-
-.close-button:hover {
-  background: #f3f4f6;
+  height: auto;
+  margin: 0 auto;
+  max-width: 400px;
 }
 
 /* Dotted Arrow */
@@ -806,27 +771,10 @@ export default {
   align-items: center;
 }
 
-.dotted-arrow img{
-    width:50%;
-    height: 100%;
-}
-
-.arrow-line {
-  width: 2px;
-  height: 40px;
-  background: repeating-linear-gradient(
-    to bottom,
-    #f59e0b 0px,
-    #f59e0b 4px,
-    transparent 4px,
-    transparent 8px
-  );
-}
-
-.arrow-head {
-  color: #f59e0b;
-  font-size: 20px;
-  margin-top: -2px;
+.arrow-image {
+  width: 50%;
+  height: auto;
+  max-width: 200px;
 }
 
 /* Mobile Dialog */
@@ -834,103 +782,18 @@ export default {
   background: white;
   border-radius: 12px;
   width: 80%;
-  height: 100%;
+  max-width: 400px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   overflow: hidden;
-    display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom:30px;
+  margin-bottom: 30px;
 }
 
-.mobile-dialog img{
+.mobile-dialog img {
   width: 70%;
-  height: 100%;
-}
-
-.dialog-header {
-  padding: 16px 20px;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.dialog-header h3 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
-}
-
-.dialog-content {
-  padding: 20px;
-}
-
-.app-preview {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.app-icon {
-  width: 48px;
-  height: 48px;
-  background: #f3f4f6;
-  border-radius: 8px;
-  flex-shrink: 0;
-}
-
-.app-details {
-  flex: 1;
-}
-
-.app-name-line {
-  width: 120px;
-  height: 12px;
-  background: #e5e7eb;
-  border-radius: 6px;
-  margin-bottom: 8px;
-}
-
-.app-url-line {
-  width: 80px;
-  height: 10px;
-  background: #f3f4f6;
-  border-radius: 5px;
-}
-
-.dialog-buttons {
-  padding: 16px 20px;
-  display: flex;
-  gap: 12px;
-  justify-content: flex-end;
-  border-top: 1px solid #e5e7eb;
-}
-
-.dialog-button {
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  border: none;
-}
-
-.install-button {
-  background: #3b82f6;
-  color: white;
-}
-
-.install-button:hover {
-  background: #2563eb;
-}
-
-.cancel-button {
-  background: #f3f4f6;
-  color: #6b7280;
-}
-
-.cancel-button:hover {
-  background: #e5e7eb;
+  height: auto;
 }
 
 .tab-button .platform-icon {
@@ -946,7 +809,7 @@ export default {
 }
 
 .tab-button.active .platform-icon {
-    filter: brightness(0) invert(0)
+  filter: brightness(0) invert(0);
 }
 
 /* Responsive Design */
@@ -963,16 +826,20 @@ export default {
     max-width: 100%;
     height: auto;
     text-align: center;
+    order: 1;
+  }
+  
+  .center-content {
+    width: 100%;
+    order: 2;
+    min-height: 300px;
   }
   
   .right-content {
     width: 100%;
     max-width: 100%;
     height: auto;
-  }
-  
-  .center-content {
-    display: none; /* Hide empty space on mobile */
+    order: 3;
   }
   
   .features-grid {
@@ -998,6 +865,18 @@ export default {
 }
 
 @media (max-width: 768px) {
+  .left-content {
+    order: 3;
+  }
+
+  .center-content {
+    order: 1;
+  }
+
+  .right-content {
+    order: 2
+  }
+
   .app-title {
     font-size: 2.5rem;
     text-align: center;
@@ -1006,20 +885,6 @@ export default {
   .app-subtitle {
     font-size: 1.8rem;
     text-align: center;
-  }
-  
-  .left-content {
-    align-items: center;
-    text-align: center;
-    order: 3;
-  }
-
-  .center-content{
-    order: 1;
-  }
-  
-  .right-content {
-    order: 2;
   }
   
   .qr-codes {
@@ -1095,6 +960,16 @@ export default {
   
   .mobile-dialog {
     max-width: 300px;
+  }
+  
+  .step-image {
+    width: 90%;
+    max-width: 300px;
+  }
+  
+  .arrow-image {
+    width: 60%;
+    max-width: 150px;
   }
 }
 
@@ -1202,6 +1077,138 @@ export default {
   
   .mobile-dialog {
     max-width: 250px;
+  }
+  
+  .step-image {
+    width: 95%;
+    max-width: 250px;
+  }
+  
+  .arrow-image {
+    width: 70%;
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 360px) {
+  .center-phone-image {
+    max-width: 180px;
+  }
+  
+  .app-title {
+    font-size: 1.8rem;
+  }
+  
+  .app-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .qr-placeholder img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .features-grid {
+    max-width: 240px;
+    gap: 10px;
+  }
+  
+  .feature-card {
+    padding: 12px 8px;
+    min-height: 90px;
+  }
+  
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .feature-title {
+    font-size: 0.9rem;
+  }
+  
+  .feature-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .guide-title {
+    font-size: 1.6rem;
+  }
+  
+  .step-badge {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+  
+  .step-title {
+    font-size: 1.1rem;
+  }
+  
+  .step-description {
+    font-size: 13px;
+    max-width: 240px;
+  }
+  
+  .browser-mockup {
+    max-width: 240px;
+  }
+  
+  .mobile-dialog {
+    max-width: 220px;
+  }
+  
+  .step-image {
+    width: 100%;
+    max-width: 220px;
+  }
+  
+  .arrow-image {
+    width: 80%;
+    max-width: 100px;
+  }
+  
+  .tab-button {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+  
+  .affiliate-text {
+    font-size: 14px;
+  }
+  
+  .signup-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  .download-button:active {
+    transform: scale(0.98);
+  }
+  
+  .signup-button:active {
+    transform: scale(0.98);
+  }
+  
+  .tab-button:active {
+    transform: scale(0.98);
+  }
+  
+  .feature-card:active {
+    transform: translateY(-4px);
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .center-phone-image,
+  .step-image,
+  .arrow-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
   }
 }
 </style>

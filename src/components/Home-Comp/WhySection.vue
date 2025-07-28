@@ -286,8 +286,7 @@ export default {
 }
 
 .py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 0;
 }
 
 /* Desktop Why Container */
@@ -480,7 +479,7 @@ export default {
 /* Responsive Design */
 @media (max-width: 768px) {
   .why-header-section {
-    padding: 40px 20px 30px 20px;
+    padding: 0 20px 30px 20px;
   }
   
   .why-header-title {
@@ -516,7 +515,7 @@ export default {
   }
   
   .mobile-card {
-    height: 260px;
+    height: 280px;
     padding: 16px;
     border-radius: 16px;
   }

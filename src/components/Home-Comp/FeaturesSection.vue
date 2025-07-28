@@ -326,7 +326,7 @@ export default {
   
   .tab-content {
     width: 100%;
-    padding: 24px 20px;
+    padding: 24px 24px;
     border-radius: 16px;
     background: #27272A;
     min-height: auto;
@@ -405,7 +405,7 @@ export default {
 
 @media (max-width: 480px) {
   .features-section {
-    margin: 30px auto;
+    margin: 0 auto;
     padding: 16px;
     border-radius: 12px;
   }
@@ -416,7 +416,7 @@ export default {
   }
   
   .tab-content {
-    padding: 20px 16px;
+    padding: 20px 10px;
     border-radius: 12px;
   }
   
@@ -425,11 +425,12 @@ export default {
   }
   
   .feature-title {
-    font-size: 14px;
+    font-size: 10px;
   }
   
   .feature-description {
-    font-size: 14px;
+    font-size: 10px;
+    text-align: left;
   }
   
   .feature-separator {
@@ -438,25 +439,26 @@ export default {
   
   .library-header,
   .secure-header {
-    font-size: 15px;
+    font-size: 12px;
   }
   
   .providers-list li,
   .secure-list li {
-    font-size: 13px;
+    font-size: 10px;
+    text-align: left;
   }
   
   .platform-section {
-    padding: 0 12px;
+    padding: 0;
     margin: 30px auto 15px auto;
   }
   
   .platform-title {
-    font-size: 18px;
+    font-size: 16px;
   }
   
   .platform-description {
-    font-size: 14px;
+    font-size: 10px;
   }
 }
 
@@ -472,7 +474,7 @@ export default {
   }
   
   .tab-content {
-    padding: 16px 12px;
+    padding: 16px 16px;
   }
   
   .feature-title {

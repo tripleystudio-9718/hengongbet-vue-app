@@ -22,7 +22,7 @@
         </div>
 
         <!-- Dotted Line 1 -->
-        <div class="dotted-line-container">
+        <div class="dotted-line-container dotted-line-1">
           <div class="circle"></div>
           <div class="dotted-line"></div>
           <div class="circle"></div>
@@ -41,7 +41,7 @@
         </div>
 
         <!-- Dotted Line 2 -->
-        <div class="dotted-line-container">
+        <div class="dotted-line-container dotted-line-2">
           <div class="circle"></div>
           <div class="dotted-line"></div>
           <div class="circle"></div>
@@ -60,7 +60,7 @@
         </div>
 
         <!-- Dotted Line 3 -->
-        <div class="dotted-line-container">
+        <div class="dotted-line-container dotted-line-3">
           <div class="circle"></div>
           <div class="dotted-line"></div>
           <div class="circle"></div>
@@ -129,10 +129,9 @@ export default {
 </script>
 
 <style scoped>
-/* Header Section */
 .header-section {
   text-align: center;
-  padding: 60px 0 40px 0;
+  padding: 40px 0;
 }
 
 .header-subtitle {
@@ -275,51 +274,209 @@ export default {
   .header-title {
     font-size: 2.5rem;
   }
-  
-  .steps-container {
-    flex-direction: column;
-    gap: 3rem;
-    align-items: center;
+
+  .py-8 {
+    padding: 0;
   }
   
-  .dotted-line-container {
-    transform: rotate(90deg);
-    width: 80px;
+  .steps-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 2rem 0.5rem;
+    align-items: center;
+    justify-items: center;
+    max-width: 100%;
+  }
+  
+  /* Grid positioning for mobile layout with connecting lines */
+  .step-item:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  
+  .dotted-line-1 {
+    grid-column: 2;
+    grid-row: 1;
+    width: 60px;
     margin-top: 0;
+  }
+  
+  .step-item:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  
+  .step-item:nth-child(5) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  
+  .dotted-line-3 {
+    grid-column: 2;
+    grid-row: 3;
+    width: 60px;
+    margin-top: 0;
+  }
+  
+  .step-item:nth-child(7) {
+    grid-column: 3;
+    grid-row: 3;
+  }
+  
+  /* Hide the middle dotted line (between steps 2-3) on mobile */
+  .dotted-line-2 {
+    display: none;
   }
   
   .step-item {
     max-width: 100%;
     align-items: center;
+    text-align: center;
   }
   
   .step-content {
     justify-content: center;
     text-align: center;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+    gap: 0.5rem;
   }
   
   .steps-desc {
     text-align: center;
+    width: 100%;
   }
   
   .steps-img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0.5rem;
   }
   
   .num-img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .steps-h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .steps-p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+  
+  /* Mobile dotted line styling */
+  .dotted-line-container .circle {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .dotted-line-container .dotted-line {
+    height: 2px;
+    background-image: repeating-linear-gradient(
+      to right,
+      #ED8F23 0px,
+      #ED8F23 4px,
+      transparent 4px,
+      transparent 8px
+    );
   }
 }
 
 @media (max-width: 480px) {
   .header-title {
-    font-size: 2rem;
+    font-size: 28px;
   }
   
   .header-subtitle {
+    font-size: 16px;
+  }
+  
+  .px-6 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .steps-container {
+    gap: 1.5rem 0.25rem;
+  }
+  
+  .dotted-line-1,
+  .dotted-line-3 {
+    width: 40px;
+  }
+  
+  .steps-img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .num-img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .steps-h2 {
     font-size: 1rem;
+  }
+  
+  .steps-p {
+    font-size: 0.75rem;
+  }
+  
+  .dotted-line-container .circle {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+@media (max-width: 360px) {
+  .steps-container {
+    gap: 1rem 0.125rem;
+  }
+  
+  .dotted-line-1,
+  .dotted-line-3 {
+    width: 30px;
+  }
+  
+  .steps-img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .num-img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .steps-h2 {
+    font-size: 0.9rem;
+  }
+  
+  .steps-p {
+    font-size: 0.7rem;
+  }
+  
+  .dotted-line-container .circle {
+    width: 5px;
+    height: 5px;
+  }
+  
+  .dotted-line-container .dotted-line {
+    background-image: repeating-linear-gradient(
+      to right,
+      #ED8F23 0px,
+      #ED8F23 3px,
+      transparent 3px,
+      transparent 6px
+    );
   }
 }
 </style>
