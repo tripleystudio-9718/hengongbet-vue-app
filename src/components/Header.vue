@@ -9,26 +9,24 @@
           <div class="hamburger-line"></div>
           <div class="hamburger-line"></div>
         </button>
-
         <!-- Logo Section -->
         <div class="flex items-center space-x-2">
           <div class="logo-container">
             <img :src="logoImage" alt="HengOngBet Logo" class="logo-image" />
           </div>
         </div>
-
         <!-- Right Side - Desktop: Login/Register, Mobile: Language -->
         <div class="auth-buttons flex items-center space-x-2">
           <!-- Desktop Login/Register -->
           <button @click="goToLogin" class="login-btn desktop-only">Login</button>
           <button @click="goToRegister" class="register-btn desktop-only">Register</button>
-          
+                    
           <!-- Mobile Language Selector -->
           <div class="mobile-language-selector">
             <button @click="toggleLanguageDropdown" class="mobile-language-btn">
               <img :src="selectedLanguage.flag" :alt="selectedLanguage.code" class="mobile-flag" />
             </button>
-            
+                        
             <!-- Mobile Language Dropdown -->
             <div v-if="showLanguageDropdown" class="mobile-language-dropdown">
               <div
@@ -46,7 +44,6 @@
         </div>
       </div>
     </div>
-
     <!-- Navigation Header - Desktop Only -->
     <div class="nav-header bg-gray-700 px-6 py-2 desktop-only">
       <div class="max-w-7xl mx-auto flex items-center justify-between">
@@ -60,27 +57,45 @@
           <router-link to="/games" class="nav-item">Games</router-link>
           <router-link to="/4d-results" class="nav-item">4D Results</router-link>
           <router-link to="/faqs" class="nav-item">FAQS</router-link>
-          <router-link to="/help" class="nav-item">Help</router-link>
+          
+          <!-- Help Dropdown -->
+          <div class="help-dropdown-container" @mouseenter="showHelpDropdown = true" @mouseleave="showHelpDropdown = false">
+            <router-link to="" class="nav-item help-item">
+              Help
+              <svg class="help-arrow" :class="{ 'help-arrow-rotated': showHelpDropdown }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </router-link>
+            
+            <!-- Help Dropdown Menu -->
+            <div v-if="showHelpDropdown" class="help-dropdown-menu">
+              <router-link to="tutorial-guide" class="help-dropdown-item">
+                <span>Tutorial Guide</span>
+              </router-link>
+              <router-link to="/topup-withdraw-tutorial" class="help-dropdown-item">
+                <span>Topup & Withdraw Tutorial</span>
+              </router-link>
+            </div>
+          </div>
         </nav>
-
         <div class="header-right-section">
           <div class="date-time-display">{{ currentDateTime }}</div>
           <div class="separator-line">|</div>
-          
+                    
           <div class="language-selector-container">
             <div class="language-selector-button" @click="toggleLanguageDropdown">
               <img :src="selectedLanguage.flag" :alt="selectedLanguage.code" class="flag-image" />
               <span class="language-label">{{ selectedLanguage.name }}</span>
               <svg 
-                class="dropdown-arrow" 
-                :class="{ 'arrow-rotated': showLanguageDropdown }" 
-                fill="none" 
-                stroke="currentColor" 
+                class="dropdown-arrow"
+                :class="{ 'arrow-rotated': showLanguageDropdown }"
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
               >
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
-              
+                            
               <div v-if="showLanguageDropdown" class="language-dropdown-menu">
                 <div
                   v-for="language in availableLanguages"
@@ -98,17 +113,14 @@
         </div>
       </div>
     </div>
-
     <!-- Mobile Menu Overlay -->
     <div v-if="showMobileMenu" class="mobile-overlay" @click="closeMobileMenu"></div>
-
     <!-- Mobile Menu Sidebar -->
     <div class="mobile-sidebar" :class="{ 'mobile-sidebar-open': showMobileMenu }">
       <!-- Mobile Menu Header -->
       <div class="mobile-menu-header">
         <img :src="logoImage" alt="HengOngBet Logo" class="mobile-logo" />
       </div>
-
       <!-- Mobile Menu Items -->
       <nav class="mobile-nav">
         <!-- Home -->
@@ -118,7 +130,6 @@
           </svg>
           <span>Home</span>
         </router-link>
-
         <!-- Agent -->
         <router-link to="/agent" @click="closeMobileMenu" class="mobile-nav-item">
           <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
@@ -126,7 +137,6 @@
           </svg>
           <span>Agent</span>
         </router-link>
-
         <!-- Download -->
         <router-link to="/download" @click="closeMobileMenu" class="mobile-nav-item">
           <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
@@ -134,7 +144,6 @@
           </svg>
           <span>Download</span>
         </router-link>
-
         <!-- Promotion -->
         <router-link to="/promotion" @click="closeMobileMenu" class="mobile-nav-item">
           <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
@@ -142,7 +151,6 @@
           </svg>
           <span>Promotion</span>
         </router-link>
-
         <!-- Game -->
         <div class="mobile-game-section">
           <button @click="toggleGameMenu" class="mobile-nav-item game-item" :class="{ 'game-active': showGameMenu }">
@@ -154,7 +162,6 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
-
           <!-- Game Submenu -->
           <div v-if="showGameMenu" class="game-submenu">
             <router-link to="/games/slot" @click="closeMobileMenu" class="game-sub-item">
@@ -183,7 +190,6 @@
             </router-link>
           </div>
         </div>
-
         <!-- FAQ -->
         <router-link to="/faq" @click="closeMobileMenu" class="mobile-nav-item">
           <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
@@ -191,14 +197,33 @@
           </svg>
           <span>FAQ</span>
         </router-link>
-
-        <!-- Help -->
-        <router-link to="/help" @click="closeMobileMenu" class="mobile-nav-item">
-          <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-1.106-1.106A6.002 6.002 0 004 10c0 .898.241 1.738.668 2.566l1.49-1.449zm4.259-5.644l-1.227-1.227A5.989 5.989 0 0110 4c.898 0 1.738.241 2.566.668l-1.449 1.49a4.01 4.01 0 00-2.08-.041zM9 9a1 1 0 012 0v4a1 1 0 11-2 0V9z" clip-rule="evenodd"></path>
-          </svg>
-          <span>Help</span>
-        </router-link>
+        <!-- Help with Mobile Dropdown -->
+        <div class="mobile-help-section">
+          <button @click="toggleHelpMenu" class="mobile-nav-item help-item" :class="{ 'help-active': showHelpMenu }">
+            <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-1.106-1.106A6.002 6.002 0 004 10c0 .898.241 1.738.668 2.566l1.49-1.449zm4.259-5.644l-1.227-1.227A5.989 5.989 0 0110 4c.898 0 1.738.241 2.566.668l-1.449 1.49a4.01 4.01 0 00-2.08-.041zM9 9a1 1 0 012 0v4a1 1 0 11-2 0V9z" clip-rule="evenodd"></path>
+            </svg>
+            <span>Help</span>
+            <svg class="help-arrow" :class="{ 'help-arrow-rotated': showHelpMenu }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <!-- Help Submenu -->
+          <div v-if="showHelpMenu" class="help-submenu">
+            <router-link to="/help/tutorial-guide" @click="closeMobileMenu" class="help-sub-item">
+              <span>Tutorial Guide</span>
+              <svg class="chevron-right" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </router-link>
+            <router-link to="/help/topup-withdraw" @click="closeMobileMenu" class="help-sub-item">
+              <span>Topup & Withdraw Tutorial</span>
+              <svg class="chevron-right" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </router-link>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -218,6 +243,8 @@ export default {
       currentDateTime: '',
       showMobileMenu: false,
       showGameMenu: false,
+      showHelpMenu: false,
+      showHelpDropdown: false,
       showLanguageDropdown: false,
       selectedLanguage: {
         code: 'EN',
@@ -248,17 +275,14 @@ export default {
       ]
     }
   },
-
   mounted() {
     this.updateDateTime()
     setInterval(this.updateDateTime, 1000)
     document.addEventListener('click', this.closeLanguageDropdown)
   },
-
   beforeUnmount() {
     document.removeEventListener('click', this.closeLanguageDropdown)
   },
-
   methods: {
     updateDateTime() {
       const now = new Date()
@@ -275,7 +299,6 @@ export default {
       const formatted = now.toLocaleString('en-GB', options)
       this.currentDateTime = `${formatted} (GMT +8)`
     },
-
     toggleMobileMenu() {
       this.showMobileMenu = !this.showMobileMenu
       if (this.showMobileMenu) {
@@ -283,37 +306,35 @@ export default {
       } else {
         document.body.style.overflow = ''
         this.showGameMenu = false
+        this.showHelpMenu = false
       }
     },
-
     closeMobileMenu() {
       this.showMobileMenu = false
       this.showGameMenu = false
+      this.showHelpMenu = false
       document.body.style.overflow = ''
     },
-
     toggleGameMenu() {
       this.showGameMenu = !this.showGameMenu
     },
-
+    toggleHelpMenu() {
+      this.showHelpMenu = !this.showHelpMenu
+    },
     toggleLanguageDropdown() {
       this.showLanguageDropdown = !this.showLanguageDropdown
     },
-
     selectLanguage(language) {
       this.selectedLanguage = language
       this.showLanguageDropdown = false
       this.$emit('language-changed', language)
     },
-
     goToRegister() {
       this.$router.push('/register')
     },
-
     goToLogin() {
       this.$router.push('/login')
     },
-
     closeLanguageDropdown(event) {
       if (!event.target.closest('.language-selector-container') && !event.target.closest('.mobile-language-selector')) {
         this.showLanguageDropdown = false
@@ -570,6 +591,100 @@ export default {
   height: 14px;
 }
 
+/* Help Section - Mobile */
+.mobile-help-section {
+  position: relative;
+}
+
+.help-item {
+  justify-content: center;
+  align-items: center;
+}
+
+.help-active {
+  background: #F1AE3D;
+  color: #000;
+  border-radius: 25px;
+  margin: 0 16px;
+  width: auto;
+}
+
+.help-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+  margin-left: auto;
+}
+
+.help-arrow-rotated {
+  transform: rotate(180deg);
+}
+
+.help-submenu {
+  background: rgba(0, 0, 0, 0.2);
+  margin: 8px 16px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.help-sub-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  color: #cbd5e0;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.help-sub-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #F1AE3D;
+}
+
+/* Desktop Help Dropdown */
+.help-dropdown-container {
+  position: relative;
+}
+
+.help-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: #2d3748;
+  border: 1px solid #4a5568;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  min-width: 220px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.help-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.help-dropdown-item:hover {
+  background: #4a5568;
+  color: #F1AE3D;
+}
+
+.help-dropdown-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
 /* Desktop styles - keep original */
 .header-right-section {
   display: flex;
@@ -751,10 +866,10 @@ export default {
 .nav-item.router-link-active::after {
   content: '';
   position: absolute;
-  bottom: -11px; 
+  bottom: -11px;   
   left: 50%;
   transform: translateX(-50%);
-  width: 80%; 
+  width: 80%;   
   height: 3px;
   background: linear-gradient(90deg, #F2B240 0%, #ED9226 100%);
   border-radius: 2px;
@@ -789,7 +904,7 @@ export default {
   bottom: -11px;
   left: 50%;
   transform: translateX(-50%);
-  width: 60%; 
+  width: 60%;   
   height: 3px;
   background: linear-gradient(90deg, #F2B240 0%, #ED9226 100%);
   border-radius: 2px;
@@ -800,28 +915,28 @@ export default {
   .desktop-only {
     display: none !important;
   }
-  
+    
   .mobile-hamburger {
     display: flex;
   }
-  
+    
   .mobile-language-selector {
     display: block;
   }
-  
+    
   .mobile-overlay {
     display: block;
   }
-  
+    
   .mobile-sidebar {
     display: block;
   }
-  
+    
   .logo-image {
     height: 32px;
     max-width: 150px;
   }
-  
+    
   .top-header {
     padding: 12px 16px;
   }
@@ -831,17 +946,17 @@ export default {
   .mobile-sidebar {
     width: 260px;
   }
-  
+    
   .logo-image {
     height: 28px;
     max-width: 120px;
   }
-  
+    
   .mobile-nav-item {
     padding: 14px 20px;
     font-size: 15px;
   }
-  
+    
   .mobile-nav-icon {
     width: 18px;
     height: 18px;

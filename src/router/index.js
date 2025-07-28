@@ -8,6 +8,8 @@ import FAQ from '@/components/FAQ.vue';
 import FourDResult from '@/components/FourDResult.vue';
 import DownloadPage from '@/components/DownloadPage.vue';
 import Register from '@/components/Register.vue';
+import TutorialGuide from '@/components/TutorialGuide.vue';
+import TutorialTopUpWithDraw from '@/components/TopWithTutorial.vue';
 
 const routes = [
   {
@@ -57,6 +59,16 @@ const routes = [
     path: '/register',
     name: 'Register',
     component: Register,
+  },
+  {
+    path: '/tutorial-guide',
+    name: 'TutorialGuide',
+    component: TutorialGuide,
+  },
+  {
+    path: '/topup-withdraw-tutorial',
+    name: 'TutorialTopUpWithDraw',
+    component: TutorialTopUpWithDraw,
   }
 ]
 
