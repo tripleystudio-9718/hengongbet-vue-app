@@ -1,63 +1,10 @@
 <template>
   <div class="home-page">
-    <!-- Hero Banner Carousel Section -->
-    <section class="hero-banner">
-      <div class="carousel-container"
-           @mousedown="startDrag"
-           @mousemove="drag"
-           @mouseup="endDrag"
-           @mouseleave="endDrag"
-           @touchstart="startDrag"
-           @touchmove="drag"
-           @touchend="endDrag">
-        
-        <div class="carousel-wrapper"
-             :style="{
-               transform: `translateX(${currentTransform}px)`,
-               transition: isDragging ? 'none' : 'transform 0.3s ease-out'
-             }"
-             ref="carouselWrapper">
-          <div v-for="(image, index) in displayImages"
-               :key="`slide-${index}`"
-               class="carousel-slide">
-            <img :src="image" 
-                 :alt="`Gaming Banner ${(index % originalImages.length) + 1}`" 
-                 class="banner-image" />
-          </div>
-        </div>
-
-        <!-- Navigation Arrows -->
-        <button @click="prevSlide" 
-                @mousedown.stop 
-                @touchstart.stop 
-                class="carousel-arrow carousel-arrow-left" 
-                aria-label="Previous slide">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        
-        <button @click="nextSlide" 
-                @mousedown.stop 
-                @touchstart.stop 
-                class="carousel-arrow carousel-arrow-right" 
-                aria-label="Next slide">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-
-        <!-- Dots Indicator -->
-        <div class="carousel-dots">
-          <button v-for="(image, index) in originalImages"
-                  :key="`dot-${index}`"
-                  @click="goToSlide(index)"
-                  :class="['carousel-dot', { active: index === currentSlideIndex }]"
-                  :aria-label="`Go to slide ${index + 1}`">
-          </button>
-        </div>
-      </div>
-    </section>
+    <HomeBanner 
+      :images="carouselImages" 
+      :auto-play="true" 
+      :auto-play-interval="3000" 
+    />
         
     <div class="home-container">
       <PromotionSection />
@@ -121,6 +68,7 @@
 </template>
 
 <script>
+import HomeBanner from '@/components/Home-Comp/HomeBanner.vue'
 import PromotionSection from '@/components/Home-Comp/PromotionSection.vue'
 import FeaturesSection from '@/components/Home-Comp/FeaturesSection.vue'
 import GamesSection from '@/components/Home-Comp/GamesSection.vue'
@@ -131,11 +79,15 @@ import ProviderSection from '@/components/Home-Comp/ProviderSection.vue'
 import ReviewSection from '@/components/Home-Comp/ReviewSection.vue'
 import FaqSection from '@/components/Home-Comp/FaqSection.vue'
 import homeBanner from '@/assets/home-banner.png'
+import homeBanner1 from '@/assets/home-banner1.png'
+import homeBanner2 from '@/assets/home-banner2.png'
+import homeBanner3 from '@/assets/home-banner3.png'
 import becomeImg from '@/assets/become-img.png'
 
 export default {
   name: 'Home',
   components: {
+    HomeBanner,
     PromotionSection,
     FeaturesSection,
     GamesSection,
@@ -148,25 +100,13 @@ export default {
   },
   data() {
     return {
-      homeBanner,
       becomeImg,
-      // Carousel data
-      currentSlideIndex: 0,
-      slideWidth: 0,
-      isDragging: false,
-      startX: 0,
-      currentX: 0,
-      dragOffset: 0,
-      autoPlayTimer: null,
-      isTransitioning: false,
-      // Base images for the carousel
+      // Carousel images for the hero banner
       carouselImages: [
         homeBanner,
-        homeBanner,
-        homeBanner,
-        homeBanner,
-        homeBanner,
-        homeBanner
+        homeBanner1,
+        homeBanner2,
+        homeBanner3,
       ],
       content: {
         brandSection: {
@@ -210,198 +150,6 @@ export default {
         }
       }
     }
-  },
-  computed: {
-    originalImages() {
-      return this.carouselImages.length > 0 ? this.carouselImages : [
-        homeBanner,
-        homeBanner,
-        homeBanner
-      ]
-    },
-    displayImages() {
-      // Create infinite loop by adding first and last slides
-      const images = this.originalImages
-      return [
-        images[images.length - 1], // Last slide at beginning
-        ...images,                 // Original slides
-        images[0]                  // First slide at end
-      ]
-    },
-    currentTransform() {
-      // Add 1 to account for the extra slide at the beginning
-      const baseTransform = -(this.currentSlideIndex + 1) * this.slideWidth
-      return baseTransform + this.dragOffset
-    }
-  },
-  mounted() {
-    this.initializeCarousel()
-    this.startCarousel()
-    window.addEventListener('resize', this.handleResize)
-  },
-  beforeUnmount() {
-    this.stopCarousel()
-    window.removeEventListener('resize', this.handleResize)
-    this.removeGlobalListeners()
-  },
-  methods: {
-    initializeCarousel() {
-      this.$nextTick(() => {
-        const container = this.$refs.carouselWrapper?.parentElement
-        if (container) {
-          this.slideWidth = container.offsetWidth
-        }
-      })
-    },
-    
-    handleResize() {
-      this.initializeCarousel()
-    },
-    
-    startCarousel() {
-      if (this.autoPlayTimer) return
-      this.autoPlayTimer = setInterval(() => {
-        if (!this.isDragging && !this.isTransitioning) {
-          this.nextSlide()
-        }
-      }, 3000)
-    },
-    
-    stopCarousel() {
-      if (this.autoPlayTimer) {
-        clearInterval(this.autoPlayTimer)
-        this.autoPlayTimer = null
-      }
-    },
-    
-    nextSlide() {
-      if (this.isTransitioning) return
-      
-      this.isTransitioning = true
-      this.dragOffset = 0
-      this.currentSlideIndex++
-      
-      // Handle infinite loop
-      if (this.currentSlideIndex >= this.originalImages.length) {
-        setTimeout(() => {
-          this.currentSlideIndex = 0
-          this.isTransitioning = false
-        }, 300)
-      } else {
-        setTimeout(() => {
-          this.isTransitioning = false
-        }, 300)
-      }
-    },
-    
-    prevSlide() {
-      if (this.isTransitioning) return
-      
-      this.isTransitioning = true
-      this.dragOffset = 0
-      this.currentSlideIndex--
-      
-      // Handle infinite loop
-      if (this.currentSlideIndex < 0) {
-        setTimeout(() => {
-          this.currentSlideIndex = this.originalImages.length - 1
-          this.isTransitioning = false
-        }, 300)
-      } else {
-        setTimeout(() => {
-          this.isTransitioning = false
-        }, 300)
-      }
-    },
-    
-    goToSlide(index) {
-      if (this.isTransitioning || index === this.currentSlideIndex) return
-      
-      this.isTransitioning = true
-      this.dragOffset = 0
-      this.currentSlideIndex = index
-      
-      setTimeout(() => {
-        this.isTransitioning = false
-      }, 300)
-    },
-    
-    startDrag(event) {
-      if (this.isTransitioning) return
-      
-      this.isDragging = true
-      this.stopCarousel()
-      
-      const clientX = event.type === 'mousedown' ? event.clientX : event.touches[0].clientX
-      this.startX = clientX
-      this.currentX = clientX
-      this.dragOffset = 0
-      
-      event.preventDefault()
-      
-      if (event.type === 'mousedown') {
-        document.addEventListener('mousemove', this.handleMouseMove)
-        document.addEventListener('mouseup', this.handleMouseUp)
-      }
-    },
-    
-    drag(event) {
-      if (!this.isDragging) return
-      
-      event.preventDefault()
-      const clientX = event.type === 'mousemove' ? event.clientX : event.touches[0].clientX
-      this.currentX = clientX
-      
-      this.dragOffset = this.currentX - this.startX
-      
-      // Add resistance at boundaries
-      const maxDrag = this.slideWidth * 0.5
-      if (Math.abs(this.dragOffset) > maxDrag) {
-        this.dragOffset = this.dragOffset > 0 ? maxDrag : -maxDrag
-      }
-    },
-    
-    handleMouseMove(event) {
-      this.drag(event)
-    },
-    
-    handleMouseUp() {
-      this.endDrag()
-    },
-    
-    endDrag() {
-      if (!this.isDragging) return
-      
-      this.isDragging = false
-      this.removeGlobalListeners()
-      
-      const threshold = this.slideWidth * 0.25
-      
-      if (Math.abs(this.dragOffset) > threshold) {
-        if (this.dragOffset > 0) {
-          this.prevSlide()
-        } else {
-          this.nextSlide()
-        }
-      } else {
-        // Snap back to current slide
-        this.isTransitioning = true
-        this.dragOffset = 0
-        setTimeout(() => {
-          this.isTransitioning = false
-        }, 300)
-      }
-      
-      // Restart auto-play
-      setTimeout(() => {
-        this.startCarousel()
-      }, 1000)
-    },
-    
-    removeGlobalListeners() {
-      document.removeEventListener('mousemove', this.handleMouseMove)
-      document.removeEventListener('mouseup', this.handleMouseUp)
-    }
   }
 }
 </script>
@@ -418,137 +166,6 @@ export default {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-}
-
-/* Hero Banner Carousel */
-.hero-banner {
-  position: relative;
-  overflow: hidden;
-  background: #0a0e1a;
-  width: 100%;
-}
-
-.carousel-container {
-  position: relative;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-}
-
-.carousel-wrapper {
-  display: flex;
-  width: 100%;
-  will-change: transform;
-  cursor: grab;
-  touch-action: pan-y;
-}
-
-.carousel-wrapper:active {
-  cursor: grabbing;
-}
-
-.carousel-slide {
-  min-width: 100%;
-  max-width: 100%;
-  flex-shrink: 0;
-  flex-grow: 0;
-  display: block;
-}
-
-.banner-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  max-height: 600px;
-  user-select: none;
-  pointer-events: none;
-  -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
-}
-
-/* Carousel Navigation Arrows */
-.carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: rgba(255, 255, 255, 0.9);
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  z-index: 20;
-  user-select: none;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-.carousel-arrow:hover {
-  background: linear-gradient(135deg, rgba(242, 178, 64, 0.9), rgba(242, 178, 64, 0.7));
-  border-color: rgba(242, 178, 64, 0.5);
-  color: white;
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 12px 40px rgba(242, 178, 64, 0.4);
-}
-
-.carousel-arrow:active {
-  transform: translateY(-50%) scale(0.95);
-}
-
-.carousel-arrow svg {
-  transition: transform 0.3s ease;
-}
-
-.carousel-arrow:hover svg {
-  transform: scale(1.2);
-}
-
-.carousel-arrow-left {
-  left: 30px;
-}
-
-.carousel-arrow-right {
-  right: 30px;
-}
-
-/* Dots Indicator */
-.carousel-dots {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 12px;
-  z-index: 20;
-}
-
-.carousel-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.carousel-dot:hover {
-  border-color: rgba(242, 178, 64, 0.8);
-  background: rgba(242, 178, 64, 0.3);
-}
-
-.carousel-dot.active {
-  background: #F2B240;
-  border-color: #F2B240;
 }
 
 /* Global Typography Classes */
@@ -687,38 +304,6 @@ export default {
     text-align: center;
   }
 
-  .banner-image {
-    max-height: 300px;
-  }
-
-  .carousel-arrow {
-    width: 50px;
-    height: 50px;
-  }
-
-  .carousel-arrow svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .carousel-arrow-left {
-    left: 15px;
-  }
-
-  .carousel-arrow-right {
-    right: 15px;
-  }
-
-  .carousel-dots {
-    bottom: 15px;
-    gap: 8px;
-  }
-
-  .carousel-dot {
-    width: 10px;
-    height: 10px;
-  }
-
   .section-wrapper {
     padding: 1.5rem 0;
     text-align: center;
@@ -786,28 +371,6 @@ export default {
     text-align: center;
   }
 
-  .banner-image {
-    max-height: 250px;
-  }
-
-  .carousel-arrow {
-    width: 45px;
-    height: 45px;
-  }
-
-  .carousel-arrow svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .carousel-arrow-left {
-    left: 10px;
-  }
-
-  .carousel-arrow-right {
-    right: 10px;
-  }
-
   .main-title {
     margin: 0;
   }
@@ -868,20 +431,6 @@ export default {
     text-align: center;
   }
 
-  .banner-image {
-    max-height: 200px;
-  }
-
-  .carousel-arrow {
-    width: 40px;
-    height: 40px;
-  }
-
-  .carousel-arrow svg {
-    width: 16px;
-    height: 16px;
-  }
-
   .section-wrapper {
     padding: 0.8rem 0;
     text-align: center;
@@ -906,10 +455,6 @@ export default {
 }
 
 @media (max-width: 768px) and (orientation: landscape) {
-  .banner-image {
-    max-height: 200px;
-  }
-
   .section-wrapper {
     padding: 1rem 0;
     text-align: center;
@@ -920,13 +465,6 @@ export default {
   }
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .banner-image {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-  }
-}
-
 @media (hover: none) and (pointer: coarse) {
   .feature-list li,
   .feature-list-1 li {
@@ -934,26 +472,5 @@ export default {
     margin-bottom: 1rem;
     text-align: center;
   }
-
-  .carousel-arrow {
-    width: 55px;
-    height: 55px;
-    touch-action: manipulation;
-  }
-
-  .carousel-container {
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-  }
-}
-
-/* Performance optimizations */
-.carousel-wrapper {
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-.carousel-slide {
-  backface-visibility: hidden;
 }
 </style>

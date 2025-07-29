@@ -236,7 +236,7 @@ export default {
   align-items: center;
   width: 120px;
   flex-shrink: 0;
-  margin-top: 75px; /* Align with center of step icons */
+  margin-top: 75px; 
 }
 
 .circle {

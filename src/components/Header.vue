@@ -9,12 +9,14 @@
           <div class="hamburger-line"></div>
           <div class="hamburger-line"></div>
         </button>
-        <!-- Logo Section -->
-        <div class="flex items-center space-x-2">
-          <div class="logo-container">
-            <img :src="logoImage" alt="HengOngBet Logo" class="logo-image" />
+        <!-- Logo Section - Now clickable and links to homepage -->
+        <router-link to="/" class="logo-link">
+          <div class="flex items-center space-x-2">
+            <div class="logo-container">
+              <img :src="logoImage" alt="HengOngBet Logo" class="logo-image" />
+            </div>
           </div>
-        </div>
+        </router-link>
         <!-- Right Side - Desktop: Login/Register, Mobile: Language -->
         <div class="auth-buttons flex items-center space-x-2">
           <!-- Desktop Login/Register -->
@@ -119,7 +121,9 @@
     <div class="mobile-sidebar" :class="{ 'mobile-sidebar-open': showMobileMenu }">
       <!-- Mobile Menu Header -->
       <div class="mobile-menu-header">
-        <img :src="logoImage" alt="HengOngBet Logo" class="mobile-logo" />
+        <router-link to="/" @click="closeMobileMenu">
+          <img :src="logoImage" alt="HengOngBet Logo" class="mobile-logo" />
+        </router-link>
       </div>
       <!-- Mobile Menu Items -->
       <nav class="mobile-nav">
@@ -131,11 +135,11 @@
           <span>Home</span>
         </router-link>
         <!-- Agent -->
-        <router-link to="/agent" @click="closeMobileMenu" class="mobile-nav-item">
+        <router-link to="/affiliate" @click="closeMobileMenu" class="mobile-nav-item">
           <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
           </svg>
-          <span>Agent</span>
+          <span>Affiliate</span>
         </router-link>
         <!-- Download -->
         <router-link to="/download" @click="closeMobileMenu" class="mobile-nav-item">
@@ -151,47 +155,15 @@
           </svg>
           <span>Promotion</span>
         </router-link>
-        <!-- Game -->
-        <div class="mobile-game-section">
-          <button @click="toggleGameMenu" class="mobile-nav-item game-item" :class="{ 'game-active': showGameMenu }">
-            <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z" clip-rule="evenodd"></path>
-            </svg>
-            <span>Game</span>
-            <svg class="game-arrow" :class="{ 'game-arrow-rotated': showGameMenu }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <!-- Game Submenu -->
-          <div v-if="showGameMenu" class="game-submenu">
-            <router-link to="/games/slot" @click="closeMobileMenu" class="game-sub-item">
-              <span>Slot</span>
-              <svg class="chevron-right" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </router-link>
-            <router-link to="/games/casino" @click="closeMobileMenu" class="game-sub-item">
-              <span>Casino</span>
-              <svg class="chevron-right" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </router-link>
-            <router-link to="/games/sports" @click="closeMobileMenu" class="game-sub-item">
-              <span>Sports</span>
-              <svg class="chevron-right" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </router-link>
-            <router-link to="/games/lottery" @click="closeMobileMenu" class="game-sub-item">
-              <span>Lottery</span>
-              <svg class="chevron-right" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </router-link>
-          </div>
-        </div>
+        <!-- Game - Now direct link without dropdown -->
+        <router-link to="/games" @click="closeMobileMenu" class="mobile-nav-item">
+          <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z" clip-rule="evenodd"></path>
+          </svg>
+          <span>Game</span>
+        </router-link>
         <!-- FAQ -->
-        <router-link to="/faq" @click="closeMobileMenu" class="mobile-nav-item">
+        <router-link to="/faqs" @click="closeMobileMenu" class="mobile-nav-item">
           <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
           </svg>
@@ -210,13 +182,13 @@
           </button>
           <!-- Help Submenu -->
           <div v-if="showHelpMenu" class="help-submenu">
-            <router-link to="/help/tutorial-guide" @click="closeMobileMenu" class="help-sub-item">
+            <router-link to="/tutorial-guide" @click="closeMobileMenu" class="help-sub-item">
               <span>Tutorial Guide</span>
               <svg class="chevron-right" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
             </router-link>
-            <router-link to="/help/topup-withdraw" @click="closeMobileMenu" class="help-sub-item">
+            <router-link to="/topup-withdraw-tutorial" @click="closeMobileMenu" class="help-sub-item">
               <span>Topup & Withdraw Tutorial</span>
               <svg class="chevron-right" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -242,7 +214,6 @@ export default {
       homeIcon,
       currentDateTime: '',
       showMobileMenu: false,
-      showGameMenu: false,
       showHelpMenu: false,
       showHelpDropdown: false,
       showLanguageDropdown: false,
@@ -305,18 +276,13 @@ export default {
         document.body.style.overflow = 'hidden'
       } else {
         document.body.style.overflow = ''
-        this.showGameMenu = false
         this.showHelpMenu = false
       }
     },
     closeMobileMenu() {
       this.showMobileMenu = false
-      this.showGameMenu = false
       this.showHelpMenu = false
       document.body.style.overflow = ''
-    },
-    toggleGameMenu() {
-      this.showGameMenu = !this.showGameMenu
     },
     toggleHelpMenu() {
       this.showHelpMenu = !this.showHelpMenu
@@ -358,6 +324,17 @@ export default {
 
 .nav-header {
   background-color: #615F5C;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.logo-link:hover {
+  transform: scale(1.05);
 }
 
 .logo-container {
@@ -494,6 +471,11 @@ export default {
   height: 40px;
   width: auto;
   object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.mobile-logo:hover {
+  transform: scale(1.05);
 }
 
 .mobile-nav {
@@ -533,62 +515,6 @@ export default {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-}
-
-/* Game Section */
-.mobile-game-section {
-  position: relative;
-}
-
-.game-item {
-  justify-content: space-between;
-}
-
-.game-active {
-  background: #F1AE3D;
-  color: #000;
-  border-radius: 25px;
-  margin: 0 16px;
-  width: auto;
-}
-
-.game-arrow {
-  width: 16px;
-  height: 16px;
-  transition: transform 0.2s ease;
-  margin-left: auto;
-}
-
-.game-arrow-rotated {
-  transform: rotate(180deg);
-}
-
-.game-submenu {
-  background: rgba(0, 0, 0, 0.2);
-  margin: 8px 16px;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.game-sub-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 20px;
-  color: #cbd5e0;
-  text-decoration: none;
-  font-size: 14px;
-  transition: all 0.2s ease;
-}
-
-.game-sub-item:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #F1AE3D;
-}
-
-.chevron-right {
-  width: 14px;
-  height: 14px;
 }
 
 /* Help Section - Mobile */
@@ -641,6 +567,11 @@ export default {
 .help-sub-item:hover {
   background: rgba(255, 255, 255, 0.05);
   color: #F1AE3D;
+}
+
+.chevron-right {
+  width: 14px;
+  height: 14px;
 }
 
 /* Desktop Help Dropdown */
@@ -976,4 +907,5 @@ export default {
 .py-5 { padding-top: 1.25rem; padding-bottom: 1.25rem; }
 .bg-gray-700 { background-color: #374151; }
 .bg-gray-800 { background-color: #1f2937; }
+
 </style>

@@ -277,7 +277,7 @@ export default {
 .step-number {
   position: absolute;
   z-index: 2;
-  left: 20px;
+  left: 22px;
   color: #242424;
   width: 35px;
   height: 35px;
