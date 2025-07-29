@@ -124,6 +124,9 @@
 import messageBg from '@/assets/message-bg.png'
 import quotationIcon from '@/assets/quotation_icon.svg'
 import nextRightArrow from '@/assets/next-right-arrow.svg'
+import avatar1 from '@/assets/avatar-1.png'
+import avatar2 from '@/assets/avatar-2.png'
+import avatar3 from '@/assets/avatar-3.png'
 
 export default {
   name: 'CustomerTestimonials',
@@ -137,6 +140,9 @@ export default {
       messageBg,
       quotationIcon,
       nextRightArrow,
+      avatar1,
+      avatar2,
+      avatar3,
       
       // Drag state
       isDragging: false,
@@ -162,40 +168,24 @@ export default {
           name: "Mohamed Fitri Aiman",
           timeAgo: "2 days ago",
           rating: 5,
-          text: "Saya laki game, dah cuba banyak website kasino, tapi Winbox memang letak. Game banyak pilihan, dan slot sampai live kasino. Website pun senang guna, loading laju. Kalau ada masalah, support pun cepat reply. Memang puas hati, sekarang kawan kawan saya pun main kat sini.",
-          avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+          text: "Saya kaki game, dah cuba banyak website kasino, tapi Winbox memang lain. Game banyak pilihan, dari slot sampai live kasino. Website pun senang guna, loading laju. Kalau ada masalah, support pun cepat reply. Memang puas hati, sekarang kawan-kawan saya pun main kat sini",
+          avatar: avatar1
         },
         {
           id: 2,
           name: "Knesia Pang Suet Yin",
           timeAgo: "1 week ago", 
           rating: 5,
-          text: "一开始用友介绍Winbox我还半信半疑，后来自己注册玩才发现真的很不错。网站界面很清晰，不卡，玩起来很顺手。最重要的是提现的时候真的很快的，什么出款说法、安全、红色防护，几乎没火线就会到账的，感觉他们是在兑现社服务承诺而不是一种欺骗的行为。",
-          avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face"
+          text: "—开始朋友介绍Winbox我还半信半疑，后来目己注册玩了才知道亮的不同。网站界面很清晰，不卡，玩起来很顺手。最重要的是他们的优惠活动很多，什么迎新奖励、返水、红包都有。几乎每次上线都会有惊喜，感觉他们真的在回馈玩家，不像别的网站只是吸钱。现在我介绍给几个朋友了，太象都说很值！",
+          avatar: avatar2
         },
         {
           id: 3,
-          name: "Bolok Low Kai Xin",
+          name: "Bolok Low Kai Xian",
           timeAgo: "3 mins ago",
           rating: 5,
-          text: "Been using Winbox for a while now and I must say, it's one here is how easy everything is. The platform runs so smoothly and customer service is top-notch. Very professional and friendly. Withdrawals? Always quick. I've tried many sites made cashing out such a breeze. Customer service is hassle-free. Highly recommend!",
-          avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
-        },
-        {
-          id: 4,
-          name: "Ahmad Rahman",
-          timeAgo: "5 days ago",
-          rating: 5,
-          text: "Platform yang sangat baik! Interface mudah digunakan dan games yang disediakan sangat menarik. Customer service sangat membantu dan withdrawal process sangat cepat.",
-          avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
-        },
-        {
-          id: 5,
-          name: "Lisa Wong",
-          timeAgo: "1 day ago",
-          rating: 5,
-          text: "Excellent platform with great games and fast payouts. The live casino games are particularly impressive. Highly recommended for anyone looking for a reliable gaming experience.",
-          avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+          text: "Been using Winbox for a while now. What keeps me here is how easy everything is. The site runs smoothly and customer service responds fast and friendly. Withdrawals? Always quick. Other sites made cashing out a headache, but Winbox is hassle- free. Highly recommend.",
+          avatar: avatar3
         }
       ]
     }
@@ -574,7 +564,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1.5rem 2rem 2.5rem 2rem;
+  padding: 0 1rem 2.5rem 1rem;
   margin: 0.75rem;
   position: relative;
   z-index: 1;

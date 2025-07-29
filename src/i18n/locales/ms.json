@@ -1,0 +1,241 @@
+{
+  "nav": {
+    "home": "Laman Utama",
+    "games": "Permainan",
+    "promotion": "Promosi",
+    "4d_results": "Keputusan 4D",
+    "download": "Muat Turun",
+    "affiliate": "Ahli Gabungan",
+    "faq": "Soalan Lazim",
+    "help": "Bantuan",
+    "tutorial": "Panduan Tutorial",
+    "topup_tutorial": "Tutorial Top-up & Pengeluaran",
+    "login": "Log Masuk",
+    "register": "Daftar"
+  },
+  "common": {
+    "welcome": "Selamat Datang",
+    "loading": "Memuatkan...",
+    "error": "Ralat",
+    "success": "Berjaya",
+    "cancel": "Batal",
+    "confirm": "Sahkan",
+    "save": "Simpan",
+    "edit": "Edit",
+    "delete": "Padam",
+    "search": "Cari",
+    "submit": "Hantar",
+    "back": "Kembali",
+    "next": "Seterusnya",
+    "previous": "Sebelumnya",
+    "close": "Tutup",
+    "select": "Pilih",
+    "language": "Bahasa",
+    "notice": "Notis Penting"
+  },
+  "auth": {
+    "login": "Log Masuk",
+    "register": "Daftar",
+    "username": "Nama Pengguna",
+    "password": "Kata Laluan",
+    "email": "E-mel",
+    "phone": "Nombor Telefon",
+    "forgot_password": "Lupa Kata Laluan?",
+    "remember_me": "Ingat Saya",
+    "sign_in": "Log Masuk",
+    "sign_up": "Daftar",
+    "already_have_account": "Sudah mempunyai akaun?",
+    "dont_have_account": "Tidak mempunyai akaun?",
+    "create_account": "Cipta Akaun"
+  },
+  "games": {
+    "title": "Permainan",
+    "categories": "Kategori",
+    "popular": "Permainan Popular",
+    "new": "Permainan Baru",
+    "slots": "Slot",
+    "live_casino": "Kasino Langsung",
+    "sports": "Pertaruhan Sukan",
+    "lottery": "Loteri",
+    "fishing": "Permainan Memancing",
+    "play_now": "Main Sekarang"
+  },
+  "promotion": {
+    "title": "Promosi",
+    "active": "Promosi Aktif",
+    "expired": "Promosi Tamat Tempoh",
+    "terms": "Terma & Syarat",
+    "claim": "Tuntut Sekarang",
+    "details": "Butiran"
+  },
+  "results": {
+    "title": "Keputusan 4D",
+    "today": "Keputusan Hari Ini",
+    "history": "Sejarah Keputusan",
+    "date": "Tarikh",
+    "number": "Nombor",
+    "prize": "Hadiah"
+  },
+  "download": {
+    "title": "Muat Turun Aplikasi",
+    "android": "Android",
+    "ios": "iOS",
+    "desktop": "Desktop",
+    "download_now": "Muat Turun Sekarang",
+    "qr_code": "Imbas Kod QR"
+  },
+  "affiliate": {
+    "title": "Program Ahli Gabungan",
+    "join": "Sertai Program Ahli Gabungan Kami",
+    "commission": "Komisen",
+    "referral": "Pautan Rujukan",
+    "earnings": "Pendapatan",
+    "withdraw": "Keluarkan"
+  },
+  "faq": {
+    "title": "Soalan Lazim",
+    "search_faq": "Cari Soalan Lazim",
+    "categories": "Kategori",
+    "general": "Umum",
+    "account": "Akaun",
+    "payment": "Pembayaran",
+    "technical": "Sokongan Teknikal"
+  },
+  "tutorial": {
+    "title": "Panduan Tutorial",
+    "getting_started": "Memulakan",
+    "how_to_play": "Cara Bermain",
+    "account_setup": "Persediaan Akaun",
+    "game_rules": "Peraturan Permainan"
+  },
+  "topup": {
+    "title": "Tutorial Top-up & Pengeluaran",
+    "deposit": "Deposit",
+    "withdraw": "Keluarkan",
+    "methods": "Kaedah Pembayaran",
+    "bank_transfer": "Pindahan Bank",
+    "e_wallet": "Dompet Elektronik",
+    "cryptocurrency": "Mata Wang Kripto",
+    "minimum": "Jumlah Minimum",
+    "maximum": "Jumlah Maksimum",
+    "processing_time": "Masa Pemprosesan"
+  },
+  "footer": {
+    "about_us": "Tentang Kami",
+    "contact": "Hubungi Kami",
+    "privacy": "Dasar Privasi",
+    "terms": "Syarat Perkhidmatan",
+    "responsible_gaming": "Permainan Bertanggungjawab",
+    "support": "Sokongan 24/7",
+    "copyright": "© 2024 HengOngBet. Hak cipta terpelihara."
+  },
+  "home": {
+    "brandSection": {
+      "subtitle": "Kasino Online Dipercayai",
+      "title": "Heng Ong Bet Rasmi",
+      "tagline": "Heng Ong Bet - Platform Kasino Online Malaysia Yang Dipercayai",
+      "paragraphs": [
+        "Ditubuhkan pada tahun 2015, Heng Ong Bet adalah platform hiburan dalam talian serba lengkap pertama di Malaysia. Dengan sistem permainan bertaraf dunia dan pasukan sokongan teknikal tertinggi yang komited untuk menyampaikan perkhidmatan permainan yang selamat, boleh dipercayai, dan berkualiti tinggi kepada semua pengguna.",
+        "Sebagai salah satu platform permainan dalam talian terkemuka di Malaysia, kami menawarkan rangkaian pilihan permainan yang komprehensif termasuk:"
+      ],
+      "features": [
+        "Pertaruhan sukan",
+        "Kasino langsung",
+        "Permainan slot",
+        "Loteri 4D dan lain-lain"
+      ],
+      "conclusion": "Pemain menikmati pengalaman permainan yang adil, selamat, dan lancar, dengan deposit dan pengeluaran yang pantas."
+    },
+    "affiliateSection": {
+      "becomeText": "Menjadi",
+      "brand": "Heng Ong Bet",
+      "affiliateToday": "Ahli Gabungan Hari Ini",
+      "description": "Sertai program ahli gabungan rasmi HengOngBet dan dapatkan komisen tinggi dengan mempromosikan platform kasino dalam talian terbaik Malaysia. Sama ada anda seorang pemasar berpengalaman atau baru bermula, alat, sistem penjejakan, dan pasukan sokongan kami membantu anda berjaya",
+      "benefits": [
+        "Penjejakan masa nyata & laporan",
+        "Sehingga 50% perkongsian hasil",
+        "Sistem pembayaran mingguan",
+        "Banner promosi tersuai",
+        "Bot Telegram & penjana pautan",
+        "Sokongan ahli gabungan khusus",
+        "Kos sifar untuk menyertai",
+        "Dipercayai oleh ribuan ejen di Malaysia"
+      ]
+    }
+  },
+  "features": {
+    "tabs": [
+      {
+        "id": "why-choose",
+        "title": "Mengapa Pilih Heng Ong Bet?"
+      },
+      {
+        "id": "games-library",
+        "title": "Perpustakaan Permainan Terbesar Malaysia"
+      },
+      {
+        "id": "secure-rewarding",
+        "title": "Terbukti, Selamat & Bermanfaat"
+      }
+    ],
+    "whyChoose": {
+      "features": [
+        {
+          "id": 1,
+          "title": "Pasukan Pakar",
+          "description": "Sentiasa menambah baik permainan dan pengalaman pengguna"
+        },
+        {
+          "id": 2,
+          "title": "Platform Selamat",
+          "description": "Enkripsi canggih untuk perlindungan data"
+        },
+        {
+          "id": 3,
+          "title": "Sokongan 24/7",
+          "description": "Bantuan tersedia bila-bila masa"
+        },
+        {
+          "id": 4,
+          "title": "Permainan Bertanggungjawab",
+          "description": "Menggalakkan permainan yang selamat dan sihat"
+        },
+        {
+          "id": 5,
+          "title": "Fokus Komuniti",
+          "description": "Menyokong inisiatif kebajikan tempatan"
+        }
+      ]
+    },
+    "gamesLibrary": {
+      "header": "Kami telah bekerjasama dengan pembekal terbaik termasuk:",
+      "providers": [
+        {
+          "category": "Kasino Langsung",
+          "list": "PEGASUS LIVE, CTG855, AE SEXY, ASIA GAMING, EVOLUTION & lain-lain"
+        },
+        {
+          "category": "Slot",
+          "list": "918KISS, PUSSY888, NAGA GAMES, JILI, PLAYTECH, dan banyak lagi"
+        },
+        {
+          "category": "Pertaruhan Sukan",
+          "list": "SBOBET, SBOVS, BET33"
+        }
+      ]
+    },
+    "secureRewarding": {
+      "header": "Dengan lebih 10 tahun dalam industri, Heng Ong Bet terkenal dengan:",
+      "features": [
+        "Keadilan permainan",
+        "Keselamatan enkripsi SSL",
+        "Bonus deposit tetap dan tawaran kredit percuma",
+        "Persekitaran yang peribadi, stabil, dan dipercayai"
+      ]
+    },
+    "platform": {
+      "title": "Main Di Mana-mana, Bila-bila Masa",
+      "description": "Dengan aplikasi mudah alih Heng Ong Bet (menyokong iOS & Android), anda boleh menikmati semua permainan kegemaran anda semasa dalam perjalanan — dari slot dan sportsbook hingga dealer langsung dan permainan 4D. Sertai Heng Ong Bet hari ini dan alami platform permainan dalam talian yang paling boleh dipercayai dan menarik di Malaysia!"
+    }
+  }
+}

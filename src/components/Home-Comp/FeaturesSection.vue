@@ -3,7 +3,7 @@
     <!-- Tab Navigation -->
     <div class="tab-navigation">
       <button
-        v-for="tab in tabs"
+        v-for="tab in currentContent.tabs"
         :key="tab.id"
         @click="activeTab = tab.id"
         :class="['tab-btn', { active: activeTab === tab.id }]"
@@ -14,29 +14,28 @@
     <div class="tab-content">
       <!-- Games Library Tab with bullet points -->
       <div v-if="activeTab === 'games-library'" class="games-library-content">
-        <p class="library-header">We've partnered with top providers including:</p>
+        <p class="library-header">{{ currentContent.gamesLibrary.header }}</p>
         <ul class="providers-list">
-          <li><strong>Live Casinos:</strong> PEGASUS LIVE, CTG855, AE SEXY, ASIA GAMING, EVOLUTION & more</li>
-          <li><strong>Slots:</strong> 918KISS, PUSSY888, NAGA GAMES, JILI, PLAYTECH, and many others</li>
-          <li><strong>Sports Betting:</strong> SBOBET, SBOVS, BET33</li>
+          <li v-for="(provider, index) in currentContent.gamesLibrary.providers" :key="index">
+            <strong>{{ provider.category }}:</strong> {{ provider.list }}
+          </li>
         </ul>
       </div>
             
       <!-- Secure & Rewarding Tab with bullet points -->
       <div v-else-if="activeTab === 'secure-rewarding'" class="secure-content">
-        <p class="secure-header">With over 10 years in the industry, Heng Ong Bet is known for:</p>
+        <p class="secure-header">{{ currentContent.secureRewarding.header }}</p>
         <ul class="secure-list">
-          <li>Game fairness</li>
-          <li>SSL-encrypted security</li>
-          <li>Regular deposit bonuses and free credit offers</li>
-          <li>A private, stable, and trusted environment</li>
+          <li v-for="(item, index) in currentContent.secureRewarding.features" :key="index">
+            {{ item }}
+          </li>
         </ul>
       </div>
             
       <!-- Why Choose tab with original format -->
       <div v-else class="features-list">
         <div
-          v-for="feature in currentTabFeatures"
+          v-for="feature in currentContent.whyChoose.features"
           :key="feature.id"
           class="feature-item"
         >
@@ -50,75 +49,151 @@
     
   <!-- Platform Section -->
   <div class="platform-section">
-    <h3 class="platform-title">{{ platformContent.title }}</h3>
-    <p class="platform-description">{{ platformContent.description }}</p>
+    <h3 class="platform-title">{{ currentContent.platform.title }}</h3>
+    <p class="platform-description">{{ currentContent.platform.description }}</p>
   </div>
 </template>
 
 <script>
+import { useRoute } from 'vue-router'
+import { getCurrentLocale } from '@/router'
+
 export default {
   name: 'FeaturesSection',
+  setup() {
+    const route = useRoute()
+    return { route, getCurrentLocale }
+  },
   data() {
     return {
       activeTab: 'why-choose',
-      tabs: [
-        {
-          id: 'why-choose',
-          title: 'Why Choose Heng Ong Bet?'
-        },
-        {
-          id: 'games-library',
-          title: "Malaysia's Largest Game Library"
-        },
-        {
-          id: 'secure-rewarding',
-          title: 'Proven, Secure & Rewarding'
-        }
-      ],
-      tabFeatures: {
-        'why-choose': [
-          {
-            id: 1,
-            title: 'Expert Team',
-            description: 'Constantly improving games and user experience'
+      allContent: {
+        en: {
+          tabs: [
+            { id: 'why-choose', title: 'Why Choose Heng Ong Bet?' },
+            { id: 'games-library', title: "Malaysia's Largest Game Library" },
+            { id: 'secure-rewarding', title: 'Proven, Secure & Rewarding' }
+          ],
+          whyChoose: {
+            features: [
+              { id: 1, title: 'Expert Team', description: 'Constantly improving games and user experience' },
+              { id: 2, title: 'Secure Platform', description: 'Advanced encryption for data protection' },
+              { id: 3, title: '24/7 Support', description: 'Help available anytime' },
+              { id: 4, title: 'Responsible Gaming', description: 'Promoting safe and healthy play' },
+              { id: 5, title: 'Community Focused', description: 'Supporting local welfare initiatives' }
+            ]
           },
-          {
-            id: 2,
-            title: 'Secure Platform',
-            description: 'Advanced encryption for data protection'
+          gamesLibrary: {
+            header: "We've partnered with top providers including:",
+            providers: [
+              { category: 'Live Casinos', list: 'PEGASUS LIVE, CTG855, AE SEXY, ASIA GAMING, EVOLUTION & more' },
+              { category: 'Slots', list: '918KISS, PUSSY888, NAGA GAMES, JILI, PLAYTECH, and many others' },
+              { category: 'Sports Betting', list: 'SBOBET, SBOVS, BET33' }
+            ]
           },
-          {
-            id: 3,
-            title: '24/7 Support',
-            description: 'Help available anytime'
+          secureRewarding: {
+            header: 'With over 10 years in the industry, Heng Ong Bet is known for:',
+            features: [
+              'Game fairness',
+              'SSL-encrypted security',
+              'Regular deposit bonuses and free credit offers',
+              'A private, stable, and trusted environment'
+            ]
           },
-          {
-            id: 4,
-            title: 'Responsible Gaming',
-            description: 'Promoting safe and healthy play'
-          },
-          {
-            id: 5,
-            title: 'Community Focused',
-            description: 'Supporting local welfare initiatives'
+          platform: {
+            title: "Play Anywhere, Anytime",
+            description: "With the Heng Ong Bet mobile app (iOS & Android supported), you can enjoy all your favorite games on the go — from slots and sportsbook to live dealer and 4D games. Join Heng Ong Bet today and experience Malaysia's most reliable and exciting online gaming platform!"
           }
-        ],
-        'games-library': [
-          // This tab now uses a different format with bullet points
-        ],
-        'secure-rewarding': [
-          // This tab now uses bullet points format
-        ]
-      },
-      platformContent: {
-        title: "Play Anywhere, Anytime",
-        description: "With the Heng Ong Bet mobile app (iOS & Android supported), you can enjoy all your favorite games on the go — from slots and sportsbook to live dealer and 4D games. Join Heng Ong Bet today and experience Malaysia's most reliable and exciting online gaming platform!"
+        },
+        zh: {
+          tabs: [
+            { id: 'why-choose', title: '为什么选择兴旺Bet？' },
+            { id: 'games-library', title: '马来西亚最大的游戏库' },
+            { id: 'secure-rewarding', title: '经过验证，安全且有回报' }
+          ],
+          whyChoose: {
+            features: [
+              { id: 1, title: '专家团队', description: '不断改进游戏和用户体验' },
+              { id: 2, title: '安全平台', description: '先进的数据保护加密技术' },
+              { id: 3, title: '24/7 支持', description: '随时提供帮助' },
+              { id: 4, title: '负责任博彩', description: '促进安全健康的游戏' },
+              { id: 5, title: '社区为本', description: '支持当地福利倡议' }
+            ]
+          },
+          gamesLibrary: {
+            header: "我们与顶级供应商合作，包括：",
+            providers: [
+              { category: '真人娱乐场', list: 'PEGASUS LIVE, CTG855, AE SEXY, ASIA GAMING, EVOLUTION 等' },
+              { category: '老虎机', list: '918KISS, PUSSY888, NAGA GAMES, JILI, PLAYTECH 等' },
+              { category: '体育博彩', list: 'SBOBET, SBOVS, BET33' }
+            ]
+          },
+          secureRewarding: {
+            header: '凭借在行业中超过10年的经验，兴旺Bet以以下特点而闻名：',
+            features: [
+              '游戏公平性',
+              'SSL加密安全',
+              '定期存款奖金和免费信贷优惠',
+              '私密、稳定、可信的环境'
+            ]
+          },
+          platform: {
+            title: "随时随地畅玩",
+            description: "通过兴旺Bet手机应用（支持iOS和Android），您可以随时随地享受所有喜爱的游戏——从老虎机和体育博彩到真人荷官和4D游戏。立即加入兴旺Bet，体验马来西亚最可靠、最令人兴奋的在线游戏平台！"
+          }
+        },
+        ms: {
+          tabs: [
+            { id: 'why-choose', title: 'Mengapa Pilih Heng Ong Bet?' },
+            { id: 'games-library', title: 'Perpustakaan Permainan Terbesar Malaysia' },
+            { id: 'secure-rewarding', title: 'Terbukti, Selamat & Bermanfaat' }
+          ],
+          whyChoose: {
+            features: [
+              { id: 1, title: 'Pasukan Pakar', description: 'Sentiasa menambah baik permainan dan pengalaman pengguna' },
+              { id: 2, title: 'Platform Selamat', description: 'Enkripsi canggih untuk perlindungan data' },
+              { id: 3, title: 'Sokongan 24/7', description: 'Bantuan tersedia bila-bila masa' },
+              { id: 4, title: 'Permainan Bertanggungjawab', description: 'Menggalakkan permainan yang selamat dan sihat' },
+              { id: 5, title: 'Fokus Komuniti', description: 'Menyokong inisiatif kebajikan tempatan' }
+            ]
+          },
+          gamesLibrary: {
+            header: "Kami telah bekerjasama dengan pembekal terbaik termasuk:",
+            providers: [
+              { category: 'Kasino Langsung', list: 'PEGASUS LIVE, CTG855, AE SEXY, ASIA GAMING, EVOLUTION & lain-lain' },
+              { category: 'Slot', list: '918KISS, PUSSY888, NAGA GAMES, JILI, PLAYTECH, dan banyak lagi' },
+              { category: 'Pertaruhan Sukan', list: 'SBOBET, SBOVS, BET33' }
+            ]
+          },
+          secureRewarding: {
+            header: 'Dengan lebih 10 tahun dalam industri, Heng Ong Bet terkenal dengan:',
+            features: [
+              'Keadilan permainan',
+              'Keselamatan enkripsi SSL',
+              'Bonus deposit tetap dan tawaran kredit percuma',
+              'Persekitaran yang peribadi, stabil, dan dipercayai'
+            ]
+          },
+          platform: {
+            title: "Main Di Mana-mana, Bila-bila Masa",
+            description: "Dengan aplikasi mudah alih Heng Ong Bet (menyokong iOS & Android), anda boleh menikmati semua permainan kegemaran anda semasa dalam perjalanan — dari slot dan sportsbook hingga dealer langsung dan permainan 4D. Sertai Heng Ong Bet hari ini dan alami platform permainan dalam talian yang paling boleh dipercayai dan menarik di Malaysia!"
+          }
+        }
       }
     }
   },
   computed: {
-    currentTabFeatures() {
-      return this.tabFeatures[this.activeTab] || []
+    currentLocale() {
+      return this.getCurrentLocale(this.route)
+    },
+    currentContent() {
+      return this.allContent[this.currentLocale] || this.allContent.en
+    }
+  },
+  watch: {
+    '$route'() {
+      // Force reactivity when route changes
+      this.$forceUpdate()
     }
   }
 }

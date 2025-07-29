@@ -8,9 +8,14 @@
       :autoplay="autoPlayConfig"
       :navigation="navigationConfig"
       :pagination="paginationConfig"
+      :speed="800"
+      :loopAdditionalSlides="2"
+      :watchSlidesProgress="true"
+      :centeredSlides="true"
       class="hero-banner-swiper"
       @swiper="onSwiper"
       @slideChange="onSlideChange"
+      @autoplayTimeLeft="onAutoplayTimeLeft"
     >
       <swiper-slide
         v-for="(image, index) in images"
@@ -23,6 +28,32 @@
           class="banner-image" 
         />
       </swiper-slide>
+      
+      <!-- Custom Navigation Arrows -->
+      <div class="hero-swiper-button-prev" slot="button-prev" @click="prevSlide">
+        <div class="nav-arrow nav-arrow-left"></div>
+      </div>
+      <div class="hero-swiper-button-next" slot="button-next" @click="nextSlide">
+        <div class="nav-arrow nav-arrow-right"></div>
+      </div>
+      
+      <!-- Custom Pagination -->
+      <div class="hero-swiper-pagination" slot="pagination"></div>
+      
+      <!-- Progress Ring for Auto-play (Optional) -->
+      <div v-if="showProgressRing" class="autoplay-progress">
+        <svg class="progress-ring" width="60" height="60">
+          <circle
+            class="progress-ring-circle"
+            :stroke-dasharray="progressCircumference + ' ' + progressCircumference"
+            :stroke-dashoffset="progressOffset"
+            cx="30"
+            cy="30"
+            r="25"
+          />
+        </svg>
+        <span class="progress-text">{{ Math.ceil(autoplayTimeLeft / 1000) }}</span>
+      </div>
     </swiper>
   </section>
 </template>
@@ -51,7 +82,7 @@ export default {
     },
     autoPlayInterval: {
       type: Number,
-      default: 3000
+      default: 4000 // Slightly longer for better UX
     },
     showNavigation: {
       type: Boolean,
@@ -60,12 +91,22 @@ export default {
     showPagination: {
       type: Boolean,
       default: true
+    },
+    showProgressRing: {
+      type: Boolean,
+      default: false // Optional progress indicator
+    },
+    pauseOnHover: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
     return {
       swiperInstance: null,
-      currentSlideIndex: 0
+      currentSlideIndex: 0,
+      autoplayTimeLeft: 0,
+      progressCircumference: 2 * Math.PI * 25 // radius = 25
     }
   },
   computed: {
@@ -73,29 +114,59 @@ export default {
       return this.autoPlay ? {
         delay: this.autoPlayInterval,
         disableOnInteraction: false,
-        pauseOnMouseEnter: true
+        pauseOnMouseEnter: this.pauseOnHover,
+        reverseDirection: false,
+        waitForTransition: true,
+        stopOnLastSlide: false // Ensures unlimited movement
       } : false
     },
     navigationConfig() {
       return this.showNavigation ? {
         nextEl: '.hero-swiper-button-next',
         prevEl: '.hero-swiper-button-prev',
+        disabledClass: 'swiper-button-disabled'
       } : false
     },
     paginationConfig() {
       return this.showPagination ? {
         el: '.hero-swiper-pagination',
         clickable: true,
-        dynamicBullets: true
+        dynamicBullets: true,
+        dynamicMainBullets: 3,
+        type: 'bullets'
       } : false
+    },
+    progressOffset() {
+      const progress = 1 - (this.autoplayTimeLeft / this.autoPlayInterval)
+      return this.progressCircumference * progress
     }
+  },
+  mounted() {
+    // Ensure auto-play starts immediately
+    this.$nextTick(() => {
+      if (this.swiperInstance && this.autoPlay) {
+        this.startAutoplay()
+      }
+    })
   },
   methods: {
     onSwiper(swiper) {
       this.swiperInstance = swiper
+      
+      // Start autoplay immediately
+      if (this.autoPlay) {
+        this.startAutoplay()
+      }
     },
     onSlideChange(swiper) {
       this.currentSlideIndex = swiper.realIndex
+      this.$emit('slideChange', {
+        currentIndex: this.currentSlideIndex,
+        totalSlides: this.images.length
+      })
+    },
+    onAutoplayTimeLeft(swiper, time, progress) {
+      this.autoplayTimeLeft = time
     },
     nextSlide() {
       if (this.swiperInstance) {
@@ -111,6 +182,33 @@ export default {
       if (this.swiperInstance) {
         this.swiperInstance.slideToLoop(index)
       }
+    },
+    startAutoplay() {
+      if (this.swiperInstance && this.swiperInstance.autoplay) {
+        this.swiperInstance.autoplay.start()
+      }
+    },
+    stopAutoplay() {
+      if (this.swiperInstance && this.swiperInstance.autoplay) {
+        this.swiperInstance.autoplay.stop()
+      }
+    },
+    resumeAutoplay() {
+      if (this.swiperInstance && this.swiperInstance.autoplay) {
+        this.swiperInstance.autoplay.start()
+      }
+    },
+    // Manual controls for external use
+    pauseSlider() {
+      this.stopAutoplay()
+    },
+    playSlider() {
+      this.startAutoplay()
+    }
+  },
+  beforeUnmount() {
+    if (this.swiperInstance) {
+      this.swiperInstance.destroy(true, true)
     }
   }
 }
@@ -137,6 +235,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .banner-image {
@@ -151,11 +250,12 @@ export default {
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
+  transition: transform 0.8s ease;
 }
 
 /* Custom Navigation Arrows */
-:deep(.hero-swiper-button-next),
-:deep(.hero-swiper-button-prev) {
+.hero-swiper-button-next,
+.hero-swiper-button-prev {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -175,11 +275,10 @@ export default {
   z-index: 20;
   user-select: none;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  margin-top: 0;
 }
 
-:deep(.hero-swiper-button-next):hover,
-:deep(.hero-swiper-button-prev):hover {
+.hero-swiper-button-next:hover,
+.hero-swiper-button-prev:hover {
   background: linear-gradient(135deg, rgba(242, 178, 64, 0.9), rgba(242, 178, 64, 0.7));
   border-color: rgba(242, 178, 64, 0.5);
   color: white;
@@ -187,44 +286,47 @@ export default {
   box-shadow: 0 12px 40px rgba(242, 178, 64, 0.4);
 }
 
-:deep(.hero-swiper-button-next):active,
-:deep(.hero-swiper-button-prev):active {
+.hero-swiper-button-next:active,
+.hero-swiper-button-prev:active {
   transform: translateY(-50%) scale(0.95);
 }
 
-:deep(.hero-swiper-button-next)::after,
-:deep(.hero-swiper-button-prev)::after {
-  content: '';
-  width: 0;
-  height: 0;
-}
-
-:deep(.hero-swiper-button-prev) {
+.hero-swiper-button-prev {
   left: 30px;
 }
 
-:deep(.hero-swiper-button-prev)::before {
-  content: '';
-  width: 24px;
-  height: 24px;
-  background: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 18L9 12L15 6' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
-  background-size: contain;
-}
-
-:deep(.hero-swiper-button-next) {
+.hero-swiper-button-next {
   right: 30px;
 }
 
-:deep(.hero-swiper-button-next)::before {
-  content: '';
+.nav-arrow {
   width: 24px;
   height: 24px;
-  background: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 18L15 12L9 6' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
-  background-size: contain;
+  position: relative;
+}
+
+.nav-arrow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform-origin: center;
+}
+
+.nav-arrow-left::before {
+  transform: translate(-25%, -50%) rotate(-135deg);
+}
+
+.nav-arrow-right::before {
+  transform: translate(-75%, -50%) rotate(45deg);
 }
 
 /* Custom Pagination Dots */
-:deep(.hero-swiper-pagination) {
+.hero-swiper-pagination {
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -249,40 +351,96 @@ export default {
 :deep(.swiper-pagination-bullet):hover {
   border-color: rgba(242, 178, 64, 0.8);
   background: rgba(242, 178, 64, 0.3);
+  transform: scale(1.2);
 }
 
 :deep(.swiper-pagination-bullet-active) {
   background: #F2B240 !important;
   border-color: #F2B240 !important;
+  transform: scale(1.3);
+}
+
+/* Progress Ring for Auto-play */
+.autoplay-progress {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+}
+
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+  fill: transparent;
+  stroke: rgba(242, 178, 64, 0.8);
+  stroke-width: 2;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.progress-text {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Smooth slide transitions */
+:deep(.swiper-slide) {
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+:deep(.swiper-slide-active) {
+  transform: scale(1);
+}
+
+:deep(.swiper-slide-prev),
+:deep(.swiper-slide-next) {
+  transform: scale(0.95);
 }
 
 /* Mobile Responsive Design */
 @media (max-width: 768px) {
   .banner-image {
-    max-height: 300px;
+    height: 100px;
   }
 
-  :deep(.hero-swiper-button-next),
-  :deep(.hero-swiper-button-prev) {
-    width: 50px;
-    height: 50px;
+  .hero-swiper-button-next,
+  .hero-swiper-button-prev {
+    width: 30px;
+    height: 30px;
   }
 
-  :deep(.hero-swiper-button-prev)::before,
-  :deep(.hero-swiper-button-next)::before {
+  .nav-arrow {
     width: 20px;
     height: 20px;
   }
 
-  :deep(.hero-swiper-button-prev) {
+  .nav-arrow::before {
+    width: 10px;
+    height: 10px;
+  }
+
+  .hero-swiper-button-prev {
     left: 15px;
   }
 
-  :deep(.hero-swiper-button-next) {
+  .hero-swiper-button-next {
     right: 15px;
   }
 
-  :deep(.hero-swiper-pagination) {
+  .hero-swiper-pagination {
     bottom: 15px;
     gap: 8px;
   }
@@ -291,49 +449,62 @@ export default {
     width: 10px;
     height: 10px;
   }
+
+  .autoplay-progress {
+    top: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .progress-text {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 480px) {
   .banner-image {
-    max-height: 250px;
+    height: 100px;
   }
 
-  :deep(.hero-swiper-button-next),
-  :deep(.hero-swiper-button-prev) {
-    width: 45px;
-    height: 45px;
+  .hero-swiper-button-next,
+  .hero-swiper-button-prev {
+    width: 30px !important;
+    height: 30px !important;
   }
 
-  :deep(.hero-swiper-button-prev)::before,
-  :deep(.hero-swiper-button-next)::before {
+  .nav-arrow {
     width: 18px;
     height: 18px;
   }
 
-  :deep(.hero-swiper-button-prev) {
+  .nav-arrow::before {
+    width: 9px;
+    height: 9px;
+  }
+
+  .hero-swiper-button-prev {
     left: 10px;
   }
 
-  :deep(.hero-swiper-button-next) {
+  .hero-swiper-button-next {
     right: 10px;
+  }
+
+  .autoplay-progress {
+    display: none; /* Hide on very small screens */
   }
 }
 
 @media (max-width: 360px) {
-  .banner-image {
-    max-height: 200px;
-  }
-
-  :deep(.hero-swiper-button-next),
-  :deep(.hero-swiper-button-prev) {
-    width: 40px;
-    height: 40px;
-  }
-
-  :deep(.hero-swiper-button-prev)::before,
-  :deep(.hero-swiper-button-next)::before {
+.nav-arrow {
     width: 16px;
     height: 16px;
+  }
+
+  .nav-arrow::before {
+    width: 8px;
+    height: 8px;
   }
 }
 
@@ -351,8 +522,8 @@ export default {
 }
 
 @media (hover: none) and (pointer: coarse) {
-  :deep(.hero-swiper-button-next),
-  :deep(.hero-swiper-button-prev) {
+  .hero-swiper-button-next,
+  .hero-swiper-button-prev {
     width: 55px;
     height: 55px;
     touch-action: manipulation;
@@ -362,5 +533,30 @@ export default {
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
   }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .hero-banner-slide,
+  .banner-image,
+  :deep(.swiper-slide) {
+    transition: none;
+  }
+  
+  .autoplay-progress {
+    display: none;
+  }
+}
+
+/* Focus states for accessibility */
+.hero-swiper-button-next:focus,
+.hero-swiper-button-prev:focus {
+  outline: 2px solid #F2B240;
+  outline-offset: 2px;
+}
+
+:deep(.swiper-pagination-bullet):focus {
+  outline: 2px solid #F2B240;
+  outline-offset: 2px;
 }
 </style>

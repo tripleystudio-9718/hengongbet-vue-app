@@ -13,22 +13,22 @@
         <div class="content-container">
           <!-- Brand Section -->
           <div class="section-wrapper">
-            <p class="subtitle-text">{{ content.brandSection.subtitle }}</p>
-            <h2 class="main-title" style="color: #F2B240;">{{ content.brandSection.title }}</h2>
-            <p class="description-text">{{ content.brandSection.tagline }}</p>
+            <p class="subtitle-text">{{ currentContent.brandSection.subtitle }}</p>
+            <h2 class="main-title" style="color: #F2B240;">{{ currentContent.brandSection.title }}</h2>
+            <p class="description-text">{{ currentContent.brandSection.tagline }}</p>
                                   
             <div class="text-content">
-              <p v-for="(paragraph, index) in content.brandSection.paragraphs" :key="index">
+              <p v-for="(paragraph, index) in currentContent.brandSection.paragraphs" :key="index">
                 {{ paragraph }}
               </p>
                                         
               <ul class="feature-list">
-                <li v-for="(feature, index) in content.brandSection.features" :key="index">
+                <li v-for="(feature, index) in currentContent.brandSection.features" :key="index">
                   • {{ feature }}
                 </li>
               </ul>
                                         
-              <p>{{ content.brandSection.conclusion }}</p>
+              <p>{{ currentContent.brandSection.conclusion }}</p>
             </div>
           </div>
                     
@@ -48,12 +48,12 @@
         </div>
         <div class="column-text">
           <h2 class="main-title">
-            Become a <span class="accent-color">{{ content.affiliateSection.brand }}</span> Affiliate Today
+            {{ currentContent.affiliateSection.becomeText }} <span class="accent-color">{{ currentContent.affiliateSection.brand }}</span> {{ currentContent.affiliateSection.affiliateToday }}
           </h2>
-          <p class="subtitle-text">{{ content.affiliateSection.description }}</p>
+          <p class="subtitle-text">{{ currentContent.affiliateSection.description }}</p>
                     
           <ul class="feature-list-1" style="flex-direction: column;">
-            <li v-for="(benefit, index) in content.affiliateSection.benefits" :key="index">
+            <li v-for="(benefit, index) in currentContent.affiliateSection.benefits" :key="index">
               • {{ benefit }}
             </li>
           </ul>
@@ -68,6 +68,8 @@
 </template>
 
 <script>
+import { useRoute } from 'vue-router'
+import { getCurrentLocale } from '@/router'
 import HomeBanner from '@/components/Home-Comp/HomeBanner.vue'
 import PromotionSection from '@/components/Home-Comp/PromotionSection.vue'
 import FeaturesSection from '@/components/Home-Comp/FeaturesSection.vue'
@@ -98,6 +100,14 @@ export default {
     ReviewSection,
     FaqSection
   },
+  setup() {
+    const route = useRoute()
+    
+    return {
+      route,
+      getCurrentLocale
+    }
+  },
   data() {
     return {
       becomeImg,
@@ -108,47 +118,126 @@ export default {
         homeBanner2,
         homeBanner3,
       ],
-      content: {
-        brandSection: {
-          subtitle: "Trusted Online Casino",
-          title: "Heng Ong Bet Official",
-          tagline: "Heng Ong Bet - Malaysia's Trusted Online Casino Platform",
-          paragraphs: [
-            "Founded in 2015, Heng Ong Bet is Malaysia's first all-in-one online entertainment platform. With world-class gaming systems and highest technical support team committed to delivering safe, reliable, and high-quality gaming services to all users.",
-            "As one of the leading online gaming platforms in Malaysia, we offer a comprehensive range of gaming options including:"
-          ],
-          features: [
-            "Sports betting",
-            "Live casino",
-            "Slot games",
-            "4D lottery and more"
-          ],
-          conclusion: "Players enjoy a fair, secure, and seamless gaming experience, with fast deposits and withdrawals."
+      // All language content
+      allContent: {
+        en: {
+          brandSection: {
+            subtitle: "Trusted Online Casino",
+            title: "Heng Ong Bet Official",
+            tagline: "Heng Ong Bet - Malaysia's Trusted Online Casino Platform",
+            paragraphs: [
+              "Founded in 2015, Heng Ong Bet is Malaysia's first all-in-one online entertainment platform. With world-class gaming systems and highest technical support team committed to delivering safe, reliable, and high-quality gaming services to all users.",
+              "As one of the leading online gaming platforms in Malaysia, we offer a comprehensive range of gaming options including:"
+            ],
+            features: [
+              "Sports betting",
+              "Live casino",
+              "Slot games",
+              "4D lottery and more"
+            ],
+            conclusion: "Players enjoy a fair, secure, and seamless gaming experience, with fast deposits and withdrawals."
+          },
+          affiliateSection: {
+            brand: "Heng Ong Bet",
+            becomeText: "Become a",
+            affiliateToday: "Affiliate Today",
+            description: "Join HengOngBet's official affiliate program and earn high commissions by promoting Malaysia's top online casino platform. Whether you're a seasoned marketer or just getting started, our tools, tracking system, and support team help you succeed",
+            benefits: [
+              "Real-time tracking & reports",
+              "Up to 50% revenue share",
+              "Weekly payout system",
+              "Custom promotional banners",
+              "Telegram bot & link generator",
+              "Dedicated affiliate support",
+              "Zero cost to join",
+              "Trusted by thousands of agents in Malaysia"
+            ]
+          }
         },
-        whySection: {
-          brand: "Heng Ong Bet"
+        zh: {
+          brandSection: {
+            subtitle: "值得信赖的在线赌场",
+            title: "兴旺Bet官方",
+            tagline: "兴旺Bet - 马来西亚值得信赖的在线赌场平台",
+            paragraphs: [
+              "成立于2015年，兴旺Bet是马来西亚首个一体化在线娱乐平台。拥有世界级的游戏系统和最高水平的技术支持团队，致力于为所有用户提供安全、可靠、高质量的游戏服务。",
+              "作为马来西亚领先的在线游戏平台之一，我们提供全面的游戏选择，包括："
+            ],
+            features: [
+              "体育博彩",
+              "真人娱乐场",
+              "老虎机游戏",
+              "4D彩票等"
+            ],
+            conclusion: "玩家享受公平、安全、无缝的游戏体验，存取款快速便捷。"
+          },
+          affiliateSection: {
+            brand: "兴旺Bet",
+            becomeText: "立即成为",
+            affiliateToday: "代理",
+            description: "加入HengOngBet官方代理项目，通过推广马来西亚顶级在线赌场平台赚取高额佣金。无论您是经验丰富的营销人员还是初学者，我们的工具、跟踪系统和支持团队都会帮助您成功",
+            benefits: [
+              "实时跟踪和报告",
+              "高达50%收入分成",
+              "每周支付系统",
+              "定制推广横幅",
+              "Telegram机器人和链接生成器",
+              "专属代理支持",
+              "免费加入",
+              "受到马来西亚数千名代理的信赖"
+            ]
+          }
         },
-        affiliateSection: {
-          brand: "Heng Ong Bet",
-          description: "Join HengOngBet's official affiliate program and earn high commissions by promoting Malaysia's top online casino platform. Whether you're a seasoned marketer or just getting started, our tools, tracking system, and support team help you succeed",
-          benefits: [
-            "Real-time tracking & reports",
-            "Up to 50% revenue share",
-            "Weekly payout system",
-            "Custom promotional banners",
-            "Telegram bot & link generator",
-            "Dedicated affiliate support",
-            "Zero cost to join",
-            "Trusted by thousands of agents in Malaysia"
-          ]
-        },
-        globalSection: {
-          brand: "Heng Ong Bet",
-          title: "We Are Global",
-          subtitle: "Heng Ong Bet is Now Expanding Globally",
-          description: "Heng Ong Bet is now available in Singapore, with our talented global team supporting growth across Malaysia and Singapore. What unites us? A passion for delivering the best gaming experience. We're also actively expanding into Thailand, Vietnam, Indonesia, Cambodia, the UK, and the USA."
+        ms: {
+          brandSection: {
+            subtitle: "Kasino Online Dipercayai",
+            title: "Heng Ong Bet Rasmi",
+            tagline: "Heng Ong Bet - Platform Kasino Online Malaysia Yang Dipercayai",
+            paragraphs: [
+              "Ditubuhkan pada tahun 2015, Heng Ong Bet adalah platform hiburan dalam talian serba lengkap pertama di Malaysia. Dengan sistem permainan bertaraf dunia dan pasukan sokongan teknikal tertinggi yang komited untuk menyampaikan perkhidmatan permainan yang selamat, boleh dipercayai, dan berkualiti tinggi kepada semua pengguna.",
+              "Sebagai salah satu platform permainan dalam talian terkemuka di Malaysia, kami menawarkan rangkaian pilihan permainan yang komprehensif termasuk:"
+            ],
+            features: [
+              "Pertaruhan sukan",
+              "Kasino langsung",
+              "Permainan slot",
+              "Loteri 4D dan lain-lain"
+            ],
+            conclusion: "Pemain menikmati pengalaman permainan yang adil, selamat, dan lancar, dengan deposit dan pengeluaran yang pantas."
+          },
+          affiliateSection: {
+            brand: "Heng Ong Bet",
+            becomeText: "Menjadi",
+            affiliateToday: "Ahli Gabungan Hari Ini",
+            description: "Sertai program ahli gabungan rasmi HengOngBet dan dapatkan komisen tinggi dengan mempromosikan platform kasino dalam talian terbaik Malaysia. Sama ada anda seorang pemasar berpengalaman atau baru bermula, alat, sistem penjejakan, dan pasukan sokongan kami membantu anda berjaya",
+            benefits: [
+              "Penjejakan masa nyata & laporan",
+              "Sehingga 50% perkongsian hasil",
+              "Sistem pembayaran mingguan",
+              "Banner promosi tersuai",
+              "Bot Telegram & penjana pautan",
+              "Sokongan ahli gabungan khusus",
+              "Kos sifar untuk menyertai",
+              "Dipercayai oleh ribuan ejen di Malaysia"
+            ]
+          }
         }
       }
+    }
+  },
+  computed: {
+    currentLocale() {
+      return this.getCurrentLocale(this.route)
+    },
+    currentContent() {
+      const locale = this.currentLocale
+      return this.allContent[locale] || this.allContent.en
+    }
+  },
+  watch: {
+    '$route'() {
+      // Force reactivity when route changes
+      this.$forceUpdate()
     }
   }
 }

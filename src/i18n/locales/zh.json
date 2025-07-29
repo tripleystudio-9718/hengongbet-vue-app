@@ -1,0 +1,241 @@
+{
+  "nav": {
+    "home": "首页",
+    "games": "游戏",
+    "promotion": "优惠",
+    "4d_results": "4D开奖",
+    "download": "下载",
+    "affiliate": "代理",
+    "faq": "常见问题",
+    "help": "帮助",
+    "tutorial": "教程指南",
+    "topup_tutorial": "充值提现教程",
+    "login": "登录",
+    "register": "注册"
+  },
+  "common": {
+    "welcome": "欢迎",
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "cancel": "取消",
+    "confirm": "确认",
+    "save": "保存",
+    "edit": "编辑",
+    "delete": "删除",
+    "search": "搜索",
+    "submit": "提交",
+    "back": "返回",
+    "next": "下一步",
+    "previous": "上一步",
+    "close": "关闭",
+    "select": "选择",
+    "language": "语言",
+    "notice": "重要通知"
+  },
+  "auth": {
+    "login": "登录",
+    "register": "注册",
+    "username": "用户名",
+    "password": "密码",
+    "email": "邮箱",
+    "phone": "手机号码",
+    "forgot_password": "忘记密码？",
+    "remember_me": "记住我",
+    "sign_in": "登录",
+    "sign_up": "注册",
+    "already_have_account": "已有账户？",
+    "dont_have_account": "没有账户？",
+    "create_account": "创建账户"
+  },
+  "games": {
+    "title": "游戏",
+    "categories": "分类",
+    "popular": "热门游戏",
+    "new": "新游戏",
+    "slots": "老虎机",
+    "live_casino": "真人娱乐场",
+    "sports": "体育博彩",
+    "lottery": "彩票",
+    "fishing": "捕鱼游戏",
+    "play_now": "立即游戏"
+  },
+  "promotion": {
+    "title": "优惠活动",
+    "active": "进行中的优惠",
+    "expired": "已过期的优惠",
+    "terms": "条款与条件",
+    "claim": "立即领取",
+    "details": "详情"
+  },
+  "results": {
+    "title": "4D开奖结果",
+    "today": "今日开奖",
+    "history": "历史开奖",
+    "date": "日期",
+    "number": "号码",
+    "prize": "奖金"
+  },
+  "download": {
+    "title": "下载应用",
+    "android": "安卓版",
+    "ios": "苹果版",
+    "desktop": "桌面版",
+    "download_now": "立即下载",
+    "qr_code": "扫描二维码"
+  },
+  "affiliate": {
+    "title": "代理计划",
+    "join": "加入我们的代理计划",
+    "commission": "佣金",
+    "referral": "推荐链接",
+    "earnings": "收益",
+    "withdraw": "提现"
+  },
+  "faq": {
+    "title": "常见问题",
+    "search_faq": "搜索常见问题",
+    "categories": "分类",
+    "general": "一般问题",
+    "account": "账户",
+    "payment": "支付",
+    "technical": "技术支持"
+  },
+  "tutorial": {
+    "title": "教程指南",
+    "getting_started": "入门指南",
+    "how_to_play": "如何游戏",
+    "account_setup": "账户设置",
+    "game_rules": "游戏规则"
+  },
+  "topup": {
+    "title": "充值提现教程",
+    "deposit": "充值",
+    "withdraw": "提现",
+    "methods": "支付方式",
+    "bank_transfer": "银行转账",
+    "e_wallet": "电子钱包",
+    "cryptocurrency": "加密货币",
+    "minimum": "最低金额",
+    "maximum": "最高金额",
+    "processing_time": "处理时间"
+  },
+  "footer": {
+    "about_us": "关于我们",
+    "contact": "联系我们",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "responsible_gaming": "负责任博彩",
+    "support": "24/7 客服",
+    "copyright": "© 2024 HengOngBet. 版权所有。"
+  },
+  "home": {
+    "brandSection": {
+      "subtitle": "值得信赖的在线赌场",
+      "title": "兴旺Bet官方",
+      "tagline": "兴旺Bet - 马来西亚值得信赖的在线赌场平台",
+      "paragraphs": [
+        "成立于2015年，兴旺Bet是马来西亚首个一体化在线娱乐平台。拥有世界级的游戏系统和最高水平的技术支持团队，致力于为所有用户提供安全、可靠、高质量的游戏服务。",
+        "作为马来西亚领先的在线游戏平台之一，我们提供全面的游戏选择，包括："
+      ],
+      "features": [
+        "体育博彩",
+        "真人娱乐场",
+        "老虎机游戏",
+        "4D彩票等"
+      ],
+      "conclusion": "玩家享受公平、安全、无缝的游戏体验，存取款快速便捷。"
+    },
+    "affiliateSection": {
+      "becomeText": "立即成为",
+      "brand": "兴旺Bet",
+      "affiliateToday": "代理",
+      "description": "加入HengOngBet官方代理项目，通过推广马来西亚顶级在线赌场平台赚取高额佣金。无论您是经验丰富的营销人员还是初学者，我们的工具、跟踪系统和支持团队都会帮助您成功",
+      "benefits": [
+        "实时跟踪和报告",
+        "高达50%收入分成",
+        "每周支付系统",
+        "定制推广横幅",
+        "Telegram机器人和链接生成器",
+        "专属代理支持",
+        "免费加入",
+        "受到马来西亚数千名代理的信赖"
+      ]
+    }
+  },
+  "features": {
+    "tabs": [
+      {
+        "id": "why-choose",
+        "title": "为什么选择兴旺Bet？"
+      },
+      {
+        "id": "games-library",
+        "title": "马来西亚最大的游戏库"
+      },
+      {
+        "id": "secure-rewarding",
+        "title": "经过验证，安全且有回报"
+      }
+    ],
+    "whyChoose": {
+      "features": [
+        {
+          "id": 1,
+          "title": "专家团队",
+          "description": "不断改进游戏和用户体验"
+        },
+        {
+          "id": 2,
+          "title": "安全平台",
+          "description": "先进的数据保护加密技术"
+        },
+        {
+          "id": 3,
+          "title": "24/7 支持",
+          "description": "随时提供帮助"
+        },
+        {
+          "id": 4,
+          "title": "负责任博彩",
+          "description": "促进安全健康的游戏"
+        },
+        {
+          "id": 5,
+          "title": "社区为本",
+          "description": "支持当地福利倡议"
+        }
+      ]
+    },
+    "gamesLibrary": {
+      "header": "我们与顶级供应商合作，包括：",
+      "providers": [
+        {
+          "category": "真人娱乐场",
+          "list": "PEGASUS LIVE, CTG855, AE SEXY, ASIA GAMING, EVOLUTION 等"
+        },
+        {
+          "category": "老虎机",
+          "list": "918KISS, PUSSY888, NAGA GAMES, JILI, PLAYTECH 等"
+        },
+        {
+          "category": "体育博彩",
+          "list": "SBOBET, SBOVS, BET33"
+        }
+      ]
+    },
+    "secureRewarding": {
+      "header": "凭借在行业中超过10年的经验，兴旺Bet以以下特点而闻名：",
+      "features": [
+        "游戏公平性",
+        "SSL加密安全",
+        "定期存款奖金和免费信贷优惠",
+        "私密、稳定、可信的环境"
+      ]
+    },
+    "platform": {
+      "title": "随时随地畅玩",
+      "description": "通过兴旺Bet手机应用（支持iOS和Android），您可以随时随地享受所有喜爱的游戏——从老虎机和体育博彩到真人荷官和4D游戏。立即加入兴旺Bet，体验马来西亚最可靠、最令人兴奋的在线游戏平台！"
+    }
+  }
+}

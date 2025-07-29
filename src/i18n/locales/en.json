@@ -1,0 +1,241 @@
+{
+  "nav": {
+    "home": "Home",
+    "games": "Games",
+    "promotion": "Promotion",
+    "4d_results": "4D Results",
+    "download": "Download",
+    "affiliate": "Affiliate",
+    "faq": "FAQ",
+    "help": "Help",
+    "tutorial": "Tutorial Guide",
+    "topup_tutorial": "Top-up & Withdrawal Tutorial",
+    "login": "Login",
+    "register": "Register"
+  },
+  "common": {
+    "welcome": "Welcome",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "search": "Search",
+    "submit": "Submit",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "close": "Close",
+    "select": "Select",
+    "language": "Language",
+    "notice": "Important Notice"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "username": "Username",
+    "password": "Password",
+    "email": "Email",
+    "phone": "Phone Number",
+    "forgot_password": "Forgot Password?",
+    "remember_me": "Remember Me",
+    "sign_in": "Sign In",
+    "sign_up": "Sign Up",
+    "already_have_account": "Already have an account?",
+    "dont_have_account": "Don't have an account?",
+    "create_account": "Create Account"
+  },
+  "games": {
+    "title": "Games",
+    "categories": "Categories",
+    "popular": "Popular Games",
+    "new": "New Games",
+    "slots": "Slots",
+    "live_casino": "Live Casino",
+    "sports": "Sports Betting",
+    "lottery": "Lottery",
+    "fishing": "Fishing Games",
+    "play_now": "Play Now"
+  },
+  "promotion": {
+    "title": "Promotions",
+    "active": "Active Promotions",
+    "expired": "Expired Promotions",
+    "terms": "Terms & Conditions",
+    "claim": "Claim Now",
+    "details": "Details"
+  },
+  "results": {
+    "title": "4D Results",
+    "today": "Today's Results",
+    "history": "Result History",
+    "date": "Date",
+    "number": "Number",
+    "prize": "Prize"
+  },
+  "download": {
+    "title": "Download App",
+    "android": "Android",
+    "ios": "iOS",
+    "desktop": "Desktop",
+    "download_now": "Download Now",
+    "qr_code": "Scan QR Code"
+  },
+  "affiliate": {
+    "title": "Affiliate Program",
+    "join": "Join Our Affiliate Program",
+    "commission": "Commission",
+    "referral": "Referral Link",
+    "earnings": "Earnings",
+    "withdraw": "Withdraw"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "search_faq": "Search FAQ",
+    "categories": "Categories",
+    "general": "General",
+    "account": "Account",
+    "payment": "Payment",
+    "technical": "Technical Support"
+  },
+  "tutorial": {
+    "title": "Tutorial Guide",
+    "getting_started": "Getting Started",
+    "how_to_play": "How to Play",
+    "account_setup": "Account Setup",
+    "game_rules": "Game Rules"
+  },
+  "topup": {
+    "title": "Top-up & Withdrawal Tutorial",
+    "deposit": "Deposit",
+    "withdraw": "Withdraw",
+    "methods": "Payment Methods",
+    "bank_transfer": "Bank Transfer",
+    "e_wallet": "E-Wallet",
+    "cryptocurrency": "Cryptocurrency",
+    "minimum": "Minimum Amount",
+    "maximum": "Maximum Amount",
+    "processing_time": "Processing Time"
+  },
+  "footer": {
+    "about_us": "About Us",
+    "contact": "Contact Us",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "responsible_gaming": "Responsible Gaming",
+    "support": "24/7 Support",
+    "copyright": "© 2024 HengOngBet. All rights reserved."
+  },
+  "home": {
+    "brandSection": {
+      "subtitle": "Trusted Online Casino",
+      "title": "Heng Ong Bet Official",
+      "tagline": "Heng Ong Bet - Malaysia's Trusted Online Casino Platform",
+      "paragraphs": [
+        "Founded in 2015, Heng Ong Bet is Malaysia's first all-in-one online entertainment platform. With world-class gaming systems and highest technical support team committed to delivering safe, reliable, and high-quality gaming services to all users.",
+        "As one of the leading online gaming platforms in Malaysia, we offer a comprehensive range of gaming options including:"
+      ],
+      "features": [
+        "Sports betting",
+        "Live casino",
+        "Slot games",
+        "4D lottery and more"
+      ],
+      "conclusion": "Players enjoy a fair, secure, and seamless gaming experience, with fast deposits and withdrawals."
+    },
+    "affiliateSection": {
+      "becomeText": "Become a",
+      "brand": "Heng Ong Bet",
+      "affiliateToday": "Affiliate Today",
+      "description": "Join HengOngBet's official affiliate program and earn high commissions by promoting Malaysia's top online casino platform. Whether you're a seasoned marketer or just getting started, our tools, tracking system, and support team help you succeed",
+      "benefits": [
+        "Real-time tracking & reports",
+        "Up to 50% revenue share",
+        "Weekly payout system",
+        "Custom promotional banners",
+        "Telegram bot & link generator",
+        "Dedicated affiliate support",
+        "Zero cost to join",
+        "Trusted by thousands of agents in Malaysia"
+      ]
+    }
+  },
+  "features": {
+    "tabs": [
+      {
+        "id": "why-choose",
+        "title": "Why Choose Heng Ong Bet?"
+      },
+      {
+        "id": "games-library",
+        "title": "Malaysia's Largest Game Library"
+      },
+      {
+        "id": "secure-rewarding",
+        "title": "Proven, Secure & Rewarding"
+      }
+    ],
+    "whyChoose": {
+      "features": [
+        {
+          "id": 1,
+          "title": "Expert Team",
+          "description": "Constantly improving games and user experience"
+        },
+        {
+          "id": 2,
+          "title": "Secure Platform",
+          "description": "Advanced encryption for data protection"
+        },
+        {
+          "id": 3,
+          "title": "24/7 Support",
+          "description": "Help available anytime"
+        },
+        {
+          "id": 4,
+          "title": "Responsible Gaming",
+          "description": "Promoting safe and healthy play"
+        },
+        {
+          "id": 5,
+          "title": "Community Focused",
+          "description": "Supporting local welfare initiatives"
+        }
+      ]
+    },
+    "gamesLibrary": {
+      "header": "We've partnered with top providers including:",
+      "providers": [
+        {
+          "category": "Live Casinos",
+          "list": "PEGASUS LIVE, CTG855, AE SEXY, ASIA GAMING, EVOLUTION & more"
+        },
+        {
+          "category": "Slots",
+          "list": "918KISS, PUSSY888, NAGA GAMES, JILI, PLAYTECH, and many others"
+        },
+        {
+          "category": "Sports Betting",
+          "list": "SBOBET, SBOVS, BET33"
+        }
+      ]
+    },
+    "secureRewarding": {
+      "header": "With over 10 years in the industry, Heng Ong Bet is known for:",
+      "features": [
+        "Game fairness",
+        "SSL-encrypted security",
+        "Regular deposit bonuses and free credit offers",
+        "A private, stable, and trusted environment"
+      ]
+    },
+    "platform": {
+      "title": "Play Anywhere, Anytime",
+      "description": "With the Heng Ong Bet mobile app (iOS & Android supported), you can enjoy all your favorite games on the go — from slots and sportsbook to live dealer and 4D games. Join Heng Ong Bet today and experience Malaysia's most reliable and exciting online gaming platform!"
+    }
+  }
+}

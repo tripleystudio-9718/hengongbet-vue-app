@@ -10,7 +10,7 @@
           <div class="hamburger-line"></div>
         </button>
         <!-- Logo Section - Now clickable and links to homepage -->
-        <router-link to="/" class="logo-link">
+        <router-link :to="getLocalePath('/')" class="logo-link">
           <div class="flex items-center space-x-2">
             <div class="logo-container">
               <img :src="logoImage" alt="HengOngBet Logo" class="logo-image" />
@@ -20,15 +20,15 @@
         <!-- Right Side - Desktop: Login/Register, Mobile: Language -->
         <div class="auth-buttons flex items-center space-x-2">
           <!-- Desktop Login/Register -->
-          <button @click="goToLogin" class="login-btn desktop-only">Login</button>
-          <button @click="goToRegister" class="register-btn desktop-only">Register</button>
-                    
+          <button @click="goToLogin" class="login-btn desktop-only">{{ $t('auth.login') }}</button>
+          <button @click="goToRegister" class="register-btn desktop-only">{{ $t('auth.register') }}</button>
+                              
           <!-- Mobile Language Selector -->
           <div class="mobile-language-selector">
             <button @click="toggleLanguageDropdown" class="mobile-language-btn">
               <img :src="selectedLanguage.flag" :alt="selectedLanguage.code" class="mobile-flag" />
             </button>
-                        
+                                    
             <!-- Mobile Language Dropdown -->
             <div v-if="showLanguageDropdown" class="mobile-language-dropdown">
               <div
@@ -50,32 +50,32 @@
     <div class="nav-header bg-gray-700 px-6 py-2 desktop-only">
       <div class="max-w-7xl mx-auto flex items-center justify-between">
         <nav class="flex items-center space-x-8">
-          <router-link to="/" class="nav-item home-icon">
+          <router-link :to="getLocalePath('/')" class="nav-item home-icon">
             <img :src="homeIcon" alt="Home" class="home-icon-image" />
           </router-link>
-          <router-link to="/affiliate" class="nav-item">Affiliate</router-link>
-          <router-link to="/promotion" class="nav-item">Promotion</router-link>
-          <router-link to="/download" class="nav-item">Download</router-link>
-          <router-link to="/games" class="nav-item">Games</router-link>
-          <router-link to="/4d-results" class="nav-item">4D Results</router-link>
-          <router-link to="/faqs" class="nav-item">FAQS</router-link>
-          
+          <router-link :to="getLocalePath('/affiliate')" class="nav-item">{{ $t('nav.affiliate') }}</router-link>
+          <router-link :to="getLocalePath('/promotion')" class="nav-item">{{ $t('nav.promotion') }}</router-link>
+          <router-link :to="getLocalePath('/download')" class="nav-item">{{ $t('nav.download') }}</router-link>
+          <router-link :to="getLocalePath('/games')" class="nav-item">{{ $t('nav.games') }}</router-link>
+          <router-link :to="getLocalePath('/4d-results')" class="nav-item">{{ $t('nav.4d_results') }}</router-link>
+          <router-link :to="getLocalePath('/faqs')" class="nav-item">{{ $t('nav.faq') }}</router-link>
+                    
           <!-- Help Dropdown -->
           <div class="help-dropdown-container" @mouseenter="showHelpDropdown = true" @mouseleave="showHelpDropdown = false">
-            <router-link to="" class="nav-item help-item">
-              Help
+            <a href="#" class="nav-item help-item" @click.prevent>
+              {{ $t('nav.help') }}
               <svg class="help-arrow" :class="{ 'help-arrow-rotated': showHelpDropdown }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
-            </router-link>
-            
+            </a>
+                        
             <!-- Help Dropdown Menu -->
             <div v-if="showHelpDropdown" class="help-dropdown-menu">
-              <router-link to="tutorial-guide" class="help-dropdown-item">
-                <span>Tutorial Guide</span>
+              <router-link :to="getLocalePath('/tutorial-guide')" class="help-dropdown-item">
+                <span>{{ $t('nav.tutorial') }}</span>
               </router-link>
-              <router-link to="/topup-withdraw-tutorial" class="help-dropdown-item">
-                <span>Topup & Withdraw Tutorial</span>
+              <router-link :to="getLocalePath('/topup-withdraw-tutorial')" class="help-dropdown-item">
+                <span>{{ $t('nav.topup_tutorial') }}</span>
               </router-link>
             </div>
           </div>
@@ -83,7 +83,7 @@
         <div class="header-right-section">
           <div class="date-time-display">{{ currentDateTime }}</div>
           <div class="separator-line">|</div>
-                    
+                              
           <div class="language-selector-container">
             <div class="language-selector-button" @click="toggleLanguageDropdown">
               <img :src="selectedLanguage.flag" :alt="selectedLanguage.code" class="flag-image" />
@@ -97,7 +97,7 @@
               >
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
-                            
+                                          
               <div v-if="showLanguageDropdown" class="language-dropdown-menu">
                 <div
                   v-for="language in availableLanguages"
@@ -121,53 +121,53 @@
     <div class="mobile-sidebar" :class="{ 'mobile-sidebar-open': showMobileMenu }">
       <!-- Mobile Menu Header -->
       <div class="mobile-menu-header">
-        <router-link to="/" @click="closeMobileMenu">
+        <router-link :to="getLocalePath('/')" @click="closeMobileMenu">
           <img :src="logoImage" alt="HengOngBet Logo" class="mobile-logo" />
         </router-link>
       </div>
       <!-- Mobile Menu Items -->
       <nav class="mobile-nav">
         <!-- Home -->
-        <router-link to="/" @click="closeMobileMenu" class="mobile-nav-item home-active">
+        <router-link :to="getLocalePath('/')" @click="closeMobileMenu" class="mobile-nav-item home-active">
           <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
             <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
           </svg>
-          <span>Home</span>
+          <span>{{ $t('nav.home') }}</span>
         </router-link>
         <!-- Agent -->
-        <router-link to="/affiliate" @click="closeMobileMenu" class="mobile-nav-item">
+        <router-link :to="getLocalePath('/affiliate')" @click="closeMobileMenu" class="mobile-nav-item">
           <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
           </svg>
-          <span>Affiliate</span>
+          <span>{{ $t('nav.affiliate') }}</span>
         </router-link>
         <!-- Download -->
-        <router-link to="/download" @click="closeMobileMenu" class="mobile-nav-item">
+        <router-link :to="getLocalePath('/download')" @click="closeMobileMenu" class="mobile-nav-item">
           <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
           </svg>
-          <span>Download</span>
+          <span>{{ $t('nav.download') }}</span>
         </router-link>
         <!-- Promotion -->
-        <router-link to="/promotion" @click="closeMobileMenu" class="mobile-nav-item">
+        <router-link :to="getLocalePath('/promotion')" @click="closeMobileMenu" class="mobile-nav-item">
           <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
           </svg>
-          <span>Promotion</span>
+          <span>{{ $t('nav.promotion') }}</span>
         </router-link>
         <!-- Game - Now direct link without dropdown -->
-        <router-link to="/games" @click="closeMobileMenu" class="mobile-nav-item">
+        <router-link :to="getLocalePath('/games')" @click="closeMobileMenu" class="mobile-nav-item">
           <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z" clip-rule="evenodd"></path>
           </svg>
-          <span>Game</span>
+          <span>{{ $t('nav.games') }}</span>
         </router-link>
         <!-- FAQ -->
-        <router-link to="/faqs" @click="closeMobileMenu" class="mobile-nav-item">
+        <router-link :to="getLocalePath('/faqs')" @click="closeMobileMenu" class="mobile-nav-item">
           <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
           </svg>
-          <span>FAQ</span>
+          <span>{{ $t('nav.faq') }}</span>
         </router-link>
         <!-- Help with Mobile Dropdown -->
         <div class="mobile-help-section">
@@ -175,21 +175,21 @@
             <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-1.106-1.106A6.002 6.002 0 004 10c0 .898.241 1.738.668 2.566l1.49-1.449zm4.259-5.644l-1.227-1.227A5.989 5.989 0 0110 4c.898 0 1.738.241 2.566.668l-1.449 1.49a4.01 4.01 0 00-2.08-.041zM9 9a1 1 0 012 0v4a1 1 0 11-2 0V9z" clip-rule="evenodd"></path>
             </svg>
-            <span>Help</span>
+            <span>{{ $t('nav.help') }}</span>
             <svg class="help-arrow" :class="{ 'help-arrow-rotated': showHelpMenu }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
           <!-- Help Submenu -->
           <div v-if="showHelpMenu" class="help-submenu">
-            <router-link to="/tutorial-guide" @click="closeMobileMenu" class="help-sub-item">
-              <span>Tutorial Guide</span>
+            <router-link :to="getLocalePath('/tutorial-guide')" @click="closeMobileMenu" class="help-sub-item">
+              <span>{{ $t('nav.tutorial') }}</span>
               <svg class="chevron-right" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
             </router-link>
-            <router-link to="/topup-withdraw-tutorial" @click="closeMobileMenu" class="help-sub-item">
-              <span>Topup & Withdraw Tutorial</span>
+            <router-link :to="getLocalePath('/topup-withdraw-tutorial')" @click="closeMobileMenu" class="help-sub-item">
+              <span>{{ $t('nav.topup_tutorial') }}</span>
               <svg class="chevron-right" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
@@ -202,12 +202,29 @@
 </template>
 
 <script>
+import { useI18n } from 'vue-i18n'
+import { useRouter, useRoute } from 'vue-router'
+import { switchLocale, getCurrentLocale, localePath } from '@/router'
 import logoImage from '@/assets/hengongbet.png'
 import homeIcon from '@/assets/home_icon.svg'
 
 export default {
   name: 'Header',
   emits: ['login', 'register', 'language-changed'],
+  setup() {
+    const { locale } = useI18n()
+    const router = useRouter()
+    const route = useRoute()
+        
+    return {
+      locale,
+      router,
+      route,
+      switchLocale,
+      getCurrentLocale,
+      localePath
+    }
+  },
   data() {
     return {
       logoImage,
@@ -217,39 +234,51 @@ export default {
       showHelpMenu: false,
       showHelpDropdown: false,
       showLanguageDropdown: false,
+      currentLocale: 'en', // Track current locale in component state
       selectedLanguage: {
-        code: 'EN',
+        code: 'en',
         name: 'English',
         flag: 'https://flagcdn.com/w20/gb.png'
       },
       availableLanguages: [
         {
-          code: 'EN',
+          code: 'en',
           name: 'English',
           flag: 'https://flagcdn.com/w20/gb.png'
         },
         {
-          code: 'MY',
+          code: 'ms',
           name: 'Bahasa Malaysia',
           flag: 'https://flagcdn.com/w20/my.png'
         },
         {
-          code: 'ZH',
+          code: 'zh',
           name: '中文',
           flag: 'https://flagcdn.com/w20/cn.png'
-        },
-        {
-          code: 'TH',
-          name: 'ไทย',
-          flag: 'https://flagcdn.com/w20/th.png'
         }
       ]
+    }
+  },
+  watch: {
+    '$route.meta.locale': {
+      handler(newLocale) {
+        if (newLocale) {
+          this.currentLocale = newLocale
+          this.updateSelectedLanguage(newLocale)
+        }
+      },
+      immediate: true
     }
   },
   mounted() {
     this.updateDateTime()
     setInterval(this.updateDateTime, 1000)
     document.addEventListener('click', this.closeLanguageDropdown)
+        
+    // Initialize selected language based on current route
+    const currentLocale = this.getCurrentLocale(this.$route)
+    this.currentLocale = currentLocale
+    this.updateSelectedLanguage(currentLocale)
   },
   beforeUnmount() {
     document.removeEventListener('click', this.closeLanguageDropdown)
@@ -269,6 +298,19 @@ export default {
       }
       const formatted = now.toLocaleString('en-GB', options)
       this.currentDateTime = `${formatted} (GMT +8)`
+    },
+    updateSelectedLanguage(localeCode) {
+      const language = this.availableLanguages.find(lang => lang.code === localeCode)
+      if (language) {
+        this.selectedLanguage = language
+      }
+    },
+    // Custom method to get localized path using current locale
+    getLocalePath(path) {
+      if (this.currentLocale === 'en') {
+        return path
+      }
+      return `/${this.currentLocale}${path}`
     },
     toggleMobileMenu() {
       this.showMobileMenu = !this.showMobileMenu
@@ -290,16 +332,33 @@ export default {
     toggleLanguageDropdown() {
       this.showLanguageDropdown = !this.showLanguageDropdown
     },
-    selectLanguage(language) {
+    async selectLanguage(language) {
+      // Update component state immediately
+      this.currentLocale = language.code
       this.selectedLanguage = language
       this.showLanguageDropdown = false
+      
+      // Emit language change event
       this.$emit('language-changed', language)
+      
+      // Wait for next tick to ensure state is updated
+      await this.$nextTick()
+      
+      // Switch locale and navigate
+      this.switchLocale(this.router, language.code)
+      
+      // Close mobile menu after navigation
+      setTimeout(() => {
+        if (this.showMobileMenu) {
+          this.closeMobileMenu()
+        }
+      }, 150)
     },
     goToRegister() {
-      this.$router.push('/register')
+      this.$router.push(this.getLocalePath('/register'))
     },
     goToLogin() {
-      this.$router.push('/login')
+      this.$router.push(this.getLocalePath('/login'))
     },
     closeLanguageDropdown(event) {
       if (!event.target.closest('.language-selector-container') && !event.target.closest('.mobile-language-selector')) {
@@ -311,6 +370,7 @@ export default {
 </script>
 
 <style scoped>
+/* Keep all your existing styles - they remain the same */
 .header-container {
   position: sticky;
   top: 0;
@@ -736,7 +796,7 @@ export default {
 }
 
 .login-btn {
-  padding: 6px 16px;
+  padding: 6px 14px;
   border: 1px solid #F1AE3D;
   color: #F1AE3D;
   background: transparent;
@@ -797,10 +857,10 @@ export default {
 .nav-item.router-link-active::after {
   content: '';
   position: absolute;
-  bottom: -11px;   
+  bottom: -11px;     
   left: 50%;
   transform: translateX(-50%);
-  width: 80%;   
+  width: 80%;     
   height: 3px;
   background: linear-gradient(90deg, #F2B240 0%, #ED9226 100%);
   border-radius: 2px;
@@ -835,7 +895,7 @@ export default {
   bottom: -11px;
   left: 50%;
   transform: translateX(-50%);
-  width: 60%;   
+  width: 60%;     
   height: 3px;
   background: linear-gradient(90deg, #F2B240 0%, #ED9226 100%);
   border-radius: 2px;
@@ -846,28 +906,28 @@ export default {
   .desktop-only {
     display: none !important;
   }
-    
+      
   .mobile-hamburger {
     display: flex;
   }
-    
+      
   .mobile-language-selector {
     display: block;
   }
-    
+      
   .mobile-overlay {
     display: block;
   }
-    
+      
   .mobile-sidebar {
     display: block;
   }
-    
+      
   .logo-image {
     height: 32px;
     max-width: 150px;
   }
-    
+      
   .top-header {
     padding: 12px 16px;
   }
@@ -877,17 +937,17 @@ export default {
   .mobile-sidebar {
     width: 260px;
   }
-    
+      
   .logo-image {
     height: 28px;
     max-width: 120px;
   }
-    
+      
   .mobile-nav-item {
     padding: 14px 20px;
     font-size: 15px;
   }
-    
+      
   .mobile-nav-icon {
     width: 18px;
     height: 18px;
@@ -907,5 +967,4 @@ export default {
 .py-5 { padding-top: 1.25rem; padding-bottom: 1.25rem; }
 .bg-gray-700 { background-color: #374151; }
 .bg-gray-800 { background-color: #1f2937; }
-
 </style>
