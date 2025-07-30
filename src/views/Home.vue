@@ -50,7 +50,7 @@
           <h2 class="main-title">
             {{ currentContent.affiliateSection.becomeText }} <span class="accent-color">{{ currentContent.affiliateSection.brand }}</span> {{ currentContent.affiliateSection.affiliateToday }}
           </h2>
-          <p class="subtitle-text">{{ currentContent.affiliateSection.description }}</p>
+          <p class="subtitle-text-affiliate">{{ currentContent.affiliateSection.description }}</p>
                     
           <ul class="feature-list-1" style="flex-direction: column;">
             <li v-for="(benefit, index) in currentContent.affiliateSection.benefits" :key="index">
@@ -291,6 +291,14 @@ export default {
   line-height: 1.4;
 }
 
+.subtitle-text-affiliate {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  font-weight: 400;
+  color: #FFFFFF;
+  margin: 0.5rem 0;
+  line-height: 1.4;
+}
+
 .description-text {
   font-size: clamp(1rem, 2.5vw, 1.125rem);
   font-weight: 600;
@@ -465,6 +473,11 @@ export default {
   }
 
   .subtitle-text {
+    font-size: 12px;
+    margin: 0;
+  }
+
+  .subtitle-text-affiliate {
     font-size: 12px;
     margin: 0;
   }

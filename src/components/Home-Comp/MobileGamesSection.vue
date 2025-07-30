@@ -3,13 +3,13 @@
     <div class="mobile-container">
       <!-- Header -->
       <div class="mobile-header">
-        <h2 class="mobile-title">Hot Games</h2>
+        <h2 class="mobile-title">{{ t('mobileGameSec.title') }}</h2>
       </div>
-            
+      
       <!-- Featured Game Carousel -->
       <div class="mobile-featured">
-        <div class="mobile-carousel" 
-             @mouseenter="stopAutoplay" 
+        <div class="mobile-carousel"
+             @mouseenter="stopAutoplay"
              @mouseleave="startAutoplay">
           <!-- Navigation Arrows -->
           <button class="carousel-nav prev" @click="scrollLeft">
@@ -17,39 +17,43 @@
               <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
             </svg>
           </button>
-                    
+          
           <button class="carousel-nav next" @click="scrollRight">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
             </svg>
           </button>
-                    
+          
           <!-- Horizontal Scrollable Container -->
-          <div class="carousel-container" 
+          <div class="carousel-container"
                ref="carouselContainer"
                @touchstart="handleTouchStart"
                @touchmove="handleTouchMove"
                @touchend="handleTouchEnd">
-            <div class="carousel-track-horizontal" 
+            <div class="carousel-track-horizontal"
                  :style="{ transform: `translateX(${translateX}px)`, transition: isTransitioning ? 'transform 0.3s ease' : 'none' }">
               <div
-                 v-for="(game, index) in infiniteGames"
-                 :key="`${game.id}-${Math.floor(index / featuredGames.length)}-${index}`"
+                v-for="(game, index) in infiniteGames"
+                :key="`${game.id}-${Math.floor(index / featuredGames.length)}-${index}`"
                 class="featured-game-card"
-                :class="{ 
+                :class="{
                   'center-card': index === centerIndex,
                   'left-card': index === centerIndex - 1,
-                  'right-card': index === centerIndex + 1
+                  'right-card': index === centerIndex + 1,
+                  'left-outer-card': index === centerIndex - 2,
+                  'right-outer-card': index === centerIndex + 2
                 }"
+                @click="handleFeaturedGameClick(game)"
+                style="cursor: pointer;"
               >
                 <div class="crown-badge">
                   <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M5 16L3 12L5.5 7L10 10L12 4L14 10L18.5 7L21 12L19 16H5ZM7 14H17L18 12.5L16.5 9L13.5 11.5L12 6.5L10.5 11.5L7.5 9L6 12.5L7 14Z"/>
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z"/>
                   </svg>
                 </div>
                 <img
-                   :src="game.image"
-                   :alt="game.name"
+                  :src="game.image"
+                  :alt="game.name"
                   class="featured-image"
                 />
               </div>
@@ -57,47 +61,44 @@
           </div>
         </div>
         
-        <!-- Pagination Dots
-        <div class="carousel-pagination">
-          <button
-            v-for="(game, index) in featuredGames"
-            :key="`dot-${index}`"
-            @click="goToSlide(index)"
-            :class="['pagination-dot', { active: index === currentRealIndex }]"
-          ></button>
-        </div> -->
-                
         <!-- Featured Game Info -->
         <div class="featured-info">
           <h3>{{ centerGame.name }}</h3>
           <p>{{ centerGame.provider }}</p>
         </div>
       </div>
-            
+      
       <!-- Enhanced Category Tabs -->
       <div class="game-tabs-container">
         <div class="game-tabs">
           <button
-            v-for="(category, index) in gameCategories"
-            :key="category"
+            v-for="(category, index) in translatedGameCategories"
+            :key="category.key"
             :ref="`tab-${index}`"
-            @click="$emit('update:activeCategory', category)"
-            :class="['game-tab', { active: activeCategory === category }]"
+            @click="$emit('update:activeCategory', category.key); updateTabIndicator()"
+            :class="['game-tab', { active: activeCategory === category.key }]"
           >
-            <span class="tab-icon" v-html="getCategoryIcon(category)"></span>
-            <span class="tab-text">{{ category }}</span>
+            <div class="tab-icon-wrapper">
+              <img 
+                :src="getCategoryIconPath(category.key)" 
+                :alt="`${category.label} icon`"
+                class="tab-icon-image"
+              />
+            </div>
+            <span class="tab-text">{{ category.label }}</span>
           </button>
         </div>
         <div class="tab-indicator" :style="indicatorStyle"></div>
       </div>
-            
+      
       <!-- Games Grid -->
       <div class="mobile-games-grid">
         <div
           v-for="game in displayedGames"
           :key="game.id"
           class="mobile-game-card"
-          @click="playGame(game)"
+          @click="handleRegularGameClick(game)"
+          style="cursor: pointer;"
         >
           <div class="game-image-container">
             <img
@@ -114,12 +115,17 @@
 </template>
 
 <script>
+  import allIcon from '@/assets/all-icon.svg'
+  import casinoIcon from '@/assets/casino-icon.svg'
+  import slotIcon from '@/assets/slot-icon.svg'
+  import sportIcon from '@/assets/sport-icon.svg'
+  import lotteryIcon from '@/assets/lottery-icon.svg'
 export default {
   name: 'MobileGamesSection',
   props: {
     activeCategory: {
       type: String,
-      default: 'All'
+      default: 'all'
     },
     currentSlide: {
       type: Number,
@@ -136,14 +142,18 @@ export default {
     games: {
       type: Array,
       required: true
+    },
+    currentLanguage: {
+      type: String,
+      default: 'en'
     }
   },
-  emits: ['update:activeCategory', 'play-game', 'next-slide', 'prev-slide'],
+  emits: ['update:activeCategory', 'play-game', 'next-slide', 'prev-slide', 'featured-game-click', 'regular-game-click'],
   data() {
     return {
       centerIndex: 0,
       translateX: 0,
-      cardWidth: 160,
+      cardWidth: 120,
       autoplayInterval: null,
       isTransitioning: false,
       touchStartX: 0,
@@ -158,8 +168,14 @@ export default {
     }
   },
   computed: {
+    translatedGameCategories() {
+      return this.gameCategories.map(category => ({
+        key: category.key,
+        label: category.label
+      }));
+    },
     displayedGames() {
-      return this.activeCategory === 'All'
+      return this.activeCategory === 'all'
         ? this.games
         : this.games.filter(game => game.category === this.activeCategory)
     },
@@ -183,15 +199,23 @@ export default {
       const middleSetStart = this.duplicateCount * this.featuredGames.length
       const indexInMiddleSet = (this.centerIndex - middleSetStart) % this.featuredGames.length
       return indexInMiddleSet < 0 ? this.featuredGames.length + indexInMiddleSet : indexInMiddleSet
+    },
+    indicatorStyle() {
+      return this.tabIndicatorStyle
+    }
+  },
+  watch: {
+    activeCategory() {
+      this.$nextTick(() => {
+        this.updateTabIndicator()
+      })
     }
   },
   mounted() {
     this.initializeCarousel()
     this.startAutoplay()
     this.updateTabIndicator()
-
     window.addEventListener('resize', this.handleResize)
-
     const tabContainer = this.$el.querySelector('.game-tabs')
     if (tabContainer) {
       tabContainer.addEventListener('scroll', this.updateTabIndicator)
@@ -200,13 +224,58 @@ export default {
   beforeUnmount() {
     this.stopAutoplay()
     window.removeEventListener('resize', this.handleResize)
-
     const tabContainer = this.$el.querySelector('.game-tabs')
     if (tabContainer) {
       tabContainer.removeEventListener('scroll', this.updateTabIndicator)
     }
   },
   methods: {
+    t(key) {
+      if (this.$t) {
+        return this.$t(key)
+      }
+      if (this.$translations && this.$translations[this.currentLanguage]) {
+        const keys = key.split('.')
+        let value = this.$translations[this.currentLanguage]
+        for (const k of keys) {
+          value = value?.[k]
+        }
+        return value || key
+      }
+      return key
+    },
+    goToRegisterPage() {
+      const locale = this.currentLanguage || this.$i18n?.locale || 'en';
+      let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
+      
+      switch(locale) {
+        case 'zh':
+          targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
+          break;
+        case 'ms':
+          targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
+          break;
+        default:
+          targetUrl = 'https://hengongbet.com/en-my?regRef=player';
+      }
+      console.log('Redirecting to registration from mobile game interaction');
+      window.location.href = targetUrl;
+    },
+    handleFeaturedGameClick(game) {
+      console.log('Mobile featured game clicked:', game.name);
+      this.$emit('featured-game-click', game);
+      this.goToRegisterPage();
+    },
+    handleRegularGameClick(game) {
+      console.log('Mobile regular game clicked:', game.name);
+      this.$emit('regular-game-click', game);
+      this.goToRegisterPage();
+    },
+    playGame(game) {
+      console.log('Mobile game clicked (legacy):', game.name);
+      this.$emit('play-game', game);
+      this.goToRegisterPage();
+    },
     initializeCarousel() {
       this.centerIndex = this.duplicateCount * this.featuredGames.length
       this.updateTranslateX()
@@ -259,7 +328,7 @@ export default {
       const container = this.$refs.carouselContainer
       if (container) {
         const containerWidth = container.offsetWidth
-        const cardEffectiveWidth = this.cardWidth - 20
+        const cardEffectiveWidth = this.cardWidth - 10
         const centerOffset = (containerWidth - cardEffectiveWidth) / 2
         return centerOffset - index * cardEffectiveWidth
       }
@@ -310,14 +379,14 @@ export default {
     },
     updateTabIndicator() {
       this.$nextTick(() => {
-        const activeIndex = this.gameCategories.indexOf(this.activeCategory)
+        const activeIndex = this.translatedGameCategories.findIndex(cat => cat.key === this.activeCategory)
         const tabRef = this.$refs[`tab-${activeIndex}`]?.[0]
         if (tabRef && tabRef.parentElement) {
           const tabRect = tabRef.getBoundingClientRect()
           const containerRect = tabRef.parentElement.getBoundingClientRect()
           const scrollLeft = tabRef.parentElement.scrollLeft
-          const left = tabRect.left - containerRect.left + scrollLeft + 8
-          const width = tabRect.width - 16
+          const left = tabRect.left - containerRect.left + scrollLeft
+          const width = tabRect.width
           this.tabIndicatorStyle = {
             transform: `translateX(${left}px)`,
             width: `${width}px`,
@@ -326,24 +395,19 @@ export default {
         }
       })
     },
-    getCategoryIcon(category) {
-      const icons = {
-        'All': '<svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M3 6h2v2H3V6m4 0h14v2H7V6m-4 5h2v2H3v-2m4 0h14v2H7v-2m-4 5h2v2H3v-2m4 0h14v2H7v-2Z"/></svg>',
-        'Slots': '<svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m1 2v16h14V4H5m3 4h2v2H8V8m0 4h2v2H8v-2m4-4h2v2h-2V8m0 4h2v2h-2v-2m4-4h2v2h-2V8m0 4h2v2h-2v-2Z"/></svg>',
-        'Casino': '<svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2Z"/></svg>',
-        'Sports': '<svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>',
-        'Lottery': '<svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M5 3h4v6h6V3h4v18h-4v-6H9v6H5V3Z"/></svg>'
+    getCategoryIconPath(category) {
+      const iconMap = {
+        'all': allIcon,
+        'slots': slotIcon, 
+        'casino': casinoIcon,
+        'sports': sportIcon,
+        'lottery': lotteryIcon
       }
-      return icons[category] || ''
-    },
-    playGame(game) {
-      console.log('Playing game:', game.name)
-      this.$emit('play-game', game)
+      return iconMap[category] || '/icons/all-icon.png'
     }
   }
 }
 </script>
-
 
 <style scoped>
 .mobile-games-section {
@@ -431,24 +495,24 @@ export default {
 
 .featured-game-card {
   position: relative;
-  min-width: 160px;
-  width: 160px;
-  height: 160px;
+  min-width: 120px;
+  width: 120px;
+  height: 120px;
   border-radius: 15px;
   overflow: hidden;
   transition: all 0.3s ease;
-  transform: scale(0.8);
-  opacity: 0.6;
+  transform: scale(0.7);
+  opacity: 0.4;
   flex-shrink: 0;
-  margin-right: -20px;
+  margin-right: -10px;
 }
 
 .featured-game-card.center-card {
   transform: scale(1.1);
   opacity: 1;
   z-index: 5;
-  margin-right: -20px;
-  margin-left: -20px;
+  margin-right: -10px;
+  margin-left: -10px;
 }
 
 .featured-game-card.left-card,
@@ -458,7 +522,14 @@ export default {
   z-index: 3;
 }
 
-.featured-game-card:not(.center-card):not(.left-card):not(.right-card) {
+.featured-game-card.left-outer-card,
+.featured-game-card.right-outer-card {
+  transform: scale(0.75);
+  opacity: 0.6;
+  z-index: 2;
+}
+
+.featured-game-card:not(.center-card):not(.left-card):not(.right-card):not(.left-outer-card):not(.right-outer-card) {
   z-index: 1;
 }
 
@@ -481,32 +552,6 @@ export default {
   border-radius: 15px;
 }
 
-.carousel-pagination {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin: 15px 0;
-}
-
-.pagination-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(255, 255, 255, 0.3);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.pagination-dot.active {
-  background: #f59e0b;
-  transform: scale(1.2);
-}
-
-.pagination-dot:hover {
-  background: rgba(255, 255, 255, 0.5);
-}
-
 .featured-info {
   text-align: center;
   margin-top: 12px;
@@ -525,18 +570,11 @@ export default {
   margin: 0;
 }
 
-/* Enhanced Game Tabs */
+/* Enhanced Game Tabs - Based on Design */
 .game-tabs-container {
   position: relative;
-  background: linear-gradient(145deg, rgba(51, 65, 85, 0.8), rgba(30, 41, 59, 0.9));
-  border-radius: 16px;
-  padding: 6px;
+  border-bottom: 1px solid white;
   margin: 0 8px 24px 8px;
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(71, 85, 105, 0.3);
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .game-tabs {
@@ -544,79 +582,73 @@ export default {
   position: relative;
   z-index: 2;
   gap: 0;
-  overflow-x: auto;           /* enables horizontal scroll */
-  white-space: nowrap;        /* prevents wrapping */
-  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
-  scrollbar-width: none;      /* hide scrollbar for Firefox */
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
 
 .game-tabs::-webkit-scrollbar {
-  display: none;              /* hide scrollbar for Chrome/Safari */
+  display: none;
 }
 
 .game-tab {
-  flex: 0 0 auto;
-  padding: 14px 12px;
+  flex: 1;
+  padding: 12px 8px;
   background: transparent;
   border: none;
-  color: #94a3b8;
-  font-size: 13px;
+  color: #888;
+  font-size: 12px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   white-space: nowrap;
   position: relative;
-  border-radius: 12px;
-  min-height: 48px;
+  border-radius: 20px;
+  min-height: 60px;
 }
 
 .game-tab:hover {
-  color: #e2e8f0;
-  background: rgba(255, 255, 255, 0.08);
-  transform: translateY(-1px);
+  color: #ccc;
 }
 
 .game-tab.active {
-  color: #f59e0b;
+  color: #fff;
   font-weight: 600;
 }
 
-.game-tab.active .tab-icon {
-  color: #f59e0b;
-  transform: scale(1.1);
-}
-
-.tab-icon {
+.tab-icon-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
-  flex-shrink: 0;
 }
 
-.tab-text {
-  font-size: 13px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  font-weight: inherit;
+.tab-icon-image {
+  width: 15px !important;
+  height: 15px !important;
+  transition: all 0.3s ease;
+  object-fit: contain;
+}
+
+.game-tab.active .tab-icon-image {
+  transform: scale(1.1);
 }
 
 .tab-indicator {
   position: absolute;
-  bottom: 6px;
-  left: 6px;
+  bottom: -1px;
+  left: 0;
   height: 4px;
   background: linear-gradient(90deg, #f59e0b, #d97706, #f59e0b);
   border-radius: 2px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
-  box-shadow: 
-    0 0 12px rgba(245, 158, 11, 0.6),
-    0 2px 8px rgba(245, 158, 11, 0.4);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.6), 0 2px 8px rgba(245, 158, 11, 0.4);
 }
 
 /* Games Grid */
@@ -686,7 +718,6 @@ export default {
   
   .game-tabs-container {
     margin: 0 4px 20px 4px;
-    padding: 5px;
   }
   
   .mobile-games-grid {
@@ -696,24 +727,24 @@ export default {
   }
   
   .game-tab {
-    font-size: 11px;
-    padding: 12px 8px;
-    gap: 6px;
-    min-height: 44px;
+    font-size: 10px;
+    padding: 10px 6px;
+    gap: 4px;
+    min-height: 55px;
   }
   
   .tab-text {
-    font-size: 11px;
+    font-size: 10px;
+  }
+  
+  .tab-icon-image {
+    width: 28px;
+    height: 28px;
   }
   
   .game-title {
     font-size: 8px;
     margin-top: 6px;
-  }
-  
-  .tab-icon svg {
-    width: 14px;
-    height: 14px;
   }
 }
 
@@ -732,12 +763,17 @@ export default {
   }
   
   .game-tab {
-    padding: 13px 10px;
-    font-size: 12px;
+    padding: 11px 7px;
+    font-size: 11px;
   }
   
   .tab-text {
-    font-size: 12px;
+    font-size: 11px;
+  }
+  
+  .tab-icon-image {
+    width: 30px;
+    height: 30px;
   }
 }
 
@@ -752,12 +788,17 @@ export default {
   }
   
   .game-tab {
-    padding: 14px 12px;
-    font-size: 13px;
+    padding: 12px 8px;
+    font-size: 12px;
   }
   
   .tab-text {
-    font-size: 13px;
+    font-size: 12px;
+  }
+  
+  .tab-icon-image {
+    width: 32px;
+    height: 32px;
   }
 }
 </style>

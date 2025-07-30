@@ -238,7 +238,10 @@
       "description": "Dengan aplikasi mudah alih Heng Ong Bet (menyokong iOS & Android), anda boleh menikmati semua permainan kegemaran anda semasa dalam perjalanan — dari slot dan sportsbook hingga dealer langsung dan permainan 4D. Sertai Heng Ong Bet hari ini dan alami platform permainan dalam talian yang paling boleh dipercayai dan menarik di Malaysia!"
     }
   },
-"games": {
+  "mobileGameSec": {
+      "title": "Permainan Popular"
+    },
+"gameSec": {
     "title": "Permainan Popular",
     "categories": {
       "all": "Semua",

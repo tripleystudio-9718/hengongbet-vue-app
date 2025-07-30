@@ -4,7 +4,7 @@
       <!-- Desktop Layout -->
       <div class="desktop-layout">
         <div class="games-top">
-          <h2 class="games-title">{{ t('games.title') }}</h2>
+          <h2 class="games-title">{{ t('gameSec.title') }}</h2>
           
           <!-- Game Categories -->
           <div class="game-categories">
@@ -129,139 +129,6 @@ import game13 from '@/assets/game13.png'
 import game14 from '@/assets/game14.png'
 import game15 from '@/assets/game15.png'
 
-// Translation data - you can move this to separate files
-const translations = {
-  en: {
-    games: {
-      title: "Hot Games",
-      categories: {
-        all: "All",
-        slots: "Slots",
-        casino: "Casino",
-        sports: "Sports",
-        lottery: "Lottery"
-      },
-      featured_games: {
-        iceland: "Iceland",
-        panther_moon: "Panther Moon", 
-        fa_fa_fa: "Fa Fa Fa",
-        sugar_bliss: "Sugar Bliss",
-        super_ace: "Super Ace"
-      },
-      providers: {
-        endorphina: "Endorphina",
-        novomatic: "Novomatic",
-        golden_hero: "Golden Hero",
-        sweet_gaming: "Sweet Gaming",
-        pragmatic_play: "Pragmatic Play"
-      },
-      regular_games: {
-        lucky_365: "Lucky 365",
-        askmeslot: "Askmeslot",
-        jdb: "JDB",
-        monkey_king: "Monkey King",
-        hot_road: "Hot Road",
-        maxbet: "Maxbet",
-        sv388: "Sv388",
-        rcb988: "Rcb988",
-        jili: "Jili",
-        microslot: "Microslot",
-        evolution: "Evolution",
-        sexy: "Sexy",
-        ekor: "Ekor",
-        big_gaming: "Big Gaming",
-        pragmatic_play_regular: "Pragmatic Play"
-      }
-    }
-  },
-  ms: {
-    games: {
-      title: "Permainan Popular",
-      categories: {
-        all: "Semua",
-        slots: "Slot",
-        casino: "Kasino",
-        sports: "Sukan", 
-        lottery: "Loteri"
-      },
-      featured_games: {
-        iceland: "Iceland",
-        panther_moon: "Panther Moon",
-        fa_fa_fa: "Fa Fa Fa", 
-        sugar_bliss: "Sugar Bliss",
-        super_ace: "Super Ace"
-      },
-      providers: {
-        endorphina: "Endorphina",
-        novomatic: "Novomatic",
-        golden_hero: "Golden Hero",
-        sweet_gaming: "Sweet Gaming",
-        pragmatic_play: "Pragmatic Play"
-      },
-      regular_games: {
-        lucky_365: "Lucky 365",
-        askmeslot: "Askmeslot", 
-        jdb: "JDB",
-        monkey_king: "Raja Monyet",
-        hot_road: "Jalan Panas",
-        maxbet: "Maxbet",
-        sv388: "Sv388",
-        rcb988: "Rcb988",
-        jili: "Jili",
-        microslot: "Microslot",
-        evolution: "Evolution",
-        sexy: "Sexy",
-        ekor: "Ekor",
-        big_gaming: "Big Gaming",
-        pragmatic_play_regular: "Pragmatic Play"
-      }
-    }
-  },
-  zh: {
-    games: {
-      title: "热门游戏",
-      categories: {
-        all: "全部",
-        slots: "老虎机",
-        casino: "娱乐场",
-        sports: "体育",
-        lottery: "彩票"
-      },
-      featured_games: {
-        iceland: "冰岛",
-        panther_moon: "黑豹之月",
-        fa_fa_fa: "发发发",
-        sugar_bliss: "甜蜜极乐", 
-        super_ace: "超级王牌"
-      },
-      providers: {
-        endorphina: "Endorphina",
-        novomatic: "Novomatic", 
-        golden_hero: "Golden Hero",
-        sweet_gaming: "Sweet Gaming",
-        pragmatic_play: "Pragmatic Play"
-      },
-      regular_games: {
-        lucky_365: "幸运365",
-        askmeslot: "Askmeslot",
-        jdb: "JDB", 
-        monkey_king: "齐天大圣",
-        hot_road: "火热之路",
-        maxbet: "Maxbet",
-        sv388: "Sv388",
-        rcb988: "Rcb988",
-        jili: "吉利",
-        microslot: "Microslot",
-        evolution: "Evolution",
-        sexy: "Sexy",
-        ekor: "Ekor",
-        big_gaming: "Big Gaming",
-        pragmatic_play_regular: "Pragmatic Play"
-      }
-    }
-  }
-}
-
 const AUTO_SLIDE_INTERVAL = 4000
 
 export default {
@@ -291,64 +158,64 @@ export default {
   computed: {
     gameCategories() {
       return [
-        { key: 'all', label: this.t('games.categories.all') },
-        { key: 'slots', label: this.t('games.categories.slots') },
-        { key: 'casino', label: this.t('games.categories.casino') },
-        { key: 'sports', label: this.t('games.categories.sports') },
-        { key: 'lottery', label: this.t('games.categories.lottery') }
+        { key: 'all', label: this.t('gameSec.categories.all') },
+        { key: 'slots', label: this.t('gameSec.categories.slots') },
+        { key: 'casino', label: this.t('gameSec.categories.casino') },
+        { key: 'sports', label: this.t('gameSec.categories.sports') },
+        { key: 'lottery', label: this.t('gameSec.categories.lottery') }
       ]
     },
     featuredGames() {
       return [
         {
           id: 'featured-1',
-          name: this.t('games.featured_games.iceland'),
-          provider: this.t('games.providers.endorphina'),
+          name: this.t('gameSec.featured_games.iceland'),
+          provider: this.t('gameSec.providers.endorphina'),
           image: icelandGameIcon
         },
         {
           id: 'featured-2', 
-          name: this.t('games.featured_games.panther_moon'),
-          provider: this.t('games.providers.novomatic'),
+          name: this.t('gameSec.featured_games.panther_moon'),
+          provider: this.t('gameSec.providers.novomatic'),
           image: pantherMoonGameIcon
         },
         {
           id: 'featured-3',
-          name: this.t('games.featured_games.fa_fa_fa'),
-          provider: this.t('games.providers.golden_hero'),
+          name: this.t('gameSec.featured_games.fa_fa_fa'),
+          provider: this.t('gameSec.providers.golden_hero'),
           image: fafafaGameIcon
         },
         {
           id: 'featured-4',
-          name: this.t('games.featured_games.sugar_bliss'),
-          provider: this.t('games.providers.sweet_gaming'),
+          name: this.t('gameSec.featured_games.sugar_bliss'),
+          provider: this.t('gameSec.providers.sweet_gaming'),
           image: sugarBlissGameIcon
         },
         {
           id: 'featured-5',
-          name: this.t('games.featured_games.super_ace'),
-          provider: this.t('games.providers.pragmatic_play'),
+          name: this.t('gameSec.featured_games.super_ace'),
+          provider: this.t('gameSec.providers.pragmatic_play'),
           image: superAceGameIcon
         }
       ]
     },
     games() {
       return [
-        { id: 1, name: this.t('games.regular_games.lucky_365'), image: game1, category: 'slots'},
-        { id: 2, name: this.t('games.regular_games.askmeslot'), image: game2, category: 'slots'},
-        { id: 3, name: this.t('games.regular_games.jdb'), image: game3, category: 'slots'},
-        { id: 4, name: this.t('games.regular_games.monkey_king'), image: game4, category: 'slots'},
-        { id: 5, name: this.t('games.regular_games.hot_road'), image: game5, category: 'casino'},
-        { id: 6, name: this.t('games.regular_games.maxbet'), image: game6, category: 'sports'},
-        { id: 7, name: this.t('games.regular_games.sv388'), image: game7, category: 'sports'},
-        { id: 8, name: this.t('games.regular_games.rcb988'), image: game8, category: 'sports'},
-        { id: 9, name: this.t('games.regular_games.jili'), image: game9, category: 'slots'},
-        { id: 10, name: this.t('games.regular_games.microslot'), image: game10, category: 'slots'},
-        { id: 11, name: this.t('games.regular_games.evolution'), image: game11, category: 'casino'},
-        { id: 12, name: this.t('games.regular_games.sexy'), image: game12, category: 'casino'},
-        { id: 13, name: this.t('games.regular_games.ekor'), image: game13, category: 'lottery'},
-        { id: 14, name: this.t('games.regular_games.big_gaming'), image: game14, category: 'casino'},
-        { id: 15, name: this.t('games.regular_games.pragmatic_play_regular'), image: game15, category: 'slots'}
+        { id: 1, name: this.t('gameSec.regular_games.lucky_365'), image: game1, category: 'slots'},
+        { id: 2, name: this.t('gameSec.regular_games.askmeslot'), image: game2, category: 'slots'},
+        { id: 3, name: this.t('gameSec.regular_games.jdb'), image: game3, category: 'slots'},
+        { id: 4, name: this.t('gameSec.regular_games.monkey_king'), image: game4, category: 'slots'},
+        { id: 5, name: this.t('gameSec.regular_games.hot_road'), image: game5, category: 'casino'},
+        { id: 6, name: this.t('gameSec.regular_games.maxbet'), image: game6, category: 'sports'},
+        { id: 7, name: this.t('gameSec.regular_games.sv388'), image: game7, category: 'sports'},
+        { id: 8, name: this.t('gameSec.regular_games.rcb988'), image: game8, category: 'sports'},
+        { id: 9, name: this.t('gameSec.regular_games.jili'), image: game9, category: 'slots'},
+        { id: 10, name: this.t('gameSec.regular_games.microslot'), image: game10, category: 'slots'},
+        { id: 11, name: this.t('gameSec.regular_games.evolution'), image: game11, category: 'casino'},
+        { id: 12, name: this.t('gameSec.regular_games.sexy'), image: game12, category: 'casino'},
+        { id: 13, name: this.t('gameSec.regular_games.ekor'), image: game13, category: 'lottery'},
+        { id: 14, name: this.t('gameSec.regular_games.big_gaming'), image: game14, category: 'casino'},
+        { id: 15, name: this.t('gameSec.regular_games.pragmatic_play_regular'), image: game15, category: 'slots'}
       ]
     },
     displayedGames() {
@@ -361,23 +228,32 @@ export default {
     }
   },
   methods: {
+    // Use external translation function (i18n or custom)
     t(key) {
-      const keys = key.split('.')
-      let value = translations[this.currentLanguage]
-      
-      for (const k of keys) {
-        value = value?.[k]
+      // If using Vue i18n
+      if (this.$t) {
+        return this.$t(key)
       }
       
-      return value || key
+      // If using custom translation system
+      if (this.$translations && this.$translations[this.currentLanguage]) {
+        const keys = key.split('.')
+        let value = this.$translations[this.currentLanguage]
+        
+        for (const k of keys) {
+          value = value?.[k]
+        }
+        
+        return value || key
+      }
+      
+      // Fallback
+      return key
     },
 
-    // Updated registration redirect with proper locale detection
+    // Registration redirect with proper locale detection
     goToRegisterPage() {
-      const supportedLocales = ['en', 'ms', 'zh'];
-      const locale = supportedLocales.includes(this.currentLanguage) 
-        ? this.currentLanguage 
-        : (this.$i18n?.locale || 'en');
+      const locale = this.currentLanguage || this.$i18n?.locale || 'en';
 
       let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
       
@@ -387,7 +263,6 @@ export default {
           targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
           break;
         case 'ms':
-          // Add Malay URL if available, otherwise fallback to English
           targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
           break;
         default:
@@ -404,7 +279,6 @@ export default {
     // Update handlePlayGame to redirect to registration
     handlePlayGame(game) {
       console.log('Game clicked:', game.name);
-      // Instead of just emitting, redirect to registration
       this.goToRegisterPage();
     },
 
@@ -465,7 +339,7 @@ export default {
   position: relative;
 }
 
-/* Show desktop layout by default, hide mobile */
+/* Layout Display Control */
 .desktop-layout {
   display: block;
   position: relative;
@@ -491,6 +365,7 @@ export default {
   font-size: 22px;
   font-weight: bold;
   margin: 20px 0 10px 0;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 .desktop-layout .game-categories {
@@ -519,6 +394,7 @@ export default {
 .desktop-layout .category-btn.active,
 .desktop-layout .category-btn:hover {
   color: #F1AE3D;
+  transform: translateY(-1px);
 }
 
 .desktop-layout .category-btn.active::after {
@@ -534,6 +410,7 @@ export default {
   z-index: 10;
 }
 
+/* Games Grid Layout */
 .desktop-layout .games-grid {
   display: grid;
   grid-template-columns: 300px 1fr;
@@ -541,6 +418,7 @@ export default {
   padding: 20px 0;
 }
 
+/* Featured Game Section */
 .desktop-layout .featured-game {
   position: relative;
   display: flex;
@@ -554,6 +432,7 @@ export default {
   position: relative;
   width: 280px;
   flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .desktop-layout .featured-slide-card {
@@ -614,12 +493,13 @@ export default {
 .desktop-layout .featured-game-info {
   text-align: center;
   color: white;
+  margin-top: 12px;
 }
 
 .desktop-layout .featured-game-info h3 {
   font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 0px;
+  margin-bottom: 4px;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
@@ -630,13 +510,13 @@ export default {
   text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
+/* Slider Indicators */
 .desktop-layout .slider-indicators {
-  position: absolute;
-  bottom: 180px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   display: flex;
+  justify-content: center;
   gap: 8px;
+  margin-top: 16px;
   z-index: 10;
 }
 
@@ -650,12 +530,17 @@ export default {
   transition: all 0.3s ease;
 }
 
+.desktop-layout .indicator:hover {
+  background: rgba(241, 174, 61, 0.7);
+}
+
 .desktop-layout .indicator.active {
   background: #F1AE3D;
   width: 24px;
   height: 8px;
 }
 
+/* Regular Games Grid */
 .desktop-layout .regular-games {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -677,6 +562,7 @@ export default {
   width: 100%;
   height: 120px;
   flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .desktop-layout .game-card:hover {
@@ -689,6 +575,11 @@ export default {
   height: 100%;
   object-fit: cover;
   border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.desktop-layout .game-card:hover .game-image {
+  transform: scale(1.05);
 }
 
 .desktop-layout .game-info-external {
@@ -702,9 +593,25 @@ export default {
   font-weight: bold;
   margin-bottom: 0;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  transition: color 0.3s ease;
+}
+
+.desktop-layout .game-card-wrapper:hover .game-info-external h4 {
+  color: #F1AE3D;
 }
 
 /* RESPONSIVE BREAKPOINTS */
+@media (max-width: 1024px) {
+  .desktop-layout .regular-games {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+  
+  .desktop-layout .games-grid {
+    gap: 30px;
+  }
+}
+
 @media (max-width: 768px) {
   .desktop-layout {
     display: none;
@@ -717,5 +624,24 @@ export default {
   .games-section {
     padding: 0;
   }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  .desktop-layout .featured-slide-card,
+  .desktop-layout .game-card,
+  .desktop-layout .category-btn,
+  .desktop-layout .indicator {
+    transition: none;
+  }
+}
+
+/* Focus States for Accessibility */
+.desktop-layout .category-btn:focus,
+.desktop-layout .indicator:focus,
+.desktop-layout .featured-slide-card:focus,
+.desktop-layout .game-card:focus {
+  outline: 2px solid #F1AE3D;
+  outline-offset: 2px;
 }
 </style>

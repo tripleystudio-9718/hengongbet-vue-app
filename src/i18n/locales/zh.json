@@ -238,7 +238,10 @@
       "description": "通过兴旺Bet手机应用（支持iOS和Android），您可以随时随地享受所有喜爱的游戏——从老虎机和体育博彩到真人荷官和4D游戏。立即加入兴旺Bet，体验马来西亚最可靠、最令人兴奋的在线游戏平台！"
     }
   },
-  "games": {
+  "mobileGameSec": {
+      "title": "热门游戏"
+    },
+  "gameSec": {
     "title": "热门游戏",
     "categories": {
       "all": "全部",

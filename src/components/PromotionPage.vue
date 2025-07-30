@@ -145,7 +145,7 @@ export default {
       }
 
       window.location.href = url
-}
+    }
   }
 }
 </script>
@@ -452,6 +452,44 @@ export default {
 .mobile-button-3 { color: #ffffff; }
 .mobile-button-4 { color: #ffffff; }
 .mobile-button-5 { color: #ffffff; }
+
+/* Small PC/Laptop Optimization */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .promotion-cards {
+    width: 75%;
+  }
+  
+  .card-content {
+    height: 190px;
+  }
+  
+  .overlay-left {
+    width: 32%;
+    padding: 0 15px;
+    gap: 8px;
+  }
+  
+  .bonus-label {
+    font-size: 0.8rem;
+    margin-top: 8px;
+  }
+  
+  .bonus-amount {
+    font-size: 64px;
+    line-height: 0.9;
+  }
+  
+  .bonus-subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+  }
+  
+  .promo-button {
+    padding: 20px 12px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
 
 /* Responsive Design */
 @media (max-width: 1024px) {

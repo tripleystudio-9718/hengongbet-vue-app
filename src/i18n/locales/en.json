@@ -238,7 +238,10 @@
       "description": "With the Heng Ong Bet mobile app (iOS & Android supported), you can enjoy all your favorite games on the go — from slots and sportsbook to live dealer and 4D games. Join Heng Ong Bet today and experience Malaysia's most reliable and exciting online gaming platform!"
     }
   },
-  "games": {
+  "mobileGameSec": {
+      "title": "Hot Games"
+    },
+  "gameSec": {
     "title": "Hot Games",
     "categories": {
       "all": "All",
