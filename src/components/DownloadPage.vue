@@ -6,37 +6,37 @@
         <!-- Left Side - App Info and QR Codes -->
         <div class="left-content">
           <div class="app-info">
-            <h1 class="app-title">Heng Ong Bet App</h1>
-            <p class="app-subtitle">For IOS & Android</p>
+            <h1 class="app-title">{{ $t('app.title') }}</h1>
+            <p class="app-subtitle">{{ $t('app.subtitle') }}</p>
           </div>
-          
+                    
           <div class="qr-codes">
             <div class="qr-code-item">
               <div class="qr-placeholder">
                 <!-- QR Code placeholder - you can replace with actual QR code -->
                 <img :src="iosIcon" alt="iOS" class="platform-icon" />
               </div>
-              <div class="download-button ios-button">
+              <div class="download-button ios-button" @click="goToRegisterPage">
                 <img src="@/assets/ios-logo.svg" alt="iOS Logo" class="platform-icon" />
-                <span>iOS Download</span>
+                <span>{{ $t('app.iosDownload') }}</span>
               </div>
             </div>
-            
+                        
             <div class="qr-code-item">
               <div class="qr-placeholder">
                 <!-- QR Code placeholder - you can replace with actual QR code -->
                 <img :src="androidIcon" alt="Android" class="platform-icon" />
               </div>
-              <div class="download-button android-button">
+              <div class="download-button android-button" @click="goToRegisterPage">
                 <img src="@/assets/android-logo.svg" alt="Android Logo" class="platform-icon" />
-                <span>Android Download</span>
+                <span>{{ $t('app.androidDownload') }}</span>
               </div>
             </div>
           </div>
           <hr class="section-divider" />
           <div class="affiliate-section">
-            <p class="affiliate-text">Sign Up And Join Our Affiliate Program!</p>
-            <button class="signup-button">Sign Up Now !</button>
+            <p class="affiliate-text">{{ $t('app.affiliateText') }}</p>
+            <button class="signup-button" @click="goToRegisterPage">{{ $t('app.signUpButton') }}</button>
           </div>
         </div>
         <!-- Center - Phone Image for Mobile -->
@@ -54,19 +54,19 @@
                   <img :src="giftIcon" alt="Exclusive Bonus" class="feature-icon" />
                 </div>
                 <div class="feature-text">
-                  <span class="feature-title">Exclusive</span>
-                  <span class="feature-subtitle">Bonus</span>
+                  <span class="feature-title">{{ $t('app.features.exclusive') }}</span>
+                  <span class="feature-subtitle">{{ $t('app.features.bonus') }}</span>
                 </div>
               </div>
-              
+                            
               <!-- Tall Card - Affiliate Program -->
               <div class="feature-card tall-card">
                 <div class="feature-icon-container">
                   <img :src="yellowHuman" alt="Affiliate Program" class="feature-icon" />
                 </div>
                 <div class="feature-text">
-                  <span class="feature-title">Affiliate</span>
-                  <span class="feature-subtitle">Program</span>
+                  <span class="feature-title">{{ $t('app.features.affiliate') }}</span>
+                  <span class="feature-subtitle">{{ $t('app.features.program') }}</span>
                 </div>
               </div>
             </div>
@@ -78,19 +78,19 @@
                   <img :src="yellowClock" alt="Instant Payment" class="feature-icon" />
                 </div>
                 <div class="feature-text">
-                  <span class="feature-title">Instant</span>
-                  <span class="feature-subtitle">Payment</span>
+                  <span class="feature-title">{{ $t('app.features.instant') }}</span>
+                  <span class="feature-subtitle">{{ $t('app.features.payment') }}</span>
                 </div>
               </div>
-              
+                            
               <!-- Short Card - Seamless Experience -->
               <div class="feature-card short-card">
                 <div class="feature-icon-container">
                   <img :src="moneyIcon" alt="Seamless Experience" class="feature-icon" />
                 </div>
                 <div class="feature-text">
-                  <span class="feature-title">Seamless</span>
-                  <span class="feature-subtitle">Experience</span>
+                  <span class="feature-title">{{ $t('app.features.seamless') }}</span>
+                  <span class="feature-subtitle">{{ $t('app.features.experience') }}</span>
                 </div>
               </div>
             </div>
@@ -108,7 +108,7 @@
           @click="switchTab('android')"
         >
           <img src="@/assets/android-icon.svg" alt="Android Logo" class="platform-icon" />
-          Android
+          {{ $t('guide.tabs.android') }}
         </button>
         <button 
           class="tab-button"
@@ -116,7 +116,7 @@
           @click="switchTab('ios')"
         >
           <img src="@/assets/apple-icon.svg" alt="iOS Logo" class="platform-icon" />
-          iOS
+          {{ $t('guide.tabs.ios') }}
         </button>
         <button 
           class="tab-button"
@@ -124,21 +124,21 @@
           @click="switchTab('desktop')"
         >
           <img src="@/assets/desktop-icon.svg" alt="Desktop Logo" class="platform-icon" />
-          Desktop
+          {{ $t('guide.tabs.desktop') }}
         </button>
       </div>
       <!-- Download Guide Content -->
       <div v-if="activeTab === 'android'" class="guide-content">
         <!-- Title -->
-        <h1 class="guide-title">Android Download</h1>
+        <h1 class="guide-title">{{ $t('guide.titles.androidDownload') }}</h1>
         <!-- Step 1 -->
         <div class="step-section">
           <div class="step-badge">1</div>
-          <h2 class="step-title">Step 1</h2>
+          <h2 class="step-title">{{ $t('guide.steps.android.step1.title') }}</h2>
           <p class="step-description">
-          Tap dotted setting icon at top right of the address bar.
+            {{ $t('guide.steps.android.step1.description') }}
           </p>
-          
+                    
           <!-- Browser Address Bar Mockup -->
           <div class="browser-mockup">
               <img src="@/assets/step1-image.webp" alt="Step 1" class="step-image" />
@@ -146,15 +146,16 @@
           <!-- Dotted Arrow -->
           <div class="dotted-arrow">
            <img src="@/assets/download-arrow.png" alt="Arrow" class="arrow-image" />
-        </div> </div>
+        </div> 
+        </div>
       <!-- Step 2 -->
         <div class="step-section">
           <div class="step-badge">2</div>
-          <h2 class="step-title">Step 2</h2>
+          <h2 class="step-title">{{ $t('guide.steps.android.step2.title') }}</h2>
           <p class="step-description">
-            Tap Add to Home Screen to pop up installation for HENG ONG BET App.
+            {{ $t('guide.steps.android.step2.description') }}
           </p>
-          
+                    
           <!-- Mobile Installation Dialog -->
           <div class="mobile-dialog">
         <img src="@/assets/step2-image.webp" alt="Step 2" class="step-image" />
@@ -162,14 +163,16 @@
           <!-- Dotted Arrow -->
           <div class="dotted-arrow">
            <img src="@/assets/download-arrow.png" alt="Arrow" class="arrow-image" />
-        </div> </div>
+        </div> 
+        </div>
         <!-- Step 3 -->
         <div class="step-section">
           <div class="step-badge">3</div>
-          <h2 class="step-title">Step 3</h2>
-          <p class="step-description">Tap Install to own the HENG ONG BET App, launch & enjoy your game!
+          <h2 class="step-title">{{ $t('guide.steps.android.step3.title') }}</h2>
+          <p class="step-description">
+            {{ $t('guide.steps.android.step3.description') }}
           </p>
-          
+                    
           <!-- Mobile Installation Dialog -->
           <div class="mobile-dialog">
         <img src="@/assets/step3-image.webp" alt="Step 3" class="step-image" />
@@ -178,15 +181,15 @@
       </div>
       <!-- iOS Guide Content -->
       <div v-else-if="activeTab === 'ios'" class="guide-content">
-        <h1 class="guide-title">iOS Download</h1>
+        <h1 class="guide-title">{{ $t('guide.titles.iosDownload') }}</h1>
       <!-- Step 1 -->
         <div class="step-section">
           <div class="step-badge">1</div>
-          <h2 class="step-title">Step 1</h2>
+          <h2 class="step-title">{{ $t('guide.steps.ios.step1.title') }}</h2>
           <p class="step-description">
-            Tap share button at the bottom of the address bar.
+            {{ $t('guide.steps.ios.step1.description') }}
           </p>
-          
+                    
           <!-- Browser Address Bar Mockup -->
           <div class="browser-mockup">
               <img src="@/assets/ios-step1-image.webp" alt="iOS Step 1" class="step-image" />
@@ -194,15 +197,16 @@
           <!-- Dotted Arrow -->
           <div class="dotted-arrow">
            <img src="@/assets/download-arrow.png" alt="Arrow" class="arrow-image" />
-        </div> </div>
+        </div> 
+        </div>
         <!-- Step 2 -->
         <div class="step-section">
           <div class="step-badge">2</div>
-          <h2 class="step-title">Step 2</h2>
+          <h2 class="step-title">{{ $t('guide.steps.ios.step2.title') }}</h2>
           <p class="step-description">
-            Tap Add to Home Screen to pop up installation for HENG ONG BET App.
+            {{ $t('guide.steps.ios.step2.description') }}
           </p>
-          
+                    
           <!-- Mobile Installation Dialog -->
           <div class="mobile-dialog">
         <img src="@/assets/ios-step2-image.webp" alt="iOS Step 2" class="step-image" />
@@ -210,31 +214,34 @@
           <!-- Dotted Arrow -->
           <div class="dotted-arrow">
            <img src="@/assets/download-arrow.png" alt="Arrow" class="arrow-image" />
-        </div> </div>
+        </div> 
+        </div>
         <!-- Step 3 -->
         <div class="step-section">
           <div class="step-badge">3</div>
-          <h2 class="step-title">Step 3</h2>
+          <h2 class="step-title">{{ $t('guide.steps.ios.step3.title') }}</h2>
           <p class="step-description">
-          Tap Add to own the HENG ONG BET App, launch & enjoy your game!
+            {{ $t('guide.steps.ios.step3.description') }}
           </p>
-          
+                    
           <!-- Mobile Installation Dialog -->
           <div class="mobile-dialog">
         <img src="@/assets/ios-step3-image.webp" alt="iOS Step 3" class="step-image" />
           </div>
         </div>
-              </div>
+              
+        </div>
       <!-- Desktop Guide Content -->
       <div v-else-if="activeTab === 'desktop'" class="guide-content">
-        <h1 class="guide-title">Desktop Download</h1>
+        <h1 class="guide-title">{{ $t('guide.titles.desktopDownload') }}</h1>
          <!-- Step 1 -->
         <div class="step-section">
           <div class="step-badge">1</div>
-          <h2 class="step-title">Step 1</h2>
-          <p class="step-description">Click desktop download button at right side of the address bar to pop up installation for HENG ONG BET App.
+          <h2 class="step-title">{{ $t('guide.steps.desktop.step1.title') }}</h2>
+          <p class="step-description">
+            {{ $t('guide.steps.desktop.step1.description') }}
           </p>
-          
+                    
           <!-- Browser Address Bar Mockup -->
           <div class="browser-mockup">
               <img src="@/assets/desk-step1-image.webp" alt="Desktop Step 1" class="step-image" />
@@ -242,20 +249,23 @@
           <!-- Dotted Arrow -->
           <div class="dotted-arrow">
            <img src="@/assets/download-arrow.png" alt="Arrow" class="arrow-image" />
-        </div> </div>
+        </div> 
+        </div>
         <!-- Step 2 -->
         <div class="step-section">
           <div class="step-badge">2</div>
-          <h2 class="step-title">Step 2</h2>
-          <p class="step-description">Click Install to own the HENG ONG BET App, launch & enjoy your game!
+          <h2 class="step-title">{{ $t('guide.steps.desktop.step2.title') }}</h2>
+          <p class="step-description">
+            {{ $t('guide.steps.desktop.step2.description') }}
           </p>
-          
+                    
           <!-- Mobile Installation Dialog -->
           <div class="mobile-dialog">
         <img src="@/assets/desk-step2-image.webp" alt="Desktop Step 2" class="step-image" />
           </div>
     </div>
-           </div>
+           
+        </div>
     </div>
   </div>
 </template>
@@ -292,7 +302,18 @@ export default {
   methods: {
     switchTab(tab) {
       this.activeTab = tab;
-    }
+    },
+    goToRegisterPage() {
+      const locale = this.$i18n?.locale || 'en';
+
+      let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
+      if (locale === 'zh') {
+        targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
+      }
+
+      // Redirect to external URL
+      window.location.href = targetUrl;
+}
   },
   mounted() {
     // You can add any initialization logic here
@@ -865,18 +886,22 @@ export default {
 }
 
 @media (max-width: 768px) {
+  .app-section-with-background {
+    background-image: url('@/assets/mobile-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
   .left-content {
     order: 3;
   }
-
   .center-content {
     order: 1;
   }
-
   .right-content {
     order: 2
   }
-
   .app-title {
     font-size: 2.5rem;
     text-align: center;

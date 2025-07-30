@@ -3,14 +3,14 @@
     <div class="content-wrapper">
       <!-- Header -->
       <div class="header-wrapper">
-        <h2 class="main-title">{{ headerContent.title }}</h2>
-        <h3 class="accent-subtitle">{{ headerContent.subtitle }}</h3>
+        <h2 class="main-title">{{ $t('testimonials.header.title') }}</h2>
+        <h3 class="accent-subtitle">{{ $t('testimonials.header.subtitle') }}</h3>
         <div class="rating-display">
-          <span class="rating-value">{{ headerContent.rating }}</span>
+          <span class="rating-value">{{ $t('testimonials.header.rating') }}</span>
           <div class="stars-group">
             <span v-for="n in 5" :key="n" class="star-icon">★</span>
           </div>
-          <span class="rating-description">{{ headerContent.reviewCount }}</span>
+          <span class="rating-description">{{ $t('testimonials.header.review_count') }}</span>
         </div>
       </div>
 
@@ -19,10 +19,10 @@
         <!-- Left Side - Quote and Title -->
         <div class="control-panel">
           <div class="quote-display">
-            <img :src="quotationIcon" alt="Quotation" class="quote-icon" />
+            <img :src="quotationIcon" :alt="$t('testimonials.alt_text.quotation')" class="quote-icon" />
           </div>
           <h2 class="panel-title">
-            {{ controlContent.title }}
+            {{ $t('testimonials.control.title') }}
           </h2>
           
           <!-- Progress Bar -->
@@ -30,8 +30,9 @@
             <button 
               @click="prevSlide"
               class="control-button"
+              :title="$t('testimonials.navigation.previous')"
             >
-              <img :src="nextRightArrow" alt="Previous" class="control-arrow-icon left-arrow" />
+              <img :src="nextRightArrow" :alt="$t('testimonials.alt_text.previous')" class="control-arrow-icon left-arrow" />
             </button>
             
             <div class="progress-container">
@@ -44,8 +45,9 @@
             <button 
               @click="nextSlide"
               class="control-button"
+              :title="$t('testimonials.navigation.next')"
             >
-              <img :src="nextRightArrow" alt="Next" class="control-arrow-icon" />
+              <img :src="nextRightArrow" :alt="$t('testimonials.alt_text.next')" class="control-arrow-icon" />
             </button>
           </div>
         </div>
@@ -108,7 +110,7 @@
                     {{ testimonial.name }}
                   </div>
                   <div class="profile-timestamp">
-                    {{ testimonial.timeAgo }}
+                    {{ formatTimeAgo(testimonial.timeAgo) }}
                   </div>
                 </div>
               </div>
@@ -151,17 +153,7 @@ export default {
       initialTransform: 0,
       currentTransform: 0,
       
-      headerContent: {
-        title: "Testimonials",
-        subtitle: "Real stories. Real wins. Real excitement.",
-        rating: "4.8/5",
-        reviewCount: "Based On 1200 reviews"
-      },
-      
-      controlContent: {
-        title: "What Our Customers Are Saying"
-      },
-      
+      // Base testimonials data with original messages
       testimonials: [
         {
           id: 1,
@@ -184,7 +176,7 @@ export default {
           name: "Bolok Low Kai Xian",
           timeAgo: "3 mins ago",
           rating: 5,
-          text: "Been using Winbox for a while now. What keeps me here is how easy everything is. The site runs smoothly and customer service responds fast and friendly. Withdrawals? Always quick. Other sites made cashing out a headache, but Winbox is hassle- free. Highly recommend.",
+          text: "Been using Winbox for a while now. What keeps me here is how easy everything is. The site runs smoothly and customer service responds fast and friendly. Withdrawals? Always quick. Other sites made cashing out a headache, but Winbox is hassle- free. Highly recommend.",
           avatar: avatar3
         }
       ]
@@ -228,6 +220,21 @@ export default {
     this.cleanup();
   },
   methods: {
+    formatTimeAgo(timeAgo) {
+      // Parse the original timeAgo and format it with translations
+      if (timeAgo.includes('days ago')) {
+        const days = timeAgo.match(/(\d+)/)[0];
+        return `${days} ${this.$t('testimonials.time.days_ago')}`;
+      } else if (timeAgo.includes('week ago')) {
+        const weeks = timeAgo.match(/(\d+)/)?.[0] || '1';
+        return `${weeks} ${this.$t('testimonials.time.week_ago')}`;
+      } else if (timeAgo.includes('mins ago')) {
+        const mins = timeAgo.match(/(\d+)/)[0];
+        return `${mins} ${this.$t('testimonials.time.mins_ago')}`;
+      }
+      return timeAgo; // fallback to original if no match
+    },
+    
     setupEventListeners() {
       document.addEventListener('mousemove', this.handleMove, { passive: false });
       document.addEventListener('mouseup', this.handleEnd);

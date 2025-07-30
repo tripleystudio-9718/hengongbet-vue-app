@@ -237,5 +237,820 @@
       "title": "Play Anywhere, Anytime",
       "description": "With the Heng Ong Bet mobile app (iOS & Android supported), you can enjoy all your favorite games on the go — from slots and sportsbook to live dealer and 4D games. Join Heng Ong Bet today and experience Malaysia's most reliable and exciting online gaming platform!"
     }
+  },
+  "games": {
+    "title": "Hot Games",
+    "categories": {
+      "all": "All",
+      "slots": "Slots",
+      "casino": "Casino",
+      "sports": "Sports",
+      "lottery": "Lottery"
+    },
+    "featured_games": {
+      "iceland": "Iceland",
+      "panther_moon": "Panther Moon",
+      "fa_fa_fa": "Fa Fa Fa",
+      "sugar_bliss": "Sugar Bliss",
+      "super_ace": "Super Ace"
+    },
+    "providers": {
+      "endorphina": "Endorphina",
+      "novomatic": "Novomatic",
+      "golden_hero": "Golden Hero",
+      "sweet_gaming": "Sweet Gaming",
+      "pragmatic_play": "Pragmatic Play"
+    },
+    "regular_games": {
+      "lucky_365": "Lucky 365",
+      "askmeslot": "Askmeslot",
+      "jdb": "JDB",
+      "monkey_king": "Monkey King",
+      "hot_road": "Hot Road",
+      "maxbet": "Maxbet",
+      "sv388": "Sv388",
+      "rcb988": "Rcb988",
+      "jili": "Jili",
+      "microslot": "Microslot",
+      "evolution": "Evolution",
+      "sexy": "Sexy",
+      "ekor": "Ekor",
+      "big_gaming": "Big Gaming",
+      "pragmatic_play_regular": "Pragmatic Play"
+    },
+    "actions": {
+      "play_now": "Play Now",
+      "view_all": "View All",
+      "load_more": "Load More"
+    }
+  },
+  "how_it_works": {
+    "header": {
+      "subtitle": "Welcome to Heng Ong Bet - Trusted Online Casino",
+      "title": "Start Playing and Earning"
+    },
+    "steps": {
+      "step1": {
+        "title": "Create Account",
+        "description": "Click Join Now. Fill in your login info"
+      },
+      "step2": {
+        "title": "Make a Deposit",
+        "description": "Make your first deposit using money or crypto transfer"
+      },
+      "step3": {
+        "title": "Start Winning",
+        "description": "Start winning while playing on your favourite games"
+      },
+      "step4": {
+        "title": "Get Reward",
+        "description": "Don't forget to claim your bonuses"
+      }
+    },
+    "alt_text": {
+      "account_icon": "Account Icon",
+      "deposit_icon": "Deposit Icon",
+      "winning_icon": "Winning Icon",
+      "reward_icon": "Reward Icon"
+    }
+  },
+  "app_guide": {
+    "header": {
+      "subtitle": "All - New Heng Ong Bet App",
+      "title": "Premium Games & Support"
+    },
+    "tabs": {
+      "android": "Android",
+      "ios": "iOS",
+      "desktop": "Desktop"
+    },
+    "instructions": {
+      "title": "Instructions",
+      "step": "Step"
+    },
+    "navigation": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "steps": {
+      "android": {
+        "step1": "Tap dotted setting icon at top right of the address bar.",
+        "step2": "Tap Add to Home Screen to pop up installation for HENG ONG BET App.",
+        "step3": "Tap Install to own the HENG ONG BET App, launch & enjoy your game!"
+      },
+      "ios": {
+        "step1": "Tap share button at the bottom of the address bar.",
+        "step2": "Tap Add to Home Screen to pop up installation for HENG ONG BET App.",
+        "step3": "Tap Add to own the HENG ONG BET App, launch & enjoy your game!"
+      },
+      "desktop": {
+        "step1": "Click desktop download button at right side of the address bar to pop up installation for HENG ONG BET App.",
+        "step2": "Click Install to own the HENG ONG BET App, launch & enjoy your game!"
+      }
+    },
+    "alt_text": {
+      "step_image": "Step {{number}} instruction image"
+    }
+  },
+  "why_section": {
+    "header": {
+      "prefix": "Why Choose",
+      "brand": "Heng Ong Bet",
+      "suffix": "?"
+    },
+    "cards": {
+      "card1": {
+        "title": "What Makes Heng Ong Bet Different?",
+        "description": "Unlike traditional online casinos that rely on agents for deposits and withdrawals, Heng Ong Bet connects you directly—no middlemen involved. Enjoy instant transactions, built-in social and e-wallet features, and a unique commission-sharing system that lets you earn while you play."
+      },
+      "card2": {
+        "title": "Most Trusted Casino",
+        "description": "Your privacy and security are our top priority. Heng Ong Bet uses industry-standard protection to safeguard your personal data and strictly follows our privacy policy to ensure a safe and trustworthy gaming environment."
+      },
+      "card3": {
+        "title": "Simple & Fast Registration",
+        "description": "Create your Heng Ong Bet account to access 1,000+ games, enjoy exclusive promos, and stay updated with the latest offers."
+      },
+      "card4": {
+        "title": "Online Support",
+        "description": "Our Heng Ong Bet support team is available 24/7 via live chat, phone, and email to assist you quickly with any issues."
+      }
+    },
+    "alt_text": {
+      "computer_icon": "Computer Icon",
+      "trusted_icon": "Trusted Icon",
+      "registration_icon": "Registration Icon",
+      "support_icon": "Support Icon"
+    }
+  },
+  "why_section": {
+    "header": {
+      "prefix": "Why Choose",
+      "brand": "Heng Ong Bet",
+      "suffix": "?"
+    },
+    "cards": {
+      "card1": {
+        "title": "What Makes Heng Ong Bet Different?",
+        "description": "Unlike traditional online casinos that rely on agents for deposits and withdrawals, Heng Ong Bet connects you directly—no middlemen involved. Enjoy instant transactions, built-in social and e-wallet features, and a unique commission-sharing system that lets you earn while you play."
+      },
+      "card2": {
+        "title": "Most Trusted Casino",
+        "description": "Your privacy and security are our top priority. Heng Ong Bet uses industry-standard protection to safeguard your personal data and strictly follows our privacy policy to ensure a safe and trustworthy gaming environment."
+      },
+      "card3": {
+        "title": "Simple & Fast Registration",
+        "description": "Create your Heng Ong Bet account to access 1,000+ games, enjoy exclusive promos, and stay updated with the latest offers."
+      },
+      "card4": {
+        "title": "Online Support",
+        "description": "Our Heng Ong Bet support team is available 24/7 via live chat, phone, and email to assist you quickly with any issues."
+      }
+    },
+    "alt_text": {
+      "computer_icon": "Computer Icon",
+      "trusted_icon": "Trusted Icon",
+      "registration_icon": "Registration Icon",
+      "support_icon": "Support Icon"
+    }
+  },
+  "provider_showcase": {
+    "global_header": {
+      "brand": "Heng Ong Bet",
+      "title": "We Are Global",
+      "subtitle": "Heng Ong Bet is Now Expanding Globally",
+      "description": "Heng Ong Bet is now available in Singapore, with our talented global team supporting growth across Malaysia and Singapore. What unites us? A passion for delivering the best gaming experience. We're also actively expanding into Thailand, Vietnam, Indonesia, Cambodia, the UK, and the USA."
+    },
+    "providers": {
+      "slots": {
+        "name": "Slots",
+        "description": "Heng Ong Bet offers a wide variety of online slot games powered by top providers like MEGA888, PUSSY888, PUSSY888, VPOWER, NAGA GAMES, JILI, and more. With advanced technology, stunning graphics, and immersive sound effects, our slots deliver exciting gameplay and big win potential."
+      },
+      "sports": {
+        "name": "Sport Betting",
+        "description": "Heng Ong Bet offers a complete and professional sports betting experience through top platforms like MAXBET, SBOBET, and RCB788. Bet on popular sports such as football, basketball, tennis, baseball, and ice hockey with various options like handicap, over/under, odd/even, and half-time bets."
+      },
+      "lottery": {
+        "name": "4D Lottery",
+        "description": "Heng Ong Bet brings you the most exciting 4D lottery games with a chance to win big prizes every day. Enjoy popular formats like direct selection, group selection, Magnum, Da Ma Cai, Toto, and daily Grand Dragon draws. With high odds and multiple betting options, your winning chances are greater than ever."
+      },
+      "live_casino": {
+        "name": "Live Casino",
+        "description": "Heng Ong Bet brings you real-time live casino games at home with top providers like PGCN88 LIVE, AE SEXY, and EVOLUTION. Enjoy smooth HD streams, fair play from pro dealers, and fast, secure transactions—all in one trusted platform."
+      }
+    },
+    "alt_text": {
+      "slots": "Slots Gaming Provider",
+      "sports": "Sports Betting Provider",
+      "lottery": "4D Lottery Provider",
+      "live_casino": "Live Casino Provider"
+    }
+  },
+  "testimonials": {
+    "header": {
+      "title": "Testimonials",
+      "subtitle": "Real stories. Real wins. Real excitement.",
+      "rating": "4.8/5",
+      "review_count": "Based On 1200 reviews"
+    },
+    "control": {
+      "title": "What Our Customers Are Saying"
+    },
+    "navigation": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "time": {
+      "days_ago": "days ago",
+      "week_ago": "week ago",
+      "mins_ago": "mins ago"
+    },
+    "alt_text": {
+      "quotation": "Quotation",
+      "previous": "Previous",
+      "next": "Next"
+    }
+  },
+  "faqSec": {
+    "header": {
+      "label": "FAQ",
+      "title": "Heng Ong Bet - All You Need To Know",
+      "description": "Got questions? We've compiled the most common queries from our players to help you get started smoothly on HengOngBet",
+      "button_text": "View All FAQs"
+    },
+    "questions": {
+      "q1": {
+        "question": "How Do I Register on Heng Ong Bet ?",
+        "answer": "Simply click the 'Register' button, fill in your details, and verify your phone number to get started"
+      },
+      "q2": {
+        "question": "Is Heng Ong Bet Legal and Safe to Use ?",
+        "answer": "Yes, Heng Ong Bet operates under proper licensing and uses advanced security measures to protect your data and transactions. We are fully compliant with all applicable regulations."
+      },
+      "q3": {
+        "question": "How can I Deposit or Withdraw money ?",
+        "answer": "You can deposit and withdraw money through various secure payment methods including bank transfers, e-wallets, and cryptocurrency. All transactions are processed quickly and securely."
+      },
+      "q4": {
+        "question": "What games are available on Heng Ong Bet ?",
+        "answer": "We offer a wide variety of games including live casino games, slot machines, sports betting, lottery games, and more. Our platform features games from top providers in the industry."
+      },
+      "q5": {
+        "question": "Are there any Welcome Bonuses or Promotions ?",
+        "answer": "Yes! We offer generous welcome bonuses for new players, as well as ongoing promotions, loyalty rewards, and special bonuses. Check our promotions page for the latest offers."
+      },
+      "q6": {
+        "question": "What should I do if I forget my login details ?",
+        "answer": "If you forget your login details, simply click on the 'Forgot Password' link on the login page. You can reset your password using your registered email or phone number."
+      },
+      "q7": {
+        "question": "Is there a mobile app for Heng Ong Bet",
+        "answer": "Yes, we have a mobile app available for both iOS and Android devices. You can download it from the App Store or Google Play Store, or access our mobile-optimized website directly from your browser."
+      }
+    },
+    "alt_text": {
+      "open": "Open",
+      "close": "Close"
+    }
+  },
+  "affiliate": {
+    "brand_section": {
+      "title1": "Join as a",
+      "brand": "Heng Ong Bet",
+      "title2": "Agent, Shareholder, or Member",
+      "tagline": "No Win-Loss Worries · Flexible Commissions · Auto Profit Distribution"
+    },
+    "join_button": "Join Us",
+    "steps": {
+      "step": "Step",
+      "step1": {
+        "number": "1",
+        "title": "Register"
+      },
+      "step2": {
+        "number": "2", 
+        "title": "Promote"
+      },
+      "step3": {
+        "number": "3",
+        "title": "Earn"
+      }
+    },
+    "commission_section": {
+      "title": "Dual Commission Models",
+      "description": "Switch anytime. Total control over how you earn.",
+      "models": {
+        "revenue_share": {
+          "title": "Revenue Share",
+          "description": "Earn percentage of player losses"
+        },
+        "cpa_model": {
+          "title": "CPA Model", 
+          "description": "Fixed amount per qualified player"
+        }
+      }
+    },
+    "levels_section": {
+      "title": "User Levels & Rebate System",
+      "table": {
+        "headers": {
+          "user_level": "User Level",
+          "benefits": "Benefits", 
+          "rebate": "Rebate"
+        },
+        "levels": {
+          "shareholder": {
+            "name": "Shareholder",
+            "benefits": "Based on players' total betting volume + win/loss (Fight + Pool)",
+            "rebate": "-----"
+          },
+          "referrer": {
+            "name": "Referrer", 
+            "benefits": "0.3% on player bets",
+            "rebate": "0.5% on own bets"
+          },
+          "player": {
+            "name": "Player",
+            "benefits": "-----",
+            "rebate": "0.5% on every bet placed"
+          }
+        }
+      }
+    },
+    "features": {
+      "high_commission": {
+        "title": "High Commission",
+        "description": "Up to 50% revenue share"
+      },
+      "real_time_tracking": {
+        "title": "Real-time Tracking",
+        "description": "Monitor your earnings live"
+      },
+      "weekly_payouts": {
+        "title": "Weekly Payouts", 
+        "description": "Fast and reliable payments"
+      },
+      "dedicated_support": {
+        "title": "Dedicated Support",
+        "description": "24/7 affiliate assistance"
+      },
+      "marketing_tools": {
+        "title": "Marketing Tools",
+        "description": "Professional banners & links"
+      }
+    },
+    "cta_section": {
+      "title": "Final Call To Action",
+      "subtitle": "Join the <span style=\"color: #F2B240;\">Heng Ong Bet</span> Agent Network and take control of your financial future!",
+      "description": "Start Earning Today. Your Profits, Your Control.",
+      "buttons": {
+        "register": "Register",
+        "support": "Customer Support"
+      }
+    },
+    "alt_text": {
+      "gaming_banner": "Gaming Banner"
+    }
+  },
+  "supported_games": {
+    "title": "Supported Game Types",
+    "games": {
+      "lottery": {
+        "title": "Lottery",
+        "subtitle": "(4D, Lucky, Magnum & More)"
+      },
+      "sports": {
+        "title": "Sports",
+        "subtitle": "(Global Events, Real-Time Odds)"
+      },
+      "slots": {
+        "title": "Slots",
+        "subtitle": "(Malaysia Gaming, Asia Number Ring 3)"
+      },
+      "horse_racing": {
+        "title": "Horse Racing",
+        "subtitle": "(Full Speed Online Racing)"
+      },
+      "live_casino": {
+        "title": "Live Casino",
+        "subtitle": "(Real Dealers & Realistic Game Dealing Cards)"
+      },
+      "cockfighting": {
+        "title": "Cockfighting",
+        "subtitle": "(Live Action, Real Betting)"
+      }
+    }
+  },
+  "why_choose_us": {
+    "title": "Why Choose Us?",
+    "features": {
+      "high_commission": {
+        "title": "High Commission",
+        "description": "Up to 50% revenue share with competitive rates"
+      },
+      "custom_solutions": {
+        "title": "Custom Solutions",
+        "description": "Tailored affiliate programs for success"
+      },
+      "marketing_tools": {
+        "title": "Marketing Tools",
+        "description": "Professional banners and tracking links"
+      },
+      "dedicated_support": {
+        "title": "Dedicated Support",
+        "description": "24/7 affiliate assistance and guidance"
+      },
+      "weekly_payouts": {
+        "title": "Weekly Payouts",
+        "description": "Fast and reliable payment processing"
+      },
+      "real_time_tracking": {
+        "title": "Real-time Tracking",
+        "description": "Monitor your earnings and performance live"
+      }
+    }
+  },
+  "promotion_section": {
+    "header": {
+      "title_prefix": "Promotion Galore at",
+      "brand": "Heng Ong Bet",
+      "subtitle": "Unlock Exclusive Bonuses & Maximize Your Wins",
+      "description": "At HengOngBet, we bring you the ultimate platform for online gaming promotions in Malaysia and Singapore. Our exclusive bonuses are tailored to reward you for every bet you place — from generous cashback offers to tournament-related bonuses and exciting Heng Ong bonuses."
+    },
+    "promotions": {
+      "promo1": {
+        "bonus_label": "Top-up Bonus",
+        "bonus_amount": "68%",
+        "bonus_subtitle": "Get a Maximum Bonus Up To 200",
+        "title": "Top-up Bonus 68%",
+        "description": "Get a maximum bonus up to 200",
+        "button_text": "Invite & Earn Now"
+      },
+      "promo2": {
+        "bonus_label": "Top-up Rebate",
+        "bonus_amount": "0.5%",
+        "bonus_subtitle": "Bonus with No Limit",
+        "title": "Top-up Rebate 0.5%",
+        "description": "Bonus with No Limit",
+        "button_text": "Share & Win More"
+      },
+      "promo3": {
+        "bonus_label": "Top-up Bonus",
+        "bonus_amount": "200%",
+        "bonus_subtitle": "Get a Maximum Bonus Up To 100",
+        "title": "Top-up Bonus 200%",
+        "description": "Get a maximum bonus up to 100",
+        "button_text": "Start Referring Now"
+      },
+      "promo4": {
+        "bonus_label": "Daily Rebate Up To",
+        "bonus_amount": "3%",
+        "bonus_subtitle": "The More You Play, The More You Earn!",
+        "title": "Daily Rebate Up to 3%!",
+        "description": "The more you play, the more you earn!",
+        "button_text": "Get Your Rebate"
+      },
+      "promo5": {
+        "bonus_label": "Referral Rebate Up To",
+        "bonus_amount": "10%",
+        "bonus_subtitle": "The More You Invite, The More You Bet!",
+        "title": "Referral Rebate Up to 10%!",
+        "description": "The more you invite, the more you bet, and the more rebates you get!",
+        "button_text": "Get Your Rebate"
+      }
+    },
+    "mobile_promotions": {
+      "promo1": {
+        "alt": "Mobile Promotion 1",
+        "title": "Top-up Bonus 68%"
+      },
+      "promo2": {
+        "alt": "Mobile Promotion 2",
+        "title": "Top-up Rebate 0.5%"
+      },
+      "promo3": {
+        "alt": "Mobile Promotion 3",
+        "title": "Top-up Bonus 200%"
+      },
+      "promo4": {
+        "alt": "Mobile Promotion 4",
+        "title": "Daily Rebate Up to 3%"
+      },
+      "promo5": {
+        "alt": "Mobile Promotion 5",
+        "title": "Referral Rebate Up to 10%"
+      }
+    }
+  },
+  "app": {
+    "title": "Heng Ong Bet App",
+    "subtitle": "For IOS & Android",
+    "iosDownload": "iOS Download",
+    "androidDownload": "Android Download",
+    "affiliateText": "Sign Up And Join Our Affiliate Program!",
+    "signUpButton": "Sign Up Now !",
+    "features": {
+      "exclusive": "Exclusive",
+      "bonus": "Bonus",
+      "affiliate": "Affiliate",
+      "program": "Program",
+      "instant": "Instant",
+      "payment": "Payment",
+      "seamless": "Seamless",
+      "experience": "Experience"
+    }
+  },
+  "guide": {
+    "tabs": {
+      "android": "Android",
+      "ios": "iOS",
+      "desktop": "Desktop"
+    },
+    "titles": {
+      "androidDownload": "Android Download",
+      "iosDownload": "iOS Download",
+      "desktopDownload": "Desktop Download"
+    },
+    "steps": {
+      "step": "Step",
+      "android": {
+        "step1": {
+          "title": "Step 1",
+          "description": "Tap dotted setting icon at top right of the address bar."
+        },
+        "step2": {
+          "title": "Step 2",
+          "description": "Tap Add to Home Screen to pop up installation for HENG ONG BET App."
+        },
+        "step3": {
+          "title": "Step 3",
+          "description": "Tap Install to own the HENG ONG BET App, launch & enjoy your game!"
+        }
+      },
+      "ios": {
+        "step1": {
+          "title": "Step 1",
+          "description": "Tap share button at the bottom of the address bar."
+        },
+        "step2": {
+          "title": "Step 2",
+          "description": "Tap Add to Home Screen to pop up installation for HENG ONG BET App."
+        },
+        "step3": {
+          "title": "Step 3",
+          "description": "Tap Add to own the HENG ONG BET App, launch & enjoy your game!"
+        }
+      },
+      "desktop": {
+        "step1": {
+          "title": "Step 1",
+          "description": "Click desktop download button at right side of the address bar to pop up installation for HENG ONG BET App."
+        },
+        "step2": {
+          "title": "Step 2",
+          "description": "Click Install to own the HENG ONG BET App, launch & enjoy your game!"
+        }
+      }
+    }
+  },
+  "games": {
+    "tabs": {
+      "all": "All",
+      "slots": "Slots",
+      "casino": "Casino",
+      "sports": "Sports",
+      "lottery": "Lottery"
+    },
+    "names": {
+      "lucky365": "Lucky 365",
+      "askmeslot": "Askmeslot",
+      "jdb": "JDB",
+      "monkeyKing": "Monkey King",
+      "hotRoad": "Hot Road",
+      "maxbet": "Maxbet",
+      "sv388": "Sv388",
+      "rcb988": "Rcb988",
+      "jili": "Jili",
+      "microslot": "Microslot",
+      "evolution": "Evolution",
+      "sexy": "Sexy",
+      "ekor": "Ekor",
+      "bigGaming": "Big Gaming",
+      "pragmaticPlay": "Pragmatic Play"
+    },
+    "alt": {
+      "gameBanner": "Game Banner",
+      "gameImage": "Game Image"
+    },
+    "actions": {
+      "clickToPlay": "Click to play {gameName}"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Question (FAQ)",
+    "appName": "Heng Ong Bet",
+    "search": {
+      "placeholder": "Type your search keyword here...",
+      "button": "Search",
+      "noResults": "No FAQ questions found for \"{query}\"",
+      "tryDifferent": "Try searching with different keywords or browse all questions above."
+    },
+    "sections": {
+      "gettingStarted": "Getting Started",
+      "loginSecurity": "Login & Account Security",
+      "bonusPromotions": "Bonuses & Promotions",
+      "finalNote": "Final Note"
+    },
+    "gettingStarted": [
+      {
+        "question": "Is HengOngBet legal in Malaysia and Singapore?",
+        "answer": "While online betting regulations vary, HengOngBet operates under international licensing and provides secure access to entertainment for users in both countries. It is your responsibility to ensure you are of legal age and that online betting is allowed in your region."
+      },
+      {
+        "question": "How do I create an account on HengOngBet?",
+        "answer": "Visit https://hengongbet88.net, click \"Register,\" fill in your mobile number, username, password, and verification code. Make sure to enter a valid referral code to claim your welcome bonus."
+      },
+      {
+        "question": "Can I register using someone else's phone number?",
+        "answer": "No. You must use your own mobile number to complete SMS verification and ensure your account security."
+      }
+    ],
+    "loginSecurity": [
+      {
+        "question": "I didn't receive my SMS verification code. What should I do?",
+        "answer": "Check your phone signal, make sure you entered the correct number, and try resending the code. If the issue persists, contact live support."
+      },
+      {
+        "question": "I forgot my password. How can I reset it?",
+        "answer": "Click the \"Forgot Password\" link on the login page and follow the instructions to reset via your registered phone number."
+      },
+      {
+        "question": "Can I have more than one account?",
+        "answer": "No. Multiple accounts by the same user are not allowed and may result in all related accounts being suspended."
+      },
+      {
+        "question": "What is the minimum deposit on HengOngBet?",
+        "answer": "The minimum deposit varies depending on the payment method, but it typically starts at RM30."
+      },
+      {
+        "question": "How do I deposit funds?",
+        "answer": "Log in to your account, go to \"Deposit,\" select a payment method (e.g. FPX, DuitNow, bank transfer), and follow the instructions."
+      },
+      {
+        "question": "How fast are withdrawal processed?",
+        "answer": "Most withdrawals are processed within 5-15 minutes during operational hours. Delays may occur during high traffic."
+      },
+      {
+        "question": "Can I withdraw the RM10 Welcome Bonus directly?",
+        "answer": "No. The bonus must be used to place bets. Winnings from the bonus can be withdrawn once wagering requirements are met."
+      },
+      {
+        "question": "Is there a mobile app for HengOngBet?",
+        "answer": "Yes. Android users can download the APK from the official website. iOS users can install a web app shortcut through Safari."
+      },
+      {
+        "question": "Is the HengOngBet app safe to use?",
+        "answer": "Yes. Always download the app from the official website to avoid third-party clones. The app uses secure encryption and follows all data protection standards."
+      }
+    ],
+    "bonusPromotions": [
+      {
+        "question": "How do I claim the RM10 welcome bonus?",
+        "answer": "Register a new account using your real mobile number and enter a valid referral code. The RM10 bonus will be credited after successful verification."
+      },
+      {
+        "question": "Are there daily bonuses or reload promotions?",
+        "answer": "Yes. Visit the Promotions Page regularly to see all active offers, including daily reload, cashback, and VIP rewards."
+      },
+      {
+        "question": "Do bonuses have wagering requirements?",
+        "answer": "Yes. All bonuses come with specific terms. Be sure to read the conditions before activating any offer."
+      },
+      {
+        "question": "The website won't load on my phone. What should I do?",
+        "answer": "Try clearing your browser cache, switch to a different browser, or use the app version for better performance."
+      },
+      {
+        "question": "A game froze or crashed during play. Will I lose my bet?",
+        "answer": "Your bet result is still recorded by the game provider. You can re-enter the game or contact support to verify the outcome."
+      },
+      {
+        "question": "How do I contact customer support?",
+        "answer": "Yes. Our live agents are trained to assist you in English, Chinese, and Malay."
+      },
+      {
+        "question": "Can I speak to a real person?",
+        "answer": "Live chat support is available 24/7 through the website or mobile app."
+      },
+      {
+        "question": "Where can I get updates about new features or events?",
+        "answer": "Follow our official Telegram channel or check the Blog section for announcements."
+      }
+    ],
+    "finalNote": {
+      "title": "Still have questions?",
+      "content": "Visit our Help Center or speak with a support agent anytime. HengOngBet is committed to providing safe, transparent, and rewarding online gaming for all players."
+    }
+  },
+  "tutorial": {
+    "title": "Tutorial Guide",
+    "titleHighlight": "Tutorial",
+    "subtitle": "Easy To Know & Just follow Step Of Tutorial",
+    "sections": {
+      "redeemBonus": {
+        "title": "Easy 3 steps to {highlight} (new member bonus)",
+        "highlight": "Redeem RM10",
+        "steps": [
+          "Click on Terms at the bottom left of app",
+          "Click \"Claim Now\" on the activity page",
+          "Click \"Redeem Now\" follow the activity instructions"
+        ]
+      },
+      "queryHistory": {
+        "title": "{highlight} Tutorial",
+        "highlight": "Query history",
+        "steps": [
+          "Click on \"today\" at the bottom of the app",
+          "Click on \"big fish\" at the middle of the app",
+          "Click \"Record List\" to top right corner",
+          "Choose the history record you want to explore"
+        ]
+      }
+    },
+    "alt": {
+      "tutorialIcon": "Tutorial Icon"
+    }
+  },
+  "tutorialTabs": {
+    "titleH1": "Topup & Withdraw",
+    "titleH1Part2": "Tutorials",
+    "tabs": {
+      "topup": "Instant Top Up",
+      "transfer": "Bank Transfer",
+      "withdraw": "Withdraw"
+    },
+    "titles": {
+      "topup": {
+        "prefix": "How to top up via",
+        "highlight": "Instant Top Up",
+        "suffix": "in heng ong bet?"
+      },
+      "transfer": {
+        "prefix": "How to top up via",
+        "highlight": "Bank Transfer",
+        "suffix": "in heng ong bet?"
+      },
+      "withdraw": {
+        "prefix": "How to",
+        "highlight": "Withdraw",
+        "suffix": "in heng ong bet?"
+      }
+    },
+    "steps": {
+      "topup": [
+        "Log in HENG ONG BET",
+        "Click \"Top Up Button\"",
+        "Click \"Instant Top Up\"",
+        "Select the bank you want to use",
+        "Key your amount",
+        "Enter your bank transfer and username, and click \"Apply\"",
+        "Key OTP number and click \"Proceed\"",
+        "If the page show no update in 5 seconds, then click \"Retry\"",
+        "Instant Top Up successful"
+      ],
+      "transfer": [
+        "Select a convenient bank for deposit, from \"One hand in your TOPICK account or surf for changed immediately",
+        "Click \"Yes\"",
+        "Click \"Top up\"",
+        "Click \"Bank Transfer\"",
+        "Fill in the exchange amount, and click \"Submit\"",
+        "Click \"+\" to upload a cash deposit or transfer document and click \"Submit\"",
+        "Choose your bank",
+        "Enter OTP number that received in your phone, and click \"OK\"",
+        "Enter the amount and click \"Submit\"",
+        "Enter your payment password",
+        "Request submitted! Processing now... phone wait"
+      ],
+      "withdraw": [
+        "Log in HENG ONG BET",
+        "Click \"Yes\"",
+        "Click \"Withdraw\"",
+        "Select \"withdraw\" and click \"OK\"",
+        "Enter your account number, and click \"Next\"",
+        "Enter your phone number and click \"Request OTP\"",
+        "Enter OTP number that received in your phone, and click \"OK\"",
+        "Enter the amount and click \"Submit\"",
+        "Enter your payment password",
+        "Request submitted! Processing now... phone wait"
+      ]
+    },
+    "ui": {
+      "step": "Step",
+      "showMore": "Show more steps",
+      "showLess": "Show less steps"
+    },
+    "alt": {
+      "stepImage": "Step {step} image"
+    }
   }
 }

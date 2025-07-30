@@ -10,13 +10,19 @@
           :class="{ active: activeTab === tab.id }"
           @click="setActiveTab(tab.id)"
         >
-          {{ tab.name }}
+          {{ $t(`tutorialTabs.tabs.${tab.id}`) }}
         </button>
       </div>
     </div>
-    
+            
     <!-- Tab Content -->
     <div class="tab-content-wrapper">
+      <!-- Main Title with separated colors -->
+      <h1>
+        <span class="highlight">{{ $t('tutorialTabs.titleH1') }}</span>
+        <span class="regular-text">{{ ' ' + $t('tutorialTabs.titleH1Part2') }}</span>
+      </h1>
+      
       <!-- Dynamic Tab Content -->
       <div v-if="currentTabData" class="tab-content">
         <div class="content-container">
@@ -30,7 +36,7 @@
               @touchstart="startSliderDrag(activeTab, $event)"
               @touchmove="onSliderDrag(activeTab, $event)"
               @touchend="endSliderDrag(activeTab)">
-              
+                                          
               <div
                 class="image-slider-track"
                 :style="{
@@ -44,23 +50,28 @@
                   v-for="(img, index) in sliders[activeTab].images"
                   :key="index"
                 >
-                  <img :src="img" :alt="`${currentTabData.title} Step ${index + 1}`" />
+                  <img :src="img" :alt="$t('tutorialTabs.alt.stepImage', { step: index + 1 })" />
                 </div>
               </div>
             </div>
           </div>
-          
+                              
           <!-- Guide Section -->
           <div class="guide-section">
-            <h2 v-html="currentTabData.title"></h2>
-            
+            <!-- Title with separated colors -->
+            <h2>
+              <span class="regular-text">{{ $t(`tutorialTabs.titles.${activeTab}.prefix`) }}</span>
+              <span class="highlight">{{ ' ' + $t(`tutorialTabs.titles.${activeTab}.highlight`) + ' ' }}</span>
+              <span class="regular-text">{{ $t(`tutorialTabs.titles.${activeTab}.suffix`) }}</span>
+            </h2>
+                                    
             <div class="steps-container">
               <template v-for="(step, index) in currentTabData.steps" :key="index">
-                <div 
+                <div                   
                   class="step-item"
                   v-if="showAllSteps || index < 4"
-                  :class="{ 
-                    hidden: !showAllSteps && index >= 4,
+                  :class="{
+                     hidden: !showAllSteps && index >= 4,
                     'is-last': index === currentTabData.steps.length - 1
                   }"
                 >
@@ -69,26 +80,26 @@
                     <div class="step-line"></div>
                   </div>
                   <div class="step-content">
-                    <div class="step-number">Step {{ index + 1 }}</div>
-                    <p>{{ typeof step === 'string' ? step : step.description }}</p>
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} {{ index + 1 }}</div>
+                    <p>{{ $t(`tutorialTabs.steps.${activeTab}.${index}`) }}</p>
                   </div>
                 </div>
               </template>
             </div>
-            
+                                    
             <!-- Show More Button (only if more than 4 steps) -->
-            <button 
+            <button               
               v-if="currentTabData.steps.length > 4"
-              class="show-more-btn" 
+              class="show-more-btn"               
               @click="toggleSteps"
-              :aria-label="showAllSteps ? 'Show less steps' : 'Show more steps'"
+              :aria-label="showAllSteps ? $t('tutorialTabs.ui.showLess') : $t('tutorialTabs.ui.showMore')"
             >
-              <svg 
+              <svg                 
                 class="toggle-arrow"
                 :class="{ rotated: showAllSteps }"
-                width="12" 
-                height="8" 
-                viewBox="0 0 12 8" 
+                width="12"                 
+                height="8"                 
+                viewBox="0 0 12 8"                 
                 fill="none"
               >
                 <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -111,62 +122,22 @@ const showAllSteps = ref(false)
 
 // Tab configuration
 const tabs = [
-  { id: 'topup', name: 'Instant Top Up' },
-  { id: 'transfer', name: 'Bank Transfer' },
-  { id: 'withdraw', name: 'Withdraw' }
+  { id: 'topup' },
+  { id: 'transfer' },
+  { id: 'withdraw' }
 ]
 
-// Content data
-const tabsData = {
-  topup: {
-    title: 'How to top up via <span class="highlight">Instant Top Up</span> in heng ong bet?',
-    steps: [
-      'Log in HENG ONG BET',
-      'Click "Top Up Button"',
-      'Click "Instant Top Up"',
-      'Select the bank you want to use',
-      'Key your amount',
-      'Enter your bank transfer and username, and click "Apply"',
-      'Key OTP number and click "Proceed"',
-      'If the page show no update in 5 seconds, then click "Retry"',
-      'Instant Top Up successful'
-    ]
-  },
-  transfer: {
-    title: 'How to top up via <span class="highlight">Bank Transfer</span> in heng ong bet?',
-    steps: [
-      { description: 'Select a convenient bank for deposit, from "One hand in your TOPICK account or surf for changed immediately' },
-      { description: 'Click "Yes"' },
-      { description: 'Click "Top up"' },
-      { description: 'Click "Bank Transfer"' },
-      { description: 'Fill in the exchange amount, and click "Submit"' },
-      { description: 'Click "+" to upload a cash deposit or transfer document and click "Submit"' },
-      { description: 'Choose your bank' },
-      { description: 'Enter OTP number that received in your phone, and click "OK"' },
-      { description: 'Enter the amount and click "Submit"' },
-      { description: 'Enter your payment password' },
-      { description: 'Request submitted! Processing now... phone wait' }
-    ]
-  },
-  withdraw: {
-    title: 'How to <span class="highlight">Withdraw</span> in heng ong bet?',
-    steps: [
-      { description: 'Log in HENG ONG BET' },
-      { description: 'Click "Yes"' },
-      { description: 'Click "Withdraw"' },
-      { description: 'Select "withdraw" and click "OK"' },
-      { description: 'Enter your account number, and click "Next"' },
-      { description: 'Enter your phone number and click "Request OTP"' },
-      { description: 'Enter OTP number that received in your phone, and click "OK"' },
-      { description: 'Enter the amount and click "Submit"' },
-      { description: 'Enter your payment password' },
-      { description: 'Request submitted! Processing now... phone wait' }
-    ]
-  }
+// Content data structure (steps count for each tab)
+const tabsConfig = {
+  topup: { stepCount: 9 },
+  transfer: { stepCount: 11 },
+  withdraw: { stepCount: 10 }
 }
 
 // Computed property for current tab data
-const currentTabData = computed(() => tabsData[activeTab.value])
+const currentTabData = computed(() => ({
+  steps: Array(tabsConfig[activeTab.value].stepCount).fill().map((_, i) => ({ index: i }))
+}))
 
 // Slider configuration
 const createSliderConfig = (imageCount) => ({
@@ -200,10 +171,10 @@ const setActiveTab = (tabId) => {
       slider.interval = null
     }
   })
-  
+      
   activeTab.value = tabId
   showAllSteps.value = false
-  
+      
   // Start auto-slide for new tab
   setTimeout(() => startAutoSlide(tabId), 100)
 }
@@ -222,7 +193,7 @@ const initializeSliders = () => {
 const startAutoSlide = (sliderId) => {
   const slider = sliders[sliderId]
   if (!slider) return
-  
+      
   slider.interval = setInterval(() => {
     slider.index++
   }, 4000)
@@ -231,16 +202,16 @@ const startAutoSlide = (sliderId) => {
 const handleSliderTransitionEnd = (sliderId) => {
   const slider = sliders[sliderId]
   if (!slider || slider.index < slider.images.length - 1) return
-  
+      
   slider.transitionSpeed = '0s'
   slider.index = 1
-  
+      
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       slider.transitionSpeed = '0.5s'
     })
   })
-  
+      
   clearInterval(slider.interval)
   startAutoSlide(sliderId)
 }
@@ -250,7 +221,7 @@ const getEventX = (e) => e.type.includes('mouse') ? e.clientX : e.touches[0].cli
 const startSliderDrag = (sliderId, e) => {
   const slider = sliders[sliderId]
   if (!slider) return
-  
+      
   clearInterval(slider.interval)
   slider.isDragging = true
   slider.startX = getEventX(e)
@@ -260,21 +231,21 @@ const startSliderDrag = (sliderId, e) => {
 const onSliderDrag = (sliderId, e) => {
   const slider = sliders[sliderId]
   if (!slider?.isDragging) return
-  
+      
   slider.deltaX = getEventX(e) - slider.startX
 }
 
 const endSliderDrag = (sliderId) => {
   const slider = sliders[sliderId]
   if (!slider?.isDragging) return
-  
+      
   slider.isDragging = false
   slider.transitionSpeed = '0.5s'
-  
+      
   if (Math.abs(slider.deltaX) > slider.threshold) {
     slider.index += slider.deltaX > 0 ? -1 : 1
   }
-  
+      
   slider.deltaX = 0
   setTimeout(() => startAutoSlide(sliderId), 3000)
 }
@@ -292,7 +263,13 @@ onUnmounted(() => {
 <style scoped>
 .tutorial-overall {
   width: 100%;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background-color: #27272A;
+  padding: 40px 0;
+  position: relative;
+  background-image: url('@/assets/tutorial-guide-bg.png');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: auto;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: white;
   padding-bottom: 2rem;
@@ -349,6 +326,12 @@ onUnmounted(() => {
   padding: 0 1.25rem;
   width: 100%;
   box-sizing: border-box;
+}
+
+.tab-content-wrapper h1 {
+  font-size: 40px;
+  font-weight: 500;
+  text-align: center;
 }
 
 .tab-content {
@@ -416,15 +399,20 @@ onUnmounted(() => {
 }
 
 .guide-section h2 {
-  font-size: 1.5rem;
+  font-size: 25px;
   font-weight: 600;
   margin-bottom: 1.875rem;
   color: white;
   line-height: 1.4;
 }
 
+/* Color Classes */
 .highlight {
   color: #F0AD3C;
+}
+
+.regular-text {
+  color: white;
 }
 
 /* Steps */
@@ -514,7 +502,6 @@ onUnmounted(() => {
   width: 2.5rem;
   height: 2.5rem;
   transition: all 0.3s ease;
-  margin-left: 2.125rem;
   position: relative;
 }
 
@@ -541,7 +528,7 @@ onUnmounted(() => {
   .content-container {
     gap: 2rem;
   }
-  
+      
   .guide-section h2 {
     font-size: 1.375rem;
   }
@@ -551,77 +538,77 @@ onUnmounted(() => {
   .tutorial-overall {
     padding-bottom: 1.5rem;
   }
-
+    
   .tabs-container {
     padding: 1rem 0.5rem;
   }
-
+    
   .tab-button {
     font-size: 0.75rem;
     padding: 0.5rem 1rem;
   }
-
+    
   .content-container {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     max-width: 100%;
   }
-
+    
   .tab-content-wrapper {
     padding: 0 0.75rem;
   }
-
+    
   .image-section {
     order: 1;
     width: 100%;
     max-width: 100%;
   }
-
+    
   .image-slider-window {
     max-width: 18rem;
     margin: 0 auto;
     padding: 1rem;
   }
-
+    
   .image-slide img {
     max-width: 14rem;
     width: 100%;
     height: auto;
   }
-
+    
   .guide-section {
     order: 2;
     padding: 0;
     width: 100%;
   }
-
+    
   .guide-section h2 {
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
     text-align: left;
   }
-
+    
   .step-item {
     padding: 0.75rem 0;
   }
-
+    
   .step-indicator {
     margin-right: 0.9375rem;
     width: 1.5rem;
   }
-
+    
   .step-line {
     height: 2.8125rem;
   }
-
+    
   .step-number {
     font-size: 0.875rem;
   }
-
+    
   .step-content p {
     font-size: 0.875rem;
   }
-
+    
   .show-more-btn {
     margin-left: 1.8125rem;
   }
@@ -631,56 +618,60 @@ onUnmounted(() => {
   .tabs-container {
     padding: 0.75rem 0.5rem;
   }
-
+    
   .tab-content-wrapper {
     padding: 0 0.5rem;
   }
 
+  .tab-content-wrapper h1 {
+    font-size: 1.2rem;
+  }
+    
   .content-container {
     gap: 1.25rem;
   }
-
+    
   .image-slider-window {
     max-width: 16rem;
     padding: 0.75rem;
   }
-
+    
   .image-slide img {
     max-width: 12rem;
   }
-
+    
   .guide-section h2 {
     font-size: 1.125rem;
     margin-bottom: 1.25rem;
   }
-
+    
   .step-item {
     padding: 0.625rem 0;
   }
-
+    
   .step-indicator {
     margin-right: 0.75rem;
     width: 1.375rem;
   }
-
+    
   .step-circle {
     width: 0.8125rem;
     height: 0.8125rem;
   }
-
+    
   .step-line {
     height: 2.5rem;
   }
-
+    
   .step-number {
     font-size: 0.8125rem;
   }
-
+    
   .step-content p {
     font-size: 0.8125rem;
     line-height: 1.5;
   }
-
+    
   .show-more-btn {
     width: 2.25rem;
     height: 2.25rem;
@@ -692,33 +683,33 @@ onUnmounted(() => {
   .tabs-container {
     padding: 0.75rem 0.25rem;
   }
-
+    
   .tab-content-wrapper {
     padding: 0 0.25rem;
   }
-
+    
   .tab-button {
     padding: 0.5rem 0.75rem;
     font-size: 0.6875rem;
   }
-
+    
   .image-slider-window {
     max-width: 14rem;
     padding: 0.5rem;
   }
-
+    
   .image-slide img {
     max-width: 10rem;
   }
-
+    
   .guide-section h2 {
     font-size: 1rem;
   }
-
+    
   .step-content p {
     font-size: 0.75rem;
   }
-
+    
   .step-number {
     font-size: 0.75rem;
   }
@@ -740,7 +731,7 @@ onUnmounted(() => {
   .step-circle {
     background: #FFD700;
   }
-  
+      
   .highlight,
   .step-number,
   .show-more-btn {

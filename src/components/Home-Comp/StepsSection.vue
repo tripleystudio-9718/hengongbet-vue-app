@@ -2,8 +2,8 @@
   <section>
     <!-- Header Section -->
     <div class="header-section">
-      <p class="header-subtitle">{{ headerContent.subtitle }}</p>
-      <h2 class="header-title">{{ headerContent.title }}</h2>
+      <p class="header-subtitle">{{ $t('how_it_works.header.subtitle') }}</p>
+      <h2 class="header-title">{{ $t('how_it_works.header.title') }}</h2>
     </div>
 
     <div class="max-w-7xl mx-auto px-6 py-8">
@@ -11,12 +11,12 @@
       <div class="steps-container">
         <!-- Step 1 -->
         <div class="step-item">
-          <img :src="accountIcon" alt="Account Icon" class="steps-img" />
+          <img :src="accountIcon" :alt="$t('how_it_works.alt_text.account_icon')" class="steps-img" />
           <div class="step-content">
             <img :src="stepNumbers[0]" alt="Step 1" class="num-img" />
             <div class="steps-desc">
-              <h2 class="steps-h2">{{ stepsData[0].title }}</h2>
-              <p class="steps-p">{{ stepsData[0].description }}</p>
+              <h2 class="steps-h2">{{ $t('how_it_works.steps.step1.title') }}</h2>
+              <p class="steps-p">{{ $t('how_it_works.steps.step1.description') }}</p>
             </div>
           </div>
         </div>
@@ -30,12 +30,12 @@
 
         <!-- Step 2 -->
         <div class="step-item">
-          <img :src="depositIcon" alt="Deposit Icon" class="steps-img" />
+          <img :src="depositIcon" :alt="$t('how_it_works.alt_text.deposit_icon')" class="steps-img" />
           <div class="step-content">
             <img :src="stepNumbers[1]" alt="Step 2" class="num-img" />
             <div class="steps-desc">
-              <h2 class="steps-h2">{{ stepsData[1].title }}</h2>
-              <p class="steps-p">{{ stepsData[1].description }}</p>
+              <h2 class="steps-h2">{{ $t('how_it_works.steps.step2.title') }}</h2>
+              <p class="steps-p">{{ $t('how_it_works.steps.step2.description') }}</p>
             </div>
           </div>
         </div>
@@ -49,12 +49,12 @@
 
         <!-- Step 3 -->
         <div class="step-item">
-          <img :src="winningIcon" alt="Winning Icon" class="steps-img" />
+          <img :src="winningIcon" :alt="$t('how_it_works.alt_text.winning_icon')" class="steps-img" />
           <div class="step-content">
             <img :src="stepNumbers[2]" alt="Step 3" class="num-img" />
             <div class="steps-desc">
-              <h2 class="steps-h2">{{ stepsData[2].title }}</h2>
-              <p class="steps-p">{{ stepsData[2].description }}</p>
+              <h2 class="steps-h2">{{ $t('how_it_works.steps.step3.title') }}</h2>
+              <p class="steps-p">{{ $t('how_it_works.steps.step3.description') }}</p>
             </div>
           </div>
         </div>
@@ -68,12 +68,12 @@
 
         <!-- Step 4 -->
         <div class="step-item">
-          <img :src="rewardIcon" alt="Reward Icon" class="steps-img" />
+          <img :src="rewardIcon" :alt="$t('how_it_works.alt_text.reward_icon')" class="steps-img" />
           <div class="step-content">
             <img :src="stepNumbers[3]" alt="Step 4" class="num-img" />
             <div class="steps-desc">
-              <h2 class="steps-h2">{{ stepsData[3].title }}</h2>
-              <p class="steps-p">{{ stepsData[3].description }}</p>
+              <h2 class="steps-h2">{{ $t('how_it_works.steps.step4.title') }}</h2>
+              <p class="steps-p">{{ $t('how_it_works.steps.step4.description') }}</p>
             </div>
           </div>
         </div>
@@ -100,29 +100,7 @@ export default {
       depositIcon,
       winningIcon,
       rewardIcon,
-      stepNumbers: [firstIcon, secondIcon, thirdIcon, fourIcon],
-      headerContent: {
-        subtitle: "Welcome to Heng Ong Bet - Trusted Online Casino",
-        title: "Start Playing and Earning"
-      },
-      stepsData: [
-        {
-          title: 'Create Account',
-          description: 'Click Join Now. Fill in your login info'
-        },
-        {
-          title: 'Make a Deposit',
-          description: 'Make your first deposit using money or crypto transfer'
-        },
-        {
-          title: 'Start Winning',
-          description: 'Start winning while playing on your favourite games'
-        },
-        {
-          title: 'Get Reward',
-          description: "Don't forget to claim your bonuses"
-        }
-      ]
+      stepNumbers: [firstIcon, secondIcon, thirdIcon, fourIcon]
     }
   }
 }
@@ -332,7 +310,7 @@ export default {
   .step-item {
     max-width: 100%;
     align-items: center;
-    text-align: center;
+    text-alignment: center;
   }
   
   .step-content {

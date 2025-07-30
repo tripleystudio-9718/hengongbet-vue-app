@@ -3,41 +3,41 @@
     <!-- Header Section -->
     <div class="why-header-section">
       <h2 class="why-header-title">
-        {{ headerContent.prefix }} <span class="accent-color">{{ headerContent.brand }}</span> {{ headerContent.suffix }}
+        {{ $t('why_section.header.prefix') }} <span class="accent-color">{{ $t('why_section.header.brand') }}</span> {{ $t('why_section.header.suffix') }}
       </h2>
     </div>
 
     <div class="max-w-7xl mx-auto px-6 py-8">
       <div class="why-container">
         <div class="why-card-1">
-          <img :src="computerIcon" alt="Computer Icon" class="why-image" />
+          <img :src="computerIcon" :alt="$t('why_section.alt_text.computer_icon')" class="why-image" />
           <div class="card-content">
-            <h3 class="why-title">{{ cardContent[0].title }}</h3>
-            <p class="why-p">{{ cardContent[0].description }}</p>
+            <h3 class="why-title">{{ $t('why_section.cards.card1.title') }}</h3>
+            <p class="why-p">{{ $t('why_section.cards.card1.description') }}</p>
           </div>  
         </div>
 
         <div class="why-card-2">
-          <img :src="trustedIcon" alt="Trusted Icon" class="why-image" />
+          <img :src="trustedIcon" :alt="$t('why_section.alt_text.trusted_icon')" class="why-image" />
           <div class="card-content">
-            <h3 class="why-title">{{ cardContent[1].title }}</h3>
-            <p class="why-p">{{ cardContent[1].description }}</p>
+            <h3 class="why-title">{{ $t('why_section.cards.card2.title') }}</h3>
+            <p class="why-p">{{ $t('why_section.cards.card2.description') }}</p>
           </div>
         </div>
 
         <div class="why-card-3">
-          <img :src="registrationIcon" alt="Registration Icon" class="why-image" />
+          <img :src="registrationIcon" :alt="$t('why_section.alt_text.registration_icon')" class="why-image" />
           <div class="card-content">
-            <h3 class="why-title" style="color: black;">{{ cardContent[2].title }}</h3>
-            <p class="why-p" style="color: black;">{{ cardContent[2].description }}</p>
+            <h3 class="why-title" style="color: black;">{{ $t('why_section.cards.card3.title') }}</h3>
+            <p class="why-p" style="color: black;">{{ $t('why_section.cards.card3.description') }}</p>
           </div>
         </div>
 
         <div class="why-card-4">
-          <img :src="supportIcon" alt="Support Icon" class="why-image" />
+          <img :src="supportIcon" :alt="$t('why_section.alt_text.support_icon')" class="why-image" />
           <div class="card-content">
-            <h3 class="why-title">{{ cardContent[3].title }}</h3>
-            <p class="why-p">{{ cardContent[3].description }}</p>
+            <h3 class="why-title">{{ $t('why_section.cards.card4.title') }}</h3>
+            <p class="why-p">{{ $t('why_section.cards.card4.description') }}</p>
           </div>
         </div>
       </div>
@@ -46,39 +46,37 @@
       <div class="mobile-slider-container">
         <div class="mobile-slider" ref="mobileSlider">
           <div class="mobile-card mobile-card-1">
-            <img :src="computerIcon" alt="Computer Icon" class="mobile-image" />
+            <img :src="computerIcon" :alt="$t('why_section.alt_text.computer_icon')" class="mobile-image" />
             <div class="mobile-card-content">
-              <h3 class="mobile-title">{{ cardContent[0].title }}</h3>
-              <p class="mobile-p">{{ cardContent[0].description }}</p>
+              <h3 class="mobile-title">{{ $t('why_section.cards.card1.title') }}</h3>
+              <p class="mobile-p">{{ $t('why_section.cards.card1.description') }}</p>
             </div>  
           </div>
 
           <div class="mobile-card mobile-card-2">
-            <img :src="trustedIcon" alt="Trusted Icon" class="mobile-image" />
+            <img :src="trustedIcon" :alt="$t('why_section.alt_text.trusted_icon')" class="mobile-image" />
             <div class="mobile-card-content">
-              <h3 class="mobile-title">{{ cardContent[1].title }}</h3>
-              <p class="mobile-p">{{ cardContent[1].description }}</p>
+              <h3 class="mobile-title">{{ $t('why_section.cards.card2.title') }}</h3>
+              <p class="mobile-p">{{ $t('why_section.cards.card2.description') }}</p>
             </div>
           </div>
 
           <div class="mobile-card mobile-card-3">
-            <img :src="registrationIcon" alt="Registration Icon" class="mobile-image" />
+            <img :src="registrationIcon" :alt="$t('why_section.alt_text.registration_icon')" class="mobile-image" />
             <div class="mobile-card-content">
-              <h3 class="mobile-title" style="color: black;">{{ cardContent[2].title }}</h3>
-              <p class="mobile-p" style="color: black;">{{ cardContent[2].description }}</p>
+              <h3 class="mobile-title" style="color: black;">{{ $t('why_section.cards.card3.title') }}</h3>
+              <p class="mobile-p" style="color: black;">{{ $t('why_section.cards.card3.description') }}</p>
             </div>
           </div>
 
           <div class="mobile-card mobile-card-4">
-            <img :src="supportIcon" alt="Support Icon" class="mobile-image" />
+            <img :src="supportIcon" :alt="$t('why_section.alt_text.support_icon')" class="mobile-image" />
             <div class="mobile-card-content">
-              <h3 class="mobile-title">{{ cardContent[3].title }}</h3>
-              <p class="mobile-p">{{ cardContent[3].description }}</p>
+              <h3 class="mobile-title">{{ $t('why_section.cards.card4.title') }}</h3>
+              <p class="mobile-p">{{ $t('why_section.cards.card4.description') }}</p>
             </div>
           </div>
         </div>
-
-
       </div>
     </div>
   </section>
@@ -98,30 +96,7 @@ export default {
       trustedIcon,
       registrationIcon,
       supportIcon,
-      currentSlide: 0,
-      headerContent: {
-        prefix: "Why Choose",
-        brand: "Heng Ong Bet",
-        suffix: "?"
-      },
-      cardContent: [
-        {
-          title: "What Makes Heng Ong Bet Different?",
-          description: "Unlike traditional online casinos that rely on agents for deposits and withdrawals, Heng Ong Bet connects you directly—no middlemen involved. Enjoy instant transactions, built-in social and e-wallet features, and a unique commission-sharing system that lets you earn while you play."
-        },
-        {
-          title: "Most Trusted Casino",
-          description: "Your privacy and security are our top priority. Heng Ong Bet uses industry-standard protection to safeguard your personal data and strictly follows our privacy policy to ensure a safe and trustworthy gaming environment."
-        },
-        {
-          title: "Simple & Fast Registration",
-          description: "Create your Heng Ong Bet account to access 1,000+ games, enjoy exclusive promos, and stay updated with the latest offers."
-        },
-        {
-          title: "Online Support",
-          description: "Our Heng Ong Bet support team is available 24/7 via live chat, phone, and email to assist you quickly with any issues."
-        }
-      ]
+      currentSlide: 0
     }
   },
   mounted() {
@@ -153,7 +128,7 @@ export default {
         const newTransform = startTransform + movePercent
         
         const maxTransform = 0
-        const minTransform = -(this.cardContent.length - 1) * 70
+        const minTransform = -3 * 70 // 4 cards total, so max slide is 3
         
         let finalTransform = newTransform
         if (newTransform > maxTransform) {
@@ -177,7 +152,7 @@ export default {
         if (Math.abs(diffX) > threshold || velocity > 2) {
           if (diffX > 0 && this.currentSlide > 0) {
             this.currentSlide--
-          } else if (diffX < 0 && this.currentSlide < this.cardContent.length - 1) {
+          } else if (diffX < 0 && this.currentSlide < 3) { // 4 cards total
             this.currentSlide++
           }
         }
@@ -202,7 +177,7 @@ export default {
         const newTransform = startTransform + movePercent
         
         const maxTransform = 0
-        const minTransform = -(this.cardContent.length - 1) * 70
+        const minTransform = -3 * 70 // 4 cards total
         
         let finalTransform = newTransform
         if (newTransform > maxTransform) {
@@ -225,7 +200,7 @@ export default {
         if (Math.abs(diffX) > threshold) {
           if (diffX > 0 && this.currentSlide > 0) {
             this.currentSlide--
-          } else if (diffX < 0 && this.currentSlide < this.cardContent.length - 1) {
+          } else if (diffX < 0 && this.currentSlide < 3) { // 4 cards total
             this.currentSlide++
           }
         }

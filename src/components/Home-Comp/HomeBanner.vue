@@ -21,6 +21,7 @@
         v-for="(image, index) in images"
         :key="`slide-${index}`"
         class="hero-banner-slide"
+        @click="navigateToPromotion"
       >
         <img 
           :src="image" 
@@ -30,10 +31,10 @@
       </swiper-slide>
       
       <!-- Custom Navigation Arrows -->
-      <div class="hero-swiper-button-prev" slot="button-prev" @click="prevSlide">
+      <div class="hero-swiper-button-prev" slot="button-prev" @click.stop="prevSlide">
         <div class="nav-arrow nav-arrow-left"></div>
       </div>
-      <div class="hero-swiper-button-next" slot="button-next" @click="nextSlide">
+      <div class="hero-swiper-button-next" slot="button-next" @click.stop="nextSlide">
         <div class="nav-arrow nav-arrow-right"></div>
       </div>
       
@@ -60,6 +61,7 @@
 
 <script>
 import { Swiper, SwiperSlide } from "swiper/vue";
+import { localePath } from '@/router';
 
 export default {
   name: 'HeroBanner',
@@ -99,6 +101,10 @@ export default {
     pauseOnHover: {
       type: Boolean,
       default: true
+    },
+    showPromotionOverlay: {
+      type: Boolean,
+      default: false // Simplified - no overlay needed
     }
   },
   data() {
@@ -204,6 +210,25 @@ export default {
     },
     playSlider() {
       this.startAutoplay()
+    },
+    // Navigation to promotion page
+    navigateToPromotion() {
+      try {
+        // Get current locale from route
+        const currentLocale = this.$route.meta?.locale || 'en';
+        
+        // Generate localized path for promotion page
+        const promotionPath = localePath('/promotion', currentLocale);
+        
+        // Navigate to promotion page
+        this.$router.push(promotionPath);
+        
+        console.log('Navigating to promotion page:', promotionPath);
+      } catch (error) {
+        console.error('Navigation error:', error);
+        // Fallback navigation
+        this.$router.push('/promotion');
+      }
     }
   },
   beforeUnmount() {
@@ -236,6 +261,8 @@ export default {
   justify-content: center;
   align-items: center;
   transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  position: relative;
 }
 
 .banner-image {
@@ -245,12 +272,11 @@ export default {
   object-fit: cover;
   max-height: 600px;
   user-select: none;
-  pointer-events: none;
   -webkit-user-drag: none;
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
-  transition: transform 0.8s ease;
+  transition: transform 0.8s ease, filter 0.3s ease;
 }
 
 /* Custom Navigation Arrows */
@@ -460,6 +486,14 @@ export default {
   .progress-text {
     font-size: 12px;
   }
+
+  .promotion-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .promotion-text p {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -494,10 +528,18 @@ export default {
   .autoplay-progress {
     display: none; /* Hide on very small screens */
   }
+
+  .promotion-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .promotion-text p {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 360px) {
-.nav-arrow {
+  .nav-arrow {
     width: 16px;
     height: 16px;
   }
@@ -533,6 +575,11 @@ export default {
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
   }
+
+  /* Always show overlay on touch devices */
+  .slide-overlay {
+    opacity: 0.7;
+  }
 }
 
 /* Accessibility improvements */
@@ -556,6 +603,11 @@ export default {
 }
 
 :deep(.swiper-pagination-bullet):focus {
+  outline: 2px solid #F2B240;
+  outline-offset: 2px;
+}
+
+.hero-banner-slide:focus {
   outline: 2px solid #F2B240;
   outline-offset: 2px;
 }

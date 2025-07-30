@@ -1,100 +1,100 @@
 <template>
-   <div class="game-overall">
+  <div class="game-overall">
     <div class="game-banner">
-      <img :src="bannerImage" alt="Game Banner" />
+      <img :src="bannerImage" :alt="$t('games.alt.gameBanner')" />
     </div>
-  <div class="game-tabs-container">
-    <!-- Tab Navigation -->
-    <div class="tabs">
-      <button 
-        v-for="tab in tabs" 
-        :key="tab.id"
-        class="tab-button" 
-        :class="{ active: activeTab === tab.id }"
-        @click="setActiveTab(tab.id)"
-      >
-        {{ tab.name }}
-      </button>
+    <div class="game-tabs-container">
+      <!-- Tab Navigation -->
+      <div class="tabs">
+        <button 
+          v-for="tab in tabs"
+          :key="tab.id"
+          class="tab-button"
+          :class="{ active: activeTab === tab.id }"
+          @click="setActiveTab(tab.id)"
+        >
+          {{ $t(`games.tabs.${tab.id}`) }}
+        </button>
+      </div>
+      <!-- Tab Content -->
+      <div class="tab-content-wrapper">
+        <!-- All Games Tab -->
+        <div v-show="activeTab === 'all'" class="tab-content active">
+          <div 
+            v-for="game in allGames"
+            :key="game.id"
+            class="game-card"
+            @click="goToRegisterPage"
+            :title="$t('games.actions.clickToPlay', { gameName: $t(`games.names.${game.nameKey}`) })"
+          >
+            <div class="game-image">
+              <img :src="game.image" :alt="$t('games.alt.gameImage')" />
+            </div>
+            <div class="game-name">{{ $t(`games.names.${game.nameKey}`) }}</div>
+          </div>
+        </div>
+        <!-- Slots Tab -->
+        <div v-show="activeTab === 'slots'" class="tab-content active">
+          <div 
+            v-for="game in slotsGames"
+            :key="game.id"
+            class="game-card"
+            @click="goToRegisterPage"
+            :title="$t('games.actions.clickToPlay', { gameName: $t(`games.names.${game.nameKey}`) })"
+          >
+            <div class="game-image">
+              <img :src="game.image" :alt="$t('games.alt.gameImage')" />
+            </div>
+            <div class="game-name">{{ $t(`games.names.${game.nameKey}`) }}</div>
+          </div>
+        </div>
+        <!-- Casino Tab -->
+        <div v-show="activeTab === 'casino'" class="tab-content active">
+          <div 
+            v-for="game in casinoGames"
+            :key="game.id"
+            class="game-card"
+            @click="goToRegisterPage"
+            :title="$t('games.actions.clickToPlay', { gameName: $t(`games.names.${game.nameKey}`) })"
+          >
+            <div class="game-image">
+              <img :src="game.image" :alt="$t('games.alt.gameImage')" />
+            </div>
+            <div class="game-name">{{ $t(`games.names.${game.nameKey}`) }}</div>
+          </div>
+        </div>
+        <!-- Sports Tab -->
+        <div v-show="activeTab === 'sports'" class="tab-content active">
+          <div 
+            v-for="game in sportsGames"
+            :key="game.id"
+            class="game-card"
+            @click="goToRegisterPage"
+            :title="$t('games.actions.clickToPlay', { gameName: $t(`games.names.${game.nameKey}`) })"
+          >
+            <div class="game-image">
+              <img :src="game.image" :alt="$t('games.alt.gameImage')" />
+            </div>
+            <div class="game-name">{{ $t(`games.names.${game.nameKey}`) }}</div>
+          </div>
+        </div>
+        <!-- Lottery Tab -->
+        <div v-show="activeTab === 'lottery'" class="tab-content active">
+          <div 
+            v-for="game in lotteryGames"
+            :key="game.id"
+            class="game-card"
+            @click="goToRegisterPage"
+            :title="$t('games.actions.clickToPlay', { gameName: $t(`games.names.${game.nameKey}`) })"
+          >
+            <div class="game-image">
+              <img :src="game.image" :alt="$t('games.alt.gameImage')" />
+            </div>
+            <div class="game-name">{{ $t(`games.names.${game.nameKey}`) }}</div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!-- Tab Content -->
-    <div class="tab-content-wrapper">
-      <!-- All Games Tab -->
-      <div v-show="activeTab === 'all'" class="tab-content active">
-        <div 
-          v-for="game in allGames" 
-          :key="game.id"
-          class="game-card"
-          @click="handleGameClick(game)"
-        >
-          <div class="game-image">
-            <img :src="game.image" :alt="game.name" />
-          </div>
-          <div class="game-name">{{ game.name }}</div>
-        </div>
-      </div>
-
-      <!-- Slots Tab -->
-      <div v-show="activeTab === 'slots'" class="tab-content active">
-        <div 
-          v-for="game in slotsGames" 
-          :key="game.id"
-          class="game-card"
-          @click="handleGameClick(game)"
-        >
-          <div class="game-image">
-            <img :src="game.image" :alt="game.name" />
-          </div>
-          <div class="game-name">{{ game.name }}</div>
-        </div>
-      </div>
-
-      <!-- Casino Tab -->
-      <div v-show="activeTab === 'casino'" class="tab-content active">
-        <div 
-          v-for="game in casinoGames" 
-          :key="game.id"
-          class="game-card"
-          @click="handleGameClick(game)"
-        >
-          <div class="game-image">
-            <img :src="game.image" :alt="game.name" />
-          </div>
-          <div class="game-name">{{ game.name }}</div>
-        </div>
-      </div>
-
-      <!-- Sports Tab -->
-      <div v-show="activeTab === 'sports'" class="tab-content active">
-        <div 
-          v-for="game in sportsGames" 
-          :key="game.id"
-          class="game-card"
-          @click="handleGameClick(game)"
-        >
-          <div class="game-image">
-            <img :src="game.image" :alt="game.name" />
-          </div>
-          <div class="game-name">{{ game.name }}</div>
-        </div>
-      </div>
-
-      <!-- Lottery Tab -->
-      <div v-show="activeTab === 'lottery'" class="tab-content active">
-        <div 
-          v-for="game in lotteryGames" 
-          :key="game.id"
-          class="game-card"
-          @click="handleGameClick(game)"
-        >
-          <div class="game-image">
-            <img :src="game.image" :alt="game.name" />
-          </div>
-          <div class="game-name">{{ game.name }}</div>
-        </div>
-      </div>
-    </div>
-  </div>
   </div>
 </template>
 
@@ -106,28 +106,103 @@ export default {
       bannerImage: new URL('@/assets/gamepage-banner.png', import.meta.url).href,
       activeTab: 'all',
       tabs: [
-        { id: 'all', name: 'All' },
-        { id: 'slots', name: 'Slots' },
-        { id: 'casino', name: 'Casino' },
-        { id: 'sports', name: 'Sports' },
-        { id: 'lottery', name: 'Lottery' }
+        { id: 'all' },
+        { id: 'slots' },
+        { id: 'casino' },
+        { id: 'sports' },
+        { id: 'lottery' }
       ],
       allGames: [
-        { id: 1, name: 'Lucky 365', image: new URL('@/assets/game1.png', import.meta.url).href, category: 'slots' },
-        { id: 2, name: 'Askmeslot', image: new URL('@/assets/game2.png', import.meta.url).href, category: 'slots' },
-        { id: 3, name: 'JDB', image: new URL('@/assets/game3.png', import.meta.url).href, category: 'slots' },
-        { id: 4, name: 'Monkey King', image: new URL('@/assets/game4.png', import.meta.url).href, category: 'slots' },
-        { id: 5, name: 'Hot Road', image: new URL('@/assets/game5.png', import.meta.url).href, category: 'casino' },
-        { id: 6, name: 'Maxbet', image: new URL('@/assets/game6.png', import.meta.url).href, category: 'sports' },
-        { id: 7, name: 'Sv388', image: new URL('@/assets/game7.png', import.meta.url).href, category: 'sports' },
-        { id: 8, name: 'Rcb988', image: new URL('@/assets/game8.png', import.meta.url).href, category: 'sports' },
-        { id: 9, name: 'Jili', image: new URL('@/assets/game9.png', import.meta.url).href, category: 'slots' },
-        { id: 10, name: 'Microslot', image: new URL('@/assets/game10.png', import.meta.url).href, category: 'slots' },
-        { id: 11, name: 'Evolution', image: new URL('@/assets/game11.png', import.meta.url).href, category: 'casino' },
-        { id: 12, name: 'Sexy', image: new URL('@/assets/game12.png', import.meta.url).href, category: 'casino' },
-        { id: 13, name: 'Ekor', image: new URL('@/assets/game13.png', import.meta.url).href, category: 'lottery' },
-        { id: 14, name: 'Big Gaming', image: new URL('@/assets/game14.png', import.meta.url).href, category: 'casino' },
-        { id: 15, name: 'Pragmatic Play', image: new URL('@/assets/game15.png', import.meta.url).href, category: 'casino' }
+        { 
+          id: 1, 
+          nameKey: 'lucky365', 
+          image: new URL('@/assets/game1.png', import.meta.url).href, 
+          category: 'slots' 
+        },
+        { 
+          id: 2, 
+          nameKey: 'askmeslot', 
+          image: new URL('@/assets/game2.png', import.meta.url).href, 
+          category: 'slots' 
+        },
+        { 
+          id: 3, 
+          nameKey: 'jdb', 
+          image: new URL('@/assets/game3.png', import.meta.url).href, 
+          category: 'slots' 
+        },
+        { 
+          id: 4, 
+          nameKey: 'monkeyKing', 
+          image: new URL('@/assets/game4.png', import.meta.url).href, 
+          category: 'slots' 
+        },
+        { 
+          id: 5, 
+          nameKey: 'hotRoad', 
+          image: new URL('@/assets/game5.png', import.meta.url).href, 
+          category: 'casino' 
+        },
+        { 
+          id: 6, 
+          nameKey: 'maxbet', 
+          image: new URL('@/assets/game6.png', import.meta.url).href, 
+          category: 'sports' 
+        },
+        { 
+          id: 7, 
+          nameKey: 'sv388', 
+          image: new URL('@/assets/game7.png', import.meta.url).href, 
+          category: 'sports' 
+        },
+        { 
+          id: 8, 
+          nameKey: 'rcb988', 
+          image: new URL('@/assets/game8.png', import.meta.url).href, 
+          category: 'sports' 
+        },
+        { 
+          id: 9, 
+          nameKey: 'jili', 
+          image: new URL('@/assets/game9.png', import.meta.url).href, 
+          category: 'slots' 
+        },
+        { 
+          id: 10, 
+          nameKey: 'microslot', 
+          image: new URL('@/assets/game10.png', import.meta.url).href, 
+          category: 'slots' 
+        },
+        { 
+          id: 11, 
+          nameKey: 'evolution', 
+          image: new URL('@/assets/game11.png', import.meta.url).href, 
+          category: 'casino' 
+        },
+        { 
+          id: 12, 
+          nameKey: 'sexy', 
+          image: new URL('@/assets/game12.png', import.meta.url).href, 
+          category: 'casino' 
+        },
+        { 
+          id: 13, 
+          nameKey: 'ekor', 
+          image: new URL('@/assets/game13.png', import.meta.url).href, 
+          category: 'lottery' 
+        },
+        { 
+          id: 14, 
+          nameKey: 'bigGaming', 
+          image: new URL('@/assets/game14.png', import.meta.url).href, 
+          category: 'casino' 
+        },
+        { 
+          id: 15, 
+          nameKey: 'pragmaticPlay', 
+          image: new URL('@/assets/game15.png', import.meta.url).href, 
+          category: 'casino' 
+        }
       ]
     }
   },
@@ -150,16 +225,26 @@ export default {
       this.activeTab = tabId;
     },
     handleGameClick(game) {
-      console.log('Game clicked:', game.name);
-    }
+      const gameName = this.$t(`games.names.${game.nameKey}`);
+      console.log('Game clicked:', gameName);
+    },
+    goToRegisterPage() {
+      const locale = this.$i18n?.locale || 'en';
+
+      let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
+      if (locale === 'zh') {
+        targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
+      }
+
+      // Redirect to external URL
+      window.location.href = targetUrl;
+}
   }
 }
 </script>
 
-
 <style scoped>
-
-  .game-overall {
+.game-overall {
   width: 100%;
   height: auto;
   background-color: #27272A;
@@ -176,7 +261,6 @@ export default {
   height: auto;
 }
 
-
 .game-tabs-container {
   width: 100%;
   max-width: 1200px;
@@ -184,7 +268,6 @@ export default {
   padding: 20px;
   background-color: #27272A;
   min-height: 100vh;
-  font-family: 'Rubik', sans-serif;
 }
 
 /* Tab Navigation */
@@ -212,7 +295,6 @@ export default {
   border-radius: 50px;
   transition: all 0.3s ease;
   white-space: nowrap;
-  font-family: 'Rubik', sans-serif;
 }
 
 .tab-button:hover {
@@ -220,7 +302,7 @@ export default {
 }
 
 .tab-button.active {
-background: linear-gradient(135deg, #F0AD3C 0%, #ED9326 100%);
+  background: linear-gradient(135deg, #F0AD3C 0%, #ED9326 100%);
   color: #070707;
   font-weight: 100;
 }
@@ -239,16 +321,24 @@ background: linear-gradient(135deg, #F0AD3C 0%, #ED9326 100%);
 
 @keyframes fadeIn {
   from { 
-    opacity: 0; 
-    transform: translateY(10px); 
+    opacity: 0;
+    transform: translateY(10px);
   }
   to { 
-    opacity: 1; 
-    transform: translateY(0); 
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 /* Game Cards */
+.game-card {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+}
 
 .game-image {
   width: 100%;
@@ -270,7 +360,9 @@ background: linear-gradient(135deg, #F0AD3C 0%, #ED9326 100%);
   transition: transform 0.3s ease;
 }
 
-
+.game-card:hover .game-image img {
+  transform: scale(1.05);
+}
 
 .game-name {
   font-size: 22px;
@@ -281,6 +373,7 @@ background: linear-gradient(135deg, #F0AD3C 0%, #ED9326 100%);
   align-items: center;
   justify-content: center;
   margin-bottom:30px;
+  text-align: center;
 }
 
 /* Responsive Design */
@@ -295,7 +388,7 @@ background: linear-gradient(135deg, #F0AD3C 0%, #ED9326 100%);
   html, body {
     overflow-x: hidden;
   }
-
+  
   .game-overall,
   .game-tabs-container,
   .tab-content-wrapper,
@@ -305,7 +398,7 @@ background: linear-gradient(135deg, #F0AD3C 0%, #ED9326 100%);
     box-sizing: border-box;
     overflow-x: hidden;
   }
-
+  
   .tabs {
     overflow-x: auto;
     white-space: nowrap;
@@ -314,17 +407,17 @@ background: linear-gradient(135deg, #F0AD3C 0%, #ED9326 100%);
     gap: 6px;
     scrollbar-width: none; /* Firefox */
   }
-
+  
   .tabs::-webkit-scrollbar {
     display: none; /* Chrome, Safari */
   }
-
+  
   .tab-button {
     font-size: 12px;
     padding: 6px 10px;
     flex: 0 0 auto; /* Don't shrink */
   }
-
+  
   .tab-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -332,21 +425,21 @@ background: linear-gradient(135deg, #F0AD3C 0%, #ED9326 100%);
     padding: 0;
     margin: 0;
   }
-
+  
   .game-card {
     margin: 0;
     padding: 0;
     width: 100%;
     box-sizing: border-box;
   }
-
+  
   .game-image {
     width: 100%;
     overflow: hidden;
     border-radius: 12px;
     background: #000;
   }
-
+  
   .game-image img {
     width: 100%;
     height: 100%;
@@ -354,7 +447,7 @@ background: linear-gradient(135deg, #F0AD3C 0%, #ED9326 100%);
     border-radius: 12px;
     display: block;
   }
-
+  
   .game-name {
     font-size: 11px;
     color: #fff;
@@ -365,5 +458,4 @@ background: linear-gradient(135deg, #F0AD3C 0%, #ED9326 100%);
     text-overflow: ellipsis;
   }
 }
-
 </style>

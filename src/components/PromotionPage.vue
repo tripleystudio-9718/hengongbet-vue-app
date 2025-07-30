@@ -3,11 +3,11 @@
     <!-- Header Section -->
     <div class="promotion-header">
       <h1 class="main-title">
-        Promotion Galore at <span class="highlight">Heng Ong Bet</span>
+        {{ $t('promotion_section.header.title_prefix') }} <span class="highlight">{{ $t('promotion_section.header.brand') }}</span>
       </h1>
-      <h2 class="subtitle">Unlock Exclusive Bonuses & Maximize Your Wins</h2>
+      <h2 class="subtitle">{{ $t('promotion_section.header.subtitle') }}</h2>
       <p class="description">
-        At HengOngBet, we bring you the ultimate platform for online gaming promotions in Malaysia and Singapore. Our exclusive bonuses are tailored to reward you for every bet you place — from generous cashback offers to tournament-related bonuses and exciting Heng Ong bonuses.
+        {{ $t('promotion_section.header.description') }}
       </p>
     </div>
 
@@ -39,19 +39,37 @@
       </div>
     </div>
 
-    <!-- Mobile Promotion Images -->
+    <!-- Mobile Promotion Cards with Text Overlays -->
     <div v-if="isMobile" class="mobile-promotion-grid">
       <div 
-        v-for="(promo, index) in mobilePromotions" 
+        v-for="(promo, index) in promotions" 
         :key="index"
-        class="mobile-promo-item"
+        class="mobile-promo-card"
+        :class="`mobile-card-${index + 1}`"
         @click="handlePromoClick(promo)"
       >
-        <img 
-          :src="promo.mobileImage" 
-          :alt="promo.alt"
-          class="mobile-promo-image"
-        />
+        <div 
+          class="mobile-card-content"
+          :style="{ backgroundImage: `url(${promo.mobileImage})` }"
+        >
+          <div class="mobile-overlay">
+            <div class="mobile-text-content">
+              <div class="mobile-bonus-header">
+                <div class="mobile-bonus-label">{{ promo.bonusLabel }}</div>
+                <div class="mobile-bonus-amount">{{ promo.bonusAmount }}</div>
+              </div>
+              <div class="mobile-bonus-subtitle">{{ promo.bonusSubtitle }}</div>
+            </div>
+            <div class="mobile-button-container">
+              <button 
+                class="mobile-promo-button"
+                :class="`mobile-button-${index + 1}`"
+              >
+                {{ promo.buttonText }}
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -63,80 +81,46 @@ export default {
   data() {
     return {
       isMobile: false,
-      promotions: [
+      basePromotions: [
         {
-          bonusLabel: 'Top-up Bonus',
-          bonusAmount: '68%',
-          bonusSubtitle: 'Get a Maximum Bonus Up To 200',
-          title: 'Top-up Bonus 68%',
-          description: 'Get a maximum bonus up to 200',
-          buttonText: 'Invite & Earn Now',
+          translationKey: 'promo1',
           image: new URL('@/assets/promotion1.png', import.meta.url).href,
-        },
-        {
-          bonusLabel: 'Top-up Rebate',
-          bonusAmount: '0.5%',
-          bonusSubtitle: 'Bonus with No Limit',
-          title: 'Top-up Rebate 0.5%',
-          description: 'Bonus with No Limit',
-          buttonText: 'Share & Win More',
-          image: new URL('@/assets/promotion2.png', import.meta.url).href,
-        },
-        {
-          bonusLabel: 'Top-up Bonus',
-          bonusAmount: '200%',
-          bonusSubtitle: 'Get a Maximum Bonus Up To 100',
-          title: 'Top-up Bonus 200%',
-          description: 'Get a maximum bonus up to 100',
-          buttonText: 'Start Referring Now',
-          image: new URL('@/assets/promotion3.png', import.meta.url).href,
-        },
-        {
-          bonusLabel: 'Daily Rebate Up To',
-          bonusAmount: '3%',
-          bonusSubtitle: 'The More You Play, The More You Earn!',
-          title: 'Daily Rebate Up to 3%!',
-          description: 'The more you play, the more you earn!',
-          buttonText: 'Get Your Rebate',
-          image: new URL('@/assets/promotion4.png', import.meta.url).href,
-        },
-        {
-          bonusLabel: 'Referral Rebate Up To',
-          bonusAmount: '10%',
-          bonusSubtitle: 'The More You Invite, The More You Bet!',
-          title: 'Referral Rebate Up to 10%!',
-          description: 'The more you invite, the more you bet, and the more rebates you get!',
-          buttonText: 'Get Your Rebate',
-          image: new URL('@/assets/promotion5.png', import.meta.url).href,
-        }
-      ],
-      mobilePromotions: [
-        {
           mobileImage: new URL('@/assets/mobile-promotion-1.png', import.meta.url).href,
-          alt: 'Mobile Promotion 1',
-          title: 'Top-up Bonus 68%'
         },
         {
+          translationKey: 'promo2',
+          image: new URL('@/assets/promotion2.png', import.meta.url).href,
           mobileImage: new URL('@/assets/mobile-promotion-2.png', import.meta.url).href,
-          alt: 'Mobile Promotion 2',
-          title: 'Top-up Rebate 0.5%'
         },
         {
+          translationKey: 'promo3',
+          image: new URL('@/assets/promotion3.png', import.meta.url).href,
           mobileImage: new URL('@/assets/mobile-promotion-3.png', import.meta.url).href,
-          alt: 'Mobile Promotion 3',
-          title: 'Top-up Bonus 200%'
         },
         {
+          translationKey: 'promo4',
+          image: new URL('@/assets/promotion4.png', import.meta.url).href,
           mobileImage: new URL('@/assets/mobile-promotion-4.png', import.meta.url).href,
-          alt: 'Mobile Promotion 4',
-          title: 'Daily Rebate Up to 3%'
         },
         {
+          translationKey: 'promo5',
+          image: new URL('@/assets/promotion5.png', import.meta.url).href,
           mobileImage: new URL('@/assets/mobile-promotion-5.png', import.meta.url).href,
-          alt: 'Mobile Promotion 5',
-          title: 'Referral Rebate Up to 10%'
         }
       ]
+    }
+  },
+  computed: {
+    promotions() {
+      return this.basePromotions.map(promo => ({
+        ...promo,
+        bonusLabel: this.$t(`promotion_section.promotions.${promo.translationKey}.bonus_label`),
+        bonusAmount: this.$t(`promotion_section.promotions.${promo.translationKey}.bonus_amount`),
+        bonusSubtitle: this.$t(`promotion_section.promotions.${promo.translationKey}.bonus_subtitle`),
+        title: this.$t(`promotion_section.promotions.${promo.translationKey}.title`),
+        description: this.$t(`promotion_section.promotions.${promo.translationKey}.description`),
+        buttonText: this.$t(`promotion_section.promotions.${promo.translationKey}.button_text`)
+      }))
     }
   },
   mounted() {
@@ -151,9 +135,17 @@ export default {
       this.isMobile = window.innerWidth <= 768
     },
     handlePromoClick(promo) {
-      console.log('Promotion clicked:', promo.title);
-      // Add your click handling logic here
-    }
+      const locale = this.$i18n?.locale || 'en'
+
+      let url = 'https://hengongbet.com/en-my?regRef=player'
+      if (locale === 'zh') {
+        url = 'https://hengongbet.com/zh-my?regRef=player'
+      } else if (locale === 'ms') {
+        url = 'https://hengongbet.com/ms-my?regRef=player'
+      }
+
+      window.location.href = url
+}
   }
 }
 </script>
@@ -326,38 +318,140 @@ export default {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 calc(100% - 20px));
 }
 
-/* Mobile Promotion Grid */
+/* Mobile Promotion Cards with Text Overlays */
 .mobile-promotion-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
   max-width: 600px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 15px;
 }
 
-.mobile-promo-item {
+.mobile-promo-card {
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   transition: transform 0.2s ease;
+  position: relative;
+  min-height: 200px;
 }
 
-.mobile-promo-item:hover {
+.mobile-promo-card:hover {
   transform: scale(1.02);
 }
 
-.mobile-promo-item:active {
+.mobile-promo-card:active {
   transform: scale(0.98);
 }
 
-.mobile-promo-image {
+.mobile-card-content {
   width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-  object-fit: cover;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
+
+.mobile-overlay {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  margin-top: -18px;
+}
+
+.mobile-text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  margin-top: 70px;
+}
+
+.mobile-bonus-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.mobile-button-container {
+  align-self: stretch;
+  margin-top: -50px;
+}
+
+.mobile-bonus-label {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.mobile-bonus-amount {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.mobile-bonus-subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.mobile-promo-button {
+  background-color: transparent;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Mobile Color Schemes - Amount gets specific colors */
+.mobile-card-1 .mobile-bonus-amount {
+  color: #14C570;
+}
+
+.mobile-card-2 .mobile-bonus-amount {
+  color: #FAC701;
+}
+
+.mobile-card-3 .mobile-bonus-amount {
+  color: #DC60DF;
+}
+
+.mobile-card-4 .mobile-bonus-amount {
+  color: #0BE7FF;
+}
+
+.mobile-card-5 .mobile-bonus-amount {
+  color: #8A64FF;
+}
+
+/* Mobile Button Colors */
+.mobile-button-1 { color: #ffffff; }
+.mobile-button-2 { color: #ffffff; }
+.mobile-button-3 { color: #ffffff; }
+.mobile-button-4 { color: #ffffff; }
+.mobile-button-5 { color: #ffffff; }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -394,13 +488,20 @@ export default {
   }
 
   .mobile-promotion-grid {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 12px;
+    gap: 16px;
     padding: 0 16px;
   }
 
-  .mobile-promo-image {
-    border-radius: 8px;
+  .mobile-card-content {
+    height: 250px;
+  }
+
+  .mobile-overlay {
+    padding: 15px;
+  }
+
+  .mobile-bonus-amount {
+    font-size: 3rem;
   }
 }
 
@@ -423,16 +524,34 @@ export default {
   }
 
   .mobile-promotion-grid {
-    gap: 10px;
+    gap: 12px;
     padding: 0 12px;
   }
 
-  .mobile-promo-item {
-    border-radius: 8px;
+  .mobile-card-content {
+    height: 245px;
   }
 
-  .mobile-promo-image {
-    border-radius: 6px;
+  .mobile-overlay {
+    padding: 12px;
+  }
+
+  .mobile-bonus-amount {
+    font-size: 2.5rem;
+  }
+
+  .mobile-bonus-label,
+  .mobile-bonus-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .mobile-promo-button {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+
+  .mobile-button-container {
+    margin-top: -40px;
   }
 }
 
@@ -450,8 +569,34 @@ export default {
   }
 
   .mobile-promotion-grid {
-    gap: 8px;
+    gap: 10px;
     padding: 0 8px;
+  }
+
+  .mobile-card-content {
+    height: 245px;
+  }
+
+  .mobile-overlay {
+    padding: 10px;
+  }
+
+  .mobile-bonus-amount {
+    font-size: 2rem;
+  }
+
+  .mobile-bonus-label,
+  .mobile-bonus-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .mobile-promo-button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+
+  .mobile-button-container {
+    margin-top: -35px;
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="why-section">
-    <h2 class="section-title">Why Choose Us?</h2>
+    <h2 class="section-title">{{ $t('why_choose_us.title') }}</h2>
     
     <!-- Swiper Implementation -->
     <div class="swiper-container">
@@ -68,37 +68,31 @@ export default {
     return {
       modules: [Autoplay],
       
-      // Features data with imported icons
-      features: [
+      // Base features data with icons and translation keys
+      baseFeatures: [
         {
           icon: why1Icon,
-          title: 'High Commission',
-          description: 'Up to 50% revenue share with competitive rates'
+          translationKey: 'high_commission'
         },
         {
           icon: why2Icon,
-          title: 'Custom Solutions',
-          description: 'Tailored affiliate programs for success'
+          translationKey: 'custom_solutions'
         },
         {
-          icon: why3Icon,
-          title: 'Marketing Tools',
-          description: 'Professional banners and tracking links'
+          icon: why3Icon,  
+          translationKey: 'marketing_tools'
         },
         {
           icon: why4Icon,
-          title: 'Dedicated Support',
-          description: '24/7 affiliate assistance and guidance'
+          translationKey: 'dedicated_support'
         },
         {
           icon: why5Icon,
-          title: 'Weekly Payouts',
-          description: 'Fast and reliable payment processing'
+          translationKey: 'weekly_payouts'
         },
         {
           icon: why6Icon,
-          title: 'Real-time Tracking',
-          description: 'Monitor your earnings and performance live'
+          translationKey: 'real_time_tracking'
         }
       ],
 
@@ -129,6 +123,15 @@ export default {
           spaceBetween: 20
         }
       }
+    }
+  },
+  computed: {
+    features() {
+      return this.baseFeatures.map(feature => ({
+        ...feature,
+        title: this.$t(`why_choose_us.features.${feature.translationKey}.title`),
+        description: this.$t(`why_choose_us.features.${feature.translationKey}.description`)
+      }))
     }
   }
 }

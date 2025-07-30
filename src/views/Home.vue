@@ -284,9 +284,9 @@ export default {
 }
 
 .subtitle-text {
-  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
   font-weight: 400;
-  color: #D5D3CF;
+  color: #FFFFFF;
   margin: 0.5rem 0;
   line-height: 1.4;
 }

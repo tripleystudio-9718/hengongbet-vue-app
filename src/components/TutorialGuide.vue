@@ -3,136 +3,124 @@
     <!-- Header Section -->
     <div class="header-section">
       <h1 class="header-title">
-        <span class="title-highlight">Tutorial</span> Guide
+        <span class="title-highlight">{{ $t('tutorial.titleHighlight') }}</span> {{ $t('tutorial.title') }}
       </h1>
-      <p class="header-subtitle">Easy To Know & Just follow Step Of Tutorial</p>
+      <p class="header-subtitle">{{ $t('tutorial.subtitle') }}</p>
     </div>
-
     <div class="max-w-7xl mx-auto px-6 py-8">
       <!-- First Tutorial Section -->
       <div class="tutorial-section">
         <h3 class="section-title">
-          Easy 3 steps to <span class="highlight">Redeem RM10</span> (new member bonus)
+          {{ $t('tutorial.sections.redeemBonus.title') }} <span class="highlight">{{ $t('tutorial.sections.redeemBonus.highlight') }}</span> {{ $t('tutorial.sections.redeemBonus.subtitle') }}
         </h3>
-        
+                
         <div class="steps-container steps-3">
           <!-- Step 1 -->
           <div class="step-item">
             <div class="step-icon-wrapper">
-              <img :src="tutorialIcon" alt="Tutorial Icon" class="tutorial-bg-icon" />
+              <img :src="tutorialIcon" :alt="$t('tutorial.alt.tutorialIcon')" class="tutorial-bg-icon" />
               <div class="step-number">1</div>
               <div class="step-text-overlay">
-                <p>Click on Terms at the bottom left of app</p>
+                <p>{{ $t('tutorial.sections.redeemBonus.steps.0') }}</p>
               </div>
             </div>
           </div>
-
           <!-- Dotted Line 1 -->
           <div class="dotted-line-container">
             <div class="circle"></div>
             <div class="dotted-line"></div>
             <div class="circle"></div>
           </div>
-
           <!-- Step 2 -->
           <div class="step-item">
             <div class="step-icon-wrapper">
-              <img :src="tutorialIcon" alt="Tutorial Icon" class="tutorial-bg-icon" />
+              <img :src="tutorialIcon" :alt="$t('tutorial.alt.tutorialIcon')" class="tutorial-bg-icon" />
               <div class="step-number">2</div>
               <div class="step-text-overlay">
-                <p>Click "Claim Now" on the activity page</p>
+                <p>{{ $t('tutorial.sections.redeemBonus.steps.1') }}</p>
               </div>
             </div>
           </div>
-
           <!-- Dotted Line 2 -->
           <div class="dotted-line-container">
             <div class="circle"></div>
             <div class="dotted-line"></div>
             <div class="circle"></div>
           </div>
-
           <!-- Step 3 -->
           <div class="step-item">
             <div class="step-icon-wrapper">
-              <img :src="tutorialIcon" alt="Tutorial Icon" class="tutorial-bg-icon" />
+              <img :src="tutorialIcon" :alt="$t('tutorial.alt.tutorialIcon')" class="tutorial-bg-icon" />
               <div class="step-number">3</div>
               <div class="step-text-overlay">
-                <p>Click "Redeem Now" follow the activity instructions</p>
+                <p>{{ $t('tutorial.sections.redeemBonus.steps.2') }}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-
       <!-- Second Tutorial Section -->
       <div class="tutorial-section">
         <h3 class="section-title">
-          <span class="highlight">Query history</span> Tutorial
+          <span class="highlight">{{ $t('tutorial.sections.queryHistory.highlight') }}</span> {{ $t('tutorial.sections.queryHistory.title') }}
         </h3>
-        
+                
         <div class="steps-container steps-4">
           <!-- Step 1 -->
           <div class="step-item">
             <div class="step-icon-wrapper">
-              <img :src="tutorialIcon" alt="Tutorial Icon" class="tutorial-bg-icon" />
+              <img :src="tutorialIcon" :alt="$t('tutorial.alt.tutorialIcon')" class="tutorial-bg-icon" />
               <div class="step-number">1</div>
               <div class="step-text-overlay">
-                <p>Click on "today" at the bottom of the app</p>
+                <p>{{ $t('tutorial.sections.queryHistory.steps.0') }}</p>
               </div>
             </div>
           </div>
-
           <!-- Dotted Line 1 -->
           <div class="dotted-line-container">
             <div class="circle"></div>
             <div class="dotted-line"></div>
             <div class="circle"></div>
           </div>
-
           <!-- Step 2 -->
           <div class="step-item">
             <div class="step-icon-wrapper">
-              <img :src="tutorialIcon" alt="Tutorial Icon" class="tutorial-bg-icon" />
+              <img :src="tutorialIcon" :alt="$t('tutorial.alt.tutorialIcon')" class="tutorial-bg-icon" />
               <div class="step-number">2</div>
               <div class="step-text-overlay">
-                <p>Click on "big fish" at the middle of the app</p>
+                <p>{{ $t('tutorial.sections.queryHistory.steps.1') }}</p>
               </div>
             </div>
           </div>
-
           <!-- Dotted Line 2 -->
           <div class="dotted-line-container">
             <div class="circle"></div>
             <div class="dotted-line"></div>
             <div class="circle"></div>
           </div>
-
           <!-- Step 3 -->
           <div class="step-item">
             <div class="step-icon-wrapper">
-              <img :src="tutorialIcon" alt="Tutorial Icon" class="tutorial-bg-icon" />
+              <img :src="tutorialIcon" :alt="$t('tutorial.alt.tutorialIcon')" class="tutorial-bg-icon" />
               <div class="step-number">3</div>
               <div class="step-text-overlay">
-                <p>Click "Record List" to top right corner</p>
+                <p>{{ $t('tutorial.sections.queryHistory.steps.2') }}</p>
               </div>
             </div>
           </div>
-
           <!-- Dotted Line 3 -->
           <div class="dotted-line-container">
             <div class="circle"></div>
             <div class="dotted-line"></div>
             <div class="circle"></div>
           </div>
-
           <!-- Step 4 -->
           <div class="step-item">
             <div class="step-icon-wrapper">
-              <img :src="tutorialIcon" alt="Tutorial Icon" class="tutorial-bg-icon" />
+              <img :src="tutorialIcon" :alt="$t('tutorial.alt.tutorialIcon')" class="tutorial-bg-icon" />
               <div class="step-number">4</div>
               <div class="step-text-overlay">
-                <p>Choose the history record you want to explore</p>
+                <p>{{ $t('tutorial.sections.queryHistory.steps.3') }}</p>
               </div>
             </div>
           </div>

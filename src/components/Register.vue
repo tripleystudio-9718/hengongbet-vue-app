@@ -1,7 +1,7 @@
 <template>
   <div class="sport-live">
     <iframe
-      src="https://hengongbet.com/en-my"
+      src="https://hengongbet.com/en-my?regRef=player"
       frameborder="0"
       allowfullscreen
     ></iframe>

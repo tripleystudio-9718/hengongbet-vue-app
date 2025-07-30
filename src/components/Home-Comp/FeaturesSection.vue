@@ -145,7 +145,7 @@ export default {
         ms: {
           tabs: [
             { id: 'why-choose', title: 'Mengapa Pilih Heng Ong Bet?' },
-            { id: 'games-library', title: 'Perpustakaan Permainan Terbesar Malaysia' },
+            { id: 'games-library', title: 'Pusat Game Terbesar Malaysia' },
             { id: 'secure-rewarding', title: 'Terbukti, Selamat & Bermanfaat' }
           ],
           whyChoose: {
@@ -270,7 +270,7 @@ export default {
 .feature-title {
   color: #C0BEBE;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 14px;
   flex-shrink: 0;
 }
 
@@ -282,7 +282,7 @@ export default {
 
 .feature-description {
   color: #C0BEBE;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.4;
   font-weight: 400;
   flex: 1;
@@ -296,7 +296,7 @@ export default {
 
 .library-header,
 .secure-header {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
   color: #C0BEBE;
   margin-bottom: 20px;
@@ -311,7 +311,7 @@ export default {
 
 .providers-list li,
 .secure-list li {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
   color: #C0BEBE;
   margin-bottom: 16px;

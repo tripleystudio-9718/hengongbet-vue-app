@@ -935,7 +935,9 @@ export default {
 
 @media (max-width: 480px) {
   .mobile-sidebar {
-    width: 260px;
+    width: 270px;
+    height: 70vh;
+    overflow-x: hidden;
   }
       
   .logo-image {
@@ -951,6 +953,10 @@ export default {
   .mobile-nav-icon {
     width: 18px;
     height: 18px;
+  }
+
+  .py-5 {
+    padding: 10px !important;
   }
 }
 

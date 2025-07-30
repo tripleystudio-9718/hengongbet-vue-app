@@ -237,5 +237,771 @@
       "title": "随时随地畅玩",
       "description": "通过兴旺Bet手机应用（支持iOS和Android），您可以随时随地享受所有喜爱的游戏——从老虎机和体育博彩到真人荷官和4D游戏。立即加入兴旺Bet，体验马来西亚最可靠、最令人兴奋的在线游戏平台！"
     }
+  },
+  "games": {
+    "title": "热门游戏",
+    "categories": {
+      "all": "全部",
+      "slots": "老虎机",
+      "casino": "娱乐场",
+      "sports": "体育",
+      "lottery": "彩票"
+    },
+    "featured_games": {
+      "iceland": "冰岛",
+      "panther_moon": "黑豹之月",
+      "fa_fa_fa": "发发发",
+      "sugar_bliss": "甜蜜极乐",
+      "super_ace": "超级王牌"
+    },
+    "providers": {
+      "endorphina": "Endorphina",
+      "novomatic": "Novomatic",
+      "golden_hero": "Golden Hero",
+      "sweet_gaming": "Sweet Gaming",
+      "pragmatic_play": "Pragmatic Play"
+    },
+    "regular_games": {
+      "lucky_365": "幸运365",
+      "askmeslot": "Askmeslot",
+      "jdb": "JDB",
+      "monkey_king": "齐天大圣",
+      "hot_road": "火热之路",
+      "maxbet": "Maxbet",
+      "sv388": "Sv388",
+      "rcb988": "Rcb988",
+      "jili": "吉利",
+      "microslot": "Microslot",
+      "evolution": "Evolution",
+      "sexy": "Sexy",
+      "ekor": "Ekor",
+      "big_gaming": "Big Gaming",
+      "pragmatic_play_regular": "Pragmatic Play"
+    },
+    "actions": {
+      "play_now": "立即游戏",
+      "view_all": "查看全部",
+      "load_more": "加载更多"
+    }
+  },
+  "how_it_works": {
+    "header": {
+      "subtitle": "欢迎来到兴旺Bet - 值得信赖的在线赌场",
+      "title": "开始游戏和赚钱"
+    },
+    "steps": {
+      "step1": {
+        "title": "创建账户",
+        "description": "点击立即加入，填写您的登录信息"
+      },
+      "step2": {
+        "title": "充值",
+        "description": "使用现金或加密货币转账进行首次充值"
+      },
+      "step3": {
+        "title": "开始获胜",
+        "description": "在您最喜欢的游戏中开始获胜"
+      },
+      "step4": {
+        "title": "获得奖励",
+        "description": "别忘了领取您的奖金"
+      }
+    },
+    "alt_text": {
+      "account_icon": "账户图标",
+      "deposit_icon": "充值图标",
+      "winning_icon": "获胜图标",
+      "reward_icon": "奖励图标"
+    }
+  },
+  "app_guide": {
+    "header": {
+      "subtitle": "全新兴旺Bet应用程序",
+      "title": "高级游戏与支持"
+    },
+    "tabs": {
+      "android": "安卓",
+      "ios": "苹果",
+      "desktop": "桌面"
+    },
+    "instructions": {
+      "title": "使用说明",
+      "step": "步骤"
+    },
+    "navigation": {
+      "previous": "上一步",
+      "next": "下一步"
+    },
+    "steps": {
+      "android": {
+        "step1": "点击地址栏右上角的点状设置图标。",
+        "step2": "点击\"添加到主屏幕\"以弹出HENG ONG BET应用程序的安装提示。",
+        "step3": "点击安装以拥有HENG ONG BET应用程序，启动并享受您的游戏！"
+      },
+      "ios": {
+        "step1": "点击地址栏底部的分享按钮。",
+        "step2": "点击\"添加到主屏幕\"以弹出HENG ONG BET应用程序的安装提示。",
+        "step3": "点击添加以拥有HENG ONG BET应用程序，启动并享受您的游戏！"
+      },
+      "desktop": {
+        "step1": "点击地址栏右侧的桌面下载按钮以弹出HENG ONG BET应用程序的安装提示。",
+        "step2": "点击安装以拥有HENG ONG BET应用程序，启动并享受您的游戏！"
+      }
+    },
+    "alt_text": {
+      "step_image": "步骤{{number}}说明图片"
+    }
+  },
+  "why_section": {
+    "header": {
+      "prefix": "为什么选择",
+      "brand": "兴旺Bet",
+      "suffix": "？"
+    },
+    "cards": {
+      "card1": {
+        "title": "兴旺Bet有何不同？",
+        "description": "与依赖代理商进行存取款的传统在线赌场不同，兴旺Bet直接连接您——无中间商参与。享受即时交易、内置社交和电子钱包功能，以及独特的佣金分享系统，让您在游戏的同时赚取收益。"
+      },
+      "card2": {
+        "title": "最值得信赖的赌场",
+        "description": "您的隐私和安全是我们的首要任务。兴旺Bet使用行业标准保护来保护您的个人数据，严格遵循我们的隐私政策，确保安全可信的游戏环境。"
+      },
+      "card3": {
+        "title": "简单快速注册",
+        "description": "创建您的兴旺Bet账户，访问1000+游戏，享受专属优惠，并及时了解最新优惠信息。"
+      },
+      "card4": {
+        "title": "在线支持",
+        "description": "我们的兴旺Bet支持团队通过在线聊天、电话和电子邮件24/7为您提供服务，快速帮助您解决任何问题。"
+      }
+    },
+    "alt_text": {
+      "computer_icon": "电脑图标",
+      "trusted_icon": "信任图标",
+      "registration_icon": "注册图标",
+      "support_icon": "支持图标"
+    }
+  },
+  "provider_showcase": {
+    "global_header": {
+      "brand": "兴旺Bet",
+      "title": "我们是全球性的",
+      "subtitle": "兴旺Bet现正向全球扩展",
+      "description": "兴旺Bet现已在新加坡推出，我们才华横溢的全球团队支持马来西亚和新加坡的发展。是什么团结了我们？对提供最佳游戏体验的热情。我们还积极扩展到泰国、越南、印度尼西亚、柬埔寨、英国和美国。"
+    },
+    "providers": {
+      "slots": {
+        "name": "老虎机",
+        "description": "兴旺Bet提供由MEGA888、PUSSY888、VPOWER、NAGA GAMES、JILI等顶级供应商支持的各种在线老虎机游戏。凭借先进的技术、精美的图形和身临其境的音效，我们的老虎机提供令人兴奋的游戏体验和巨大的获胜潜力。"
+      },
+      "sports": {
+        "name": "体育博彩",
+        "description": "兴旺Bet通过MAXBET、SBOBET和RCB788等顶级平台提供完整和专业的体育博彩体验。投注足球、篮球、网球、棒球和冰球等热门运动，提供让球、大小球、单双数和半场投注等多种选择。"
+      },
+      "lottery": {
+        "name": "4D彩票",
+        "description": "兴旺Bet为您带来最激动人心的4D彩票游戏，每天都有机会赢得大奖。享受直选、组选、万能、大马彩、多多和每日万龙等热门玩法。高赔率和多种投注选项，您的获胜机会比以往任何时候都大。"
+      },
+      "live_casino": {
+        "name": "真人娱乐场",
+        "description": "兴旺Bet通过PGCN88 LIVE、AE SEXY和EVOLUTION等顶级供应商为您带来在家即可享受的实时真人娱乐场游戏。享受流畅的高清直播、专业荷官的公平游戏以及快速安全的交易——全部集中在一个值得信赖的平台上。"
+      }
+    },
+    "alt_text": {
+      "slots": "老虎机游戏供应商",
+      "sports": "体育博彩供应商",
+      "lottery": "4D彩票供应商",
+      "live_casino": "真人娱乐场供应商"
+    }
+  },
+  "testimonials": {
+    "header": {
+      "title": "用户评价",
+      "subtitle": "真实故事。真实胜利。真实刺激。",
+      "rating": "4.8/5",
+      "review_count": "基于1200条评价"
+    },
+    "control": {
+      "title": "我们的客户评价"
+    },
+    "navigation": {
+      "previous": "上一个",
+      "next": "下一个"
+    },
+    "time": {
+      "days_ago": "天前",
+      "week_ago": "周前",
+      "mins_ago": "分钟前"
+    },
+    "alt_text": {
+      "quotation": "引用",
+      "previous": "上一个",
+      "next": "下一个"
+    }
+  },
+  "faqSec": {
+    "header": {
+      "label": "常见问题",
+      "title": "兴旺Bet - 您需要了解的一切",
+      "description": "有疑问吗？我们收集了玩家最常见的问题，帮助您在兴旺Bet顺利开始游戏之旅",
+      "button_text": "查看所有常见问题"
+    },
+    "questions": {
+      "q1": {
+        "question": "如何在兴旺Bet注册？",
+        "answer": "只需点击\"注册\"按钮，填写您的详细信息，并验证您的手机号码即可开始"
+      },
+      "q2": {
+        "question": "兴旺Bet合法且安全使用吗？",
+        "answer": "是的，兴旺Bet在适当的许可下运营，并使用先进的安全措施来保护您的数据和交易。我们完全遵守所有适用的法规。"
+      },
+      "q3": {
+        "question": "我如何存款或提款？",
+        "answer": "您可以通过各种安全的支付方式存款和提款，包括银行转账、电子钱包和加密货币。所有交易都快速安全地处理。"
+      },
+      "q4": {
+        "question": "兴旺Bet有哪些游戏可供选择？",
+        "answer": "我们提供各种游戏，包括真人娱乐场游戏、老虎机、体育博彩、彩票游戏等。我们的平台拥有行业顶级供应商的游戏。"
+      },
+      "q5": {
+        "question": "有欢迎奖金或促销活动吗？",
+        "answer": "有的！我们为新玩家提供丰厚的欢迎奖金，以及持续的促销活动、忠诚度奖励和特别奖金。请查看我们的促销页面了解最新优惠。"
+      },
+      "q6": {
+        "question": "如果我忘记了登录详情该怎么办？",
+        "answer": "如果您忘记了登录详情，只需在登录页面点击\"忘记密码\"链接。您可以使用注册的电子邮件或手机号码重置密码。"
+      },
+      "q7": {
+        "question": "兴旺Bet有手机应用程序吗？",
+        "answer": "有的，我们有适用于iOS和Android设备的手机应用程序。您可以从App Store或Google Play商店下载，或直接从浏览器访问我们的移动优化网站。"
+      }
+    },
+    "alt_text": {
+      "open": "打开",
+      "close": "关闭"
+    }
+  },
+  "affiliate": {
+    "brand_section": {
+      "title1": "加入成为",
+      "brand": "兴旺Bet",
+      "title2": "代理、股东或会员",
+      "tagline": "无输赢担忧 · 灵活佣金 · 自动利润分配"
+    },
+    "join_button": "加入我们",
+    "steps": {
+      "step": "步骤",
+      "step1": {
+        "number": "1",
+        "title": "注册"
+      },
+      "step2": {
+        "number": "2",
+        "title": "推广"
+      },
+      "step3": {
+        "number": "3",
+        "title": "赚钱"
+      }
+    },
+    "commission_section": {
+      "title": "双重佣金模式",
+      "description": "随时切换。完全控制您的赚钱方式。",
+      "models": {
+        "revenue_share": {
+          "title": "收入分成",
+          "description": "从玩家损失中赚取百分比"
+        },
+        "cpa_model": {
+          "title": "CPA模式",
+          "description": "每个合格玩家固定金额"
+        }
+      }
+    },
+    "levels_section": {
+      "title": "用户等级与返利系统",
+      "table": {
+        "headers": {
+          "user_level": "用户等级",
+          "benefits": "福利",
+          "rebate": "返利"
+        },
+        "levels": {
+          "shareholder": {
+            "name": "股东",
+            "benefits": "基于玩家总投注量 + 输赢（对战 + 奖池）",
+            "rebate": "-----"
+          },
+          "referrer": {
+            "name": "推荐人",
+            "benefits": "玩家投注的0.3%",
+            "rebate": "自己投注的0.5%"
+          },
+          "player": {
+            "name": "玩家",
+            "benefits": "-----",
+            "rebate": "每次投注0.5%"
+          }
+        }
+      }
+    },
+    "features": {
+      "high_commission": {
+        "title": "高佣金",
+        "description": "高达50%收入分成"
+      },
+      "real_time_tracking": {
+        "title": "实时跟踪",
+        "description": "实时监控您的收益"
+      },
+      "weekly_payouts": {
+        "title": "每周支付",
+        "description": "快速可靠的付款"
+      },
+      "dedicated_support": {
+        "title": "专属支持",
+        "description": "24/7代理协助"
+      },
+      "marketing_tools": {
+        "title": "营销工具",
+        "description": "专业横幅和链接"
+      }
+    },
+    "cta_section": {
+      "title": "最终行动号召",
+      "subtitle": "加入<span style=\"color: #F2B240;\">兴旺Bet</span>代理网络，掌控您的财务未来！",
+      "description": "今天就开始赚钱。您的利润，您的控制。",
+      "buttons": {
+        "register": "注册",
+        "support": "客户支持"
+      }
+    },
+    "alt_text": {
+      "gaming_banner": "游戏横幅"
+    }
+  },
+  "supported_games": {
+    "title": "支持的游戏类型",
+    "games": {
+      "lottery": {
+        "title": "彩票",
+        "subtitle": "(4D, Lucky, Magnum 等)"
+      },
+      "sports": {
+        "title": "体育",
+        "subtitle": "(全球赛事，实时赔率)"
+      },
+      "slots": {
+        "title": "老虎机",
+        "subtitle": "(马来西亚游戏，亚洲数字环3)"
+      },
+      "horse_racing": {
+        "title": "赛马",
+        "subtitle": "(全速在线赛马)"
+      },
+      "live_casino": {
+        "title": "真人娱乐场",
+        "subtitle": "(真人荷官与逼真的发牌游戏)"
+      },
+      "cockfighting": {
+        "title": "斗鸡",
+        "subtitle": "(现场直播，真实投注)"
+      }
+    }
+  },
+  "why_choose_us": {
+    "title": "为什么选择我们？",
+    "features": {
+      "high_commission": {
+        "title": "高佣金",
+        "description": "高达50%收入分成，费率具有竞争力"
+      },
+      "custom_solutions": {
+        "title": "定制解决方案",
+        "description": "为成功量身定制的代理计划"
+      },
+      "marketing_tools": {
+        "title": "营销工具",
+        "description": "专业横幅和跟踪链接"
+      },
+      "dedicated_support": {
+        "title": "专属支持",
+        "description": "24/7代理协助和指导"
+      },
+      "weekly_payouts": {
+        "title": "每周支付",
+        "description": "快速可靠的付款处理"
+      },
+      "real_time_tracking": {
+        "title": "实时跟踪",
+        "description": "实时监控您的收益和表现"
+      }
+    }
+  },
+  "promotion_section": {
+    "header": {
+      "title_prefix": "丰富促销活动尽在",
+      "brand": "兴旺Bet",
+      "subtitle": "解锁专属奖金 & 最大化您的胜利",
+      "description": "在兴旺Bet，我们为您带来马来西亚和新加坡终极在线游戏促销平台。我们的专属奖金专为奖励您的每一次投注而量身定制——从丰厚的返现优惠到锦标赛相关奖金以及令人兴奋的兴旺奖金。"
+    },
+    "promotions": {
+      "promo1": {
+        "bonus_label": "充值奖金",
+        "bonus_amount": "68%",
+        "bonus_subtitle": "获得最高200的奖金",
+        "title": "充值奖金68%",
+        "description": "获得最高200的奖金",
+        "button_text": "邀请立即赚取"
+      },
+      "promo2": {
+        "bonus_label": "充值返利",
+        "bonus_amount": "0.5%",
+        "bonus_subtitle": "无限制奖金",
+        "title": "充值返利0.5%",
+        "description": "无限制奖金",
+        "button_text": "分享赢得更多"
+      },
+      "promo3": {
+        "bonus_label": "充值奖金",
+        "bonus_amount": "200%",
+        "bonus_subtitle": "获得最高100的奖金",
+        "title": "充值奖金200%",
+        "description": "获得最高100的奖金",
+        "button_text": "立即开始推荐"
+      },
+      "promo4": {
+        "bonus_label": "每日返利高达",
+        "bonus_amount": "3%",
+        "bonus_subtitle": "玩得越多，赚得越多！",
+        "title": "每日返利高达3%！",
+        "description": "玩得越多，赚得越多！",
+        "button_text": "获取您的返利"
+      },
+      "promo5": {
+        "bonus_label": "推荐返利高达",
+        "bonus_amount": "10%",
+        "bonus_subtitle": "邀请越多，下注越多！",
+        "title": "推荐返利高达10%！",
+        "description": "邀请越多，下注越多，返利越多！",
+        "button_text": "获取您的返利"
+      }
+    },
+    "mobile_promotions": {
+      "promo1": {
+        "alt": "手机促销1",
+        "title": "充值奖金68%"
+      },
+      "promo2": {
+        "alt": "手机促销2",
+        "title": "充值返利0.5%"
+      },
+      "promo3": {
+        "alt": "手机促销3",
+        "title": "充值奖金200%"
+      },
+      "promo4": {
+        "alt": "手机促销4",
+        "title": "每日返利高达3%"
+      },
+      "promo5": {
+        "alt": "手机促销5",
+        "title": "推荐返利高达10%"
+      }
+    }
+  },
+  "app": {
+    "title": "Heng Ong Bet 程序",
+    "subtitle": "适用于 IOS 和 Android",
+    "iosDownload": "iOS 下载",
+    "androidDownload": "Android 下载",
+    "affiliateText": "注册并加入我们的联盟计划！",
+    "signUpButton": "立即注册！",
+    "features": {
+      "exclusive": "独家",
+      "bonus": "奖金",
+      "affiliate": "联盟",
+      "program": "计划",
+      "instant": "即时",
+      "payment": "支付",
+      "seamless": "无缝",
+      "experience": "体验"
+    }
+  },
+  "guide": {
+    "tabs": {
+      "android": "Android",
+      "ios": "iOS",
+      "desktop": "桌面"
+    },
+    "titles": {
+      "androidDownload": "Android 下载",
+      "iosDownload": "iOS 下载",
+      "desktopDownload": "桌面下载"
+    },
+    "steps": {
+      "step": "步骤",
+      "android": {
+        "step1": {
+          "title": "步骤 1",
+          "description": "点击地址栏右上角的点状设置图标。"
+        },
+        "step2": {
+          "title": "步骤 2",
+          "description": "点击添加到主屏幕以弹出 HENG ONG BET 应用程序的安装。"
+        },
+        "step3": {
+          "title": "步骤 3",
+          "description": "点击安装以拥有 HENG ONG BET 应用程序，启动并享受您的游戏！"
+        }
+      },
+      "ios": {
+        "step1": {
+          "title": "步骤 1",
+          "description": "点击地址栏底部的分享按钮。"
+        },
+        "step2": {
+          "title": "步骤 2",
+          "description": "点击添加到主屏幕以弹出 HENG ONG BET 应用程序的安装。"
+        },
+        "step3": {
+          "title": "步骤 3",
+          "description": "点击添加以拥有 HENG ONG BET 应用程序，启动并享受您的游戏！"
+        }
+      },
+      "desktop": {
+        "step1": {
+          "title": "步骤 1",
+          "description": "点击地址栏右侧的桌面下载按钮以弹出 HENG ONG BET 应用程序的安装。"
+        },
+        "step2": {
+          "title": "步骤 2",
+          "description": "点击安装以拥有 HENG ONG BET 应用程序，启动并享受您的游戏！"
+        }
+      }
+    }
+  },
+  "games": {
+    "tabs": {
+      "all": "全部",
+      "slots": "老虎机",
+      "casino": "赌场",
+      "sports": "体育",
+      "lottery": "彩票"
+    },
+    "names": {
+      "lucky365": "Lucky 365",
+      "askmeslot": "Askmeslot",
+      "jdb": "JDB",
+      "monkeyKing": "猴王",
+      "hotRoad": "热门之路",
+      "maxbet": "Maxbet",
+      "sv388": "Sv388",
+      "rcb988": "Rcb988",
+      "jili": "Jili",
+      "microslot": "Microslot",
+      "evolution": "Evolution",
+      "sexy": "Sexy",
+      "ekor": "Ekor",
+      "bigGaming": "Big Gaming",
+      "pragmaticPlay": "Pragmatic Play"
+    },
+    "alt": {
+      "gameBanner": "游戏横幅",
+      "gameImage": "游戏图片"
+    },
+    "actions": {
+      "clickToPlay": "点击玩 {gameName}"
+    }
+  },
+  "faq": {
+    "title": "常见问题 (FAQ)",
+    "appName": "Heng Ong Bet",
+    "search": {
+      "placeholder": "在此输入您的搜索关键词...",
+      "button": "搜索",
+      "noResults": "未找到关于 \"{query}\" 的常见问题",
+      "tryDifferent": "尝试使用不同的关键词搜索或浏览上面的所有问题。"
+    },
+    "sections": {
+      "gettingStarted": "入门指南",
+      "loginSecurity": "登录和账户安全",
+      "bonusPromotions": "奖金和促销",
+      "finalNote": "最后说明"
+    },
+    "gettingStarted": [
+      {
+        "question": "HengOngBet在马来西亚和新加坡合法吗？",
+        "answer": "虽然在线博彩法规各不相同，但HengOngBet在国际许可下运营，为两国用户提供安全的娱乐访问。您有责任确保您已达到法定年龄，并且在线博彩在您所在地区是被允许的。"
+      },
+      {
+        "question": "如何在HengOngBet上创建账户？",
+        "answer": "访问 https://hengongbet88.net，点击\"注册\"，填写您的手机号码、用户名、密码和验证码。确保输入有效的推荐码以获得欢迎奖金。"
+      },
+      {
+        "question": "我可以使用别人的电话号码注册吗？",
+        "answer": "不可以。您必须使用自己的手机号码完成短信验证并确保账户安全。"
+      }
+    ],
+    "loginSecurity": [
+      {
+        "question": "我没有收到短信验证码。我该怎么办？",
+        "answer": "检查您的手机信号，确保您输入了正确的号码，并尝试重新发送验证码。如果问题持续存在，请联系在线客服。"
+      },
+      {
+        "question": "我忘记了密码。如何重置？",
+        "answer": "在登录页面点击\"忘记密码\"链接，按照说明通过您注册的手机号码重置。"
+      },
+      {
+        "question": "我可以拥有多个账户吗？",
+        "answer": "不可以。同一用户不允许拥有多个账户，可能导致所有相关账户被暂停。"
+      },
+      {
+        "question": "HengOngBet的最低存款是多少？",
+        "answer": "最低存款根据支付方式而异，但通常从RM30开始。"
+      },
+      {
+        "question": "如何存入资金？",
+        "answer": "登录您的账户，转到\"存款\"，选择支付方式（如FPX、DuitNow、银行转账），然后按照说明操作。"
+      },
+      {
+        "question": "提款处理速度有多快？",
+        "answer": "大多数提款在营业时间内5-15分钟内处理完成。高流量期间可能会出现延迟。"
+      },
+      {
+        "question": "我可以直接提取RM10欢迎奖金吗？",
+        "answer": "不可以。奖金必须用于下注。满足投注要求后，奖金产生的奖金可以提取。"
+      },
+      {
+        "question": "HengOngBet有手机应用程序吗？",
+        "answer": "有的。Android用户可以从官方网站下载APK。iOS用户可以通过Safari安装网页应用快捷方式。"
+      },
+      {
+        "question": "HengOngBet应用程序使用安全吗？",
+        "answer": "是的。始终从官方网站下载应用程序以避免第三方克隆版本。该应用程序使用安全加密并遵循所有数据保护标准。"
+      }
+    ],
+    "bonusPromotions": [
+      {
+        "question": "如何获得RM10欢迎奖金？",
+        "answer": "使用您的真实手机号码注册新账户并输入有效的推荐码。成功验证后将获得RM10奖金。"
+      },
+      {
+        "question": "有每日奖金或充值促销吗？",
+        "answer": "有的。定期访问促销页面查看所有活跃优惠，包括每日充值、返现和VIP奖励。"
+      },
+      {
+        "question": "奖金有投注要求吗？",
+        "answer": "是的。所有奖金都有特定条款。在激活任何优惠之前，请务必阅读条件。"
+      },
+      {
+        "question": "网站在我的手机上无法加载。我该怎么办？",
+        "answer": "尝试清除浏览器缓存，切换到不同的浏览器，或使用应用程序版本以获得更好的性能。"
+      },
+      {
+        "question": "游戏在游戏过程中冻结或崩溃。我会失去我的赌注吗？",
+        "answer": "您的投注结果仍由游戏提供商记录。您可以重新进入游戏或联系客服验证结果。"
+      },
+      {
+        "question": "如何联系客户支持？",
+        "answer": "是的。我们的在线客服经过培训，可以用英语、中文和马来语为您提供帮助。"
+      },
+      {
+        "question": "我可以与真人交谈吗？",
+        "answer": "通过网站或手机应用程序提供24/7在线聊天支持。"
+      },
+      {
+        "question": "我在哪里可以获得有关新功能或活动的更新？",
+        "answer": "关注我们的官方Telegram频道或查看博客部分获取公告。"
+      }
+    ],
+    "finalNote": {
+      "title": "还有问题吗？",
+      "content": "访问我们的帮助中心或随时与客服代表交谈。HengOngBet致力于为所有玩家提供安全、透明和有益的在线游戏体验。"
+    }
+  },
+  "tutorial": {
+    "title": "教程指南",
+    "titleHighlight": "教程",
+    "subtitle": "简单易懂，只需按照教程步骤操作",
+    "sections": {
+      "redeemBonus": {
+        "title": "简单3步{highlight}（新会员奖金）",
+        "highlight": "兑换RM10",
+        "steps": ["点击应用程序左下角的条款", "在活动页面点击\"立即领取\"", "点击\"立即兑换\"按照活动说明操作"]
+      },
+      "queryHistory": {
+        "title": "{highlight}教程",
+        "highlight": "查询历史",
+        "steps": [
+          "点击应用程序底部的\"今天\"",
+          "点击应用程序中间的\"大鱼\"",
+          "点击右上角的\"记录列表\"",
+          "选择您想要查看的历史记录"
+        ]
+      }
+    },
+    "alt": {
+      "tutorialIcon": "教程图标"
+    }
+  },
+    "tutorialTabs": {
+    "tabs": {
+      "topup": "即时充值",
+      "transfer": "银行转账",
+      "withdraw": "提款"
+    },
+    "titles": {
+      "topup": "如何在heng ong bet中通过<span class=\"highlight\">即时充值</span>进行充值？",
+      "transfer": "如何在heng ong bet中通过<span class=\"highlight\">银行转账</span>进行充值？",
+      "withdraw": "如何在heng ong bet中<span class=\"highlight\">提款</span>？"
+    },
+    "steps": {
+      "topup": [
+        "登录HENG ONG BET",
+        "点击\"充值按钮\"",
+        "点击\"即时充值\"",
+        "选择您要使用的银行",
+        "输入您的金额",
+        "输入您的银行转账和用户名，然后点击\"申请\"",
+        "输入OTP号码并点击\"继续\"",
+        "如果页面在5秒内没有更新，请点击\"重试\"",
+        "即时充值成功"
+      ],
+      "transfer": [
+        "选择一个方便的银行进行存款，从\"您的TOPICK账户中的一只手或立即浏览更改",
+        "点击\"是\"",
+        "点击\"充值\"",
+        "点击\"银行转账\"",
+        "填写兑换金额，然后点击\"提交\"",
+        "点击\"+\"上传现金存款或转账文件，然后点击\"提交\"",
+        "选择您的银行",
+        "输入您手机收到的OTP号码，然后点击\"确定\"",
+        "输入金额并点击\"提交\"",
+        "输入您的支付密码",
+        "请求已提交！正在处理中...请等待"
+      ],
+      "withdraw": [
+        "登录HENG ONG BET",
+        "点击\"是\"",
+        "点击\"提款\"",
+        "选择\"提款\"并点击\"确定\"",
+        "输入您的账号，然后点击\"下一步\"",
+        "输入您的手机号码并点击\"请求OTP\"",
+        "输入您手机收到的OTP号码，然后点击\"确定\"",
+        "输入金额并点击\"提交\"",
+        "输入您的支付密码",
+        "请求已提交！正在处理中...请等待"
+      ]
+    },
+    "ui": {
+      "step": "步骤",
+      "showMore": "显示更多步骤",
+      "showLess": "显示较少步骤"
+    },
+    "alt": {
+      "stepImage": "第{step}步图片"
+    }
   }
 }

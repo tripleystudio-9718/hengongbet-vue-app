@@ -2,10 +2,10 @@
   <section>
     <!-- Global Header Section -->
     <div class="global-header-section">
-      <h3 class="global-brand">{{ globalContent.brand }}</h3>
-      <h2 class="global-title">{{ globalContent.title }}</h2>
-      <h4 class="global-subtitle">{{ globalContent.subtitle }}</h4>
-      <p class="global-description">{{ globalContent.description }}</p>
+      <h3 class="global-brand">{{ $t('provider_showcase.global_header.brand') }}</h3>
+      <h2 class="global-title">{{ $t('provider_showcase.global_header.title') }}</h2>
+      <h4 class="global-subtitle">{{ $t('provider_showcase.global_header.subtitle') }}</h4>
+      <p class="global-description">{{ $t('provider_showcase.global_header.description') }}</p>
     </div>
 
     <div class="max-w-7xl mx-auto px-6 py-8">
@@ -18,8 +18,8 @@
           :style="{ backgroundImage: `url(${provider.backgroundImage})` }"
         >
           <div class="provider-content">
-            <h3 class="provider-title">{{ provider.name }}</h3>
-            <p class="provider-description">{{ provider.description }}</p>
+            <h3 class="provider-title">{{ provider.displayName }}</h3>
+            <p class="provider-description">{{ provider.displayDescription }}</p>
           </div>
         </div>
       </div>
@@ -34,8 +34,8 @@
             :style="{ backgroundImage: `url(${provider.backgroundImage})` }"
           >
             <div class="mobile-provider-content">
-              <h3 class="mobile-provider-title">{{ provider.name }}</h3>
-              <p class="mobile-provider-description">{{ provider.description }}</p>
+              <h3 class="mobile-provider-title">{{ provider.displayName }}</h3>
+              <p class="mobile-provider-description">{{ provider.displayDescription }}</p>
             </div>
           </div>
         </div>
@@ -51,11 +51,10 @@ import lotteryBg from '@/assets/lottery-bg.png'
 import liveCasinoBg from '@/assets/live-casino-bg.png'
 
 class GameProvider {
-  constructor(name, backgroundImage, alt, description) {
-    this.name = name
+  constructor(translationKey, backgroundImage, altKey) {
+    this.translationKey = translationKey
     this.backgroundImage = backgroundImage
-    this.alt = alt
-    this.description = description
+    this.altKey = altKey
   }
 }
 
@@ -64,38 +63,22 @@ export default {
   data() {
     return {
       currentProviderSlide: 0,
-      globalContent: {
-        brand: "Heng Ong Bet",
-        title: "We Are Global",
-        subtitle: "Heng Ong Bet is Now Expanding Globally",
-        description: "Heng Ong Bet is now available in Singapore, with our talented global team supporting growth across Malaysia and Singapore. What unites us? A passion for delivering the best gaming experience. We're also actively expanding into Thailand, Vietnam, Indonesia, Cambodia, the UK, and the USA."
-      },
-      providers: [
-        new GameProvider(
-          'Slots', 
-          slotsBg, 
-          'Slots Gaming Provider',
-          'Heng Ong Bet offers a wide variety of online slot games powered by top providers like MEGA888, PUSSY888, PUSSY888, VPOWER, NAGA GAMES, JILI, and more. With advanced technology, stunning graphics, and immersive sound effects, our slots deliver exciting gameplay and big win potential.'
-        ),
-        new GameProvider(
-          'Sport Betting', 
-          sportsBg, 
-          'Sports Betting Provider',
-          'Heng Ong Bet offers a complete and professional sports betting experience through top platforms like MAXBET, SBOBET, and RCB788. Bet on popular sports such as football, basketball, tennis, baseball, and ice hockey with various options like handicap, over/under, odd/even, and half-time bets.'
-        ),
-        new GameProvider(
-          '4D Lottery', 
-          lotteryBg, 
-          '4D Lottery Provider',
-          'Heng Ong Bet brings you the most exciting 4D lottery games with a chance to win big prizes every day. Enjoy popular formats like direct selection, group selection, Magnum, Da Ma Cai, Toto, and daily Grand Dragon draws. With high odds and multiple betting options, your winning chances are greater than ever.'
-        ),
-        new GameProvider(
-          'Live Casino', 
-          liveCasinoBg, 
-          'Live Casino Provider',
-          'Heng Ong Bet brings you real-time live casino games at home with top providers like PGCN88 LIVE, AE SEXY, and EVOLUTION. Enjoy smooth HD streams, fair play from pro dealers, and fast, secure transactions—all in one trusted platform.'
-        )
+      baseProviders: [
+        new GameProvider('slots', slotsBg, 'slots'),
+        new GameProvider('sports', sportsBg, 'sports'),
+        new GameProvider('lottery', lotteryBg, 'lottery'),
+        new GameProvider('live_casino', liveCasinoBg, 'live_casino')
       ]
+    }
+  },
+  computed: {
+    providers() {
+      return this.baseProviders.map(provider => ({
+        ...provider,
+        displayName: this.$t(`provider_showcase.providers.${provider.translationKey}.name`),
+        displayDescription: this.$t(`provider_showcase.providers.${provider.translationKey}.description`),
+        displayAlt: this.$t(`provider_showcase.alt_text.${provider.altKey}`)
+      }))
     }
   },
   mounted() {

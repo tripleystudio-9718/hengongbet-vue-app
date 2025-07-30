@@ -2,8 +2,8 @@
   <div class="app-guide-container">
     <!-- Header Section -->
     <div class="app-guide-header-section">
-      <p class="app-guide-header-subtitle">{{ headerContent.subtitle }}</p>
-      <h2 class="app-guide-header-title">{{ headerContent.title }}</h2>
+      <p class="app-guide-header-subtitle">{{ $t('app_guide.header.subtitle') }}</p>
+      <h2 class="app-guide-header-title">{{ $t('app_guide.header.title') }}</h2>
     </div>
 
     <div class="app-guide-features-section">
@@ -23,7 +23,7 @@
       <div class="app-guide-tab-content">
         <!-- Instruction Section -->
         <div class="instruction-section">
-          <h2 class="instruction-title">Instructions</h2>
+          <h2 class="instruction-title">{{ $t('app_guide.instructions.title') }}</h2>
           
           <!-- Slides Container -->
           <div class="app-guide-slides-wrapper">
@@ -37,12 +37,16 @@
                 class="app-guide-slide"
               >
                 <div class="step-content">
-                  <h3 class="step-title">Step {{ index + 1 }}</h3>
+                  <h3 class="step-title">{{ $t('app_guide.instructions.step') }} {{ index + 1 }}</h3>
                   <p class="step-description">{{ step.description }}</p>
                   
                   <!-- Step Image -->
                   <div class="step-image-container">
-                    <img :src="step.image" :alt="`Step ${index + 1}`" class="step-image" />
+                    <img 
+                      :src="step.image" 
+                      :alt="$t('app_guide.alt_text.step_image', { number: index + 1 })" 
+                      class="step-image" 
+                    />
                   </div>
                 </div>
               </div>
@@ -56,6 +60,7 @@
               class="app-guide-nav-arrow app-guide-nav-arrow-left" 
               @click="previousSlide"
               :disabled="currentSlide === 0"
+              :title="$t('app_guide.navigation.previous')"
             >
               <i class="fas fa-arrow-left"></i>
             </button>
@@ -70,6 +75,7 @@
               class="app-guide-nav-arrow app-guide-nav-arrow-right" 
               @click="nextSlide"
               :disabled="currentSlide === maxSlides - 1"
+              :title="$t('app_guide.navigation.next')"
             >
               <i class="fas fa-arrow-right"></i>
             </button>
@@ -98,63 +104,42 @@ export default {
     return {
       activeTab: 'Android',
       currentSlide: 0,
-      headerContent: {
-        subtitle: "All - New Heng Ong Bet App",
-        title: "Premium Games & Support"
-      },
-      tabs: [
-        {
-          id: 'Android',
-          title: 'Android',
-          icon: 'fab fa-android'
-        },
-        {
-          id: 'iOS',
-          title: 'iOS',
-          icon: 'fab fa-apple'
-        },
-        {
-          id: 'Desktop',
-          title: 'Desktop',
-          icon: 'fas fa-desktop'
-        }
-      ],
-      tabSteps: {
+      baseTabSteps: {
         'Android': [
           {
-            description: 'Tap dotted setting icon at top right of the address bar.',
+            stepKey: 'step1',
             image: '/src/assets/step1-image.webp'
           },
           {
-            description: 'Tap Add to Home Screen to pop up installation for HENG ONG BET App.',
+            stepKey: 'step2',
             image: '/src/assets/step2-image.webp'
           },
           {
-            description: 'Tap Install to own the HENG ONG BET App, launch & enjoy your game!',
+            stepKey: 'step3',
             image: '/src/assets/step3-image.webp'
           }
         ],
         'iOS': [
           {
-            description: 'Tap share button at the bottom of the address bar.',
+            stepKey: 'step1',
             image: '/src/assets/ios-step1-image.webp'
           },
           {
-            description: 'Tap Add to Home Screen to pop up installation for HENG ONG BET App.',
+            stepKey: 'step2',
             image: '/src/assets/ios-step2-image.webp'
           },
           {
-            description: 'Tap Add to own the HENG ONG BET App, launch & enjoy your game!',
+            stepKey: 'step3',
             image: '/src/assets/ios-step3-image.webp'
           }
         ],
         'Desktop': [
           {
-            description: 'Click desktop download button at right side of the address bar to pop up installation for HENG ONG BET App.',
+            stepKey: 'step1',
             image: '/src/assets/desk-step1-image.webp'
           },
           {
-            description: 'Click Install to own the HENG ONG BET App, launch & enjoy your game!',
+            stepKey: 'step2',
             image: '/src/assets/desk-step2-image.webp'
           }
         ]
@@ -162,8 +147,33 @@ export default {
     }
   },
   computed: {
+    tabs() {
+      return [
+        {
+          id: 'Android',
+          title: this.$t('app_guide.tabs.android'),
+          icon: 'fab fa-android'
+        },
+        {
+          id: 'iOS',
+          title: this.$t('app_guide.tabs.ios'),
+          icon: 'fab fa-apple'
+        },
+        {
+          id: 'Desktop',
+          title: this.$t('app_guide.tabs.desktop'),
+          icon: 'fas fa-desktop'
+        }
+      ]
+    },
     currentTabSteps() {
-      return this.tabSteps[this.activeTab] || []
+      const baseSteps = this.baseTabSteps[this.activeTab] || []
+      const activeTabKey = this.activeTab.toLowerCase()
+      
+      return baseSteps.map(step => ({
+        ...step,
+        description: this.$t(`app_guide.steps.${activeTabKey}.${step.stepKey}`)
+      }))
     },
     maxSlides() {
       return this.currentTabSteps.length

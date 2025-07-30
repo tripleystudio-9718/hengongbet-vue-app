@@ -1,6 +1,6 @@
 <template>
   <div class="games-section">
-    <h2 class="section-title">Supported Game Types</h2>
+    <h2 class="section-title">{{ $t('supported_games.title') }}</h2>
         
     <!-- Swiper Implementation -->
     <div class="swiper-container">
@@ -68,37 +68,31 @@ export default {
     return {
       modules: [Autoplay],
       
-      // Game types data with imported icons and subtitles
-      gameTypes: [
+      // Base game types data with icons and translation keys
+      baseGameTypes: [
         {
           icon: lotteryIcon,
-          title: 'Lottery',
-          subtitle: '(4D, Lucky, Magnum & More)'
+          translationKey: 'lottery'
         },
         {
           icon: sportsIcon,
-          title: 'Sports',
-          subtitle: '(Global Events, Real-Time Odds)'
+          translationKey: 'sports'
         },
         {
           icon: slotsIcon,
-          title: 'Slots',
-          subtitle: '(Malaysia Gaming, Asia Number Ring 3)'
+          translationKey: 'slots'
         },
         {
           icon: horseRacingIcon,
-          title: 'Horse Racing',
-          subtitle: '(Full Speed Online Racing)'
+          translationKey: 'horse_racing'
         },
         {
           icon: liveCasinoIcon,
-          title: 'Live Casino',
-          subtitle: '(Real Dealers & Realistic Game Dealing Cards)'
+          translationKey: 'live_casino'
         },
         {
           icon: cockfightingIcon,
-          title: 'Cockfighting',
-          subtitle: '(Live Action, Real Betting)'
+          translationKey: 'cockfighting'
         },
       ],
       
@@ -129,6 +123,15 @@ export default {
           spaceBetween: 20
         }
       }
+    }
+  },
+  computed: {
+    gameTypes() {
+      return this.baseGameTypes.map(game => ({
+        ...game,
+        title: this.$t(`supported_games.games.${game.translationKey}.title`),
+        subtitle: this.$t(`supported_games.games.${game.translationKey}.subtitle`)
+      }))
     }
   }
 }

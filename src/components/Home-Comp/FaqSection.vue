@@ -2,10 +2,13 @@
   <div class="section-container">
     <!-- FAQ Header Section -->
     <div class="header-section">
-      <h3 class="header-label">{{ headerContent.label }}</h3>
-      <h2 class="main-title">{{ headerContent.title }}</h2>
-      <p class="header-description">{{ headerContent.description }}</p>
-      <button class="cta-button">{{ headerContent.buttonText }}</button>
+      <h3 class="header-label">{{ $t('faqSec.header.label') }}</h3>
+      <h2 class="main-title">{{ $t('faqSec.header.title') }}</h2>
+      <p class="header-description">{{ $t('faqSec.header.description') }}</p>
+      <button class="cta-button" @click="goToFaqPage">
+        {{ $t('faqSec.header.button_text') }}
+      </button>
+
     </div>
 
     <div class="content-wrapper">
@@ -31,13 +34,13 @@
                 <img 
                   v-if="openItems[index]" 
                   :src="closeIcon"
-                  alt="Close"
+                  :alt="$t('faqSec.alt_text.close')"
                   class="trigger-icon-image"
                 />
                 <img 
                   v-else 
                   :src="openIcon"
-                  alt="Open"
+                  :alt="$t('faqSec.alt_text.open')"
                   class="trigger-icon-image"
                 />
               </div>
@@ -62,6 +65,7 @@
 <script>
 import openIcon from '@/assets/open-icon.svg'
 import closeIcon from '@/assets/close-icon.svg'
+import { localePath } from '@/router'
 
 export default {
   name: 'FAQ',
@@ -70,52 +74,131 @@ export default {
       openItems: { 0: true }, // First item open by default
       openIcon,
       closeIcon,
-      headerContent: {
-        label: "FAQ",
-        title: "Heng Ong Bet - All You Need To Know",
-        description: "Got questions? We've compiled the most common queries from our players to help you get started smoothly on HengOngBet",
-        buttonText: "View All FAQs"
-      },
-      faqData: [
-        {
-          question: "How Do I Register on Heng Ong Bet ?",
-          answer: "Simply click the 'Register' button, fill in your details, and verify your phone number to get started"
-        },
-        {
-          question: "Is Heng Ong Bet Legal and Safe to Use ?",
-          answer: "Yes, Heng Ong Bet operates under proper licensing and uses advanced security measures to protect your data and transactions. We are fully compliant with all applicable regulations."
-        },
-        {
-          question: "How can I Deposit or Withdraw money ?",
-          answer: "You can deposit and withdraw money through various secure payment methods including bank transfers, e-wallets, and cryptocurrency. All transactions are processed quickly and securely."
-        },
-        {
-          question: "What games are available on Heng Ong Bet ?",
-          answer: "We offer a wide variety of games including live casino games, slot machines, sports betting, lottery games, and more. Our platform features games from top providers in the industry."
-        },
-        {
-          question: "Are there any Welcome Bonuses or Promotions ?",
-          answer: "Yes! We offer generous welcome bonuses for new players, as well as ongoing promotions, loyalty rewards, and special bonuses. Check our promotions page for the latest offers."
-        },
-        {
-          question: "What should I do if I forget my login details ?",
-          answer: "If you forget your login details, simply click on the 'Forgot Password' link on the login page. You can reset your password using your registered email or phone number."
-        },
-        {
-          question: "Is there a mobile app for Heng Ong Bet",
-          answer: "Yes, we have a mobile app available for both iOS and Android devices. You can download it from the App Store or Google Play Store, or access our mobile-optimized website directly from your browser."
-        }
-      ]
+      faqData: []
+    }
+  },
+  created() {
+    console.log('FAQ Component created');
+    console.log('$i18n available:', !!this.$i18n);
+    console.log('Current locale:', this.$i18n?.locale);
+    
+    // Load FAQ data using translation keys
+    this.loadFaqData();
+  },
+  mounted() {
+    console.log('FAQ Component mounted');
+    console.log('FAQ data:', this.faqData);
+    
+    // If faqData is empty, try loading again
+    if (this.faqData.length === 0) {
+      this.$nextTick(() => {
+        this.loadFaqData();
+      });
     }
   },
   methods: {
+    loadFaqData() {
+      console.log('Loading FAQ data...');
+      
+      // Test if translations work
+      const testLabel = this.$t('faqSec.header.label');
+      const testQuestion = this.$t('faqSec.questions.q1.question');
+      
+      console.log('Test label:', testLabel);
+      console.log('Test question:', testQuestion);
+      
+      // Check if translations are working
+      if (testQuestion && testQuestion !== 'faqSec.questions.q1.question') {
+        // Translations are working, load data using faqSec keys
+        this.faqData = [
+          {
+            question: this.$t('faqSec.questions.q1.question'),
+            answer: this.$t('faqSec.questions.q1.answer')
+          },
+          {
+            question: this.$t('faqSec.questions.q2.question'),
+            answer: this.$t('faqSec.questions.q2.answer')
+          },
+          {
+            question: this.$t('faqSec.questions.q3.question'),
+            answer: this.$t('faqSec.questions.q3.answer')
+          },
+          {
+            question: this.$t('faqSec.questions.q4.question'),
+            answer: this.$t('faqSec.questions.q4.answer')
+          },
+          {
+            question: this.$t('faqSec.questions.q5.question'),
+            answer: this.$t('faqSec.questions.q5.answer')
+          },
+          {
+            question: this.$t('faqSec.questions.q6.question'),
+            answer: this.$t('faqSec.questions.q6.answer')
+          },
+          {
+            question: this.$t('faqSec.questions.q7.question'),
+            answer: this.$t('faqSec.questions.q7.answer')
+          }
+        ];
+        
+        console.log('FAQ data loaded successfully:', this.faqData);
+      } else {
+        console.error('Translations not working. Using fallback data.');
+        
+        // Fallback data for testing
+        this.faqData = [
+          {
+            question: "How Do I Register on Heng Ong Bet?",
+            answer: "Simply click the 'Register' button, fill in your details, and verify your phone number to get started"
+          },
+          {
+            question: "Is Heng Ong Bet Legal and Safe to Use?",
+            answer: "Yes, Heng Ong Bet operates under proper licensing and uses advanced security measures to protect your data and transactions."
+          },
+          {
+            question: "How can I Deposit or Withdraw money?",
+            answer: "You can deposit and withdraw money through various secure payment methods including bank transfers, e-wallets, and cryptocurrency."
+          },
+          {
+            question: "What games are available on Heng Ong Bet?",
+            answer: "We offer a wide variety of games including live casino games, slot machines, sports betting, lottery games, and more."
+          },
+          {
+            question: "Are there any Welcome Bonuses or Promotions?",
+            answer: "Yes! We offer generous welcome bonuses for new players, as well as ongoing promotions, loyalty rewards, and special bonuses."
+          },
+          {
+            question: "What should I do if I forget my login details?",
+            answer: "If you forget your login details, simply click on the 'Forgot Password' link on the login page."
+          },
+          {
+            question: "Is there a mobile app for Heng Ong Bet?",
+            answer: "Yes, we have a mobile app available for both iOS and Android devices."
+          }
+        ];
+      }
+    },
+    
     toggleItem(index) {
       this.openItems = {
         ...this.openItems,
         [index]: !this.openItems[index]
       };
-    }
+    },
+
+    goToFaqPage() {
+    const currentLocale = this.$route.meta?.locale || 'en';
+    const path = localePath('/faqs', currentLocale);
+    this.$router.push(path);
   }
+  },
+  
+  watch: {
+    '$i18n.locale'() {
+      console.log('Locale changed to:', this.$i18n.locale);
+      this.loadFaqData();
+    }
+  },
 }
 </script>
 

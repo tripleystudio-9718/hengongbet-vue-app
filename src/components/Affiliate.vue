@@ -2,21 +2,21 @@
   <div class="affiliate-section">
     <!-- Hero Banner -->
     <section class="affiliate-hero-banner">
-      <img :src="affiliateBanner" alt="Gaming Banner" class="affiliate-banner-image" />
+      <img :src="affiliateBanner" :alt="$t('affiliate.alt_text.gaming_banner')" class="affiliate-banner-image" />
     </section>
     
     <div class="affiliate-container">
       <!-- Main Title Section -->
       <h1 class="main-title">
-        {{ content.brandSection.title1 }} 
-        <span style="color: #F2B240;">{{ content.brandSection.hengOngBet }}</span> 
-        {{ content.brandSection.title2 }}
+        {{ $t('affiliate.brand_section.title1') }} 
+        <span style="color: #F2B240;">{{ $t('affiliate.brand_section.brand') }}</span> 
+        {{ $t('affiliate.brand_section.title2') }}
       </h1>
-      <p class="description-text">{{ content.brandSection.tagline }}</p>
+      <p class="description-text">{{ $t('affiliate.brand_section.tagline') }}</p>
       
       <!-- Join Button -->
       <div class="join-button-container">
-        <button class="join-button">Join Us</button>
+        <button class="join-button" @click="goToRegisterPage">{{ $t('affiliate.join_button') }}</button>
       </div>
       
       <!-- Join Steps -->
@@ -25,8 +25,8 @@
           <div class="steps-des">
             <img :src="num1Icon" class="num-image" />
             <div class="steps-t">
-              <p class="steps-p">Step 1</p>
-              <h2 class="steps-h2">Register</h2>
+              <p class="steps-p">{{ $t('affiliate.steps.step') }} {{ $t('affiliate.steps.step1.number') }}</p>
+              <h2 class="steps-h2">{{ $t('affiliate.steps.step1.title') }}</h2>
             </div>
           </div>
         </div>
@@ -34,8 +34,8 @@
           <div class="steps-des">
             <img :src="num2Icon" class="num-image" />
             <div class="steps-t">
-              <p class="steps-p">Step 2</p>
-              <h2 class="steps-h2">Promote</h2>
+              <p class="steps-p">{{ $t('affiliate.steps.step') }} {{ $t('affiliate.steps.step2.number') }}</p>
+              <h2 class="steps-h2">{{ $t('affiliate.steps.step2.title') }}</h2>
             </div>
           </div>
         </div>
@@ -43,8 +43,8 @@
           <div class="steps-des">
             <img :src="num3Icon" class="num-image" />
             <div class="steps-t">
-              <p class="steps-p">Step 3</p>
-              <h2 class="steps-h2">Earn</h2>
+              <p class="steps-p">{{ $t('affiliate.steps.step') }} {{ $t('affiliate.steps.step3.number') }}</p>
+              <h2 class="steps-h2">{{ $t('affiliate.steps.step3.title') }}</h2>
             </div>
           </div>
         </div>
@@ -55,8 +55,8 @@
       
       <!-- Commission Section -->
       <div class="commission-section">
-        <h2 class="section-title">Dual Commission Models</h2>
-        <p class="section-description">Switch anytime. Total control over how you earn.</p>
+        <h2 class="section-title">{{ $t('affiliate.commission_section.title') }}</h2>
+        <p class="section-description">{{ $t('affiliate.commission_section.description') }}</p>
         <div class="commission-cards">
           <div class="commission-card" v-for="(model, index) in commissionModels" :key="index">
             <div class="commission-icon">
@@ -70,15 +70,15 @@
       
       <!-- Levels Section -->
       <div class="levels-section">
-        <h2 class="section-title">User Levels & Rebate System</h2>
+        <h2 class="section-title">{{ $t('affiliate.levels_section.title') }}</h2>
         
         <!-- Table (responsive for all devices) -->
         <div class="levels-table-container">
           <div class="levels-table">
             <div class="table-header">
-              <div class="table-cell">User Level</div>
-              <div class="table-cell">Benefits</div>
-              <div class="table-cell">Rebate</div>
+              <div class="table-cell">{{ $t('affiliate.levels_section.table.headers.user_level') }}</div>
+              <div class="table-cell">{{ $t('affiliate.levels_section.table.headers.benefits') }}</div>
+              <div class="table-cell">{{ $t('affiliate.levels_section.table.headers.rebate') }}</div>
             </div>
             <div class="table-row" v-for="(level, index) in userLevels" :key="index">
               <div class="table-cell">{{ level.name }}</div>
@@ -94,12 +94,12 @@
 
       <!-- Final CTA Section -->
       <div class="cta-section">
-        <h2 class="cta-title">Final Call To Action</h2>
-        <p class="cta-subtitle">Join the <span style="color: #F2B240;">Heng Ong Bet</span> Agent Network and take control of your financial future!</p>
-        <p class="cta-description">Start Earning Today. Your Profits, Your Control.</p>
+        <h2 class="cta-title">{{ $t('affiliate.cta_section.title') }}</h2>
+        <p class="cta-subtitle" v-html="$t('affiliate.cta_section.subtitle')"></p>
+        <p class="cta-description">{{ $t('affiliate.cta_section.description') }}</p>
         <div class="cta-buttons">
-          <button class="cta-button primary">Register</button>
-          <button class="cta-button secondary">Customer Support</button>
+          <button class="cta-button primary" @click="goToRegisterPage">{{ $t('affiliate.cta_section.buttons.register') }}</button>
+          <button class="cta-button secondary" @click="goToRegisterPage">{{ $t('affiliate.cta_section.buttons.support') }}</button>
         </div>
       </div>
     </div>
@@ -131,72 +131,85 @@ export default {
       num2Icon,
       num3Icon,
       dual1Icon,
-      dual2Icon,
-      content: {
-        brandSection: {
-          title1: "Join as a",
-          hengOngBet: "Heng Ong Bet",
-          title2: "Agent, Shareholder, or Member",
-          tagline: "No Win-Loss Worries · Flexible Commissions · Auto Profit Distribution",
-        }
-      },
-      features: [
+      dual2Icon
+    }
+  },
+  computed: {
+    features() {
+      return [
         {
           icon: '@/assets/icons/feature1.png',
-          title: 'High Commission',
-          description: 'Up to 50% revenue share'
+          title: this.$t('affiliate.features.high_commission.title'),
+          description: this.$t('affiliate.features.high_commission.description')
         },
         {
           icon: '@/assets/icons/feature2.png',
-          title: 'Real-time Tracking',
-          description: 'Monitor your earnings live'
+          title: this.$t('affiliate.features.real_time_tracking.title'),
+          description: this.$t('affiliate.features.real_time_tracking.description')
         },
         {
           icon: '@/assets/icons/feature3.png',
-          title: 'Weekly Payouts',
-          description: 'Fast and reliable payments'
+          title: this.$t('affiliate.features.weekly_payouts.title'),
+          description: this.$t('affiliate.features.weekly_payouts.description')
         },
         {
           icon: '@/assets/icons/feature4.png',
-          title: 'Dedicated Support',
-          description: '24/7 affiliate assistance'
+          title: this.$t('affiliate.features.dedicated_support.title'),
+          description: this.$t('affiliate.features.dedicated_support.description')
         },
         {
           icon: '@/assets/icons/feature5.png',
-          title: 'Marketing Tools',
-          description: 'Professional banners & links'
+          title: this.$t('affiliate.features.marketing_tools.title'),
+          description: this.$t('affiliate.features.marketing_tools.description')
         }
-      ],
-      commissionModels: [
+      ]
+    },
+    commissionModels() {
+      return [
         {
-          icon: dual1Icon,
-          title: 'Revenue Share',
-          description: 'Earn percentage of player losses'
+          icon: this.dual1Icon,
+          title: this.$t('affiliate.commission_section.models.revenue_share.title'),
+          description: this.$t('affiliate.commission_section.models.revenue_share.description')
         },
         {
-          icon: dual2Icon,
-          title: 'CPA Model',
-          description: 'Fixed amount per qualified player'
+          icon: this.dual2Icon,
+          title: this.$t('affiliate.commission_section.models.cpa_model.title'),
+          description: this.$t('affiliate.commission_section.models.cpa_model.description')
         }
-      ],
-      userLevels: [
+      ]
+    },
+    userLevels() {
+      return [
         {
-          name: 'Shareholder',
-          benefits: 'Based on players\' total betting volume + win/loss (Fight + Pool)',
-          rebate: '-----'
+          name: this.$t('affiliate.levels_section.table.levels.shareholder.name'),
+          benefits: this.$t('affiliate.levels_section.table.levels.shareholder.benefits'),
+          rebate: this.$t('affiliate.levels_section.table.levels.shareholder.rebate')
         },
         {
-          name: 'Referrer',
-          benefits: '0.3% on player bets',
-          rebate: '0.5% on own bets'
+          name: this.$t('affiliate.levels_section.table.levels.referrer.name'),
+          benefits: this.$t('affiliate.levels_section.table.levels.referrer.benefits'),
+          rebate: this.$t('affiliate.levels_section.table.levels.referrer.rebate')
         },
         {
-          name: 'Player',
-          benefits: '-----',
-          rebate: '0.5% on every bet placed'
+          name: this.$t('affiliate.levels_section.table.levels.player.name'),
+          benefits: this.$t('affiliate.levels_section.table.levels.player.benefits'),
+          rebate: this.$t('affiliate.levels_section.table.levels.player.rebate')
         }
       ]
     }
+  },
+  methods: {
+    goToRegisterPage() {
+      const locale = this.$i18n?.locale || 'en';
+
+      let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
+      if (locale === 'zh') {
+        targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
+      }
+
+      // Redirect to external URL
+      window.location.href = targetUrl;
+}
   }
 }
 </script>
