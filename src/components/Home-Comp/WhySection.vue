@@ -454,7 +454,7 @@ export default {
 /* Responsive Design */
 @media (max-width: 768px) {
   .why-header-section {
-    padding: 0 20px 30px 20px;
+    padding: 20px 20px 30px 20px;
   }
   
   .why-header-title {

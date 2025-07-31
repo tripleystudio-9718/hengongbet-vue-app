@@ -47,12 +47,12 @@
           <img :src="becomeImg" alt="HengOngBet Logo" class="responsive-image" />
         </div>
         <div class="column-text">
-          <h2 class="main-title">
+          <h2 class="main-title affiliate-main-title">
             {{ currentContent.affiliateSection.becomeText }} <span class="accent-color">{{ currentContent.affiliateSection.brand }}</span> {{ currentContent.affiliateSection.affiliateToday }}
           </h2>
-          <p class="subtitle-text-affiliate">{{ currentContent.affiliateSection.description }}</p>
+          <p class="subtitle-text-affiliate affiliate-description">{{ currentContent.affiliateSection.description }}</p>
                     
-          <ul class="feature-list-1" style="flex-direction: column;">
+          <ul class="feature-list-1 affiliate-features-list">
             <li v-for="(benefit, index) in currentContent.affiliateSection.benefits" :key="index">
               • {{ benefit }}
             </li>
@@ -394,6 +394,19 @@ export default {
   color: white;
 }
 
+/* Affiliate Section Specific Styles */
+.affiliate-main-title {
+  /* Specific styling for affiliate title */
+}
+
+.affiliate-description {
+  /* Specific styling for affiliate description */
+}
+
+.affiliate-features-list {
+  /* Specific styling for affiliate features list */
+}
+
 /* Mobile First Responsive Design */
 @media (max-width: 768px) {
   .home-container {
@@ -436,6 +449,24 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  /* Affiliate Mobile Specific Fixes */
+  .affiliate-main-title {
+    margin: 16px 0 !important; /* Add gap between title and description */
+  }
+
+  .affiliate-description {
+    margin: 16px 0 !important; /* Add gap between description and features */
+  }
+
+  .affiliate-features-list {
+    margin: 16px 0 !important; /* Reduce gap in features list */
+  }
+
+  .affiliate-features-list li {
+    margin-bottom: 8px !important; /* Reduce gap between feature items */
+    line-height: 1.4 !important; /* Tighter line height for better spacing */
   }
 
   .text-content {
@@ -493,6 +524,29 @@ export default {
     text-align: center;
   }
 
+  /* Enhanced Affiliate Mobile Fixes for Small Screens */
+  .affiliate-main-title {
+    margin: 12px 0 !important; /* Smaller gap for very small screens */
+    font-size: clamp(1.8rem, 4vw, 1.8rem) !important;
+  }
+
+  .affiliate-description {
+    margin: 12px 0 !important;
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+  }
+
+  .affiliate-features-list {
+    margin: 12px 0 !important;
+  }
+
+  .affiliate-features-list li {
+    margin-bottom: 6px !important; /* Even smaller gaps between items */
+    font-size: 10px !important;
+    line-height: 1.3 !important;
+    padding: 2px 0 !important; /* Minimal padding */
+  }
+
   .text-content {
     padding: 0 5px;
     text-align: center;
@@ -515,6 +569,13 @@ export default {
     padding: 0 5px;
     text-align: center;
     font-size: 10px;
+  }
+
+  /* Override for affiliate features specifically */
+  .affiliate-features-list {
+    display: flex !important;
+    flex-direction: column !important; /* Keep vertical for affiliate features */
+    align-items: center !important;
   }
 
   * {
@@ -542,6 +603,27 @@ export default {
     padding: 20px 0;
     gap: 16px;
     text-align: center;
+  }
+
+  /* Ultra-compact affiliate spacing for very small screens */
+  .affiliate-main-title {
+    margin: 10px 0 !important;
+    font-size: clamp(1.1rem, 4vw, 1.6rem) !important;
+  }
+
+  .affiliate-description {
+    margin: 10px 0 !important;
+    font-size: 10px !important;
+  }
+
+  .affiliate-features-list {
+    margin: 10px 0 !important;
+  }
+
+  .affiliate-features-list li {
+    margin-bottom: 4px !important;
+    font-size: 9px !important;
+    line-height: 1.2 !important;
   }
 
   .main-title,
@@ -573,6 +655,12 @@ export default {
     padding: 8px 4px;
     margin-bottom: 1rem;
     text-align: center;
+  }
+  
+  /* Touch device specific affiliate adjustments */
+  .affiliate-features-list li {
+    padding: 4px 2px !important;
+    margin-bottom: 6px !important;
   }
 }
 </style>

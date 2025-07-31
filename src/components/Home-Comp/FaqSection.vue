@@ -420,6 +420,7 @@ export default {
   
   .content-text {
     font-size: 0.9rem;
+    text-align: left;
   }
   
   .cta-button {

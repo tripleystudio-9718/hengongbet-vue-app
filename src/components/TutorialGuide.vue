@@ -330,6 +330,39 @@ export default {
   margin: 0 -2px;
 }
 
+
+@media (min-width: 1441px) and (max-width: 1680px) {
+  .affiliate-section {
+    width: 65%;
+  }
+
+  .section-divider {
+    width: 65%;
+  }
+}
+
+@media (max-width: 1440px) {
+  .step-icon-wrapper {
+    width: 235px;
+  }
+
+  .tutorial-bg-icon {
+    width: 230px;
+  }
+
+  .step-text-overlay {
+    left: 75px;
+  }
+
+  .step-number{
+    left: 13px;
+  }
+
+  .step-text-overlay p{
+    font-size: 12px;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .steps-container {

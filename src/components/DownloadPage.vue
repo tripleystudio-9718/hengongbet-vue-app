@@ -307,10 +307,11 @@ export default {
       const locale = this.$i18n?.locale || 'en';
 
       let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
-      if (locale === 'zh') {
-        targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
-      }
-
+  if (locale === 'zh') {
+    targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
+  } else if (locale === 'ms') {
+    targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
+  }
       // Redirect to external URL
       window.location.href = targetUrl;
 }
@@ -501,6 +502,26 @@ export default {
   height: auto;
   object-fit: contain;
   display: none; /* Hidden on desktop */
+}
+
+@media (min-width: 1441px) and (max-width: 1680px) {
+  .affiliate-section {
+    width: 65%;
+  }
+
+  .section-divider {
+    width: 65%;
+  }
+}
+
+@media (max-width: 1440px) {
+  .affiliate-section {
+    width: 75%;
+  }
+
+  .section-divider {
+    width: 75%;
+  }
 }
 
 /* Mobile: Show center phone image */

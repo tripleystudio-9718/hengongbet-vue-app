@@ -68,27 +68,44 @@
         :space-between="swiperSpaceBetween"
         :loop="true"
         :autoplay="{
-          delay: 2500,
+          delay: 3000,
           disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+          reverseDirection: false,
+          waitForTransition: true,
+          stopOnLastSlide: false
         }"
-        :speed="500"
+        :speed="800"
         :grab-cursor="true"
         :allow-touch-move="true"
         :centeredSlides="false"
         :slides-per-group="1"
-        :threshold="20"
-        :longSwipesRatio="0.2"
-        :longSwipesMs="200"
+        :threshold="10"
+        :longSwipesRatio="0.15"
+        :longSwipesMs="300"
         :followFinger="true"
-        :touchRatio="1"
+        :touchRatio="1.2"
         :watchSlidesProgress="true"
         :simulateTouch="true"
         :touchStartPreventDefault="false"
         :slideToClickedSlide="false"
+        :resistance="true"
+        :resistanceRatio="0.2"
+        :roundLengths="true"
+        :freeMode="{
+          enabled: false,
+          momentum: true,
+          momentumRatio: 0.8,
+          momentumBounce: false,
+          minimumVelocity: 0.02,
+          sticky: false
+        }"
         :breakpoints="swiperBreakpoints"
         class="promotion-swiper"
         @swiper="onSwiper"
         @slideChange="onSlideChange"
+        @transitionStart="onTransitionStart"
+        @transitionEnd="onTransitionEnd"
       >
         <SwiperSlide
           v-for="(promo, index) in promotions"
@@ -190,6 +207,15 @@ export default {
       return 20
     }
   },
+  mounted() {
+    // Add performance optimizations
+    this.$nextTick(() => {
+      if (this.swiperInstance) {
+        // Ensure smooth performance
+        this.swiperInstance.update();
+      }
+    });
+  },
   methods: {
     toggleNoticePopup() {
       this.showNoticePopup = !this.showNoticePopup
@@ -200,10 +226,26 @@ export default {
       }
     },
     onSwiper(swiper) {
-      this.swiperInstance = swiper
+      this.swiperInstance = swiper;
+      
+      // Enhanced performance settings
+      swiper.params.touchEventsTarget = 'container';
+      swiper.params.updateOnWindowResize = true;
+      swiper.params.observer = true;
+      swiper.params.observeParents = true;
+      swiper.params.observeSlideChildren = true;
     },
     onSlideChange(swiper) {
+      // Optional: Add smooth transition effects here
       console.log('Slide changed to:', swiper.activeIndex)
+    },
+    onTransitionStart(swiper) {
+      // Add smooth start animation
+      swiper.el.style.willChange = 'transform';
+    },
+    onTransitionEnd(swiper) {
+      // Clean up after transition
+      swiper.el.style.willChange = 'auto';
     },
     navigateToPromotion() {
       try {
@@ -500,7 +542,7 @@ export default {
   }
 }
 
-/* Promotion Swiper */
+/* Enhanced Promotion Swiper */
 .promotion-swiper-container {
   position: relative;
   padding: 20px;
@@ -512,25 +554,36 @@ export default {
   width: 100%;
   padding: 0;
   overflow: visible;
+  /* Enhanced performance */
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
 }
 
 .swiper-slide {
   flex-shrink: 0;
   width: auto;
+  /* Smooth transitions */
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: transform;
 }
 
 .promo-card {
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
   height: 100px;
   box-sizing: border-box;
   width: 100%;
+  /* Enhanced smoothness */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .promo-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) translateZ(0);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .promo-image {
@@ -545,6 +598,9 @@ export default {
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
+  /* Performance optimization */
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .sound-icon-image {
@@ -559,7 +615,7 @@ export default {
   }
   
   .notice-content {
-    padding: 10px 0;
+    padding: 0;
   }
   
   .marquee-text {
@@ -627,9 +683,11 @@ export default {
   }
 }
 
-/* Perfect Swiper Styles */
+/* Perfect Swiper Styles with Enhanced Smoothness */
 .promotion-swiper .swiper-wrapper {
   align-items: stretch;
+  /* Enhanced transitions */
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .promotion-swiper.swiper-grab {
@@ -640,13 +698,27 @@ export default {
   cursor: grabbing;
 }
 
-/* Ensure smooth infinite loop */
+/* Ensure ultra-smooth infinite loop */
 .promotion-swiper .swiper-slide {
   opacity: 1 !important;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .promotion-swiper .swiper-slide-duplicate {
   opacity: 1 !important;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Enhanced smooth transitions */
+.promotion-swiper .swiper-slide-active {
+  z-index: 2;
+}
+
+.promotion-swiper .swiper-slide-next,
+.promotion-swiper .swiper-slide-prev {
+  z-index: 1;
 }
 
 /* Touch-friendly improvements for mobile */
@@ -656,7 +728,8 @@ export default {
   }
   
   .promo-card:active {
-    transform: scale(0.98);
+    transform: scale(0.98) translateZ(0);
+    transition-duration: 0.1s;
   }
   
   .dropdown-arrow {
@@ -683,5 +756,23 @@ export default {
 
 .popup-body::-webkit-scrollbar-thumb:hover {
   background: #f59e0b;
+}
+
+/* Performance optimization for all devices */
+@media (prefers-reduced-motion: no-preference) {
+  .promotion-swiper,
+  .swiper-slide,
+  .promo-card {
+    will-change: transform;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promotion-swiper,
+  .swiper-slide,
+  .promo-card {
+    will-change: auto;
+    transition-duration: 0.1s;
+  }
 }
 </style>

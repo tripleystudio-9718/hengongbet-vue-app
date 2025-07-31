@@ -205,11 +205,13 @@ export default {
       let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
       if (locale === 'zh') {
         targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
+      } else if (locale === 'ms') {
+        targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
       }
 
-      // Redirect to external URL
+      console.log('Redirecting to affiliate registration:', targetUrl);
       window.location.href = targetUrl;
-}
+    }
   }
 }
 </script>

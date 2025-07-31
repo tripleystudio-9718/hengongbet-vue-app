@@ -287,7 +287,7 @@ export default {
 
 .search-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   margin-bottom: 20px;
   width: 100%;
@@ -518,36 +518,39 @@ export default {
   }
   
   .search-container {
-    flex-direction: column;
-    gap: 10px;
-    padding: 12px;
+    padding: 8px;
+    width: 96%;
   }
   
   .search-box {
-    width: 100%;
-    margin-right: 0;
-    justify-content: center;
+    margin-right: 8px;
   }
   
   .search-input {
-    width: 100%;
-    max-width: 100%;
-    min-width: 120px;
-    padding: 14px 20px 14px 48px;
-    font-size: 16px;
+    padding: 12px 18px 12px 44px;
+    font-size: 15px;
+    min-width: 100px;
+    max-width: 140px;
   }
   
   .search-input:lang(zh),
   .search-input:lang(zh-CN),
   .search-input:lang(zh-TW) {
-    font-size: 15px;
-    padding: 14px 24px 14px 48px;
+    font-size: 14px;
+    padding: 12px 20px 12px 44px;
+    min-width: 85px;
+    max-width: 120px;
   }
   
   .search-container-input {
-    width: 100%;
-    padding: 14px 15px;
-    font-size: 16px;
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+  
+  .search-icon {
+    left: 14px;
+    width: 15px;
+    height: 15px;
   }
   
   .question-text {
@@ -572,31 +575,47 @@ export default {
     font-size: 16px;
   }
   
+  .search-container {
+    padding: 6px;
+  }
+  
+  .search-box {
+    margin-right: 6px;
+  }
+  
   .search-input {
-    font-size: 15px;
-    padding: 12px 18px 12px 44px;
+    font-size: 14px;
+    padding: 10px 16px 10px 40px;
+    min-width: 85px;
+    max-width: 120px;
   }
   
   .search-input:lang(zh),
   .search-input:lang(zh-CN),
   .search-input:lang(zh-TW) {
-    font-size: 14px;
-    padding: 12px 20px 12px 44px;
+    font-size: 13px;
+    padding: 10px 18px 10px 40px;
+    min-width: 75px;
+    max-width: 100px;
   }
   
   .search-container-input {
     font-size: 14px;
-    padding: 12px 15px;
+    padding: 10px 12px;
   }
   
   .search-icon {
-    left: 14px;
+    left: 12px;
     width: 14px;
     height: 14px;
   }
   
   .question-text {
     font-size: 15px;
+  }
+
+  .faq-answer {
+    padding: 10px 10px;
   }
   
   .faq-answer p {
@@ -605,14 +624,32 @@ export default {
 }
 
 /* Additional language-specific optimizations */
-@media (max-width: 768px) {
-  /* Stack search elements vertically on mobile for better UX */
-  .search-container {
-    align-items: stretch;
+@media (max-width: 320px) {
+  .search-input {
+    font-size: 13px;
+    padding: 8px 14px 8px 36px;
+    min-width: 70px;
+    max-width: 90px;
   }
   
-  .search-box {
-    margin-bottom: 8px;
+  .search-input:lang(zh),
+  .search-input:lang(zh-CN),
+  .search-input:lang(zh-TW) {
+    font-size: 12px;
+    padding: 8px 16px 8px 36px;
+    min-width: 65px;
+    max-width: 80px;
+  }
+  
+  .search-container-input {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+  
+  .search-icon {
+    left: 10px;
+    width: 12px;
+    height: 12px;
   }
 }
 

@@ -231,24 +231,28 @@ export default {
     },
     // Mobile auth button methods
     goToLogin() {
-      try {
-        const currentLocale = this.$route.meta?.locale || 'en';
-        const loginPath = localePath('/login', currentLocale);
-        this.$router.push(loginPath);
-      } catch (error) {
-        console.error('Login navigation error:', error);
-        this.$router.push('/login');
-      }
+      const locale = this.$i18n?.locale || 'en';
+
+  let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
+  if (locale === 'zh') {
+    targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
+  } else if (locale === 'ms') {
+    targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
+  }
+
+  window.location.href = targetUrl;
     },
     goToRegister() {
-      try {
-        const currentLocale = this.$route.meta?.locale || 'en';
-        const registerPath = localePath('/register', currentLocale);
-        this.$router.push(registerPath);
-      } catch (error) {
-        console.error('Register navigation error:', error);
-        this.$router.push('/register');
-      }
+      const locale = this.$i18n?.locale || 'en';
+
+  let targetUrl = 'https://hengongbet.com/en-my';
+  if (locale === 'zh') {
+    targetUrl = 'https://hengongbet.com/zh-my';
+  }else if (locale === 'ms') {
+    targetUrl = 'https://hengongbet.com/ms-my';
+  }
+
+  window.location.href = targetUrl;
     }
   },
   beforeUnmount() {

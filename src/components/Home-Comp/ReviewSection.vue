@@ -145,6 +145,7 @@ export default {
       avatar1,
       avatar2,
       avatar3,
+      duplicateCount: 50, // Much larger number for true infinite scrolling
       
       // Drag state
       isDragging: false,
@@ -184,10 +185,21 @@ export default {
   },
   computed: {
     displayTestimonials() {
-      return [...this.testimonials, ...this.testimonials, ...this.testimonials];
+      // Create multiple duplicates for better infinite scrolling
+      const duplicates = [];
+      for (let i = 0; i < this.duplicateCount; i++) {
+        duplicates.push(...this.testimonials.map((testimonial, index) => ({
+          ...testimonial,
+          uniqueId: `${testimonial.id}-${i}-${index}` // Unique identifier for each duplicate
+        })));
+      }
+      return duplicates;
     },
     totalSlides() {
       return this.testimonials.length;
+    },
+    totalDuplicatedSlides() {
+      return this.displayTestimonials.length;
     },
     realIndex() {
       return ((this.currentSlide % this.totalSlides) + this.totalSlides) % this.totalSlides;
@@ -197,6 +209,10 @@ export default {
     },
     slideDistance() {
       return this.cardWidth + this.cardGap;
+    },
+    centerOffset() {
+      // Start from the middle set of duplicates
+      return Math.floor(this.duplicateCount / 2) * this.totalSlides;
     },
     sliderStyle() {
       const translateX = this.isDragging 
@@ -212,7 +228,8 @@ export default {
     }
   },
   mounted() {
-    this.currentSlide = this.totalSlides;
+    // Start from the middle set of duplicates for seamless infinite scroll
+    this.currentSlide = this.centerOffset;
     this.setupEventListeners();
     this.startAutoPlay();
   },
@@ -286,8 +303,8 @@ export default {
       const deltaTime = Date.now() - this.dragStartTime;
       const velocity = Math.abs(deltaX) / deltaTime;
       
-      const distanceThreshold = this.slideDistance * 0.3;
-      const velocityThreshold = 0.5;
+      const distanceThreshold = this.slideDistance * 0.25; // Reduced threshold for easier swiping
+      const velocityThreshold = 0.3; // Reduced velocity threshold
       
       let shouldSlide = false;
       let direction = 0;
@@ -309,39 +326,33 @@ export default {
       
       setTimeout(() => {
         this.startAutoPlay();
-      }, 3000);
+      }, 2000); // Reduced delay before auto-play resumes
     },
     
     goToSlide(targetSlide) {
+      // For true circular behavior, just move to the target slide
       this.currentSlide = targetSlide;
-      
-      setTimeout(() => {
-        this.handleInfiniteLoop();
-      }, 100);
     },
     
     handleInfiniteLoop() {
-      let newPosition = this.currentSlide;
-      
-      if (this.currentSlide >= this.totalSlides * 2) {
-        newPosition = this.totalSlides;
-      } else if (this.currentSlide < this.totalSlides) {
-        newPosition = this.totalSlides;
-      }
-      
-      if (newPosition !== this.currentSlide) {
-        this.$nextTick(() => {
-          this.currentSlide = newPosition;
-        });
-      }
+      // Remove all repositioning logic - let it flow naturally
+      // The CSS transform will handle the positioning
     },
     
     nextSlide() {
+      this.stopAutoPlay();
       this.goToSlide(this.currentSlide + 1);
+      setTimeout(() => {
+        this.startAutoPlay();
+      }, 3000);
     },
     
     prevSlide() {
+      this.stopAutoPlay();
       this.goToSlide(this.currentSlide - 1);
+      setTimeout(() => {
+        this.startAutoPlay();
+      }, 3000);
     },
     
     startAutoPlay() {
@@ -349,9 +360,9 @@ export default {
       if (this.isAutoPlay && !this.isDragging) {
         this.autoPlayInterval = setInterval(() => {
           if (!this.isDragging) {
-            this.nextSlide();
+            this.currentSlide++; // Just increment, no bounds checking
           }
-        }, 5000);
+        }, 4000);
       }
     },
     

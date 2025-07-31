@@ -4,84 +4,84 @@
       <div class="footer-grid">
         <!-- About Section -->
         <div class="footer-column">
-          <h3 class="footer-title">About</h3>
+          <h3 class="footer-title">{{ $t('footer.about') }}</h3>
           <p class="footer-description">
-            Discover endless excitement at HENG ONG BET. We're dedicated to delivering quality games and a secure, engaging experience.
+            {{ $t('footer.description') }}
           </p>
           
           <div class="footer-badge desktop-only">
-            <h4 class="badge-title">Game License</h4>
+            <h4 class="badge-title">{{ $t('footer.game_license') }}</h4>
             <div class="badge-icon license-badge">
-              <img :src="gcbIcon" alt="GCB License" />
+              <img :src="gcbIcon" :alt="$t('footer.gcb_license_alt')" />
             </div>
           </div>
         </div>
         
         <!-- Games Section -->
         <div class="footer-column">
-          <h3 class="footer-title">Games</h3>
+          <h3 class="footer-title">{{ $t('footer.games') }}</h3>
           <ul class="footer-links">
-            <li><a href="#" @click.prevent="handleLinkClick">Slots</a></li>
-            <li><a href="#" @click.prevent="handleLinkClick">Sports</a></li>
-            <li><a href="#" @click.prevent="handleLinkClick">Lottery</a></li>
-            <li><a href="#" @click.prevent="handleLinkClick">Casino</a></li>
+            <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.slots') }}</a></li>
+            <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.sports') }}</a></li>
+            <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.lottery') }}</a></li>
+            <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.casino') }}</a></li>
           </ul>
           
           <div class="footer-badge desktop-only">
-            <h4 class="badge-title">Certification</h4>
+            <h4 class="badge-title">{{ $t('footer.certification') }}</h4>
             <div class="badge-icon certification-badge">
-              <img :src="itechIcon" alt="iTech Certification" />
+              <img :src="itechIcon" :alt="$t('footer.itech_certification_alt')" />
             </div>
           </div>
         </div>
         
         <!-- Info Section -->
         <div class="footer-column">
-          <h3 class="footer-title">Info</h3>
+          <h3 class="footer-title">{{ $t('footer.info') }}</h3>
           <ul class="footer-links">
-            <li><a href="#" @click.prevent="handleLinkClick">Promotions</a></li>
-            <li><a href="#" @click.prevent="handleLinkClick">About Us</a></li>
-            <li><a href="#" @click.prevent="handleLinkClick">Contact Us</a></li>
-            <li><a href="#" @click.prevent="handleLinkClick">Terms & Conditions</a></li>
+            <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.promotions') }}</a></li>
+            <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.about_us') }}</a></li>
+            <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.contact_us') }}</a></li>
+            <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.terms_conditions') }}</a></li>
           </ul>
           
           <div class="footer-badge desktop-only">
-            <h4 class="badge-title">Security</h4>
+            <h4 class="badge-title">{{ $t('footer.security') }}</h4>
             <div class="badge-icon security-badge">
-              <img :src="threatMetrixIcon" alt="ThreatMetrix Security" />
+              <img :src="threatMetrixIcon" :alt="$t('footer.threatmetrix_security_alt')" />
             </div>
           </div>
         </div>
         
         <!-- Payment Methods Section -->
         <div class="footer-column">
-          <h3 class="footer-title">Payment Methods</h3>
+          <h3 class="footer-title">{{ $t('footer.payment_methods') }}</h3>
           <div class="payment-methods">
             <div class="payment-icon">
-              <img :src="tngIcon" alt="Touch 'n Go" />
+              <img :src="tngIcon" :alt="$t('footer.touch_n_go_alt')" />
             </div>
             <div class="payment-icon">
-              <img :src="bankIcon" alt="Bank Transfer" />
+              <img :src="bankIcon" :alt="$t('footer.bank_transfer_alt')" />
             </div>
             <div class="payment-icon">
-              <img :src="duItNowIcon" alt="DuitNow" />
+              <img :src="duItNowIcon" :alt="$t('footer.duitnow_alt')" />
             </div>
             <div class="payment-icon">
-              <img :src="grabIcon" alt="Grab" />
+              <img :src="grabIcon" :alt="$t('footer.grab_alt')" />
             </div>
           </div>
           
           <div class="footer-badge desktop-only">
-            <h4 class="badge-title">Follow Us</h4>
+            <h4 class="badge-title">{{ $t('footer.follow_us') }}</h4>
             <div class="social-links">
               <a href="#" @click.prevent="handleSocialClick('facebook')" class="social-icon">
-                <img :src="fbIcon" alt="Facebook" />
+                <img :src="fbIcon" :alt="$t('footer.facebook_alt')" />
               </a>
               <a href="#" @click.prevent="handleSocialClick('instagram')" class="social-icon">
-                <img :src="instagramIcon" alt="Instagram" />
+                <img :src="instagramIcon" :alt="$t('footer.instagram_alt')" />
               </a>
               <a href="#" @click.prevent="handleSocialClick('whatsapp')" class="social-icon">
-                <img :src="whatsappIcon" alt="WhatsApp" />
+                <img :src="whatsappIcon" :alt="$t('footer.whatsapp_alt')" />
               </a>
             </div>
           </div>
@@ -92,31 +92,31 @@
       <div class="mobile-footer-layout">
         <!-- Row 1: About -->
         <div class="mobile-about-section">
-          <h3 class="footer-title">About</h3>
+          <h3 class="footer-title">{{ $t('footer.about') }}</h3>
           <p class="footer-description">
-            Discover endless excitement at HENG ONG BET. We're dedicated to delivering quality games and a secure, engaging experience.
+            {{ $t('footer.description') }}
           </p>
         </div>
         
         <!-- Row 2: Games and Info -->
         <div class="mobile-row">
           <div class="mobile-column">
-            <h3 class="footer-title">Games</h3>
+            <h3 class="footer-title">{{ $t('footer.games') }}</h3>
             <ul class="footer-links">
-              <li><a href="#" @click.prevent="handleLinkClick">Slots</a></li>
-              <li><a href="#" @click.prevent="handleLinkClick">Sports</a></li>
-              <li><a href="#" @click.prevent="handleLinkClick">Lottery</a></li>
-              <li><a href="#" @click.prevent="handleLinkClick">Casino</a></li>
+              <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.slots') }}</a></li>
+              <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.sports') }}</a></li>
+              <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.lottery') }}</a></li>
+              <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.casino') }}</a></li>
             </ul>
           </div>
           
           <div class="mobile-column">
-            <h3 class="footer-title">Info</h3>
+            <h3 class="footer-title">{{ $t('footer.info') }}</h3>
             <ul class="footer-links">
-              <li><a href="#" @click.prevent="handleLinkClick">Promotions</a></li>
-              <li><a href="#" @click.prevent="handleLinkClick">About Us</a></li>
-              <li><a href="#" @click.prevent="handleLinkClick">Contact Us</a></li>
-              <li><a href="#" @click.prevent="handleLinkClick">Terms & Conditions</a></li>
+              <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.promotions') }}</a></li>
+              <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.about_us') }}</a></li>
+              <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.contact_us') }}</a></li>
+              <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.terms_conditions') }}</a></li>
             </ul>
           </div>
         </div>
@@ -124,58 +124,58 @@
         <!-- Row 3: Game License, Security, Certification -->
         <div class="mobile-badges-row">
           <div class="mobile-badge-item">
-            <h4 class="badge-title">Game License</h4>
+            <h4 class="badge-title">{{ $t('footer.game_license') }}</h4>
             <div class="badge-icon license-badge">
-              <img :src="gcbIcon" alt="GCB License" />
+              <img :src="gcbIcon" :alt="$t('footer.gcb_license_alt')" />
             </div>
           </div>
           
           <div class="mobile-badge-item">
-            <h4 class="badge-title">Security</h4>
+            <h4 class="badge-title">{{ $t('footer.security') }}</h4>
             <div class="badge-icon security-badge">
-              <img :src="threatMetrixIcon" alt="ThreatMetrix Security" />
+              <img :src="threatMetrixIcon" :alt="$t('footer.threatmetrix_security_alt')" />
             </div>
           </div>
           
           <div class="mobile-badge-item">
-            <h4 class="badge-title">Certification</h4>
+            <h4 class="badge-title">{{ $t('footer.certification') }}</h4>
             <div class="badge-icon certification-badge">
-              <img :src="itechIcon" alt="iTech Certification" />
+              <img :src="itechIcon" :alt="$t('footer.itech_certification_alt')" />
             </div>
           </div>
         </div>
         
         <!-- Row 4: Payment Methods -->
         <div class="mobile-payment-section">
-          <h3 class="footer-title">Payment Methods</h3>
+          <h3 class="footer-title">{{ $t('footer.payment_methods') }}</h3>
           <div class="payment-methods">
             <div class="payment-icon">
-              <img :src="tngIcon" alt="Touch 'n Go" />
+              <img :src="tngIcon" :alt="$t('footer.touch_n_go_alt')" />
             </div>
             <div class="payment-icon">
-              <img :src="bankIcon" alt="Bank Transfer" />
+              <img :src="bankIcon" :alt="$t('footer.bank_transfer_alt')" />
             </div>
             <div class="payment-icon">
-              <img :src="duItNowIcon" alt="DuitNow" />
+              <img :src="duItNowIcon" :alt="$t('footer.duitnow_alt')" />
             </div>
             <div class="payment-icon">
-              <img :src="grabIcon" alt="Grab" />
+              <img :src="grabIcon" :alt="$t('footer.grab_alt')" />
             </div>
           </div>
         </div>
         
         <!-- Row 5: Social Links -->
         <div class="mobile-social-section">
-          <h3 class="footer-title">Follow Us</h3>
+          <h3 class="footer-title">{{ $t('footer.follow_us') }}</h3>
           <div class="social-links">
             <a href="#" @click.prevent="handleSocialClick('facebook')" class="social-icon">
-              <img :src="fbIcon" alt="Facebook" />
+              <img :src="fbIcon" :alt="$t('footer.facebook_alt')" />
             </a>
             <a href="#" @click.prevent="handleSocialClick('instagram')" class="social-icon">
-              <img :src="instagramIcon" alt="Instagram" />
+              <img :src="instagramIcon" :alt="$t('footer.instagram_alt')" />
             </a>
             <a href="#" @click.prevent="handleSocialClick('whatsapp')" class="social-icon">
-              <img :src="whatsappIcon" alt="WhatsApp" />
+              <img :src="whatsappIcon" :alt="$t('footer.whatsapp_alt')" />
             </a>
           </div>
         </div>
@@ -186,7 +186,7 @@
       
       <!-- Copyright Section -->
       <div class="footer-bottom">
-        <p class="copyright">Copyright © 2025 HENG ONG BET™. All rights reserved.</p>
+        <p class="copyright">{{ $t('footer.copyright') }}</p>
       </div>
     </div>
   </footer>

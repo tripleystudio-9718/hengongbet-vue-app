@@ -309,6 +309,8 @@ export default {
   let targetUrl = 'https://hengongbet.com/en-my';
   if (locale === 'zh') {
     targetUrl = 'https://hengongbet.com/zh-my';
+  }else if (locale === 'ms') {
+    targetUrl = 'https://hengongbet.com/ms-my';
   }
 
   window.location.href = targetUrl;

@@ -137,12 +137,14 @@ export default {
     handlePromoClick(promo) {
       const locale = this.$i18n?.locale || 'en'
 
-      let url = 'https://hengongbet.com/en-my?regRef=player'
-      if (locale === 'zh') {
-        url = 'https://hengongbet.com/zh-my?regRef=player'
-      }
+      let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
+  if (locale === 'zh') {
+    targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
+  } else if (locale === 'ms') {
+    targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
+  }
 
-      window.location.href = url
+  window.location.href = targetUrl;
     }
   }
 }
@@ -450,6 +452,26 @@ export default {
 .mobile-button-3 { color: #ffffff; }
 .mobile-button-4 { color: #ffffff; }
 .mobile-button-5 { color: #ffffff; }
+
+@media (min-width: 1441px) and (max-width: 1680px) {
+  .card-content {
+    height: 220px;
+  }
+
+  .bonus-amount {
+    font-size: 75px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .card-content {
+    height: 180px;
+  }
+
+  .bonus-amount {
+    font-size: 45px;
+  }
+}
 
 /* Small PC/Laptop Optimization */
 @media (min-width: 769px) and (max-width: 1200px) {

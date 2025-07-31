@@ -121,13 +121,35 @@
     "processing_time": "Processing Time"
   },
   "footer": {
+    "about": "About",
+    "description": "Discover endless excitement at HENG ONG BET. We're dedicated to delivering quality games and a secure, engaging experience.",
+    "games": "Games",
+    "slots": "Slots",
+    "sports": "Sports",
+    "lottery": "Lottery", 
+    "casino": "Casino",
+    "info": "Info",
+    "promotions": "Promotions",
     "about_us": "About Us",
-    "contact": "Contact Us",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "responsible_gaming": "Responsible Gaming",
-    "support": "24/7 Support",
-    "copyright": "© 2024 HengOngBet. All rights reserved."
+    "contact_us": "Contact Us",
+    "terms_conditions": "Terms & Conditions",
+    "payment_methods": "Payment Methods",
+    "game_license": "Game License",
+    "certification": "Certification",
+    "security": "Security",
+    "follow_us": "Follow Us",
+    "copyright": "Copyright © 2025 HENG ONG BET™. All rights reserved.",
+    
+    "gcb_license_alt": "GCB License",
+    "itech_certification_alt": "iTech Certification",
+    "threatmetrix_security_alt": "ThreatMetrix Security",
+    "touch_n_go_alt": "Touch 'n Go",
+    "bank_transfer_alt": "Bank Transfer",
+    "duitnow_alt": "DuitNow",
+    "grab_alt": "Grab",
+    "facebook_alt": "Facebook",
+    "instagram_alt": "Instagram",
+    "whatsapp_alt": "WhatsApp"
   },
   "home": {
     "brandSection": {

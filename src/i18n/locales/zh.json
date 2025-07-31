@@ -121,13 +121,35 @@
     "processing_time": "处理时间"
   },
   "footer": {
+    "about": "关于我们",
+    "description": "在 HENG ONG BET 探索无尽的刺激体验。我们致力于提供优质游戏以及安全、有趣的娱乐环境。",
+    "games": "游戏",
+    "slots": "老虎机",
+    "sports": "体育",
+    "lottery": "彩票",
+    "casino": "赌场",
+    "info": "信息",
+    "promotions": "优惠活动",
     "about_us": "关于我们",
-    "contact": "联系我们",
-    "privacy": "隐私政策",
-    "terms": "服务条款",
-    "responsible_gaming": "负责任博彩",
-    "support": "24/7 客服",
-    "copyright": "© 2024 HengOngBet. 版权所有。"
+    "contact_us": "联系我们",
+    "terms_conditions": "条款与条件",
+    "payment_methods": "支付方式",
+    "game_license": "游戏许可证",
+    "certification": "认证",
+    "security": "安全性",
+    "follow_us": "关注我们",
+    "copyright": "版权 © 2025 HENG ONG BET™。保留所有权利。",
+    
+    "gcb_license_alt": "GCB 许可证",
+    "itech_certification_alt": "iTech 认证",
+    "threatmetrix_security_alt": "ThreatMetrix 安全",
+    "touch_n_go_alt": "Touch 'n Go",
+    "bank_transfer_alt": "银行转账",
+    "duitnow_alt": "DuitNow",
+    "grab_alt": "Grab",
+    "facebook_alt": "脸书",
+    "instagram_alt": "Instagram",
+    "whatsapp_alt": "WhatsApp"
   },
   "home": {
     "brandSection": {
