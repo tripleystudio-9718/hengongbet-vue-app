@@ -202,7 +202,7 @@ export default {
   width: 280px;
   height: auto;
   max-height: 85vh;
-  background: #2d3748;
+  background: #27272A;
   z-index: 1000;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
@@ -215,7 +215,7 @@ export default {
 }
 
 .mobile-menu-header {
-  padding: 24px;
+  padding: 10px;
   border-bottom: 1px solid #4a5568;
 }
 
@@ -338,7 +338,7 @@ export default {
 @media (max-width: 480px) {
   .mobile-sidebar {
     width: 270px;
-    height: 70vh;
+    height: 80vh;
     overflow-x: hidden;
   }
       

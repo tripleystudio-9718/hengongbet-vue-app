@@ -262,9 +262,6 @@ export default {
         case 'zh':
           targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
           break;
-        case 'ms':
-          targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
-          break;
         default:
           targetUrl = 'https://hengongbet.com/en-my?regRef=player';
       }
@@ -273,7 +270,7 @@ export default {
       console.log('Redirecting to registration from game interaction');
       
       // Redirect to external URL
-      window.location.href = targetUrl;
+      window.open(targetUrl, '_blank');
     },
 
     // Update handlePlayGame to redirect to registration

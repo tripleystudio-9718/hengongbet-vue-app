@@ -950,6 +950,8 @@
     }
   },
     "tutorialTabs": {
+      "titleH1": "充值及提现",
+    "titleH1Part2": "教程",
     "tabs": {
       "topup": "即时充值",
       "transfer": "银行转账",

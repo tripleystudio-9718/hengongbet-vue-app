@@ -339,7 +339,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 24px 0 24px;
+  padding: 10px 24px;
   border-bottom: 1px solid #475569;
   background: rgba(251, 191, 36, 0.05);
 }
@@ -394,9 +394,8 @@ export default {
 
 .notice-content-text {
   background: rgba(251, 191, 36, 0.1);
-  border-left: 4px solid #fbbf24;
   padding: 20px;
-  border-radius: 0 8px 8px 0;
+  border-radius: 8px;
 }
 
 .notice-content-text p {
@@ -572,7 +571,7 @@ export default {
   }
   
   .promo-card {
-    height: 80px;
+    height: 70px;
     border-radius: 8px;
   }
   
@@ -620,11 +619,11 @@ export default {
 /* Desktop adjustments */
 @media (min-width: 769px) {
   .promotion-swiper-container {
-    padding: 30px 20px;
+    padding: 0;
   }
   
   .promo-card {
-    height: 100px;
+    height:85px;
   }
 }
 

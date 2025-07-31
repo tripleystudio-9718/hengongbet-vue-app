@@ -252,14 +252,11 @@ export default {
         case 'zh':
           targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
           break;
-        case 'ms':
-          targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
-          break;
         default:
           targetUrl = 'https://hengongbet.com/en-my?regRef=player';
       }
       console.log('Redirecting to registration from mobile game interaction');
-      window.location.href = targetUrl;
+      window.open(targetUrl, '_blank');
     },
     handleFeaturedGameClick(game) {
       console.log('Mobile featured game clicked:', game.name);

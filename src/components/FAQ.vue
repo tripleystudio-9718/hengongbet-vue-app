@@ -183,6 +183,10 @@ export default {
     }
   },
   computed: {
+    // Get current locale for dynamic styling
+    currentLocale() {
+      return this.$i18n?.locale || this.$route?.meta?.locale || 'en'
+    },
     filteredGettingStartedFAQs() {
       if (!this.searchQuery) {
         return this.gettingStartedFAQs.map((item, index) => ({
@@ -295,16 +299,16 @@ export default {
 
 .search-box {
   position: relative;
-  width: 115px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin-right: 10px;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 .search-icon {
   position: absolute;
-  left: 20px;
+  left: 16px;
   top: 50%;
   transform: translateY(-50%);
   width: 16px;
@@ -314,21 +318,47 @@ export default {
 }
 
 .search-input {
-  width: 50%;
-  padding: 10px 70px 10px 52px;
+  /* Dynamic width based on content and language */
+  min-width: 100px;
+  max-width: 180px;
+  width: auto;
+  padding: 12px 20px 12px 48px;
   background: linear-gradient(180deg, #F0AD3C 0%, #ED9326 100%);
   border: none;
   border-radius: 10px;
   color: #242424;
-  font-size: 18px;
+  font-size: 16px;
   outline: none;
-  font-weight: 800;
+  font-weight: 700;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  text-align: center;
+  
+  /* Language-specific adjustments */
+  letter-spacing: 0.5px;
+}
+
+/* Chinese language specific styling */
+.search-input:lang(zh),
+.search-input:lang(zh-CN),
+.search-input:lang(zh-TW) {
+  font-size: 15px;
+  letter-spacing: 1px;
+  min-width: 90px;
+  padding: 12px 24px 12px 48px;
+}
+
+/* Malay language specific styling */
+.search-input:lang(ms) {
+  font-size: 14px;
+  min-width: 110px;
+  padding: 12px 18px 12px 48px;
 }
 
 .search-input:hover {
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(240, 173, 60, 0.3);
 }
 
 .search-input:active {
@@ -342,8 +372,9 @@ export default {
   outline: none;
   color: #ffffff;
   font-size: 16px;
-  padding: 10px 15px;
+  padding: 12px 15px;
   font-weight: 400;
+  min-width: 0; /* Allow shrinking */
 }
 
 .search-container-input::placeholder {
@@ -486,42 +517,110 @@ export default {
     font-size: 1.5rem;
   }
   
+  .search-container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+  }
+  
   .search-box {
-    width: 150px;
+    width: 100%;
+    margin-right: 0;
+    justify-content: center;
+  }
+  
+  .search-input {
+    width: 100%;
+    max-width: 100%;
+    min-width: 120px;
+    padding: 14px 20px 14px 48px;
+    font-size: 16px;
+  }
+  
+  .search-input:lang(zh),
+  .search-input:lang(zh-CN),
+  .search-input:lang(zh-TW) {
+    font-size: 15px;
+    padding: 14px 24px 14px 48px;
+  }
+  
+  .search-container-input {
+    width: 100%;
+    padding: 14px 15px;
+    font-size: 16px;
   }
   
   .question-text {
-    font-size: 13px;
+    font-size: 16px;
   }
   
   .faq-answer p {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 480px) {
   .main-title {
-    font-size: 28px;
+    font-size: 1.4rem;
   }
   
   .section-title {
-    font-size: 16px;
+    font-size: 20px;
   }
   
   .final-note-content p {
-    font-size: 10px;
+    font-size: 16px;
   }
   
-  .search-box {
-    width: 120px;
+  .search-input {
+    font-size: 15px;
+    padding: 12px 18px 12px 44px;
+  }
+  
+  .search-input:lang(zh),
+  .search-input:lang(zh-CN),
+  .search-input:lang(zh-TW) {
+    font-size: 14px;
+    padding: 12px 20px 12px 44px;
   }
   
   .search-container-input {
-    font-size: 12px;
+    font-size: 14px;
+    padding: 12px 15px;
   }
   
+  .search-icon {
+    left: 14px;
+    width: 14px;
+    height: 14px;
+  }
+  
+  .question-text {
+    font-size: 15px;
+  }
+  
+  .faq-answer p {
+    font-size: 13px;
+  }
+}
+
+/* Additional language-specific optimizations */
+@media (max-width: 768px) {
+  /* Stack search elements vertically on mobile for better UX */
   .search-container {
-    padding: 0;
+    align-items: stretch;
+  }
+  
+  .search-box {
+    margin-bottom: 8px;
+  }
+}
+
+/* High-DPI screen adjustments */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .search-input {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 </style>

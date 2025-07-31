@@ -140,8 +140,6 @@ export default {
       let url = 'https://hengongbet.com/en-my?regRef=player'
       if (locale === 'zh') {
         url = 'https://hengongbet.com/zh-my?regRef=player'
-      } else if (locale === 'ms') {
-        url = 'https://hengongbet.com/ms-my?regRef=player'
       }
 
       window.location.href = url

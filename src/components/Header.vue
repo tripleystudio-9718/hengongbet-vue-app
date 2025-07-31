@@ -137,6 +137,9 @@ import { switchLocale, getCurrentLocale, localePath } from '@/router'
 import logoImage from '@/assets/hengongbet.png'
 import homeIcon from '@/assets/home_icon.svg'
 import MobileHeader from './MobileHeader.vue'
+import malaysiaFlag from '@/assets/malaysia-flag.svg'
+import ukFlag from '@/assets/uk-flag.svg'
+import chinaFlag from '@/assets/china-flag.svg'
 
 export default {
   name: 'Header',
@@ -162,6 +165,9 @@ export default {
     return {
       logoImage,
       homeIcon,
+      malaysiaFlag,
+      ukFlag,
+      chinaFlag,
       currentDateTime: '',
       showMobileMenu: false,
       showHelpDropdown: false,
@@ -170,23 +176,23 @@ export default {
       selectedLanguage: {
         code: 'en',
         name: 'English',
-        flag: 'https://flagcdn.com/w20/gb.png'
+        flag: ukFlag
       },
       availableLanguages: [
         {
           code: 'en',
           name: 'English',
-          flag: 'https://flagcdn.com/w20/gb.png'
+          flag: ukFlag
         },
         {
           code: 'ms',
           name: 'Bahasa Malaysia',
-          flag: 'https://flagcdn.com/w20/my.png'
+          flag: malaysiaFlag
         },
         {
           code: 'zh',
           name: '中文',
-          flag: 'https://flagcdn.com/w20/cn.png'
+          flag: chinaFlag
         }
       ]
     }
@@ -286,11 +292,28 @@ export default {
       }, 150)
     },
     goToRegister() {
-      this.$router.push(this.getLocalePath('/register'))
-    },
+  const locale = this.$i18n?.locale || 'en';
+
+  let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
+  if (locale === 'zh') {
+    targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
+  } else if (locale === 'ms') {
+    targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
+  }
+
+  window.location.href = targetUrl;
+},
     goToLogin() {
-      this.$router.push(this.getLocalePath('/login'))
-    },
+  const locale = this.$i18n?.locale || 'en';
+
+  let targetUrl = 'https://hengongbet.com/en-my';
+  if (locale === 'zh') {
+    targetUrl = 'https://hengongbet.com/zh-my';
+  }
+
+  window.location.href = targetUrl;
+}
+,
     closeLanguageDropdown(event) {
       if (!event.target.closest('.language-selector-container') && !event.target.closest('.mobile-language-selector')) {
         this.showLanguageDropdown = false
@@ -374,7 +397,7 @@ export default {
 
 .mobile-flag {
   width: 24px;
-  height: 16px;
+  height: 24px;
   border-radius: 2px;
   object-fit: cover;
 }
@@ -415,7 +438,7 @@ export default {
 
 .dropdown-flag-mobile {
   width: 16px;
-  height: 12px;
+  height: 16px;
   border-radius: 2px;
   object-fit: cover;
 }
@@ -514,7 +537,7 @@ export default {
 
 .flag-image {
   width: 18px;
-  height: 13px;
+  height: 18px;
   border-radius: 2px;
   object-fit: cover;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -576,7 +599,7 @@ export default {
 
 .dropdown-flag {
   width: 16px;
-  height: 12px;
+  height: 16px;
   border-radius: 2px;
   object-fit: cover;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);

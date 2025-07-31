@@ -1117,7 +1117,7 @@ export default {
 
 @media (max-width: 360px) {
   .center-phone-image {
-    max-width: 180px;
+    max-width: 300px;
   }
   
   .app-title {

@@ -56,6 +56,16 @@
         <span class="progress-text">{{ Math.ceil(autoplayTimeLeft / 1000) }}</span>
       </div>
     </swiper>
+    
+    <!-- Mobile Auth Buttons - Only visible on mobile -->
+    <div class="mobile-auth-buttons">
+      <button @click="goToLogin" class="mobile-login-btn">
+        {{ $t('auth.login') }}
+      </button>
+      <button @click="goToRegister" class="mobile-register-btn">
+        {{ $t('auth.register') }}
+      </button>
+    </div>
   </section>
 </template>
 
@@ -84,7 +94,7 @@ export default {
     },
     autoPlayInterval: {
       type: Number,
-      default: 4000 // Slightly longer for better UX
+      default: 4000
     },
     showNavigation: {
       type: Boolean,
@@ -96,7 +106,7 @@ export default {
     },
     showProgressRing: {
       type: Boolean,
-      default: false // Optional progress indicator
+      default: false
     },
     pauseOnHover: {
       type: Boolean,
@@ -104,7 +114,7 @@ export default {
     },
     showPromotionOverlay: {
       type: Boolean,
-      default: false // Simplified - no overlay needed
+      default: false
     }
   },
   data() {
@@ -112,7 +122,7 @@ export default {
       swiperInstance: null,
       currentSlideIndex: 0,
       autoplayTimeLeft: 0,
-      progressCircumference: 2 * Math.PI * 25 // radius = 25
+      progressCircumference: 2 * Math.PI * 25
     }
   },
   computed: {
@@ -123,7 +133,7 @@ export default {
         pauseOnMouseEnter: this.pauseOnHover,
         reverseDirection: false,
         waitForTransition: true,
-        stopOnLastSlide: false // Ensures unlimited movement
+        stopOnLastSlide: false
       } : false
     },
     navigationConfig() {
@@ -148,7 +158,6 @@ export default {
     }
   },
   mounted() {
-    // Ensure auto-play starts immediately
     this.$nextTick(() => {
       if (this.swiperInstance && this.autoPlay) {
         this.startAutoplay()
@@ -159,7 +168,6 @@ export default {
     onSwiper(swiper) {
       this.swiperInstance = swiper
       
-      // Start autoplay immediately
       if (this.autoPlay) {
         this.startAutoplay()
       }
@@ -204,30 +212,42 @@ export default {
         this.swiperInstance.autoplay.start()
       }
     },
-    // Manual controls for external use
     pauseSlider() {
       this.stopAutoplay()
     },
     playSlider() {
       this.startAutoplay()
     },
-    // Navigation to promotion page
     navigateToPromotion() {
       try {
-        // Get current locale from route
         const currentLocale = this.$route.meta?.locale || 'en';
-        
-        // Generate localized path for promotion page
         const promotionPath = localePath('/promotion', currentLocale);
-        
-        // Navigate to promotion page
         this.$router.push(promotionPath);
-        
         console.log('Navigating to promotion page:', promotionPath);
       } catch (error) {
         console.error('Navigation error:', error);
-        // Fallback navigation
         this.$router.push('/promotion');
+      }
+    },
+    // Mobile auth button methods
+    goToLogin() {
+      try {
+        const currentLocale = this.$route.meta?.locale || 'en';
+        const loginPath = localePath('/login', currentLocale);
+        this.$router.push(loginPath);
+      } catch (error) {
+        console.error('Login navigation error:', error);
+        this.$router.push('/login');
+      }
+    },
+    goToRegister() {
+      try {
+        const currentLocale = this.$route.meta?.locale || 'en';
+        const registerPath = localePath('/register', currentLocale);
+        this.$router.push(registerPath);
+      } catch (error) {
+        console.error('Register navigation error:', error);
+        this.$router.push('/register');
       }
     }
   },
@@ -240,7 +260,7 @@ export default {
 </script>
 
 <style scoped>
-/* Hero Banner Carousel */
+/* Existing styles remain the same... */
 .hero-banner {
   position: relative;
   overflow: hidden;
@@ -279,7 +299,69 @@ export default {
   transition: transform 0.8s ease, filter 0.3s ease;
 }
 
-/* Custom Navigation Arrows */
+.mobile-auth-buttons {
+  background-color: #27272A;
+  display: none; 
+  flex-direction: row;
+  gap: 16px;
+  padding: 5px 24px;
+  justify-content: center;
+}
+
+.mobile-login-btn {
+  flex: 1;
+  max-width: 50%;
+  padding: 14px 20px;
+  border: 2px solid #F1AE3D;
+  color: #F1AE3D;
+  background: transparent;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-login-btn:hover,
+.mobile-login-btn:active {
+  background: #F1AE3D;
+  color: #1a202c;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(241, 174, 61, 0.3);
+}
+
+.mobile-register-btn {
+  flex: 1;
+  max-width: 50%;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #F2B240 0%, #ED9226 100%);
+  color: #1a202c;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(237, 146, 38, 0.3);
+  text-align: center;
+  white-space: nowrap;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-register-btn:hover,
+.mobile-register-btn:active {
+  background: linear-gradient(135deg, #F8C455 0%, #F1A533 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(237, 146, 38, 0.4);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* All existing navigation and pagination styles remain unchanged... */
 .hero-swiper-button-next,
 .hero-swiper-button-prev {
   position: absolute;
@@ -351,7 +433,6 @@ export default {
   transform: translate(-75%, -50%) rotate(45deg);
 }
 
-/* Custom Pagination Dots */
 .hero-swiper-pagination {
   position: absolute;
   bottom: 20px;
@@ -386,7 +467,6 @@ export default {
   transform: scale(1.3);
 }
 
-/* Progress Ring for Auto-play */
 .autoplay-progress {
   position: absolute;
   top: 20px;
@@ -422,30 +502,21 @@ export default {
   text-align: center;
 }
 
-/* Smooth slide transitions */
-:deep(.swiper-slide) {
-  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-:deep(.swiper-slide-active) {
-  transform: scale(1);
-}
-
-:deep(.swiper-slide-prev),
-:deep(.swiper-slide-next) {
-  transform: scale(0.95);
-}
-
 /* Mobile Responsive Design */
 @media (max-width: 768px) {
+  .mobile-auth-buttons {
+    display: flex !important;
+    padding: 10px;
+  }
+
   .banner-image {
     height: 100px;
   }
 
   .hero-swiper-button-next,
   .hero-swiper-button-prev {
-    width: 30px;
-    height: 30px;
+    width: 30px !important;
+    height: 30px !important;
   }
 
   .nav-arrow {
@@ -486,14 +557,6 @@ export default {
   .progress-text {
     font-size: 12px;
   }
-
-  .promotion-text h3 {
-    font-size: 1.5rem;
-  }
-
-  .promotion-text p {
-    font-size: 1rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -501,10 +564,17 @@ export default {
     height: 100px;
   }
 
+  .mobile-login-btn,
+  .mobile-register-btn {
+    padding: 5px 16px;
+    font-size: 0.95rem;
+    max-width: 50%;
+  }
+
   .hero-swiper-button-next,
   .hero-swiper-button-prev {
-    width: 30px !important;
-    height: 30px !important;
+    width: 40px;
+    height: 40px;
   }
 
   .nav-arrow {
@@ -526,19 +596,12 @@ export default {
   }
 
   .autoplay-progress {
-    display: none; /* Hide on very small screens */
-  }
-
-  .promotion-text h3 {
-    font-size: 1.2rem;
-  }
-
-  .promotion-text p {
-    font-size: 0.9rem;
+    display: none;
   }
 }
 
 @media (max-width: 360px) {
+
   .nav-arrow {
     width: 16px;
     height: 16px;
@@ -550,24 +613,13 @@ export default {
   }
 }
 
-@media (max-width: 768px) and (orientation: landscape) {
-  .banner-image {
-    max-height: 200px;
-  }
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .banner-image {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-  }
-}
-
+/* Touch device optimizations */
 @media (hover: none) and (pointer: coarse) {
+
   .hero-swiper-button-next,
   .hero-swiper-button-prev {
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     touch-action: manipulation;
   }
 
@@ -575,18 +627,15 @@ export default {
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
   }
-
-  /* Always show overlay on touch devices */
-  .slide-overlay {
-    opacity: 0.7;
-  }
 }
 
 /* Accessibility improvements */
 @media (prefers-reduced-motion: reduce) {
   .hero-banner-slide,
   .banner-image,
-  :deep(.swiper-slide) {
+  :deep(.swiper-slide),
+  .mobile-login-btn,
+  .mobile-register-btn {
     transition: none;
   }
   
@@ -596,6 +645,12 @@ export default {
 }
 
 /* Focus states for accessibility */
+.mobile-login-btn:focus,
+.mobile-register-btn:focus {
+  outline: 2px solid #F2B240;
+  outline-offset: 2px;
+}
+
 .hero-swiper-button-next:focus,
 .hero-swiper-button-prev:focus {
   outline: 2px solid #F2B240;

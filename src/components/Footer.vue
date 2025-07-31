@@ -9,7 +9,7 @@
             Discover endless excitement at HENG ONG BET. We're dedicated to delivering quality games and a secure, engaging experience.
           </p>
           
-          <div class="footer-badge">
+          <div class="footer-badge desktop-only">
             <h4 class="badge-title">Game License</h4>
             <div class="badge-icon license-badge">
               <img :src="gcbIcon" alt="GCB License" />
@@ -27,7 +27,7 @@
             <li><a href="#" @click.prevent="handleLinkClick">Casino</a></li>
           </ul>
           
-          <div class="footer-badge">
+          <div class="footer-badge desktop-only">
             <h4 class="badge-title">Certification</h4>
             <div class="badge-icon certification-badge">
               <img :src="itechIcon" alt="iTech Certification" />
@@ -45,7 +45,7 @@
             <li><a href="#" @click.prevent="handleLinkClick">Terms & Conditions</a></li>
           </ul>
           
-          <div class="footer-badge">
+          <div class="footer-badge desktop-only">
             <h4 class="badge-title">Security</h4>
             <div class="badge-icon security-badge">
               <img :src="threatMetrixIcon" alt="ThreatMetrix Security" />
@@ -71,7 +71,7 @@
             </div>
           </div>
           
-          <div class="footer-badge">
+          <div class="footer-badge desktop-only">
             <h4 class="badge-title">Follow Us</h4>
             <div class="social-links">
               <a href="#" @click.prevent="handleSocialClick('facebook')" class="social-icon">
@@ -84,6 +84,99 @@
                 <img :src="whatsappIcon" alt="WhatsApp" />
               </a>
             </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Mobile Only Layout -->
+      <div class="mobile-footer-layout">
+        <!-- Row 1: About -->
+        <div class="mobile-about-section">
+          <h3 class="footer-title">About</h3>
+          <p class="footer-description">
+            Discover endless excitement at HENG ONG BET. We're dedicated to delivering quality games and a secure, engaging experience.
+          </p>
+        </div>
+        
+        <!-- Row 2: Games and Info -->
+        <div class="mobile-row">
+          <div class="mobile-column">
+            <h3 class="footer-title">Games</h3>
+            <ul class="footer-links">
+              <li><a href="#" @click.prevent="handleLinkClick">Slots</a></li>
+              <li><a href="#" @click.prevent="handleLinkClick">Sports</a></li>
+              <li><a href="#" @click.prevent="handleLinkClick">Lottery</a></li>
+              <li><a href="#" @click.prevent="handleLinkClick">Casino</a></li>
+            </ul>
+          </div>
+          
+          <div class="mobile-column">
+            <h3 class="footer-title">Info</h3>
+            <ul class="footer-links">
+              <li><a href="#" @click.prevent="handleLinkClick">Promotions</a></li>
+              <li><a href="#" @click.prevent="handleLinkClick">About Us</a></li>
+              <li><a href="#" @click.prevent="handleLinkClick">Contact Us</a></li>
+              <li><a href="#" @click.prevent="handleLinkClick">Terms & Conditions</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Row 3: Game License, Security, Certification -->
+        <div class="mobile-badges-row">
+          <div class="mobile-badge-item">
+            <h4 class="badge-title">Game License</h4>
+            <div class="badge-icon license-badge">
+              <img :src="gcbIcon" alt="GCB License" />
+            </div>
+          </div>
+          
+          <div class="mobile-badge-item">
+            <h4 class="badge-title">Security</h4>
+            <div class="badge-icon security-badge">
+              <img :src="threatMetrixIcon" alt="ThreatMetrix Security" />
+            </div>
+          </div>
+          
+          <div class="mobile-badge-item">
+            <h4 class="badge-title">Certification</h4>
+            <div class="badge-icon certification-badge">
+              <img :src="itechIcon" alt="iTech Certification" />
+            </div>
+          </div>
+        </div>
+        
+        <!-- Row 4: Payment Methods -->
+        <div class="mobile-payment-section">
+          <h3 class="footer-title">Payment Methods</h3>
+          <div class="payment-methods">
+            <div class="payment-icon">
+              <img :src="tngIcon" alt="Touch 'n Go" />
+            </div>
+            <div class="payment-icon">
+              <img :src="bankIcon" alt="Bank Transfer" />
+            </div>
+            <div class="payment-icon">
+              <img :src="duItNowIcon" alt="DuitNow" />
+            </div>
+            <div class="payment-icon">
+              <img :src="grabIcon" alt="Grab" />
+            </div>
+          </div>
+        </div>
+        
+        <!-- Row 5: Social Links -->
+        <div class="mobile-social-section">
+          <h3 class="footer-title">Follow Us</h3>
+          <div class="social-links">
+            <a href="#" @click.prevent="handleSocialClick('facebook')" class="social-icon">
+              <img :src="fbIcon" alt="Facebook" />
+            </a>
+            <a href="#" @click.prevent="handleSocialClick('instagram')" class="social-icon">
+              <img :src="instagramIcon" alt="Instagram" />
+            </a>
+            <a href="#" @click.prevent="handleSocialClick('whatsapp')" class="social-icon">
+              <img :src="whatsappIcon" alt="WhatsApp" />
+            </a>
           </div>
         </div>
       </div>
@@ -179,6 +272,11 @@ export default {
   gap: 60px;
   margin-bottom: 32px;
   align-items: start;
+}
+
+/* Hide mobile layout on desktop */
+.mobile-footer-layout {
+  display: none;
 }
 
 /* Column Styles */
@@ -393,91 +491,151 @@ export default {
     padding: 0 20px;
   }
   
+  /* Hide desktop layout */
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    display: none;
+  }
+  
+  .desktop-only {
+    display: none;
+  }
+  
+  /* Show mobile layout */
+  .mobile-footer-layout {
+    display: block;
     margin-bottom: 32px;
   }
   
-  .footer-column {
-    min-height: auto;
-    gap: 24px;
+  /* Mobile Row Styles */
+  .mobile-about-section {
+    margin-bottom: 32px;
   }
   
-  .footer-title {
+  .mobile-about-section .footer-title {
     font-size: 18px;
     margin-bottom: 16px;
     font-weight: 700;
   }
   
-  .footer-description {
+  .mobile-about-section .footer-description {
     font-size: 14px;
-    margin-bottom: 0;
-    max-width: 100%;
-    flex-grow: 0;
+    color: #9CA3AF;
     line-height: 1.6;
-  }
-  
-  .footer-links {
+    max-width: 100%;
     margin-bottom: 0;
-    flex-grow: 0;
   }
   
-  .footer-links li {
+  .mobile-row {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+  
+  .mobile-column {
+    flex: 1;
+  }
+  
+  .mobile-column .footer-title {
+    font-size: 18px;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  
+  .mobile-column .footer-links {
+    margin-bottom: 0;
+  }
+  
+  .mobile-column .footer-links li {
     margin-bottom: 14px;
   }
   
-  .footer-links a {
+  .mobile-column .footer-links a {
     font-size: 14px;
     line-height: 1.5;
   }
   
-  .payment-methods {
+  /* Mobile Badges Row */
+  .mobile-badges-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  
+  .mobile-badge-item {
+    flex: 1;
+    min-width: 90px;
+    text-align: left;
+  }
+  
+  .mobile-badge-item .badge-title {
+    font-size: 14px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    text-align: left;
+  }
+  
+  .mobile-badge-item .license-badge {
+    width: 60px;
+    height: 48px;
+    margin: 0;
+  }
+  
+  .mobile-badge-item .certification-badge {
+    width: 50px;
+    height: 40px;
+    margin: 0;
+  }
+  
+  .mobile-badge-item .security-badge {
+    width: 80px;
+    height: 28px;
+    margin: 0;
+  }
+  
+  /* Mobile Payment Section */
+  .mobile-payment-section {
+    margin-bottom: 32px;
+  }
+  
+  .mobile-payment-section .footer-title {
+    font-size: 18px;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  
+  .mobile-payment-section .payment-methods {
     gap: 16px;
     margin-bottom: 0;
-    flex-grow: 0;
     justify-content: flex-start;
   }
   
-  .payment-icon {
+  .mobile-payment-section .payment-icon {
     width: 36px;
     height: 22px;
   }
   
-  .social-links {
+  /* Mobile Social Section */
+  .mobile-social-section {
+    margin-bottom: 0;
+  }
+  
+  .mobile-social-section .footer-title {
+    font-size: 18px;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  
+  .mobile-social-section .social-links {
     gap: 20px;
     justify-content: flex-start;
   }
   
-  .social-icon {
+  .mobile-social-section .social-icon {
     width: 24px;
     height: 24px;
-  }
-  
-  .footer-badge {
-    margin-top: 0;
-    align-self: flex-start;
-  }
-  
-  .badge-title {
-    font-size: 16px;
-    margin-bottom: 12px;
-    font-weight: 600;
-  }
-  
-  .license-badge {
-    width: 70px;
-    height: 56px;
-  }
-  
-  .certification-badge {
-    width: 60px;
-    height: 48px;
-  }
-  
-  .security-badge {
-    width: 120px;
-    height: 40px;
   }
   
   .footer-divider {
@@ -499,69 +657,90 @@ export default {
     padding: 0 16px;
   }
   
-  .footer-grid {
-    gap: 32px;
+  .mobile-about-section {
+    margin-bottom: 28px;
   }
   
-  .footer-column {
-    gap: 20px;
-  }
-  
-  .footer-title {
+  .mobile-about-section .footer-title {
     font-size: 16px;
     margin-bottom: 12px;
   }
   
-  .footer-description {
+  .mobile-about-section .footer-description {
     font-size: 13px;
     line-height: 1.5;
   }
   
-  .footer-links li {
+  .mobile-row {
+    gap: 24px;
+    margin-bottom: 28px;
+  }
+  
+  .mobile-column .footer-title {
+    font-size: 16px;
     margin-bottom: 12px;
   }
   
-  .footer-links a {
+  .mobile-column .footer-links li {
+    margin-bottom: 12px;
+  }
+  
+  .mobile-column .footer-links a {
     font-size: 13px;
   }
   
-  .payment-methods {
+  .mobile-badges-row {
     gap: 12px;
-    flex-wrap: wrap;
+    margin-bottom: 28px;
   }
   
-  .payment-icon {
-    width: 32px;
-    height: 20px;
-  }
-  
-  .social-links {
-    gap: 16px;
-  }
-  
-  .social-icon {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .badge-title {
-    font-size: 15px;
+  .mobile-badge-item .badge-title {
+    font-size: 13px;
     margin-bottom: 10px;
   }
   
-  .license-badge {
-    width: 60px;
-    height: 48px;
-  }
-  
-  .certification-badge {
+  .mobile-badge-item .license-badge {
     width: 50px;
     height: 40px;
   }
   
-  .security-badge {
-    width: 100px;
-    height: 32px;
+  .mobile-badge-item .certification-badge {
+    width: 42px;
+    height: 34px;
+  }
+  
+  .mobile-badge-item .security-badge {
+    width: 70px;
+    height: 24px;
+  }
+  
+  .mobile-payment-section,
+  .mobile-social-section {
+    margin-bottom: 28px;
+  }
+  
+  .mobile-payment-section .footer-title,
+  .mobile-social-section .footer-title {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .mobile-payment-section .payment-methods {
+    gap: 12px;
+  }
+  
+  .mobile-payment-section .payment-icon {
+    width: 32px;
+    height: 20px;
+  }
+  
+  .mobile-social-section .social-links {
+    gap: 16px;
+  }
+  
+  .mobile-social-section .social-icon {
+    width: 20px;
+    height: 20px;
   }
   
   .footer-divider {
