@@ -766,7 +766,7 @@ export default {
   }
 
   .py-5 {
-    padding: 10px !important;
+    padding: 8px !important;
   }
 }
 
