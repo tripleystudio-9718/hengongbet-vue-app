@@ -253,27 +253,16 @@ export default {
 
     // Registration redirect with proper locale detection
     goToRegisterPage() {
-      const locale = this.currentLanguage || this.$i18n?.locale || 'en';
+      const locale = this.$i18n?.locale || 'en';
 
       let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
-      
-      // Handle different locale mappings
-      switch(locale) {
-        case 'zh':
-          targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
-          break;
-          case 'ms':
-          targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
-          break;
-        default:
-          targetUrl = 'https://hengongbet.com/en-my?regRef=player';
-      }
-
-      // Optional: Track which game was clicked for analytics
-      console.log('Redirecting to registration from game interaction');
-      
+  if (locale === 'zh') {
+    targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
+  } else if (locale === 'ms') {
+    targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
+  }
       // Redirect to external URL
-      window.open(targetUrl, '_blank');
+      window.location.href = targetUrl;
     },
 
     // Update handlePlayGame to redirect to registration

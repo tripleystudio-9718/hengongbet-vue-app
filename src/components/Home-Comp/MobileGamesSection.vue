@@ -5,7 +5,7 @@
       <div class="mobile-header">
         <h2 class="mobile-title">{{ t('mobileGameSec.title') }}</h2>
       </div>
-      
+            
       <!-- Featured Game Carousel -->
       <div class="mobile-featured">
         <div class="mobile-carousel"
@@ -17,13 +17,13 @@
               <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
             </svg>
           </button>
-          
+                    
           <button class="carousel-nav next" @click="scrollRight">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
             </svg>
           </button>
-          
+                    
           <!-- Horizontal Scrollable Container -->
           <div class="carousel-container"
                ref="carouselContainer"
@@ -43,7 +43,8 @@
                   'left-outer-card': index === centerIndex - 2,
                   'right-outer-card': index === centerIndex + 2
                 }"
-                @click="handleFeaturedGameClick(game)"
+                @click.prevent.stop="handleFeaturedGameClick(game, $event)"
+                @mousedown.prevent="() => {}"
                 style="cursor: pointer;"
               >
                 <div class="crown-badge">
@@ -60,14 +61,14 @@
             </div>
           </div>
         </div>
-        
+                
         <!-- Featured Game Info -->
         <div class="featured-info">
           <h3>{{ centerGame.name }}</h3>
           <p>{{ centerGame.provider }}</p>
         </div>
       </div>
-      
+            
       <!-- Enhanced Category Tabs -->
       <div class="game-tabs-container">
         <div class="game-tabs">
@@ -80,7 +81,7 @@
           >
             <div class="tab-icon-wrapper">
               <img 
-                :src="getCategoryIconPath(category.key)" 
+                :src="getCategoryIconPath(category.key)"
                 :alt="`${category.label} icon`"
                 class="tab-icon-image"
               />
@@ -90,14 +91,15 @@
         </div>
         <div class="tab-indicator" :style="indicatorStyle"></div>
       </div>
-      
+            
       <!-- Games Grid -->
       <div class="mobile-games-grid">
         <div
           v-for="game in displayedGames"
           :key="game.id"
           class="mobile-game-card"
-          @click="handleRegularGameClick(game)"
+          @click.prevent.stop="handleRegularGameClick(game, $event)"
+          @mousedown.prevent="() => {}"
           style="cursor: pointer;"
         >
           <div class="game-image-container">
@@ -115,11 +117,12 @@
 </template>
 
 <script>
-  import allIcon from '@/assets/all-icon.svg'
-  import casinoIcon from '@/assets/casino-icon.svg'
-  import slotIcon from '@/assets/slot-icon.svg'
-  import sportIcon from '@/assets/sport-icon.svg'
-  import lotteryIcon from '@/assets/lottery-icon.svg'
+import allIcon from '@/assets/all-icon.svg'
+import casinoIcon from '@/assets/casino-icon.svg'
+import slotIcon from '@/assets/slot-icon.svg'
+import sportIcon from '@/assets/sport-icon.svg'
+import lotteryIcon from '@/assets/lottery-icon.svg'
+
 export default {
   name: 'MobileGamesSection',
   props: {
@@ -244,42 +247,48 @@ export default {
       }
       return key
     },
-    goToRegisterPage() {
-      const locale = this.currentLanguage || this.$i18n?.locale || 'en';
+    
+    goToRegisterPage(event) {
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
+  const locale = this.$i18n?.locale || 'en';
+
       let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
-      
-      switch(locale) {
-        case 'zh':
-          targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
-          break;
-          case 'ms':
-          targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
-          break;
-        default:
-          targetUrl = 'https://hengongbet.com/en-my?regRef=player';
-      }
-      console.log('Redirecting to registration from mobile game interaction');
-      window.open(targetUrl, '_blank');
-    },
-    handleFeaturedGameClick(game) {
+  if (locale === 'zh') {
+    targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
+  } else if (locale === 'ms') {
+    targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
+  }
+      // Redirect to external URL
+      window.location.href = targetUrl;
+},
+
+    handleFeaturedGameClick(game, event) {
       console.log('Mobile featured game clicked:', game.name);
       this.$emit('featured-game-click', game);
-      this.goToRegisterPage();
+      this.goToRegisterPage(event);
     },
-    handleRegularGameClick(game) {
+
+    handleRegularGameClick(game, event) {
       console.log('Mobile regular game clicked:', game.name);
       this.$emit('regular-game-click', game);
-      this.goToRegisterPage();
+      this.goToRegisterPage(event);
     },
+
     playGame(game) {
       console.log('Mobile game clicked (legacy):', game.name);
       this.$emit('play-game', game);
-      this.goToRegisterPage();
+      this.goToRegisterPage(event);
     },
+
     initializeCarousel() {
       this.centerIndex = this.duplicateCount * this.featuredGames.length
       this.updateTranslateX()
     },
+
     scrollLeft() {
       if (this.isTransitioning) return
       this.isTransitioning = true
@@ -291,6 +300,7 @@ export default {
       }, 300)
       this.$emit('prev-slide')
     },
+
     scrollRight() {
       if (this.isTransitioning) return
       this.isTransitioning = true
@@ -302,9 +312,11 @@ export default {
       }, 300)
       this.$emit('next-slide')
     },
+
     checkAndResetPosition() {
       const middleSetStart = this.duplicateCount * this.featuredGames.length
       const middleSetEnd = middleSetStart + this.featuredGames.length - 1
+
       if (this.centerIndex < middleSetStart - this.featuredGames.length) {
         this.centerIndex += this.featuredGames.length * this.duplicateCount
         this.translateX = this.calculateTranslateX(this.centerIndex)
@@ -313,6 +325,7 @@ export default {
         this.translateX = this.calculateTranslateX(this.centerIndex)
       }
     },
+
     goToSlide(index) {
       if (this.isTransitioning) return
       this.stopAutoplay()
@@ -324,6 +337,7 @@ export default {
         this.startAutoplay()
       }, 300)
     },
+
     calculateTranslateX(index) {
       const container = this.$refs.carouselContainer
       if (container) {
@@ -334,28 +348,34 @@ export default {
       }
       return 0
     },
+
     updateTranslateX() {
       this.translateX = this.calculateTranslateX(this.centerIndex)
     },
+
     startAutoplay() {
       this.stopAutoplay()
       this.autoplayInterval = setInterval(() => {
         this.scrollRight()
       }, 3000)
     },
+
     stopAutoplay() {
       if (this.autoplayInterval) {
         clearInterval(this.autoplayInterval)
         this.autoplayInterval = null
       }
     },
+
     handleTouchStart(e) {
       this.touchStartX = e.touches[0].clientX
       this.stopAutoplay()
     },
+
     handleTouchMove(e) {
       e.preventDefault()
     },
+
     handleTouchEnd(e) {
       this.touchEndX = e.changedTouches[0].clientX
       this.handleSwipe()
@@ -363,6 +383,7 @@ export default {
         this.startAutoplay()
       }, 1000)
     },
+
     handleSwipe() {
       const swipeDistance = this.touchStartX - this.touchEndX
       if (Math.abs(swipeDistance) > this.minSwipeDistance) {
@@ -373,10 +394,12 @@ export default {
         }
       }
     },
+
     handleResize() {
       this.updateTranslateX()
       this.updateTabIndicator()
     },
+
     updateTabIndicator() {
       this.$nextTick(() => {
         const activeIndex = this.translatedGameCategories.findIndex(cat => cat.key === this.activeCategory)
@@ -395,6 +418,7 @@ export default {
         }
       })
     },
+
     getCategoryIconPath(category) {
       const iconMap = {
         'all': allIcon,
@@ -505,6 +529,11 @@ export default {
   opacity: 0.4;
   flex-shrink: 0;
   margin-right: -10px;
+  /* Prevent text selection and context menu */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .featured-game-card.center-card {
@@ -550,6 +579,13 @@ export default {
   object-fit: contain;
   display: block;
   border-radius: 15px;
+  /* Prevent image dragging */
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
 }
 
 .featured-info {
@@ -666,6 +702,11 @@ export default {
   transition: transform 0.2s ease;
   border-radius: 12px;
   overflow: hidden;
+  /* Prevent text selection and context menu */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .mobile-game-card:active {
@@ -687,6 +728,13 @@ export default {
   object-fit: cover;
   border-radius: 12px;
   transition: transform 0.3s ease;
+  /* Prevent image dragging */
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
 }
 
 .mobile-game-card:hover .game-image {
@@ -708,6 +756,11 @@ export default {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  /* Prevent text selection */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 /* Responsive adjustments */

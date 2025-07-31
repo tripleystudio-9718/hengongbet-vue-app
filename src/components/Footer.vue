@@ -236,12 +236,12 @@ export default {
       // Get current language from parent component or store
       const locale = this.$parent?.currentLanguage || this.$store?.state?.language || 'en';
       
-      let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
+      let targetUrl = 'https://hengongbet.com/en-my';
       
       if (locale === 'zh') {
-        targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
+        targetUrl = 'https://hengongbet.com/zh-my';
       } else if (locale === 'ms') {
-        targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
+        targetUrl = 'https://hengongbet.com/ms-my';
       }
       
       console.log('Redirecting to registration from footer');

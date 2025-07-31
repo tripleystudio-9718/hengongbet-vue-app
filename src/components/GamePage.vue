@@ -232,10 +232,11 @@ export default {
       const locale = this.$i18n?.locale || 'en';
 
       let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
-      if (locale === 'zh') {
-        targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
-      }
-
+  if (locale === 'zh') {
+    targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
+  } else if (locale === 'ms') {
+    targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
+  }
       // Redirect to external URL
       window.location.href = targetUrl;
 }
