@@ -1077,5 +1077,14 @@
     "alt": {
       "stepImage": "Step {step} image"
     }
+  },
+
+  "notice": {
+    "title": "Important Gaming Notice",
+    "shortText": "Notice: The following games will not count the amount of code played only the winnings and losses: MONKEY KING - 'Dragon Tiger Blue', 'Dragon Tiger Red', 'Single Pick', 'Roulette73', 'Baccarat' EVOLUTION - 'First Person Craps', 'Craps'...",
+    "fullText": "Notice: The following games will not count the amount of code played only the winnings and losses.\n\nMONKEY KING - \"Dragon Tiger Blue, Dragon Tiger Red, Single Pick, Roulette73, Baccarat\"\n\nEVOLUTION - \"First Person Craps, Craps, First Person Video Poker, Video Poker, All Blackjack Games\"\n\nJILI - \"Blackjack and Blackjack Lucky Ladies\"\n\nPragmatic Play (Live) - \"All Blackjack Game\"\n\nPragmatic Play (Slot) - \"Roulette, Baccarat, Dragon Bonus Baccarat, Dragon Tiger\"\n\nJDB - \"Gamble\"\n\nThank you for your understanding and cooperation, and wish you a happy game.",
+    "buttons": {
+      "understand": "I Understand"
+    }
   }
 }

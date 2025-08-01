@@ -335,7 +335,6 @@ export default {
 
 .top-header {
   background-color: #242424;
-  border-bottom: 1px solid #4a5568;
 }
 
 .nav-header {
@@ -766,8 +765,12 @@ export default {
   }
 
   .py-5 {
-    padding: 8px !important;
+    padding: 0px 5px !important;
   }
+
+  .bg-gray-800 {
+  box-shadow: 0 2px 9.3px 0 rgba(0, 0, 0, 0.25);
+}
 }
 
 /* Utility classes */
@@ -781,6 +784,6 @@ export default {
 .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
 .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
 .py-5 { padding-top: 1.25rem; padding-bottom: 1.25rem; }
-.bg-gray-700 { background-color: #374151; }
-.bg-gray-800 { background-color: #1f2937; }
+.bg-gray-700 { background-color: #615F5C; }
+.bg-gray-800 { background-color: #27272A; }
 </style>

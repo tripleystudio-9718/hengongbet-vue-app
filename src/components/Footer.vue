@@ -254,7 +254,7 @@ export default {
 <style scoped>
 /* Footer Base Styles */
 .footer-section {
-  background: #242424;
+  background: #27272A;
   box-shadow: 0 2px 9.3px 0 rgba(0, 0, 0, 0.25);
   padding: 48px 0 24px;
   color: white;

@@ -1034,5 +1034,14 @@
     "alt": {
       "stepImage": "Imej langkah {step}"
     }
+  },
+
+  "notice": {
+    "title": "Notis Permainan Penting",
+    "shortText": "Notis: Permainan berikut tidak akan mengira jumlah kod yang dimainkan, hanya kemenangan dan kerugian sahaja: MONKEY KING - 'Dragon Tiger Blue', 'Dragon Tiger Red', 'Single Pick', 'Roulette73', 'Baccarat' EVOLUTION - 'First Person Craps', 'Craps'...",
+    "fullText": "Notis: Permainan berikut tidak akan mengira jumlah kod yang dimainkan, hanya kemenangan dan kerugian sahaja.\n\nMONKEY KING - \"Dragon Tiger Blue, Dragon Tiger Red, Single Pick, Roulette73, Baccarat\"\n\nEVOLUTION - \"First Person Craps, Craps, First Person Video Poker, Video Poker, Semua Permainan Blackjack\"\n\nJILI - \"Blackjack dan Blackjack Lucky Ladies\"\n\nPragmatic Play (Live) - \"Semua Permainan Blackjack\"\n\nPragmatic Play (Slot) - \"Roulette, Baccarat, Dragon Bonus Baccarat, Dragon Tiger\"\n\nJDB - \"Gamble\"\n\nTerima kasih atas pemahaman dan kerjasama anda, dan semoga anda menikmati permainan.",
+    "buttons": {
+      "understand": "Saya Faham"
+    }
   }
 }

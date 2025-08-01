@@ -218,6 +218,7 @@ export default {
 .content-wrapper {
   max-width: 1100px;
   margin: 0 auto;
+  padding-bottom: 10px;
 }
 
 /* Global Typography Classes */

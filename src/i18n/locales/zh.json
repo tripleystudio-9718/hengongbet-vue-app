@@ -1030,5 +1030,14 @@
     "alt": {
       "stepImage": "第{step}步图片"
     }
+  },
+
+  "notice": {
+    "title": "重要游戏公告",
+    "shortText": "公告：以下游戏将不计算所玩代码的数量，只计算输赢：MONKEY KING - 'Dragon Tiger Blue'、'Dragon Tiger Red'、'Single Pick'、'Roulette73'、'Baccarat' EVOLUTION - 'First Person Craps'、'Craps'...",
+    "fullText": "公告：以下游戏将不计算所玩代码的数量，只计算输赢。\n\nMONKEY KING - \"Dragon Tiger Blue，Dragon Tiger Red，Single Pick，Roulette73，Baccarat\"\n\nEVOLUTION - \"First Person Craps、Craps、First Person Video Poker、Video Poker、所有二十一点游戏\"\n\nJILI - \"Blackjack和Blackjack Lucky Ladies\"\n\nPragmatic Play（真人） - \"所有二十一点游戏\"\n\nPragmatic Play（老虎机） - \"Roulette、Baccarat、Dragon Bonus Baccarat、Dragon Tiger\"\n\nJDB - \"Gamble\"\n\n感谢您的理解与配合，祝您游戏愉快。",
+    "buttons": {
+      "understand": "我明白了"
+    }
   }
 }

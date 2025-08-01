@@ -8,7 +8,7 @@
         </div>
         <div class="marquee-container">
           <div class="marquee-text">
-            {{ noticeText }}
+            {{ $t('notice.shortText') }}
           </div>
         </div>
         <button class="dropdown-arrow" @click="toggleNoticePopup">
@@ -35,7 +35,7 @@
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.58L19 8l-9 9z" fill="#fbbf24"/>
                   </svg>
                 </div>
-                <h3>Important Gaming Notice</h3>
+                <h3>{{ $t('notice.title') }}</h3>
               </div>
               <button @click="showNoticePopup = false" class="close-button">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -46,13 +46,13 @@
             
             <div class="popup-body">
               <div class="notice-content-text">
-                <p>{{ fullNoticeText }}</p>
+                <p>{{ $t('notice.fullText') }}</p>
               </div>
             </div>
             
             <div class="popup-footer">
               <button @click="showNoticePopup = false" class="understand-btn">
-                I Understand
+                {{ $t('notice.buttons.understand') }}
               </button>
             </div>
           </div>
@@ -149,8 +149,6 @@ export default {
       showNoticePopup: false,
       swiperInstance: null,
       modules: [Autoplay],
-      noticeText: "Notice: The following games will not count the amount of code played only the winnings and losses: MONKEY KING - 'Dragon Tiger Blue', 'Dragon Tiger Red', 'Single Pick', 'Roulette73', 'Baccarat' EVOLUTION - 'First Person Craps', 'Craps'...",
-      fullNoticeText: "Notice: The following games will not count the amount of code played only the winnings and losses. MONKEY KING - \"Dragon Tiger Blue，Dragon Tiger Red，Single Pick，Roulette73，Baccarat\" EVOLUTION - \"First Person Craps、Craps 、First Person Video Poker 、Video Poker 、All Blackjack Games\" JILI - \"Blackjack and Blackjack Lucky Ladies\" Pragmatic Play （Live） - \"All Blackjack Game\" Pragmatic Play （Slot） - \"Roulette 、Baccarat、 Dragon Bonus Baccarat、Dragon Tiger\" JDB - \"Gamble\" Thank you for your understanding and cooperation,and wish you a happy game.",
       promotions: [
         { id: 1, title: 'Top-up Bonus 68%', image: promotion1 },
         { id: 2, title: 'Top-up Bonus 200%', image: promotion2 },
