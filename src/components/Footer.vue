@@ -184,15 +184,22 @@
       <!-- Divider Line -->
       <div class="footer-divider"></div>
       
-      <!-- Copyright Section -->
+      <!-- Copyright Section with Link -->
       <div class="footer-bottom">
-        <p class="copyright">{{ $t('footer.copyright') }}</p>
+        <p class="copyright">
+          © 2025 
+          <router-link :to="localePath('/')" class="home-anchor" @click="scrollToTop">
+            Heng Ong Bet
+          </router-link>
+          88 | Heng Ong Bet | All Rights Reserved.
+        </p>
       </div>
     </div>
   </footer>
 </template>
 
 <script>
+import { localePath } from '@/router'
 import gcbIcon from '@/assets/gcb_icon.svg'
 import itechIcon from '@/assets/itech_icon.svg'
 import threatMetrixIcon from '@/assets/threat-metrix_icon.svg'
@@ -220,7 +227,12 @@ export default {
       whatsappIcon
     }
   },
+  computed: {
+    // Remove the currentSiteUrl computed property since we don't need it anymore
+  },
   methods: {
+    localePath,
+    
     handleLinkClick() {
       // All footer links redirect to registration
       this.goToRegisterPage();
@@ -246,6 +258,14 @@ export default {
       
       console.log('Redirecting to registration from footer');
       window.location.href = targetUrl;
+    },
+    
+    scrollToTop() {
+      // Scroll to top when clicking home anchor
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     }
   }
 }
@@ -459,6 +479,20 @@ export default {
   color: #9CA3AF;
   margin: 0;
   font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Anchor Link Styles */
+.home-anchor {
+  color: #F1AE3D;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.home-anchor:hover {
+  color: #FFD700;
+  text-decoration: underline;
 }
 
 /* Responsive Design */
@@ -756,7 +790,8 @@ export default {
 
 /* Focus States for Accessibility */
 .footer-links a:focus,
-.social-icon:focus {
+.social-icon:focus,
+.home-anchor:focus {
   outline: 2px solid #F1AE3D;
   outline-offset: 2px;
 }

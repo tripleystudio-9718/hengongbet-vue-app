@@ -84,7 +84,7 @@
           
           <!-- Help Submenu -->
           <div v-if="showHelpMenu" class="help-submenu">
-            <router-link :to="getLocalePath('/tutorial-guide')" @click="closeMobileMenu" class="help-sub-item" :class="{ 'help-sub-active': isCurrentRoute('/tutorial-guide') }">
+            <router-link :to="getLocalePath('/beginner-tutorial')" @click="closeMobileMenu" class="help-sub-item" :class="{ 'help-sub-active': isCurrentRoute('/beginner-tutorial') }">
               <span>{{ $t('nav.tutorial') }}</span>
               <svg class="chevron-right" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -172,7 +172,7 @@ export default {
     },
     // Check if any help page is currently active
     isHelpPageActive() {
-      return this.isCurrentRoute('/tutorial-guide') || this.isCurrentRoute('/topup-withdraw-tutorial')
+      return this.isCurrentRoute('/beginner-tutorial') || this.isCurrentRoute('/topup-withdraw-tutorial')
     }
   }
 }

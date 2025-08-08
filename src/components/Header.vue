@@ -74,7 +74,7 @@
                         
             <!-- Help Dropdown Menu -->
             <div v-if="showHelpDropdown" class="help-dropdown-menu">
-              <router-link :to="getLocalePath('/tutorial-guide')" class="help-dropdown-item">
+              <router-link :to="getLocalePath('/beginner-tutorial')" class="help-dropdown-item">
                 <span>{{ $t('nav.tutorial') }}</span>
               </router-link>
               <router-link :to="getLocalePath('/topup-withdraw-tutorial')" class="help-dropdown-item">
