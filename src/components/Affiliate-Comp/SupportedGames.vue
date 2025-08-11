@@ -1,6 +1,7 @@
 <template>
   <div class="games-section">
-    <h2 class="section-title">{{ $t('supported_games.title') }}</h2>
+    <div class="section-title" v-html="$t('supported_games.title')"></div>
+    <div class="section-subtitle" v-html="$t('supported_games.subtitle')"></div>
         
     <!-- Swiper Implementation -->
     <div class="swiper-container">
@@ -34,8 +35,8 @@
             <div class="game-icon">
               <img :src="game.icon" :alt="game.title" class="icon-image" />
             </div>
-            <h3 class="game-title">{{ game.title }}</h3>
-            <p class="game-subtitle">{{ game.subtitle }}</p>
+            <div class="game-title" v-html="game.title"></div>
+            <div class="game-subtitle" v-html="game.subtitle"></div>
           </div>
         </swiper-slide>
       </swiper>
@@ -152,8 +153,21 @@ export default {
   font-weight: 700;
   color: #FFFFFF;
   text-align: center;
-  margin: 60px 0 40px 0;
+  margin: 60px 0 20px 0;
   line-height: 1.2;
+}
+
+/* Section Subtitle */
+.section-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: #9CA3AF;
+  text-align: center;
+  margin: 0;
+  line-height: 1.4;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Container to control overflow */
@@ -288,7 +302,13 @@ export default {
 @media (max-width: 768px) {
   .section-title {
     font-size: 28px;
-    margin: 40px 0 30px 0;
+    margin: 40px 0 15px 0;
+  }
+  
+  .section-subtitle {
+    font-size: 14px;
+    margin: 0 0 30px 0;
+    padding: 0 15px;
   }
   
   .swiper-container {
@@ -332,7 +352,13 @@ export default {
 @media (max-width: 480px) {
   .section-title {
     font-size: 24px;
-    margin: 30px 0 25px 0;
+    margin: 30px 0 15px 0;
+  }
+  
+  .section-subtitle {
+    font-size: 13px;
+    margin: 0 0 25px 0;
+    padding: 0 10px;
   }
 
   .swiper-container {

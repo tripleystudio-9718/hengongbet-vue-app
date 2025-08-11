@@ -6,8 +6,8 @@
         <!-- Left Side - App Info and QR Codes -->
         <div class="left-content">
           <div class="app-info">
-            <h1 class="app-title">{{ $t('app.title') }}</h1>
-            <p class="app-subtitle">{{ $t('app.subtitle') }}</p>
+            <div class="app-title" v-html="$t('app.title')"></div>
+            <div class="app-subtitle" v-html="$t('app.subtitle')"></div>
           </div>
                     
           <div class="qr-codes">
@@ -18,7 +18,7 @@
               </div>
               <div class="download-button ios-button" @click="goToRegisterPage">
                 <img src="@/assets/ios-logo.svg" alt="iOS Logo" class="platform-icon" />
-                <span>{{ $t('app.iosDownload') }}</span>
+                <span v-html="$t('app.iosDownload')"></span>
               </div>
             </div>
                         
@@ -29,14 +29,14 @@
               </div>
               <div class="download-button android-button" @click="goToRegisterPage">
                 <img src="@/assets/android-logo.svg" alt="Android Logo" class="platform-icon" />
-                <span>{{ $t('app.androidDownload') }}</span>
+                <span v-html="$t('app.androidDownload')"></span>
               </div>
             </div>
           </div>
           <hr class="section-divider" />
           <div class="affiliate-section">
-            <p class="affiliate-text">{{ $t('app.affiliateText') }}</p>
-            <button class="signup-button" @click="goToRegisterPage">{{ $t('app.signUpButton') }}</button>
+            <div class="affiliate-text" v-html="$t('app.affiliateText')"></div>
+            <button class="signup-button" @click="goToRegisterPage" v-html="$t('app.signUpButton')"></button>
           </div>
         </div>
         <!-- Center - Phone Image for Mobile -->
@@ -54,8 +54,8 @@
                   <img :src="giftIcon" alt="Exclusive Bonus" class="feature-icon" />
                 </div>
                 <div class="feature-text">
-                  <span class="feature-title">{{ $t('app.features.exclusive') }}</span>
-                  <span class="feature-subtitle">{{ $t('app.features.bonus') }}</span>
+                  <span class="feature-title" v-html="$t('app.features.exclusive')"></span>
+                  <span class="feature-subtitle" v-html="$t('app.features.bonus')"></span>
                 </div>
               </div>
                             
@@ -65,8 +65,8 @@
                   <img :src="yellowHuman" alt="Affiliate Program" class="feature-icon" />
                 </div>
                 <div class="feature-text">
-                  <span class="feature-title">{{ $t('app.features.affiliate') }}</span>
-                  <span class="feature-subtitle">{{ $t('app.features.program') }}</span>
+                  <span class="feature-title" v-html="$t('app.features.affiliate')"></span>
+                  <span class="feature-subtitle" v-html="$t('app.features.program')"></span>
                 </div>
               </div>
             </div>
@@ -78,8 +78,8 @@
                   <img :src="yellowClock" alt="Instant Payment" class="feature-icon" />
                 </div>
                 <div class="feature-text">
-                  <span class="feature-title">{{ $t('app.features.instant') }}</span>
-                  <span class="feature-subtitle">{{ $t('app.features.payment') }}</span>
+                  <span class="feature-title" v-html="$t('app.features.instant')"></span>
+                  <span class="feature-subtitle" v-html="$t('app.features.payment')"></span>
                 </div>
               </div>
                             
@@ -89,8 +89,8 @@
                   <img :src="moneyIcon" alt="Seamless Experience" class="feature-icon" />
                 </div>
                 <div class="feature-text">
-                  <span class="feature-title">{{ $t('app.features.seamless') }}</span>
-                  <span class="feature-subtitle">{{ $t('app.features.experience') }}</span>
+                  <span class="feature-title" v-html="$t('app.features.seamless')"></span>
+                  <span class="feature-subtitle" v-html="$t('app.features.experience')"></span>
                 </div>
               </div>
             </div>
@@ -108,7 +108,7 @@
           @click="switchTab('android')"
         >
           <img src="@/assets/android-icon.svg" alt="Android Logo" class="platform-icon" />
-          {{ $t('guide.tabs.android') }}
+          <span v-html="$t('guide.tabs.android')"></span>
         </button>
         <button 
           class="tab-button"
@@ -116,7 +116,7 @@
           @click="switchTab('ios')"
         >
           <img src="@/assets/apple-icon.svg" alt="iOS Logo" class="platform-icon" />
-          {{ $t('guide.tabs.ios') }}
+          <span v-html="$t('guide.tabs.ios')"></span>
         </button>
         <button 
           class="tab-button"
@@ -124,20 +124,18 @@
           @click="switchTab('desktop')"
         >
           <img src="@/assets/desktop-icon.svg" alt="Desktop Logo" class="platform-icon" />
-          {{ $t('guide.tabs.desktop') }}
+          <span v-html="$t('guide.tabs.desktop')"></span>
         </button>
       </div>
       <!-- Download Guide Content -->
       <div v-if="activeTab === 'android'" class="guide-content">
         <!-- Title -->
-        <h1 class="guide-title">{{ $t('guide.titles.androidDownload') }}</h1>
+        <div class="guide-title" v-html="$t('guide.titles.androidDownload')"></div>
         <!-- Step 1 -->
         <div class="step-section">
           <div class="step-badge">1</div>
-          <h2 class="step-title">{{ $t('guide.steps.android.step1.title') }}</h2>
-          <p class="step-description">
-            {{ $t('guide.steps.android.step1.description') }}
-          </p>
+          <div class="step-title" v-html="$t('guide.steps.android.step1.title')"></div>
+          <div class="step-description" v-html="$t('guide.steps.android.step1.description')"></div>
                     
           <!-- Browser Address Bar Mockup -->
           <div class="browser-mockup">
@@ -151,10 +149,8 @@
       <!-- Step 2 -->
         <div class="step-section">
           <div class="step-badge">2</div>
-          <h2 class="step-title">{{ $t('guide.steps.android.step2.title') }}</h2>
-          <p class="step-description">
-            {{ $t('guide.steps.android.step2.description') }}
-          </p>
+          <div class="step-title" v-html="$t('guide.steps.android.step2.title')"></div>
+          <div class="step-description" v-html="$t('guide.steps.android.step2.description')"></div>
                     
           <!-- Mobile Installation Dialog -->
           <div class="mobile-dialog">
@@ -168,10 +164,8 @@
         <!-- Step 3 -->
         <div class="step-section">
           <div class="step-badge">3</div>
-          <h2 class="step-title">{{ $t('guide.steps.android.step3.title') }}</h2>
-          <p class="step-description">
-            {{ $t('guide.steps.android.step3.description') }}
-          </p>
+          <div class="step-title" v-html="$t('guide.steps.android.step3.title')"></div>
+          <div class="step-description" v-html="$t('guide.steps.android.step3.description')"></div>
                     
           <!-- Mobile Installation Dialog -->
           <div class="mobile-dialog">
@@ -181,14 +175,12 @@
       </div>
       <!-- iOS Guide Content -->
       <div v-else-if="activeTab === 'ios'" class="guide-content">
-        <h1 class="guide-title">{{ $t('guide.titles.iosDownload') }}</h1>
+        <div class="guide-title" v-html="$t('guide.titles.iosDownload')"></div>
       <!-- Step 1 -->
         <div class="step-section">
           <div class="step-badge">1</div>
-          <h2 class="step-title">{{ $t('guide.steps.ios.step1.title') }}</h2>
-          <p class="step-description">
-            {{ $t('guide.steps.ios.step1.description') }}
-          </p>
+          <div class="step-title" v-html="$t('guide.steps.ios.step1.title')"></div>
+          <div class="step-description" v-html="$t('guide.steps.ios.step1.description')"></div>
                     
           <!-- Browser Address Bar Mockup -->
           <div class="browser-mockup">
@@ -202,10 +194,8 @@
         <!-- Step 2 -->
         <div class="step-section">
           <div class="step-badge">2</div>
-          <h2 class="step-title">{{ $t('guide.steps.ios.step2.title') }}</h2>
-          <p class="step-description">
-            {{ $t('guide.steps.ios.step2.description') }}
-          </p>
+          <div class="step-title" v-html="$t('guide.steps.ios.step2.title')"></div>
+          <div class="step-description" v-html="$t('guide.steps.ios.step2.description')"></div>
                     
           <!-- Mobile Installation Dialog -->
           <div class="mobile-dialog">
@@ -219,10 +209,8 @@
         <!-- Step 3 -->
         <div class="step-section">
           <div class="step-badge">3</div>
-          <h2 class="step-title">{{ $t('guide.steps.ios.step3.title') }}</h2>
-          <p class="step-description">
-            {{ $t('guide.steps.ios.step3.description') }}
-          </p>
+          <div class="step-title" v-html="$t('guide.steps.ios.step3.title')"></div>
+          <div class="step-description" v-html="$t('guide.steps.ios.step3.description')"></div>
                     
           <!-- Mobile Installation Dialog -->
           <div class="mobile-dialog">
@@ -233,14 +221,12 @@
         </div>
       <!-- Desktop Guide Content -->
       <div v-else-if="activeTab === 'desktop'" class="guide-content">
-        <h1 class="guide-title">{{ $t('guide.titles.desktopDownload') }}</h1>
+        <div class="guide-title" v-html="$t('guide.titles.desktopDownload')"></div>
          <!-- Step 1 -->
         <div class="step-section">
           <div class="step-badge">1</div>
-          <h2 class="step-title">{{ $t('guide.steps.desktop.step1.title') }}</h2>
-          <p class="step-description">
-            {{ $t('guide.steps.desktop.step1.description') }}
-          </p>
+          <div class="step-title" v-html="$t('guide.steps.desktop.step1.title')"></div>
+          <div class="step-description" v-html="$t('guide.steps.desktop.step1.description')"></div>
                     
           <!-- Browser Address Bar Mockup -->
           <div class="browser-mockup">
@@ -254,10 +240,8 @@
         <!-- Step 2 -->
         <div class="step-section">
           <div class="step-badge">2</div>
-          <h2 class="step-title">{{ $t('guide.steps.desktop.step2.title') }}</h2>
-          <p class="step-description">
-            {{ $t('guide.steps.desktop.step2.description') }}
-          </p>
+          <div class="step-title" v-html="$t('guide.steps.desktop.step2.title')"></div>
+          <div class="step-description" v-html="$t('guide.steps.desktop.step2.description')"></div>
                     
           <!-- Mobile Installation Dialog -->
           <div class="mobile-dialog">
@@ -267,6 +251,9 @@
            
         </div>
     </div>
+
+    <!-- Section 3: Additional Content - Now as separate component -->
+    <AdditionalContent />
   </div>
 </template>
 
@@ -282,8 +269,14 @@ import giftIcon from '@/assets/gift-icon.png'
 import moneyIcon from '@/assets/money-icon.png'
 import yellowHuman from '@/assets/yellow-human.png'
 
+// Import the new separate component
+import AdditionalContent from './AdditionalContent.vue'
+
 export default {
   name: 'AppDownloadSection',
+  components: {
+    AdditionalContent
+  },
   data() {
     return {
       // Make images available in template
@@ -1133,99 +1126,6 @@ export default {
   .arrow-image {
     width: 70%;
     max-width: 120px;
-  }
-}
-
-@media (max-width: 360px) {
-  .center-phone-image {
-    max-width: 300px;
-  }
-  
-  .app-title {
-    font-size: 1.8rem;
-  }
-  
-  .app-subtitle {
-    font-size: 1.2rem;
-  }
-  
-  .qr-placeholder img {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .features-grid {
-    max-width: 240px;
-    gap: 10px;
-  }
-  
-  .feature-card {
-    padding: 12px 8px;
-    min-height: 90px;
-  }
-  
-  .feature-icon {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .feature-title {
-    font-size: 0.9rem;
-  }
-  
-  .feature-subtitle {
-    font-size: 0.8rem;
-  }
-  
-  .guide-title {
-    font-size: 1.6rem;
-  }
-  
-  .step-badge {
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
-  }
-  
-  .step-title {
-    font-size: 1.1rem;
-  }
-  
-  .step-description {
-    font-size: 13px;
-    max-width: 240px;
-  }
-  
-  .browser-mockup {
-    max-width: 240px;
-  }
-  
-  .mobile-dialog {
-    max-width: 220px;
-  }
-  
-  .step-image {
-    width: 100%;
-    max-width: 220px;
-  }
-  
-  .arrow-image {
-    width: 80%;
-    max-width: 100px;
-  }
-  
-  .tab-button {
-    padding: 8px 10px;
-    font-size: 12px;
-  }
-  
-  .affiliate-text {
-    font-size: 14px;
-  }
-  
-  .signup-button {
-    padding: 10px 20px;
-    font-size: 14px;
   }
 }
 

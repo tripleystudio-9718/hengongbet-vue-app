@@ -7,17 +7,19 @@
     
     <div class="affiliate-container">
       <!-- Main Title Section -->
-      <h1 class="main-title">
-        {{ $t('affiliate.brand_section.title1') }} 
-        <span style="color: #F2B240;">{{ $t('affiliate.brand_section.brand') }}</span> 
-        {{ $t('affiliate.brand_section.title2') }}
-      </h1>
-      <p class="description-text">{{ $t('affiliate.brand_section.tagline') }}</p>
+      <div class="main-title" v-html="$t('affiliate.brand_section.title')"></div>
+      <div class="description-text" v-html="$t('affiliate.brand_section.tagline')"></div>
+      
+      <!-- Additional paragraph under tagline -->
+      <div class="tagline-paragraph" v-html="$t('affiliate.brand_section.description_paragraph')"></div>
       
       <!-- Join Button -->
       <div class="join-button-container">
-        <button class="join-button" @click="goToRegisterPage">{{ $t('affiliate.join_button') }}</button>
+        <button class="join-button" @click="goToRegisterPage" v-html="$t('affiliate.join_button')"></button>
       </div>
+      
+      <!-- How It Works Title -->
+      <div class="how-it-works-title" v-html="$t('affiliate.how_it_works.title')"></div>
       
       <!-- Join Steps -->
       <div class="join-steps">
@@ -25,8 +27,9 @@
           <div class="steps-des">
             <img :src="num1Icon" class="num-image" />
             <div class="steps-t">
-              <p class="steps-p">{{ $t('affiliate.steps.step') }} {{ $t('affiliate.steps.step1.number') }}</p>
-              <h2 class="steps-h2">{{ $t('affiliate.steps.step1.title') }}</h2>
+              <div class="steps-p" v-html="`${$t('affiliate.steps.step')} ${$t('affiliate.steps.step1.number')}`"></div>
+              <div class="steps-h2" v-html="$t('affiliate.steps.step1.title')"></div>
+              <div class="steps-description" v-html="$t('affiliate.steps.step1.description')"></div>
             </div>
           </div>
         </div>
@@ -34,8 +37,9 @@
           <div class="steps-des">
             <img :src="num2Icon" class="num-image" />
             <div class="steps-t">
-              <p class="steps-p">{{ $t('affiliate.steps.step') }} {{ $t('affiliate.steps.step2.number') }}</p>
-              <h2 class="steps-h2">{{ $t('affiliate.steps.step2.title') }}</h2>
+              <div class="steps-p" v-html="`${$t('affiliate.steps.step')} ${$t('affiliate.steps.step2.number')}`"></div>
+              <div class="steps-h2" v-html="$t('affiliate.steps.step2.title')"></div>
+              <div class="steps-description" v-html="$t('affiliate.steps.step2.description')"></div>
             </div>
           </div>
         </div>
@@ -43,8 +47,9 @@
           <div class="steps-des">
             <img :src="num3Icon" class="num-image" />
             <div class="steps-t">
-              <p class="steps-p">{{ $t('affiliate.steps.step') }} {{ $t('affiliate.steps.step3.number') }}</p>
-              <h2 class="steps-h2">{{ $t('affiliate.steps.step3.title') }}</h2>
+              <div class="steps-p" v-html="`${$t('affiliate.steps.step')} ${$t('affiliate.steps.step3.number')}`"></div>
+              <div class="steps-h2" v-html="$t('affiliate.steps.step3.title')"></div>
+              <div class="steps-description" v-html="$t('affiliate.steps.step3.description')"></div>
             </div>
           </div>
         </div>
@@ -55,51 +60,60 @@
       
       <!-- Commission Section -->
       <div class="commission-section">
-        <h2 class="section-title">{{ $t('affiliate.commission_section.title') }}</h2>
-        <p class="section-description">{{ $t('affiliate.commission_section.description') }}</p>
+        <div class="section-title" v-html="$t('affiliate.commission_section.title')"></div>
+        <div class="section-description" v-html="$t('affiliate.commission_section.description')"></div>
         <div class="commission-cards">
           <div class="commission-card" v-for="(model, index) in commissionModels" :key="index">
             <div class="commission-icon">
               <img :src="model.icon" :alt="model.title" class="icon-image" />
             </div>
-            <h3 class="commission-title">{{ model.title }}</h3>
-            <p class="commission-description">{{ model.description }}</p>
+            <div class="commission-title" v-html="model.title"></div>
+            <div class="commission-description" v-html="model.description"></div>
           </div>
         </div>
       </div>
       
       <!-- Levels Section -->
       <div class="levels-section">
-        <h2 class="section-title">{{ $t('affiliate.levels_section.title') }}</h2>
+        <div class="section-title" v-html="$t('affiliate.levels_section.title')"></div>
         
         <!-- Table (responsive for all devices) -->
         <div class="levels-table-container">
           <div class="levels-table">
             <div class="table-header">
-              <div class="table-cell">{{ $t('affiliate.levels_section.table.headers.user_level') }}</div>
-              <div class="table-cell">{{ $t('affiliate.levels_section.table.headers.benefits') }}</div>
-              <div class="table-cell">{{ $t('affiliate.levels_section.table.headers.rebate') }}</div>
+              <div class="table-cell" v-html="$t('affiliate.levels_section.table.headers.user_level')"></div>
+              <div class="table-cell" v-html="$t('affiliate.levels_section.table.headers.benefits')"></div>
+              <div class="table-cell" v-html="$t('affiliate.levels_section.table.headers.rebate')"></div>
             </div>
             <div class="table-row" v-for="(level, index) in userLevels" :key="index">
-              <div class="table-cell">{{ level.name }}</div>
-              <div class="table-cell">{{ level.benefits }}</div>
-              <div class="table-cell">{{ level.rebate }}</div>
+              <div class="table-cell" v-html="level.name"></div>
+              <div class="table-cell" v-html="level.benefits"></div>
+              <div class="table-cell" v-html="level.rebate"></div>
             </div>
           </div>
         </div>
+        <div class="description-text" v-html="$t('affiliate.levels_section.description')"></div>
       </div>
 
       <!-- Supported Games Component -->
       <SupportedGames />
 
+      <!-- Who Should Join Section -->
+      <div class="who-should-join-section">
+        <div class="who-should-join-title" v-html="$t('affiliate.who_should_join.title')"></div>
+        <ul class="who-should-join-list">
+          <li v-for="(item, index) in whoShouldJoinItems" :key="index" v-html="item"></li>
+        </ul>
+        <div class="who-should-join-description" v-html="$t('affiliate.who_should_join.description')"></div>
+      </div>
+
       <!-- Final CTA Section -->
       <div class="cta-section">
-        <h2 class="cta-title">{{ $t('affiliate.cta_section.title') }}</h2>
-        <p class="cta-subtitle" v-html="$t('affiliate.cta_section.subtitle')"></p>
-        <p class="cta-description">{{ $t('affiliate.cta_section.description') }}</p>
+        <div class="cta-title" v-html="$t('affiliate.cta_section.title')"></div>
+        <div class="cta-subtitle" v-html="$t('affiliate.cta_section.subtitle')"></div>
+        <div class="cta-description" v-html="$t('affiliate.cta_section.description')"></div>
         <div class="cta-buttons">
-          <button class="cta-button primary" @click="goToRegisterPage">{{ $t('affiliate.cta_section.buttons.register') }}</button>
-          <button class="cta-button secondary" @click="goToRegisterPage">{{ $t('affiliate.cta_section.buttons.support') }}</button>
+          <button class="cta-button primary" @click="goToRegisterPage" v-html="$t('affiliate.cta_section.buttons.register')"></button>
         </div>
       </div>
     </div>
@@ -196,6 +210,16 @@ export default {
           rebate: this.$t('affiliate.levels_section.table.levels.player.rebate')
         }
       ]
+    },
+    whoShouldJoinItems() {
+      return [
+        this.$t('affiliate.who_should_join.items.online_marketers'),
+        this.$t('affiliate.who_should_join.items.social_media_influencers'),
+        this.$t('affiliate.who_should_join.items.telegram_whatsapp_admins'),
+        this.$t('affiliate.who_should_join.items.forum_owners'),
+        this.$t('affiliate.who_should_join.items.gaming_enthusiasts'),
+        this.$t('affiliate.who_should_join.items.earn_from_home')
+      ]
     }
   },
   methods: {
@@ -266,9 +290,32 @@ export default {
   font-size: 18px;
   font-weight: 400;
   color: #ffffff;
-  margin: 1rem 0 2rem 0;
+  margin: 1rem 0;
   line-height: 1.4;
   text-align: center;
+  word-wrap: break-word;
+}
+
+.tagline-paragraph {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 1rem 0 2rem 0;
+  line-height: 1.5;
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.how-it-works-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 40px 0 30px 0;
+  line-height: 1.2;
   word-wrap: break-word;
 }
 
@@ -292,8 +339,8 @@ export default {
 .steps-num {
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
-  height: 250px;
+  background-size: cover;
+  height: 200px;
   width: 100%;
   max-width: 600px;
   display: flex;
@@ -314,6 +361,17 @@ export default {
   font-weight: 400;
   color: #ffffff;
   margin: 0;
+}
+
+.steps-description {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 8px 0 0 0;
+  line-height: 1.4;
+  text-align: left;
+  max-width: 200px;
+  word-wrap: break-word;
 }
 
 .num-image {
@@ -535,6 +593,57 @@ export default {
   font-weight: 700;
 }
 
+/* Who Should Join Section */
+.who-should-join-section {
+  margin-top: 0;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px 0;
+}
+
+.who-should-join-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.who-should-join-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  text-align: left;
+  width: 300px;
+}
+
+.who-should-join-list li {
+  font-size: 16px;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+  line-height: 1.4;
+}
+
+.who-should-join-list li::before {
+  content: '•';
+  color: #F2B240;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+.who-should-join-description {
+  font-size: 16px;
+  color: #9CA3AF;
+  line-height: 1.5;
+  margin-top: 20px;
+}
+
 /* CTA Section */
 .cta-section {
   text-align: center;
@@ -613,7 +722,7 @@ export default {
   -webkit-text-fill-color: initial;
 }
 
-/* Mobile Responsive Design */
+/* Mobile responsive for Who Should Join */
 @media (max-width: 768px) {
   .affiliate-container {
     padding: 0 15px;
@@ -631,7 +740,19 @@ export default {
 
   .description-text {
     font-size: 16px;
+    margin: 15px 0;
+    padding: 0 10px;
+  }
+
+  .tagline-paragraph {
+    font-size: 14px;
     margin: 15px 0 25px 0;
+    padding: 0 10px;
+  }
+
+  .how-it-works-title {
+    font-size: 24px;
+    margin: 30px 0 20px 0;
     padding: 0 10px;
   }
 
@@ -651,7 +772,7 @@ export default {
   .steps-num {
     width: 100%;
     max-width: 100%;
-    height: 180px;
+    height: 200px;
     border-radius: 12px;
     margin: 0;
   }
@@ -668,6 +789,12 @@ export default {
 
   .steps-p {
     font-size: 14px;
+  }
+
+  .steps-description {
+    font-size: 12px;
+    max-width: 250px;
+    text-align: center;
   }
 
   .num-image {
@@ -745,6 +872,30 @@ export default {
     font-weight: 700;
   }
 
+  .who-should-join-section {
+    margin-top: 40px;
+    padding: 0 15px;
+  }
+  
+  .who-should-join-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+  
+  .who-should-join-list li {
+    font-size: 15px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
+  
+  .who-should-join-list li::before {
+    font-size: 18px;
+  }
+  
+  .who-should-join-description {
+    font-size: 14px;
+  }
+
   .cta-title {
     font-size: 26px;
     padding: 0 10px;
@@ -790,6 +941,14 @@ export default {
     font-size: 14px;
   }
 
+  .tagline-paragraph {
+    font-size: 13px;
+  }
+
+  .how-it-works-title {
+    font-size: 20px;
+  }
+
   .section-title {
     font-size: 20px;
   }
@@ -819,13 +978,38 @@ export default {
     font-size: 11px;
   }
 
+  .who-should-join-section {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .who-should-join-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .who-should-join-list li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    padding-left: 18px;
+    text-align: center;
+  }
+  
+  .who-should-join-list li::before {
+    font-size: 16px;
+  }
+  
+  .who-should-join-description {
+    font-size: 13px;
+  }
+
   /* Keep steps vertical and full-width on small screens */
   .join-steps {
     gap: 15px;
   }
 
   .steps-num {
-    height: 150px;
+    height: 180px;
   }
 
   .steps-h2 {
@@ -834,6 +1018,11 @@ export default {
 
   .steps-p {
     font-size: 12px;
+  }
+
+  .steps-description {
+    font-size: 11px;
+    max-width: 200px;
   }
 
   .num-image {

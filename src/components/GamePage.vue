@@ -12,8 +12,8 @@
           class="tab-button"
           :class="{ active: activeTab === tab.id }"
           @click="setActiveTab(tab.id)"
+          v-html="$t(`games.tabs.${tab.id}`)"
         >
-          {{ $t(`games.tabs.${tab.id}`) }}
         </button>
       </div>
       <!-- Tab Content -->
@@ -30,7 +30,7 @@
             <div class="game-image">
               <img :src="game.image" :alt="$t('games.alt.gameImage')" />
             </div>
-            <div class="game-name">{{ $t(`games.names.${game.nameKey}`) }}</div>
+            <div class="game-name" v-html="$t(`games.names.${game.nameKey}`)"></div>
           </div>
         </div>
         <!-- Slots Tab -->
@@ -91,6 +91,113 @@
               <img :src="game.image" :alt="$t('games.alt.gameImage')" />
             </div>
             <div class="game-name">{{ $t(`games.names.${game.nameKey}`) }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game Information Section -->
+    <div class="game-content-section">
+      <!-- Slots Section -->
+      <div class="content-section">
+        <div class="section-title" v-html="$t('games.content.slots.title')"></div>
+        <div class="section-description" v-html="$t('games.content.slots.description')"></div>
+        
+        <div class="games-info-grid">
+          <div v-for="(item, index) in slotsContent" :key="index" class="game-info-card">
+            <div class="game-info-title" v-html="$t(`games.content.slots.games.${item.key}.title`)"></div>
+            <div class="game-info-description" v-html="$t(`games.content.slots.games.${item.key}.description`)"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Casino Section -->
+      <div class="content-section">
+        <div class="section-title" v-html="$t('games.content.casino.title')"></div>
+        <div class="section-description" v-html="$t('games.content.casino.description')"></div>
+        
+        <div class="games-info-grid">
+          <div v-for="(item, index) in casinoContent" :key="index" class="game-info-card">
+            <div class="game-info-title" v-html="$t(`games.content.casino.games.${item.key}.title`)"></div>
+            <div class="game-info-description" v-html="$t(`games.content.casino.games.${item.key}.description`)"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sports Section -->
+      <div class="content-section">
+        <div class="section-title" v-html="$t('games.content.sports.title')"></div>
+        <div class="section-description" v-html="$t('games.content.sports.description')"></div>
+        
+        <div class="games-info-grid">
+          <div v-for="(item, index) in sportsContent" :key="index" class="game-info-card">
+            <div class="game-info-title" v-html="$t(`games.content.sports.games.${item.key}.title`)"></div>
+            <div class="game-info-description" v-html="$t(`games.content.sports.games.${item.key}.description`)"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lottery Section -->
+      <div class="content-section">
+        <div class="section-title" v-html="$t('games.content.lottery.title')"></div>
+        
+        <div class="games-info-grid">
+          <div v-for="(item, index) in lotteryContent" :key="index" class="game-info-card">
+            <div class="game-info-title" v-html="$t(`games.content.lottery.games.${item.key}.title`)"></div>
+            <div class="game-info-description" v-html="$t(`games.content.lottery.games.${item.key}.description`)"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section - Accordion Design -->
+      <div class="content-section">
+        <div class="section-title" v-html="$t('games.content.faq.title')"></div>
+        
+        <div class="accordion-container">
+          <div 
+            v-for="(item, index) in faqContent" 
+            :key="index" 
+            class="accordion-item"
+          >
+            <button
+              @click="toggleContentItem('faq', index)"
+              class="accordion-trigger"
+            >
+              <span 
+                class="trigger-text"
+                :class="{ 'text-active': openContentItems.faq[index] }"
+                v-html="$t(`games.content.faq.items.${item.key}.question`)"
+              ></span>
+
+              <div class="trigger-icon-wrapper">
+                <div class="trigger-icon-circle">
+                  <svg 
+                    v-if="openContentItems.faq[index]" 
+                    class="trigger-icon-image"
+                    viewBox="0 0 24 24" 
+                    fill="none"
+                  >
+                    <path d="M18 12H6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  <svg 
+                    v-else 
+                    class="trigger-icon-image"
+                    viewBox="0 0 24 24" 
+                    fill="none"
+                  >
+                    <path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </div>
+              </div>
+            </button>
+            
+            <transition name="fade-slide">
+              <div v-if="openContentItems.faq[index]" class="accordion-content">
+                <div class="content-body">
+                  <p class="content-text" v-html="$t(`games.content.faq.items.${item.key}.answer`)"></p>
+                </div>
+              </div>
+            </transition>
           </div>
         </div>
       </div>
@@ -203,6 +310,40 @@ export default {
           image: new URL('@/assets/game15.png', import.meta.url).href, 
           category: 'casino' 
         }
+      ],
+      openContentItems: {
+        faq: { 0: true }
+      },
+      slotsContent: [
+        { key: 'lucky365' },
+        { key: 'askmeslot' },
+        { key: 'jdb' },
+        { key: 'monkeyKing' },
+        { key: 'jili' },
+        { key: 'microslot' }
+      ],
+      casinoContent: [
+        { key: 'hotRoad' },
+        { key: 'evolution' },
+        { key: 'sexy' },
+        { key: 'bigGaming' },
+        { key: 'pragmaticPlay' }
+      ],
+      sportsContent: [
+        { key: 'maxbet' },
+        { key: 'sv388' },
+        { key: 'rcb988' }
+      ],
+      lotteryContent: [
+        { key: 'ekor' }
+      ],
+      faqContent: [
+        { key: 'popular' },
+        { key: 'realTime' },
+        { key: 'sports' },
+        { key: 'ekor4d' },
+        { key: 'fair' },
+        { key: 'mobile' }
       ]
     }
   },
@@ -224,6 +365,12 @@ export default {
     setActiveTab(tabId) {
       this.activeTab = tabId;
     },
+    toggleContentItem(section, index) {
+      this.openContentItems[section] = {
+        ...this.openContentItems[section],
+        [index]: !this.openContentItems[section][index]
+      };
+    },
     handleGameClick(game) {
       const gameName = this.$t(`games.names.${game.nameKey}`);
       console.log('Game clicked:', gameName);
@@ -232,14 +379,14 @@ export default {
       const locale = this.$i18n?.locale || 'en';
 
       let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
-  if (locale === 'zh') {
-    targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
-  } else if (locale === 'ms') {
-    targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
-  }
+      if (locale === 'zh') {
+        targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
+      } else if (locale === 'ms') {
+        targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
+      }
       // Redirect to external URL
       window.location.href = targetUrl;
-}
+    }
   }
 }
 </script>
@@ -377,11 +524,197 @@ export default {
   text-align: center;
 }
 
+/* Game Content Section */
+.game-content-section {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  padding: 60px 20px;
+  color: white;
+}
+
+.content-section {
+  margin-bottom: 60px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-section:last-child {
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+}
+
+.section-description {
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+  margin: 0 0 40px 0;
+  line-height: 1.5;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Game Info Cards - Static Display */
+.games-info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.game-info-card {
+  background: transparent;
+  padding: 0;
+}
+
+.game-info-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #F2B240;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.game-info-description {
+  font-size: 16px;
+  color: #D1D5DB;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Accordion Styles - Only for FAQ */
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  background-color: #242424;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.accordion-item:last-child {
+  margin-bottom: 0;
+}
+
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1.25rem;
+  text-align: left;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.accordion-trigger:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.trigger-text {
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 1.125rem;
+  padding-right: 1rem;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+  text-align: left;
+}
+
+.text-active {
+  color: #F2B240;
+}
+
+.trigger-icon-wrapper {
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.trigger-icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #F2B240;
+  border-radius: 50%;
+}
+
+.trigger-icon-image {
+  width: 20px;
+  height: 20px;
+  color: #000000;
+}
+
+.accordion-content {
+  padding: 0 1.25rem 0.5rem 1.25rem;
+}
+
+.content-body {
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.content-text {
+  color: #D1D5DB;
+  line-height: 1.6;
+  margin: 0;
+  text-align: left;
+}
+
+/* Transition animations */
+.fade-slide-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.fade-slide-leave-active {
+  transition: all 0.3s ease-in;
+}
+
+.fade-slide-enter-from {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .tab-content {
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
+  }
+
+  .game-content-section {
+    padding: 40px 15px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .section-description {
+    font-size: 16px;
   }
 }
 
@@ -425,38 +758,6 @@ export default {
     gap: 10px;
     padding: 0;
     margin: 0;
-  }
-  
-  .game-card {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .game-image {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 12px;
-    background: #000;
-  }
-  
-  .game-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-    display: block;
-  }
-  
-  .game-name {
-    font-size: 11px;
-    color: #fff;
-    text-align: center;
-    margin: 6px 0 12px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 }
 </style>

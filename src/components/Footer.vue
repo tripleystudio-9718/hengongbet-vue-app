@@ -21,7 +21,7 @@
         <div class="footer-column">
           <h3 class="footer-title">{{ $t('footer.games') }}</h3>
           <ul class="footer-links">
-            <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.slots') }}</a></li>
+            <li><a href="" @click.prevent="handleLinkClick">{{ $t('footer.slots') }}</a></li>
             <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.sports') }}</a></li>
             <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.lottery') }}</a></li>
             <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.casino') }}</a></li>
@@ -31,24 +31,6 @@
             <h4 class="badge-title">{{ $t('footer.certification') }}</h4>
             <div class="badge-icon certification-badge">
               <img :src="itechIcon" :alt="$t('footer.itech_certification_alt')" />
-            </div>
-          </div>
-        </div>
-        
-        <!-- Info Section -->
-        <div class="footer-column">
-          <h3 class="footer-title">{{ $t('footer.info') }}</h3>
-          <ul class="footer-links">
-            <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.promotions') }}</a></li>
-            <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.about_us') }}</a></li>
-            <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.contact_us') }}</a></li>
-            <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.terms_conditions') }}</a></li>
-          </ul>
-          
-          <div class="footer-badge desktop-only">
-            <h4 class="badge-title">{{ $t('footer.security') }}</h4>
-            <div class="badge-icon security-badge">
-              <img :src="threatMetrixIcon" :alt="$t('footer.threatmetrix_security_alt')" />
             </div>
           </div>
         </div>
@@ -72,18 +54,26 @@
           </div>
           
           <div class="footer-badge desktop-only">
-            <h4 class="badge-title">{{ $t('footer.follow_us') }}</h4>
-            <div class="social-links">
-              <a href="#" @click.prevent="handleSocialClick('facebook')" class="social-icon">
-                <img :src="fbIcon" :alt="$t('footer.facebook_alt')" />
-              </a>
-              <a href="#" @click.prevent="handleSocialClick('instagram')" class="social-icon">
-                <img :src="instagramIcon" :alt="$t('footer.instagram_alt')" />
-              </a>
-              <a href="#" @click.prevent="handleSocialClick('whatsapp')" class="social-icon">
-                <img :src="whatsappIcon" :alt="$t('footer.whatsapp_alt')" />
-              </a>
+            <h4 class="badge-title">{{ $t('footer.security') }}</h4>
+            <div class="badge-icon security-badge">
+              <img :src="threatMetrixIcon" :alt="$t('footer.threatmetrix_security_alt')" />
             </div>
+          </div>
+        </div>
+        
+        <!-- Social Links Section -->
+        <div class="footer-column">
+          <h3 class="footer-title">{{ $t('footer.follow_us') }}</h3>
+          <div class="social-links">
+            <a href="" @click.prevent="handleSocialClick('facebook')" class="social-icon">
+              <img :src="fbIcon" :alt="$t('footer.facebook_alt')" />
+            </a>
+            <a href="" @click.prevent="handleSocialClick('instagram')" class="social-icon">
+              <img :src="instagramIcon" :alt="$t('footer.instagram_alt')" />
+            </a>
+            <a href="" @click.prevent="handleSocialClick('whatsapp')" class="social-icon">
+              <img :src="whatsappIcon" :alt="$t('footer.whatsapp_alt')" />
+            </a>
           </div>
         </div>
       </div>
@@ -98,25 +88,15 @@
           </p>
         </div>
         
-        <!-- Row 2: Games and Info -->
+        <!-- Row 2: Games -->
         <div class="mobile-row">
           <div class="mobile-column">
             <h3 class="footer-title">{{ $t('footer.games') }}</h3>
             <ul class="footer-links">
-              <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.slots') }}</a></li>
-              <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.sports') }}</a></li>
-              <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.lottery') }}</a></li>
-              <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.casino') }}</a></li>
-            </ul>
-          </div>
-          
-          <div class="mobile-column">
-            <h3 class="footer-title">{{ $t('footer.info') }}</h3>
-            <ul class="footer-links">
-              <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.promotions') }}</a></li>
-              <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.about_us') }}</a></li>
-              <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.contact_us') }}</a></li>
-              <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.terms_conditions') }}</a></li>
+              <li><a href="" @click.prevent="handleLinkClick">{{ $t('footer.slots') }}</a></li>
+              <li><a href="" @click.prevent="handleLinkClick">{{ $t('footer.sports') }}</a></li>
+              <li><a href="" @click.prevent="handleLinkClick">{{ $t('footer.lottery') }}</a></li>
+              <li><a href="" @click.prevent="handleLinkClick">{{ $t('footer.casino') }}</a></li>
             </ul>
           </div>
         </div>
@@ -168,13 +148,13 @@
         <div class="mobile-social-section">
           <h3 class="footer-title">{{ $t('footer.follow_us') }}</h3>
           <div class="social-links">
-            <a href="#" @click.prevent="handleSocialClick('facebook')" class="social-icon">
+            <a href="" @click.prevent="handleSocialClick('facebook')" class="social-icon">
               <img :src="fbIcon" :alt="$t('footer.facebook_alt')" />
             </a>
-            <a href="#" @click.prevent="handleSocialClick('instagram')" class="social-icon">
+            <a href="" @click.prevent="handleSocialClick('instagram')" class="social-icon">
               <img :src="instagramIcon" :alt="$t('footer.instagram_alt')" />
             </a>
-            <a href="#" @click.prevent="handleSocialClick('whatsapp')" class="social-icon">
+            <a href="" @click.prevent="handleSocialClick('whatsapp')" class="social-icon">
               <img :src="whatsappIcon" :alt="$t('footer.whatsapp_alt')" />
             </a>
           </div>
@@ -184,14 +164,18 @@
       <!-- Divider Line -->
       <div class="footer-divider"></div>
       
-      <!-- Copyright Section with Link -->
+      <!-- Copyright Section with Language-Specific Link -->
       <div class="footer-bottom">
         <p class="copyright">
           © 2025 
-          <router-link :to="localePath('/')" class="home-anchor" @click="scrollToTop">
+          <a 
+            href="" 
+            class="home-anchor" 
+            @click.prevent="handleHomeClick"
+          >
             Heng Ong Bet
-          </router-link>
-          88 | Heng Ong Bet | All Rights Reserved.
+          </a>
+          88 | Heng Ong Bet | {{ $t('footer.rights_reserved') }}
         </p>
       </div>
     </div>
@@ -227,9 +211,6 @@ export default {
       whatsappIcon
     }
   },
-  computed: {
-    // Remove the currentSiteUrl computed property since we don't need it anymore
-  },
   methods: {
     localePath,
     
@@ -245,8 +226,8 @@ export default {
     },
     
     goToRegisterPage() {
-      // Get current language from parent component or store
-      const locale = this.$parent?.currentLanguage || this.$store?.state?.language || 'en';
+      // Get current language from route or i18n
+      const locale = this.$route.meta?.locale || this.$i18n.locale || 'en';
       
       let targetUrl = 'https://hengongbet.com/en-my';
       
@@ -260,8 +241,44 @@ export default {
       window.location.href = targetUrl;
     },
     
+    getHomeLink() {
+      // Get current language from route
+      const currentLocale = this.$route.meta?.locale || this.$i18n.locale || 'en';
+      
+      // Generate proper localized path
+      if (currentLocale === 'en') {
+        return '/';
+      } else {
+        return `/${currentLocale}`;
+      }
+    },
+    
+    handleHomeClick(event) {
+      // Prevent default to handle navigation manually
+      event.preventDefault();
+      
+      // Get current language
+      const currentLocale = this.$route.meta?.locale || this.$i18n.locale || 'en';
+      
+      // Generate the correct path
+      let targetPath = '/';
+      if (currentLocale !== 'en') {
+        targetPath = `/${currentLocale}`;
+      }
+      
+      // Navigate to the correct language-specific home page
+      this.$router.push(targetPath).then(() => {
+        // Scroll to top after navigation
+        this.scrollToTop();
+      }).catch(err => {
+        console.log('Navigation error:', err);
+        // Fallback: scroll to top even if navigation fails
+        this.scrollToTop();
+      });
+    },
+    
     scrollToTop() {
-      // Scroll to top when clicking home anchor
+      // Smooth scroll to top
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -288,7 +305,7 @@ export default {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr 1.3fr;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
   gap: 60px;
   margin-bottom: 32px;
   align-items: start;
@@ -488,6 +505,7 @@ export default {
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .home-anchor:hover {
