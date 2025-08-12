@@ -64,7 +64,7 @@
                 
         <!-- Featured Game Info -->
         <div class="featured-info">
-          <h3>{{ centerGame.name }}</h3>
+          <div>{{ centerGame.name }}</div>
           <p>{{ centerGame.provider }}</p>
         </div>
       </div>

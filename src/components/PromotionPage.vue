@@ -2,10 +2,10 @@
   <div class="promotion-container">
     <!-- Header Section -->
     <div class="promotion-header">
-      <h1 class="main-title">
+      <div class="main-title">
         {{ $t('promotion_section.header.title_prefix') }} <span class="highlight">{{ $t('promotion_section.header.brand') }}</span>
-      </h1>
-      <h2 class="subtitle">{{ $t('promotion_section.header.subtitle') }}</h2>
+      </div>
+      <div class="subtitle">{{ $t('promotion_section.header.subtitle') }}</div>
       <p class="description">
         {{ $t('promotion_section.header.description') }}
       </p>

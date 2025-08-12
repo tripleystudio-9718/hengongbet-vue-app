@@ -3,7 +3,8 @@
     <!-- Header Section -->
     <div class="app-guide-header-section">
       <p class="app-guide-header-subtitle">{{ $t('app_guide.header.subtitle') }}</p>
-      <h2 class="app-guide-header-title">{{ $t('app_guide.header.title') }}</h2>
+      <!-- replaced h2 with div -->
+      <div class="app-guide-header-title">{{ $t('app_guide.header.title') }}</div>
     </div>
 
     <div class="app-guide-features-section">
@@ -23,7 +24,8 @@
       <div class="app-guide-tab-content">
         <!-- Instruction Section -->
         <div class="instruction-section">
-          <h2 class="instruction-title">{{ $t('app_guide.instructions.title') }}</h2>
+          <!-- replaced h2 with div -->
+          <div class="instruction-title">{{ $t('app_guide.instructions.title') }}</div>
           
           <!-- Slides Container -->
           <div class="app-guide-slides-wrapper">
@@ -37,7 +39,8 @@
                 class="app-guide-slide"
               >
                 <div class="step-content">
-                  <h3 class="step-title">{{ $t('app_guide.instructions.step') }} {{ index + 1 }}</h3>
+                  <!-- replaced h3 with div -->
+                  <div class="step-title">{{ $t('app_guide.instructions.step') }} {{ index + 1 }}</div>
                   <p class="step-description">{{ step.description }}</p>
                   
                   <!-- Step Image -->
@@ -274,8 +277,8 @@ export default {
   padding: 10px;
   justify-content: center;
   border-radius: 16px;
-border: 2.031px solid #242424;
-background: #242424;
+  border: 2.031px solid #242424;
+  background: #242424;
 }
 
 .app-guide-tab-btn {
@@ -308,17 +311,17 @@ background: #242424;
 
 .app-guide-tab-btn.app-guide-active {
   border-radius: 12.943px;
-background: linear-gradient(180deg, #F0AD3C 0%, #ED9326 100%);
-background-blend-mode: plus-darker;
+  background: linear-gradient(180deg, #F0AD3C 0%, #ED9326 100%);
+  background-blend-mode: plus-darker;
   color: #000000;
   font-weight: 600;
 }
 
 .app-guide-tab-content {
   padding: 20px 20px 40px 20px;
-border-radius: 24.388px;
-background: #242424;
-box-shadow: 0 5.528px 5.528px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 24.388px;
+  background: #242424;
+  box-shadow: 0 5.528px 5.528px 0 rgba(0, 0, 0, 0.25);
 }
 
 .instruction-section {

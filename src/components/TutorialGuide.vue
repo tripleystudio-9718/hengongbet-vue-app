@@ -7,6 +7,7 @@
       </h1>
       <p class="header-subtitle">{{ $t('tutorial.subtitle') }}</p>
     </div>
+    
     <div class="max-w-7xl mx-auto px-6 py-8">
       <!-- First Tutorial Section -->
       <div class="tutorial-section">
@@ -59,6 +60,7 @@
           </div>
         </div>
       </div>
+      
       <!-- Second Tutorial Section -->
       <div class="tutorial-section">
         <h3 class="section-title">
@@ -127,14 +129,24 @@
         </div>
       </div>
     </div>
+
+    <!-- Import and use separate components -->
+    <BeginnerGuideContent />
+    <CleanFaqSection />
   </section>
 </template>
 
 <script>
 import tutorialIcon from '@/assets/tutorial-icon.png'
+import BeginnerGuideContent from './BeginnerGuideContent.vue'
+import CleanFaqSection from './CleanFaqSection.vue'
 
 export default {
   name: 'TutorialGuide',
+  components: {
+    BeginnerGuideContent,
+    CleanFaqSection
+  },
   data() {
     return {
       tutorialIcon
@@ -305,7 +317,7 @@ export default {
   flex-shrink: 0;
   margin: 0 20px;
   position: relative;
-  top: -10px; /* Align with step icons */
+  top: -10px;
 }
 
 .circle {
@@ -330,17 +342,7 @@ export default {
   margin: 0 -2px;
 }
 
-
-@media (min-width: 1441px) and (max-width: 1680px) {
-  .affiliate-section {
-    width: 65%;
-  }
-
-  .section-divider {
-    width: 65%;
-  }
-}
-
+/* Responsive Design */
 @media (max-width: 1440px) {
   .step-icon-wrapper {
     width: 235px;
@@ -363,7 +365,6 @@ export default {
   }
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
   .steps-container {
     gap: 10px;
@@ -405,16 +406,16 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .header-title {
-    font-size: 36px;
+  .tutorial-guide .header-title {
+    font-size: 24px !important;
   }
   
-  .header-subtitle {
-    font-size: 16px;
+  .tutorial-guide .header-subtitle {
+    font-size: 10px !important;
   }
   
-  .section-title {
-    font-size: 20px;
+  .tutorial-guide .section-title {
+    font-size: 20px !important;
     margin-bottom: 30px;
   }
   
@@ -459,8 +460,8 @@ export default {
     right: 15px;
   }
   
-  .step-text-overlay p {
-    font-size: 12px;
+  .tutorial-guide .step-text-overlay p {
+    font-size: 10px !important;
   }
 }
 
@@ -469,20 +470,20 @@ export default {
     padding: 20px 0;
   }
   
-  .header-section {
+  .tutorial-guide .header-section {
     padding: 20px 0 20px 0;
   }
   
-  .header-title {
-    font-size: 28px;
+  .tutorial-guide .header-title {
+    font-size: 24px !important;
   }
   
-  .header-subtitle {
-    font-size: 14px;
+  .tutorial-guide .header-subtitle {
+    font-size: 10px !important;
   }
   
-  .section-title {
-    font-size: 18px;
+  .tutorial-guide .section-title {
+    font-size: 20px !important;
     padding: 0 20px;
   }
   
@@ -516,8 +517,8 @@ export default {
     right: 12px;
   }
   
-  .step-text-overlay p {
-    font-size: 11px;
+  .tutorial-guide .step-text-overlay p {
+    font-size: 10px !important;
   }
   
   .dotted-line-container {

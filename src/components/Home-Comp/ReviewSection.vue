@@ -3,8 +3,8 @@
     <div class="content-wrapper">
       <!-- Header -->
       <div class="header-wrapper">
-        <h2 class="main-title">{{ $t('testimonials.header.title') }}</h2>
-        <h3 class="accent-subtitle">{{ $t('testimonials.header.subtitle') }}</h3>
+        <div class="main-title">{{ $t('testimonials.header.title') }}</div>
+        <div class="accent-subtitle">{{ $t('testimonials.header.subtitle') }}</div>
         <div class="rating-display">
           <span class="rating-value">{{ $t('testimonials.header.rating') }}</span>
           <div class="stars-group">
@@ -21,9 +21,9 @@
           <div class="quote-display">
             <img :src="quotationIcon" :alt="$t('testimonials.alt_text.quotation')" class="quote-icon" />
           </div>
-          <h2 class="panel-title">
+          <div class="panel-title">
             {{ $t('testimonials.control.title') }}
-          </h2>
+          </div>
           
           <!-- Progress Bar -->
           <div class="navigation-controls">

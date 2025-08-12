@@ -11,24 +11,96 @@
             
       <section class="main-content">
         <div class="content-container">
-          <!-- Brand Section -->
+          <!-- Hero Section -->
           <div class="section-wrapper">
-            <p class="subtitle-text">{{ currentContent.brandSection.subtitle }}</p>
-            <h2 class="main-title" style="color: #F2B240;">{{ currentContent.brandSection.title }}</h2>
-            <p class="description-text">{{ currentContent.brandSection.tagline }}</p>
-                                  
+            <div class="main-title" style="color: #FFFFFF;">{{ $t('home.hero.title') }}</div>
+            <p class="subtitle-text">{{ $t('home.hero.subtitle') }}</p>
+            <p class="description-text">{{ $t('home.hero.description') }}</p>
+            
+            <div class="cta-buttons">
+              <button class="cta-btn" @click="handleRegisterClick">{{ $t('home.hero.registerNow') }}</button>
+              <button class="cta-btn" @click="handlePromotionClick">{{ $t('home.hero.unlockBonus') }}</button>
+              <button class="cta-btn" @click="handleDownloadClick">{{ $t('home.hero.downloadApp') }}</button>
+            </div>
+          </div>
+
+          <!-- About Section -->
+          <div class="section-wrapper">
+            <div class="main-title" style="color: #F2B240;">{{ $t('home.about.title') }}</div>
+            <p class="description-text">{{ $t('home.about.description1') }} <strong>{{ $t('home.about.platformType') }}</strong></p>
             <div class="text-content">
-              <p v-for="(paragraph, index) in currentContent.brandSection.paragraphs" :key="index">
-                {{ paragraph }}
-              </p>
-                                        
+              <p>{{ $t('home.about.description2') }}</p>
+              <p>{{ $t('home.about.description3') }}</p>
+              <p>{{ $t('home.about.description4') }}</p>
+            </div>
+          </div>
+
+          <!-- Games Explore Section -->
+          <div class="section-wrapper">
+            <div class="main-title" style="color: #F2B240;">{{ $t('home.games.title') }}</div>
+            <p class="description-text">{{ $t('home.games.description') }}</p>
+
+            <!-- Slot Games -->
+            <div class="games-subsection">
+              <div class="subsection-title">{{ $t('home.games.slots.title') }}</div>
+              <p class="text-content">{{ $t('home.games.slots.description') }}</p>
+              <p class="text-content">{{ $t('home.games.slots.providers') }}</p>
+              
+              <div class="subsection-subtitle">{{ $t('home.games.slots.whatToExpected') }}</div>
               <ul class="feature-list">
-                <li v-for="(feature, index) in currentContent.brandSection.features" :key="index">
+                <li v-for="(feature, index) in $tm('home.games.slots.features')" :key="index">
                   • {{ feature }}
                 </li>
               </ul>
-                                        
-              <p>{{ currentContent.brandSection.conclusion }}</p>
+            </div>
+
+            <!-- Live Casino -->
+            <div class="games-subsection">
+              <div class="subsection-title">{{ $t('home.games.liveCasino.title') }}</div>
+              <p class="text-content">{{ $t('home.games.liveCasino.description') }}</p>
+              <p class="text-content">{{ $t('home.games.liveCasino.games') }}</p>
+              
+              <div class="subsection-subtitle">{{ $t('home.games.liveCasino.whyPlayersLove') }}</div>
+              <ul class="feature-list">
+                <li v-for="(feature, index) in $tm('home.games.liveCasino.features')" :key="index">
+                  • {{ feature }}
+                </li>
+              </ul>
+              <p class="text-content">{{ $t('home.games.liveCasino.guarantee') }}</p>
+            </div>
+
+            <!-- Sports Betting -->
+            <div class="games-subsection">
+              <div class="subsection-title">{{ $t('home.games.sports.title') }}</div>
+              <p class="text-content">{{ $t('home.games.sports.description') }}</p>
+              
+              <div class="subsection-subtitle">{{ $t('home.games.sports.highlights') }}</div>
+              <ul class="feature-list">
+                <li v-for="(feature, index) in $tm('home.games.sports.features')" :key="index">
+                  • {{ feature }}
+                </li>
+              </ul>
+            </div>
+
+            <!-- 4D Lottery -->
+            <div class="games-subsection">
+              <div class="subsection-title">{{ $t('home.games.lottery.title') }}</div>
+              <p class="text-content">{{ $t('home.games.lottery.description') }}</p>
+              <p class="text-content">{{ $t('home.games.lottery.ekor') }}</p>
+              
+              <div class="subsection-subtitle">{{ $t('home.games.lottery.howItWorks') }}</div>
+              <ul class="feature-list">
+                <li v-for="(feature, index) in $tm('home.games.lottery.steps')" :key="index">
+                  • {{ feature }}
+                </li>
+              </ul>
+            </div>
+
+            <div class="text-content">
+              <p>{{ $t('home.games.lookingMore') }} 
+                <a @click="handleGamesClick" class="accent-color" style="cursor: pointer;">{{ $t('home.games.gamesLinkText') }}</a>
+                {{ $t('home.games.exploreMore') }}
+              </p>
             </div>
           </div>
                     
@@ -47,13 +119,13 @@
           <img :src="becomeImg" alt="HengOngBet Logo" class="responsive-image" />
         </div>
         <div class="column-text">
-          <h2 class="main-title affiliate-main-title">
-            {{ currentContent.affiliateSection.becomeText }} <span class="accent-color">{{ currentContent.affiliateSection.brand }}</span> {{ currentContent.affiliateSection.affiliateToday }}
-          </h2>
-          <p class="subtitle-text-affiliate affiliate-description">{{ currentContent.affiliateSection.description }}</p>
+          <div class="main-title affiliate-main-title">
+            {{ $t('home.affiliate.becomeText') }} <span class="accent-color">{{ $t('home.affiliate.brand') }}</span> {{ $t('home.affiliate.affiliateToday') }}
+          </div>
+          <p class="subtitle-text-affiliate affiliate-description">{{ $t('home.affiliate.description') }}</p>
                     
           <ul class="feature-list-1 affiliate-features-list">
-            <li v-for="(benefit, index) in currentContent.affiliateSection.benefits" :key="index">
+            <li v-for="(benefit, index) in $tm('home.affiliate.benefits')" :key="index">
               • {{ benefit }}
             </li>
           </ul>
@@ -117,127 +189,44 @@ export default {
         homeBanner1,
         homeBanner2,
         homeBanner3,
-      ],
-      // All language content
-      allContent: {
-        en: {
-          brandSection: {
-            subtitle: "Trusted Online Casino",
-            title: "Heng Ong Bet Official",
-            tagline: "Heng Ong Bet - Malaysia's Trusted Online Casino Platform",
-            paragraphs: [
-              "Founded in 2015, Heng Ong Bet is Malaysia's first all-in-one online entertainment platform. With world-class gaming systems and highest technical support team committed to delivering safe, reliable, and high-quality gaming services to all users.",
-              "As one of the leading online gaming platforms in Malaysia, we offer a comprehensive range of gaming options including:"
-            ],
-            features: [
-              "Sports betting",
-              "Live casino",
-              "Slot games",
-              "4D lottery and more"
-            ],
-            conclusion: "Players enjoy a fair, secure, and seamless gaming experience, with fast deposits and withdrawals."
-          },
-          affiliateSection: {
-            brand: "Heng Ong Bet",
-            becomeText: "Become a",
-            affiliateToday: "Affiliate Today",
-            description: "Join HengOngBet's official affiliate program and earn high commissions by promoting Malaysia's top online casino platform. Whether you're a seasoned marketer or just getting started, our tools, tracking system, and support team help you succeed",
-            benefits: [
-              "Real-time tracking & reports",
-              "Up to 50% revenue share",
-              "Weekly payout system",
-              "Custom promotional banners",
-              "Telegram bot & link generator",
-              "Dedicated affiliate support",
-              "Zero cost to join",
-              "Trusted by thousands of agents in Malaysia"
-            ]
-          }
-        },
-        zh: {
-          brandSection: {
-            subtitle: "值得信赖的在线赌场",
-            title: "兴旺Bet官方",
-            tagline: "兴旺Bet - 马来西亚值得信赖的在线赌场平台",
-            paragraphs: [
-              "成立于2015年，兴旺Bet是马来西亚首个一体化在线娱乐平台。拥有世界级的游戏系统和最高水平的技术支持团队，致力于为所有用户提供安全、可靠、高质量的游戏服务。",
-              "作为马来西亚领先的在线游戏平台之一，我们提供全面的游戏选择，包括："
-            ],
-            features: [
-              "体育博彩",
-              "真人娱乐场",
-              "老虎机游戏",
-              "4D彩票等"
-            ],
-            conclusion: "玩家享受公平、安全、无缝的游戏体验，存取款快速便捷。"
-          },
-          affiliateSection: {
-            brand: "兴旺Bet",
-            becomeText: "立即成为",
-            affiliateToday: "代理",
-            description: "加入HengOngBet官方代理项目，通过推广马来西亚顶级在线赌场平台赚取高额佣金。无论您是经验丰富的营销人员还是初学者，我们的工具、跟踪系统和支持团队都会帮助您成功",
-            benefits: [
-              "实时跟踪和报告",
-              "高达50%收入分成",
-              "每周支付系统",
-              "定制推广横幅",
-              "Telegram机器人和链接生成器",
-              "专属代理支持",
-              "免费加入",
-              "受到马来西亚数千名代理的信赖"
-            ]
-          }
-        },
-        ms: {
-          brandSection: {
-            subtitle: "Kasino Online Dipercayai",
-            title: "Heng Ong Bet Rasmi",
-            tagline: "Heng Ong Bet - Platform Kasino Online Malaysia Yang Dipercayai",
-            paragraphs: [
-              "Ditubuhkan pada tahun 2015, Heng Ong Bet adalah platform hiburan dalam talian serba lengkap pertama di Malaysia. Dengan sistem permainan bertaraf dunia dan pasukan sokongan teknikal tertinggi yang komited untuk menyampaikan perkhidmatan permainan yang selamat, boleh dipercayai, dan berkualiti tinggi kepada semua pengguna.",
-              "Sebagai salah satu platform permainan dalam talian terkemuka di Malaysia, kami menawarkan rangkaian pilihan permainan yang komprehensif termasuk:"
-            ],
-            features: [
-              "Pertaruhan sukan",
-              "Kasino langsung",
-              "Permainan slot",
-              "Loteri 4D dan lain-lain"
-            ],
-            conclusion: "Pemain menikmati pengalaman permainan yang adil, selamat, dan lancar, dengan deposit dan pengeluaran yang pantas."
-          },
-          affiliateSection: {
-            brand: "Heng Ong Bet",
-            becomeText: "Menjadi",
-            affiliateToday: "Ahli Gabungan Hari Ini",
-            description: "Sertai program ahli gabungan rasmi HengOngBet dan dapatkan komisen tinggi dengan mempromosikan platform kasino dalam talian terbaik Malaysia. Sama ada anda seorang pemasar berpengalaman atau baru bermula, alat, sistem penjejakan, dan pasukan sokongan kami membantu anda berjaya",
-            benefits: [
-              "Penjejakan masa nyata & laporan",
-              "Sehingga 50% perkongsian hasil",
-              "Sistem pembayaran mingguan",
-              "Banner promosi tersuai",
-              "Bot Telegram & penjana pautan",
-              "Sokongan ahli gabungan khusus",
-              "Kos sifar untuk menyertai",
-              "Dipercayai oleh ribuan ejen di Malaysia"
-            ]
-          }
-        }
-      }
+      ]
     }
   },
   computed: {
     currentLocale() {
       return this.getCurrentLocale(this.route)
-    },
-    currentContent() {
-      const locale = this.currentLocale
-      return this.allContent[locale] || this.allContent.en
     }
   },
   watch: {
     '$route'() {
       // Force reactivity when route changes
       this.$forceUpdate()
+    }
+  },
+  methods: {
+    handleRegisterClick() {
+      const locale = this.$i18n?.locale || 'en'
+
+      let targetUrl = 'https://hengongbet.com/en-my?regRef=player'
+      if (locale === 'zh') {
+        targetUrl = 'https://hengongbet.com/zh-my?regRef=player'
+      } else if (locale === 'ms') {
+        targetUrl = 'https://hengongbet.com/ms-my?regRef=player'
+      }
+
+      window.location.href = targetUrl
+    },
+    handlePromotionClick() {
+      const locale = this.$i18n?.locale || 'en'
+      this.$router.push(`/${locale}/promotion`)
+    },
+    handleDownloadClick() {
+      const locale = this.$i18n?.locale || 'en'
+      this.$router.push(`/${locale}/download`)
+    },
+    handleGamesClick() {
+      const locale = this.$i18n?.locale || 'en'
+      this.$router.push(`/${locale}/games`)
     }
   }
 }
@@ -265,6 +254,23 @@ export default {
   margin: 1rem 0;
   line-height: 1.2;
   word-wrap: break-word;
+}
+
+.subsection-title {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 500;
+  color: #F2B240;
+  margin: 1.5rem 0 1rem 0;
+  line-height: 1.2;
+  word-wrap: break-word;
+}
+
+.subsection-subtitle {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: 400;
+  color: #FFFFFF;
+  margin: 1rem 0 0.5rem 0;
+  line-height: 1.3;
 }
 
 .accent-title {
@@ -318,6 +324,48 @@ export default {
 
 .accent-color {
   color: #F2B240;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.cta-btn {
+  background: #F2B240;
+  color: #000;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  flex: 1 1 auto;
+  max-width: 200px;
+}
+
+.cta-btn:hover {
+  background: #E5A535;
+  transform: translateY(-2px);
+}
+
+/* Games Subsections */
+.games-subsection {
+  margin: 2rem 0;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #3A3A3D;
+}
+
+.games-subsection:last-child {
+  border-bottom: none;
 }
 
 /* Global Layout Classes */
@@ -419,6 +467,71 @@ export default {
     text-align: center;
   }
 
+  /* Mobile Typography */
+  .main-title {
+    font-size: 24px !important;
+    margin: 1rem 0;
+  }
+
+  .subsection-title {
+    font-size: 20px !important;
+    margin: 1.5rem 0 1rem 0;
+  }
+
+  .subsection-subtitle {
+    font-size: 18px !important;
+    margin: 1rem 0 0.5rem 0;
+  }
+
+  .subtitle-text {
+    font-size: 16px !important;
+    margin: 0.5rem 0;
+  }
+
+  .description-text {
+    font-size: 14px !important;
+    margin: 1rem 0 2rem 0;
+  }
+
+  .text-content {
+    font-size: 12px !important;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  /* CTA Buttons Mobile */
+  .cta-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+  }
+
+  .cta-btn {
+    flex: 1 1 auto;
+    max-width: 120px;
+    padding: 12px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .games-subsection {
+    margin: 1.5rem 0;
+    padding: 1rem 0;
+  }
+
   .two-column-section {
     flex-direction: column;
     gap: 24px;
@@ -439,10 +552,6 @@ export default {
     text-align: center;
   }
 
-  .description-text {
-    margin: 0;
-  }
-
   .feature-list-1 {
     text-align: center;
     max-width: 100%;
@@ -451,35 +560,31 @@ export default {
     align-items: center;
   }
 
+  .feature-list li,
+  .feature-list-1 li {
+    font-size: 12px !important;
+    margin-bottom: 0.8rem;
+  }
+
   /* Affiliate Mobile Specific Fixes */
   .affiliate-main-title {
-    margin: 16px 0 !important; /* Add gap between title and description */
+    font-size: 24px !important;
+    margin: 16px 0 !important;
   }
 
   .affiliate-description {
-    margin: 16px 0 !important; /* Add gap between description and features */
+    font-size: 14px !important;
+    margin: 16px 0 !important;
   }
 
   .affiliate-features-list {
-    margin: 16px 0 !important; /* Reduce gap in features list */
+    margin: 16px 0 !important;
   }
 
   .affiliate-features-list li {
-    margin-bottom: 8px !important; /* Reduce gap between feature items */
-    line-height: 1.4 !important; /* Tighter line height for better spacing */
-  }
-
-  .text-content {
-    padding: 0 10px;
-    text-align: center;
-  }
-
-  .main-title,
-  .accent-title,
-  .section-title,
-  .subtitle-text,
-  .description-text {
-    text-align: center;
+    font-size: 12px !important;
+    margin-bottom: 8px !important;
+    line-height: 1.4 !important;
   }
 
   .main-content,
@@ -499,23 +604,72 @@ export default {
     text-align: center;
   }
 
+  /* Small Mobile Typography */
   .main-title {
-    margin: 0;
+    font-size: 22px !important;
+    margin: 0.8rem 0;
+  }
+
+  .subsection-title {
+    font-size: 18px !important;
+    margin: 1.2rem 0 0.8rem 0;
+  }
+
+  .subsection-subtitle {
+    font-size: 16px !important;
+    margin: 0.8rem 0 0.4rem 0;
   }
 
   .subtitle-text {
-    font-size: 12px;
-    margin: 0;
+    font-size: 14px !important;
+    margin: 0.4rem 0;
   }
 
   .subtitle-text-affiliate {
-    font-size: 12px;
-    margin: 0;
+    font-size: 12px !important;
+    margin: 0.4rem 0;
+  }
+
+  .description-text {
+    font-size: 12px !important;
+    margin: 0.8rem 0 1.5rem 0;
+  }
+
+  .text-content {
+    font-size: 10px !important;
+    padding: 0 8px;
   }
 
   .section-wrapper {
     padding: 1rem 0;
     text-align: center;
+  }
+
+  /* CTA Buttons Small Mobile */
+  .cta-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    margin: 1.5rem 0;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-btn {
+    flex: 1 1 auto;
+    max-width: 110px;
+    padding: 10px 6px;
+    font-size: 11px;
+    min-height: 40px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .two-column-section {
@@ -524,15 +678,22 @@ export default {
     text-align: center;
   }
 
+  .feature-list li,
+  .feature-list-1 li {
+    font-size: 10px !important;
+    margin-bottom: 0.6rem;
+    padding: 0 4px;
+  }
+
   /* Enhanced Affiliate Mobile Fixes for Small Screens */
   .affiliate-main-title {
-    margin: 12px 0 !important; /* Smaller gap for very small screens */
-    font-size: clamp(1.8rem, 4vw, 1.8rem) !important;
+    font-size: 20px !important;
+    margin: 12px 0 !important;
   }
 
   .affiliate-description {
-    margin: 12px 0 !important;
     font-size: 11px !important;
+    margin: 12px 0 !important;
     line-height: 1.3 !important;
   }
 
@@ -541,50 +702,16 @@ export default {
   }
 
   .affiliate-features-list li {
-    margin-bottom: 6px !important; /* Even smaller gaps between items */
     font-size: 10px !important;
+    margin-bottom: 6px !important;
     line-height: 1.3 !important;
-    padding: 2px 0 !important; /* Minimal padding */
+    padding: 2px 0 !important;
   }
 
-  .text-content {
-    padding: 0 5px;
-    text-align: center;
-    font-size: 10px;
-  }
-
-  .feature-list,
-  .feature-list-1 {
-    margin: 0;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .feature-list li,
-  .feature-list-1 li {
-    margin: 0;
-    padding: 0 5px;
-    text-align: center;
-    font-size: 10px;
-  }
-
-  /* Override for affiliate features specifically */
   .affiliate-features-list {
     display: flex !important;
-    flex-direction: column !important; /* Keep vertical for affiliate features */
+    flex-direction: column !important;
     align-items: center !important;
-  }
-
-  * {
-    text-align: center !important;
-  }
-
-  .feature-list li::before,
-  .feature-list-1 li::before {
-    text-align: left;
   }
 }
 
@@ -594,9 +721,67 @@ export default {
     text-align: center;
   }
 
+  /* Extra Small Mobile Typography */
+  .main-title {
+    font-size: 20px !important;
+    margin: 0.6rem 0;
+  }
+
+  .subsection-title {
+    font-size: 16px !important;
+    margin: 1rem 0 0.6rem 0;
+  }
+
+  .subsection-subtitle {
+    font-size: 14px !important;
+    margin: 0.6rem 0 0.3rem 0;
+  }
+
+  .subtitle-text {
+    font-size: 12px !important;
+    margin: 0.3rem 0;
+  }
+
+  .description-text {
+    font-size: 10px !important;
+    margin: 0.6rem 0 1rem 0;
+  }
+
+  .text-content {
+    font-size: 9px !important;
+    padding: 0 5px;
+  }
+
   .section-wrapper {
     padding: 0.8rem 0;
     text-align: center;
+  }
+
+  /* CTA Buttons Extra Small Mobile */
+  .cta-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    margin: 1rem 0;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-btn {
+    flex: 1 1 auto;
+    max-width: 100px;
+    padding: 8px 4px;
+    font-size: 10px;
+    min-height: 36px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .two-column-section {
@@ -605,15 +790,21 @@ export default {
     text-align: center;
   }
 
-  /* Ultra-compact affiliate spacing for very small screens */
+  .feature-list li,
+  .feature-list-1 li {
+    font-size: 9px !important;
+    margin-bottom: 0.4rem;
+    padding: 0 3px;
+  }
+
   .affiliate-main-title {
+    font-size: 18px !important;
     margin: 10px 0 !important;
-    font-size: clamp(1.1rem, 4vw, 1.6rem) !important;
   }
 
   .affiliate-description {
-    margin: 10px 0 !important;
     font-size: 10px !important;
+    margin: 10px 0 !important;
   }
 
   .affiliate-features-list {
@@ -621,20 +812,9 @@ export default {
   }
 
   .affiliate-features-list li {
-    margin-bottom: 4px !important;
     font-size: 9px !important;
+    margin-bottom: 4px !important;
     line-height: 1.2 !important;
-  }
-
-  .main-title,
-  .accent-title,
-  .section-title,
-  .subtitle-text,
-  .description-text,
-  .text-content {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
@@ -657,7 +837,6 @@ export default {
     text-align: center;
   }
   
-  /* Touch device specific affiliate adjustments */
   .affiliate-features-list li {
     padding: 4px 2px !important;
     margin-bottom: 6px !important;

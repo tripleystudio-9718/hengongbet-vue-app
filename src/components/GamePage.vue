@@ -144,7 +144,26 @@
         <div class="games-info-grid">
           <div v-for="(item, index) in lotteryContent" :key="index" class="game-info-card">
             <div class="game-info-title" v-html="$t(`games.content.lottery.games.${item.key}.title`)"></div>
-            <div class="game-info-description" v-html="$t(`games.content.lottery.games.${item.key}.description`)"></div>
+            <div class="game-info-description">
+              <!-- Main description text -->
+              <span v-html="$t(`games.content.lottery.games.${item.key}.descriptionStart`)"></span>
+              <!-- Space before link -->
+              <span v-if="$t(`games.content.lottery.games.${item.key}.linkText`)"> </span>
+              <!-- Router link for 4D results -->
+              <router-link 
+                v-if="$t(`games.content.lottery.games.${item.key}.linkText`)"
+                :to="get4DResultsRoute()" 
+                class="link-text"
+                v-html="$t(`games.content.lottery.games.${item.key}.linkText`)"
+              ></router-link>
+              <!-- Space after link -->
+              <span v-if="$t(`games.content.lottery.games.${item.key}.descriptionEnd`)"> </span>
+              <!-- End description text -->
+              <span 
+                v-if="$t(`games.content.lottery.games.${item.key}.descriptionEnd`)"
+                v-html="$t(`games.content.lottery.games.${item.key}.descriptionEnd`)"
+              ></span>
+            </div>
           </div>
         </div>
       </div>
@@ -170,24 +189,12 @@
               ></span>
 
               <div class="trigger-icon-wrapper">
-                <div class="trigger-icon-circle">
-                  <svg 
-                    v-if="openContentItems.faq[index]" 
-                    class="trigger-icon-image"
-                    viewBox="0 0 24 24" 
-                    fill="none"
-                  >
-                    <path d="M18 12H6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-                  <svg 
-                    v-else 
-                    class="trigger-icon-image"
-                    viewBox="0 0 24 24" 
-                    fill="none"
-                  >
-                    <path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-                </div>
+                <!-- Use imported SVG icons -->
+                <img 
+                  :src="openContentItems.faq[index] ? closeIcon : openIcon"
+                  :alt="openContentItems.faq[index] ? 'Close' : 'Open'"
+                  class="trigger-icon-image"
+                />
               </div>
             </button>
             
@@ -206,12 +213,19 @@
 </template>
 
 <script>
+// Import the SVG icons
+import openIcon from '@/assets/open-icon.svg'
+import closeIcon from '@/assets/close-icon.svg'
+
 export default {
   name: 'GameTabs',
   data() {
     return {
       bannerImage: new URL('@/assets/gamepage-banner.png', import.meta.url).href,
       activeTab: 'all',
+      // Make icons available to template
+      openIcon,
+      closeIcon,
       tabs: [
         { id: 'all' },
         { id: 'slots' },
@@ -386,6 +400,18 @@ export default {
       }
       // Redirect to external URL
       window.location.href = targetUrl;
+    },
+    get4DResultsRoute() {
+      const locale = this.$i18n?.locale || 'en';
+      
+      // Return the appropriate route based on language
+      if (locale === 'zh') {
+        return '/zh/4d-results';
+      } else if (locale === 'ms') {
+        return '/ms/4d-results';
+      } else {
+        return '/en/4d-results';  // Default to English
+      }
     }
   }
 }
@@ -592,6 +618,18 @@ export default {
   margin-bottom: 0;
 }
 
+/* Link Text Styling */
+.link-text {
+  color: #F2B240;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.link-text:hover {
+  color: #ED9326;
+}
+
 /* Accordion Styles - Only for FAQ */
 .accordion-container {
   display: flex;
@@ -647,20 +685,14 @@ export default {
   margin-left: 1rem;
 }
 
-.trigger-icon-circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  background-color: #F2B240;
-  border-radius: 50%;
-}
-
 .trigger-icon-image {
   width: 20px;
   height: 20px;
-  color: #000000;
+  transition: transform 0.2s ease;
+}
+
+.trigger-icon-image:hover {
+  transform: scale(1.1);
 }
 
 .accordion-content {
@@ -758,6 +790,30 @@ export default {
     gap: 10px;
     padding: 0;
     margin: 0;
+  }
+
+  /* Mobile Typography Adjustments */
+  .section-title {
+    font-size: 24px !important;
+  }
+
+  .game-info-title {
+    font-size: 20px !important;
+  }
+
+  .game-info-description,
+  .section-description,
+  .content-text {
+    font-size: 10px !important;
+  }
+
+  .trigger-text {
+    font-size: 10px !important;
+  }
+
+  .trigger-icon-image {
+    width: 16px;
+    height: 16px;
   }
 }
 </style>

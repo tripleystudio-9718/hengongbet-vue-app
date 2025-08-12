@@ -153,23 +153,77 @@
     "whatsapp_alt": "WhatsApp"
   },
   "home": {
-    "brandSection": {
-      "subtitle": "Trusted Online Casino",
-      "title": "Heng Ong Bet Official",
-      "tagline": "Heng Ong Bet - Malaysia's Trusted Online Casino Platform",
-      "paragraphs": [
-        "Founded in 2015, Heng Ong Bet is Malaysia's first all-in-one online entertainment platform. With world-class gaming systems and highest technical support team committed to delivering safe, reliable, and high-quality gaming services to all users.",
-        "As one of the leading online gaming platforms in Malaysia, we offer a comprehensive range of gaming options including:"
-      ],
-      "features": [
-        "Sports betting",
-        "Live casino",
-        "Slot games",
-        "4D lottery and more"
-      ],
-      "conclusion": "Players enjoy a fair, secure, and seamless gaming experience, with fast deposits and withdrawals."
+    "hero": {
+      "title": "Play Your Way at HengOngBet88",
+      "subtitle": "Malaysia's Trusted Online Casino Platform", 
+      "description": "Join a new kind of online casino in Malaysia, one built for entertainment, trust, and real convenience.",
+      "registerNow": "Register Now",
+      "unlockBonus": "Unlock Exclusive Bonus",
+      "downloadApp": "Download App"
     },
-    "affiliateSection": {
+    "about": {
+      "title": "About HengOngBet",
+      "description1": "HengOngBet is your reliable,",
+      "platformType": "all-in-one Malaysian online casino platform.",
+      "description2": "We offer a wide range of exciting games, secure banking options, and a localised experience tailored to your needs. Fully licensed under Curacao Gaming License GCB, HengOngBet prioritises fair play, player safety, and 24/7 customer support.",
+      "description3": "Whether you're here for a quick spin or to try your luck on live tables, our mobile-first platform ensures a smooth and secure journey, every time."
+    },
+    "games": {
+      "title": "Explore the Games on HengOngBet",
+      "description": "Live dealer tables, slots that never sleep, and instant 4D results, HengOngBet is your all-in-one destination for real money gaming. Whether you're spinning solo or betting live, we've got something for everyone.",
+      "slots": {
+        "title": "Slot Games",
+        "description": "Spin your way through hundreds of high-paying, mobile-optimised titles.",
+        "providers": "Play with trusted names like JILI, Lucky 365, Monkey King, Askmeslot, Microslot, and JDB.",
+        "whatToExpect": "What to expect:",
+        "features": [
+          "Cascading wins, multipliers, and jackpots",
+          "Arcade-style and traditional 3-reel options",
+          "Sci-fi, myth, and fun cartoon themes",
+          "Fast loading and smooth on all devices"
+        ]
+      },
+      "liveCasino": {
+        "title": "Live Casino",
+        "description": "Get the thrill of a casino floor, from your phone.",
+        "games": "Hot Road, Evolution, Sexy, and many more bring you HD Baccarat, Dragon Tiger, Roulette, and Blackjack with real-time dealers and interactive tables.",
+        "whyPlayersLove": "Why players love it:",
+        "features": [
+          "Real dealer interaction, 24/7",
+          "Lightning Roulette, Crazy Time, and other popular formats",
+          "Multiple languages including Malay, Mandarin, and English"
+        ],
+        "guarantee": "Premium broadcast and fair play guarantee"
+      },
+      "sports": {
+        "title": "Sports Betting",
+        "description": "From football and basketball to cockfighting and horse racing, we've got it covered. Top platforms include Maxbet, SV388, and RCB988.",
+        "highlights": "Highlights:",
+        "features": [
+          "Live betting on global football leagues (EPL, La Liga, World Cup)",
+          "Odds on e-sports, NBA, MLB, badminton, and more",
+          "Malaysia's favourite cockfight betting via SV388",
+          "Instant racing bets through RCB988, no queues, no hassle"
+        ]
+      },
+      "lottery": {
+        "title": "4D Lottery",
+        "description": "Bet small, win big, right from your phone.",
+        "ekor": "With Ekor, you can bet on 4D anytime and get instant result updates.",
+        "howItWorks": "How it works:",
+        "steps": [
+          "Choose your 4 digits and place your bet",
+          "Options include Standard, iBox, Big/Small",
+          "Fast results with daily draw tracking",
+          "Supports local favourites like Magnum, Toto, Damacai & more"
+        ]
+      },
+      "lookingMore": "Looking for more?",
+      "gamesLink": "/games",
+      "gamesLinkText": "Games",
+      "exploreMore": "to explore everything in full detail, slots, live casino, sports, and 4D, all under one roof."
+    },
+    "affiliate": {
       "becomeText": "Become a",
       "brand": "Heng Ong Bet",
       "affiliateToday": "Affiliate Today",
@@ -187,78 +241,100 @@
     }
   },
   "features": {
+    "header": {
+      "title": "Why Choose HengOngBet?",
+      "subtitle": "With over 10 years in the industry, HengOngBet has become a trusted platform for Malaysian players seeking safety, entertainment, and transparency."
+    },
     "tabs": [
       {
-        "id": "why-choose",
-        "title": "Why Choose Heng Ong Bet?"
+        "id": "safe-secure",
+        "title": "1. Safe, Licensed & Secure"
       },
       {
-        "id": "games-library",
-        "title": "Malaysia's Largest Game Library"
+        "id": "malaysians", 
+        "title": "2. Designed for Malaysians"
       },
       {
-        "id": "secure-rewarding",
-        "title": "Proven, Secure & Rewarding"
+        "id": "entertainment",
+        "title": "3. Value-Driven Entertainment"
       }
     ],
-    "whyChoose": {
+    "safeSecure": {
+      "description": "We prioritise your peace of mind.",
       "features": [
         {
-          "id": 1,
-          "title": "Expert Team",
-          "description": "Constantly improving games and user experience"
+          "title": "Gaming Curacao Licensed",
+          "description": "We operate under an internationally recognised gaming licence."
         },
         {
-          "id": 2,
+          "title": "SSL-Encrypted Security",
+          "description": "Your personal and payment data are protected by bank-grade encryption."
+        },
+        {
+          "title": "Fair Games Only",
+          "description": "All games are certified and use RNG to ensure transparency."
+        },
+        {
           "title": "Secure Platform",
-          "description": "Advanced encryption for data protection"
+          "description": "Built on modern infrastructure with robust fraud prevention."
         },
         {
-          "id": 3,
-          "title": "24/7 Support",
-          "description": "Help available anytime"
-        },
-        {
-          "id": 4,
           "title": "Responsible Gaming",
-          "description": "Promoting safe and healthy play"
-        },
-        {
-          "id": 5,
-          "title": "Community Focused",
-          "description": "Supporting local welfare initiatives"
+          "description": "Tools to help you stay in control, including limits and self-exclusion."
         }
       ]
     },
-    "gamesLibrary": {
-      "header": "We've partnered with top providers including:",
-      "providers": [
-        {
-          "category": "Live Casinos",
-          "list": "PEGASUS LIVE, CTG855, AE SEXY, ASIA GAMING, EVOLUTION & more"
-        },
-        {
-          "category": "Slots",
-          "list": "918KISS, PUSSY888, NAGA GAMES, JILI, PLAYTECH, and many others"
-        },
-        {
-          "category": "Sports Betting",
-          "list": "SBOBET, SBOVS, BET33"
-        }
-      ]
-    },
-    "secureRewarding": {
-      "header": "With over 10 years in the industry, Heng Ong Bet is known for:",
+    "malaysians": {
+      "description": "Built from the ground up with local players in mind.",
       "features": [
-        "Game fairness",
-        "SSL-encrypted security",
-        "Regular deposit bonuses and free credit offers",
-        "A private, stable, and trusted environment"
+        {
+          "title": "Mobile-First Design",
+          "description": "Optimised for Android & iOS, smooth on any network from Maxis to Unifi."
+        },
+        {
+          "title": "Localised Support",
+          "description": "24/7 assistance in English, Malay, and Mandarin via chat, WhatsApp, or Telegram."
+        },
+        {
+          "title": "Malaysian-Focused Promotions",
+          "description": "CNY, Hari Raya, and Merdeka-themed campaigns, plus real free credit offers."
+        },
+        {
+          "title": "Community Commitment",
+          "description": "We actively support local welfare initiatives and CSR efforts."
+        }
       ]
     },
-    "platform": {
-      "title": "Play Anywhere, Anytime",
-      "description": "With the Heng Ong Bet mobile app (iOS & Android supported), you can enjoy all your favorite games on the go — from slots and sportsbook to live dealer and 4D games. Join Heng Ong Bet today and experience Malaysia's most reliable and exciting online gaming platform!"
+    "entertainment": {
+      "description": "Play smarter, not harder.",
+      "features": [
+        {
+          "title": "Regular Bonuses & Free Credit",
+          "description": "Get rewarded for deposits, referrals, and reloads."
+        },
+        {
+          "title": "Expert Team",
+          "description": "Constantly improving our games and features to serve you better."
+        },
+        {
+          "title": "Game Variety",
+          "description": "From 4D to slots, sport betting, and live casino, there are 1000+ games all in one platform."
+        },
+        {
+          "title": "Stable, Lag-Free Experience",
+          "description": "Play without interruption, even during peak hours."
+        }
+      ]
+    },
+    "popularGames": {
+      "title": "Popular Games on HengOngBet",
+      "games": [
+        "Super Ace",
+        "Boxing King", 
+        "Panther Moon",
+        "Crazy 777",
+        "FaFaFa"
+      ]
     }
   },
   "mobileGameSec": {
@@ -313,24 +389,24 @@
   "how_it_works": {
     "header": {
       "subtitle": "Welcome to Heng Ong Bet - Trusted Online Casino",
-      "title": "Start Playing and Earning"
+      "title": "How to Start Playing on HengOngBet"
     },
     "steps": {
       "step1": {
-        "title": "Create Account",
-        "description": "Click Join Now. Fill in your login info"
+        "title": "Register Your Account",
+        "description": "Use your mobile number and create a secure password. Registration takes less than 1 minute."
       },
       "step2": {
-        "title": "Make a Deposit",
-        "description": "Make your first deposit using money or crypto transfer"
+        "title": "Download the App",
+        "description": "Get our mobile app for Android or iOS for the best experience. Avoid third-party links."
       },
       "step3": {
-        "title": "Start Winning",
-        "description": "Start winning while playing on your favourite games"
+        "title": "Top Up Your Wallet",
+        "description": "Use FPX, e-wallets, or other secure methods to deposit instantly."
       },
       "step4": {
-        "title": "Get Reward",
-        "description": "Don't forget to claim your bonuses"
+        "title": "Start Playing",
+        "description": "Pick your favourite slot, live casino, or sportsbook game and start enjoying real-time entertainment and get rewarded."
       }
     },
     "alt_text": {
@@ -380,38 +456,7 @@
   },
   "why_section": {
     "header": {
-      "prefix": "Why Choose",
-      "brand": "Heng Ong Bet",
-      "suffix": "?"
-    },
-    "cards": {
-      "card1": {
-        "title": "What Makes Heng Ong Bet Different?",
-        "description": "Unlike traditional online casinos that rely on agents for deposits and withdrawals, Heng Ong Bet connects you directly—no middlemen involved. Enjoy instant transactions, built-in social and e-wallet features, and a unique commission-sharing system that lets you earn while you play."
-      },
-      "card2": {
-        "title": "Most Trusted Casino",
-        "description": "Your privacy and security are our top priority. Heng Ong Bet uses industry-standard protection to safeguard your personal data and strictly follows our privacy policy to ensure a safe and trustworthy gaming environment."
-      },
-      "card3": {
-        "title": "Simple & Fast Registration",
-        "description": "Create your Heng Ong Bet account to access 1,000+ games, enjoy exclusive promos, and stay updated with the latest offers."
-      },
-      "card4": {
-        "title": "Online Support",
-        "description": "Our Heng Ong Bet support team is available 24/7 via live chat, phone, and email to assist you quickly with any issues."
-      }
-    },
-    "alt_text": {
-      "computer_icon": "Computer Icon",
-      "trusted_icon": "Trusted Icon",
-      "registration_icon": "Registration Icon",
-      "support_icon": "Support Icon"
-    }
-  },
-  "why_section": {
-    "header": {
-      "prefix": "Why Choose",
+      "prefix": "Why Players Love",
       "brand": "Heng Ong Bet",
       "suffix": "?"
     },
@@ -442,10 +487,9 @@
   },
   "provider_showcase": {
     "global_header": {
-      "brand": "Heng Ong Bet",
-      "title": "We Are Global",
-      "subtitle": "Heng Ong Bet is Now Expanding Globally",
-      "description": "Heng Ong Bet is now available in Singapore, with our talented global team supporting growth across Malaysia and Singapore. What unites us? A passion for delivering the best gaming experience. We're also actively expanding into Thailand, Vietnam, Indonesia, Cambodia, the UK, and the USA."
+      "title": "HengOngBet is Going Global",
+      "description": "Now available in Singapore, HengOngBet is supported by a global team dedicated to delivering world-class gaming experiences. We are actively growing across Southeast Asia and beyond, including Thailand, Vietnam, Indonesia, Cambodia, the UK, and the USA.",
+      "cta": "Join us in our growth to become the best online casino platform it can be!"
     },
     "providers": {
       "slots": {
@@ -470,6 +514,13 @@
       "sports": "Sports Betting Provider",
       "lottery": "4D Lottery Provider",
       "live_casino": "Live Casino Provider"
+    },
+    "bottom_section": {
+      "title": "Ready to Experience Real Online Gaming in Malaysia?",
+      "description_line1": "Whether you're into slots, live dealers, sports betting, or 4D, <strong>HengOngBet88</strong> has it all in one secure, mobile-friendly platform.",
+      "description_line2": "Enjoy fast withdrawals, real free credit, and support in your language, anytime, anywhere.",
+      "description_line3": "Register on HengOngBet88 today and play your way.",
+      "register_btn": "Register Today"
     }
   },
   "testimonials": {
@@ -506,32 +557,28 @@
     },
     "questions": {
       "q1": {
-        "question": "How Do I Register on Heng Ong Bet ?",
-        "answer": "Simply click the 'Register' button, fill in your details, and verify your phone number to get started"
+        "question": "Is HengOngBet88 legal in Malaysia?",
+        "answer": "HengOngBet88 operates under a valid Curacao Gaming License (GCB) with strict player safety and responsible gaming measures. It is up to players to decide the legal boundaries."
       },
       "q2": {
-        "question": "Is Heng Ong Bet Legal and Safe to Use ?",
-        "answer": "Yes, Heng Ong Bet operates under proper licensing and uses advanced security measures to protect your data and transactions. We are fully compliant with all applicable regulations."
+        "question": "How do I register for a HengOngBet88 account?",
+        "answer": "Simply click “Register,” enter your mobile number and password, verify your details, and start playing instantly."
       },
       "q3": {
-        "question": "How can I Deposit or Withdraw money ?",
-        "answer": "You can deposit and withdraw money through various secure payment methods including bank transfers, e-wallets, and cryptocurrency. All transactions are processed quickly and securely."
+        "question": "What games can I play on HengOngBet88?",
+        "answer": "You can enjoy 1000+ slots, live casino games, sports betting, and 4D lottery all on one platform."
       },
       "q4": {
-        "question": "What games are available on Heng Ong Bet ?",
-        "answer": "We offer a wide variety of games including live casino games, slot machines, sports betting, lottery games, and more. Our platform features games from top providers in the industry."
+        "question": "How do I deposit and withdraw money?",
+        "answer": "Deposit via FPX or e-wallets for instant top-ups, and withdraw in-app with fast approval times."
       },
       "q5": {
-        "question": "Are there any Welcome Bonuses or Promotions ?",
-        "answer": "Yes! We offer generous welcome bonuses for new players, as well as ongoing promotions, loyalty rewards, and special bonuses. Check our promotions page for the latest offers."
+        "question": "Is HengOngBet88 safe for online transactions?",
+        "answer": "Yes, all transactions are SSL-encrypted and games are RNG-certified for fair play."
       },
       "q6": {
-        "question": "What should I do if I forget my login details ?",
-        "answer": "If you forget your login details, simply click on the 'Forgot Password' link on the login page. You can reset your password using your registered email or phone number."
-      },
-      "q7": {
-        "question": "Is there a mobile app for Heng Ong Bet",
-        "answer": "Yes, we have a mobile app available for both iOS and Android devices. You can download it from the App Store or Google Play Store, or access our mobile-optimized website directly from your browser."
+        "question": "How do I register on HengOngBet88?",
+        "answer": "Click “Register,” fill in your mobile number and password, verify your account, and you’re ready to play."
       }
     },
     "alt_text": {
@@ -972,153 +1019,155 @@
       }
     }
   },
-  "games": {
-    "tabs": {
-      "all": "All",
-      "slots": "Slots",
-      "casino": "Casino",
-      "sports": "Sports",
-      "lottery": "Lottery"
-    },
-    "names": {
-      "lucky365": "Lucky 365",
-      "askmeslot": "Askmeslot",
-      "jdb": "JDB",
-      "monkeyKing": "Monkey King",
-      "hotRoad": "Hot Road",
-      "maxbet": "Maxbet",
-      "sv388": "Sv388",
-      "rcb988": "Rcb988",
-      "jili": "Jili",
-      "microslot": "Microslot",
-      "evolution": "Evolution",
-      "sexy": "Sexy",
-      "ekor": "Ekor",
-      "bigGaming": "Big Gaming",
-      "pragmaticPlay": "Pragmatic Play"
-    },
-    "alt": {
-      "gameBanner": "Game Banner",
-      "gameImage": "Game Image"
-    },
-    "actions": {
-      "clickToPlay": "Click to play {gameName}"
-    },
-    "content": {
-      "slots": {
-        "title": "Slot",
-        "description": "Spin, win, and enjoy nonstop action with Malaysia's favourite <strong>online slot</strong> providers.",
-        "games": {
-          "lucky365": {
-            "title": "Lucky 365",
-            "description": "Step into a world of myth and magic with Lucky 365. These high-payout slots are inspired by legendary gods, epic quests, and ancient powers, perfect for players who enjoy immersive visuals and the chance to unlock major jackpots with every spin."
-          },
-          "askmeslot": {
-            "title": "Askmeslot",
-            "description": "Askmeslot delivers casual fun with bright animations and lighthearted storylines. Whether you're new to slots or just want a relaxing experience, its user-friendly interface and smooth graphics make it easy to enjoy, even on short breaks."
-          },
-          "jdb": {
-            "title": "JDB",
-            "description": "Known for its arcade-style mechanics and creative game formats, JDB stands out with fishing games, fast reels, and interactive bonus features. It's ideal for players who enjoy a mix of skill and luck, all in one tap."
-          },
-          "monkeyKing": {
-            "title": "Monkey King",
-            "description": "This collection pays homage to one of Asia's most iconic characters, the Monkey King. Influenced by Stephen Chow's cult films and titles like Black Myth Wukong, the games deliver action-packed spins, cinematic visuals, and rich bonus gameplay that keep you coming back."
-          },
-          "jili": {
-            "title": "JILI",
-            "description": "JILI is a staple in the world of online slots and for good reason. Featuring cascading wins, bonus rounds, and progressive features, JILI offers something for every kind of player. If you're unsure where to start, start with JILI."
-          },
-          "microslot": {
-            "title": "Microslot",
-            "description": "Sleek, smart, and mobile-first Microslot is built for modern players who want a premium slot experience on any device. With sci-fi inspired visuals and crisp animations, it's perfect for players who value performance and design without compromise."
-          }
+"games": {
+  "tabs": {
+    "all": "All",
+    "slots": "Slots",
+    "casino": "Casino",
+    "sports": "Sports",
+    "lottery": "Lottery"
+  },
+  "names": {
+    "lucky365": "Lucky 365",
+    "askmeslot": "Askmeslot",
+    "jdb": "JDB",
+    "monkeyKing": "Monkey King",
+    "hotRoad": "Hot Road",
+    "maxbet": "Maxbet",
+    "sv388": "Sv388",
+    "rcb988": "Rcb988",
+    "jili": "Jili",
+    "microslot": "Microslot",
+    "evolution": "Evolution",
+    "sexy": "Sexy",
+    "ekor": "Ekor",
+    "bigGaming": "Big Gaming",
+    "pragmaticPlay": "Pragmatic Play"
+  },
+  "alt": {
+    "gameBanner": "Game Banner",
+    "gameImage": "Game Image"
+  },
+  "actions": {
+    "clickToPlay": "Click to play {gameName}"
+  },
+  "content": {
+    "slots": {
+      "title": "Slot",
+      "description": "Spin, win, and enjoy nonstop action with Malaysia's favourite <strong>online slot</strong> providers.<br><br>From classic 3-reel machines to cinematic bonus-packed adventures, HengOngBet brings you the best of slot games in one place. Here's a taste of what you can play:",
+      "games": {
+        "lucky365": {
+          "title": "Lucky 365",
+          "description": "Step into a world of myth and magic with Lucky 365. These high-payout slots are inspired by legendary gods, epic quests, and ancient powers, perfect for players who enjoy immersive visuals and the chance to unlock major jackpots with every spin."
+        },
+        "askmeslot": {
+          "title": "Askmeslot",
+          "description": "Askmeslot delivers casual fun with bright animations and lighthearted storylines. Whether you're new to slots or just want a relaxing experience, its user-friendly interface and smooth graphics make it easy to enjoy, even on short breaks."
+        },
+        "jdb": {
+          "title": "JDB",
+          "description": "Known for its arcade-style mechanics and creative game formats, JDB stands out with fishing games, fast reels, and interactive bonus features. It's ideal for players who enjoy a mix of skill and luck, all in one tap."
+        },
+        "monkeyKing": {
+          "title": "Monkey King",
+          "description": "This collection pays homage to one of Asia's most iconic characters, the Monkey King. Influenced by Stephen Chow's cult films and titles like Black Myth Wukong, the games deliver action-packed spins, cinematic visuals, and rich bonus gameplay that keep you coming back."
+        },
+        "jili": {
+          "title": "JILI",
+          "description": "JILI is a staple in the world of online slots and for good reason. Featuring cascading wins, bonus rounds, and progressive features, JILI offers something for every kind of player. If you're unsure where to start, start with JILI."
+        },
+        "microslot": {
+          "title": "Microslot",
+          "description": "Sleek, smart, and mobile-first Microslot is built for modern players who want a premium slot experience on any device. With sci-fi inspired visuals and crisp animations, it's perfect for players who value performance and design without compromise.<br><br>All games are mobile-optimised, fairness-certified, and available 24/7 with secure access."
         }
-      },
-      "casino": {
-        "title": "Casino",
-        "description": "Experience real-time excitement with Malaysia's top <strong>live dealer games.</strong>",
-        "games": {
-          "hotRoad": {
-            "title": "Hot Road",
-            "description": "Hot Road redefines the live casino experience with futuristic design and cutting-edge automation. Featuring robotic arms as live dealers, it brings a sci-fi twist to traditional games like Dragon Tiger and Baccarat. This is a great option for players looking for something different, visually striking, and still fully interactive."
-          },
-          "evolution": {
-            "title": "Evolution",
-            "description": "Evolution is the industry leader in live casino entertainment, offering world-class live Baccarat, Roulette, and their signature Lightning series. With high-quality streaming, professional hosts, and game show-style titles like Crazy Time and Monopoly Live, Evolution delivers an immersive and trusted live gaming experience for Malaysian players."
-          },
-          "sexy": {
-            "title": "Sexy",
-            "description": "That's right, we are bringing sexy back with our lovely dealers dressed in bikinis and lingerie. But beyond our charming dealers, they are also skilled at blackjack, roulette and other card games. Beauties and Brains!"
-          },
-          "bigGaming": {
-            "title": "Big Gaming",
-            "description": "Big Gaming offers a dynamic HD live casino experience that's built for speed and local preferences. With fast-paced betting rounds, easy-to-use interfaces, and familiar games like Baccarat, Dragon Tiger, and Roulette, it's perfect for Malaysian players who value quick action."
-          },
-          "pragmaticPlay": {
-            "title": "Pragmatic Play",
-            "description": "Pragmatic Play blends elegant design with real-time excitement. Known for its clean interface and reliable performance, this provider offers a wide range of live games in multiple languages, including Malay, Mandarin, and English. From classic card tables to game show-inspired formats like Mega Wheel and Sweet Bonanza Live, it's built for players who enjoy variety with a modern twist."
-          }
+      }
+    },
+    "casino": {
+      "title": "Casino",
+      "description": "Experience real-time excitement with Malaysia's top <strong>live dealer games.</strong><br><br>Our <strong>Live Casino</strong> brings the energy of a real casino floor straight to your screen, all hosted by professional, friendly dealers in high-definition streaming. Play from the comfort of your couch or during a Grab ride, we got you covered!",
+      "games": {
+        "hotRoad": {
+          "title": "Hot Road",
+          "description": "Hot Road redefines the live casino experience with futuristic design and cutting-edge automation. Featuring robotic arms as live dealers, it brings a sci-fi twist to traditional games like Dragon Tiger and Baccarat. This is a great option for players looking for something different, visually striking, and still fully interactive."
+        },
+        "evolution": {
+          "title": "Evolution",
+          "description": "Evolution is the industry leader in live casino entertainment, offering world-class live Baccarat, Roulette, and their signature Lightning series. With high-quality streaming, professional hosts, and game show-style titles like <strong>Crazy Time</strong> and <strong>Monopoly Live</strong>, Evolution delivers an immersive and trusted live gaming experience for Malaysian players."
+        },
+        "sexy": {
+          "title": "Sexy",
+          "description": "That's right, we are bringing sexy back with our lovely dealers dressed in bikinis and lingerie. But beyond our charming dealers, they are also skilled at blackjack, roulette and other card games. Beauties and Brains!"
+        },
+        "bigGaming": {
+          "title": "Big Gaming",
+          "description": "Big Gaming offers a dynamic <strong>HD live casino</strong> experience that's built for speed and local preferences. With fast-paced betting rounds, easy-to-use interfaces, and familiar games like Baccarat, Dragon Tiger, and Roulette, it's perfect for Malaysian players who value quick action."
+        },
+        "pragmaticPlay": {
+          "title": "Pragmatic Play",
+          "description": "Pragmatic Play blends elegant design with real-time excitement. Known for its clean interface and reliable performance, this provider offers a wide range of live games in multiple languages, including Malay, Mandarin, and English. From classic card tables to game show-inspired formats like <strong>Mega Wheel</strong> and <strong>Sweet Bonanza Live</strong>, it's built for players who enjoy variety with a modern twist."
         }
-      },
-      "sports": {
-        "title": "Sports",
-        "description": "Your all-access pass to real-time sports betting across every arena.",
-        "games": {
-          "maxbet": {
-            "title": "Maxbet",
-            "description": "One of Asia's most trusted names in <strong>sports betting</strong>, Maxbet offers extensive coverage on international football leagues, NBA, tennis, and more. With real-time stats, multi-bet options, and easy cashout, it's a solid choice for both new and seasoned bettors. Coverage includes international football (EPL, La Liga, Serie A, World Cup qualifiers), basketball (NBA, EuroLeague, FIBA), tennis (ATP, WTA, Grand Slams), e-sports (Dota 2, League of Legends, CS:GO), badminton and table tennis, American football (NFL), baseball (MLB, NPB), ice hockey (NHL, KHL), live betting on ongoing matches, handicap, over/under, 1X2, correct score, and mix parlay bets."
-          },
-          "sv388": {
-            "title": "SV388",
-            "description": "Specialising in legalised <strong>online cockfighting</strong>, SV388 delivers high-definition streams, transparent results, and secure betting for a niche but highly popular vertical in Southeast Asia. Matches run daily with detailed odds and result tracking."
-          },
-          "rcb988": {
-            "title": "RCB988",
-            "description": "RCB988 caters to horse racing and niche sports fans with a sleek <strong>horse betting</strong> platform focused on precision and speed. Whether you're betting on local or international races, the interface is fast, intuitive, and backed by trusted payouts."
-          }
+      }
+    },
+    "sports": {
+      "title": "Sports",
+      "description": "Your all-access pass to real-time sports betting across every arena.<br><br>Whether it's football, basketball, e-sports, or even cockfighting and horse racing, HengOngBet connects you to top sportsbook providers with live odds, instant updates, and seamless bets.",
+      "games": {
+        "maxbet": {
+          "title": "Maxbet",
+          "description": "One of Asia's most trusted names in <strong>sports betting</strong>, Maxbet offers extensive coverage on international football leagues, NBA, tennis, and more. With real-time stats, multi-bet options, and easy cashout, it's a solid choice for both new and seasoned bettors.<br><br>Coverage includes:<br>• International football (EPL, La Liga, Serie A, World Cup qualifiers)<br>• Basketball (NBA, EuroLeague, FIBA)<br>• Tennis (ATP, WTA, Grand Slams)<br>• E-sports (Dota 2, League of Legends, CS:GO)<br>• Badminton and table tennis<br>• American football (NFL)<br>• Baseball (MLB, NPB)<br>• Ice hockey (NHL, KHL)<br>• Live betting on ongoing matches<br>• Handicap, over/under, 1X2, correct score, and mix parlay bets"
+        },
+        "sv388": {
+          "title": "SV388",
+          "description": "Specialising in legalised <strong>online cockfighting</strong>, SV388 delivers high-definition streams, transparent results, and secure betting for a niche but highly popular vertical in Southeast Asia. Matches run daily with detailed odds and result tracking."
+        },
+        "rcb988": {
+          "title": "RCB988",
+          "description": "RCB988 caters to horse racing and niche sports fans with a sleek <strong>horse betting</strong> platform focused on precision and speed. Whether you're betting on local or international races, the interface is fast, intuitive, and backed by trusted payouts.<br><br>All sportsbook providers are mobile-ready, feature multilingual support, and operate under strict gaming fairness standards."
         }
-      },
-      "lottery": {
-        "title": "Lottery",
-        "games": {
-          "ekor": {
-            "title": "Ekor",
-            "description": "Pick your 4 digits and see where luck takes you. Heng Ong Bet connects you to local and <strong>4D</strong> draws with transparent results and instant payout processing, right from your phone with Ekor. You can bet on your favourite numbers, check past results, and follow live draws in one secure platform. It supports standard, iBox, and Big/Small bet types, all with a clean interface and fast result updates. Bet big, bet small, come bet it all, with our instant 4D results on Ekor."
-          }
+      }
+    },
+    "lottery": {
+      "title": "Lottery",
+      "games": {
+        "ekor": {
+          "title": "Ekor",
+          "descriptionStart": "Pick your 4 digits and see where luck takes you. Heng Ong Bet connects you to local and <strong>4D</strong> draws with transparent results and instant payout processing, right from your phone with Ekor.<br><br>You can bet on your favourite numbers, check past results, and follow live draws in one secure platform. It supports standard, iBox, and Big/Small bet types, all with a clean interface and fast result updates.<br><br>Bet big, bet small, come bet it all, with our instant ",
+          "linkText": "4D results ",
+          "descriptionEnd": "on Ekor."
         }
-      },
-      "faq": {
-        "title": "Frequently Asked Questions About HengOngBet Games",
-        "items": {
-          "popular": {
-            "question": "What Are The Most Popular Slot Games On HengOngBet?",
-            "answer": "Top picks include Super Ace, Boxing King, FaFaFa and Panther Moon. All mobile-friendly with high RTP and themed features."
-          },
-          "realTime": {
-            "question": "Is The Live Casino Experience Real-Time?",
-            "answer": "Yes. Heng Ong Bet offers real-time games with HD video and real dealers from providers like Evolution, Sexy, Big Gaming, and Hot Road."
-          },
-          "sports": {
-            "question": "Can I Bet On Sports Like Football Or E-Sports?",
-            "answer": "Absolutely. Heng Ong Bet's sportsbook includes Maxbet, SV388, and RCB988, covering football, basketball, cockfighting, and more."
-          },
-          "ekor4d": {
-            "question": "What Is Ekor 4D And How Does It Work?",
-            "answer": "Ekor lets you place 4D bets online, check results instantly, and choose from standard, iBox, Big/Small bets. Results are updated live."
-          },
-          "fair": {
-            "question": "Are Heng Ong Bet Games Fair And Licensed?",
-            "answer": "Yes. All games are licensed and fairness-certified, using RNG or live-dealer verification from trusted global providers."
-          },
-          "mobile": {
-            "question": "Can I Play All Games On Mobile?",
-            "answer": "Yes. Slots, live casino, 4D, and sports betting are fully available via the Heng Ong Bet app, with faster load times and app-only perks."
-          }
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions About HengOngBet Games",
+      "items": {
+        "popular": {
+          "question": "What Are The Most Popular Slot Games On HengOngBet?",
+          "answer": "Top picks include Super Ace, Boxing King, FaFaFa and Panther Moon. All mobile-friendly with high RTP and themed features."
+        },
+        "realTime": {
+          "question": "Is The Live Casino Experience Real-Time?",
+          "answer": "Yes. Heng Ong Bet offers real-time games with HD video and real dealers from providers like Evolution, Sexy, Big Gaming, and Hot Road."
+        },
+        "sports": {
+          "question": "Can I Bet On Sports Like Football Or E-Sports?",
+          "answer": "Absolutely. Heng Ong Bet's sportsbook includes Maxbet, SV388, and RCB988, covering football, basketball, cockfighting, and more."
+        },
+        "ekor4d": {
+          "question": "What Is Ekor 4D And How Does It Work?",
+          "answer": "Ekor lets you place 4D bets online, check results instantly, and choose from standard, iBox, Big/Small bets. Results are updated live."
+        },
+        "fair": {
+          "question": "Are Heng Ong Bet Games Fair And Licensed?",
+          "answer": "Yes. All games are licensed and fairness-certified, using RNG or live-dealer verification from trusted global providers."
+        },
+        "mobile": {
+          "question": "Can I Play All Games On Mobile?",
+          "answer": "Yes. Slots, live casino, 4D, and sports betting are fully available via the Heng Ong Bet app, with faster load times and app-only perks."
         }
       }
     }
-  },
+  }
+},
   "faq": {
     "title": "Frequently Asked Question (FAQ)",
     "appName": "Heng Ong Bet",
@@ -1231,8 +1280,9 @@
     "subtitle": "Easy To Know & Just follow Step Of Tutorial",
     "sections": {
       "redeemBonus": {
-        "title": "Easy 3 steps to {highlight} (new member bonus)",
+        "title": "Easy 3 steps to",
         "highlight": "Redeem RM10",
+        "subtitle": "(new member bonus)",
         "steps": [
           "Click on Terms at the bottom left of app",
           "Click \"Claim Now\" on the activity page",
@@ -1240,7 +1290,7 @@
         ]
       },
       "queryHistory": {
-        "title": "{highlight} Tutorial",
+        "title": "Tutorial",
         "highlight": "Query history",
         "steps": [
           "Click on \"today\" at the bottom of the app",
@@ -1252,6 +1302,149 @@
     },
     "alt": {
       "tutorialIcon": "Tutorial Icon"
+    },
+    "guide": {
+      "introduction": {
+        "title": "<span class=\"title-highlight\">HengOngBet88</span> New Player Tutorial",
+        "subtitle": "Whether you're here to spin slots, play 4D, or enjoy live casino tables, your <strong>Heng Ong Bet</strong> journey starts with just a few easy steps."
+      },
+      "registration": {
+        "title": "Step 1: How to Register & Download the App",
+        "steps": [
+          "Visit the official site: <router-link to=\"/\" class=\"official-link\">www.hengongbet88.com</router-link>",
+          "Tap on <strong>Download</strong> (choose Android APK or iOS option).",
+          "Install the <strong>Heng Ong Bet App</strong> on your mobile device.",
+          "Open the app and tap <strong>Register</strong>."
+        ],
+        "details": {
+          "title": "Fill in your details:",
+          "username": "Username (create your own)",
+          "password": "Secure Password",
+          "referral": "Referral Code (if any)",
+          "phone": "Phone number (for verification)"
+        },
+        "note": "Once submitted, your account is created instantly.",
+        "warning": "<strong>Always download the app from the official site to avoid fake clones.</strong>"
+      },
+      "login": {
+        "title": "Step 2: Log In to Your Account",
+        "intro": "Once registered:",
+        "steps": [
+          "Open the <strong>Heng Ong Bet app</strong>",
+          "Enter your <strong>username</strong> and <strong>password</strong>",
+          "Tap <strong>Login</strong>"
+        ],
+        "description": "You'll be taken to the homepage, where your balance, games, and promotions are all in one dashboard.",
+        "reminder": {
+          "title": "First-Time Login Reminder:",
+          "text": "You may be prompted to verify your mobile number or update your profile. Do it early to avoid withdrawal delays later."
+        }
+      },
+      "bonuses": {
+        "title": "Step 3: Claim Active Bonuses & Rebates",
+        "intro": "Unlike other platforms, <strong>Heng Ong Bet</strong> focuses on <strong>high-value top-up rewards</strong> rather than fixed welcome bonuses. Here are the <strong>live promotions</strong> you can claim after registering:",
+        "table": {
+          "headers": {
+            "promotion": "Promotion",
+            "details": "Details",
+            "claim": "How to Claim"
+          },
+          "rows": {
+            "deposit": {
+              "name": "Deposit Bonus 200%",
+              "details": "Get <strong>200% bonus</strong> on your top-up, up to RM100",
+              "claim": "Make a deposit and tap \"Claim\" in the <strong>Promotion</strong> tab"
+            },
+            "topup": {
+              "name": "Top-Up Bonus 68%",
+              "details": "Exclusive slot reload bonus, up to RM200",
+              "claim": "Deposit and select eligible slot games (Lucky365, Monkey King, etc.)"
+            },
+            "rebate": {
+              "name": "Top-Up Rebate 0.5%",
+              "details": "Get 0.5% rebate on every top-up, <strong>no limit</strong>",
+              "claim": "Automatically credited on all top-ups"
+            },
+            "daily": {
+              "name": "Daily Rebate Up to 3%",
+              "details": "Earn rebate as you play, the more you bet, the more you get",
+              "claim": "No action needed — applies based on game volume"
+            }
+          }
+        },
+        "note": "Always read the full promo T&Cs in the <strong>app's Promotion page</strong> to avoid misunderstanding on wagering or withdrawal rules."
+      },
+      "games": {
+        "title": "Step 4: Play Your Favourite Slot or Live Casino Games",
+        "intro": "After claiming your bonus:",
+        "steps": [
+          "Tap on <strong>\"Games\"</strong> in the menu",
+          "Choose your game category:",
+          "Tap to enter the game and start playing!"
+        ],
+        "categories": {
+          "slots": "Slot Games (Lucky365, Monkey King)",
+          "live": "Live Casino (Sexy Baccarat, Evolution)",
+          "lottery": "4D & Lottery"
+        },
+        "tip": "You can favourite your top games to access them faster next time with a <strong>HengongBet88 Register</strong>. Enjoy!"
+      },
+      "proTips": {
+        "title": "Pro Tips for New Players (Play Smart, Not Just Hard)",
+        "intro": "So you did your <strong>Heng Ong Bet registration</strong>, claimed your bonuses, and you're ready to spin. But wait, don't just dive in blindly. Here are 5 essential tips every beginner should know before playing on Heng Ong Bet:",
+        "tips": {
+          "rtp": {
+            "title": "Check the RTP Before You Play",
+            "description": "Look for games with high Return to Player (RTP) rates, <strong>ideally 96% or more.</strong><br><br>Why? A higher RTP means better odds over time. Games like <em>Lucky365</em> and <em>Monkey King</em> often display their RTP in the game info. It doesn't guarantee instant wins, but it helps your money last longer."
+          },
+          "budget": {
+            "title": "Set a Budget and Stick to It",
+            "description": "Decide your bankroll before you start spinning.<br><br>Whether it's RM50 or RM500, knowing your limit helps you play responsibly. Don't top-up just to chase losses, this is entertainment, not a payday."
+          },
+          "volatility": {
+            "title": "Start with Low Volatility Games",
+            "description": "Begin with games that offer frequent small wins rather than rare big hits.<br><br>Low-volatility slots help you stay in the game longer while learning the mechanics. It's a great way to build confidence without burning your bankroll too fast."
+          },
+          "bonuses": {
+            "title": "Claim Bonuses Strategically",
+            "description": "Use promotions on games you genuinely enjoy, not just because they're trending.<br><br>If you love reel-spinning action, pair your deposit bonus with <em>Askmeslot</em>. Like high-action themes? Use it on <em>MicroGaming</em>. Always match the bonus to your game style for maximum value."
+          },
+          "rules": {
+            "title": "Always Read Game Rules First",
+            "description": "Every slot has unique features: cascading reels, wild multipliers, bonus buys.<br><br>Understanding how a slot works, especially bonus triggers and symbols can give you an edge. Tap the info or \"?\" icon in any game to preview its mechanics before placing real bets."
+          }
+        },
+        "quote": "\"Smart players last longer and win smarter.\""
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions for HengOngBet88 Register",
+      "questions": [
+        {
+          "question": "How do I register for HengOngBet88?",
+          "answer": "Visit Heng Ong Bet8 official site and download the app, tap \"Register,\" and fill in your username, password, and mobile number to create your account."
+        },
+        {
+          "question": "Is there a bonus for new players on HengOngBet88?",
+          "answer": "Yes. New players can enjoy up to <strong>200% deposit bonus</strong>, <strong>68% slot top-up bonus</strong>, and up to <strong>3% daily rebate</strong> on gameplay."
+        },
+        {
+          "question": "What games can I play after signing up?",
+          "answer": "You can play slot games like <strong>Lucky365</strong> and <strong>Monkey King</strong>, live casino games, and <strong>4D lottery games</strong> directly from the app."
+        },
+        {
+          "question": "Can I play on my phone?",
+          "answer": "Yes. <strong>Heng Ong Bet is mobile-first</strong>. Just install the APK or iOS version from the official site for smooth gameplay."
+        },
+        {
+          "question": "Is HengOngBet safe and legit?",
+          "answer": "Yes. <strong>Heng Ong Bet is widely trusted in Malaysia</strong> and uses secure login, verified payment options, and fair gameplay features."
+        },
+        {
+          "question": "What tips should I follow as a beginner?",
+          "answer": "Check RTP, set a budget, start with low-volatility slots, read game rules, and only use bonuses on games you actually enjoy."
+        }
+      ]
     }
   },
   "tutorialTabs": {

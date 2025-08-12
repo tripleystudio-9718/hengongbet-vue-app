@@ -2,10 +2,9 @@
   <section>
     <!-- Global Header Section -->
     <div class="global-header-section">
-      <h3 class="global-brand">{{ $t('provider_showcase.global_header.brand') }}</h3>
-      <h2 class="global-title">{{ $t('provider_showcase.global_header.title') }}</h2>
-      <h4 class="global-subtitle">{{ $t('provider_showcase.global_header.subtitle') }}</h4>
-      <p class="global-description">{{ $t('provider_showcase.global_header.description') }}</p>
+      <div class="global-title" v-html="$t('provider_showcase.global_header.title')"></div>
+      <p class="global-description" v-html="$t('provider_showcase.global_header.description')"></p>
+      <p class="global-cta" v-html="$t('provider_showcase.global_header.cta')"></p>
     </div>
 
     <div class="max-w-7xl mx-auto px-6 py-8">
@@ -18,8 +17,8 @@
           :style="{ backgroundImage: `url(${provider.backgroundImage})` }"
         >
           <div class="provider-content">
-            <h3 class="provider-title">{{ provider.displayName }}</h3>
-            <p class="provider-description">{{ provider.displayDescription }}</p>
+            <div class="provider-title" v-html="provider.displayName"></div>
+            <p class="provider-description" v-html="provider.displayDescription"></p>
           </div>
         </div>
       </div>
@@ -34,12 +33,21 @@
             :style="{ backgroundImage: `url(${provider.backgroundImage})` }"
           >
             <div class="mobile-provider-content">
-              <h3 class="mobile-provider-title">{{ provider.displayName }}</h3>
-              <p class="mobile-provider-description">{{ provider.displayDescription }}</p>
+              <div class="mobile-provider-title" v-html="provider.displayName"></div>
+              <p class="mobile-provider-description" v-html="provider.displayDescription"></p>
             </div>
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="bottom-section">
+      <div class="bottom-title" v-html="$t('provider_showcase.bottom_section.title')"></div>
+      <p class="bottom-description-line1" v-html="$t('provider_showcase.bottom_section.description_line1')"></p>
+      <p class="bottom-description-line2" v-html="$t('provider_showcase.bottom_section.description_line2')"></p>
+      <p class="bottom-description-line3" v-html="$t('provider_showcase.bottom_section.description_line3')"></p>
+      <button class="register-btn" @click="handleRegisterClick" v-html="$t('provider_showcase.bottom_section.register_btn')"></button>
     </div>
   </section>
 </template>
@@ -203,6 +211,18 @@ export default {
       if (slider) {
         slider.style.transform = `translateX(-${this.currentProviderSlide * 70}%)`
       }
+    },
+    handleRegisterClick() {
+      const locale = this.$i18n?.locale || 'en'
+
+      let targetUrl = 'https://hengongbet.com/en-my?regRef=player'
+      if (locale === 'zh') {
+        targetUrl = 'https://hengongbet.com/zh-my?regRef=player'
+      } else if (locale === 'ms') {
+        targetUrl = 'https://hengongbet.com/ms-my?regRef=player'
+      }
+
+      window.location.href = targetUrl
     }
   }
 }
@@ -212,43 +232,31 @@ export default {
 /* Global Header Section */
 .global-header-section {
   text-align: center;
-  padding: 0 20px;
-}
-
-.global-brand {
-  color: #ffffff;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-  font-weight: normal;
-  margin: 0 0 0.5rem 0;
-  text-align: center;
 }
 
 .global-title {
   color: #F2B240;
-  font-size: 3rem;
-  font-weight: bold;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 600;
   margin: 0 0 1rem 0;
   line-height: 1.2;
-  text-align: center;
-}
-
-.global-subtitle {
-  color: #ffffff;
-  font-size: 1.3rem;
-  margin: 0 0 2rem 0;
-  font-weight: normal;
-  line-height: 1.3;
-  text-align: center;
 }
 
 .global-description {
-  color: #cbd5e1;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  max-width: 900px;
+  color: #C0BEBE;
+  font-size: clamp(0.9rem, 2.2vw, 1.125rem);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 1rem auto;
+}
+
+.global-cta {
+  color: #C0BEBE;
+  font-size: clamp(0.9rem, 2.2vw, 1.125rem);
+  line-height: 1.6;
+  max-width: 600px;
   margin: 0 auto;
-  text-align: center;
+  font-weight: 500;
 }
 
 /* Utility Classes */
@@ -441,6 +449,58 @@ export default {
   -webkit-box-orient: vertical;
 }
 
+/* Bottom Section */
+.bottom-section {
+  text-align: center;
+  padding: 60px 20px 40px 20px;
+  margin-top: 60px;
+  border-top: 1px solid #3A3A3D;
+}
+
+.bottom-title {
+  color: #FFFFFF;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+}
+
+.bottom-description-line1,
+.bottom-description-line2,
+.bottom-description-line3 {
+  color: #C0BEBE;
+  font-size: clamp(0.9rem, 2.2vw, 1.125rem);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 1rem auto;
+}
+
+.bottom-description-line2 {
+  margin-bottom: 1.5rem;
+}
+
+.bottom-description-line3 {
+  margin-bottom: 2rem;
+}
+
+.register-btn {
+  background: #F2B240;
+  color: #000000;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: none;
+}
+
+.register-btn:hover {
+  background: #E5A535;
+  transform: translateY(-2px);
+}
+
 /* Responsive design */
 @media (max-width: 1024px) {
   .provider-container {
@@ -455,7 +515,8 @@ export default {
 
 @media (max-width: 768px) {
   .global-header-section {
-    padding: 15px;
+    padding: 30px 15px;
+    margin-bottom: 20px;
   }
   
   .provider-container {
@@ -471,20 +532,16 @@ export default {
   .py-8 {
     padding-bottom: 40px;
   }
+  
+  .bottom-section {
+    padding: 40px 15px 30px 15px;
+    margin-top: 40px;
+  }
 }
 
 @media (max-width: 480px) {
-  .global-title {
-    font-size: 28px;
-  }
-  
-  .global-subtitle {
-    font-size: 16px;
-    margin: 10px;
-  }
-  
-  .global-description {
-    font-size: 10px;
+  .global-header-section {
+    padding: 20px 12px;
   }
   
   .px-6 {
@@ -515,6 +572,16 @@ export default {
     font-size: 10px;
     line-height: 1.2;
     -webkit-line-clamp: 6;
+  }
+  
+  .bottom-section {
+    padding: 30px 12px 20px 12px;
+    margin-top: 30px;
+  }
+  
+  .register-btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
   }
 }
 </style>

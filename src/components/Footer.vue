@@ -4,13 +4,13 @@
       <div class="footer-grid">
         <!-- About Section -->
         <div class="footer-column">
-          <h3 class="footer-title">{{ $t('footer.about') }}</h3>
+          <div class="footer-title">{{ $t('footer.about') }}</div>
           <p class="footer-description">
             {{ $t('footer.description') }}
           </p>
           
           <div class="footer-badge desktop-only">
-            <h4 class="badge-title">{{ $t('footer.game_license') }}</h4>
+            <div class="badge-title">{{ $t('footer.game_license') }}</div>
             <div class="badge-icon license-badge">
               <img :src="gcbIcon" :alt="$t('footer.gcb_license_alt')" />
             </div>
@@ -28,7 +28,7 @@
           </ul>
           
           <div class="footer-badge desktop-only">
-            <h4 class="badge-title">{{ $t('footer.certification') }}</h4>
+            <div class="badge-title">{{ $t('footer.certification') }}</div>
             <div class="badge-icon certification-badge">
               <img :src="itechIcon" :alt="$t('footer.itech_certification_alt')" />
             </div>
@@ -37,7 +37,7 @@
         
         <!-- Payment Methods Section -->
         <div class="footer-column">
-          <h3 class="footer-title">{{ $t('footer.payment_methods') }}</h3>
+          <div class="footer-title">{{ $t('footer.payment_methods') }}</div>
           <div class="payment-methods">
             <div class="payment-icon">
               <img :src="tngIcon" :alt="$t('footer.touch_n_go_alt')" />
@@ -54,7 +54,7 @@
           </div>
           
           <div class="footer-badge desktop-only">
-            <h4 class="badge-title">{{ $t('footer.security') }}</h4>
+            <div class="badge-title">{{ $t('footer.security') }}</div>
             <div class="badge-icon security-badge">
               <img :src="threatMetrixIcon" :alt="$t('footer.threatmetrix_security_alt')" />
             </div>
@@ -63,7 +63,7 @@
         
         <!-- Social Links Section -->
         <div class="footer-column">
-          <h3 class="footer-title">{{ $t('footer.follow_us') }}</h3>
+          <div class="footer-title">{{ $t('footer.follow_us') }}</div>
           <div class="social-links">
             <a href="" @click.prevent="handleSocialClick('facebook')" class="social-icon">
               <img :src="fbIcon" :alt="$t('footer.facebook_alt')" />
@@ -82,7 +82,7 @@
       <div class="mobile-footer-layout">
         <!-- Row 1: About -->
         <div class="mobile-about-section">
-          <h3 class="footer-title">{{ $t('footer.about') }}</h3>
+          <div class="footer-title">{{ $t('footer.about') }}</div>
           <p class="footer-description">
             {{ $t('footer.description') }}
           </p>
@@ -91,7 +91,7 @@
         <!-- Row 2: Games -->
         <div class="mobile-row">
           <div class="mobile-column">
-            <h3 class="footer-title">{{ $t('footer.games') }}</h3>
+            <div class="footer-title">{{ $t('footer.games') }}</div>
             <ul class="footer-links">
               <li><a href="" @click.prevent="handleLinkClick">{{ $t('footer.slots') }}</a></li>
               <li><a href="" @click.prevent="handleLinkClick">{{ $t('footer.sports') }}</a></li>
@@ -104,21 +104,21 @@
         <!-- Row 3: Game License, Security, Certification -->
         <div class="mobile-badges-row">
           <div class="mobile-badge-item">
-            <h4 class="badge-title">{{ $t('footer.game_license') }}</h4>
+            <div class="badge-title">{{ $t('footer.game_license') }}</div>
             <div class="badge-icon license-badge">
               <img :src="gcbIcon" :alt="$t('footer.gcb_license_alt')" />
             </div>
           </div>
           
           <div class="mobile-badge-item">
-            <h4 class="badge-title">{{ $t('footer.security') }}</h4>
+            <div class="badge-title">{{ $t('footer.security') }}</div>
             <div class="badge-icon security-badge">
               <img :src="threatMetrixIcon" :alt="$t('footer.threatmetrix_security_alt')" />
             </div>
           </div>
           
           <div class="mobile-badge-item">
-            <h4 class="badge-title">{{ $t('footer.certification') }}</h4>
+            <div class="badge-title">{{ $t('footer.certification') }}</div>
             <div class="badge-icon certification-badge">
               <img :src="itechIcon" :alt="$t('footer.itech_certification_alt')" />
             </div>
@@ -127,7 +127,7 @@
         
         <!-- Row 4: Payment Methods -->
         <div class="mobile-payment-section">
-          <h3 class="footer-title">{{ $t('footer.payment_methods') }}</h3>
+          <div class="footer-title">{{ $t('footer.payment_methods') }}</div>
           <div class="payment-methods">
             <div class="payment-icon">
               <img :src="tngIcon" :alt="$t('footer.touch_n_go_alt')" />
@@ -146,7 +146,7 @@
         
         <!-- Row 5: Social Links -->
         <div class="mobile-social-section">
-          <h3 class="footer-title">{{ $t('footer.follow_us') }}</h3>
+          <div class="footer-title">{{ $t('footer.follow_us') }}</div>
           <div class="social-links">
             <a href="" @click.prevent="handleSocialClick('facebook')" class="social-icon">
               <img :src="fbIcon" :alt="$t('footer.facebook_alt')" />

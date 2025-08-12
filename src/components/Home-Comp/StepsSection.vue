@@ -30,7 +30,7 @@
 
         <!-- Step 2 -->
         <div class="step-item">
-          <img :src="depositIcon" :alt="$t('how_it_works.alt_text.deposit_icon')" class="steps-img" />
+          <img :src="rewardIcon" :alt="$t('how_it_works.alt_text.deposit_icon')" class="steps-img" />
           <div class="step-content">
             <img :src="stepNumbers[1]" alt="Step 2" class="num-img" />
             <div class="steps-desc">
@@ -49,7 +49,7 @@
 
         <!-- Step 3 -->
         <div class="step-item">
-          <img :src="winningIcon" :alt="$t('how_it_works.alt_text.winning_icon')" class="steps-img" />
+          <img :src="depositIcon" :alt="$t('how_it_works.alt_text.winning_icon')" class="steps-img" />
           <div class="step-content">
             <img :src="stepNumbers[2]" alt="Step 3" class="num-img" />
             <div class="steps-desc">
@@ -68,7 +68,7 @@
 
         <!-- Step 4 -->
         <div class="step-item">
-          <img :src="rewardIcon" :alt="$t('how_it_works.alt_text.reward_icon')" class="steps-img" />
+          <img :src="winningIcon" :alt="$t('how_it_works.alt_text.reward_icon')" class="steps-img" />
           <div class="step-content">
             <img :src="stepNumbers[3]" alt="Step 4" class="num-img" />
             <div class="steps-desc">
@@ -262,7 +262,7 @@ export default {
     grid-template-columns: 1fr auto 1fr;
     grid-template-rows: auto auto auto auto;
     gap: 2rem 0.5rem;
-    align-items: center;
+    align-items: start;
     justify-items: center;
     max-width: 100%;
   }
@@ -278,6 +278,7 @@ export default {
     grid-row: 1;
     width: 60px;
     margin-top: 0;
+    align-self: center;
   }
   
   .step-item:nth-child(3) {
@@ -295,6 +296,7 @@ export default {
     grid-row: 3;
     width: 60px;
     margin-top: 0;
+    align-self: center;
   }
   
   .step-item:nth-child(7) {
@@ -310,7 +312,12 @@ export default {
   .step-item {
     max-width: 100%;
     align-items: center;
-    text-alignment: center;
+    text-align: center;
+    height: auto;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
   
   .step-content {
@@ -320,33 +327,46 @@ export default {
     align-items: center;
     margin-right: 0;
     gap: 0.5rem;
+    flex: 1;
+    display: flex;
   }
   
   .steps-desc {
     text-align: center;
     width: 100%;
+    max-width: 120px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
   
   .steps-img {
     width: 100px;
     height: 100px;
     margin-bottom: 0.5rem;
+    flex-shrink: 0;
   }
   
   .num-img {
     width: 40px;
     height: 40px;
     margin-bottom: 0.5rem;
+    flex-shrink: 0;
   }
   
   .steps-h2 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 0.25rem;
+    line-height: 1.2;
+    font-weight: 600;
   }
   
   .steps-p {
-    font-size: 0.8rem;
-    line-height: 1.4;
+    font-size: 0.75rem;
+    line-height: 1.3;
+    margin: 0;
+    flex: 1;
   }
   
   /* Mobile dotted line styling */
@@ -385,9 +405,19 @@ export default {
     gap: 1.5rem 0.25rem;
   }
   
+  .step-item {
+    min-height: 180px;
+  }
+  
   .dotted-line-1,
   .dotted-line-3 {
     width: 40px;
+    margin-top: 0;
+    align-self: center;
+  }
+  
+  .steps-desc {
+    max-width: 100px;
   }
   
   .steps-img {
@@ -401,11 +431,13 @@ export default {
   }
   
   .steps-h2 {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.1;
   }
   
   .steps-p {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
+    line-height: 1.2;
   }
   
   .dotted-line-container .circle {
@@ -419,9 +451,19 @@ export default {
     gap: 1rem 0.125rem;
   }
   
+  .step-item {
+    min-height: 160px;
+  }
+  
   .dotted-line-1,
   .dotted-line-3 {
     width: 30px;
+    margin-top: 0;
+    align-self: center;
+  }
+  
+  .steps-desc {
+    max-width: 90px;
   }
   
   .steps-img {
@@ -435,11 +477,13 @@ export default {
   }
   
   .steps-h2 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    line-height: 1;
   }
   
   .steps-p {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
+    line-height: 1.1;
   }
   
   .dotted-line-container .circle {

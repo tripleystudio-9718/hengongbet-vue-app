@@ -1,61 +1,52 @@
 <template>
-  <div class="section-container">
-    <!-- FAQ Header Section -->
-    <div class="header-section">
-      <div class="header-label">{{ $t('faqSec.header.label') }}</div>
-      <div class="main-title">{{ $t('faqSec.header.title') }}</div>
-      <p class="header-description">{{ $t('faqSec.header.description') }}</p>
-      <button class="cta-button" @click="goToFaqPage">
-        {{ $t('faqSec.header.button_text') }}
-      </button>
+  <div class="clean-faq-section">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Removed entire header section with titles and button -->
 
-    </div>
-
-    <div class="content-wrapper">
-      <div class="accordion-container">
-        <div 
-          v-for="(item, index) in faqData" 
-          :key="index" 
-          class="accordion-item"
-        >
-          <button
-            @click="toggleItem(index)"
-            class="accordion-trigger"
+      <div class="faq-content-wrapper">
+        <div class="faq-accordion-container">
+          <div 
+            v-for="(item, index) in faqData" 
+            :key="index" 
+            class="faq-accordion-item"
           >
-            <span 
-              class="trigger-text"
-              :class="{ 'text-active': openItems[index] }"
+            <button
+              @click="toggleItem(index)"
+              class="faq-accordion-trigger"
             >
-              {{ item.question }}
-            </span>
+              <span 
+                class="faq-trigger-text"
+                :class="{ 'faq-text-active': openItems[index] }"
+              >
+                {{ item.question }}
+              </span>
 
-            <div class="trigger-icon-wrapper">
-              <div class="trigger-icon-circle">
-                <img 
-                  v-if="openItems[index]" 
-                  :src="closeIcon"
-                  :alt="$t('faqSec.alt_text.close')"
-                  class="trigger-icon-image"
-                />
-                <img 
-                  v-else 
-                  :src="openIcon"
-                  :alt="$t('faqSec.alt_text.open')"
-                  class="trigger-icon-image"
-                />
+              <div class="faq-trigger-icon-wrapper">
+                <div class="faq-trigger-icon-circle">
+                  <img 
+                    v-if="openItems[index]" 
+                    :src="closeIcon"
+                    :alt="$t('faqSec.alt_text.close')"
+                    class="faq-trigger-icon-image"
+                  />
+                  <img 
+                    v-else 
+                    :src="openIcon"
+                    :alt="$t('faqSec.alt_text.open')"
+                    class="faq-trigger-icon-image"
+                  />
+                </div>
               </div>
-            </div>
-          </button>
-          
-          <transition name="fade-slide">
-            <div v-if="openItems[index]" class="accordion-content">
-              <div class="content-body">
-                <p class="content-text">
-                  {{ item.answer }}
-                </p>
+            </button>
+            
+            <transition name="faq-fade-slide">
+              <div v-if="openItems[index]" class="faq-accordion-content">
+                <div class="faq-content-body">
+                  <p class="faq-content-text">{{ item.answer }}</p>
+                </div>
               </div>
-            </div>
-          </transition>
+            </transition>
+          </div>
         </div>
       </div>
     </div>
@@ -68,12 +59,12 @@ import closeIcon from '@/assets/close-icon.svg'
 import { localePath } from '@/router'
 
 export default {
-  name: 'FAQ',
+  name: 'CleanFaqSection',
   data() {
     return {
-      openItems: { 0: true }, // First item open by default
       openIcon,
       closeIcon,
+      openItems: { 0: true }, // First FAQ item open by default
       faqData: []
     }
   },
@@ -82,7 +73,6 @@ export default {
     console.log('$i18n available:', !!this.$i18n);
     console.log('Current locale:', this.$i18n?.locale);
     
-    // Load FAQ data using translation keys
     this.loadFaqData();
   },
   mounted() {
@@ -134,6 +124,10 @@ export default {
           {
             question: this.$t('faqSec.questions.q6.question'),
             answer: this.$t('faqSec.questions.q6.answer')
+          },
+          {
+            question: this.$t('faqSec.questions.q7.question'),
+            answer: this.$t('faqSec.questions.q7.answer')
           }
         ];
         
@@ -166,11 +160,15 @@ export default {
           {
             question: "What should I do if I forget my login details?",
             answer: "If you forget your login details, simply click on the 'Forgot Password' link on the login page."
+          },
+          {
+            question: "Is there a mobile app for Heng Ong Bet?",
+            answer: "Yes, we have a mobile app available for both iOS and Android devices."
           }
         ];
       }
     },
-    
+
     toggleItem(index) {
       this.openItems = {
         ...this.openItems,
@@ -179,100 +177,59 @@ export default {
     },
 
     goToFaqPage() {
-    const currentLocale = this.$route.meta?.locale || 'en';
-    const path = localePath('/faqs', currentLocale);
-    this.$router.push(path);
-  }
+      try {
+        const currentLocale = this.$route.meta?.locale || this.$i18n?.locale || 'en';
+        const path = localePath('/faqs', currentLocale);
+        this.$router.push(path);
+      } catch (error) {
+        console.error('Error navigating to FAQ page:', error);
+        // Fallback navigation
+        this.$router.push('/faqs');
+      }
+    }
   },
-  
+
   watch: {
     '$i18n.locale'() {
       console.log('Locale changed to:', this.$i18n.locale);
       this.loadFaqData();
     }
-  },
+  }
 }
 </script>
 
 <style scoped>
-/* Global Layout Classes */
-.section-container {
+/* ===== CLEAN FAQ SECTION ===== */
+.clean-faq-section {
+  margin-top: 60px;
+  padding: 0;
   color: white;
-  padding: 1.5rem;
 }
 
-.header-section {
-  text-align: center;
-  padding: 40px 20px;
-  margin-bottom: 2rem;
-}
-
-.content-wrapper {
+.faq-content-wrapper {
   max-width: 1100px;
   margin: 0 auto;
   padding-bottom: 10px;
 }
 
-/* Global Typography Classes */
-.header-label {
-  color: #ffffff;
-  font-size: 1.5rem;
-  margin: 0 0 1rem 0;
-  font-weight: normal;
-}
-
-.main-title {
-  color: #F2B240;
-  font-size: 3rem;
-  font-weight: bold;
-  margin: 0 0 1.5rem 0;
-  line-height: 1.2;
-}
-
-.header-description {
-  color: #CBD5E1;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto 2rem auto;
-}
-
-/* Button Components */
-.cta-button {
-  background: linear-gradient(135deg, #F2B240, #ED9326);
-  color: #000000;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(242, 178, 64, 0.3);
-}
-
-/* Accordion Components */
-.accordion-container {
+/* Updated accordion styling to match second file's card design */
+.faq-accordion-container {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.accordion-item {
+.faq-accordion-item {
   background-color: #242424;
   border-radius: 0.5rem;
   overflow: hidden;
 }
 
-.accordion-item:last-child {
+.faq-accordion-item:last-child {
   margin-bottom: 0;
 }
 
-.accordion-trigger {
+.faq-accordion-trigger {
   width: 100%;
   display: flex;
   align-items: center;
@@ -285,156 +242,203 @@ export default {
   transition: background-color 0.2s ease;
 }
 
-.accordion-trigger:hover {
+.faq-accordion-trigger:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.trigger-text {
+.faq-accordion-trigger:focus {
+  outline: none;
+}
+
+.faq-trigger-text {
   color: #ffffff;
   font-weight: 500;
   font-size: 1.125rem;
   padding-right: 1rem;
   line-height: 1.4;
   transition: color 0.2s ease;
+  flex: 1;
 }
 
-.text-active {
+.faq-text-active {
   color: #F2B240;
 }
 
-.trigger-icon-wrapper {
+.faq-trigger-icon-wrapper {
   flex-shrink: 0;
   margin-left: 1rem;
 }
 
-.trigger-icon-circle {
+.faq-trigger-icon-circle {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 30px;
+  height: 30px;
+  transition: transform 0.2s ease;
 }
 
-.trigger-icon-image {
+.faq-accordion-trigger:hover .faq-trigger-icon-circle {
+  transform: scale(1.1);
+}
+
+.faq-trigger-icon-image {
   width: 25px;
   height: 25px;
+  transition: transform 0.2s ease;
 }
 
-.accordion-content {
+/* Updated content styling to match second file */
+.faq-accordion-content {
   padding: 0 1.25rem 0.5rem 1.25rem;
 }
 
-.content-body {
+.faq-content-body {
   border-radius: 0.5rem;
   padding: 1rem;
 }
 
-.content-text {
+.faq-content-text {
   color: #D1D5DB;
   line-height: 1.6;
   margin: 0;
+  font-size: 1rem;
 }
 
-/* Transition animations */
-.fade-slide-enter-active {
+/* FAQ Transition animations */
+.faq-fade-slide-enter-active {
   transition: all 0.3s ease-out;
 }
 
-.fade-slide-leave-active {
+.faq-fade-slide-leave-active {
   transition: all 0.3s ease-in;
 }
 
-.fade-slide-enter-from {
+.faq-fade-slide-enter-from {
   opacity: 0;
   transform: translateY(-10px);
+  max-height: 0;
 }
 
-.fade-slide-leave-to {
+.faq-fade-slide-leave-to {
   opacity: 0;
   transform: translateY(-10px);
+  max-height: 0;
+}
+
+.faq-fade-slide-enter-to,
+.faq-fade-slide-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 200px;
+}
+
+/* Utility Classes */
+.max-w-7xl {
+  max-width: 80rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .header-section {
-    padding: 0 15px 0 15px;
-  }
-  
-  .section-container {
+  .clean-faq-section {
     padding: 0;
   }
   
-  .accordion-trigger {
+  .faq-accordion-trigger {
     padding: 1.25rem 1rem;
   }
   
-  .accordion-content {
+  .faq-accordion-content {
     padding: 0 1rem 1.25rem 1rem;
   }
   
-  .trigger-text {
+  .faq-trigger-text {
     font-size: 1rem;
     padding-right: 0.75rem;
   }
   
-  .trigger-icon-circle {
-    width: 1.75rem;
-    height: 1.75rem;
+  .faq-trigger-icon-circle {
+    width: 25px;
+    height: 25px;
   }
   
-  .trigger-icon-image {
-    width: 0.875rem;
-    height: 0.875rem;
+  .faq-trigger-icon-image {
+    width: 20px;
+    height: 20px;
   }
 }
 
 @media (max-width: 640px) {
-  .main-title {
-    font-size: 2rem;
-  }
-  
-  .header-description {
-    font-size: 0.95rem;
-  }
-  
-  .accordion-trigger {
+  .faq-accordion-trigger {
     padding: 1rem 0.875rem;
   }
   
-  .accordion-content {
+  .faq-accordion-content {
     padding: 0 0.875rem 1rem 0.875rem;
   }
   
-  .trigger-text {
+  .faq-trigger-text {
     font-size: 0.95rem;
   }
   
-  .content-body {
+  .faq-content-body {
     padding: 0.875rem;
   }
   
-  .content-text {
+  .faq-content-text {
     font-size: 0.9rem;
-    text-align: left;
-  }
-  
-  .cta-button {
-    font-size: 0.9rem;
-    padding: 10px 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .main-title {
-    font-size: 28px;
-    margin: 0;
+  .faq-accordion-trigger {
+    padding: 0.5rem;
   }
   
-  .header-label {
-    font-size: 16px;
-    margin: 0;
+  .faq-trigger-text {
+    font-size: 0.9rem;
   }
+  
+  .faq-content-text {
+    font-size: 0.85rem;
+  }
+  
+  .faq-accordion-item {
+    margin-bottom: 0.75rem;
+  }
+}
 
-  .header-description {
-    font-size: 10px;
+/* FAQ Focus accessibility */
+.faq-accordion-trigger:focus-visible {
+  outline: 2px solid #F2B240;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* FAQ Loading state */
+.faq-accordion-container:empty::after {
+  content: 'Loading FAQ...';
+  display: block;
+  text-align: center;
+  color: #CBD5E1;
+  padding: 2rem;
+  font-style: italic;
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  .faq-accordion-trigger:active .faq-trigger-text {
+    color: #F2B240;
   }
 }
 </style>

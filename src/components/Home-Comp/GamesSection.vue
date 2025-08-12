@@ -4,7 +4,7 @@
       <!-- Desktop Layout -->
       <div class="desktop-layout">
         <div class="games-top">
-          <h2 class="games-title">{{ t('gameSec.title') }}</h2>
+          <div class="games-title">{{ t('gameSec.title') }}</div>
           
           <!-- Game Categories -->
           <div class="game-categories">
@@ -48,7 +48,7 @@
             
             <!-- Game Info Outside Card -->
             <div class="featured-game-info">
-              <h3>{{ currentFeaturedGame.name }}</h3>
+              <div>{{ currentFeaturedGame.name }}</div>
               <p class="game-provider">{{ currentFeaturedGame.provider }}</p>
             </div>
             
@@ -77,7 +77,7 @@
                 />
               </div>
               <div class="game-info-external">
-                <h4>{{ game.name }}</h4>
+                <div>{{ game.name }}</div>
               </div>
             </div>
           </div>

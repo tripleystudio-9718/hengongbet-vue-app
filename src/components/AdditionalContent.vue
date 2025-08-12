@@ -66,24 +66,12 @@
             ></span>
 
             <div class="trigger-icon-wrapper">
-              <div class="trigger-icon-circle">
-                <svg 
-                  v-if="openFaqItems[index]" 
-                  class="trigger-icon-image"
-                  viewBox="0 0 24 24" 
-                  fill="none"
-                >
-                  <path d="M18 12H6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <svg 
-                  v-else 
-                  class="trigger-icon-image"
-                  viewBox="0 0 24 24" 
-                  fill="none"
-                >
-                  <path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-              </div>
+              <!-- Use imported SVG icons -->
+              <img 
+                :src="openFaqItems[index] ? closeIcon : openIcon"
+                :alt="openFaqItems[index] ? 'Close' : 'Open'"
+                class="trigger-icon-image"
+              />
             </div>
           </button>
           
@@ -101,11 +89,18 @@
 </template>
 
 <script>
+// Import the SVG icons
+import openIcon from '@/assets/open-icon.svg'
+import closeIcon from '@/assets/close-icon.svg'
+
 export default {
   name: 'AdditionalContent',
   data() {
     return {
-      openFaqItems: { 0: true } // First FAQ item open by default
+      openFaqItems: { 0: true }, // First FAQ item open by default
+      // Make icons available to template
+      openIcon,
+      closeIcon
     }
   },
   computed: {
@@ -433,20 +428,14 @@ export default {
   margin-left: 1rem;
 }
 
-.trigger-icon-circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  background-color: #F2B240;
-  border-radius: 50%;
-}
-
 .trigger-icon-image {
   width: 20px;
   height: 20px;
-  color: #000000;
+  transition: transform 0.2s ease;
+}
+
+.trigger-icon-image:hover {
+  transform: scale(1.1);
 }
 
 .accordion-content {
@@ -571,11 +560,6 @@ export default {
     font-size: 10px;
   }
   
-  .trigger-icon-circle {
-    width: 26px;
-    height: 26px;
-  }
-  
   .trigger-icon-image {
     width: 14px;
     height: 14px;
@@ -592,11 +576,6 @@ export default {
   .trigger-text {
     font-size: 14px;
     padding-right: 0.75rem;
-  }
-  
-  .trigger-icon-circle {
-    width: 28px;
-    height: 28px;
   }
   
   .trigger-icon-image {

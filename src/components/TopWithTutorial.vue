@@ -109,6 +109,91 @@
         </div>
       </div>
     </div>
+    
+    <!-- Added PDF content section at the bottom -->
+    <div class="pdf-content-section">
+      <div class="content-container">
+        <h2 class="pdf-title">HengOngBet88 Top-Up Guide</h2>
+        
+        <div class="guide-block">
+          <h3>HengOngBet88 E-Wallet Top-Up</h3>
+          <ol class="guide-steps">
+            <li>Open the HengOngBet app and select <strong>"Top-Up (E-Wallet)"</strong>.</li>
+            <li>Choose your e-wallet method: <strong>Touch 'n Go</strong> or <strong>GrabPay</strong>.</li>
+            <li>Enter your desired top-up amount.</li>
+            <li>You'll be given a bank account or QR code to transfer to.</li>
+            <li>Open your TNG or GrabPay app and complete the transfer.</li>
+            <li>Take a screenshot or save the transaction receipt.</li>
+            <li>Return to the HengOngBet app and upload your receipt in the provided field.</li>
+            <li>Wait for the admin to verify and approve, top-up will reflect shortly.</li>
+          </ol>
+          <p class="important-note">
+            <strong>Always double-check the account number or QR code before confirming your payment in the e-wallet app.</strong>
+          </p>
+        </div>
+
+        <div class="guide-block">
+          <h3>HengOngBet88 Online Banking Top-Up</h3>
+          <ol class="guide-steps">
+            <li>Tap <strong>"Top-Up (Bank Transfer)"</strong> in the app.</li>
+            <li>Select the bank account provided.</li>
+            <li>Enter your top-up amount and transfer it via your online banking app using <strong>DuitNow</strong> or normal transfer.</li>
+            <li>Save the payment receipt or take a screenshot.</li>
+            <li>Return to the app and upload the receipt.</li>
+            <li>Wait for confirmation, once approved, your wallet will be updated.</li>
+          </ol>
+        </div>
+
+        <div class="guide-block">
+          <h2>HengOngBet88 Withdrawal Guide</h2>
+          
+          <div class="step-section">
+            <h4>Step 1: Select "Withdraw" in the App</h4>
+            <ul>
+              <li>Tap the <strong>"Withdraw"</strong> option on the homepage or wallet section.</li>
+              <li>This will open the withdrawal form.</li>
+            </ul>
+          </div>
+
+          <div class="step-section">
+            <h4>Step 2: Enter Withdrawal Amount & Submit</h4>
+            <ul>
+              <li>Type in the amount you want to withdraw <strong>(RM100)</strong>.</li>
+              <li>Double-check the amount and tap <strong>"Submit."</strong></li>
+            </ul>
+          </div>
+
+          <div class="step-section">
+            <h4>Step 3: Enter Your 6-Digit Payment PIN</h4>
+            <ul>
+              <li>You'll be prompted to enter your <strong>6-digit Payment PIN</strong> for security.</li>
+              <li>This is the same PIN you created during your account setup or first withdrawal.</li>
+            </ul>
+            <p class="note">
+              <strong>If you've forgotten your PIN, use the reset option or contact support.</strong>
+            </p>
+          </div>
+
+          <div class="step-section">
+            <h4>Step 4: Wait for Approval</h4>
+            <ul>
+              <li>Once submitted, your withdrawal request will be reviewed.</li>
+              <li>Most approvals happen within a few minutes, but may take longer during <strong>peak times</strong>.</li>
+              <li>You'll get a notification once your withdrawal is successful.</li>
+            </ul>
+          </div>
+
+          <div class="reminders-section">
+            <h4>Reminders</h4>
+            <ul>
+              <li>Withdrawals must follow any <strong>bonus turnover rules</strong> if applicable.</li>
+              <li>Make sure your <strong>bank details are correct and updated</strong> in your profile.</li>
+              <li>Use the same method <strong>(bank account)</strong> that you used to deposit for faster processing.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -344,7 +429,7 @@ onUnmounted(() => {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
-  align-items: start;
+  align-items: center;
   width: 100%;
 }
 
@@ -737,5 +822,164 @@ onUnmounted(() => {
   .show-more-btn {
     color: #FFD700;
   }
+}
+
+/* Added styles for PDF content section */
+.pdf-content-section {
+  margin-top: 3rem;
+  padding: 60px 20px;
+  background: transparent;
+  color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pdf-content-section .content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: transparent;
+  padding: 0;
+}
+
+.pdf-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #F2B240;
+  text-align: center;
+  margin: 0 0 40px 0;
+  line-height: 1.2;
+}
+
+.guide-block {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.guide-block:last-child {
+  margin-bottom: 0;
+}
+
+.guide-block h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #F2B240;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.guide-block h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #F2B240;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.guide-steps {
+  margin: 0 0 20px 0;
+  padding-left: 20px;
+  color: #D1D5DB;
+  display: inline-block;
+  text-align: left;
+}
+
+.guide-steps li {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  color: #D1D5DB;
+}
+
+.guide-steps li strong {
+  color: #F2B240;
+}
+
+.important-note {
+  font-size: 16px;
+  color: #D1D5DB;
+  line-height: 1.6;
+  margin: 20px 0 0 0;
+  font-style: italic;
+}
+
+.important-note strong {
+  color: #F2B240;
+}
+
+.step-section {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.step-section h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #F2B240;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.step-section ul {
+  margin: 0 0 15px 0;
+  padding-left: 20px;
+  display: inline-block;
+  text-align: left;
+}
+
+.step-section li {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 6px;
+  color: #D1D5DB;
+}
+
+.step-section li strong {
+  color: #F2B240;
+}
+
+.note {
+  font-size: 16px;
+  color: #D1D5DB;
+  line-height: 1.6;
+  margin: 15px 0 0 0;
+  font-style: italic;
+}
+
+.note strong {
+  color: #F2B240;
+}
+
+.reminders-section {
+  background: transparent;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.reminders-section h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #F2B240;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.reminders-section ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.reminders-section li {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 6px;
+  color: #D1D5DB;
+}
+
+.reminders-section li strong {
+  color: #F2B240;
 }
 </style>

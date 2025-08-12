@@ -2,9 +2,9 @@
   <div class="faq-container">
     <!-- Header -->
     <div class="faq-header">
-      <h1 class="main-title">
+      <div class="main-title">
         <span class="highlight">{{ $t('faq.appName') }}</span> {{ $t('faq.title') }}
-      </h1>
+      </div>
             
       <!-- Search Bar -->
       <div class="search-container">
@@ -33,9 +33,9 @@
     <div class="faq-content">
       <!-- Getting Started Section -->
       <div class="faq-section" v-if="filteredGettingStartedFAQs.length > 0">
-        <h2 class="section-title">
+        <div class="section-title">
           <span class="highlight">{{ $t('faq.sections.gettingStarted').split(' ')[0] }} </span>{{ $t('faq.sections.gettingStarted').split(' ').slice(1).join(' ') }}
-        </h2>
+        </div>
                 
         <div 
           class="faq-item"
@@ -65,9 +65,9 @@
 
       <!-- Login & Account Security Section -->
       <div class="faq-section" v-if="filteredLoginSecurityFAQs.length > 0">
-        <h2 class="section-title">
+        <div class="section-title">
           <span class="highlight">{{ $t('faq.sections.loginSecurity').split(' ')[0] }} {{ $t('faq.sections.loginSecurity').split(' ')[1] }} {{ $t('faq.sections.loginSecurity').split(' ')[2] }} </span>{{ $t('faq.sections.loginSecurity').split(' ').slice(3).join(' ') }}
-        </h2>
+        </div>
                 
         <div 
           class="faq-item"
@@ -97,9 +97,9 @@
 
       <!-- Bonuses & Promotions Section -->
       <div class="faq-section" v-if="filteredBonusPromotionsFAQs.length > 0">
-        <h2 class="section-title">
+        <div class="section-title">
           <span class="highlight">{{ $t('faq.sections.bonusPromotions').split(' ')[0] }} </span>{{ $t('faq.sections.bonusPromotions').split(' ').slice(1).join(' ') }}
-        </h2>
+        </div>
                 
         <div 
           class="faq-item"

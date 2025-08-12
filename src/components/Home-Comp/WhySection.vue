@@ -2,9 +2,9 @@
   <section>
     <!-- Header Section -->
     <div class="why-header-section">
-      <h2 class="why-header-title">
+      <div class="why-header-title">
         {{ $t('why_section.header.prefix') }} <span class="accent-color">{{ $t('why_section.header.brand') }}</span> {{ $t('why_section.header.suffix') }}
-      </h2>
+      </div>
     </div>
 
     <div class="max-w-7xl mx-auto px-6 py-8">
@@ -12,7 +12,7 @@
         <div class="why-card-1">
           <img :src="computerIcon" :alt="$t('why_section.alt_text.computer_icon')" class="why-image" />
           <div class="card-content">
-            <h3 class="why-title">{{ $t('why_section.cards.card1.title') }}</h3>
+            <div class="why-title">{{ $t('why_section.cards.card1.title') }}</div>
             <p class="why-p">{{ $t('why_section.cards.card1.description') }}</p>
           </div>  
         </div>
@@ -20,7 +20,7 @@
         <div class="why-card-2">
           <img :src="trustedIcon" :alt="$t('why_section.alt_text.trusted_icon')" class="why-image" />
           <div class="card-content">
-            <h3 class="why-title">{{ $t('why_section.cards.card2.title') }}</h3>
+            <div class="why-title">{{ $t('why_section.cards.card2.title') }}</div>
             <p class="why-p">{{ $t('why_section.cards.card2.description') }}</p>
           </div>
         </div>
@@ -28,7 +28,7 @@
         <div class="why-card-3">
           <img :src="registrationIcon" :alt="$t('why_section.alt_text.registration_icon')" class="why-image" />
           <div class="card-content">
-            <h3 class="why-title" style="color: black;">{{ $t('why_section.cards.card3.title') }}</h3>
+            <div class="why-title" style="color: black;">{{ $t('why_section.cards.card3.title') }}</div>
             <p class="why-p" style="color: black;">{{ $t('why_section.cards.card3.description') }}</p>
           </div>
         </div>
@@ -36,7 +36,7 @@
         <div class="why-card-4">
           <img :src="supportIcon" :alt="$t('why_section.alt_text.support_icon')" class="why-image" />
           <div class="card-content">
-            <h3 class="why-title">{{ $t('why_section.cards.card4.title') }}</h3>
+            <div class="why-title">{{ $t('why_section.cards.card4.title') }}</div>
             <p class="why-p">{{ $t('why_section.cards.card4.description') }}</p>
           </div>
         </div>
@@ -48,7 +48,7 @@
           <div class="mobile-card mobile-card-1">
             <img :src="computerIcon" :alt="$t('why_section.alt_text.computer_icon')" class="mobile-image" />
             <div class="mobile-card-content">
-              <h3 class="mobile-title">{{ $t('why_section.cards.card1.title') }}</h3>
+              <div class="mobile-title">{{ $t('why_section.cards.card1.title') }}</div>
               <p class="mobile-p">{{ $t('why_section.cards.card1.description') }}</p>
             </div>  
           </div>
@@ -56,7 +56,7 @@
           <div class="mobile-card mobile-card-2">
             <img :src="trustedIcon" :alt="$t('why_section.alt_text.trusted_icon')" class="mobile-image" />
             <div class="mobile-card-content">
-              <h3 class="mobile-title">{{ $t('why_section.cards.card2.title') }}</h3>
+              <div class="mobile-title">{{ $t('why_section.cards.card2.title') }}</div>
               <p class="mobile-p">{{ $t('why_section.cards.card2.description') }}</p>
             </div>
           </div>
@@ -64,7 +64,7 @@
           <div class="mobile-card mobile-card-3">
             <img :src="registrationIcon" :alt="$t('why_section.alt_text.registration_icon')" class="mobile-image" />
             <div class="mobile-card-content">
-              <h3 class="mobile-title" style="color: black;">{{ $t('why_section.cards.card3.title') }}</h3>
+              <div class="mobile-title" style="color: black;">{{ $t('why_section.cards.card3.title') }}</div>
               <p class="mobile-p" style="color: black;">{{ $t('why_section.cards.card3.description') }}</p>
             </div>
           </div>
@@ -72,7 +72,7 @@
           <div class="mobile-card mobile-card-4">
             <img :src="supportIcon" :alt="$t('why_section.alt_text.support_icon')" class="mobile-image" />
             <div class="mobile-card-content">
-              <h3 class="mobile-title">{{ $t('why_section.cards.card4.title') }}</h3>
+              <div class="mobile-title">{{ $t('why_section.cards.card4.title') }}</div>
               <p class="mobile-p">{{ $t('why_section.cards.card4.description') }}</p>
             </div>
           </div>
