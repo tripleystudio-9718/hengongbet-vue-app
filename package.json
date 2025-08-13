@@ -11,10 +11,13 @@
     "generate-sitemap": "node scripts/sitemap-generator.js"
   },
   "dependencies": {
+    "@unhead/vue": "^2.0.14",
+    "@vueuse/head": "^2.0.0",
     "lucide-vue-next": "^0.525.0",
     "swiper": "^11.2.10",
     "vue": "^3.5.18",
     "vue-i18n": "^9.14.5",
+    "vue-meta": "^2.4.0",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {

@@ -56,140 +56,283 @@
             </div>
           </div>
                               
-          <!-- Guide Section -->
+          <!-- Guide Section with Dynamic Content -->
           <div class="guide-section">
-            <!-- Title with separated colors -->
-            <h2>
-              <span class="regular-text">{{ $t(`tutorialTabs.titles.${activeTab}.prefix`) }}</span>
-              <span class="highlight">{{ ' ' + $t(`tutorialTabs.titles.${activeTab}.highlight`) + ' ' }}</span>
-              <span class="regular-text">{{ $t(`tutorialTabs.titles.${activeTab}.suffix`) }}</span>
-            </h2>
-                                    
-            <div class="steps-container">
-              <template v-for="(step, index) in currentTabData.steps" :key="index">
-                <div                   
-                  class="step-item"
-                  v-if="showAllSteps || index < 4"
-                  :class="{
-                     hidden: !showAllSteps && index >= 4,
-                    'is-last': index === currentTabData.steps.length - 1
-                  }"
-                >
+            <!-- Top-up Content -->
+            <div v-if="activeTab === 'topup'" class="tab-guide-content">
+              <h2>
+                <span class="highlight">{{ $t('tutorialTabs.guides.topup.title.highlight') }}</span>
+                <span class="regular-text">{{ $t('tutorialTabs.guides.topup.title.regular') }}</span>
+              </h2>
+              
+              <div class="steps-container">
+                <div class="step-item">
                   <div class="step-indicator">
-                    <div class="step-circle" v-if="index === 0"></div>
+                    <div class="step-circle"></div>
                     <div class="step-line"></div>
                   </div>
                   <div class="step-content">
-                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} {{ index + 1 }}</div>
-                    <p>{{ $t(`tutorialTabs.steps.${activeTab}.${index}`) }}</p>
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 1</div>
+                    <p v-html="$t('tutorialTabs.guides.topup.steps.0')"></p>
                   </div>
                 </div>
-              </template>
+                
+                <div class="step-item">
+                  <div class="step-indicator">
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 2</div>
+                    <p v-html="$t('tutorialTabs.guides.topup.steps.1')"></p>
+                  </div>
+                </div>
+                
+                <div class="step-item">
+                  <div class="step-indicator">
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 3</div>
+                    <p v-html="$t('tutorialTabs.guides.topup.steps.2')"></p>
+                  </div>
+                </div>
+                
+                <div class="step-item">
+                  <div class="step-indicator">
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 4</div>
+                    <p v-html="$t('tutorialTabs.guides.topup.steps.3')"></p>
+                  </div>
+                </div>
+                
+                <div class="step-item" v-if="showAllSteps">
+                  <div class="step-indicator">
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 5</div>
+                    <p v-html="$t('tutorialTabs.guides.topup.steps.4')"></p>
+                  </div>
+                </div>
+                
+                <div class="step-item" v-if="showAllSteps">
+                  <div class="step-indicator">
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 6</div>
+                    <p v-html="$t('tutorialTabs.guides.topup.steps.5')"></p>
+                  </div>
+                </div>
+                
+                <div class="step-item" v-if="showAllSteps">
+                  <div class="step-indicator">
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 7</div>
+                    <p v-html="$t('tutorialTabs.guides.topup.steps.6')"></p>
+                  </div>
+                </div>
+                
+                <div class="step-item is-last" v-if="showAllSteps">
+                  <div class="step-indicator">
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 8</div>
+                    <p v-html="$t('tutorialTabs.guides.topup.steps.7')"></p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="important-note" v-if="showAllSteps">
+                <p v-html="$t('tutorialTabs.guides.topup.note')"></p>
+              </div>
+              
+              <button class="show-more-btn" @click="toggleSteps">
+                <svg class="toggle-arrow" :class="{ rotated: showAllSteps }" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                  <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
             </div>
-                                    
-            <!-- Show More Button (only if more than 4 steps) -->
-            <button               
-              v-if="currentTabData.steps.length > 4"
-              class="show-more-btn"               
-              @click="toggleSteps"
-              :aria-label="showAllSteps ? $t('tutorialTabs.ui.showLess') : $t('tutorialTabs.ui.showMore')"
-            >
-              <svg                 
-                class="toggle-arrow"
-                :class="{ rotated: showAllSteps }"
-                width="12"                 
-                height="8"                 
-                viewBox="0 0 12 8"                 
-                fill="none"
-              >
-                <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Added PDF content section at the bottom -->
-    <div class="pdf-content-section">
-      <div class="content-container">
-        <h2 class="pdf-title">HengOngBet88 Top-Up Guide</h2>
-        
-        <div class="guide-block">
-          <h3>HengOngBet88 E-Wallet Top-Up</h3>
-          <ol class="guide-steps">
-            <li>Open the HengOngBet app and select <strong>"Top-Up (E-Wallet)"</strong>.</li>
-            <li>Choose your e-wallet method: <strong>Touch 'n Go</strong> or <strong>GrabPay</strong>.</li>
-            <li>Enter your desired top-up amount.</li>
-            <li>You'll be given a bank account or QR code to transfer to.</li>
-            <li>Open your TNG or GrabPay app and complete the transfer.</li>
-            <li>Take a screenshot or save the transaction receipt.</li>
-            <li>Return to the HengOngBet app and upload your receipt in the provided field.</li>
-            <li>Wait for the admin to verify and approve, top-up will reflect shortly.</li>
-          </ol>
-          <p class="important-note">
-            <strong>Always double-check the account number or QR code before confirming your payment in the e-wallet app.</strong>
-          </p>
-        </div>
 
-        <div class="guide-block">
-          <h3>HengOngBet88 Online Banking Top-Up</h3>
-          <ol class="guide-steps">
-            <li>Tap <strong>"Top-Up (Bank Transfer)"</strong> in the app.</li>
-            <li>Select the bank account provided.</li>
-            <li>Enter your top-up amount and transfer it via your online banking app using <strong>DuitNow</strong> or normal transfer.</li>
-            <li>Save the payment receipt or take a screenshot.</li>
-            <li>Return to the app and upload the receipt.</li>
-            <li>Wait for confirmation, once approved, your wallet will be updated.</li>
-          </ol>
-        </div>
+            <!-- Transfer Content -->
+            <div v-if="activeTab === 'transfer'" class="tab-guide-content">
+              <h2>
+                <span class="highlight">{{ $t('tutorialTabs.guides.transfer.title.highlight') }}</span>
+                <span class="regular-text">{{ $t('tutorialTabs.guides.transfer.title.regular') }}</span>
+              </h2>
+              
+              <div class="steps-container">
+                <div class="step-item">
+                  <div class="step-indicator">
+                    <div class="step-circle"></div>
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 1</div>
+                    <p v-html="$t('tutorialTabs.guides.transfer.steps.0')"></p>
+                  </div>
+                </div>
+                
+                <div class="step-item">
+                  <div class="step-indicator">
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 2</div>
+                    <p v-html="$t('tutorialTabs.guides.transfer.steps.1')"></p>
+                  </div>
+                </div>
+                
+                <div class="step-item">
+                  <div class="step-indicator">
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 3</div>
+                    <p v-html="$t('tutorialTabs.guides.transfer.steps.2')"></p>
+                  </div>
+                </div>
+                
+                <div class="step-item">
+                  <div class="step-indicator">
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 4</div>
+                    <p v-html="$t('tutorialTabs.guides.transfer.steps.3')"></p>
+                  </div>
+                </div>
+                
+                <div class="step-item" v-if="showAllSteps">
+                  <div class="step-indicator">
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 5</div>
+                    <p v-html="$t('tutorialTabs.guides.transfer.steps.4')"></p>
+                  </div>
+                </div>
+                
+                <div class="step-item is-last" v-if="showAllSteps">
+                  <div class="step-indicator">
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 6</div>
+                    <p v-html="$t('tutorialTabs.guides.transfer.steps.5')"></p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="important-note" v-if="showAllSteps">
+                <p v-html="$t('tutorialTabs.guides.transfer.note')"></p>
+              </div>
+              
+              <button class="show-more-btn" @click="toggleSteps">
+                <svg class="toggle-arrow" :class="{ rotated: showAllSteps }" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                  <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
 
-        <div class="guide-block">
-          <h2>HengOngBet88 Withdrawal Guide</h2>
-          
-          <div class="step-section">
-            <h4>Step 1: Select "Withdraw" in the App</h4>
-            <ul>
-              <li>Tap the <strong>"Withdraw"</strong> option on the homepage or wallet section.</li>
-              <li>This will open the withdrawal form.</li>
-            </ul>
-          </div>
-
-          <div class="step-section">
-            <h4>Step 2: Enter Withdrawal Amount & Submit</h4>
-            <ul>
-              <li>Type in the amount you want to withdraw <strong>(RM100)</strong>.</li>
-              <li>Double-check the amount and tap <strong>"Submit."</strong></li>
-            </ul>
-          </div>
-
-          <div class="step-section">
-            <h4>Step 3: Enter Your 6-Digit Payment PIN</h4>
-            <ul>
-              <li>You'll be prompted to enter your <strong>6-digit Payment PIN</strong> for security.</li>
-              <li>This is the same PIN you created during your account setup or first withdrawal.</li>
-            </ul>
-            <p class="note">
-              <strong>If you've forgotten your PIN, use the reset option or contact support.</strong>
-            </p>
-          </div>
-
-          <div class="step-section">
-            <h4>Step 4: Wait for Approval</h4>
-            <ul>
-              <li>Once submitted, your withdrawal request will be reviewed.</li>
-              <li>Most approvals happen within a few minutes, but may take longer during <strong>peak times</strong>.</li>
-              <li>You'll get a notification once your withdrawal is successful.</li>
-            </ul>
-          </div>
-
-          <div class="reminders-section">
-            <h4>Reminders</h4>
-            <ul>
-              <li>Withdrawals must follow any <strong>bonus turnover rules</strong> if applicable.</li>
-              <li>Make sure your <strong>bank details are correct and updated</strong> in your profile.</li>
-              <li>Use the same method <strong>(bank account)</strong> that you used to deposit for faster processing.</li>
-            </ul>
+            <!-- Withdraw Content -->
+            <div v-if="activeTab === 'withdraw'" class="tab-guide-content">
+              <h2>
+                <span class="highlight">{{ $t('tutorialTabs.guides.withdraw.title.highlight') }}</span>
+                <span class="regular-text">{{ $t('tutorialTabs.guides.withdraw.title.regular') }}</span>
+              </h2>
+              
+              <div class="steps-container">
+                <div class="step-item">
+                  <div class="step-indicator">
+                    <div class="step-circle"></div>
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 1</div>
+                    <p v-html="$t('tutorialTabs.guides.withdraw.steps.0')"></p>
+                  </div>
+                </div>
+                
+                <div class="step-item">
+                  <div class="step-indicator">
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 2</div>
+                    <p v-html="$t('tutorialTabs.guides.withdraw.steps.1')"></p>
+                  </div>
+                </div>
+                
+                <div class="step-item">
+                  <div class="step-indicator">
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 3</div>
+                    <p v-html="$t('tutorialTabs.guides.withdraw.steps.2')"></p>
+                  </div>
+                </div>
+                
+                <div class="step-item">
+                  <div class="step-indicator">
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 4</div>
+                    <p v-html="$t('tutorialTabs.guides.withdraw.steps.3')"></p>
+                  </div>
+                </div>
+                
+                <div class="step-item" v-if="showAllSteps">
+                  <div class="step-indicator">
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 5</div>
+                    <p v-html="$t('tutorialTabs.guides.withdraw.steps.4')"></p>
+                  </div>
+                </div>
+                
+                <div class="step-item" v-if="showAllSteps">
+                  <div class="step-indicator">
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 6</div>
+                    <p v-html="$t('tutorialTabs.guides.withdraw.steps.5')"></p>
+                  </div>
+                </div>
+                
+                <div class="step-item is-last" v-if="showAllSteps">
+                  <div class="step-indicator">
+                    <div class="step-line"></div>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 7</div>
+                    <p v-html="$t('tutorialTabs.guides.withdraw.steps.6')"></p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="withdrawal-reminders" v-if="showAllSteps">
+                <h4>{{ $t('tutorialTabs.guides.withdraw.reminders.title') }}</h4>
+                <ul>
+                  <li v-for="(reminder, index) in withdrawalReminders" :key="index" v-html="reminder"></li>
+                </ul>
+              </div>
+              
+              <button class="show-more-btn" @click="toggleSteps">
+                <svg class="toggle-arrow" :class="{ rotated: showAllSteps }" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                  <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -223,6 +366,26 @@ const tabsConfig = {
 const currentTabData = computed(() => ({
   steps: Array(tabsConfig[activeTab.value].stepCount).fill().map((_, i) => ({ index: i }))
 }))
+
+// Computed property for withdrawal reminders
+const withdrawalReminders = computed(() => {
+  // Try to get from translation first, fallback to hardcoded
+  try {
+    return [
+      "Withdrawals must follow any <strong>bonus turnover rules</strong> if applicable.",
+      "Make sure your <strong>bank details are correct and updated</strong> in your profile.", 
+      "Use the same method <strong>(bank account)</strong> that you used to deposit for faster processing.",
+      "If you've forgotten your <strong>PIN</strong>, use the reset option or contact support."
+    ]
+  } catch (e) {
+    return [
+      "Withdrawals must follow any <strong>bonus turnover rules</strong> if applicable.",
+      "Make sure your <strong>bank details are correct and updated</strong> in your profile.", 
+      "Use the same method <strong>(bank account)</strong> that you used to deposit for faster processing.",
+      "If you've forgotten your <strong>PIN</strong>, use the reset option or contact support."
+    ]
+  }
+})
 
 // Slider configuration
 const createSliderConfig = (imageCount) => ({
@@ -588,6 +751,7 @@ onUnmounted(() => {
   height: 2.5rem;
   transition: all 0.3s ease;
   position: relative;
+  margin-top: 1rem;
 }
 
 .show-more-btn:hover {
@@ -761,6 +925,23 @@ onUnmounted(() => {
     width: 2.25rem;
     height: 2.25rem;
     margin-left: 1.625rem;
+    margin-top: 0.75rem;
+  }
+  
+  .important-note {
+    padding: 0 10px !important;
+  }
+  
+  .important-note p {
+    font-size: 10px !important;
+  }
+  
+  .withdrawal-reminders {
+    padding: 0 10px !important;
+  }
+  
+  .withdrawal-reminders li {
+    font-size: 10px !important;
   }
 }
 
@@ -824,7 +1005,7 @@ onUnmounted(() => {
   }
 }
 
-/* Added styles for PDF content section */
+/* Updated styles for dynamic PDF content section */
 .pdf-content-section {
   margin-top: 3rem;
   padding: 60px 20px;
@@ -841,6 +1022,22 @@ onUnmounted(() => {
   gap: 2rem;
   background: transparent;
   padding: 0;
+}
+
+.guide-content {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .pdf-title {
@@ -913,6 +1110,7 @@ onUnmounted(() => {
   background: transparent;
   padding: 0;
   margin-bottom: 30px;
+  text-align: left;
 }
 
 .step-section h4 {
@@ -926,8 +1124,6 @@ onUnmounted(() => {
 .step-section ul {
   margin: 0 0 15px 0;
   padding-left: 20px;
-  display: inline-block;
-  text-align: left;
 }
 
 .step-section li {
@@ -957,6 +1153,7 @@ onUnmounted(() => {
   background: transparent;
   padding: 0;
   margin-top: 30px;
+  text-align: left;
 }
 
 .reminders-section h4 {
@@ -981,5 +1178,56 @@ onUnmounted(() => {
 
 .reminders-section li strong {
   color: #F2B240;
+}
+
+/* Additional styles for new content structure */
+.tab-guide-content {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.important-note {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.important-note p {
+  color: #D1D5DB;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  font-style: normal;
+}
+
+.important-note strong {
+  color: #F0AD3C;
+}
+
+.withdrawal-reminders {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.withdrawal-reminders h4 {
+  color: #F0AD3C;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.withdrawal-reminders ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.withdrawal-reminders li {
+  color: #D1D5DB;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.withdrawal-reminders li strong {
+  color: #F0AD3C;
 }
 </style>

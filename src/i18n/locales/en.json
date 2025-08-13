@@ -1510,6 +1510,64 @@
         "Request submitted! Processing now... phone wait"
       ]
     },
+    "guides": {
+      "topup": {
+        "title": {
+          "highlight": "HengOngBet88 E-Wallet",
+          "regular": " Top-Up Guide"
+        },
+        "steps": [
+          "Open the HengOngBet app and select <strong>\"Top-Up (E-Wallet)\"</strong>.",
+          "Choose your e-wallet method: <strong>Touch 'n Go</strong> or <strong>GrabPay</strong>.",
+          "Enter your desired top-up amount.",
+          "You'll be given a bank account or QR code to transfer to.",
+          "Open your TNG or GrabPay app and complete the transfer.",
+          "Take a screenshot or save the transaction receipt.",
+          "Return to the HengOngBet app and upload your receipt in the provided field.",
+          "Wait for the admin to verify and approve, top-up will reflect shortly."
+        ],
+        "note": "<strong>Always double-check the account number or QR code before confirming your payment in the e-wallet app.</strong>"
+      },
+      "transfer": {
+        "title": {
+          "highlight": "HengOngBet88 Online Banking",
+          "regular": " Top-Up Guide"
+        },
+        "steps": [
+          "Tap <strong>\"Top-Up (Bank Transfer)\"</strong> in the app.",
+          "Select the bank account provided.",
+          "Enter your top-up amount and transfer it via your online banking app using <strong>DuitNow</strong> or normal transfer.",
+          "Save the payment receipt or take a screenshot.",
+          "Return to the app and upload the receipt.",
+          "Wait for confirmation, once approved, your wallet will be updated."
+        ],
+        "note": "<strong>Ensure you use the correct bank details provided by the platform to avoid any transfer delays.</strong>"
+      },
+      "withdraw": {
+        "title": {
+          "highlight": "HengOngBet88 Withdrawal",
+          "regular": " Guide"
+        },
+        "steps": [
+          "Tap the <strong>\"Withdraw\"</strong> option on the homepage or wallet section.",
+          "Type in the amount you want to withdraw <strong>(RM100)</strong>.",
+          "Double-check the amount and tap <strong>\"Submit.\"</strong>",
+          "You'll be prompted to enter your <strong>6-digit Payment PIN</strong> for security.",
+          "Once submitted, your withdrawal request will be reviewed.",
+          "Most approvals happen within a few minutes, but may take longer during <strong>peak times</strong>.",
+          "You'll get a notification once your withdrawal is successful."
+        ],
+        "reminders": {
+          "title": "Important Reminders:",
+          "items": [
+            "Withdrawals must follow any <strong>bonus turnover rules</strong> if applicable.",
+            "Make sure your <strong>bank details are correct and updated</strong> in your profile.",
+            "Use the same method <strong>(bank account)</strong> that you used to deposit for faster processing.",
+            "If you've forgotten your PIN, use the reset option or contact support."
+          ]
+        }
+      }
+    },
     "ui": {
       "step": "Step",
       "showMore": "Show more steps",

@@ -178,6 +178,68 @@ const metaContent = {
   }
 };
 
+// Helper function to update or create meta tags
+const updateMetaTag = (property, content, useProperty = false) => {
+  const selector = useProperty ? `meta[property="${property}"]` : `meta[name="${property}"]`;
+  let meta = document.querySelector(selector);
+  
+  if (!meta) {
+    meta = document.createElement('meta');
+    if (useProperty) {
+      meta.setAttribute('property', property);
+    } else {
+      meta.setAttribute('name', property);
+    }
+    document.head.appendChild(meta);
+  }
+  
+  meta.setAttribute('content', content);
+};
+
+// Helper function to get page-specific image based on route
+const getPageImage = (routeName) => {
+  const images = {
+    'Home': 'https://www.hengongbet88.com/assets/home-banner.jpg',
+    'Affiliate': 'https://www.hengongbet88.com/assets/affiliate-banner.jpg',
+    'Login': 'https://www.hengongbet88.com/assets/login-banner.jpg',
+    'GamePage': 'https://www.hengongbet88.com/assets/games-banner.jpg',
+    'PromotionPage': 'https://www.hengongbet88.com/assets/promotion-banner.jpg',
+    'FAQ': 'https://www.hengongbet88.com/assets/faq-banner.jpg',
+    'FourDResult': 'https://www.hengongbet88.com/assets/4d-banner.jpg',
+    'DownloadPage': 'https://www.hengongbet88.com/assets/download-banner.jpg',
+    'Register': 'https://www.hengongbet88.com/assets/register-banner.jpg',
+    'TutorialGuide': 'https://www.hengongbet88.com/assets/tutorial-banner.jpg',
+    'TutorialTopUpWithDraw': 'https://www.hengongbet88.com/assets/topup-banner.jpg'
+  };
+  
+  // Extract base route name (remove locale suffix)
+  const baseName = routeName.replace(/-[a-z]{2}$/, '');
+  return images[baseName] || 'https://www.hengongbet88.com/assets/default-og-image.jpg';
+};
+
+// Function to update social media meta tags
+const updateSocialMetaTags = (to) => {
+  const title = to.meta.title || 'HengOngBet88';
+  const description = to.meta.description || 'Play at HengOngBet88, Malaysia\'s trusted online casino.';
+  const image = getPageImage(to.name);
+  const url = `${BASE_URL}${to.path}`;
+  
+  // Open Graph Meta Tags
+  updateMetaTag('og:title', title, true);
+  updateMetaTag('og:description', description, true);
+  updateMetaTag('og:image', image, true);
+  updateMetaTag('og:url', url, true);
+  updateMetaTag('og:type', 'website', true);
+  updateMetaTag('og:site_name', 'HENGONGBET88', true);
+  
+  // Twitter Card Meta Tags
+  updateMetaTag('twitter:card', 'summary_large_image');
+  updateMetaTag('twitter:title', title);
+  updateMetaTag('twitter:description', description);
+  updateMetaTag('twitter:image', image);
+  updateMetaTag('twitter:site', '@hengongbet88');
+};
+
 // Helper function to remove existing hreflang and canonical links
 const removeExistingLinks = () => {
   const existingLinks = document.querySelectorAll('link[rel="alternate"], link[rel="canonical"]');
@@ -288,6 +350,9 @@ router.beforeEach((to, from, next) => {
     document.head.appendChild(descriptionMeta);
   }
   descriptionMeta.content = to.meta.description || 'Play at HengOngBet88, Malaysia\'s trusted online casino. Enjoy slots, live dealers, sports betting, fast payouts, and secure gaming, anytime, anywhere.';
+  
+  // Add Open Graph and Twitter Card meta tags
+  updateSocialMetaTags(to);
   
   // Add canonical and hreflang links
   const basePath = to.meta.basePath || getBasePath(to.path, locale);
