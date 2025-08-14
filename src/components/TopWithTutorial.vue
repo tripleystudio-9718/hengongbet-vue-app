@@ -229,9 +229,9 @@
                 </div>
               </div>
               
-              <div class="important-note" v-if="showAllSteps">
+              <!-- <div class="important-note" v-if="showAllSteps">
                 <p v-html="$t('tutorialTabs.guides.transfer.note')"></p>
-              </div>
+              </div> -->
               
               <button class="show-more-btn" @click="toggleSteps">
                 <svg class="toggle-arrow" :class="{ rotated: showAllSteps }" width="12" height="8" viewBox="0 0 12 8" fill="none">
@@ -279,43 +279,13 @@
                   </div>
                 </div>
                 
-                <div class="step-item">
+                <div class="step-item is-last">
                   <div class="step-indicator">
                     <div class="step-line"></div>
                   </div>
                   <div class="step-content">
                     <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 4</div>
                     <p v-html="$t('tutorialTabs.guides.withdraw.steps.3')"></p>
-                  </div>
-                </div>
-                
-                <div class="step-item" v-if="showAllSteps">
-                  <div class="step-indicator">
-                    <div class="step-line"></div>
-                  </div>
-                  <div class="step-content">
-                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 5</div>
-                    <p v-html="$t('tutorialTabs.guides.withdraw.steps.4')"></p>
-                  </div>
-                </div>
-                
-                <div class="step-item" v-if="showAllSteps">
-                  <div class="step-indicator">
-                    <div class="step-line"></div>
-                  </div>
-                  <div class="step-content">
-                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 6</div>
-                    <p v-html="$t('tutorialTabs.guides.withdraw.steps.5')"></p>
-                  </div>
-                </div>
-                
-                <div class="step-item is-last" v-if="showAllSteps">
-                  <div class="step-indicator">
-                    <div class="step-line"></div>
-                  </div>
-                  <div class="step-content">
-                    <div class="step-number">{{ $t('tutorialTabs.ui.step') }} 7</div>
-                    <p v-html="$t('tutorialTabs.guides.withdraw.steps.6')"></p>
                   </div>
                 </div>
               </div>
@@ -359,7 +329,7 @@ const tabs = [
 const tabsConfig = {
   topup: { stepCount: 9 },
   transfer: { stepCount: 11 },
-  withdraw: { stepCount: 10 }
+  withdraw: { stepCount: 7 } // Updated from 10 to 7 after removing steps 5, 6, 7
 }
 
 // Computed property for current tab data

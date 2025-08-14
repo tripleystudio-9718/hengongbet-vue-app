@@ -1549,21 +1549,17 @@
           "regular": " Guide"
         },
         "steps": [
-          "Tap the <strong>\"Withdraw\"</strong> option on the homepage or wallet section.",
-          "Type in the amount you want to withdraw <strong>(RM100)</strong>.",
-          "Double-check the amount and tap <strong>\"Submit.\"</strong>",
-          "You'll be prompted to enter your <strong>6-digit Payment PIN</strong> for security.",
-          "Once submitted, your withdrawal request will be reviewed.",
-          "Most approvals happen within a few minutes, but may take longer during <strong>peak times</strong>.",
-          "You'll get a notification once your withdrawal is successful."
+          "Select <strong>“Withdraw” in the App</strong> <br>• Tap the <strong>“Withdraw”</strong> option on the homepage or wallet section. <br>• This will open the withdrawal form.",
+          "<strong>Enter Withdrawal Amount & Submit</strong> <br>• Type in the amount you want to withdraw <strong>(RM100)</strong>.<br>• Double-check the amount and tap <strong>\"Submit.\"</strong>",
+          "<strong>Enter Your 6-Digit Payment PIN</strong><br>• You'll be prompted to enter your <strong>6-digit Payment PIN</strong> for security. <br>• This is the same PIN you created during your account setup or first withdrawal.<br>If you’ve forgotten your PIN, use the <strong>reset option</strong> or contact support.",
+          "Wait for Approval. <br>• Once submitted, your withdrawal request will be reviewed.<br>• Most approvals happen within <strong>a few minutes</strong>, but may take longer during peak times.<br>• You’ll get a notification once your withdrawal is successful. "
         ],
         "reminders": {
           "title": "Important Reminders:",
           "items": [
             "Withdrawals must follow any <strong>bonus turnover rules</strong> if applicable.",
-            "Make sure your <strong>bank details are correct and updated</strong> in your profile.",
-            "Use the same method <strong>(bank account)</strong> that you used to deposit for faster processing.",
-            "If you've forgotten your PIN, use the reset option or contact support."
+            "Make sure your <strong>bank details are correct </strong>and updated in your profile.",
+            "Use the <strong>same method</strong> (bank account) that you used to deposit for faster processing."
           ]
         }
       }
@@ -1600,10 +1596,7 @@
         "step2": "Withdrawal tutorial step 2 - Enter withdrawal amount RM100 in the input field",
         "step3": "Withdrawal tutorial step 3 - Double-check amount and tap Submit button to proceed",
         "step4": "Withdrawal tutorial step 4 - Enter 6-digit Payment PIN for security verification",
-        "step5": "Withdrawal tutorial step 5 - Withdrawal request submitted for admin review process",
-        "step6": "Withdrawal tutorial step 6 - Wait for approval during peak times or instant processing",
-        "step7": "Withdrawal tutorial step 7 - Receive notification confirmation of successful withdrawal",
-        "step8": "Withdrawal tutorial step 8 - Withdrawal completed and funds transferred to bank account"
+        "step5": "Withdrawal tutorial step 5 - Withdrawal request submitted for admin review process"
       }
     }
   },
