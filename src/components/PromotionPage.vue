@@ -84,28 +84,38 @@ export default {
       basePromotions: [
         {
           translationKey: 'promo1',
-          image: new URL('@/assets/promotion1.png', import.meta.url).href,
-          mobileImage: new URL('@/assets/mobile-promotion-1.png', import.meta.url).href,
+          image: new URL('@/assets/top-up-bonus-68-promotion.png', import.meta.url).href,
+          mobileImage: new URL('@/assets/mobile-top-up-bonus-68.png', import.meta.url).href,
+          desktopAltText: 'Top up bonus 68% promotion - Desktop banner for special deposit bonus offer',
+          mobileAltText: 'Top up bonus 68% promotion - Mobile banner for special deposit bonus offer'
         },
         {
           translationKey: 'promo2',
-          image: new URL('@/assets/promotion2.png', import.meta.url).href,
-          mobileImage: new URL('@/assets/mobile-promotion-2.png', import.meta.url).href,
+          image: new URL('@/assets/top-up-rebate-05-promotion.png', import.meta.url).href,
+          mobileImage: new URL('@/assets/mobile-top-up-rebate-05.png', import.meta.url).href,
+          desktopAltText: 'Top up rebate 0.5% promotion - Desktop banner for cashback rebate offer',
+          mobileAltText: 'Top up rebate 0.5% promotion - Mobile banner for cashback rebate offer'
         },
         {
           translationKey: 'promo3',
-          image: new URL('@/assets/promotion3.png', import.meta.url).href,
-          mobileImage: new URL('@/assets/mobile-promotion-3.png', import.meta.url).href,
+          image: new URL('@/assets/top-up-bonus-200-promotion.png', import.meta.url).href,
+          mobileImage: new URL('@/assets/mobile-top-up-bonus-200.png', import.meta.url).href,
+          desktopAltText: 'Top up bonus 200% promotion - Desktop banner for maximum deposit bonus offer',
+          mobileAltText: 'Top up bonus 200% promotion - Mobile banner for maximum deposit bonus offer'
         },
         {
           translationKey: 'promo4',
-          image: new URL('@/assets/promotion4.png', import.meta.url).href,
-          mobileImage: new URL('@/assets/mobile-promotion-4.png', import.meta.url).href,
+          image: new URL('@/assets/daily-rebate-up-to-3-promotion.png', import.meta.url).href,
+          mobileImage: new URL('@/assets/mobile-daily-rebate-up-to-3.png', import.meta.url).href,
+          desktopAltText: 'Daily rebate up to 3% promotion - Desktop banner for daily cashback rewards',
+          mobileAltText: 'Daily rebate up to 3% promotion - Mobile banner for daily cashback rewards'
         },
         {
           translationKey: 'promo5',
-          image: new URL('@/assets/promotion5.png', import.meta.url).href,
-          mobileImage: new URL('@/assets/mobile-promotion-5.png', import.meta.url).href,
+          image: new URL('@/assets/referral-rebate-up-to-10-promotion.png', import.meta.url).href,
+          mobileImage: new URL('@/assets/mobile-referral-rebate-up-to-10.png', import.meta.url).href,
+          desktopAltText: 'Referral rebate up to 10% promotion - Desktop banner for friend referral rewards',
+          mobileAltText: 'Referral rebate up to 10% promotion - Mobile banner for friend referral rewards'
         }
       ]
     }
@@ -138,13 +148,13 @@ export default {
       const locale = this.$i18n?.locale || 'en'
 
       let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
-  if (locale === 'zh') {
-    targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
-  } else if (locale === 'ms') {
-    targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
-  }
+      if (locale === 'zh') {
+        targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
+      } else if (locale === 'ms') {
+        targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
+      }
 
-  window.location.href = targetUrl;
+      window.location.href = targetUrl;
     }
   }
 }

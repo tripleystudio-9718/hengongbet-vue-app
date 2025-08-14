@@ -11,7 +11,7 @@
       <div class="steps-container">
         <!-- Step 1 -->
         <div class="step-item">
-          <img :src="accountIcon" :alt="$t('how_it_works.alt_text.account_icon')" class="steps-img" />
+          <img :src="registerYourAccountIcon" alt="register your account" class="steps-img" />
           <div class="step-content">
             <img :src="stepNumbers[0]" alt="Step 1" class="num-img" />
             <div class="steps-desc">
@@ -30,7 +30,7 @@
 
         <!-- Step 2 -->
         <div class="step-item">
-          <img :src="rewardIcon" :alt="$t('how_it_works.alt_text.deposit_icon')" class="steps-img" />
+          <img :src="makeADepositIcon" alt="download the app" class="steps-img" />
           <div class="step-content">
             <img :src="stepNumbers[1]" alt="Step 2" class="num-img" />
             <div class="steps-desc">
@@ -49,7 +49,7 @@
 
         <!-- Step 3 -->
         <div class="step-item">
-          <img :src="depositIcon" :alt="$t('how_it_works.alt_text.winning_icon')" class="steps-img" />
+          <img :src="startWinningIcon" alt="top up your wallet" class="steps-img" />
           <div class="step-content">
             <img :src="stepNumbers[2]" alt="Step 3" class="num-img" />
             <div class="steps-desc">
@@ -68,7 +68,7 @@
 
         <!-- Step 4 -->
         <div class="step-item">
-          <img :src="winningIcon" :alt="$t('how_it_works.alt_text.reward_icon')" class="steps-img" />
+          <img :src="getRewardIcon" alt="start playing" class="steps-img" />
           <div class="step-content">
             <img :src="stepNumbers[3]" alt="Step 4" class="num-img" />
             <div class="steps-desc">
@@ -83,10 +83,10 @@
 </template>
 
 <script>
-import accountIcon from '@/assets/account_icon.png'
-import depositIcon from '@/assets/deposit_icon.png'
-import winningIcon from '@/assets/winning_icon.png'
-import rewardIcon from '@/assets/reward_icon.png'
+import registerYourAccountIcon from '@/assets/register-your-account-icon.png'
+import makeADepositIcon from '@/assets/make-a-deposit-icon.png'
+import startWinningIcon from '@/assets/start-winning-icon.png'
+import getRewardIcon from '@/assets/get-reward-icon.png'
 import firstIcon from '@/assets/first_icon.png'
 import secondIcon from '@/assets/second_icon.png'
 import thirdIcon from '@/assets/third_icon.png'
@@ -96,10 +96,10 @@ export default {
   name: 'HowItWorksSteps',
   data() {
     return {
-      accountIcon,
-      depositIcon,
-      winningIcon,
-      rewardIcon,
+      registerYourAccountIcon,
+      makeADepositIcon,
+      startWinningIcon,
+      getRewardIcon,
       stepNumbers: [firstIcon, secondIcon, thirdIcon, fourIcon]
     }
   }

@@ -53,16 +53,16 @@
 </template>
 
 <script>
-import slotsBg from '@/assets/slots-bg.png'
-import sportsBg from '@/assets/sports-bg.png'
-import lotteryBg from '@/assets/lottery-bg.png'
-import liveCasinoBg from '@/assets/live-casino-bg.png'
+import slotsProviderBackground from '@/assets/slots-provider-background.png'
+import sportsProviderBackground from '@/assets/sports-provider-background.png'
+import lotteryProviderBackground from '@/assets/lottery-provider-background.png'
+import liveCasinoProviderBackground from '@/assets/live-casino-provider-background.png'
 
 class GameProvider {
-  constructor(translationKey, backgroundImage, altKey) {
+  constructor(translationKey, backgroundImage, altText) {
     this.translationKey = translationKey
     this.backgroundImage = backgroundImage
-    this.altKey = altKey
+    this.altText = altText
   }
 }
 
@@ -72,10 +72,26 @@ export default {
     return {
       currentProviderSlide: 0,
       baseProviders: [
-        new GameProvider('slots', slotsBg, 'slots'),
-        new GameProvider('sports', sportsBg, 'sports'),
-        new GameProvider('lottery', lotteryBg, 'lottery'),
-        new GameProvider('live_casino', liveCasinoBg, 'live_casino')
+        new GameProvider(
+          'slots', 
+          slotsProviderBackground, 
+          'Slots provider background'
+        ),
+        new GameProvider(
+          'sports', 
+          sportsProviderBackground, 
+          'Sports provider background'
+        ),
+        new GameProvider(
+          'lottery', 
+          lotteryProviderBackground, 
+          'Lottery provider background'
+        ),
+        new GameProvider(
+          'live_casino', 
+          liveCasinoProviderBackground, 
+          'Live casino provider background'
+        )
       ]
     }
   },
@@ -84,8 +100,7 @@ export default {
       return this.baseProviders.map(provider => ({
         ...provider,
         displayName: this.$t(`provider_showcase.providers.${provider.translationKey}.name`),
-        displayDescription: this.$t(`provider_showcase.providers.${provider.translationKey}.description`),
-        displayAlt: this.$t(`provider_showcase.alt_text.${provider.altKey}`)
+        displayDescription: this.$t(`provider_showcase.providers.${provider.translationKey}.description`)
       }))
     }
   },

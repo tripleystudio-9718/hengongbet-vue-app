@@ -132,11 +132,11 @@ import 'swiper/css'
 import 'swiper/css/autoplay'
 
 import soundIcon from '@/assets/sound-icon.svg'
-import promotion1 from '@/assets/promotion-1.png'
-import promotion2 from '@/assets/promotion-2.png'
-import promotion3 from '@/assets/promotion-3.png'
-import promotion4 from '@/assets/promotion-4.png'
-import promotion5 from '@/assets/promotion-5.png'
+import promotion1 from '@/assets/top-up-bonus-68.png'
+import promotion2 from '@/assets/top-up-bonus-200.png'
+import promotion3 from '@/assets/daily-rebate-up-to-3.png'
+import promotion4 from '@/assets/referral-rebate-up-to-10.png'
+import promotion5 from '@/assets/top-up-rebate-0.5.png'
 
 export default {
   name: 'PromotionSection',

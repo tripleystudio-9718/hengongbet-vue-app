@@ -43,7 +43,7 @@ const metaContent = {
     },
     zh: { 
       title: '成为 HengOngBet88 的代理商、股东或会员', 
-      description: '成为 HengOngBet88 的代理商、股东或会员。赚取佣金，获得独家特权，与马来西亚值得信赖的在线赌场平台一起成长。Ask ChatGPT' 
+      description: '成为 HengOngBet88 的代理商、股东或会员。赚取佣金，获得独家特权，与马来西亚值得信赖的在线赌场平台一起成长。' 
     },
     ms: { 
       title: 'Jadi Ejen, Pemegang Saham atau Ahli HengOngBet88', 
@@ -240,6 +240,460 @@ const updateSocialMetaTags = (to) => {
   updateMetaTag('twitter:site', '@hengongbet88');
 };
 
+// Helper function to create and update JSON-LD schema
+const updateSchemaOrg = (to) => {
+  // Remove existing schema
+  const existingSchema = document.querySelector('script[type="application/ld+json"]');
+  if (existingSchema) {
+    existingSchema.remove();
+  }
+
+  const title = to.meta.title || 'HengOngBet88';
+  const description = to.meta.description || 'Play at HengOngBet88, Malaysia\'s trusted online casino.';
+  const url = `${BASE_URL}${to.path}`;
+  const locale = to.meta.locale || defaultLocale;
+  
+  // Get base route name for schema type determination
+  const baseName = to.name.replace(/-[a-z]{2}$/, '');
+  
+  let schema = {};
+
+  // Page-specific schema based on route
+  switch (baseName) {
+    case 'Home':
+      schema = {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://www.hengongbet88.com/#website",
+            "url": "https://www.hengongbet88.com/",
+            "name": "Hengongbet88",
+            "alternateName": "Hengongbet",
+            "publisher": { "@id": "https://www.hengongbet88.com/#organization" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.hengongbet88.com/#organization",
+            "name": "Hengongbet88",
+            "url": "https://www.hengongbet88.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.hengongbet88.com/assets/hengongbet-CbOFDCLB.png"
+            }
+          },
+          {
+            "@type": ["Organization", "LocalBusiness"],
+            "@id": "https://www.hengongbet88.com/#localbusiness",
+            "name": "Hengongbet88",
+            "image": "https://www.hengongbet88.com/assets/hengongbet-CbOFDCLB.png",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "MY"
+            },
+            "url": "https://www.hengongbet88.com/",
+            "openingHours": "Mo-Su 00:00-23:59",
+            "paymentAccepted": ["WireTransfer", "CreditCard", "DebitCard", "Cryptocurrency"],
+            "description": "Play at HengOngBet88, Malaysia's trusted online casino. Enjoy slots, live dealers, sports betting, fast payouts, and secure gaming, anytime, anywhere."
+          },
+          {
+            "@type": "WebPage",
+            "@id": `${url}#webpage`,
+            "url": url,
+            "name": title,
+            "description": description,
+            "isPartOf": { "@id": "https://www.hengongbet88.com/#website" },
+            "breadcrumb": { "@id": `${url}#breadcrumb` },
+            "mainEntity": { "@id": `${url}#faq` }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": `${url}#breadcrumb`,
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.hengongbet88.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Hengongbet Login",
+                "item": "https://www.hengongbet88.com/login"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Hengongbet Register",
+                "item": "https://www.hengongbet88.com/register"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Hengongbet Download",
+                "item": "https://www.hengongbet88.com/download"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": `${url}#faq`,
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is HengOngBet88 legal in Malaysia?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "HengOngBet88 operates under a valid Curacao Gaming License (GCB) with strict player safety and responsible gaming measures. It is up to players to decide the legal boundaries."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What games can I play on HengOngBet88?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You can enjoy 1000+ slots, live casino games, sports betting, and 4D lottery all on one platform."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I deposit and withdraw money?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Deposit via FPX or e-wallets for instant top-ups, and withdraw in-app with fast approval times."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is HengOngBet88 safe for online transactions?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, all transactions are SSL-encrypted and games are RNG-certified for fair play."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I register on HengOngBet88?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Click 'Register,' fill in your mobile number and password, verify your account, and you're ready to play."
+                }
+              }
+            ]
+          }
+        ]
+      };
+      break;
+
+    case 'Login':
+      schema = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": `${url}#webpage`,
+        "url": url,
+        "name": title,
+        "description": description,
+        "inLanguage": locale,
+        "isPartOf": { "@id": "https://www.hengongbet88.com/#website" },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.hengongbet88.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Hengongbet Login",
+              "item": url
+            }
+          ]
+        },
+        "mainEntity": {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How do I reset my HengOngBet88 password?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Click 'Forgot Password' on the login page, enter your registered email or number, and follow the reset instructions."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does 2FA work on HengOngBet88?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It sends a verification code to your registered email/SMS, which you must enter after your password."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why is my HengOngBet88 account locked?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Multiple failed login attempts trigger a temporary lock. Wait 15 minutes or contact support."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I Log In From Multiple Devices?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, but avoid logging in from multiple devices at the same time to prevent security flags."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is the HengOngBet88 login site safe?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely, the site uses SSL encryption, certified random number testing, and real-time monitoring."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What Should I Do If My Login Still Fails After Trying These Steps?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Contact HengOngBet88 customer service via live chat or official channels for assistance."
+              }
+            }
+          ]
+        }
+      };
+      break;
+
+    case 'Register':
+      schema = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": `${url}#webpage`,
+        "url": url,
+        "name": title,
+        "description": description,
+        "inLanguage": locale,
+        "isPartOf": { "@id": "https://www.hengongbet88.com/#website" },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.hengongbet88.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Hengongbet Register",
+              "item": url
+            }
+          ]
+        },
+        "mainEntity": {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How do I register on HengOngBet88?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Click 'Register' on the official HengOngBet88 website or app, fill in your details, verify with the OTP, and your account will be activated instantly."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What Details Do I Need To Create A HengongBet88 Account?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You'll need a username, password, phone number, and optionally a referral code for registration."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I verify my HengOngBet88 account?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Enter the One-Time Password (OTP) sent to your phone or email after registration to complete activation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What games can I play after registering?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Registration unlocks slots, live casino, sports betting, and 4D lottery from providers like JILI, Askmebet, and Sexy Baccarat."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is my account secure on HengOngBet88?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, the platform uses encryption, 2FA, and real-time monitoring to protect player accounts."
+              }
+            }
+          ]
+        }
+      };
+      break;
+
+    case 'DownloadPage':
+      schema = {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": `${url}#webpage`,
+            "url": url,
+            "name": title,
+            "description": description,
+            "inLanguage": locale,
+            "isPartOf": { "@id": "https://www.hengongbet88.com/#website" },
+            "publisher": { "@id": "https://www.hengongbet88.com/#organization" },
+            "breadcrumb": { "@id": `${url}#breadcrumb` },
+            "primaryImageOfPage": { "@id": `${url}#primaryimage` },
+            "mainEntity": { "@id": `${url}#faq` }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": `${url}#breadcrumb`,
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.hengongbet88.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Download",
+                "item": url
+              }
+            ]
+          },
+          {
+            "@type": "ImageObject",
+            "@id": `${url}#primaryimage`,
+            "url": "https://www.hengongbet88.com/assets/hengongbet-CbOFDCLB.png"
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": `${url}#app`,
+            "name": "HengOngBet88",
+            "operatingSystem": ["Android", "iOS"],
+            "applicationCategory": ["MobileApplication", "GameApplication"],
+            "description": description,
+            "softwareVersion": "2024.1015.001",
+            "fileSize": "33.68 MB",
+            "datePublished": "2024-10-15",
+            "publisher": { "@id": "https://www.hengongbet88.com/#organization" },
+            "downloadUrl": url,
+            "image": "https://www.hengongbet88.com/assets/hengongbet-CbOFDCLB.png"
+          },
+          {
+            "@type": "FAQPage",
+            "@id": `${url}#faq`,
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is the HengOngBet app safe to download?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Always use the official download links provided by HengOngBet88 to ensure your APK or iOS file is secure and malware-free."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I install HengOngBet on both Android and iPhone?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, the app supports both Android (APK) and iOS devices with a smooth, mobile-first experience."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where do I get the latest APK version for HengOngBet?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You can download the latest 2025 APK from the official Android or iOS download buttons or the QR code on this page."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need to allow special permissions to install the app?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For Android, you may need to enable \"Install from Unknown Sources\" in your settings; on iOS, tap Install and follow the prompts."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What games can I access on the app?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Slots, sportsbook, live casino, cockfighting, and 4D results are available, with all features optimised for the app."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are there app-only promotions or bonuses?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes—app users get exclusive free credit offers, rebate alerts, and faster agent tools not available on the website."
+                }
+              }
+            ]
+          }
+        ]
+      };
+      break;
+
+    // Add more cases for other pages with simplified schema
+    default:
+      schema = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": `${url}#webpage`,
+        "url": url,
+        "name": title,
+        "description": description,
+        "inLanguage": locale,
+        "isPartOf": { "@id": "https://www.hengongbet88.com/#website" },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.hengongbet88.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": title.replace(' - HENGONGBET88', '').replace('HENGONGBET88 - ', ''),
+              "item": url
+            }
+          ]
+        }
+      };
+  }
+
+  // Create and append the schema script
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(schema, null, 2);
+  document.head.appendChild(script);
+};
+
 // Helper function to remove existing hreflang and canonical links
 const removeExistingLinks = () => {
   const existingLinks = document.querySelectorAll('link[rel="alternate"], link[rel="canonical"]');
@@ -353,6 +807,9 @@ router.beforeEach((to, from, next) => {
   
   // Add Open Graph and Twitter Card meta tags
   updateSocialMetaTags(to);
+  
+  // Add Schema.org structured data
+  updateSchemaOrg(to);
   
   // Add canonical and hreflang links
   const basePath = to.meta.basePath || getBasePath(to.path, locale);

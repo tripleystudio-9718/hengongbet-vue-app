@@ -342,7 +342,7 @@
 
 <script setup>
 import { ref, reactive, computed, onMounted, onUnmounted } from 'vue'
-import mobileFrame from '@/assets/mobile-frame.png'
+import topupTutorialStepsFrame from '@/assets/topup-tutorial-steps-frame.png'
 
 // Reactive state
 const activeTab = ref('topup')
@@ -389,7 +389,7 @@ const withdrawalReminders = computed(() => {
 
 // Slider configuration
 const createSliderConfig = (imageCount) => ({
-  originalImages: Array(imageCount).fill(mobileFrame),
+  originalImages: Array(imageCount).fill(topupTutorialStepsFrame),
   images: [],
   index: 1,
   interval: null,

@@ -14,7 +14,7 @@
             <div class="qr-code-item">
               <div class="qr-placeholder">
                 <!-- QR Code placeholder - you can replace with actual QR code -->
-                <img :src="iosIcon" alt="iOS" class="platform-icon" />
+                <img :src="iosIcon" alt="ios downlaod qr code" class="platform-icon" />
               </div>
               <div class="download-button ios-button" @click="goToRegisterPage">
                 <img src="@/assets/ios-logo.svg" alt="iOS Logo" class="platform-icon" />
@@ -25,7 +25,7 @@
             <div class="qr-code-item">
               <div class="qr-placeholder">
                 <!-- QR Code placeholder - you can replace with actual QR code -->
-                <img :src="androidIcon" alt="Android" class="platform-icon" />
+                <img :src="androidIcon" alt="android download qr code" class="platform-icon" />
               </div>
               <div class="download-button android-button" @click="goToRegisterPage">
                 <img src="@/assets/android-logo.svg" alt="Android Logo" class="platform-icon" />
@@ -41,7 +41,7 @@
         </div>
         <!-- Center - Phone Image for Mobile -->
         <div class="center-content">
-          <img :src="MobileDownloadBanner" alt="Phone Download" class="center-phone-image" />
+          <img :src="MobileDownloadBanner" alt="mobile download phone frame" class="center-phone-image" />
         </div>
         <!-- Right Side - Features Grid -->
         <div class="right-content">
@@ -51,7 +51,7 @@
               <!-- Short Card - Exclusive Bonus -->
               <div class="feature-card short-card">
                 <div class="feature-icon-container">
-                  <img :src="giftIcon" alt="Exclusive Bonus" class="feature-icon" />
+                  <img :src="giftIcon" alt="Exclusive Bonus Icon" class="feature-icon" />
                 </div>
                 <div class="feature-text">
                   <span class="feature-title" v-html="$t('app.features.exclusive')"></span>
@@ -62,7 +62,7 @@
               <!-- Tall Card - Affiliate Program -->
               <div class="feature-card tall-card">
                 <div class="feature-icon-container">
-                  <img :src="yellowHuman" alt="Affiliate Program" class="feature-icon" />
+                  <img :src="yellowHuman" alt="Affiliate Program Icon" class="feature-icon" />
                 </div>
                 <div class="feature-text">
                   <span class="feature-title" v-html="$t('app.features.affiliate')"></span>
@@ -75,7 +75,7 @@
               <!-- Tall Card - Instant Payment -->
               <div class="feature-card tall-card">
                 <div class="feature-icon-container">
-                  <img :src="yellowClock" alt="Instant Payment" class="feature-icon" />
+                  <img :src="yellowClock" alt="Instant Payment Icon" class="feature-icon" />
                 </div>
                 <div class="feature-text">
                   <span class="feature-title" v-html="$t('app.features.instant')"></span>
@@ -86,7 +86,7 @@
               <!-- Short Card - Seamless Experience -->
               <div class="feature-card short-card">
                 <div class="feature-icon-container">
-                  <img :src="moneyIcon" alt="Seamless Experience" class="feature-icon" />
+                  <img :src="moneyIcon" alt="Seamless Experience Icon" class="feature-icon" />
                 </div>
                 <div class="feature-text">
                   <span class="feature-title" v-html="$t('app.features.seamless')"></span>
@@ -139,7 +139,7 @@
                     
           <!-- Browser Address Bar Mockup -->
           <div class="browser-mockup">
-              <img src="@/assets/step1-image.webp" alt="Step 1" class="step-image" />
+              <img src="@/assets/android-instruction-step-1.webp" alt="Step 1" class="step-image" />
           </div>
           <!-- Dotted Arrow -->
           <div class="dotted-arrow">
@@ -154,7 +154,7 @@
                     
           <!-- Mobile Installation Dialog -->
           <div class="mobile-dialog">
-        <img src="@/assets/step2-image.webp" alt="Step 2" class="step-image" />
+        <img src="@/assets/android-instruction-step-2.webp" alt="Step 2" class="step-image" />
           </div>
           <!-- Dotted Arrow -->
           <div class="dotted-arrow">
@@ -169,7 +169,7 @@
                     
           <!-- Mobile Installation Dialog -->
           <div class="mobile-dialog">
-        <img src="@/assets/step3-image.webp" alt="Step 3" class="step-image" />
+        <img src="@/assets/android-instruction-step-3.webp" alt="Step 3" class="step-image" />
           </div>
         </div>
       </div>
@@ -184,7 +184,7 @@
                     
           <!-- Browser Address Bar Mockup -->
           <div class="browser-mockup">
-              <img src="@/assets/ios-step1-image.webp" alt="iOS Step 1" class="step-image" />
+              <img src="@/assets/ios-instruction-step-1.webp" alt="iOS Step 1" class="step-image" />
           </div>
           <!-- Dotted Arrow -->
           <div class="dotted-arrow">
@@ -199,7 +199,7 @@
                     
           <!-- Mobile Installation Dialog -->
           <div class="mobile-dialog">
-        <img src="@/assets/ios-step2-image.webp" alt="iOS Step 2" class="step-image" />
+        <img src="@/assets/ios-instruction-step-2.webp" alt="iOS Step 2" class="step-image" />
           </div>
           <!-- Dotted Arrow -->
           <div class="dotted-arrow">
@@ -214,7 +214,7 @@
                     
           <!-- Mobile Installation Dialog -->
           <div class="mobile-dialog">
-        <img src="@/assets/ios-step3-image.webp" alt="iOS Step 3" class="step-image" />
+        <img src="@/assets/ios-instruction-step-3.webp" alt="iOS Step 3" class="step-image" />
           </div>
         </div>
               
@@ -230,7 +230,7 @@
                     
           <!-- Browser Address Bar Mockup -->
           <div class="browser-mockup">
-              <img src="@/assets/desk-step1-image.webp" alt="Desktop Step 1" class="step-image" />
+              <img src="@/assets/desk-instruction-step-1.webp" alt="Desktop Step 1" class="step-image" />
           </div>
           <!-- Dotted Arrow -->
           <div class="dotted-arrow">
@@ -245,7 +245,7 @@
                     
           <!-- Mobile Installation Dialog -->
           <div class="mobile-dialog">
-        <img src="@/assets/desk-step2-image.webp" alt="Desktop Step 2" class="step-image" />
+        <img src="@/assets/desk-instruction-step-2.webp" alt="Desktop Step 2" class="step-image" />
           </div>
     </div>
            

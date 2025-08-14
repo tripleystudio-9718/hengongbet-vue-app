@@ -2,7 +2,7 @@
   <div class="affiliate-section">
     <!-- Hero Banner -->
     <section class="affiliate-hero-banner">
-      <img :src="affiliateBanner" :alt="$t('affiliate.alt_text.gaming_banner')" class="affiliate-banner-image" />
+      <img :src="joinOurAffilateProgram" :alt="$t('affiliate.alt_text.gaming_banner')" class="affiliate-banner-image" />
     </section>
     
     <div class="affiliate-container">
@@ -65,7 +65,7 @@
         <div class="commission-cards">
           <div class="commission-card" v-for="(model, index) in commissionModels" :key="index">
             <div class="commission-icon">
-              <img :src="model.icon" :alt="model.title" class="icon-image" />
+              <img :src="model.icon" :alt="model.altText" class="icon-image" />
             </div>
             <div class="commission-title" v-html="model.title"></div>
             <div class="commission-description" v-html="model.description"></div>
@@ -121,13 +121,13 @@
 </template>
 
 <script>
-import affiliateBanner from '@/assets/affiliate-banner.png'
+import joinOurAffilateProgram from '@/assets/join-our-affilate-program.png'
 import stepImage from '@/assets/step-bg.png'
 import num1Icon from '@/assets/num1-icon.png'
 import num2Icon from '@/assets/num2-icon.png'
 import num3Icon from '@/assets/num3-icon.png'
-import dual1Icon from '@/assets/dual1-icon.png'
-import dual2Icon from '@/assets/dual2-icon.png'
+import revenueShareIcon from '@/assets/revenue-share-icon.png'
+import cpaModelIcon from '@/assets/cpa-model-icon.png'
 import WhyChooseUs from '@/components/Affiliate-Comp/WhyChooseUs.vue'
 import SupportedGames from '@/components/Affiliate-Comp/SupportedGames.vue'
 
@@ -139,13 +139,13 @@ export default {
   },
   data() {
     return {
-      affiliateBanner,
+      joinOurAffilateProgram,
       stepImage,
       num1Icon,
       num2Icon,
       num3Icon,
-      dual1Icon,
-      dual2Icon
+      revenueShareIcon,
+      cpaModelIcon
     }
   },
   computed: {
@@ -179,19 +179,21 @@ export default {
       ]
     },
     commissionModels() {
-      return [
-        {
-          icon: this.dual1Icon,
-          title: this.$t('affiliate.commission_section.models.revenue_share.title'),
-          description: this.$t('affiliate.commission_section.models.revenue_share.description')
-        },
-        {
-          icon: this.dual2Icon,
-          title: this.$t('affiliate.commission_section.models.cpa_model.title'),
-          description: this.$t('affiliate.commission_section.models.cpa_model.description')
-        }
-      ]
+  return [
+    {
+      icon: this.revenueShareIcon,
+      title: this.$t('affiliate.commission_section.models.revenue_share.title'),
+      description: this.$t('affiliate.commission_section.models.revenue_share.description'),
+      altText: 'Revenue share model - Earn percentage of player losses with ongoing passive income'
     },
+    {
+      icon: this.cpaModelIcon,
+      title: this.$t('affiliate.commission_section.models.cpa_model.title'),
+      description: this.$t('affiliate.commission_section.models.cpa_model.description'),
+      altText: 'CPA model - Cost per acquisition with fixed payout for each qualified player'
+    }
+  ]
+},
     userLevels() {
       return [
         {

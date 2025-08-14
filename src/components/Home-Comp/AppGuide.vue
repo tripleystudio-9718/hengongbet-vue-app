@@ -111,39 +111,47 @@ export default {
         'Android': [
           {
             stepKey: 'step1',
-            image: '/src/assets/step1-image.webp'
+            image: '/src/assets/android-instruction-step-1.webp',
+            alt: 'Android app installation step 1'
           },
           {
             stepKey: 'step2',
-            image: '/src/assets/step2-image.webp'
+            image: '/src/assets/android-instruction-step-2.webp',
+            alt: 'Android app installation step 2'
           },
           {
             stepKey: 'step3',
-            image: '/src/assets/step3-image.webp'
+            image: '/src/assets/android-instruction-step-3.webp',
+            alt: 'Android app installation step 3'
           }
         ],
         'iOS': [
           {
             stepKey: 'step1',
-            image: '/src/assets/ios-step1-image.webp'
+            image: '/src/assets/ios-instruction-step-1.webp',
+            alt: 'iOS app installation step 1'
           },
           {
             stepKey: 'step2',
-            image: '/src/assets/ios-step2-image.webp'
+            image: '/src/assets/ios-instruction-step-2.webp',
+            alt: 'iOS app installation step 2'
           },
           {
             stepKey: 'step3',
-            image: '/src/assets/ios-step3-image.webp'
+            image: '/src/assets/ios-instruction-step-3.webp',
+            alt: 'iOS app installation step 3'
           }
         ],
         'Desktop': [
           {
             stepKey: 'step1',
-            image: '/src/assets/desk-step1-image.webp'
+            image: '/src/assets/desk-instruction-step-1.webp',
+            alt: 'Desktop app installation step 1'
           },
           {
             stepKey: 'step2',
-            image: '/src/assets/desk-step2-image.webp'
+            image: '/src/assets/desk-instruction-step-2.webp',
+            alt: 'Desktop app installation step 2'
           }
         ]
       }

@@ -1514,16 +1514,16 @@
       "topup": {
         "title": {
           "highlight": "HengOngBet88 E-Wallet",
-          "regular": " Top-Up Guide"
+          "regular": " Top-Up"
         },
         "steps": [
           "Open the HengOngBet app and select <strong>\"Top-Up (E-Wallet)\"</strong>.",
           "Choose your e-wallet method: <strong>Touch 'n Go</strong> or <strong>GrabPay</strong>.",
-          "Enter your desired top-up amount.",
-          "You'll be given a bank account or QR code to transfer to.",
-          "Open your TNG or GrabPay app and complete the transfer.",
-          "Take a screenshot or save the transaction receipt.",
-          "Return to the HengOngBet app and upload your receipt in the provided field.",
+          "Enter your desired <strong>top-up amount.</strong>",
+          "You'll be given a <strong>bank account or QR code</strong> to transfer to.",
+          "Open your TNG or GrabPay app and <strong>complete the transfer.</strong>",
+          "<strong>Take a screenshot or save the transaction receipt.</strong>",
+          "Return to the HengOngBet app and <strong>upload your receipt</strong> in the provided field.",
           "Wait for the admin to verify and approve, top-up will reflect shortly."
         ],
         "note": "<strong>Always double-check the account number or QR code before confirming your payment in the e-wallet app.</strong>"
@@ -1531,14 +1531,14 @@
       "transfer": {
         "title": {
           "highlight": "HengOngBet88 Online Banking",
-          "regular": " Top-Up Guide"
+          "regular": " Top-Up"
         },
         "steps": [
           "Tap <strong>\"Top-Up (Bank Transfer)\"</strong> in the app.",
-          "Select the bank account provided.",
-          "Enter your top-up amount and transfer it via your online banking app using <strong>DuitNow</strong> or normal transfer.",
-          "Save the payment receipt or take a screenshot.",
-          "Return to the app and upload the receipt.",
+          "Select the <strong>bank account</strong> provided.",
+          "Enter your <strong>top-up amount</strong> and transfer it via your online banking app using <strong>DuitNow</strong> or normal transfer.",
+          "Save the <strong>payment receipt</strong> or take a screenshot.",
+          "Return to the app and <strong>upload the receipt</strong>.",
           "Wait for confirmation, once approved, your wallet will be updated."
         ],
         "note": "<strong>Ensure you use the correct bank details provided by the platform to avoid any transfer delays.</strong>"
@@ -1574,7 +1574,37 @@
       "showLess": "Show less steps"
     },
     "alt": {
-      "stepImage": "Step {step} image"
+      "stepImage": "Step {step} image",
+      "topup": {
+        "step1": "Top-up tutorial step 1 - Select Top-Up E-Wallet option in HengOngBet app interface",
+        "step2": "Top-up tutorial step 2 - Choose e-wallet method Touch n Go or GrabPay selection screen",
+        "step3": "Top-up tutorial step 3 - Enter desired top-up amount and view bank account or QR code",
+        "step4": "Top-up tutorial step 4 - Complete transfer using TNG or GrabPay app payment interface",
+        "step5": "Top-up tutorial step 5 - Take screenshot or save transaction receipt for verification",
+        "step6": "Top-up tutorial step 6 - Upload receipt in HengOngBet app upload field interface",
+        "step7": "Top-up tutorial step 7 - Wait for admin verification and approval confirmation screen",
+        "step8": "Top-up tutorial step 8 - Top-up amount reflected in wallet balance confirmation"
+      },
+      "transfer": {
+        "step1": "Bank transfer tutorial step 1 - Select Top-Up Bank Transfer option in app interface",
+        "step2": "Bank transfer tutorial step 2 - View provided bank account details for transfer",
+        "step3": "Bank transfer tutorial step 3 - Enter top-up amount and initiate online banking transfer",
+        "step4": "Bank transfer tutorial step 4 - Complete DuitNow or normal transfer via banking app",
+        "step5": "Bank transfer tutorial step 5 - Save payment receipt or take screenshot for proof",
+        "step6": "Bank transfer tutorial step 6 - Upload receipt in app for verification and approval",
+        "step7": "Bank transfer tutorial step 7 - Wait for confirmation and wallet balance update",
+        "step8": "Bank transfer tutorial step 8 - Transfer completed successfully with updated balance"
+      },
+      "withdraw": {
+        "step1": "Withdrawal tutorial step 1 - Select Withdraw option from homepage or wallet section",
+        "step2": "Withdrawal tutorial step 2 - Enter withdrawal amount RM100 in the input field",
+        "step3": "Withdrawal tutorial step 3 - Double-check amount and tap Submit button to proceed",
+        "step4": "Withdrawal tutorial step 4 - Enter 6-digit Payment PIN for security verification",
+        "step5": "Withdrawal tutorial step 5 - Withdrawal request submitted for admin review process",
+        "step6": "Withdrawal tutorial step 6 - Wait for approval during peak times or instant processing",
+        "step7": "Withdrawal tutorial step 7 - Receive notification confirmation of successful withdrawal",
+        "step8": "Withdrawal tutorial step 8 - Withdrawal completed and funds transferred to bank account"
+      }
     }
   },
 

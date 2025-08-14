@@ -50,13 +50,12 @@ import { Autoplay } from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 
-// Import icons
-import why1Icon from '@/assets/why1-icon.png';
-import why2Icon from '@/assets/why2-icon.png';
-import why3Icon from '@/assets/why3-icon.png';
-import why4Icon from '@/assets/why4-icon.png';
-import why5Icon from '@/assets/why5-icon.png';
-import why6Icon from '@/assets/why6-icon.png';
+// Updated imports with descriptive variable names matching file names
+import highCommissionIcon from '@/assets/high-commission-icon.png';
+import customSolutionsIcon from '@/assets/custom-solutions-icon.png';
+import marketingToolsIcon from '@/assets/marketing-tools-icon.png';
+import dedicatedSupportIcon from '@/assets/dedicated-support-icon.png';
+import weeklyPayoutsIcon from '@/assets/weekly-payouts-icon.png';
 
 export default {
   name: 'WhyChooseUs',
@@ -68,31 +67,32 @@ export default {
     return {
       modules: [Autoplay],
       
-      // Base features data with icons and translation keys
+      // Base features data with icons, translation keys, and alt text
       baseFeatures: [
         {
-          icon: why1Icon,
-          translationKey: 'high_commission'
+          icon: highCommissionIcon,
+          translationKey: 'high_commission',
+          altText: 'High commission rates'
         },
         {
-          icon: why2Icon,
-          translationKey: 'custom_solutions'
+          icon: customSolutionsIcon,
+          translationKey: 'custom_solutions',
+          altText: 'Custom solutions'
         },
         {
-          icon: why3Icon,  
-          translationKey: 'marketing_tools'
+          icon: marketingToolsIcon,  
+          translationKey: 'marketing_tools',
+          altText: 'Marketing tools'
         },
         {
-          icon: why4Icon,
-          translationKey: 'dedicated_support'
+          icon: dedicatedSupportIcon,
+          translationKey: 'dedicated_support',
+          altText: 'Dedicated support'
         },
         {
-          icon: why5Icon,
-          translationKey: 'weekly_payouts'
-        },
-        {
-          icon: why6Icon,
-          translationKey: 'real_time_tracking'
+          icon: weeklyPayoutsIcon,
+          translationKey: 'weekly_payouts',
+          altText: 'Weekly payouts'
         }
       ],
 

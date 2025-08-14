@@ -116,7 +116,7 @@
       <!-- Become Affiliate Section -->
       <div class="two-column-section">
         <div class="column-image">
-          <img :src="becomeImg" alt="HengOngBet Logo" class="responsive-image" />
+          <img :src="becomeAHengOngBetAffiliateToday" alt="become a heng ong bet affiliate" class="responsive-image" />
         </div>
         <div class="column-text">
           <div class="main-title affiliate-main-title">
@@ -152,11 +152,11 @@ import WhySection from '@/components/Home-Comp/WhySection.vue'
 import ProviderSection from '@/components/Home-Comp/ProviderSection.vue'
 import ReviewSection from '@/components/Home-Comp/ReviewSection.vue'
 import FaqSection from '@/components/Home-Comp/FaqSection.vue'
-import homeBanner from '@/assets/home-banner.png'
-import homeBanner1 from '@/assets/home-banner1.png'
-import homeBanner2 from '@/assets/home-banner2.png'
-import homeBanner3 from '@/assets/home-banner3.png'
-import becomeImg from '@/assets/become-img.png'
+import enjoyRebatesTogether from '@/assets/enjoy-rebates-together.png'
+import maximumBetRm50000 from '@/assets/maximum-bet-rm50000.png'
+import startAsAHobAffilateNow from '@/assets/start-as-a-hob-affilate-now.png'
+import theHighestLotteryOddsPlatform from '@/assets/the-highest-lottery-odds-platform.png'
+import becomeAHengOngBetAffiliateToday from '@/assets/become-a-heng-ong-bet-affiliate-today.png'
 
 export default {
   name: 'Home',
@@ -182,13 +182,13 @@ export default {
   },
   data() {
     return {
-      becomeImg,
+      becomeAHengOngBetAffiliateToday,
       // Carousel images for the hero banner
       carouselImages: [
-        homeBanner,
-        homeBanner1,
-        homeBanner2,
-        homeBanner3,
+        enjoyRebatesTogether,
+        maximumBetRm50000,
+        startAsAHobAffilateNow,
+        theHighestLotteryOddsPlatform,
       ]
     }
   },

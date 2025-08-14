@@ -10,7 +10,7 @@
     <div class="max-w-7xl mx-auto px-6 py-8">
       <div class="why-container">
         <div class="why-card-1">
-          <img :src="computerIcon" :alt="$t('why_section.alt_text.computer_icon')" class="why-image" />
+          <img :src="whatMakesHengOngBetDifferentIcon" alt="What makes HengOngBet different - Unique gaming platform features" class="why-image" />
           <div class="card-content">
             <div class="why-title">{{ $t('why_section.cards.card1.title') }}</div>
             <p class="why-p">{{ $t('why_section.cards.card1.description') }}</p>
@@ -18,7 +18,7 @@
         </div>
 
         <div class="why-card-2">
-          <img :src="trustedIcon" :alt="$t('why_section.alt_text.trusted_icon')" class="why-image" />
+          <img :src="mostTrustedCasinoIcon" alt="Most trusted casino platform - Secure and reliable gaming experience" class="why-image" />
           <div class="card-content">
             <div class="why-title">{{ $t('why_section.cards.card2.title') }}</div>
             <p class="why-p">{{ $t('why_section.cards.card2.description') }}</p>
@@ -26,7 +26,7 @@
         </div>
 
         <div class="why-card-3">
-          <img :src="registrationIcon" :alt="$t('why_section.alt_text.registration_icon')" class="why-image" />
+          <img :src="simpleFastRegistrationIcon" alt="Simple fast registration process - Quick and easy account setup" class="why-image" />
           <div class="card-content">
             <div class="why-title" style="color: black;">{{ $t('why_section.cards.card3.title') }}</div>
             <p class="why-p" style="color: black;">{{ $t('why_section.cards.card3.description') }}</p>
@@ -34,7 +34,7 @@
         </div>
 
         <div class="why-card-4">
-          <img :src="supportIcon" :alt="$t('why_section.alt_text.support_icon')" class="why-image" />
+          <img :src="onlineSupportIcon" alt="Online support service - 24/7 customer assistance and help" class="why-image" />
           <div class="card-content">
             <div class="why-title">{{ $t('why_section.cards.card4.title') }}</div>
             <p class="why-p">{{ $t('why_section.cards.card4.description') }}</p>
@@ -46,7 +46,7 @@
       <div class="mobile-slider-container">
         <div class="mobile-slider" ref="mobileSlider">
           <div class="mobile-card mobile-card-1">
-            <img :src="computerIcon" :alt="$t('why_section.alt_text.computer_icon')" class="mobile-image" />
+            <img :src="whatMakesHengOngBetDifferentIcon" alt="What makes HengOngBet different - Unique gaming platform features" class="mobile-image" />
             <div class="mobile-card-content">
               <div class="mobile-title">{{ $t('why_section.cards.card1.title') }}</div>
               <p class="mobile-p">{{ $t('why_section.cards.card1.description') }}</p>
@@ -54,7 +54,7 @@
           </div>
 
           <div class="mobile-card mobile-card-2">
-            <img :src="trustedIcon" :alt="$t('why_section.alt_text.trusted_icon')" class="mobile-image" />
+            <img :src="mostTrustedCasinoIcon" alt="Most trusted casino platform - Secure and reliable gaming experience" class="mobile-image" />
             <div class="mobile-card-content">
               <div class="mobile-title">{{ $t('why_section.cards.card2.title') }}</div>
               <p class="mobile-p">{{ $t('why_section.cards.card2.description') }}</p>
@@ -62,7 +62,7 @@
           </div>
 
           <div class="mobile-card mobile-card-3">
-            <img :src="registrationIcon" :alt="$t('why_section.alt_text.registration_icon')" class="mobile-image" />
+            <img :src="simpleFastRegistrationIcon" alt="Simple fast registration process - Quick and easy account setup" class="mobile-image" />
             <div class="mobile-card-content">
               <div class="mobile-title" style="color: black;">{{ $t('why_section.cards.card3.title') }}</div>
               <p class="mobile-p" style="color: black;">{{ $t('why_section.cards.card3.description') }}</p>
@@ -70,7 +70,7 @@
           </div>
 
           <div class="mobile-card mobile-card-4">
-            <img :src="supportIcon" :alt="$t('why_section.alt_text.support_icon')" class="mobile-image" />
+            <img :src="onlineSupportIcon" alt="Online support service - 24/7 customer assistance and help" class="mobile-image" />
             <div class="mobile-card-content">
               <div class="mobile-title">{{ $t('why_section.cards.card4.title') }}</div>
               <p class="mobile-p">{{ $t('why_section.cards.card4.description') }}</p>
@@ -83,19 +83,20 @@
 </template>
 
 <script>
-import computerIcon from '@/assets/computer_icon.png'
-import trustedIcon from '@/assets/trusted_icon.png'
-import registrationIcon from '@/assets/registration_icon.png'
-import supportIcon from '@/assets/support_icon.png'
+import whatMakesHengOngBetDifferentIcon from '@/assets/what-makes-heng-ong-bet-different-icon.png'
+import mostTrustedCasinoIcon from '@/assets/most-trusted-casino-icon.png'
+import simpleFastRegistrationIcon from '@/assets/simple-fast-registration-icon.png'
+import onlineSupportIcon from '@/assets/online-support-icon.png'
 
 export default {
   name: 'WhySection',
   data() {
     return {
-      computerIcon,
-      trustedIcon,
-      registrationIcon,
-      supportIcon,
+      // Updated data properties with descriptive names
+      whatMakesHengOngBetDifferentIcon,
+      mostTrustedCasinoIcon,
+      simpleFastRegistrationIcon,
+      onlineSupportIcon,
       currentSlide: 0
     }
   },

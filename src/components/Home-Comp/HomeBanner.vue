@@ -24,8 +24,8 @@
         @click="navigateToPromotion"
       >
         <img 
-          :src="image" 
-          :alt="`Gaming Banner ${index + 1}`" 
+          :src="image.src || image" 
+          :alt="image.alt || altTexts[index] || `HengOngBet88 Gaming Banner ${index + 1}`" 
           class="banner-image" 
         />
       </swiper-slide>
@@ -83,6 +83,15 @@ export default {
     images: {
       type: Array,
       default: () => []
+    },
+    altTexts: {
+      type: Array,
+      default: () => [
+        'enjoy rebates together',
+        'maximum bet rm 50000',
+        'start as a hob affilate now',
+        'the highest lottery odds platform'
+      ]
     },
     modules: {
       type: Array,
@@ -184,17 +193,17 @@ export default {
     },
     nextSlide() {
       if (this.swiperInstance) {
-        this.swiperInstance.slideNext()
+        this.swiperInstance.slideNext(800) // Add speed parameter
       }
     },
     prevSlide() {
       if (this.swiperInstance) {
-        this.swiperInstance.slidePrev()
+        this.swiperInstance.slidePrev(800) // Add speed parameter
       }
     },
     goToSlide(index) {
       if (this.swiperInstance) {
-        this.swiperInstance.slideToLoop(index)
+        this.swiperInstance.slideToLoop(index, 800) // Add speed parameter
       }
     },
     startAutoplay() {
@@ -233,26 +242,26 @@ export default {
     goToLogin() {
       const locale = this.$i18n?.locale || 'en';
 
-  let targetUrl = 'https://hengongbet.com/en-my';
-  if (locale === 'zh') {
-    targetUrl = 'https://hengongbet.com/zh-my';
-  }else if (locale === 'ms') {
-    targetUrl = 'https://hengongbet.com/ms-my';
-  }
+      let targetUrl = 'https://hengongbet.com/en-my';
+      if (locale === 'zh') {
+        targetUrl = 'https://hengongbet.com/zh-my';
+      }else if (locale === 'ms') {
+        targetUrl = 'https://hengongbet.com/ms-my';
+      }
 
-  window.location.href = targetUrl;
+      window.location.href = targetUrl;
     },
     goToRegister() {
       const locale = this.$i18n?.locale || 'en';
 
-  let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
-  if (locale === 'zh') {
-    targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
-  } else if (locale === 'ms') {
-    targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
-  }
+      let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
+      if (locale === 'zh') {
+        targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
+      } else if (locale === 'ms') {
+        targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
+      }
 
-  window.location.href = targetUrl;
+      window.location.href = targetUrl;
     }
   },
   beforeUnmount() {
@@ -264,7 +273,7 @@ export default {
 </script>
 
 <style scoped>
-/* Existing styles remain the same... */
+/* All existing styles remain the same... */
 .hero-banner {
   position: relative;
   overflow: hidden;

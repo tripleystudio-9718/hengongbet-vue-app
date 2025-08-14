@@ -237,92 +237,107 @@ export default {
         { 
           id: 1, 
           nameKey: 'lucky365', 
-          image: new URL('@/assets/game1.png', import.meta.url).href, 
-          category: 'slots' 
+          image: new URL('@/assets/lucky365-game-icon.png', import.meta.url).href, 
+          category: 'slots',
+          alt: 'Lucky365 Slot Game Icon - Premium online slot gaming experience'
         },
         { 
           id: 2, 
           nameKey: 'askmeslot', 
-          image: new URL('@/assets/game2.png', import.meta.url).href, 
-          category: 'slots' 
+          image: new URL('@/assets/askmeslot-game-icon.png', import.meta.url).href, 
+          category: 'slots',
+          alt: 'AskmeSlot Game Icon - Interactive slot machine gaming'
         },
         { 
           id: 3, 
           nameKey: 'jdb', 
-          image: new URL('@/assets/game3.png', import.meta.url).href, 
-          category: 'slots' 
+          image: new URL('@/assets/jdb-slot-game-icon.png', import.meta.url).href, 
+          category: 'slots',
+          alt: 'JDB Slot Game Icon - High-quality slot gaming provider'
         },
         { 
           id: 4, 
           nameKey: 'monkeyKing', 
-          image: new URL('@/assets/game4.png', import.meta.url).href, 
-          category: 'slots' 
+          image: new URL('@/assets/monkey-king-game-icon.png', import.meta.url).href, 
+          category: 'slots',
+          alt: 'Monkey King Slot Game Icon - Adventure-themed slot gaming'
         },
         { 
           id: 5, 
           nameKey: 'hotRoad', 
-          image: new URL('@/assets/game5.png', import.meta.url).href, 
-          category: 'casino' 
+          image: new URL('@/assets/hot-road-game-icon.png', import.meta.url).href, 
+          category: 'casino',
+          alt: 'Hot Road Live Casino Game Icon - Real-time casino gaming experience'
         },
         { 
           id: 6, 
           nameKey: 'maxbet', 
-          image: new URL('@/assets/game6.png', import.meta.url).href, 
-          category: 'sports' 
+          image: new URL('@/assets/maxbet-game-icon.png', import.meta.url).href, 
+          category: 'sports',
+          alt: 'Maxbet Sports Game Icon - Professional sports betting platform'
         },
         { 
           id: 7, 
           nameKey: 'sv388', 
-          image: new URL('@/assets/game7.png', import.meta.url).href, 
-          category: 'sports' 
+          image: new URL('@/assets/sv388-game-icon.png', import.meta.url).href, 
+          category: 'sports',
+          alt: 'SV388 Cockfighting Sports Game Icon - Traditional sports betting'
         },
         { 
           id: 8, 
           nameKey: 'rcb988', 
-          image: new URL('@/assets/game8.png', import.meta.url).href, 
-          category: 'sports' 
+          image: new URL('@/assets/rcb988-game-icon.png', import.meta.url).href, 
+          category: 'sports',
+          alt: 'RCB988 Horse Racing Sports Game Icon - Horse racing betting platform'
         },
         { 
           id: 9, 
           nameKey: 'jili', 
-          image: new URL('@/assets/game9.png', import.meta.url).href, 
-          category: 'slots' 
+          image: new URL('@/assets/jili-game-icon.png', import.meta.url).href, 
+          category: 'slots',
+          alt: 'JILI Slot Game Icon - Modern slot gaming with exciting features'
         },
         { 
           id: 10, 
           nameKey: 'microslot', 
-          image: new URL('@/assets/game10.png', import.meta.url).href, 
-          category: 'slots' 
+          image: new URL('@/assets/microslot-game-icon.png', import.meta.url).href, 
+          category: 'slots',
+          alt: 'Microslot Game Icon - Micro-gaming slot entertainment'
         },
         { 
           id: 11, 
           nameKey: 'evolution', 
-          image: new URL('@/assets/game11.png', import.meta.url).href, 
-          category: 'casino' 
+          image: new URL('@/assets/evolution-game-icon.png', import.meta.url).href, 
+          category: 'casino',
+          alt: 'Evolution Live Casino Game Icon - Live dealer casino games'
         },
         { 
           id: 12, 
           nameKey: 'sexy', 
-          image: new URL('@/assets/game12.png', import.meta.url).href, 
-          category: 'casino' 
+          image: new URL('@/assets/ae-sexy-game-icon.png', import.meta.url).href, 
+          category: 'casino',
+          alt: 'AE Sexy Live Casino Game Icon - Premium live baccarat experience'
         },
         { 
           id: 13, 
           nameKey: 'ekor', 
-          image: new URL('@/assets/game13.png', import.meta.url).href, 
-          category: 'lottery' 
+          image: new URL('@/assets/ekor-game-icon.png', import.meta.url).href, 
+          category: 'lottery',
+          alt: 'Ekor 4D Lottery Game Icon - Traditional 4D lottery gaming'
         },
         { 
           id: 14, 
           nameKey: 'bigGaming', 
-          image: new URL('@/assets/game14.png', import.meta.url).href, 
-          category: 'casino' 
+          image: new URL('@/assets/big-gaming-game-icon.png', import.meta.url).href, 
+          category: 'casino',
+          alt: 'Big Gaming Live Casino Game Icon - Professional live casino gaming'
         },
         { 
           id: 15, 
           nameKey: 'pragmaticPlay', 
-          image: new URL('@/assets/game15.png', import.meta.url).href, 
-          category: 'casino' 
+          image: new URL('@/assets/pragmatic-play-game-icon.png', import.meta.url).href, 
+          category: 'slots',
+          alt: 'Pragmatic Play Slot Game Icon - World-class slot gaming provider'
         }
       ],
       openContentItems: {

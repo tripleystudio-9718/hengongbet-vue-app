@@ -39,7 +39,7 @@
                 <div class="featured-image-container">
                   <img 
                     :src="featuredGame.image"
-                    :alt="featuredGame.name"
+                    :alt="featuredGame.alt"
                     class="featured-slide-image"
                   />
                 </div>
@@ -72,7 +72,7 @@
               >
                 <img 
                   :src="game.image"
-                  :alt="game.name"
+                  :alt="game.alt"
                   class="game-image"
                 />
               </div>
@@ -113,21 +113,21 @@ import sugarBlissGameIcon from '@/assets/sugar-bliss-game-icon.jpg'
 import superAceGameIcon from '@/assets/super-ace-game-icon.jpg'
 
 // Regular games images from game tabs
-import game1 from '@/assets/game1.png'
-import game2 from '@/assets/game2.png'
-import game3 from '@/assets/game3.png'
-import game4 from '@/assets/game4.png'
-import game5 from '@/assets/game5.png'
-import game6 from '@/assets/game6.png'
-import game7 from '@/assets/game7.png'
-import game8 from '@/assets/game8.png'
-import game9 from '@/assets/game9.png'
-import game10 from '@/assets/game10.png'
-import game11 from '@/assets/game11.png'
-import game12 from '@/assets/game12.png'
-import game13 from '@/assets/game13.png'
-import game14 from '@/assets/game14.png'
-import game15 from '@/assets/game15.png'
+import lucky365GameIcon from '@/assets/lucky365-game-icon.png'
+import askmeslotGameIcon from '@/assets/askmeslot-game-icon.png'
+import jdbSlotGameIcon from '@/assets/jdb-slot-game-icon.png'
+import monkeyKingGameIcon from '@/assets/monkey-king-game-icon.png'
+import hotRoadGameIcon from '@/assets/hot-road-game-icon.png'
+import maxbetGameIcon from '@/assets/maxbet-game-icon.png'
+import sv388GameIcon from '@/assets/sv388-game-icon.png'
+import rcb988GameIcon from '@/assets/rcb988-game-icon.png'
+import jiliGameIcon from '@/assets/jili-game-icon.png'
+import microslotGameIcon from '@/assets/microslot-game-icon.png'
+import evolutionGameIcon from '@/assets/evolution-game-icon.png'
+import aeSexyGameIcon from '@/assets/ae-sexy-game-icon.png'
+import ekorGameIcon from '@/assets/ekor-game-icon.png'
+import bigGamingGameIcon from '@/assets/big-gaming-game-icon.png'
+import pragmaticPlayGameIcon from '@/assets/pragmatic-play-game-icon.png'
 
 const AUTO_SLIDE_INTERVAL = 4000
 
@@ -171,53 +171,148 @@ export default {
           id: 'featured-1',
           name: this.t('gameSec.featured_games.iceland'),
           provider: this.t('gameSec.providers.endorphina'),
-          image: icelandGameIcon
+          image: icelandGameIcon,
+          alt: 'Iceland Slot Game Icon'
         },
         {
           id: 'featured-2', 
           name: this.t('gameSec.featured_games.panther_moon'),
           provider: this.t('gameSec.providers.novomatic'),
-          image: pantherMoonGameIcon
+          image: pantherMoonGameIcon,
+          alt: 'Panther Moon Slot Game Icon'
         },
         {
           id: 'featured-3',
           name: this.t('gameSec.featured_games.fa_fa_fa'),
           provider: this.t('gameSec.providers.golden_hero'),
-          image: fafafaGameIcon
+          image: fafafaGameIcon,
+          alt: 'Fa Fa Fa Slot Game Icon'
         },
         {
           id: 'featured-4',
           name: this.t('gameSec.featured_games.sugar_bliss'),
           provider: this.t('gameSec.providers.sweet_gaming'),
-          image: sugarBlissGameIcon
+          image: sugarBlissGameIcon,
+          alt: 'HSugar Bliss Slot Game Icon'
         },
         {
           id: 'featured-5',
           name: this.t('gameSec.featured_games.super_ace'),
           provider: this.t('gameSec.providers.pragmatic_play'),
-          image: superAceGameIcon
+          image: superAceGameIcon,
+          alt: 'Super Ace Slot Game Icon'
         }
       ]
     },
     games() {
-      return [
-        { id: 1, name: this.t('gameSec.regular_games.lucky_365'), image: game1, category: 'slots'},
-        { id: 2, name: this.t('gameSec.regular_games.askmeslot'), image: game2, category: 'slots'},
-        { id: 3, name: this.t('gameSec.regular_games.jdb'), image: game3, category: 'slots'},
-        { id: 4, name: this.t('gameSec.regular_games.monkey_king'), image: game4, category: 'slots'},
-        { id: 5, name: this.t('gameSec.regular_games.hot_road'), image: game5, category: 'casino'},
-        { id: 6, name: this.t('gameSec.regular_games.maxbet'), image: game6, category: 'sports'},
-        { id: 7, name: this.t('gameSec.regular_games.sv388'), image: game7, category: 'sports'},
-        { id: 8, name: this.t('gameSec.regular_games.rcb988'), image: game8, category: 'sports'},
-        { id: 9, name: this.t('gameSec.regular_games.jili'), image: game9, category: 'slots'},
-        { id: 10, name: this.t('gameSec.regular_games.microslot'), image: game10, category: 'slots'},
-        { id: 11, name: this.t('gameSec.regular_games.evolution'), image: game11, category: 'casino'},
-        { id: 12, name: this.t('gameSec.regular_games.sexy'), image: game12, category: 'casino'},
-        { id: 13, name: this.t('gameSec.regular_games.ekor'), image: game13, category: 'lottery'},
-        { id: 14, name: this.t('gameSec.regular_games.big_gaming'), image: game14, category: 'casino'},
-        { id: 15, name: this.t('gameSec.regular_games.pragmatic_play_regular'), image: game15, category: 'slots'}
-      ]
+  return [
+    { 
+      id: 1, 
+      name: this.t('gameSec.regular_games.lucky_365'), 
+      image: lucky365GameIcon, 
+      category: 'slots',
+      alt: 'Lucky 365 Slot Game Icon'
     },
+    { 
+      id: 2, 
+      name: this.t('gameSec.regular_games.askmeslot'), 
+      image: askmeslotGameIcon, 
+      category: 'slots',
+      alt: 'Askmebet Slot Game Icon'
+    },
+    { 
+      id: 3, 
+      name: this.t('gameSec.regular_games.jdb'), 
+      image: jdbSlotGameIcon, 
+      category: 'slots',
+      alt: 'JDB Slot Game Icon'
+    },
+    { 
+      id: 4, 
+      name: this.t('gameSec.regular_games.monkey_king'), 
+      image: monkeyKingGameIcon, 
+      category: 'slots',
+      alt: 'Monkey King Slot Game Icon'
+    },
+    { 
+      id: 5, 
+      name: this.t('gameSec.regular_games.hot_road'), 
+      image: hotRoadGameIcon, 
+      category: 'casino',
+      alt: 'Hot Road Live Casino Game Icon'
+    },
+    { 
+      id: 6, 
+      name: this.t('gameSec.regular_games.maxbet'), 
+      image: maxbetGameIcon, 
+      category: 'sports',
+      alt: 'Maxbet Sports Game Icon'
+    },
+    { 
+      id: 7, 
+      name: this.t('gameSec.regular_games.sv388'), 
+      image: sv388GameIcon, 
+      category: 'sports',
+      alt: 'SV388 Cockfighting Sports Game Icon'
+    },
+    { 
+      id: 8, 
+      name: this.t('gameSec.regular_games.rcb988'), 
+      image: rcb988GameIcon, 
+      category: 'sports',
+      alt: 'RCB988 Horse Racing Sports Game Icon'
+    },
+    { 
+      id: 9, 
+      name: this.t('gameSec.regular_games.jili'), 
+      image: jiliGameIcon, 
+      category: 'slots',
+      alt: 'JILI Slot Game Icon'
+    },
+    { 
+      id: 10, 
+      name: this.t('gameSec.regular_games.microslot'), 
+      image: microslotGameIcon, 
+      category: 'slots',
+      alt: 'Microslot Game Icon'
+    },
+    { 
+      id: 11, 
+      name: this.t('gameSec.regular_games.evolution'), 
+      image: evolutionGameIcon, 
+      category: 'casino',
+      alt: 'Evolution Live Casino Game Icon'
+    },
+    { 
+      id: 12, 
+      name: this.t('gameSec.regular_games.sexy'), 
+      image: aeSexyGameIcon, 
+      category: 'casino',
+      alt: 'Sexy Baccarat Live Casino Game Icon'
+    },
+    { 
+      id: 13, 
+      name: this.t('gameSec.regular_games.ekor'), 
+      image: ekorGameIcon, 
+      category: 'lottery',
+      alt: 'Ekor 4D Lottery Game Icon'
+    },
+    { 
+      id: 14, 
+      name: this.t('gameSec.regular_games.big_gaming'), 
+      image: bigGamingGameIcon, 
+      category: 'casino',
+      alt: 'Big Gaming Live Casino Game Icon'
+    },
+    { 
+      id: 15, 
+      name: this.t('gameSec.regular_games.pragmatic_play_regular'), 
+      image: pragmaticPlayGameIcon, 
+      category: 'slots',
+      alt: 'Pragmatic Play Slot Game Icon'
+    }
+  ]
+},
     displayedGames() {
       return this.activeCategory === 'all' 
         ? this.games 
@@ -256,11 +351,11 @@ export default {
       const locale = this.$i18n?.locale || 'en';
 
       let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
-  if (locale === 'zh') {
-    targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
-  } else if (locale === 'ms') {
-    targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
-  }
+      if (locale === 'zh') {
+        targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
+      } else if (locale === 'ms') {
+        targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
+      }
       // Redirect to external URL
       window.location.href = targetUrl;
     },
