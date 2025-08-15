@@ -1621,6 +1621,16 @@
     }
   },
 
+  "withdrawalReminders": {
+      "title": "Withdrawal Reminders",
+      "items": [
+        "Withdrawals must follow any <strong>bonus turnover rules</strong> if applicable.",
+        "Make sure your <strong>bank details are correct and updated</strong> in your profile.",
+        "Use the same method <strong>(bank account)</strong> that you used to deposit for faster processing.",
+        "If you've forgotten your <strong>PIN</strong>, use the reset option or contact support."
+      ]
+    },
+
   "notice": {
     "title": "Important Gaming Notice",
     "shortText": "Notice: The following games will not count the amount of code played only the winnings and losses: MONKEY KING - 'Dragon Tiger Blue', 'Dragon Tiger Red', 'Single Pick', 'Roulette73', 'Baccarat' EVOLUTION - 'First Person Craps', 'Craps'...",

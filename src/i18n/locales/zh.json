@@ -8,7 +8,7 @@
     "affiliate": "代理",
     "faq": "常见问题",
     "help": "帮助",
-    "tutorial": "教程指南",
+    "tutorial": "新手教程",
     "topup_tutorial": "充值提现教程",
     "login": "登录",
     "register": "注册"
@@ -45,7 +45,7 @@
     "sign_in": "登录",
     "sign_up": "注册",
     "already_have_account": "已有账户？",
-    "dont_have_account": "没有账户？",
+    "dont_have_account": "还没有账户？",
     "create_account": "创建账户"
   },
   "games": {
@@ -78,8 +78,8 @@
   },
   "download": {
     "title": "下载应用",
-    "android": "安卓版",
-    "ios": "苹果版",
+    "android": "安卓",
+    "ios": "苹果",
     "desktop": "桌面版",
     "download_now": "立即下载",
     "qr_code": "扫描二维码"
@@ -122,12 +122,12 @@
   },
   "footer": {
     "about": "关于我们",
-    "description": "在 HENG ONG BET 探索无尽的刺激体验。我们致力于提供优质游戏以及安全、有趣的娱乐环境。",
+    "description": "在恒旺博彩发现无尽的刺激。我们致力于提供优质游戏和安全、引人入胜的体验。",
     "games": "游戏",
     "slots": "老虎机",
     "sports": "体育",
     "lottery": "彩票",
-    "casino": "赌场",
+    "casino": "娱乐场",
     "info": "信息",
     "promotions": "优惠活动",
     "about_us": "关于我们",
@@ -136,133 +136,208 @@
     "payment_methods": "支付方式",
     "game_license": "游戏许可证",
     "certification": "认证",
-    "security": "安全性",
+    "security": "安全",
     "follow_us": "关注我们",
     "rights_reserved": "版权所有。",
-    
-    "gcb_license_alt": "GCB 许可证",
-    "itech_certification_alt": "iTech 认证",
-    "threatmetrix_security_alt": "ThreatMetrix 安全",
+    "gcb_license_alt": "GCB许可证",
+    "itech_certification_alt": "iTech认证",
+    "threatmetrix_security_alt": "ThreatMetrix安全",
     "touch_n_go_alt": "Touch 'n Go",
     "bank_transfer_alt": "银行转账",
     "duitnow_alt": "DuitNow",
     "grab_alt": "Grab",
-    "facebook_alt": "脸书",
+    "facebook_alt": "Facebook",
     "instagram_alt": "Instagram",
     "whatsapp_alt": "WhatsApp"
   },
   "home": {
-    "brandSection": {
-      "subtitle": "值得信赖的在线赌场",
-      "title": "兴旺Bet官方",
-      "tagline": "兴旺Bet - 马来西亚值得信赖的在线赌场平台",
-      "paragraphs": [
-        "成立于2015年，兴旺Bet是马来西亚首个一体化在线娱乐平台。拥有世界级的游戏系统和最高水平的技术支持团队，致力于为所有用户提供安全、可靠、高质量的游戏服务。",
-        "作为马来西亚领先的在线游戏平台之一，我们提供全面的游戏选择，包括："
-      ],
-      "features": [
-        "体育博彩",
-        "真人娱乐场",
-        "老虎机游戏",
-        "4D彩票等"
-      ],
-      "conclusion": "玩家享受公平、安全、无缝的游戏体验，存取款快速便捷。"
+    "hero": {
+      "title": "在恒旺博彩88尽情游戏",
+      "subtitle": "马来西亚值得信赖的在线娱乐场平台",
+      "description": "加入马来西亚全新的在线娱乐场，专为娱乐、信任和真正便利而打造。",
+      "registerNow": "立即注册",
+      "unlockBonus": "解锁专属奖金",
+      "downloadApp": "下载应用"
     },
-    "affiliateSection": {
-      "becomeText": "立即成为",
-      "brand": "兴旺Bet",
-      "affiliateToday": "代理",
-      "description": "加入HengOngBet官方代理项目，通过推广马来西亚顶级在线赌场平台赚取高额佣金。无论您是经验丰富的营销人员还是初学者，我们的工具、跟踪系统和支持团队都会帮助您成功",
+    "about": {
+      "title": "关于恒旺博彩",
+      "description1": "恒旺博彩是您可靠的",
+      "platformType": "马来西亚一站式在线娱乐场平台。",
+      "description2": "我们提供各种精彩游戏、安全的银行选项和为您需求量身定制的本地化体验。在库拉索游戏许可证GCB的完全许可下，恒旺博彩优先考虑公平游戏、玩家安全和24/7客户支持。",
+      "description3": "无论您是来快速旋转还是在真人桌上试试运气，我们的移动优先平台都能确保每次都有流畅安全的旅程。"
+    },
+    "games": {
+      "title": "探索恒旺博彩的游戏",
+      "description": "真人荷官桌、永不停歇的老虎机和即时4D结果，恒旺博彩是您真钱游戏的一站式目的地。无论您是单独旋转还是现场投注，我们都有适合每个人的游戏。",
+      "slots": {
+        "title": "老虎机游戏",
+        "description": "通过数百个高赔付、移动优化的游戏旋转您的方式。",
+        "providers": "与JILI、Lucky 365、Monkey King、Askmeslot、Microslot和JDB等值得信赖的品牌一起游戏。",
+        "whatToExpected": "期待什么：",
+        "features": [
+          "连锁获胜、倍数和累积奖金",
+          "街机风格和传统3轴选项",
+          "科幻、神话和有趣的卡通主题",
+          "在所有设备上快速加载和流畅运行"
+        ]
+      },
+      "liveCasino": {
+        "title": "真人娱乐场",
+        "description": "从您的手机获得娱乐场楼层的刺激。",
+        "games": "Hot Road、Evolution、Sexy等更多为您带来高清百家乐、龙虎、轮盘和二十一点，配有实时荷官和互动桌台。",
+        "whyPlayersLove": "玩家喜爱的原因：",
+        "features": [
+          "真实荷官互动，24/7",
+          "闪电轮盘、疯狂时间和其他热门格式",
+          "多种语言包括马来语、中文和英语"
+        ],
+        "guarantee": "优质广播和公平游戏保证"
+      },
+      "sports": {
+        "title": "体育博彩",
+        "description": "从足球和篮球到斗鸡和赛马，我们都有覆盖。顶级平台包括Maxbet、SV388和RCB988。",
+        "highlights": "亮点：",
+        "features": [
+          "全球足球联赛现场投注（英超、西甲、世界杯）",
+          "电子竞技、NBA、MLB、羽毛球等赔率",
+          "通过SV388进行马来西亚最受欢迎的斗鸡投注",
+          "通过RCB988即时赛马投注，无需排队，无麻烦"
+        ]
+      },
+      "lottery": {
+        "title": "4D彩票",
+        "description": "小赌注，大奖金，直接从您的手机。",
+        "ekor": "使用Ekor，您可以随时投注4D并获得即时结果更新。",
+        "howItWorks": "工作原理：",
+        "steps": [
+          "选择您的4位数字并下注",
+          "选项包括标准、iBox、大/小",
+          "快速结果和每日开奖跟踪",
+          "支持本地热门如万能、多多、大马彩等"
+        ]
+      },
+      "lookingMore": "寻找更多？",
+      "gamesLink": "/games",
+      "gamesLinkText": "游戏",
+      "exploreMore": "详细探索一切，老虎机、真人娱乐场、体育和4D，全部在一个屋檐下。"
+    },
+    "affiliate": {
+      "becomeText": "成为",
+      "brand": "恒旺博彩",
+      "affiliateToday": "今日代理",
+      "description": "加入恒旺博彩的官方代理计划，通过推广马来西亚顶级在线娱乐场平台赚取高佣金。无论您是经验丰富的营销人员还是刚刚起步，我们的工具、跟踪系统和支持团队都能帮助您成功",
       "benefits": [
         "实时跟踪和报告",
-        "高达50%收入分成",
+        "高达50%的收入分成",
         "每周支付系统",
         "定制推广横幅",
         "Telegram机器人和链接生成器",
-        "专属代理支持",
-        "免费加入",
-        "受到马来西亚数千名代理的信赖"
+        "专门的代理支持",
+        "零成本加入",
+        "受到马来西亚数千代理的信赖"
       ]
     }
   },
   "features": {
+    "header": {
+      "title": "为什么选择恒旺博彩？",
+      "subtitle": "凭借超过10年的行业经验，恒旺博彩已成为马来西亚玩家寻求安全、娱乐和透明度的值得信赖的平台。"
+    },
     "tabs": [
       {
-        "id": "why-choose",
-        "title": "为什么选择兴旺Bet？"
+        "id": "safe-secure",
+        "title": "1. 安全、许可和保障"
       },
       {
-        "id": "games-library",
-        "title": "马来西亚最大的游戏库"
+        "id": "malaysians",
+        "title": "2. 为马来西亚人设计"
       },
       {
-        "id": "secure-rewarding",
-        "title": "经过验证，安全且有回报"
+        "id": "entertainment",
+        "title": "3. 价值驱动的娱乐"
       }
     ],
-    "whyChoose": {
+    "safeSecure": {
+      "description": "我们优先考虑您的安心。",
       "features": [
         {
-          "id": 1,
-          "title": "专家团队",
-          "description": "不断改进游戏和用户体验"
+          "title": "库拉索游戏许可",
+          "description": "我们在国际认可的游戏许可证下运营。"
         },
         {
-          "id": 2,
+          "title": "SSL加密安全",
+          "description": "您的个人和支付数据受到银行级加密保护。"
+        },
+        {
+          "title": "仅公平游戏",
+          "description": "所有游戏都经过认证并使用RNG确保透明度。"
+        },
+        {
           "title": "安全平台",
-          "description": "先进的数据保护加密技术"
+          "description": "建立在现代基础设施上，具有强大的欺诈预防功能。"
         },
         {
-          "id": 3,
-          "title": "24/7 支持",
-          "description": "随时提供帮助"
-        },
-        {
-          "id": 4,
-          "title": "负责任博彩",
-          "description": "促进安全健康的游戏"
-        },
-        {
-          "id": 5,
-          "title": "社区为本",
-          "description": "支持当地福利倡议"
+          "title": "负责任游戏",
+          "description": "帮助您保持控制的工具，包括限制和自我排除。"
         }
       ]
     },
-    "gamesLibrary": {
-      "header": "我们与顶级供应商合作，包括：",
-      "providers": [
-        {
-          "category": "真人娱乐场",
-          "list": "PEGASUS LIVE, CTG855, AE SEXY, ASIA GAMING, EVOLUTION 等"
-        },
-        {
-          "category": "老虎机",
-          "list": "918KISS, PUSSY888, NAGA GAMES, JILI, PLAYTECH 等"
-        },
-        {
-          "category": "体育博彩",
-          "list": "SBOBET, SBOVS, BET33"
-        }
-      ]
-    },
-    "secureRewarding": {
-      "header": "凭借在行业中超过10年的经验，兴旺Bet以以下特点而闻名：",
+    "malaysians": {
+      "description": "从头开始为本地玩家打造。",
       "features": [
-        "游戏公平性",
-        "SSL加密安全",
-        "定期存款奖金和免费信贷优惠",
-        "私密、稳定、可信的环境"
+        {
+          "title": "移动优先设计",
+          "description": "针对Android和iOS优化，在从Maxis到Unifi的任何网络上都流畅运行。"
+        },
+        {
+          "title": "本地化支持",
+          "description": "通过聊天、WhatsApp或Telegram提供英语、马来语和中文24/7协助。"
+        },
+        {
+          "title": "马来西亚专注的促销",
+          "description": "农历新年、开斋节和独立日主题活动，以及真正的免费信贷优惠。"
+        },
+        {
+          "title": "社区承诺",
+          "description": "我们积极支持当地福利倡议和企业社会责任努力。"
+        }
       ]
     },
-    "platform": {
-      "title": "随时随地畅玩",
-      "description": "通过兴旺Bet手机应用（支持iOS和Android），您可以随时随地享受所有喜爱的游戏——从老虎机和体育博彩到真人荷官和4D游戏。立即加入兴旺Bet，体验马来西亚最可靠、最令人兴奋的在线游戏平台！"
+    "entertainment": {
+      "description": "更聪明地游戏，而不是更努力。",
+      "features": [
+        {
+          "title": "定期奖金和免费信贷",
+          "description": "因存款、推荐和重新加载而获得奖励。"
+        },
+        {
+          "title": "专家团队",
+          "description": "不断改进我们的游戏和功能以更好地为您服务。"
+        },
+        {
+          "title": "游戏多样性",
+          "description": "从4D到老虎机、体育博彩和真人娱乐场，一个平台上有1000多个游戏。"
+        },
+        {
+          "title": "稳定、无延迟体验",
+          "description": "即使在高峰时段也能不间断地游戏。"
+        }
+      ]
+    },
+    "popularGames": {
+      "title": "恒旺博彩热门游戏",
+      "games": [
+        "Super Ace",
+        "Boxing King",
+        "Panther Moon",
+        "Crazy 777",
+        "FaFaFa"
+      ]
     }
   },
   "mobileGameSec": {
-      "title": "热门游戏"
-    },
+    "title": "热门游戏"
+  },
   "gameSec": {
     "title": "热门游戏",
     "categories": {
@@ -274,9 +349,9 @@
     },
     "featured_games": {
       "iceland": "冰岛",
-      "panther_moon": "黑豹之月",
+      "panther_moon": "豹月",
       "fa_fa_fa": "发发发",
-      "sugar_bliss": "甜蜜极乐",
+      "sugar_bliss": "糖果极乐",
       "super_ace": "超级王牌"
     },
     "providers": {
@@ -287,15 +362,15 @@
       "pragmatic_play": "Pragmatic Play"
     },
     "regular_games": {
-      "lucky_365": "幸运365",
+      "lucky_365": "Lucky 365",
       "askmeslot": "Askmeslot",
       "jdb": "JDB",
-      "monkey_king": "齐天大圣",
-      "hot_road": "火热之路",
+      "monkey_king": "Monkey King",
+      "hot_road": "Hot Road",
       "maxbet": "Maxbet",
       "sv388": "Sv388",
       "rcb988": "Rcb988",
-      "jili": "吉利",
+      "jili": "Jili",
       "microslot": "Microslot",
       "evolution": "Evolution",
       "sexy": "Sexy",
@@ -311,46 +386,46 @@
   },
   "how_it_works": {
     "header": {
-      "subtitle": "欢迎来到兴旺Bet - 值得信赖的在线赌场",
-      "title": "开始游戏和赚钱"
+      "subtitle": "欢迎来到恒旺博彩 - 值得信赖的在线娱乐场",
+      "title": "如何开始在恒旺博彩游戏"
     },
     "steps": {
       "step1": {
-        "title": "创建账户",
-        "description": "点击立即加入，填写您的登录信息"
+        "title": "注册您的账户",
+        "description": "使用您的手机号码并创建安全密码。注册不到1分钟。"
       },
       "step2": {
-        "title": "充值",
-        "description": "使用现金或加密货币转账进行首次充值"
+        "title": "下载应用",
+        "description": "获取我们的Android或iOS移动应用以获得最佳体验。避免第三方链接。"
       },
       "step3": {
-        "title": "开始获胜",
-        "description": "在您最喜欢的游戏中开始获胜"
+        "title": "充值您的钱包",
+        "description": "使用FPX、电子钱包或其他安全方式即时存款。"
       },
       "step4": {
-        "title": "获得奖励",
-        "description": "别忘了领取您的奖金"
+        "title": "开始游戏",
+        "description": "选择您最喜欢的老虎机、真人娱乐场或体育博彩游戏，开始享受实时娱乐并获得奖励。"
       }
     },
     "alt_text": {
       "account_icon": "账户图标",
-      "deposit_icon": "充值图标",
+      "deposit_icon": "存款图标",
       "winning_icon": "获胜图标",
       "reward_icon": "奖励图标"
     }
   },
   "app_guide": {
     "header": {
-      "subtitle": "全新兴旺Bet应用程序",
-      "title": "高级游戏与支持"
+      "subtitle": "全新恒旺博彩应用",
+      "title": "优质游戏和支持"
     },
     "tabs": {
       "android": "安卓",
       "ios": "苹果",
-      "desktop": "桌面"
+      "desktop": "桌面版"
     },
     "instructions": {
-      "title": "使用说明",
+      "title": "说明",
       "step": "步骤"
     },
     "navigation": {
@@ -360,17 +435,17 @@
     "steps": {
       "android": {
         "step1": "点击地址栏右上角的点状设置图标。",
-        "step2": "点击\"添加到主屏幕\"以弹出HENG ONG BET应用程序的安装提示。",
-        "step3": "点击安装以拥有HENG ONG BET应用程序，启动并享受您的游戏！"
+        "step2": "点击添加到主屏幕以弹出恒旺博彩应用的安装。",
+        "step3": "点击安装以拥有恒旺博彩应用，启动并享受您的游戏！"
       },
       "ios": {
         "step1": "点击地址栏底部的分享按钮。",
-        "step2": "点击\"添加到主屏幕\"以弹出HENG ONG BET应用程序的安装提示。",
-        "step3": "点击添加以拥有HENG ONG BET应用程序，启动并享受您的游戏！"
+        "step2": "点击添加到主屏幕以弹出恒旺博彩应用的安装。",
+        "step3": "点击添加以拥有恒旺博彩应用，启动并享受您的游戏！"
       },
       "desktop": {
-        "step1": "点击地址栏右侧的桌面下载按钮以弹出HENG ONG BET应用程序的安装提示。",
-        "step2": "点击安装以拥有HENG ONG BET应用程序，启动并享受您的游戏！"
+        "step1": "点击地址栏右侧的桌面下载按钮以弹出恒旺博彩应用的安装。",
+        "step2": "点击安装以拥有恒旺博彩应用，启动并享受您的游戏！"
       }
     },
     "alt_text": {
@@ -379,26 +454,26 @@
   },
   "why_section": {
     "header": {
-      "prefix": "为什么选择",
-      "brand": "兴旺Bet",
+      "prefix": "为什么玩家喜爱",
+      "brand": "恒旺博彩",
       "suffix": "？"
     },
     "cards": {
       "card1": {
-        "title": "兴旺Bet有何不同？",
-        "description": "与依赖代理商进行存取款的传统在线赌场不同，兴旺Bet直接连接您——无中间商参与。享受即时交易、内置社交和电子钱包功能，以及独特的佣金分享系统，让您在游戏的同时赚取收益。"
+        "title": "恒旺博彩有什么不同？",
+        "description": "与依赖代理进行存款和提款的传统在线娱乐场不同，恒旺博彩直接连接您——没有中间人参与。享受即时交易、内置社交和电子钱包功能，以及独特的佣金分享系统，让您在游戏时赚钱。"
       },
       "card2": {
-        "title": "最值得信赖的赌场",
-        "description": "您的隐私和安全是我们的首要任务。兴旺Bet使用行业标准保护来保护您的个人数据，严格遵循我们的隐私政策，确保安全可信的游戏环境。"
+        "title": "最值得信赖的娱乐场",
+        "description": "您的隐私和安全是我们的首要任务。恒旺博彩使用行业标准保护来保护您的个人数据，并严格遵循我们的隐私政策，确保安全可信的游戏环境。"
       },
       "card3": {
         "title": "简单快速注册",
-        "description": "创建您的兴旺Bet账户，访问1000+游戏，享受专属优惠，并及时了解最新优惠信息。"
+        "description": "创建您的恒旺博彩账户以访问1000多个游戏，享受独家促销，并及时了解最新优惠。"
       },
       "card4": {
         "title": "在线支持",
-        "description": "我们的兴旺Bet支持团队通过在线聊天、电话和电子邮件24/7为您提供服务，快速帮助您解决任何问题。"
+        "description": "我们的恒旺博彩支持团队通过实时聊天、电话和电子邮件24/7为您提供服务，快速协助您解决任何问题。"
       }
     },
     "alt_text": {
@@ -410,27 +485,26 @@
   },
   "provider_showcase": {
     "global_header": {
-      "brand": "兴旺Bet",
-      "title": "我们是全球性的",
-      "subtitle": "兴旺Bet现正向全球扩展",
-      "description": "兴旺Bet现已在新加坡推出，我们才华横溢的全球团队支持马来西亚和新加坡的发展。是什么团结了我们？对提供最佳游戏体验的热情。我们还积极扩展到泰国、越南、印度尼西亚、柬埔寨、英国和美国。"
+      "title": "恒旺博彩走向全球",
+      "description": "现在在新加坡可用，恒旺博彩由致力于提供世界级游戏体验的全球团队支持。我们正在东南亚及其他地区积极发展，包括泰国、越南、印度尼西亚、柬埔寨、英国和美国。",
+      "cta": "加入我们的成长，成为最好的在线娱乐场平台！"
     },
     "providers": {
       "slots": {
         "name": "老虎机",
-        "description": "兴旺Bet提供由MEGA888、PUSSY888、VPOWER、NAGA GAMES、JILI等顶级供应商支持的各种在线老虎机游戏。凭借先进的技术、精美的图形和身临其境的音效，我们的老虎机提供令人兴奋的游戏体验和巨大的获胜潜力。"
+        "description": "恒旺博彩提供由MEGA888、PUSSY888、PUSSY888、VPOWER、NAGA GAMES、JILI等顶级供应商提供的各种在线老虎机游戏。凭借先进技术、令人惊叹的图形和沉浸式音效，我们的老虎机提供令人兴奋的游戏玩法和巨大的获胜潜力。"
       },
       "sports": {
         "name": "体育博彩",
-        "description": "兴旺Bet通过MAXBET、SBOBET和RCB788等顶级平台提供完整和专业的体育博彩体验。投注足球、篮球、网球、棒球和冰球等热门运动，提供让球、大小球、单双数和半场投注等多种选择。"
+        "description": "恒旺博彩通过MAXBET、SBOBET和RCB788等顶级平台提供完整专业的体育博彩体验。投注足球、篮球、网球、棒球和冰球等热门体育项目，提供让分、大小球、单双和半场投注等各种选项。"
       },
       "lottery": {
         "name": "4D彩票",
-        "description": "兴旺Bet为您带来最激动人心的4D彩票游戏，每天都有机会赢得大奖。享受直选、组选、万能、大马彩、多多和每日万龙等热门玩法。高赔率和多种投注选项，您的获胜机会比以往任何时候都大。"
+        "description": "恒旺博彩为您带来最激动人心的4D彩票游戏，每天都有机会赢得大奖。享受直选、组选、万能、大马彩、多多和每日大龙开奖等热门格式。凭借高赔率和多种投注选项，您的获胜机会比以往任何时候都大。"
       },
       "live_casino": {
         "name": "真人娱乐场",
-        "description": "兴旺Bet通过PGCN88 LIVE、AE SEXY和EVOLUTION等顶级供应商为您带来在家即可享受的实时真人娱乐场游戏。享受流畅的高清直播、专业荷官的公平游戏以及快速安全的交易——全部集中在一个值得信赖的平台上。"
+        "description": "恒旺博彩通过PGCN88 LIVE、AE SEXY和EVOLUTION等顶级供应商为您在家中带来实时真人娱乐场游戏。享受流畅的高清直播、专业荷官的公平游戏以及快速安全的交易——全部在一个值得信赖的平台上。"
       }
     },
     "alt_text": {
@@ -438,17 +512,24 @@
       "sports": "体育博彩供应商",
       "lottery": "4D彩票供应商",
       "live_casino": "真人娱乐场供应商"
+    },
+    "bottom_section": {
+      "title": "准备体验马来西亚真正的在线游戏了吗？",
+      "description_line1": "无论您喜欢老虎机、真人荷官、体育博彩还是4D，<strong>恒旺博彩88</strong>都在一个安全、移动友好的平台上拥有一切。",
+      "description_line2": "享受快速提款、真正的免费信贷和您语言的支持，随时随地。",
+      "description_line3": "今天就在恒旺博彩88注册，按您的方式游戏。",
+      "register_btn": "今日注册"
     }
   },
   "testimonials": {
     "header": {
       "title": "用户评价",
-      "subtitle": "真实故事。真实胜利。真实刺激。",
+      "subtitle": "真实故事。真实获胜。真实刺激。",
       "rating": "4.8/5",
-      "review_count": "基于1200条评价"
+      "review_count": "基于1200条评论"
     },
     "control": {
-      "title": "我们的客户评价"
+      "title": "我们的客户在说什么"
     },
     "navigation": {
       "previous": "上一个",
@@ -468,38 +549,34 @@
   "faqSec": {
     "header": {
       "label": "常见问题",
-      "title": "兴旺Bet - 您需要了解的一切",
-      "description": "有疑问吗？我们收集了玩家最常见的问题，帮助您在兴旺Bet顺利开始游戏之旅",
+      "title": "恒旺博彩 - 您需要知道的一切",
+      "description": "有问题吗？我们汇编了玩家最常见的查询，帮助您在恒旺博彩上顺利开始",
       "button_text": "查看所有常见问题"
     },
     "questions": {
       "q1": {
-        "question": "如何在兴旺Bet注册？",
-        "answer": "只需点击\"注册\"按钮，填写您的详细信息，并验证您的手机号码即可开始"
+        "question": "恒旺博彩88在马来西亚合法吗？",
+        "answer": "恒旺博彩88在有效的库拉索游戏许可证（GCB）下运营，具有严格的玩家安全和负责任游戏措施。玩家有责任决定法律界限。"
       },
       "q2": {
-        "question": "兴旺Bet合法且安全使用吗？",
-        "answer": "是的，兴旺Bet在适当的许可下运营，并使用先进的安全措施来保护您的数据和交易。我们完全遵守所有适用的法规。"
+        "question": "如何注册恒旺博彩88账户？",
+        "answer": "只需点击\"注册\"，输入您的手机号码和密码，验证您的详细信息，即可立即开始游戏。"
       },
       "q3": {
-        "question": "我如何存款或提款？",
-        "answer": "您可以通过各种安全的支付方式存款和提款，包括银行转账、电子钱包和加密货币。所有交易都快速安全地处理。"
+        "question": "我可以在恒旺博彩88上玩什么游戏？",
+        "answer": "您可以在一个平台上享受1000多个老虎机、真人娱乐场游戏、体育博彩和4D彩票。"
       },
       "q4": {
-        "question": "兴旺Bet有哪些游戏可供选择？",
-        "answer": "我们提供各种游戏，包括真人娱乐场游戏、老虎机、体育博彩、彩票游戏等。我们的平台拥有行业顶级供应商的游戏。"
+        "question": "如何存款和提款？",
+        "answer": "通过FPX或电子钱包存款以获得即时充值，并在应用内提款，审批时间快。"
       },
       "q5": {
-        "question": "有欢迎奖金或促销活动吗？",
-        "answer": "有的！我们为新玩家提供丰厚的欢迎奖金，以及持续的促销活动、忠诚度奖励和特别奖金。请查看我们的促销页面了解最新优惠。"
+        "question": "恒旺博彩88的在线交易安全吗？",
+        "answer": "是的，所有交易都经过SSL加密，游戏都经过RNG认证以确保公平游戏。"
       },
       "q6": {
-        "question": "如果我忘记了登录详情该怎么办？",
-        "answer": "如果您忘记了登录详情，只需在登录页面点击\"忘记密码\"链接。您可以使用注册的电子邮件或手机号码重置密码。"
-      },
-      "q7": {
-        "question": "兴旺Bet有手机应用程序吗？",
-        "answer": "有的，我们有适用于iOS和Android设备的手机应用程序。您可以从App Store或Google Play商店下载，或直接从浏览器访问我们的移动优化网站。"
+        "question": "如何在恒旺博彩88注册？",
+        "answer": "点击\"注册\"，填写您的手机号码和密码，验证您的账户，您就可以开始游戏了。"
       }
     },
     "alt_text": {
@@ -509,59 +586,64 @@
   },
   "affiliate": {
     "brand_section": {
-      "title1": "加入成为",
-      "brand": "兴旺Bet",
-      "title2": "代理、股东或会员",
-      "tagline": "无输赢担忧 · 灵活佣金 · 自动利润分配"
+      "title": "加入<span style='color: #F2B240;'>恒旺博彩88</span>代理计划",
+      "tagline": "无输赢担忧 · 灵活佣金 · 自动利润分配",
+      "description_paragraph": "准备将您的网络转化为盈利业务吗？无论您是休闲玩家、高级推广者还是有抱负的股东，<strong style='color: #F2B240;'>恒旺博彩88</strong>提供灵活的代理系统，您可以控制如何赚钱。"
+    },
+    "how_it_works": {
+      "title": "工作原理"
     },
     "join_button": "加入我们",
     "steps": {
       "step": "步骤",
       "step1": {
         "number": "1",
-        "title": "注册"
+        "title": "注册",
+        "description": "注册为代理、会员或股东，无费用或义务。"
       },
       "step2": {
         "number": "2",
-        "title": "推广"
+        "title": "推广",
+        "description": "通过社交媒体、WhatsApp或社区分享您的推荐链接。"
       },
       "step3": {
         "number": "3",
-        "title": "赚钱"
+        "title": "赚钱",
+        "description": "享受实时跟踪、自动分配和每周佣金支付。"
       }
     },
     "commission_section": {
-      "title": "双重佣金模式",
-      "description": "随时切换。完全控制您的赚钱方式。",
+      "title": "双重佣金模式：选择您的赚钱方式",
+      "description": "完全控制您的代理收入。您可以<strong>随时在模式之间切换</strong>，根据您的目标。",
       "models": {
         "revenue_share": {
           "title": "收入分成",
-          "description": "从玩家损失中赚取百分比"
+          "description": "从玩家损失中赚取百分比，长期、可扩展的被动收入。"
         },
         "cpa_model": {
           "title": "CPA模式",
-          "description": "每个合格玩家固定金额"
+          "description": "每个合格玩家赚取固定金额，适合快速转换的推广者。"
         }
       }
     },
     "levels_section": {
-      "title": "用户等级与返利系统",
+      "title": "用户级别和返水系统",
       "table": {
         "headers": {
-          "user_level": "用户等级",
+          "user_level": "用户级别",
           "benefits": "福利",
-          "rebate": "返利"
+          "rebate": "返水"
         },
         "levels": {
           "shareholder": {
             "name": "股东",
-            "benefits": "基于玩家总投注量 + 输赢（对战 + 奖池）",
+            "benefits": "基于总投注量 + 输赢（斗鸡和台球）",
             "rebate": "-----"
           },
           "referrer": {
             "name": "推荐人",
-            "benefits": "玩家投注的0.3%",
-            "rebate": "自己投注的0.5%"
+            "benefits": "从玩家投注中赚取0.3%",
+            "rebate": "自己投注0.5%"
           },
           "player": {
             "name": "玩家",
@@ -569,12 +651,13 @@
             "rebate": "每次投注0.5%"
           }
         }
-      }
+      },
+      "description": "没有令人困惑的条件。您根据您的角色自动赚钱。"
     },
     "features": {
       "high_commission": {
         "title": "高佣金",
-        "description": "高达50%收入分成"
+        "description": "高达50%的收入分成"
       },
       "real_time_tracking": {
         "title": "实时跟踪",
@@ -585,7 +668,7 @@
         "description": "快速可靠的付款"
       },
       "dedicated_support": {
-        "title": "专属支持",
+        "title": "专门支持",
         "description": "24/7代理协助"
       },
       "marketing_tools": {
@@ -593,13 +676,24 @@
         "description": "专业横幅和链接"
       }
     },
+    "who_should_join": {
+      "title": "谁应该加入？",
+      "items": {
+        "online_marketers": "在线营销人员",
+        "social_media_influencers": "社交媒体影响者",
+        "telegram_whatsapp_admins": "Telegram/WhatsApp群组管理员",
+        "forum_owners": "论坛所有者或博主",
+        "gaming_enthusiasts": "在线游戏爱好者的朋友",
+        "earn_from_home": "任何想在家赚钱的人"
+      },
+      "description": "您不需要成为技术专家或拥有网站，只需要有一个网络。"
+    },
     "cta_section": {
-      "title": "最终行动号召",
-      "subtitle": "加入<span style=\"color: #F2B240;\">兴旺Bet</span>代理网络，掌控您的财务未来！",
-      "description": "今天就开始赚钱。您的利润，您的控制。",
+      "title": "与我们一起掌控您的财务未来",
+      "subtitle": "今天就加入<span style=\"color: #F2B240; font-weight: bold\">恒旺博彩代理网络</span>！做自己的老板。每周获得报酬。建立终身收入。",
+      "description": "您的利润。您的规则。您的控制。",
       "buttons": {
-        "register": "注册",
-        "support": "客户支持"
+        "register": "注册"
       }
     },
     "alt_text": {
@@ -608,68 +702,65 @@
   },
   "supported_games": {
     "title": "支持的游戏类型",
+    "subtitle": "推广玩家已经喜爱的各种游戏：",
     "games": {
       "lottery": {
         "title": "彩票",
-        "subtitle": "(4D, Lucky, Magnum 等)"
+        "subtitle": "4D、幸运、万能等"
       },
       "sports": {
         "title": "体育",
-        "subtitle": "(全球赛事，实时赔率)"
+        "subtitle": "全球比赛实时赔率"
       },
       "slots": {
         "title": "老虎机",
-        "subtitle": "(马来西亚游戏，亚洲数字环3)"
+        "subtitle": "马来西亚游戏，亚洲第三环"
       },
       "horse_racing": {
         "title": "赛马",
-        "subtitle": "(全速在线赛马)"
+        "subtitle": "逼真的全速在线赛事"
       },
       "live_casino": {
         "title": "真人娱乐场",
-        "subtitle": "(真人荷官与逼真的发牌游戏)"
+        "subtitle": "真实荷官和沉浸式游戏室"
       },
       "cockfighting": {
         "title": "斗鸡",
-        "subtitle": "(现场直播，真实投注)"
+        "subtitle": "现场行动，真实投注"
       }
     }
   },
   "why_choose_us": {
-    "title": "为什么选择我们？",
+    "title": "为什么成为恒旺博彩88代理？",
     "features": {
       "high_commission": {
         "title": "高佣金",
-        "description": "高达50%收入分成，费率具有竞争力"
+        "description": "高达<strong>50%的收入分成</strong>，无风险条款"
       },
       "custom_solutions": {
         "title": "定制解决方案",
-        "description": "为成功量身定制的代理计划"
+        "description": "量身定制的代理策略和灵活结构"
       },
       "marketing_tools": {
         "title": "营销工具",
-        "description": "专业横幅和跟踪链接"
+        "description": "访问横幅、跟踪链接和活动支持"
       },
       "dedicated_support": {
-        "title": "专属支持",
-        "description": "24/7代理协助和指导"
+        "title": "专门支持",
+        "description": "24/7代理协助和实时指导"
       },
       "weekly_payouts": {
         "title": "每周支付",
-        "description": "快速可靠的付款处理"
-      },
-      "real_time_tracking": {
-        "title": "实时跟踪",
-        "description": "实时监控您的收益和表现"
+        "description": "快速、自动利润分配。无延迟"
       }
     }
   },
   "promotion_section": {
     "header": {
-      "title_prefix": "丰富促销活动尽在",
-      "brand": "兴旺Bet",
-      "subtitle": "解锁专属奖金 & 最大化您的胜利",
-      "description": "在兴旺Bet，我们为您带来马来西亚和新加坡终极在线游戏促销平台。我们的专属奖金专为奖励您的每一次投注而量身定制——从丰厚的返现优惠到锦标赛相关奖金以及令人兴奋的兴旺奖金。"
+      "title_prefix": "恒旺博彩",
+      "brand": "优惠盛宴",
+      "subtitle": "解锁专属奖金，最大化您的获胜",
+      "description": "在恒旺博彩，我们为您带来马来西亚和新加坡在线游戏促销的终极平台。我们的专属奖金专为奖励您的每次投注而量身定制——从慷慨的返现优惠到锦标赛相关奖金和令人兴奋的恒旺奖金。"
     },
     "promotions": {
       "promo1": {
@@ -678,15 +769,15 @@
         "bonus_subtitle": "获得最高200的奖金",
         "title": "充值奖金68%",
         "description": "获得最高200的奖金",
-        "button_text": "邀请立即赚取"
+        "button_text": "邀请并立即赚钱"
       },
       "promo2": {
-        "bonus_label": "充值返利",
+        "bonus_label": "充值返水",
         "bonus_amount": "0.5%",
         "bonus_subtitle": "无限制奖金",
-        "title": "充值返利0.5%",
+        "title": "充值返水0.5%",
         "description": "无限制奖金",
-        "button_text": "分享赢得更多"
+        "button_text": "分享并赢得更多"
       },
       "promo3": {
         "bonus_label": "充值奖金",
@@ -697,20 +788,20 @@
         "button_text": "立即开始推荐"
       },
       "promo4": {
-        "bonus_label": "每日返利高达",
+        "bonus_label": "每日返水高达",
         "bonus_amount": "3%",
         "bonus_subtitle": "玩得越多，赚得越多！",
-        "title": "每日返利高达3%！",
+        "title": "每日返水高达3%！",
         "description": "玩得越多，赚得越多！",
-        "button_text": "获取您的返利"
+        "button_text": "获取您的返水"
       },
       "promo5": {
-        "bonus_label": "推荐返利高达",
+        "bonus_label": "推荐返水高达",
         "bonus_amount": "10%",
-        "bonus_subtitle": "邀请越多，下注越多！",
-        "title": "推荐返利高达10%！",
-        "description": "邀请越多，下注越多，返利越多！",
-        "button_text": "获取您的返利"
+        "bonus_subtitle": "邀请越多，投注越多！",
+        "title": "推荐返水高达10%！",
+        "description": "邀请越多，投注越多，获得的返水越多！",
+        "button_text": "获取您的返水"
       }
     },
     "mobile_promotions": {
@@ -720,7 +811,7 @@
       },
       "promo2": {
         "alt": "手机促销2",
-        "title": "充值返利0.5%"
+        "title": "充值返水0.5%"
       },
       "promo3": {
         "alt": "手机促销3",
@@ -728,25 +819,25 @@
       },
       "promo4": {
         "alt": "手机促销4",
-        "title": "每日返利高达3%"
+        "title": "每日返水高达3%"
       },
       "promo5": {
         "alt": "手机促销5",
-        "title": "推荐返利高达10%"
+        "title": "推荐返水高达10%"
       }
     }
   },
   "app": {
-    "title": "Heng Ong Bet 程序",
-    "subtitle": "适用于 IOS 和 Android",
-    "iosDownload": "iOS 下载",
-    "androidDownload": "Android 下载",
-    "affiliateText": "注册并加入我们的联盟计划！",
+    "title": "恒旺博彩应用",
+    "subtitle": "适用于iOS和安卓",
+    "iosDownload": "iOS下载",
+    "androidDownload": "安卓下载",
+    "affiliateText": "注册并加入我们的代理计划！",
     "signUpButton": "立即注册！",
     "features": {
-      "exclusive": "独家",
+      "exclusive": "专属",
       "bonus": "奖金",
-      "affiliate": "联盟",
+      "affiliate": "代理",
       "program": "计划",
       "instant": "即时",
       "payment": "支付",
@@ -756,53 +847,191 @@
   },
   "guide": {
     "tabs": {
-      "android": "Android",
-      "ios": "iOS",
-      "desktop": "桌面"
+      "android": "安卓",
+      "ios": "苹果",
+      "desktop": "桌面版"
     },
     "titles": {
-      "androidDownload": "Android 下载",
-      "iosDownload": "iOS 下载",
-      "desktopDownload": "桌面下载"
+      "androidDownload": "安卓下载",
+      "iosDownload": "苹果下载",
+      "desktopDownload": "桌面版下载"
     },
     "steps": {
       "step": "步骤",
       "android": {
         "step1": {
-          "title": "步骤 1",
+          "title": "步骤1",
           "description": "点击地址栏右上角的点状设置图标。"
         },
         "step2": {
-          "title": "步骤 2",
-          "description": "点击添加到主屏幕以弹出 HENG ONG BET 应用程序的安装。"
+          "title": "步骤2",
+          "description": "点击添加到主屏幕以弹出恒旺博彩应用的安装。"
         },
         "step3": {
-          "title": "步骤 3",
-          "description": "点击安装以拥有 HENG ONG BET 应用程序，启动并享受您的游戏！"
+          "title": "步骤3",
+          "description": "点击安装以拥有恒旺博彩应用，启动并享受您的游戏！"
         }
       },
       "ios": {
         "step1": {
-          "title": "步骤 1",
+          "title": "步骤1",
           "description": "点击地址栏底部的分享按钮。"
         },
         "step2": {
-          "title": "步骤 2",
-          "description": "点击添加到主屏幕以弹出 HENG ONG BET 应用程序的安装。"
+          "title": "步骤2",
+          "description": "点击添加到主屏幕以弹出恒旺博彩应用的安装。"
         },
         "step3": {
-          "title": "步骤 3",
-          "description": "点击添加以拥有 HENG ONG BET 应用程序，启动并享受您的游戏！"
+          "title": "步骤3",
+          "description": "点击添加以拥有恒旺博彩应用，启动并享受您的游戏！"
         }
       },
       "desktop": {
         "step1": {
-          "title": "步骤 1",
-          "description": "点击地址栏右侧的桌面下载按钮以弹出 HENG ONG BET 应用程序的安装。"
+          "title": "步骤1",
+          "description": "点击地址栏右侧的桌面下载按钮以弹出恒旺博彩应用的安装。"
         },
         "step2": {
-          "title": "步骤 2",
-          "description": "点击安装以拥有 HENG ONG BET 应用程序，启动并享受您的游戏！"
+          "title": "步骤2",
+          "description": "点击安装以拥有恒旺博彩应用，启动并享受您的游戏！"
+        }
+      }
+    }
+  },
+  "download": {
+    "why_download": {
+      "title": "恒旺博彩应用下载（2025）",
+      "title2": "为什么下载恒旺博彩APK？",
+      "description": "下载最新的恒旺博彩iOS和安卓移动应用，安全、无缝，专为马来西亚玩家打造。<br>享受专属奖金、即时支付和24/7访问老虎机、体育博彩、4D和真人娱乐场游戏。",
+      "features": {
+        "mobile_first": "为安卓和iPhone打造的快速、移动优先体验",
+        "one_tap_login": "一键登录，即时访问您的钱包",
+        "exclusive_promotions": "专属应用内促销和代理工具",
+        "secure_updates": "安全更新，无第三方APK"
+      },
+      "tagline": "恒旺博彩88 &#124; 下载安卓APK &#124; 免费iOS iPhone &#124; 最新2025应用版本"
+    },
+    "steps": {
+      "title": "如何在安卓上安装恒旺博彩应用",
+      "step1": "步骤1",
+      "step1Description": "点击浏览器窗口右上角的<strong>三点菜单</strong>。",
+      "step2": "步骤2",
+      "step2Description": "选择<strong>\"添加到主屏幕\"</strong>。",
+      "step3": "步骤3",
+      "step3Description": "点击<strong>\"安装\"</strong>保存应用。启动并享受！",
+      "ios_title": "如何在iOS上安装恒旺博彩应用",
+      "ios_step1": "步骤1",
+      "ios_step1Description": "点击上面的<strong>\"iOS下载\"</strong>按钮或扫描二维码。",
+      "ios_step2": "步骤2",
+      "ios_step2Description": "出现提示时，点击弹出窗口上的<strong>\"安装\"</strong>。",
+      "ios_step3": "步骤3",
+      "ios_step3Description": "下载完成后，返回主屏幕并打开应用。",
+      "ios_step4": "步骤4",
+      "ios_step4Description": "登录并享受完整的移动娱乐场体验。"
+    },
+    "start_playing": {
+      "title": "立即开始游戏",
+      "description": "下载恒旺博彩应用并享受完整访问：",
+      "games": {
+        "slots": "来自JILI、Monkey King、Askmeslot等的1000多个老虎机游戏",
+        "live_casino": "包括Sexy、Evolution和Big Gaming的精彩真人娱乐场",
+        "sports_racing": "赛马、SV388斗鸡和全球体育博彩",
+        "lottery": "通过Ekor的4D彩票结果",
+        "real_time": "实时存款、提款和返水，无限刺激。"
+      }
+    },
+    "benefits": {
+      "title": "移动游戏与桌面游戏的好处",
+      "table": {
+        "headers": {
+          "feature": "功能",
+          "app": "恒旺博彩应用",
+          "website": "网站（桌面/移动）"
+        },
+        "rows": {
+          "touchscreen": {
+            "feature": "触屏导航",
+            "app": "✅",
+            "website": "❌"
+          },
+          "biometric": {
+            "feature": "一键生物识别登录",
+            "app": "✅",
+            "website": "❌"
+          },
+          "notifications": {
+            "feature": "推送通知",
+            "app": "✅",
+            "website": "❌"
+          },
+          "exclusive_promotions": {
+            "feature": "专属应用内促销",
+            "app": "✅",
+            "website": "❌"
+          },
+          "home_screen": {
+            "feature": "主屏幕快捷访问",
+            "app": "✅",
+            "website": "❌"
+          },
+          "rebate_alerts": {
+            "feature": "实时返水提醒",
+            "app": "✅",
+            "website": "❌"
+          },
+          "affiliate_tools": {
+            "feature": "仅限应用的代理工具",
+            "app": "✅",
+            "website": "❌"
+          },
+          "gameplay": {
+            "feature": "更流畅的游戏体验",
+            "app": "✅",
+            "website": "⚠️（依赖浏览器）"
+          },
+          "offline_preview": {
+            "feature": "离线游戏预览支持",
+            "app": "✅",
+            "website": "❌"
+          },
+          "wallet_integration": {
+            "feature": "内置钱包集成",
+            "app": "✅",
+            "website": "⚠️（需要手动访问）"
+          }
+        }
+      }
+    },
+    "safety": {
+      "title": "恒旺博彩应用下载安全吗？",
+      "description": "绝对安全。恒旺博彩以玩家安全为首要任务。所有交易都受到<strong>AES-256加密</strong>保护，这是银行使用的相同标准，确保您的钱包、登录凭据和个人数据保持安全。该应用还支持<strong>基于设备的登录提醒</strong>和<strong>可选的双因素认证（2FA）</strong>以防止未经授权的访问。重要的是，恒旺博彩在安装过程中不会请求不必要的权限，不访问您的相机、麦克风或个人文件。这使其成为马来西亚目前<strong>最注重隐私的移动娱乐场应用</strong>之一。"
+    },
+    "faq": {
+      "title": "关于恒旺博彩应用下载的常见问题",
+      "items": {
+        "safe": {
+          "question": "恒旺博彩应用下载安全吗？",
+          "answer": "是的。始终使用恒旺博彩提供的官方下载链接，确保您的APK或iOS文件安全无恶意软件。"
+        },
+        "both_platforms": {
+          "question": "我可以在安卓和iPhone上都安装恒旺博彩吗？",
+          "answer": "绝对可以。该应用支持安卓（APK）和iOS设备，提供流畅的移动优先体验。"
+        },
+        "latest_apk": {
+          "question": "我在哪里可以获得恒旺博彩的最新APK版本？",
+          "answer": "您可以从我们官方的安卓或iOS下载按钮或此页面上的二维码下载最新的2025 APK。"
+        },
+        "permissions": {
+          "question": "我需要允许特殊权限来安装应用吗？",
+          "answer": "对于安卓，您可能需要在设置中启用\"允许未知来源安装\"。iOS用户只需点击\"安装\"并按照提示操作。"
+        },
+        "games_access": {
+          "question": "我可以在应用上访问什么游戏？",
+          "answer": "一切，包括老虎机游戏、体育博彩、真人娱乐场、斗鸡和4D结果。所有功能都完全针对应用优化。"
+        },
+        "app_promotions": {
+          "question": "有仅限应用的促销或奖金吗？",
+          "answer": "是的。应用用户可以访问网站上没有的专属免费信贷、返水提醒和更快的代理工具。"
         }
       }
     }
@@ -811,7 +1040,7 @@
     "tabs": {
       "all": "全部",
       "slots": "老虎机",
-      "casino": "赌场",
+      "casino": "娱乐场",
       "sports": "体育",
       "lottery": "彩票"
     },
@@ -819,8 +1048,8 @@
       "lucky365": "Lucky 365",
       "askmeslot": "Askmeslot",
       "jdb": "JDB",
-      "monkeyKing": "猴王",
-      "hotRoad": "热门之路",
+      "monkeyKing": "Monkey King",
+      "hotRoad": "Hot Road",
       "maxbet": "Maxbet",
       "sv388": "Sv388",
       "rcb988": "Rcb988",
@@ -837,16 +1066,133 @@
       "gameImage": "游戏图片"
     },
     "actions": {
-      "clickToPlay": "点击玩 {gameName}"
+      "clickToPlay": "点击游戏{gameName}"
+    },
+    "content": {
+      "title": "游戏",
+      "slots": {
+        "title": "老虎机",
+        "description": "与马来西亚最受欢迎的<strong>在线老虎机</strong>供应商一起旋转、获胜并享受不间断的动作。<br><br>从经典的3轴机器到电影级奖金丰富的冒险，恒旺博彩在一个地方为您带来最好的老虎机游戏。以下是您可以游戏的预览：",
+        "games": {
+          "lucky365": {
+            "title": "Lucky 365",
+            "description": "踏入Lucky 365的神话和魔法世界。这些高赔付老虎机受到传奇神灵、史诗任务和古老力量的启发，非常适合喜欢沉浸式视觉效果和每次旋转都有机会解锁重大累积奖金的玩家。"
+          },
+          "askmeslot": {
+            "title": "Askmeslot",
+            "description": "Askmeslot提供明亮动画和轻松故事情节的休闲乐趣。无论您是老虎机新手还是只想要轻松的体验，其用户友好的界面和流畅的图形使其易于享受，即使在短暂休息时也是如此。"
+          },
+          "jdb": {
+            "title": "JDB",
+            "description": "以其街机风格的机制和创意游戏格式而闻名，JDB以捕鱼游戏、快速转轴和互动奖金功能脱颖而出。它非常适合喜欢技巧和运气结合的玩家，一键即可完成。"
+          },
+          "monkeyKing": {
+            "title": "Monkey King",
+            "description": "这个系列向亚洲最具标志性的角色之一——猴王致敬。受到周星驰邪典电影和《黑神话：悟空》等作品的影响，游戏提供动作丰富的旋转、电影级视觉效果和丰富的奖金游戏，让您不断回来。"
+          },
+          "jili": {
+            "title": "JILI",
+            "description": "JILI是在线老虎机世界的主力，这是有原因的。具有连锁获胜、奖金回合和渐进功能，JILI为每种类型的玩家提供了一些东西。如果您不确定从哪里开始，请从JILI开始。"
+          },
+          "microslot": {
+            "title": "Microslot",
+            "description": "时尚、智能和移动优先的Microslot专为想要在任何设备上获得优质老虎机体验的现代玩家而打造。凭借科幻启发的视觉效果和清晰的动画，它非常适合重视性能和设计而不妥协的玩家。<br><br>所有游戏都经过移动优化、公平性认证，并提供24/7安全访问。"
+          }
+        }
+      },
+      "casino": {
+        "title": "娱乐场",
+        "description": "体验马来西亚顶级<strong>真人荷官游戏</strong>的实时刺激。<br><br>我们的<strong>真人娱乐场</strong>将真实娱乐场楼层的能量直接带到您的屏幕上，全部由专业、友好的荷官以高清流媒体主持。从沙发的舒适或Grab车程中游戏，我们为您提供保障！",
+        "games": {
+          "hotRoad": {
+            "title": "Hot Road",
+            "description": "Hot Road以未来主义设计和尖端自动化重新定义真人娱乐场体验。以机械臂作为真人荷官为特色，它为龙虎和百家乐等传统游戏带来科幻色彩。对于寻找不同、视觉震撼且仍然完全互动的玩家来说，这是一个很好的选择。"
+          },
+          "evolution": {
+            "title": "Evolution",
+            "description": "Evolution是真人娱乐场娱乐的行业领导者，提供世界级的真人百家乐、轮盘和他们的标志性闪电系列。凭借高质量的流媒体、专业主持人和游戏节目风格的标题如<strong>疯狂时间</strong>和<strong>大富翁现场</strong>，Evolution为马来西亚玩家提供沉浸式和值得信赖的真人游戏体验。"
+          },
+          "sexy": {
+            "title": "Sexy",
+            "description": "没错，我们正在用穿着比基尼和内衣的可爱荷官带回性感。但除了我们迷人的荷官之外，她们在二十一点、轮盘和其他纸牌游戏方面也很熟练。美貌与智慧并存！"
+          },
+          "bigGaming": {
+            "title": "Big Gaming",
+            "description": "Big Gaming提供专为速度和本地偏好而打造的动态<strong>高清真人娱乐场</strong>体验。凭借快节奏的投注回合、易于使用的界面以及百家乐、龙虎和轮盘等熟悉游戏，它非常适合重视快速行动的马来西亚玩家。"
+          },
+          "pragmaticPlay": {
+            "title": "Pragmatic Play",
+            "description": "Pragmatic Play将优雅设计与实时刺激相结合。以其干净的界面和可靠的性能而闻名，该供应商提供多种语言的各种真人游戏，包括马来语、中文和英语。从经典纸牌桌到游戏节目启发的格式如<strong>巨轮</strong>和<strong>甜蜜糖果现场</strong>，它专为喜欢现代色彩多样性的玩家而打造。"
+          }
+        }
+      },
+      "sports": {
+        "title": "体育",
+        "description": "您在每个竞技场实时体育博彩的全通行证。<br><br>无论是足球、篮球、电子竞技，甚至斗鸡和赛马，恒旺博彩都将您连接到顶级体育博彩供应商，提供实时赔率、即时更新和无缝投注。",
+        "games": {
+          "maxbet": {
+            "title": "Maxbet",
+            "description": "亚洲最值得信赖的<strong>体育博彩</strong>名称之一，Maxbet提供国际足球联赛、NBA、网球等的广泛覆盖。凭借实时统计、多重投注选项和简单的兑现，它是新手和经验丰富的投注者的可靠选择。<br><br>覆盖包括：<br>• 国际足球（英超、西甲、意甲、世界杯预选赛）<br>• 篮球（NBA、欧洲联赛、FIBA）<br>• 网球（ATP、WTA、大满贯）<br>• 电子竞技（Dota 2、英雄联盟、CS:GO）<br>• 羽毛球和乒乓球<br>• 美式足球（NFL）<br>• 棒球（MLB、NPB）<br>• 冰球（NHL、KHL）<br>• 正在进行的比赛现场投注<br>• 让分、大小球、1X2、正确比分和混合过关投注"
+          },
+          "sv388": {
+            "title": "SV388",
+            "description": "专门从事合法化<strong>在线斗鸡</strong>，SV388提供高清流媒体、透明结果和安全投注，适用于东南亚高度流行的利基市场。比赛每天进行，具有详细的赔率和结果跟踪。"
+          },
+          "rcb988": {
+            "title": "RCB988",
+            "description": "RCB988迎合赛马和利基体育爱好者，提供专注于精确和速度的时尚<strong>赛马投注</strong>平台。无论您是投注本地还是国际赛事，界面都快速、直观，并得到值得信赖的支付支持。<br><br>所有体育博彩供应商都准备好移动设备，具有多语言支持，并在严格的游戏公平标准下运营。"
+          }
+        }
+      },
+      "lottery": {
+        "title": "彩票",
+        "games": {
+          "ekor": {
+            "title": "Ekor",
+            "descriptionStart": "选择您的4位数字，看看运气会带您到哪里。恒旺博彩通过Ekor将您连接到本地和<strong>4D</strong>开奖，具有透明结果和即时支付处理，直接从您的手机。<br><br>您可以投注您最喜欢的号码，查看过去的结果，并在一个安全平台上关注现场开奖。它支持标准、iBox和大/小投注类型，全部具有干净的界面和快速结果更新。<br><br>大赌小赌，来赌一切，通过我们在Ekor上的即时",
+            "linkText": "4D结果",
+            "descriptionEnd": "。"
+          }
+        }
+      },
+      "faq": {
+        "title": "关于恒旺博彩游戏的常见问题",
+        "items": {
+          "popular": {
+            "question": "恒旺博彩上最受欢迎的老虎机游戏是什么？",
+            "answer": "热门选择包括Super Ace、Boxing King、FaFaFa和Panther Moon。全部移动友好，具有高RTP和主题功能。"
+          },
+          "realTime": {
+            "question": "真人娱乐场体验是实时的吗？",
+            "answer": "是的。恒旺博彩提供来自Evolution、Sexy、Big Gaming和Hot Road等供应商的高清视频和真实荷官的实时游戏。"
+          },
+          "sports": {
+            "question": "我可以投注足球或电子竞技等体育项目吗？",
+            "answer": "绝对可以。恒旺博彩的体育博彩包括Maxbet、SV388和RCB988，涵盖足球、篮球、斗鸡等。"
+          },
+          "ekor4d": {
+            "question": "什么是Ekor 4D，它是如何工作的？",
+            "answer": "Ekor让您在线下注4D，即时查看结果，并从标准、iBox、大/小投注中选择。结果实时更新。"
+          },
+          "fair": {
+            "question": "恒旺博彩游戏公平且有许可吗？",
+            "answer": "是的。所有游戏都有许可和公平性认证，使用来自值得信赖的全球供应商的RNG或真人荷官验证。"
+          },
+          "mobile": {
+            "question": "我可以在移动设备上玩所有游戏吗？",
+            "answer": "是的。老虎机、真人娱乐场、4D和体育博彩通过恒旺博彩应用完全可用，具有更快的加载时间和仅限应用的福利。"
+          }
+        }
+      }
     }
   },
   "faq": {
-    "title": "常见问题 (FAQ)",
-    "appName": "Heng Ong Bet",
+    "title": "常见问题（FAQ）",
+    "appName": "恒旺博彩",
     "search": {
       "placeholder": "在此输入您的搜索关键词...",
       "button": "搜索",
-      "noResults": "未找到关于 \"{query}\" 的常见问题",
+      "noResults": "未找到\"{query}\"的常见问题",
       "tryDifferent": "尝试使用不同的关键词搜索或浏览上面的所有问题。"
     },
     "sections": {
@@ -857,84 +1203,84 @@
     },
     "gettingStarted": [
       {
-        "question": "HengOngBet在马来西亚和新加坡合法吗？",
-        "answer": "虽然在线博彩法规各不相同，但HengOngBet在国际许可下运营，为两国用户提供安全的娱乐访问。您有责任确保您已达到法定年龄，并且在线博彩在您所在地区是被允许的。"
+        "question": "恒旺博彩在马来西亚和新加坡合法吗？",
+        "answer": "虽然在线博彩法规各不相同，但恒旺博彩在国际许可下运营，为两国用户提供安全的娱乐访问。您有责任确保您已达到法定年龄，并且在您的地区允许在线博彩。"
       },
       {
-        "question": "如何在HengOngBet上创建账户？",
-        "answer": "访问 https://hengongbet88.net，点击\"注册\"，填写您的手机号码、用户名、密码和验证码。确保输入有效的推荐码以获得欢迎奖金。"
+        "question": "如何在恒旺博彩创建账户？",
+        "answer": "访问https://hengongbet88.net，点击\"注册\"，填写您的手机号码、用户名、密码和验证码。确保输入有效的推荐码以领取您的欢迎奖金。"
       },
       {
-        "question": "我可以使用别人的电话号码注册吗？",
-        "answer": "不可以。您必须使用自己的手机号码完成短信验证并确保账户安全。"
+        "question": "我可以使用别人的手机号码注册吗？",
+        "answer": "不可以。您必须使用自己的手机号码完成短信验证并确保您的账户安全。"
       }
     ],
     "loginSecurity": [
       {
-        "question": "我没有收到短信验证码。我该怎么办？",
-        "answer": "检查您的手机信号，确保您输入了正确的号码，并尝试重新发送验证码。如果问题持续存在，请联系在线客服。"
+        "question": "我没有收到短信验证码。我应该怎么办？",
+        "answer": "检查您的手机信号，确保您输入了正确的号码，并尝试重新发送验证码。如果问题仍然存在，请联系在线支持。"
       },
       {
         "question": "我忘记了密码。如何重置？",
-        "answer": "在登录页面点击\"忘记密码\"链接，按照说明通过您注册的手机号码重置。"
+        "answer": "点击登录页面上的\"忘记密码\"链接，并按照说明通过您注册的手机号码重置。"
       },
       {
         "question": "我可以拥有多个账户吗？",
         "answer": "不可以。同一用户不允许拥有多个账户，可能导致所有相关账户被暂停。"
       },
       {
-        "question": "HengOngBet的最低存款是多少？",
+        "question": "恒旺博彩的最低存款是多少？",
         "answer": "最低存款根据支付方式而异，但通常从RM30开始。"
       },
       {
-        "question": "如何存入资金？",
-        "answer": "登录您的账户，转到\"存款\"，选择支付方式（如FPX、DuitNow、银行转账），然后按照说明操作。"
+        "question": "如何存款？",
+        "answer": "登录您的账户，转到\"存款\"，选择支付方式（例如FPX、DuitNow、银行转账），并按照说明操作。"
       },
       {
-        "question": "提款处理速度有多快？",
-        "answer": "大多数提款在营业时间内5-15分钟内处理完成。高流量期间可能会出现延迟。"
+        "question": "提款处理有多快？",
+        "answer": "大多数提款在运营时间内5-15分钟内处理。在高流量期间可能会出现延迟。"
       },
       {
         "question": "我可以直接提取RM10欢迎奖金吗？",
-        "answer": "不可以。奖金必须用于下注。满足投注要求后，奖金产生的奖金可以提取。"
+        "answer": "不可以。奖金必须用于下注。满足投注要求后，奖金的奖金可以提取。"
       },
       {
-        "question": "HengOngBet有手机应用程序吗？",
-        "answer": "有的。Android用户可以从官方网站下载APK。iOS用户可以通过Safari安装网页应用快捷方式。"
+        "question": "恒旺博彩有移动应用吗？",
+        "answer": "是的。安卓用户可以从官方网站下载APK。iOS用户可以通过Safari安装网络应用快捷方式。"
       },
       {
-        "question": "HengOngBet应用程序使用安全吗？",
-        "answer": "是的。始终从官方网站下载应用程序以避免第三方克隆版本。该应用程序使用安全加密并遵循所有数据保护标准。"
+        "question": "恒旺博彩应用使用安全吗？",
+        "answer": "是的。始终从官方网站下载应用以避免第三方克隆。该应用使用安全加密并遵循所有数据保护标准。"
       }
     ],
     "bonusPromotions": [
       {
-        "question": "如何获得RM10欢迎奖金？",
+        "question": "如何领取RM10欢迎奖金？",
         "answer": "使用您的真实手机号码注册新账户并输入有效的推荐码。成功验证后将获得RM10奖金。"
       },
       {
-        "question": "有每日奖金或充值促销吗？",
-        "answer": "有的。定期访问促销页面查看所有活跃优惠，包括每日充值、返现和VIP奖励。"
+        "question": "有每日奖金或重新加载促销吗？",
+        "answer": "是的。定期访问促销页面查看所有活跃优惠，包括每日重新加载、返现和VIP奖励。"
       },
       {
         "question": "奖金有投注要求吗？",
         "answer": "是的。所有奖金都有特定条款。在激活任何优惠之前，请务必阅读条件。"
       },
       {
-        "question": "网站在我的手机上无法加载。我该怎么办？",
-        "answer": "尝试清除浏览器缓存，切换到不同的浏览器，或使用应用程序版本以获得更好的性能。"
+        "question": "网站在我的手机上无法加载。我应该怎么办？",
+        "answer": "尝试清除浏览器缓存，切换到不同的浏览器，或使用应用版本以获得更好的性能。"
       },
       {
-        "question": "游戏在游戏过程中冻结或崩溃。我会失去我的赌注吗？",
-        "answer": "您的投注结果仍由游戏提供商记录。您可以重新进入游戏或联系客服验证结果。"
+        "question": "游戏在游戏过程中冻结或崩溃。我会失去我的投注吗？",
+        "answer": "您的投注结果仍由游戏供应商记录。您可以重新进入游戏或联系支持以验证结果。"
       },
       {
         "question": "如何联系客户支持？",
-        "answer": "是的。我们的在线客服经过培训，可以用英语、中文和马来语为您提供帮助。"
+        "answer": "是的。我们的在线代理受过培训，可以用英语、中文和马来语为您提供帮助。"
       },
       {
         "question": "我可以与真人交谈吗？",
-        "answer": "通过网站或手机应用程序提供24/7在线聊天支持。"
+        "answer": "通过网站或移动应用提供24/7实时聊天支持。"
       },
       {
         "question": "我在哪里可以获得有关新功能或活动的更新？",
@@ -943,66 +1289,226 @@
     ],
     "finalNote": {
       "title": "还有问题吗？",
-      "content": "访问我们的帮助中心或随时与客服代表交谈。HengOngBet致力于为所有玩家提供安全、透明和有益的在线游戏体验。"
+      "content": "访问我们的帮助中心或随时与支持代理交谈。恒旺博彩致力于为所有玩家提供安全、透明和有益的在线游戏。"
     }
   },
   "tutorial": {
-    "title": "教程指南",
+    "title": "指南",
     "titleHighlight": "教程",
-    "subtitle": "简单易懂，只需按照教程步骤操作",
+    "subtitle": "易于了解，只需按照教程步骤",
     "sections": {
       "redeemBonus": {
-        "title": "简单3步{highlight}（新会员奖金）",
+        "title": "简单3步",
         "highlight": "兑换RM10",
-        "steps": ["点击应用程序左下角的条款", "在活动页面点击\"立即领取\"", "点击\"立即兑换\"按照活动说明操作"]
+        "subtitle": "（新会员奖金）",
+        "steps": [
+          "点击应用左下角的条款",
+          "在活动页面点击\"立即领取\"",
+          "点击\"立即兑换\"按照活动说明"
+        ]
       },
       "queryHistory": {
-        "title": "{highlight}教程",
+        "title": "教程",
         "highlight": "查询历史",
         "steps": [
-          "点击应用程序底部的\"今天\"",
-          "点击应用程序中间的\"大鱼\"",
+          "点击应用底部的\"今天\"",
+          "点击应用中间的\"大鱼\"",
           "点击右上角的\"记录列表\"",
-          "选择您想要查看的历史记录"
+          "选择您想要探索的历史记录"
         ]
       }
     },
     "alt": {
       "tutorialIcon": "教程图标"
+    },
+    "guide": {
+      "introduction": {
+        "title": "<span class=\"title-highlight\">恒旺博彩88</span>新玩家教程",
+        "subtitle": "无论您是来旋转老虎机、玩4D还是享受真人娱乐场桌，您的<strong>恒旺博彩</strong>之旅只需几个简单步骤即可开始。"
+      },
+      "registration": {
+        "title": "步骤1：如何注册和下载应用",
+        "steps": [
+          "访问官方网站：<router-link to=\"/\" class=\"official-link\">www.hengongbet88.com</router-link>",
+          "点击<strong>下载</strong>（选择安卓APK或iOS选项）。",
+          "在您的移动设备上安装<strong>恒旺博彩应用</strong>。",
+          "打开应用并点击<strong>注册</strong>。"
+        ],
+        "details": {
+          "title": "填写您的详细信息：",
+          "username": "用户名（创建您自己的）",
+          "password": "安全密码",
+          "referral": "推荐码（如有）",
+          "phone": "手机号码（用于验证）"
+        },
+        "note": "提交后，您的账户立即创建。",
+        "warning": "<strong>始终从官方网站下载应用以避免虚假克隆。</strong>"
+      },
+      "login": {
+        "title": "步骤2：登录您的账户",
+        "intro": "注册后：",
+        "steps": [
+          "打开<strong>恒旺博彩应用</strong>",
+          "输入您的<strong>用户名</strong>和<strong>密码</strong>",
+          "点击<strong>登录</strong>"
+        ],
+        "description": "您将被带到主页，您的余额、游戏和促销都在一个仪表板中。",
+        "reminder": {
+          "title": "首次登录提醒：",
+          "text": "您可能会被提示验证您的手机号码或更新您的个人资料。尽早完成以避免以后提款延迟。"
+        }
+      },
+      "bonuses": {
+        "title": "步骤3：领取活跃奖金和返水",
+        "intro": "与其他平台不同，<strong>恒旺博彩</strong>专注于<strong>高价值充值奖励</strong>而不是固定的欢迎奖金。以下是注册后可以领取的<strong>实时促销</strong>：",
+        "table": {
+          "headers": {
+            "promotion": "促销",
+            "details": "详情",
+            "claim": "如何领取"
+          },
+          "rows": {
+            "deposit": {
+              "name": "存款奖金200%",
+              "details": "充值获得<strong>200%奖金</strong>，最高RM100",
+              "claim": "进行存款并在<strong>促销</strong>标签中点击\"领取\""
+            },
+            "topup": {
+              "name": "充值奖金68%",
+              "details": "专属老虎机重新加载奖金，最高RM200",
+              "claim": "存款并选择符合条件的老虎机游戏（Lucky365、Monkey King等）"
+            },
+            "rebate": {
+              "name": "充值返水0.5%",
+              "details": "每次充值获得0.5%返水，<strong>无限制</strong>",
+              "claim": "所有充值自动获得"
+            },
+            "daily": {
+              "name": "每日返水高达3%",
+              "details": "随着您的游戏赚取返水，投注越多，获得越多",
+              "claim": "无需操作——根据游戏量自动应用"
+            }
+          }
+        },
+        "note": "始终在<strong>应用的促销页面</strong>中阅读完整的促销条款和条件，以避免对投注或提款规则的误解。"
+      },
+      "games": {
+        "title": "步骤4：玩您最喜欢的老虎机或真人娱乐场游戏",
+        "intro": "领取奖金后：",
+        "steps": [
+          "点击菜单中的<strong>\"游戏\"</strong>",
+          "选择您的游戏类别：",
+          "点击进入游戏并开始游戏！"
+        ],
+        "categories": {
+          "slots": "老虎机游戏（Lucky365、Monkey King）",
+          "live": "真人娱乐场（Sexy百家乐、Evolution）",
+          "lottery": "4D和彩票"
+        },
+        "tip": "您可以收藏您的顶级游戏，以便下次通过<strong>恒旺博彩88注册</strong>更快地访问它们。享受！"
+      },
+      "proTips": {
+        "title": "新玩家专业提示（聪明游戏，而不仅仅是努力）",
+        "intro": "所以您完成了<strong>恒旺博彩注册</strong>，领取了奖金，准备旋转。但等等，不要盲目地投入。以下是每个初学者在恒旺博彩游戏前应该知道的5个基本提示：",
+        "tips": {
+          "rtp": {
+            "title": "游戏前检查RTP",
+            "description": "寻找具有高玩家回报率（RTP）的游戏，<strong>理想情况下为96%或更高。</strong><br><br>为什么？更高的RTP意味着随着时间的推移更好的赔率。像<em>Lucky365</em>和<em>Monkey King</em>这样的游戏通常在游戏信息中显示其RTP。它不能保证即时获胜，但有助于您的资金持续更长时间。"
+          },
+          "budget": {
+            "title": "设定预算并坚持",
+            "description": "在开始旋转之前决定您的资金。<br><br>无论是RM50还是RM500，了解您的限制有助于您负责任地游戏。不要仅仅为了追逐损失而充值，这是娱乐，不是发薪日。"
+          },
+          "volatility": {
+            "title": "从低波动性游戏开始",
+            "description": "从提供频繁小胜而不是罕见大胜的游戏开始。<br><br>低波动性老虎机帮助您在学习机制时在游戏中停留更长时间。这是在不过快燃烧资金的情况下建立信心的好方法。"
+          },
+          "bonuses": {
+            "title": "策略性地领取奖金",
+            "description": "在您真正喜欢的游戏上使用促销，而不仅仅是因为它们正在流行。<br><br>如果您喜欢转轴旋转动作，将您的存款奖金与<em>Askmeslot</em>配对。喜欢高动作主题？在<em>MicroGaming</em>上使用它。始终将奖金与您的游戏风格匹配以获得最大价值。"
+          },
+          "rules": {
+            "title": "始终先阅读游戏规则",
+            "description": "每个老虎机都有独特的功能：连锁转轴、野生倍数、奖金购买。<br><br>了解老虎机的工作原理，特别是奖金触发器和符号可以给您优势。在任何游戏中点击信息或\"？\"图标，在下真钱投注之前预览其机制。"
+          }
+        },
+        "quote": "\"聪明的玩家持续更长时间并更聪明地获胜。\""
+      }
+    },
+    "faq": {
+      "title": "恒旺博彩88注册常见问题",
+      "questions": [
+        {
+          "question": "如何注册恒旺博彩88？",
+          "answer": "访问恒旺博彩88官方网站并下载应用，点击\"注册\"，填写您的用户名、密码和手机号码以创建您的账户。"
+        },
+        {
+          "question": "恒旺博彩88对新玩家有奖金吗？",
+          "answer": "是的。新玩家可以享受高达<strong>200%存款奖金</strong>、<strong>68%老虎机充值奖金</strong>和高达<strong>3%每日返水</strong>的游戏。"
+        },
+        {
+          "question": "注册后我可以玩什么游戏？",
+          "answer": "您可以直接从应用玩像<strong>Lucky365</strong>和<strong>Monkey King</strong>这样的老虎机游戏、真人娱乐场游戏和<strong>4D彩票游戏</strong>。"
+        },
+        {
+          "question": "我可以在手机上游戏吗？",
+          "answer": "是的。<strong>恒旺博彩是移动优先的</strong>。只需从官方网站安装APK或iOS版本即可流畅游戏。"
+        },
+        {
+          "question": "恒旺博彩安全合法吗？",
+          "answer": "是的。<strong>恒旺博彩在马来西亚广受信赖</strong>，使用安全登录、经过验证的支付选项和公平游戏功能。"
+        },
+        {
+          "question": "作为初学者我应该遵循什么提示？",
+          "answer": "检查RTP，设定预算，从低波动性老虎机开始，阅读游戏规则，只在您真正喜欢的游戏上使用奖金。"
+        }
+      ]
     }
   },
-    "tutorialTabs": {
-      "titleH1": "充值及提现",
-    "titleH1Part2": "教程",
+  "tutorialTabs": {
+    "titleH1": "恒旺博彩88",
+    "titleH1Part2": "充值指南",
     "tabs": {
       "topup": "即时充值",
       "transfer": "银行转账",
-      "withdraw": "提款"
+      "withdraw": "提现"
     },
     "titles": {
-      "topup": "如何在heng ong bet中通过<span class=\"highlight\">即时充值</span>进行充值？",
-      "transfer": "如何在heng ong bet中通过<span class=\"highlight\">银行转账</span>进行充值？",
-      "withdraw": "如何在heng ong bet中<span class=\"highlight\">提款</span>？"
+      "topup": {
+        "prefix": "如何通过",
+        "highlight": "即时充值",
+        "suffix": "在恒旺博彩充值？"
+      },
+      "transfer": {
+        "prefix": "如何通过",
+        "highlight": "银行转账",
+        "suffix": "在恒旺博彩充值？"
+      },
+      "withdraw": {
+        "prefix": "如何在恒旺博彩",
+        "highlight": "提现",
+        "suffix": "？"
+      }
     },
     "steps": {
       "topup": [
-        "登录HENG ONG BET",
+        "登录恒旺博彩",
         "点击\"充值按钮\"",
         "点击\"即时充值\"",
         "选择您要使用的银行",
         "输入您的金额",
         "输入您的银行转账和用户名，然后点击\"申请\"",
         "输入OTP号码并点击\"继续\"",
-        "如果页面在5秒内没有更新，请点击\"重试\"",
+        "如果页面在5秒内没有更新，则点击\"重试\"",
         "即时充值成功"
       ],
       "transfer": [
-        "选择一个方便的银行进行存款，从\"您的TOPICK账户中的一只手或立即浏览更改",
+        "从\"TOPICK账户中选择一个方便的银行进行存款，或立即浏览更改",
         "点击\"是\"",
         "点击\"充值\"",
         "点击\"银行转账\"",
         "填写兑换金额，然后点击\"提交\"",
-        "点击\"+\"上传现金存款或转账文件，然后点击\"提交\"",
+        "点击\"+\"上传现金存款或转账文件并点击\"提交\"",
         "选择您的银行",
         "输入您手机收到的OTP号码，然后点击\"确定\"",
         "输入金额并点击\"提交\"",
@@ -1010,10 +1516,10 @@
         "请求已提交！正在处理中...请等待"
       ],
       "withdraw": [
-        "登录HENG ONG BET",
+        "登录恒旺博彩",
         "点击\"是\"",
-        "点击\"提款\"",
-        "选择\"提款\"并点击\"确定\"",
+        "点击\"提现\"",
+        "选择\"提现\"并点击\"确定\"",
         "输入您的账号，然后点击\"下一步\"",
         "输入您的手机号码并点击\"请求OTP\"",
         "输入您手机收到的OTP号码，然后点击\"确定\"",
@@ -1022,22 +1528,111 @@
         "请求已提交！正在处理中...请等待"
       ]
     },
+    "guides": {
+      "topup": {
+        "title": {
+          "highlight": "恒旺博彩88电子钱包",
+          "regular": "充值"
+        },
+        "steps": [
+          "打开恒旺博彩应用并选择<strong>\"充值（电子钱包）\"</strong>。",
+          "选择您的电子钱包方式：<strong>Touch 'n Go</strong>或<strong>GrabPay</strong>。",
+          "输入您想要的<strong>充值金额。</strong>",
+          "您将获得一个<strong>银行账户或二维码</strong>进行转账。",
+          "打开您的TNG或GrabPay应用并<strong>完成转账。</strong>",
+          "<strong>截图或保存交易收据。</strong>",
+          "返回恒旺博彩应用并在提供的字段中<strong>上传您的收据</strong>。",
+          "等待管理员验证和批准，充值将很快反映。"
+        ],
+        "note": "<strong>在电子钱包应用中确认付款之前，始终仔细检查账号或二维码。</strong>"
+      },
+      "transfer": {
+        "title": {
+          "highlight": "恒旺博彩88网上银行",
+          "regular": "充值"
+        },
+        "steps": [
+          "在应用中点击<strong>\"充值（银行转账）\"</strong>。",
+          "选择提供的<strong>银行账户</strong>。",
+          "输入您的<strong>充值金额</strong>并通过您的网上银行应用使用<strong>DuitNow</strong>或普通转账进行转账。",
+          "保存<strong>付款收据</strong>或截图。",
+          "返回应用并<strong>上传收据</strong>。",
+          "等待确认，一旦批准，您的钱包将被更新。"
+        ],
+        "note": "<strong>确保您使用平台提供的正确银行详细信息以避免任何转账延迟。</strong>"
+      },
+      "withdraw": {
+        "title": {
+          "highlight": "恒旺博彩88提现",
+          "regular": "指南"
+        },
+        "steps": [
+          "在应用中选择<strong>\"提现\"</strong><br>• 点击主页或钱包部分的<strong>\"提现\"</strong>选项。<br>• 这将打开提现表单。",
+          "<strong>输入提现金额并提交</strong><br>• 输入您想要提现的金额<strong>（RM100）</strong>。<br>• 仔细检查金额并点击<strong>\"提交\"</strong>。",
+          "<strong>输入您的6位数支付PIN</strong><br>• 您将被提示输入您的<strong>6位数支付PIN</strong>以确保安全。<br>• 这是您在账户设置或首次提现时创建的相同PIN。<br>如果您忘记了PIN，请使用<strong>重置选项</strong>或联系支持。",
+          "等待批准。<br>• 提交后，您的提现请求将被审查。<br>• 大多数批准在<strong>几分钟内</strong>发生，但在高峰时段可能需要更长时间。<br>• 一旦您的提现成功，您将收到通知。"
+        ],
+        "reminders": {
+          "title": "重要提醒：",
+          "items": [
+            "如果适用，提现必须遵循任何<strong>奖金周转规则</strong>。",
+            "确保您的<strong>银行详细信息正确</strong>并在您的个人资料中更新。",
+            "使用您用于存款的<strong>相同方法</strong>（银行账户）以加快处理速度。"
+          ]
+        }
+      }
+    },
     "ui": {
       "step": "步骤",
       "showMore": "显示更多步骤",
-      "showLess": "显示较少步骤"
+      "showLess": "显示更少步骤"
     },
     "alt": {
-      "stepImage": "第{step}步图片"
+      "stepImage": "步骤{step}图片",
+      "topup": {
+        "step1": "充值教程步骤1 - 在恒旺博彩应用界面中选择充值电子钱包选项",
+        "step2": "充值教程步骤2 - 选择电子钱包方式Touch n Go或GrabPay选择屏幕",
+        "step3": "充值教程步骤3 - 输入所需充值金额并查看银行账户或二维码",
+        "step4": "充值教程步骤4 - 使用TNG或GrabPay应用支付界面完成转账",
+        "step5": "充值教程步骤5 - 截图或保存交易收据以供验证",
+        "step6": "充值教程步骤6 - 在恒旺博彩应用上传字段界面中上传收据",
+        "step7": "充值教程步骤7 - 等待管理员验证和批准确认屏幕",
+        "step8": "充值教程步骤8 - 充值金额反映在钱包余额确认中"
+      },
+      "transfer": {
+        "step1": "银行转账教程步骤1 - 在应用界面中选择充值银行转账选项",
+        "step2": "银行转账教程步骤2 - 查看提供的银行账户详细信息进行转账",
+        "step3": "银行转账教程步骤3 - 输入充值金额并启动网上银行转账",
+        "step4": "银行转账教程步骤4 - 通过银行应用完成DuitNow或普通转账",
+        "step5": "银行转账教程步骤5 - 保存付款收据或截图作为证明",
+        "step6": "银行转账教程步骤6 - 在应用中上传收据以供验证和批准",
+        "step7": "银行转账教程步骤7 - 等待确认和钱包余额更新",
+        "step8": "银行转账教程步骤8 - 转账成功完成，余额已更新"
+      },
+      "withdraw": {
+        "step1": "提现教程步骤1 - 从主页或钱包部分选择提现选项",
+        "step2": "提现教程步骤2 - 在输入字段中输入提现金额RM100",
+        "step3": "提现教程步骤3 - 仔细检查金额并点击提交按钮继续",
+        "step4": "提现教程步骤4 - 输入6位数支付PIN进行安全验证",
+        "step5": "提现教程步骤5 - 提现请求已提交供管理员审查处理"
+      }
     }
   },
-
+  "withdrawalReminders": {
+      "title": "提款提醒",
+      "items": [
+        "如适用，提款必须遵循任何<strong>奖金流水规则</strong>。",
+        "确保您的<strong>银行详细信息正确并已更新</strong>在您的个人资料中。",
+        "使用与存款相同的方法<strong>（银行账户）</strong>以便更快处理。",
+        "如果您忘记了<strong>PIN码</strong>，请使用重置选项或联系客服。"
+      ]
+  },
   "notice": {
-    "title": "重要游戏公告",
-    "shortText": "公告：以下游戏将不计算所玩代码的数量，只计算输赢：MONKEY KING - 'Dragon Tiger Blue'、'Dragon Tiger Red'、'Single Pick'、'Roulette73'、'Baccarat' EVOLUTION - 'First Person Craps'、'Craps'...",
-    "fullText": "公告：以下游戏将不计算所玩代码的数量，只计算输赢。\n\nMONKEY KING - \"Dragon Tiger Blue，Dragon Tiger Red，Single Pick，Roulette73，Baccarat\"\n\nEVOLUTION - \"First Person Craps、Craps、First Person Video Poker、Video Poker、所有二十一点游戏\"\n\nJILI - \"Blackjack和Blackjack Lucky Ladies\"\n\nPragmatic Play（真人） - \"所有二十一点游戏\"\n\nPragmatic Play（老虎机） - \"Roulette、Baccarat、Dragon Bonus Baccarat、Dragon Tiger\"\n\nJDB - \"Gamble\"\n\n感谢您的理解与配合，祝您游戏愉快。",
+    "title": "重要游戏通知",
+    "shortText": "通知：以下游戏将不计算游戏代码金额，仅计算输赢：MONKEY KING - 'Dragon Tiger Blue'、'Dragon Tiger Red'、'Single Pick'、'Roulette73'、'Baccarat' EVOLUTION - 'First Person Craps'、'Craps'...",
+    "fullText": "通知：以下游戏将不计算游戏代码金额，仅计算输赢。\n\nMONKEY KING - \"Dragon Tiger Blue、Dragon Tiger Red、Single Pick、Roulette73、Baccarat\"\n\nEVOLUTION - \"First Person Craps、Craps、First Person Video Poker、Video Poker、All Blackjack Games\"\n\nJILI - \"Blackjack and Blackjack Lucky Ladies\"\n\nPragmatic Play (Live) - \"All Blackjack Game\"\n\nPragmatic Play (Slot) - \"Roulette、Baccarat、Dragon Bonus Baccarat、Dragon Tiger\"\n\nJDB - \"Gamble\"\n\n感谢您的理解与合作，祝您游戏愉快。",
     "buttons": {
-      "understand": "我明白了"
+      "understand": "我明白"
     }
   }
 }

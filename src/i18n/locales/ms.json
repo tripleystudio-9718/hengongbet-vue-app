@@ -8,8 +8,8 @@
     "affiliate": "Ahli Gabungan",
     "faq": "Soalan Lazim",
     "help": "Bantuan",
-    "tutorial": "Panduan Tutorial",
-    "topup_tutorial": "Tutorial Top-up & Pengeluaran",
+    "tutorial": "Tutorial Pemula",
+    "topup_tutorial": "Tutorial Tambah Nilai & Pengeluaran",
     "login": "Log Masuk",
     "register": "Daftar"
   },
@@ -42,10 +42,10 @@
     "phone": "Nombor Telefon",
     "forgot_password": "Lupa Kata Laluan?",
     "remember_me": "Ingat Saya",
-    "sign_in": "Log Masuk",
+    "sign_in": "Masuk",
     "sign_up": "Daftar",
-    "already_have_account": "Sudah mempunyai akaun?",
-    "dont_have_account": "Tidak mempunyai akaun?",
+    "already_have_account": "Sudah ada akaun?",
+    "dont_have_account": "Belum ada akaun?",
     "create_account": "Cipta Akaun"
   },
   "games": {
@@ -63,7 +63,7 @@
   "promotion": {
     "title": "Promosi",
     "active": "Promosi Aktif",
-    "expired": "Promosi Tamat Tempoh",
+    "expired": "Promosi Tamat",
     "terms": "Terma & Syarat",
     "claim": "Tuntut Sekarang",
     "details": "Butiran"
@@ -96,7 +96,7 @@
     "title": "Soalan Lazim",
     "search_faq": "Cari Soalan Lazim",
     "categories": "Kategori",
-    "general": "Umum",
+    "general": "Am",
     "account": "Akaun",
     "payment": "Pembayaran",
     "technical": "Sokongan Teknikal"
@@ -109,20 +109,20 @@
     "game_rules": "Peraturan Permainan"
   },
   "topup": {
-    "title": "Tutorial Top-up & Pengeluaran",
+    "title": "Tutorial Tambah Nilai & Pengeluaran",
     "deposit": "Deposit",
     "withdraw": "Keluarkan",
     "methods": "Kaedah Pembayaran",
     "bank_transfer": "Pindahan Bank",
-    "e_wallet": "Dompet Elektronik",
+    "e_wallet": "E-Dompet",
     "cryptocurrency": "Mata Wang Kripto",
     "minimum": "Jumlah Minimum",
     "maximum": "Jumlah Maksimum",
     "processing_time": "Masa Pemprosesan"
   },
   "footer": {
-    "about": "Tentang",
-    "description": "Temui keseronokan tanpa had di HENG ONG BET. Kami berdedikasi untuk menyampaikan permainan berkualiti dan pengalaman yang selamat serta menarik.",
+    "about": "Mengenai",
+    "description": "Temui keseronokan tanpa had di HENG ONG BET. Kami komited untuk menyampaikan permainan berkualiti dan pengalaman yang selamat serta menarik.",
     "games": "Permainan",
     "slots": "Slot",
     "sports": "Sukan",
@@ -130,16 +130,15 @@
     "casino": "Kasino",
     "info": "Maklumat",
     "promotions": "Promosi",
-    "about_us": "Tentang Kami",
+    "about_us": "Mengenai Kami",
     "contact_us": "Hubungi Kami",
-    "terms_conditions": "Syarat & Terma",
+    "terms_conditions": "Terma & Syarat",
     "payment_methods": "Kaedah Pembayaran",
     "game_license": "Lesen Permainan",
     "certification": "Pensijilan",
     "security": "Keselamatan",
     "follow_us": "Ikuti Kami",
     "rights_reserved": "Hak Cipta Terpelihara.",
-    
     "gcb_license_alt": "Lesen GCB",
     "itech_certification_alt": "Pensijilan iTech",
     "threatmetrix_security_alt": "Keselamatan ThreatMetrix",
@@ -152,29 +151,83 @@
     "whatsapp_alt": "WhatsApp"
   },
   "home": {
-    "brandSection": {
-      "subtitle": "Kasino Online Dipercayai",
-      "title": "Heng Ong Bet Rasmi",
-      "tagline": "Heng Ong Bet - Platform Kasino Online Malaysia Yang Dipercayai",
-      "paragraphs": [
-        "Ditubuhkan pada tahun 2015, Heng Ong Bet adalah platform hiburan dalam talian serba lengkap pertama di Malaysia. Dengan sistem permainan bertaraf dunia dan pasukan sokongan teknikal tertinggi yang komited untuk menyampaikan perkhidmatan permainan yang selamat, boleh dipercayai, dan berkualiti tinggi kepada semua pengguna.",
-        "Sebagai salah satu platform permainan dalam talian terkemuka di Malaysia, kami menawarkan rangkaian pilihan permainan yang komprehensif termasuk:"
-      ],
-      "features": [
-        "Pertaruhan sukan",
-        "Kasino langsung",
-        "Permainan slot",
-        "Loteri 4D dan lain-lain"
-      ],
-      "conclusion": "Pemain menikmati pengalaman permainan yang adil, selamat, dan lancar, dengan deposit dan pengeluaran yang pantas."
+    "hero": {
+      "title": "Bermain Mengikut Cara Anda di HengOngBet88",
+      "subtitle": "Platform Kasino Dalam Talian Terpercaya Malaysia",
+      "description": "Sertai jenis kasino dalam talian baharu di Malaysia, yang dibina untuk hiburan, kepercayaan, dan kemudahan sebenar.",
+      "registerNow": "Daftar Sekarang",
+      "unlockBonus": "Buka Bonus Eksklusif",
+      "downloadApp": "Muat Turun Aplikasi"
     },
-    "affiliateSection": {
+    "about": {
+      "title": "Mengenai HengOngBet",
+      "description1": "HengOngBet adalah platform kasino dalam talian Malaysia",
+      "platformType": "yang boleh dipercayai dan serba lengkap.",
+      "description2": "Kami menawarkan pelbagai permainan menarik, pilihan perbankan yang selamat, dan pengalaman tempatan yang disesuaikan dengan keperluan anda. Berlesen penuh di bawah Lesen Permainan Curacao GCB, HengOngBet mengutamakan permainan adil, keselamatan pemain, dan sokongan pelanggan 24/7.",
+      "description3": "Sama ada anda di sini untuk putaran pantas atau mencuba nasib di meja langsung, platform mobile-first kami memastikan perjalanan yang lancar dan selamat, setiap masa."
+    },
+    "games": {
+      "title": "Terokai Permainan di HengOngBet",
+      "description": "Meja peniaga langsung, slot yang tidak pernah tidur, dan keputusan 4D segera, HengOngBet adalah destinasi serba lengkap anda untuk permainan wang sebenar. Sama ada anda berputar solo atau bertaruh secara langsung, kami ada sesuatu untuk semua orang.",
+      "slots": {
+        "title": "Permainan Slot",
+        "description": "Berputar melalui beratus-ratus tajuk yang dioptimumkan untuk mudah alih dengan bayaran tinggi.",
+        "providers": "Bermain dengan nama terpercaya seperti JILI, Lucky 365, Monkey King, Askmeslot, Microslot, dan JDB.",
+        "whatToExpect": "Apa yang diharapkan:",
+        "features": [
+          "Kemenangan berturut-turut, pengganda, dan jackpot",
+          "Pilihan gaya arked dan tradisional 3-reel",
+          "Tema sains fiksyen, mitos, dan kartun yang menyeronokkan",
+          "Pemuatan pantas dan lancar di semua peranti"
+        ]
+      },
+      "liveCasino": {
+        "title": "Kasino Langsung",
+        "description": "Dapatkan keseronokan lantai kasino, dari telefon anda.",
+        "games": "Hot Road, Evolution, Sexy, dan banyak lagi membawakan anda Baccarat HD, Dragon Tiger, Roulette, dan Blackjack dengan peniaga masa nyata dan meja interaktif.",
+        "whyPlayersLove": "Mengapa pemain menyukainya:",
+        "features": [
+          "Interaksi peniaga sebenar, 24/7",
+          "Lightning Roulette, Crazy Time, dan format popular lain",
+          "Pelbagai bahasa termasuk Melayu, Mandarin, dan Inggeris"
+        ],
+        "guarantee": "Siaran premium dan jaminan permainan adil"
+      },
+      "sports": {
+        "title": "Pertaruhan Sukan",
+        "description": "Dari bola sepak dan bola keranjang hingga sabung ayam dan lumba kuda, kami ada semuanya. Platform teratas termasuk Maxbet, SV388, dan RCB988.",
+        "highlights": "Sorotan:",
+        "features": [
+          "Pertaruhan langsung pada liga bola sepak global (EPL, La Liga, Piala Dunia)",
+          "Odds pada e-sukan, NBA, MLB, badminton, dan lain-lain",
+          "Pertaruhan sabung ayam kegemaran Malaysia melalui SV388",
+          "Pertaruhan lumba segera melalui RCB988, tanpa beratur, tanpa kerumitan"
+        ]
+      },
+      "lottery": {
+        "title": "Loteri 4D",
+        "description": "Taruh kecil, menang besar, terus dari telefon anda.",
+        "ekor": "Dengan Ekor, anda boleh bertaruh pada 4D bila-bila masa dan mendapat kemas kini keputusan segera.",
+        "howItWorks": "Bagaimana ia berfungsi:",
+        "steps": [
+          "Pilih 4 digit anda dan letakkan taruhan anda",
+          "Pilihan termasuk Standard, iBox, Besar/Kecil",
+          "Keputusan pantas dengan penjejakan cabutan harian",
+          "Menyokong kegemaran tempatan seperti Magnum, Toto, Damacai & lain-lain"
+        ]
+      },
+      "lookingMore": "Mencari lebih banyak?",
+      "gamesLink": "/games",
+      "gamesLinkText": "Permainan",
+      "exploreMore": "untuk meneroka segala-galanya secara terperinci, slot, kasino langsung, sukan, dan 4D, semuanya di bawah satu bumbung."
+    },
+    "affiliate": {
       "becomeText": "Menjadi",
       "brand": "Heng Ong Bet",
       "affiliateToday": "Ahli Gabungan Hari Ini",
-      "description": "Sertai program ahli gabungan rasmi HengOngBet dan dapatkan komisen tinggi dengan mempromosikan platform kasino dalam talian terbaik Malaysia. Sama ada anda seorang pemasar berpengalaman atau baru bermula, alat, sistem penjejakan, dan pasukan sokongan kami membantu anda berjaya",
+      "description": "Sertai program ahli gabungan rasmi HengOngBet dan peroleh komisen tinggi dengan mempromosikan platform kasino dalam talian terbaik Malaysia. Sama ada anda pemasar berpengalaman atau baru bermula, alat, sistem penjejakan, dan pasukan sokongan kami membantu anda berjaya",
       "benefits": [
-        "Penjejakan masa nyata & laporan",
+        "Penjejakan & laporan masa nyata",
         "Sehingga 50% perkongsian hasil",
         "Sistem pembayaran mingguan",
         "Banner promosi tersuai",
@@ -186,85 +239,101 @@
     }
   },
   "features": {
+    "header": {
+      "title": "Mengapa Pilih HengOngBet?",
+      "subtitle": "Dengan lebih 10 tahun dalam industri, HengOngBet telah menjadi platform terpercaya untuk pemain Malaysia yang mencari keselamatan, hiburan, dan ketelusan."
+    },
     "tabs": [
       {
-        "id": "why-choose",
-        "title": "Mengapa Pilih Heng Ong Bet?"
+        "id": "safe-secure",
+        "title": "1. Selamat, Berlesen & Terjamin"
       },
       {
-        "id": "games-library",
-        "title": "Pusat Game Terbesar Malaysia"
+        "id": "malaysians",
+        "title": "2. Direka untuk Rakyat Malaysia"
       },
       {
-        "id": "secure-rewarding",
-        "title": "Terbukti, Selamat & Bermanfaat"
+        "id": "entertainment",
+        "title": "3. Hiburan Berorientasikan Nilai"
       }
     ],
-    "whyChoose": {
+    "safeSecure": {
+      "description": "Kami mengutamakan ketenangan fikiran anda.",
       "features": [
         {
-          "id": 1,
-          "title": "Pasukan Pakar",
-          "description": "Sentiasa menambah baik permainan dan pengalaman pengguna"
+          "title": "Berlesen Gaming Curacao",
+          "description": "Kami beroperasi di bawah lesen permainan yang diiktiraf antarabangsa."
         },
         {
-          "id": 2,
+          "title": "Keselamatan Disulitkan SSL",
+          "description": "Data peribadi dan pembayaran anda dilindungi oleh penyulitan gred bank."
+        },
+        {
+          "title": "Permainan Adil Sahaja",
+          "description": "Semua permainan disahkan dan menggunakan RNG untuk memastikan ketelusan."
+        },
+        {
           "title": "Platform Selamat",
-          "description": "Enkripsi canggih untuk perlindungan data"
+          "description": "Dibina pada infrastruktur moden dengan pencegahan penipuan yang kukuh."
         },
         {
-          "id": 3,
-          "title": "Sokongan 24/7",
-          "description": "Bantuan tersedia bila-bila masa"
-        },
-        {
-          "id": 4,
           "title": "Permainan Bertanggungjawab",
-          "description": "Menggalakkan permainan yang selamat dan sihat"
-        },
-        {
-          "id": 5,
-          "title": "Fokus Komuniti",
-          "description": "Menyokong inisiatif kebajikan tempatan"
+          "description": "Alat untuk membantu anda kekal dalam kawalan, termasuk had dan pengecualian diri."
         }
       ]
     },
-    "gamesLibrary": {
-      "header": "Kami telah bekerjasama dengan pembekal terbaik termasuk:",
-      "providers": [
-        {
-          "category": "Kasino Langsung",
-          "list": "PEGASUS LIVE, CTG855, AE SEXY, ASIA GAMING, EVOLUTION & lain-lain"
-        },
-        {
-          "category": "Slot",
-          "list": "918KISS, PUSSY888, NAGA GAMES, JILI, PLAYTECH, dan banyak lagi"
-        },
-        {
-          "category": "Pertaruhan Sukan",
-          "list": "SBOBET, SBOVS, BET33"
-        }
-      ]
-    },
-    "secureRewarding": {
-      "header": "Dengan lebih 10 tahun dalam industri, Heng Ong Bet terkenal dengan:",
+    "malaysians": {
+      "description": "Dibina dari bawah dengan mengambil kira pemain tempatan.",
       "features": [
-        "Keadilan permainan",
-        "Keselamatan enkripsi SSL",
-        "Bonus deposit tetap dan tawaran kredit percuma",
-        "Persekitaran yang peribadi, stabil, dan dipercayai"
+        {
+          "title": "Reka Bentuk Mobile-First",
+          "description": "Dioptimumkan untuk Android & iOS, lancar pada mana-mana rangkaian dari Maxis hingga Unifi."
+        },
+        {
+          "title": "Sokongan Tempatan",
+          "description": "Bantuan 24/7 dalam Bahasa Inggeris, Melayu, dan Mandarin melalui chat, WhatsApp, atau Telegram."
+        },
+        {
+          "title": "Promosi Berfokus Malaysia",
+          "description": "Kempen bertema CNY, Hari Raya, dan Merdeka, serta tawaran kredit percuma sebenar."
+        },
+        {
+          "title": "Komitmen Komuniti",
+          "description": "Kami secara aktif menyokong inisiatif kebajikan tempatan dan usaha CSR."
+        }
       ]
     },
-    "platform": {
-      "title": "Main Di Mana-mana, Bila-bila Masa",
-      "description": "Dengan aplikasi mudah alih Heng Ong Bet (menyokong iOS & Android), anda boleh menikmati semua permainan kegemaran anda semasa dalam perjalanan — dari slot dan sportsbook hingga dealer langsung dan permainan 4D. Sertai Heng Ong Bet hari ini dan alami platform permainan dalam talian yang paling boleh dipercayai dan menarik di Malaysia!"
+    "entertainment": {
+      "description": "Bermain dengan lebih bijak, bukan lebih keras.",
+      "features": [
+        {
+          "title": "Bonus Tetap & Kredit Percuma",
+          "description": "Dapatkan ganjaran untuk deposit, rujukan, dan reload."
+        },
+        {
+          "title": "Pasukan Pakar",
+          "description": "Sentiasa menambah baik permainan dan ciri kami untuk melayani anda dengan lebih baik."
+        },
+        {
+          "title": "Kepelbagaian Permainan",
+          "description": "Dari 4D hingga slot, pertaruhan sukan, dan kasino langsung, terdapat 1000+ permainan semuanya dalam satu platform."
+        },
+        {
+          "title": "Pengalaman Stabil, Tanpa Lag",
+          "description": "Bermain tanpa gangguan, walaupun semasa waktu puncak."
+        }
+      ]
+    },
+    "popularGames": {
+      "title": "Permainan Popular di HengOngBet",
+      "games": ["Super Ace", "Boxing King", "Panther Moon", "Crazy 777", "FaFaFa"]
     }
   },
   "mobileGameSec": {
-      "title": "Permainan Popular"
-    },
-"gameSec": {
-    "title": "Permainan Popular",
+    "title": "Permainan Hangat"
+  },
+  "gameSec": {
+    "title": "Permainan Hangat",
     "categories": {
       "all": "Semua",
       "slots": "Slot",
@@ -290,8 +359,8 @@
       "lucky_365": "Lucky 365",
       "askmeslot": "Askmeslot",
       "jdb": "JDB",
-      "monkey_king": "Raja Monyet",
-      "hot_road": "Jalan Panas",
+      "monkey_king": "Monkey King",
+      "hot_road": "Hot Road",
       "maxbet": "Maxbet",
       "sv388": "Sv388",
       "rcb988": "Rcb988",
@@ -306,30 +375,30 @@
     "actions": {
       "play_now": "Main Sekarang",
       "view_all": "Lihat Semua",
-      "load_more": "Muat Lebih"
+      "load_more": "Muatkan Lagi"
     }
   },
   "how_it_works": {
     "header": {
-      "subtitle": "Selamat Datang ke Heng Ong Bet - Kasino Online Dipercayai",
-      "title": "Mula Bermain dan Meraih Kemenangan"
+      "subtitle": "Selamat Datang ke Heng Ong Bet - Kasino Dalam Talian Terpercaya",
+      "title": "Cara Mula Bermain di HengOngBet"
     },
     "steps": {
       "step1": {
-        "title": "Cipta Akaun",
-        "description": "Klik Sertai Sekarang. Isi maklumat log masuk anda"
+        "title": "Daftarkan Akaun Anda",
+        "description": "Gunakan nombor mudah alih anda dan cipta kata laluan yang selamat. Pendaftaran mengambil masa kurang dari 1 minit."
       },
       "step2": {
-        "title": "Buat Deposit",
-        "description": "Buat deposit pertama anda menggunakan wang atau pemindahan kripto"
+        "title": "Muat Turun Aplikasi",
+        "description": "Dapatkan aplikasi mudah alih kami untuk Android atau iOS untuk pengalaman terbaik. Elakkan pautan pihak ketiga."
       },
       "step3": {
-        "title": "Mula Menang",
-        "description": "Mula menang sambil bermain permainan kegemaran anda"
+        "title": "Tambah Nilai Dompet Anda",
+        "description": "Gunakan FPX, e-dompet, atau kaedah selamat lain untuk deposit segera."
       },
       "step4": {
-        "title": "Dapatkan Ganjaran",
-        "description": "Jangan lupa untuk menuntut bonus anda"
+        "title": "Mula Bermain",
+        "description": "Pilih slot kegemaran, kasino langsung, atau permainan buku sukan anda dan mula menikmati hiburan masa nyata dan dapatkan ganjaran."
       }
     },
     "alt_text": {
@@ -341,8 +410,8 @@
   },
   "app_guide": {
     "header": {
-      "subtitle": "Aplikasi Heng Ong Bet Yang Baru",
-      "title": "Permainan Premium & Sokongan"
+      "subtitle": "Aplikasi Heng Ong Bet Serba Baharu",
+      "title": "Permainan & Sokongan Premium"
     },
     "tabs": {
       "android": "Android",
@@ -360,16 +429,16 @@
     "steps": {
       "android": {
         "step1": "Ketik ikon tetapan bertitik di bahagian atas kanan bar alamat.",
-        "step2": "Ketik Tambah ke Skrin Utama untuk memaparkan pemasangan untuk Aplikasi HENG ONG BET.",
+        "step2": "Ketik Tambah ke Skrin Utama untuk pop up pemasangan Aplikasi HENG ONG BET.",
         "step3": "Ketik Pasang untuk memiliki Aplikasi HENG ONG BET, lancarkan & nikmati permainan anda!"
       },
       "ios": {
         "step1": "Ketik butang kongsi di bahagian bawah bar alamat.",
-        "step2": "Ketik Tambah ke Skrin Utama untuk memaparkan pemasangan untuk Aplikasi HENG ONG BET.",
+        "step2": "Ketik Tambah ke Skrin Utama untuk pop up pemasangan Aplikasi HENG ONG BET.",
         "step3": "Ketik Tambah untuk memiliki Aplikasi HENG ONG BET, lancarkan & nikmati permainan anda!"
       },
       "desktop": {
-        "step1": "Klik butang muat turun desktop di sebelah kanan bar alamat untuk memaparkan pemasangan untuk Aplikasi HENG ONG BET.",
+        "step1": "Klik butang muat turun desktop di sebelah kanan bar alamat untuk pop up pemasangan Aplikasi HENG ONG BET.",
         "step2": "Klik Pasang untuk memiliki Aplikasi HENG ONG BET, lancarkan & nikmati permainan anda!"
       }
     },
@@ -379,26 +448,26 @@
   },
   "why_section": {
     "header": {
-      "prefix": "Mengapa Pilih",
+      "prefix": "Mengapa Pemain Suka",
       "brand": "Heng Ong Bet",
       "suffix": "?"
     },
     "cards": {
       "card1": {
         "title": "Apa Yang Membezakan Heng Ong Bet?",
-        "description": "Tidak seperti kasino tradisional yang bergantung pada ejen, Heng Ong Bet menghubungkan anda secara langsung—tiada perantara. Nikmati transaksi segera, ciri e-dompet terbina dalam, dan sistem komisen unik."
+        "description": "Tidak seperti kasino dalam talian biasa, Heng Ong Bet membolehkan anda berurusan terus tanpa ejen. Nikmati transaksi pantas, e-dompet terbina dalam, ciri sosial, dan sistem komisen yang menjana pendapatan semasa bermain."
       },
       "card2": {
         "title": "Kasino Paling Dipercayai",
-        "description": "Privasi dan keselamatan anda adalah keutamaan utama kami. Heng Ong Bet menggunakan perlindungan standard industri untuk melindungi data peribadi anda dan memastikan persekitaran permainan yang selamat."
+        "description": "Privasi dan keselamatan anda adalah keutamaan utama kami. Heng Ong Bet menggunakan perlindungan standard industri untuk melindungi data peribadi anda dan mengikuti dasar privasi kami dengan ketat untuk memastikan persekitaran permainan yang selamat dan boleh dipercayai."
       },
       "card3": {
         "title": "Pendaftaran Mudah & Pantas",
-        "description": "Cipta akaun Heng Ong Bet untuk mengakses 1,000+ permainan, nikmati promosi eksklusif, dan kekal dikemas kini dengan tawaran terkini."
+        "description": "Cipta akaun Heng Ong Bet anda untuk mengakses 1,000+ permainan, nikmati promosi eksklusif, dan kekal dikemas kini dengan tawaran terkini."
       },
       "card4": {
         "title": "Sokongan Dalam Talian",
-        "description": "Pasukan sokongan kami tersedia 24/7 melalui sembang langsung, telefon, dan e-mel untuk membantu anda menyelesaikan sebarang isu dengan pantas."
+        "description": "Pasukan sokongan Heng Ong Bet kami tersedia 24/7 melalui chat langsung, telefon, dan e-mel untuk membantu anda dengan pantas mengenai sebarang isu."
       }
     },
     "alt_text": {
@@ -410,34 +479,40 @@
   },
   "provider_showcase": {
     "global_header": {
-      "brand": "Heng Ong Bet",
-      "title": "Kami Global",
-      "subtitle": "Heng Ong Bet Kini Berkembang Secara Global",
-      "description": "Heng Ong Bet kini tersedia di Singapura, dengan pasukan global berbakat kami menyokong pertumbuhan di Malaysia dan Singapura. Apa yang menyatukan kami? Passion untuk memberikan pengalaman permainan terbaik. Kami juga aktif berkembang ke Thailand, Vietnam, Indonesia, Kemboja, UK, dan USA."
+      "title": "HengOngBet Sedang Mendunia",
+      "description": "Kini tersedia di Singapura, HengOngBet disokong oleh pasukan global yang komited untuk menyampaikan pengalaman permainan kelas dunia. Kami sedang berkembang secara aktif di seluruh Asia Tenggara dan seterusnya, termasuk Thailand, Vietnam, Indonesia, Kemboja, UK, dan USA.",
+      "cta": "Sertai kami dalam pertumbuhan untuk menjadi platform kasino dalam talian terbaik yang boleh dicapai!"
     },
     "providers": {
       "slots": {
         "name": "Slot",
-        "description": "Heng Ong Bet menawarkan pelbagai permainan slot dalam talian yang dikuasakan oleh pembekal terbaik seperti MEGA888, PUSSY888, VPOWER, NAGA GAMES, JILI, dan lain-lain. Dengan teknologi canggih, grafik menakjubkan, dan kesan bunyi mengasyikkan."
+        "description": "Heng Ong Bet menampilkan pelbagai slot menarik dari penyedia terkemuka seperti MEGA888, PUSSY888, VPOWER, NAGA GAMES, JILI dan banyak lagi—dengan grafik memukau, audio mengasyikkan, dan peluang menang besar."
       },
       "sports": {
         "name": "Pertaruhan Sukan",
-        "description": "Heng Ong Bet menawarkan pengalaman pertaruhan sukan yang lengkap dan profesional melalui platform terbaik seperti MAXBET, SBOBET, dan RCB788. Bertaruh pada sukan popular seperti bola sepak, bola keranjang, tenis, besbol, dan hoki ais."
+        "description": "Heng Ong Bet menyajikan pengalaman pertaruhan sukan profesional dengan platform terkemuka seperti MAXBET, SBOBET, dan RCB788. Nikmati pelbagai pasaran untuk bola sepak, bola keranjang, tenis, besbol, dan hoki ais termasuk handicap, over/under, ganjil/genap, dan separuh masa."
       },
       "lottery": {
-        "name": "Loteri 4D", 
-        "description": "Heng Ong Bet membawakan anda permainan loteri 4D paling menarik dengan peluang memenangi hadiah besar setiap hari. Nikmati format popular seperti pilihan langsung, pilihan kumpulan, Magnum, Da Ma Cai, Toto, dan cabutan Grand Dragon harian."
+        "name": "Loteri 4D",
+        "description": "Heng Ong Bet menawarkan permainan 4D yang menarik setiap hari, termasuk Magnum, Da Ma Cai, Toto, dan Grand Dragon. Pilih dari format seperti pemilihan langsung atau kumpulan, dengan odds tinggi dan peluang menang yang lebih besar."
       },
       "live_casino": {
         "name": "Kasino Langsung",
-        "description": "Heng Ong Bet membawakan anda permainan kasino langsung masa nyata di rumah dengan pembekal terbaik seperti PGCN88 LIVE, AE SEXY, dan EVOLUTION. Nikmati streaming HD lancar, permainan adil dari dealer profesional, dan transaksi pantas serta selamat."
+        "description": "Heng Ong Bet membolehkan anda bermain kasino langsung masa nyata dari rumah dengan PGCN88 LIVE, AE SEXY, dan EVOLUTION. Rasai streaming HD, peniaga profesional, dan transaksi pantas dalam satu platform dipercayai."
       }
     },
     "alt_text": {
-      "slots": "Pembekal Permainan Slot",
-      "sports": "Pembekal Pertaruhan Sukan",
-      "lottery": "Pembekal Loteri 4D",
-      "live_casino": "Pembekal Kasino Langsung"
+      "slots": "Penyedia Permainan Slot",
+      "sports": "Penyedia Pertaruhan Sukan",
+      "lottery": "Penyedia Loteri 4D",
+      "live_casino": "Penyedia Kasino Langsung"
+    },
+    "bottom_section": {
+      "title": "Bersedia untuk Mengalami Permainan Dalam Talian Sebenar di Malaysia?",
+      "description_line1": "Sama ada anda suka slot, peniaga langsung, pertaruhan sukan, atau 4D, <strong>HengOngBet88</strong> mempunyai semuanya dalam satu platform yang selamat dan mesra mudah alih.",
+      "description_line2": "Nikmati pengeluaran pantas, kredit percuma sebenar, dan sokongan dalam bahasa anda, bila-bila masa, di mana-mana sahaja.",
+      "description_line3": "Daftar di HengOngBet88 hari ini dan bermain mengikut cara anda.",
+      "register_btn": "Daftar Hari Ini"
     }
   },
   "testimonials": {
@@ -469,37 +544,33 @@
     "header": {
       "label": "Soalan Lazim",
       "title": "Heng Ong Bet - Semua Yang Anda Perlu Tahu",
-      "description": "Ada soalan? Kami telah kumpulkan pertanyaan paling lazim daripada pemain kami untuk membantu anda bermula dengan lancar di HengOngBet",
+      "description": "Ada soalan? Kami telah menyusun pertanyaan paling biasa dari pemain kami untuk membantu anda bermula dengan lancar di HengOngBet",
       "button_text": "Lihat Semua Soalan Lazim"
     },
     "questions": {
       "q1": {
-        "question": "Bagaimana Saya Mendaftar di Heng Ong Bet?",
-        "answer": "Hanya klik butang 'Daftar', isi butiran anda, dan sahkan nombor telefon anda untuk bermula"
+        "question": "Adakah HengOngBet88 sah di Malaysia?",
+        "answer": "HengOngBet88 beroperasi di bawah Lesen Permainan Curacao (GCB) yang sah dengan langkah keselamatan pemain dan permainan bertanggungjawab yang ketat. Terpulang kepada pemain untuk menentukan batasan undang-undang."
       },
       "q2": {
-        "question": "Adakah Heng Ong Bet Sah dan Selamat untuk Digunakan?",
-        "answer": "Ya, Heng Ong Bet beroperasi di bawah lesen yang betul dan menggunakan langkah keselamatan canggih untuk melindungi data dan transaksi anda. Kami mematuhi sepenuhnya semua peraturan yang berkenaan."
+        "question": "Bagaimana saya mendaftar untuk akaun HengOngBet88?",
+        "answer": "Hanya klik \"Daftar,\" masukkan nombor mudah alih dan kata laluan anda, sahkan butiran anda, dan mula bermain serta-merta."
       },
       "q3": {
-        "question": "Bagaimana saya boleh Deposit atau Keluarkan wang?",
-        "answer": "Anda boleh deposit dan keluarkan wang melalui pelbagai kaedah pembayaran selamat termasuk pindahan bank, e-dompet, dan mata wang kripto. Semua transaksi diproses dengan cepat dan selamat."
+        "question": "Permainan apa yang boleh saya mainkan di HengOngBet88?",
+        "answer": "Anda boleh menikmati 1000+ slot, permainan kasino langsung, pertaruhan sukan, dan loteri 4D semuanya dalam satu platform."
       },
       "q4": {
-        "question": "Apakah permainan yang tersedia di Heng Ong Bet?",
-        "answer": "Kami menawarkan pelbagai permainan termasuk permainan kasino langsung, mesin slot, pertaruhan sukan, permainan loteri, dan banyak lagi. Platform kami menampilkan permainan dari pembekal terbaik dalam industri."
+        "question": "Bagaimana saya deposit dan keluarkan wang?",
+        "answer": "Deposit melalui FPX atau e-dompet untuk tambah nilai segera, dan keluarkan dalam aplikasi dengan masa kelulusan yang pantas."
       },
       "q5": {
-        "question": "Adakah terdapat Bonus Selamat Datang atau Promosi?",
-        "answer": "Ya! Kami menawarkan bonus selamat datang yang murah hati untuk pemain baru, serta promosi berterusan, ganjaran kesetiaan, dan bonus khas. Semak halaman promosi kami untuk tawaran terkini."
+        "question": "Adakah HengOngBet88 selamat untuk transaksi dalam talian?",
+        "answer": "Ya, semua transaksi disulitkan SSL dan permainan disahkan RNG untuk permainan adil."
       },
       "q6": {
-        "question": "Apa yang perlu saya lakukan jika saya terlupa butiran log masuk saya?",
-        "answer": "Jika anda terlupa butiran log masuk anda, hanya klik pada pautan 'Lupa Kata Laluan' di halaman log masuk. Anda boleh set semula kata laluan anda menggunakan e-mel atau nombor telefon yang didaftarkan."
-      },
-      "q7": {
-        "question": "Adakah terdapat aplikasi mudah alih untuk Heng Ong Bet?",
-        "answer": "Ya, kami mempunyai aplikasi mudah alih yang tersedia untuk peranti iOS dan Android. Anda boleh memuat turunnya dari App Store atau Google Play Store, atau mengakses laman web yang dioptimumkan mudah alih kami terus dari pelayar anda."
+        "question": "Bagaimana saya mendaftar di HengOngBet88?",
+        "answer": "Klik \"Daftar,\" isi nombor mudah alih dan kata laluan anda, sahkan akaun anda, dan anda sudah bersedia untuk bermain."
       }
     },
     "alt_text": {
@@ -509,38 +580,43 @@
   },
   "affiliate": {
     "brand_section": {
-      "title1": "Sertai sebagai",
-      "brand": "Heng Ong Bet",
-      "title2": "Ejen, Pemegang Saham, atau Ahli",
-      "tagline": "Tiada Kebimbangan Menang-Kalah · Komisen Fleksibel · Pengagihan Keuntungan Auto"
+      "title": "Sertai Program Ahli Gabungan <span style='color: #F2B240;'>HengOngBet88</span>",
+      "tagline": "Tiada Kebimbangan Menang-Kalah · Komisen Fleksibel · Pengagihan Keuntungan Auto",
+      "description_paragraph": "Bersedia untuk mengubah rangkaian anda menjadi perniagaan yang menguntungkan? Sama ada anda pemain kasual, promoter peringkat tinggi, atau bakal pemegang saham, <strong style='color: #F2B240;'>HengOngBet88</strong> menawarkan sistem ahli gabungan fleksibel di mana anda mengawal cara anda memperoleh."
+    },
+    "how_it_works": {
+      "title": "Bagaimana Ia Berfungsi"
     },
     "join_button": "Sertai Kami",
     "steps": {
       "step": "Langkah",
       "step1": {
         "number": "1",
-        "title": "Daftar"
+        "title": "Daftar",
+        "description": "Daftar sebagai ejen, ahli, atau pemegang saham, tiada yuran atau kewajipan."
       },
       "step2": {
         "number": "2",
-        "title": "Promosi"
+        "title": "Promosi",
+        "description": "Kongsi pautan rujukan anda melalui media sosial, WhatsApp, atau komuniti."
       },
       "step3": {
         "number": "3",
-        "title": "Jana Pendapatan"
+        "title": "Memperoleh",
+        "description": "Nikmati penjejakan masa nyata, pengagihan auto, dan pembayaran komisen mingguan."
       }
     },
     "commission_section": {
-      "title": "Model Komisen Dwi",
-      "description": "Tukar bila-bila masa. Kawalan penuh atas cara anda memperoleh.",
+      "title": "Model Komisen Dwi: Pilih Gaya Pendapatan Anda",
+      "description": "Ambil kawalan penuh pendapatan ahli gabungan anda. Anda boleh <strong>bertukar antara model bila-bila masa</strong> berdasarkan matlamat anda.",
       "models": {
         "revenue_share": {
           "title": "Perkongsian Hasil",
-          "description": "Peroleh peratusan kerugian pemain"
+          "description": "Peroleh peratusan kerugian pemain, pendapatan pasif jangka panjang yang boleh diskalakan."
         },
         "cpa_model": {
           "title": "Model CPA",
-          "description": "Jumlah tetap setiap pemain layak"
+          "description": "Peroleh jumlah tetap setiap pemain yang layak, sesuai untuk promoter yang menukar dengan pantas."
         }
       }
     },
@@ -555,21 +631,22 @@
         "levels": {
           "shareholder": {
             "name": "Pemegang Saham",
-            "benefits": "Berdasarkan jumlah volume pertaruhan pemain + menang/kalah (Fight + Pool)",
+            "benefits": "Berdasarkan jumlah volume pertaruhan + menang/kalah (Fight & Pool)",
             "rebate": "-----"
           },
           "referrer": {
             "name": "Perujuk",
-            "benefits": "0.3% atas pertaruhan pemain",
-            "rebate": "0.5% atas pertaruhan sendiri"
+            "benefits": "Peroleh 0.3% pada taruhan pemain",
+            "rebate": "0.5% pada taruhan sendiri"
           },
           "player": {
             "name": "Pemain",
             "benefits": "-----",
-            "rebate": "0.5% setiap pertaruhan dibuat"
+            "rebate": "0.5% pada setiap taruhan yang diletakkan"
           }
         }
-      }
+      },
+      "description": "Tiada syarat yang mengelirukan. Anda memperoleh berdasarkan peranan anda, secara automatik."
     },
     "features": {
       "high_commission": {
@@ -586,20 +663,31 @@
       },
       "dedicated_support": {
         "title": "Sokongan Khusus",
-        "description": "Bantuan affiliate 24/7"
+        "description": "Bantuan ahli gabungan 24/7"
       },
       "marketing_tools": {
         "title": "Alat Pemasaran",
-        "description": "Banner profesional & pautan"
+        "description": "Banner & pautan profesional"
       }
     },
+    "who_should_join": {
+      "title": "Siapa Yang Patut Menyertai?",
+      "items": {
+        "online_marketers": "Pemasar dalam talian",
+        "social_media_influencers": "Influencer media sosial",
+        "telegram_whatsapp_admins": "Admin kumpulan Telegram/WhatsApp",
+        "forum_owners": "Pemilik forum atau blogger",
+        "gaming_enthusiasts": "Kawan peminat permainan dalam talian",
+        "earn_from_home": "Sesiapa yang ingin memperoleh dari rumah"
+      },
+      "description": "Anda tidak perlu menjadi pakar teknologi atau memiliki laman web, hanya perlu mempunyai rangkaian."
+    },
     "cta_section": {
-      "title": "Seruan Tindakan Terakhir",
-      "subtitle": "Sertai Rangkaian Ejen <span style=\"color: #F2B240;\">Heng Ong Bet</span> dan kawal masa depan kewangan anda!",
-      "description": "Mula Jana Pendapatan Hari Ini. Keuntungan Anda, Kawalan Anda.",
+      "title": "Ambil Kawalan Masa Depan Kewangan Anda Bersama Kami",
+      "subtitle": "Sertai <span style=\"color: #F2B240; font-weight: bold\">Rangkaian Ahli Gabungan HengOngBet</span> hari ini! Jadi bos sendiri. Dibayar mingguan. Kembangkan pendapatan seumur hidup.",
+      "description": "Keuntungan Anda. Peraturan Anda. Kawalan Anda.",
       "buttons": {
-        "register": "Daftar",
-        "support": "Sokongan Pelanggan"
+        "register": "Daftar"
       }
     },
     "alt_text": {
@@ -608,100 +696,97 @@
   },
   "supported_games": {
     "title": "Jenis Permainan Yang Disokong",
+    "subtitle": "Promosikan pelbagai permainan yang sudah disukai pemain:",
     "games": {
       "lottery": {
         "title": "Loteri",
-        "subtitle": "(4D, Lucky, Magnum & Lain-lain)"
+        "subtitle": "4D, Lucky, Magnum & lain-lain"
       },
       "sports": {
         "title": "Sukan",
-        "subtitle": "(Acara Global, Odds Masa Nyata)"
+        "subtitle": "Perlawanan global dengan odds masa nyata"
       },
       "slots": {
         "title": "Slot",
-        "subtitle": "(Permainan Malaysia, Asia Number Ring 3)"
+        "subtitle": "Malaysia Gaming, Asia Number Ring 3"
       },
       "horse_racing": {
         "title": "Lumba Kuda",
-        "subtitle": "(Lumba Dalam Talian Kelajuan Penuh)"
+        "subtitle": "Lumba dalam talian berkelajuan penuh yang realistik"
       },
       "live_casino": {
         "title": "Kasino Langsung",
-        "subtitle": "(Dealer Sebenar & Pembahagian Kad Permainan Realistik)"
+        "subtitle": "Peniaga sebenar dan bilik permainan yang mengasyikkan"
       },
       "cockfighting": {
         "title": "Sabung Ayam",
-        "subtitle": "(Aksi Langsung, Pertaruhan Sebenar)"
+        "subtitle": "Aksi Langsung, Pertaruhan Sebenar"
       }
     }
   },
   "why_choose_us": {
-    "title": "Mengapa Pilih Kami?",
+    "title": "Mengapa Menjadi Ahli Gabungan HengOngBet88?",
     "features": {
       "high_commission": {
         "title": "Komisen Tinggi",
-        "description": "Sehingga 50% perkongsian hasil dengan kadar kompetitif"
+        "description": "Sehingga <strong>50% perkongsian hasil</strong>, terma tanpa risiko"
       },
       "custom_solutions": {
         "title": "Penyelesaian Tersuai",
-        "description": "Program affiliate yang disesuaikan untuk kejayaan"
+        "description": "Strategi ahli gabungan yang disesuaikan dan struktur fleksibel"
       },
       "marketing_tools": {
         "title": "Alat Pemasaran",
-        "description": "Banner profesional dan pautan penjejakan"
+        "description": "Akses kepada banner, pautan penjejakan, dan sokongan kempen"
       },
       "dedicated_support": {
         "title": "Sokongan Khusus",
-        "description": "Bantuan dan panduan affiliate 24/7"
+        "description": "Bantuan ahli gabungan 24/7 dan panduan langsung"
       },
       "weekly_payouts": {
         "title": "Pembayaran Mingguan",
-        "description": "Pemprosesan pembayaran pantas dan boleh dipercayai"
-      },
-      "real_time_tracking": {
-        "title": "Penjejakan Masa Nyata",
-        "description": "Pantau pendapatan dan prestasi anda secara langsung"
+        "description": "Pengagihan keuntungan automatik yang pantas. Tiada kelewatan"
       }
     }
   },
   "promotion_section": {
     "header": {
-      "title_prefix": "Promosi Hebat di",
+      "title_prefix": "Promosi Berlimpah di",
       "brand": "Heng Ong Bet",
       "subtitle": "Buka Bonus Eksklusif & Maksimumkan Kemenangan Anda",
-      "description": "Di HengOngBet, kami membawakan anda platform terbaik untuk promosi permainan dalam talian di Malaysia dan Singapura. Bonus eksklusif kami direka khas untuk memberi ganjaran kepada anda bagi setiap pertaruhan yang anda lakukan — dari tawaran pulangan tunai yang murah hati hingga bonus berkaitan turnamen dan bonus Heng Ong yang menarik."
+      "description": "Di HengOngBet, kami membawakan anda platform terbaik untuk promosi permainan dalam talian di Malaysia dan Singapura. Bonus eksklusif kami disesuaikan untuk memberi ganjaran kepada anda untuk setiap taruhan yang anda letakkan — dari tawaran cashback yang murah hati hingga bonus berkaitan turnamen dan bonus Heng Ong yang menarik."
     },
     "promotions": {
       "promo1": {
-        "bonus_label": "Bonus Top-up",
+        "bonus_label": "Bonus Tambah Nilai",
         "bonus_amount": "68%",
         "bonus_subtitle": "Dapatkan Bonus Maksimum Sehingga 200",
-        "title": "Bonus Top-up 68%",
+        "title": "Bonus Tambah Nilai 68%",
         "description": "Dapatkan bonus maksimum sehingga 200",
-        "button_text": "Jemput & Jana Sekarang"
+        "button_text": "Jemput & Peroleh Sekarang"
       },
       "promo2": {
-        "bonus_label": "Rebat Top-up",
+        "bonus_label": "Rebat Tambah Nilai",
         "bonus_amount": "0.5%",
         "bonus_subtitle": "Bonus Tanpa Had",
-        "title": "Rebat Top-up 0.5%",
-        "description": "Bonus tanpa had",
+        "title": "Rebat Tambah Nilai 0.5%",
+        "description": "Bonus Tanpa Had",
         "button_text": "Kongsi & Menang Lebih"
       },
       "promo3": {
-        "bonus_label": "Bonus Top-up",
+        "bonus_label": "Bonus Tambah Nilai",
         "bonus_amount": "200%",
         "bonus_subtitle": "Dapatkan Bonus Maksimum Sehingga 100",
-        "title": "Bonus Top-up 200%",
+        "title": "Bonus Tambah Nilai 200%",
         "description": "Dapatkan bonus maksimum sehingga 100",
         "button_text": "Mula Rujuk Sekarang"
       },
       "promo4": {
         "bonus_label": "Rebat Harian Sehingga",
         "bonus_amount": "3%",
-        "bonus_subtitle": "Semakin Anda Main, Semakin Anda Dapat!",
+        "bonus_subtitle": "Semakin Anda Main, Semakin Anda Peroleh!",
         "title": "Rebat Harian Sehingga 3%!",
-        "description": "Semakin anda main, semakin anda dapat!",
+        "description": "Semakin anda main, semakin anda peroleh!",
         "button_text": "Dapatkan Rebat Anda"
       },
       "promo5": {
@@ -716,15 +801,15 @@
     "mobile_promotions": {
       "promo1": {
         "alt": "Promosi Mudah Alih 1",
-        "title": "Bonus Top-up 68%"
+        "title": "Bonus Tambah Nilai 68%"
       },
       "promo2": {
         "alt": "Promosi Mudah Alih 2",
-        "title": "Rebat Top-up 0.5%"
+        "title": "Rebat Tambah Nilai 0.5%"
       },
       "promo3": {
         "alt": "Promosi Mudah Alih 3",
-        "title": "Bonus Top-up 200%"
+        "title": "Bonus Tambah Nilai 200%"
       },
       "promo4": {
         "alt": "Promosi Mudah Alih 4",
@@ -737,7 +822,7 @@
     }
   },
   "app": {
-    "title": "Apl Heng Ong Bet",
+    "title": "Aplikasi Heng Ong Bet",
     "subtitle": "Untuk IOS & Android",
     "iosDownload": "Muat Turun iOS",
     "androidDownload": "Muat Turun Android",
@@ -774,7 +859,7 @@
         },
         "step2": {
           "title": "Langkah 2",
-          "description": "Ketik Tambah ke Skrin Utama untuk mengeluarkan pemasangan untuk Aplikasi HENG ONG BET."
+          "description": "Ketik Tambah ke Skrin Utama untuk pop up pemasangan Aplikasi HENG ONG BET."
         },
         "step3": {
           "title": "Langkah 3",
@@ -788,7 +873,7 @@
         },
         "step2": {
           "title": "Langkah 2",
-          "description": "Ketik Tambah ke Skrin Utama untuk mengeluarkan pemasangan untuk Aplikasi HENG ONG BET."
+          "description": "Ketik Tambah ke Skrin Utama untuk pop up pemasangan Aplikasi HENG ONG BET."
         },
         "step3": {
           "title": "Langkah 3",
@@ -798,11 +883,149 @@
       "desktop": {
         "step1": {
           "title": "Langkah 1",
-          "description": "Klik butang muat turun desktop di sebelah kanan bar alamat untuk mengeluarkan pemasangan untuk Aplikasi HENG ONG BET."
+          "description": "Klik butang muat turun desktop di sebelah kanan bar alamat untuk pop up pemasangan Aplikasi HENG ONG BET."
         },
         "step2": {
           "title": "Langkah 2",
           "description": "Klik Pasang untuk memiliki Aplikasi HENG ONG BET, lancarkan & nikmati permainan anda!"
+        }
+      }
+    }
+  },
+  "download": {
+    "why_download": {
+      "title": "Muat Turun Aplikasi HengOngBet (2025)",
+      "title2": "Mengapa Muat Turun APK HengOngBet?",
+      "description": "Muat turun aplikasi mudah alih HengOngBet terkini untuk iOS dan Android, selamat, lancar, dan dibina untuk pemain Malaysia. <br>Nikmati bonus eksklusif, pembayaran segera, dan akses 24/7 kepada slot, buku sukan, 4D, dan permainan kasino langsung.",
+      "features": {
+        "mobile_first": "Pengalaman mobile-first yang pantas dibina untuk Android dan iPhone",
+        "one_tap_login": "Log masuk satu ketukan, akses segera ke dompet anda",
+        "exclusive_promotions": "Promosi dalam aplikasi eksklusif dan alat ahli gabungan",
+        "secure_updates": "Kemas kini selamat, tiada APK pihak ketiga"
+      },
+      "tagline": "HENGONGBET88 &#124; MUAT TURUN ANDROID APK &#124; IOS IPHONE PERCUMA &#124; VERSI APLIKASI TERKINI 2025"
+    },
+    "steps": {
+      "title": "Cara Memasang Aplikasi HengOngBet di Android",
+      "step1": "Langkah 1",
+      "step1Description": "Ketik <strong>menu tiga titik</strong> di bahagian atas kanan tetingkap pelayar anda.",
+      "step2": "Langkah 2",
+      "step2Description": "Pilih <strong>\"Tambah ke Skrin Utama.\"</strong>",
+      "step3": "Langkah 3",
+      "step3Description": "Ketik <strong>\"Pasang\"</strong> untuk menyimpan aplikasi. Lancarkan dan nikmati!",
+      "ios_title": "Cara Memasang Aplikasi HengOngBet di iOS",
+      "ios_step1": "Langkah 1",
+      "ios_step1Description": "Ketik butang <strong>\"Muat Turun iOS\"</strong> di atas atau imbas QR.",
+      "ios_step2": "Langkah 2",
+      "ios_step2Description": "Apabila diminta, ketik <strong>\"Pasang\"</strong> pada pop-up.",
+      "ios_step3": "Langkah 3",
+      "ios_step3Description": "Setelah muat turun selesai, kembali ke skrin utama anda dan buka aplikasi.",
+      "ios_step4": "Langkah 4",
+      "ios_step4Description": "Log masuk dan nikmati pengalaman kasino mudah alih penuh."
+    },
+    "start_playing": {
+      "title": "Mula Bermain Serta-merta",
+      "description": "Muat turun aplikasi HengOngBet dan nikmati akses penuh kepada:",
+      "games": {
+        "slots": "1000+ Permainan Slot dari JILI, Monkey King, Askmeslot & lain-lain",
+        "live_casino": "Kasino Langsung Yang Menakjubkan termasuk Sexy, Evolution, dan Big Gaming",
+        "sports_racing": "Lumba Kuda, Sabung Ayam SV388 & Buku Sukan Global",
+        "lottery": "Keputusan Loteri 4D melalui Ekor",
+        "real_time": "Deposit masa nyata, pengeluaran & rebat, keseronokan tanpa had."
+      }
+    },
+    "benefits": {
+      "title": "Faedah Bermain di Mudah Alih vs Desktop",
+      "table": {
+        "headers": {
+          "feature": "Ciri",
+          "app": "Aplikasi HengOngBet",
+          "website": "Laman Web (Desktop/Mudah Alih)"
+        },
+        "rows": {
+          "touchscreen": {
+            "feature": "Navigasi Skrin Sentuh",
+            "app": "✅",
+            "website": "❌"
+          },
+          "biometric": {
+            "feature": "Log Masuk Biometrik Satu Ketukan",
+            "app": "✅",
+            "website": "❌"
+          },
+          "notifications": {
+            "feature": "Notifikasi Push",
+            "app": "✅",
+            "website": "❌"
+          },
+          "exclusive_promotions": {
+            "feature": "Promosi Eksklusif Dalam Aplikasi",
+            "app": "✅",
+            "website": "❌"
+          },
+          "home_screen": {
+            "feature": "Akses Pintasan Skrin Utama",
+            "app": "✅",
+            "website": "❌"
+          },
+          "rebate_alerts": {
+            "feature": "Amaran Rebat Masa Nyata",
+            "app": "✅",
+            "website": "❌"
+          },
+          "affiliate_tools": {
+            "feature": "Alat Ahli Gabungan Khusus Aplikasi",
+            "app": "✅",
+            "website": "❌"
+          },
+          "gameplay": {
+            "feature": "Pengalaman Gameplay Yang Lebih Lancar",
+            "app": "✅",
+            "website": "⚠️ (Bergantung Pada Pelayar)"
+          },
+          "offline_preview": {
+            "feature": "Sokongan Pratonton Permainan Luar Talian",
+            "app": "✅",
+            "website": "❌"
+          },
+          "wallet_integration": {
+            "feature": "Integrasi Dompet Terbina Dalam",
+            "app": "✅",
+            "website": "⚠️ (Memerlukan Akses Manual)"
+          }
+        }
+      }
+    },
+    "safety": {
+      "title": "Adakah Aplikasi HengOngBet Selamat Untuk Dimuat Turun?",
+      "description": "Sudah tentu. HengOngBet dibina dengan keselamatan pemain sebagai keutamaan utama. Semua transaksi dilindungi dengan <strong>penyulitan AES-256</strong>, standard yang sama yang digunakan oleh bank, memastikan dompet, kelayakan log masuk, dan data peribadi anda kekal selamat. Aplikasi ini juga menyokong <strong>amaran log masuk berasaskan peranti</strong> dan <strong>Pengesahan 2-Faktor (2FA) pilihan</strong> untuk mencegah akses tanpa kebenaran. Yang penting, HengOngBet tidak meminta kebenaran yang tidak perlu semasa pemasangan, tiada akses kepada kamera, mikrofon, atau fail peribadi anda. Itu menjadikannya salah satu <strong>aplikasi kasino mudah alih yang paling prihatin privasi</strong> yang tersedia di Malaysia hari ini."
+    },
+    "faq": {
+      "title": "Soalan Lazim Mengenai Muat Turun Aplikasi HengOngBet",
+      "items": {
+        "safe": {
+          "question": "Adakah Aplikasi HengOngBet selamat untuk dimuat turun?",
+          "answer": "Ya. Sentiasa gunakan pautan muat turun rasmi yang disediakan oleh Heng Ong Bet untuk memastikan fail APK atau iOS anda selamat dan bebas malware."
+        },
+        "both_platforms": {
+          "question": "Bolehkah saya memasang HengOngBet di kedua-dua Android dan iPhone?",
+          "answer": "Sudah tentu. Aplikasi ini menyokong kedua-dua peranti Android (APK) dan iOS dengan pengalaman mobile-first yang lancar."
+        },
+        "latest_apk": {
+          "question": "Di mana saya boleh mendapatkan versi APK terkini untuk HengOngBet?",
+          "answer": "Anda boleh memuat turun APK 2025 terkini dari butang Muat Turun Android atau iOS rasmi kami atau kod QR di halaman ini."
+        },
+        "permissions": {
+          "question": "Adakah Saya Perlu Membenarkan Kebenaran Khas Untuk Memasang Aplikasi?",
+          "answer": "Untuk Android, anda mungkin perlu membolehkan \"Pasang dari Sumber Tidak Diketahui\" dalam tetapan anda. Pengguna iOS hanya perlu ketik \"Pasang\" dan ikuti arahan."
+        },
+        "games_access": {
+          "question": "Permainan Apa Yang Boleh Saya Akses Di Aplikasi?",
+          "answer": "Semuanya, termasuk permainan slot, buku sukan, kasino langsung, sabung ayam, dan keputusan 4D. Semua ciri dioptimumkan sepenuhnya untuk aplikasi."
+        },
+        "app_promotions": {
+          "question": "Adakah Terdapat Promosi Atau Bonus Khusus Aplikasi?",
+          "answer": "Ya. Pengguna aplikasi mendapat akses kepada kredit percuma eksklusif, amaran rebat, dan alat ejen yang lebih pantas yang tidak tersedia di laman web."
         }
       }
     }
@@ -819,8 +1042,8 @@
       "lucky365": "Lucky 365",
       "askmeslot": "Askmeslot",
       "jdb": "JDB",
-      "monkeyKing": "Raja Monyet",
-      "hotRoad": "Jalan Panas",
+      "monkeyKing": "Monkey King",
+      "hotRoad": "Hot Road",
       "maxbet": "Maxbet",
       "sv388": "Sv388",
       "rcb988": "Rcb988",
@@ -838,6 +1061,123 @@
     },
     "actions": {
       "clickToPlay": "Klik untuk main {gameName}"
+    },
+    "content": {
+      "title": "Permainan",
+      "slots": {
+        "title": "Slot",
+        "description": "Berputar, menang, dan nikmati aksi tanpa henti dengan penyedia <strong>slot dalam talian</strong> kegemaran Malaysia.<br><br>Dari mesin 3-reel klasik hingga pengembaraan sinematik yang penuh dengan bonus, HengOngBet membawakan anda yang terbaik dari permainan slot di satu tempat. Berikut adalah rasa apa yang boleh anda mainkan:",
+        "games": {
+          "lucky365": {
+            "title": "Lucky 365",
+            "description": "Melangkah ke dunia mitos dan sihir dengan Lucky 365. Slot bayaran tinggi ini diilhamkan oleh dewa legenda, pencarian epik, dan kuasa purba, sempurna untuk pemain yang menikmati visual yang mengasyikkan dan peluang untuk membuka jackpot utama dengan setiap putaran."
+          },
+          "askmeslot": {
+            "title": "Askmeslot",
+            "description": "Askmeslot menyampaikan keseronokan kasual dengan animasi cerah dan jalan cerita yang ringan. Sama ada anda baru dalam slot atau hanya mahukan pengalaman yang santai, antara muka yang mesra pengguna dan grafik yang lancar memudahkan untuk dinikmati, walaupun dalam rehat singkat."
+          },
+          "jdb": {
+            "title": "JDB",
+            "description": "Terkenal dengan mekanik gaya arked dan format permainan kreatif, JDB menonjol dengan permainan memancing, reel pantas, dan ciri bonus interaktif. Ia sesuai untuk pemain yang menikmati campuran kemahiran dan nasib, semuanya dalam satu ketukan."
+          },
+          "monkeyKing": {
+            "title": "Monkey King",
+            "description": "Koleksi ini memberi penghormatan kepada salah satu watak paling ikonik Asia, Raja Monyet. Dipengaruhi oleh filem kultus Stephen Chow dan tajuk seperti Black Myth Wukong, permainan ini menyampaikan putaran penuh aksi, visual sinematik, dan gameplay bonus yang kaya yang membuatkan anda kembali."
+          },
+          "jili": {
+            "title": "JILI",
+            "description": "JILI adalah ruji dalam dunia slot dalam talian dan atas sebab yang baik. Menampilkan kemenangan berturut-turut, pusingan bonus, dan ciri progresif, JILI menawarkan sesuatu untuk setiap jenis pemain. Jika anda tidak pasti di mana hendak bermula, mulakan dengan JILI."
+          },
+          "microslot": {
+            "title": "Microslot",
+            "description": "Bergaya, pintar, dan mobile-first Microslot dibina untuk pemain moden yang mahukan pengalaman slot premium di mana-mana peranti. Dengan visual yang diilhamkan sains fiksyen dan animasi yang tajam, ia sempurna untuk pemain yang menghargai prestasi dan reka bentuk tanpa kompromi.<br><br>Semua permainan dioptimumkan untuk mudah alih, disahkan keadilan, dan tersedia 24/7 dengan akses selamat."
+          }
+        }
+      },
+      "casino": {
+        "title": "Kasino",
+        "description": "Alami keseronokan masa nyata dengan <strong>permainan peniaga langsung</strong> terbaik Malaysia.<br><br><strong>Kasino Langsung</strong> kami membawa tenaga lantai kasino sebenar terus ke skrin anda, semuanya dihoskan oleh peniaga profesional dan mesra dalam streaming definisi tinggi. Bermain dari keselesaan sofa anda atau semasa perjalanan Grab, kami ada untuk anda!",
+        "games": {
+          "hotRoad": {
+            "title": "Hot Road",
+            "description": "Hot Road mentakrifkan semula pengalaman kasino langsung dengan reka bentuk futuristik dan automasi canggih. Menampilkan lengan robotik sebagai peniaga langsung, ia membawa sentuhan sains fiksyen kepada permainan tradisional seperti Dragon Tiger dan Baccarat. Ini adalah pilihan yang bagus untuk pemain yang mencari sesuatu yang berbeza, menarik secara visual, dan masih interaktif sepenuhnya."
+          },
+          "evolution": {
+            "title": "Evolution",
+            "description": "Evolution adalah pemimpin industri dalam hiburan kasino langsung, menawarkan Baccarat langsung, Roulette, dan siri Lightning kelas dunia mereka. Dengan streaming berkualiti tinggi, hos profesional, dan tajuk gaya rancangan permainan seperti <strong>Crazy Time</strong> dan <strong>Monopoly Live</strong>, Evolution menyampaikan pengalaman permainan langsung yang mengasyikkan dan dipercayai untuk pemain Malaysia."
+          },
+          "sexy": {
+            "title": "Sexy",
+            "description": "Betul, kami membawa kembali sexy dengan peniaga cantik kami yang berpakaian bikini dan lingerie. Tetapi selain peniaga menawan kami, mereka juga mahir dalam blackjack, roulette dan permainan kad lain. Kecantikan dan Otak!"
+          },
+          "bigGaming": {
+            "title": "Big Gaming",
+            "description": "Big Gaming menawarkan pengalaman <strong>kasino langsung HD</strong> yang dinamik yang dibina untuk kelajuan dan keutamaan tempatan. Dengan pusingan pertaruhan yang pantas, antara muka yang mudah digunakan, dan permainan biasa seperti Baccarat, Dragon Tiger, dan Roulette, ia sempurna untuk pemain Malaysia yang menghargai aksi pantas."
+          },
+          "pragmaticPlay": {
+            "title": "Pragmatic Play",
+            "description": "Pragmatic Play menggabungkan reka bentuk elegan dengan keseronokan masa nyata. Terkenal dengan antara muka yang bersih dan prestasi yang boleh dipercayai, penyedia ini menawarkan pelbagai permainan langsung dalam pelbagai bahasa, termasuk Melayu, Mandarin, dan Inggeris. Dari meja kad klasik hingga format yang diilhamkan rancangan permainan seperti <strong>Mega Wheel</strong> dan <strong>Sweet Bonanza Live</strong>, ia dibina untuk pemain yang menikmati kepelbagaian dengan sentuhan moden."
+          }
+        }
+      },
+      "sports": {
+        "title": "Sukan",
+        "description": "Pas akses penuh anda kepada pertaruhan sukan masa nyata di setiap arena.<br><br>Sama ada bola sepak, bola keranjang, e-sukan, atau bahkan sabung ayam dan lumba kuda, HengOngBet menghubungkan anda kepada penyedia buku sukan terbaik dengan odds langsung, kemas kini segera, dan taruhan yang lancar.",
+        "games": {
+          "maxbet": {
+            "title": "Maxbet",
+            "description": "Salah satu nama paling dipercayai di Asia dalam <strong>pertaruhan sukan</strong>, Maxbet menawarkan liputan meluas pada liga bola sepak antarabangsa, NBA, tenis, dan banyak lagi. Dengan statistik masa nyata, pilihan multi-bet, dan cashout mudah, ia adalah pilihan yang kukuh untuk kedua-dua petaruh baru dan berpengalaman.<br><br>Liputan termasuk:<br>• Bola sepak antarabangsa (EPL, La Liga, Serie A, kelayakan Piala Dunia)<br>• Bola keranjang (NBA, EuroLeague, FIBA)<br>• Tenis (ATP, WTA, Grand Slams)<br>• E-sukan (Dota 2, League of Legends, CS:GO)<br>• Badminton dan ping pong<br>• Bola sepak Amerika (NFL)<br>• Besbol (MLB, NPB)<br>• Hoki ais (NHL, KHL)<br>• Pertaruhan langsung pada perlawanan yang sedang berlangsung<br>• Handicap, over/under, 1X2, skor betul, dan taruhan mix parlay"
+          },
+          "sv388": {
+            "title": "SV388",
+            "description": "Mengkhusus dalam <strong>sabung ayam dalam talian</strong> yang disahkan, SV388 menyampaikan streaming definisi tinggi, keputusan telus, dan pertaruhan selamat untuk vertikal khusus tetapi sangat popular di Asia Tenggara. Perlawanan berlangsung setiap hari dengan odds terperinci dan penjejakan keputusan."
+          },
+          "rcb988": {
+            "title": "RCB988",
+            "description": "RCB988 memenuhi keperluan peminat lumba kuda dan sukan khusus dengan platform <strong>pertaruhan kuda</strong> yang bergaya yang memfokuskan pada ketepatan dan kelajuan. Sama ada anda bertaruh pada lumba tempatan atau antarabangsa, antara muka ini pantas, intuitif, dan disokong oleh pembayaran yang dipercayai.<br><br>Semua penyedia buku sukan bersedia untuk mudah alih, menampilkan sokongan pelbagai bahasa, dan beroperasi di bawah standard keadilan permainan yang ketat."
+          }
+        }
+      },
+      "lottery": {
+        "title": "Loteri",
+        "games": {
+          "ekor": {
+            "title": "Ekor",
+            "descriptionStart": "Pilih 4 digit anda dan lihat ke mana nasib membawa anda. Heng Ong Bet menghubungkan anda kepada cabutan tempatan dan <strong>4D</strong> dengan keputusan telus dan pemprosesan pembayaran segera, terus dari telefon anda dengan Ekor.<br><br>Anda boleh bertaruh pada nombor kegemaran anda, semak keputusan lepas, dan ikuti cabutan langsung dalam satu platform selamat. Ia menyokong jenis taruhan standard, iBox, dan Besar/Kecil, semuanya dengan antara muka yang bersih dan kemas kini keputusan yang pantas.<br><br>Taruh besar, taruh kecil, mari taruh semuanya, dengan ",
+            "linkText": "keputusan 4D ",
+            "descriptionEnd": "segera kami di Ekor."
+          }
+        }
+      },
+      "faq": {
+        "title": "Soalan Lazim Mengenai Permainan HengOngBet",
+        "items": {
+          "popular": {
+            "question": "Apakah Permainan Slot Paling Popular Di HengOngBet?",
+            "answer": "Pilihan teratas termasuk Super Ace, Boxing King, FaFaFa dan Panther Moon. Semuanya mesra mudah alih dengan RTP tinggi dan ciri bertema."
+          },
+          "realTime": {
+            "question": "Adakah Pengalaman Kasino Langsung Masa Nyata?",
+            "answer": "Ya. Heng Ong Bet menawarkan permainan masa nyata dengan video HD dan peniaga sebenar dari penyedia seperti Evolution, Sexy, Big Gaming, dan Hot Road."
+          },
+          "sports": {
+            "question": "Bolehkah Saya Bertaruh Pada Sukan Seperti Bola Sepak Atau E-Sukan?",
+            "answer": "Sudah tentu. Buku sukan Heng Ong Bet termasuk Maxbet, SV388, dan RCB988, meliputi bola sepak, bola keranjang, sabung ayam, dan banyak lagi."
+          },
+          "ekor4d": {
+            "question": "Apakah Ekor 4D Dan Bagaimana Ia Berfungsi?",
+            "answer": "Ekor membolehkan anda meletakkan taruhan 4D dalam talian, semak keputusan serta-merta, dan pilih dari taruhan standard, iBox, Besar/Kecil. Keputusan dikemas kini secara langsung."
+          },
+          "fair": {
+            "question": "Adakah Permainan Heng Ong Bet Adil Dan Berlesen?",
+            "answer": "Ya. Semua permainan berlesen dan disahkan keadilan, menggunakan RNG atau pengesahan peniaga langsung dari penyedia global yang dipercayai."
+          },
+          "mobile": {
+            "question": "Bolehkah Saya Main Semua Permainan Di Mudah Alih?",
+            "answer": "Ya. Slot, kasino langsung, 4D, dan pertaruhan sukan tersedia sepenuhnya melalui aplikasi Heng Ong Bet, dengan masa pemuatan yang lebih pantas dan faedah khusus aplikasi."
+          }
+        }
+      }
     }
   },
   "faq": {
@@ -846,11 +1186,11 @@
     "search": {
       "placeholder": "Taip kata kunci carian anda di sini...",
       "button": "Cari",
-      "noResults": "Tiada soalan FAQ dijumpai untuk \"{query}\"",
+      "noResults": "Tiada soalan FAQ ditemui untuk \"{query}\"",
       "tryDifferent": "Cuba cari dengan kata kunci yang berbeza atau layari semua soalan di atas."
     },
     "sections": {
-      "gettingStarted": "Bermula",
+      "gettingStarted": "Memulakan",
       "loginSecurity": "Log Masuk & Keselamatan Akaun",
       "bonusPromotions": "Bonus & Promosi",
       "finalNote": "Nota Akhir"
@@ -861,18 +1201,18 @@
         "answer": "Walaupun peraturan pertaruhan dalam talian berbeza-beza, HengOngBet beroperasi di bawah pelesenan antarabangsa dan menyediakan akses selamat kepada hiburan untuk pengguna di kedua-dua negara. Adalah tanggungjawab anda untuk memastikan anda mencapai umur yang sah dan pertaruhan dalam talian dibenarkan di wilayah anda."
       },
       {
-        "question": "Bagaimana saya membuat akaun di HengOngBet?",
-        "answer": "Lawati https://hengongbet88.net, klik \"Daftar,\" isi nombor telefon bimbit, nama pengguna, kata laluan, dan kod pengesahan anda. Pastikan untuk memasukkan kod rujukan yang sah untuk menuntut bonus selamat datang anda."
+        "question": "Bagaimana saya mencipta akaun di HengOngBet?",
+        "answer": "Lawati https://hengongbet88.net, klik \"Daftar,\" isi nombor mudah alih, nama pengguna, kata laluan, dan kod pengesahan anda. Pastikan untuk memasukkan kod rujukan yang sah untuk menuntut bonus selamat datang anda."
       },
       {
         "question": "Bolehkah saya mendaftar menggunakan nombor telefon orang lain?",
-        "answer": "Tidak. Anda mesti menggunakan nombor telefon bimbit anda sendiri untuk melengkapkan pengesahan SMS dan memastikan keselamatan akaun anda."
+        "answer": "Tidak. Anda mesti menggunakan nombor mudah alih anda sendiri untuk melengkapkan pengesahan SMS dan memastikan keselamatan akaun anda."
       }
     ],
     "loginSecurity": [
       {
-        "question": "Saya tidak menerima kod pengesahan SMS. Apa yang perlu saya lakukan?",
-        "answer": "Periksa isyarat telefon anda, pastikan anda memasukkan nombor yang betul, dan cuba hantar semula kod tersebut. Jika masalah berterusan, hubungi sokongan langsung."
+        "question": "Saya tidak menerima kod pengesahan SMS saya. Apa yang patut saya lakukan?",
+        "answer": "Semak isyarat telefon anda, pastikan anda memasukkan nombor yang betul, dan cuba hantar semula kod. Jika masalah berterusan, hubungi sokongan langsung."
       },
       {
         "question": "Saya terlupa kata laluan saya. Bagaimana saya boleh menetapkannya semula?",
@@ -880,14 +1220,14 @@
       },
       {
         "question": "Bolehkah saya mempunyai lebih daripada satu akaun?",
-        "answer": "Tidak. Beberapa akaun oleh pengguna yang sama tidak dibenarkan dan boleh mengakibatkan semua akaun berkaitan digantung."
+        "answer": "Tidak. Akaun berganda oleh pengguna yang sama tidak dibenarkan dan boleh mengakibatkan semua akaun berkaitan digantung."
       },
       {
         "question": "Apakah deposit minimum di HengOngBet?",
         "answer": "Deposit minimum berbeza bergantung pada kaedah pembayaran, tetapi biasanya bermula pada RM30."
       },
       {
-        "question": "Bagaimana saya mendepositkan dana?",
+        "question": "Bagaimana saya deposit dana?",
         "answer": "Log masuk ke akaun anda, pergi ke \"Deposit,\" pilih kaedah pembayaran (cth. FPX, DuitNow, pindahan bank), dan ikuti arahan."
       },
       {
@@ -895,8 +1235,8 @@
         "answer": "Kebanyakan pengeluaran diproses dalam masa 5-15 minit semasa waktu operasi. Kelewatan mungkin berlaku semasa trafik tinggi."
       },
       {
-        "question": "Bolehkah saya mengeluarkan Bonus Selamat Datang RM10 secara langsung?",
-        "answer": "Tidak. Bonus mesti digunakan untuk membuat pertaruhan. Kemenangan daripada bonus boleh dikeluarkan setelah keperluan pertaruhan dipenuhi."
+        "question": "Bolehkah saya keluarkan Bonus Selamat Datang RM10 secara langsung?",
+        "answer": "Tidak. Bonus mesti digunakan untuk meletakkan taruhan. Kemenangan dari bonus boleh dikeluarkan setelah keperluan pertaruhan dipenuhi."
       },
       {
         "question": "Adakah terdapat aplikasi mudah alih untuk HengOngBet?",
@@ -904,64 +1244,65 @@
       },
       {
         "question": "Adakah aplikasi HengOngBet selamat untuk digunakan?",
-        "answer": "Ya. Sentiasa muat turun aplikasi dari laman web rasmi untuk mengelakkan klon pihak ketiga. Aplikasi menggunakan penyulitan selamat dan mengikuti semua piawaian perlindungan data."
+        "answer": "Ya. Sentiasa muat turun aplikasi dari laman web rasmi untuk mengelakkan klon pihak ketiga. Aplikasi menggunakan penyulitan selamat dan mengikuti semua standard perlindungan data."
       }
     ],
     "bonusPromotions": [
       {
         "question": "Bagaimana saya menuntut bonus selamat datang RM10?",
-        "answer": "Daftarkan akaun baru menggunakan nombor telefon bimbit sebenar anda dan masukkan kod rujukan yang sah. Bonus RM10 akan dikreditkan selepas pengesahan berjaya."
+        "answer": "Daftarkan akaun baru menggunakan nombor mudah alih sebenar anda dan masukkan kod rujukan yang sah. Bonus RM10 akan dikreditkan selepas pengesahan berjaya."
       },
       {
-        "question": "Adakah terdapat bonus harian atau promosi muat semula?",
-        "answer": "Ya. Lawati Halaman Promosi secara berkala untuk melihat semua tawaran aktif, termasuk muat semula harian, pulangan tunai, dan ganjaran VIP."
+        "question": "Adakah terdapat bonus harian atau promosi reload?",
+        "answer": "Ya. Lawati Halaman Promosi secara berkala untuk melihat semua tawaran aktif, termasuk reload harian, cashback, dan ganjaran VIP."
       },
       {
         "question": "Adakah bonus mempunyai keperluan pertaruhan?",
         "answer": "Ya. Semua bonus datang dengan terma khusus. Pastikan untuk membaca syarat sebelum mengaktifkan sebarang tawaran."
       },
       {
-        "question": "Laman web tidak akan memuatkan di telefon saya. Apa yang perlu saya lakukan?",
-        "answer": "Cuba kosongkan cache pelayar anda, tukar ke pelayar yang berbeza, atau gunakan versi aplikasi untuk prestasi yang lebih baik."
+        "question": "Laman web tidak akan memuatkan di telefon saya. Apa yang patut saya lakukan?",
+        "answer": "Cuba kosongkan cache pelayar anda, tukar kepada pelayar yang berbeza, atau gunakan versi aplikasi untuk prestasi yang lebih baik."
       },
       {
-        "question": "Permainan terhenti atau ranap semasa bermain. Adakah saya akan kehilangan pertaruhan saya?",
-        "answer": "Hasil pertaruhan anda masih direkodkan oleh penyedia permainan. Anda boleh masuk semula ke permainan atau hubungi sokongan untuk mengesahkan hasil."
+        "question": "Permainan beku atau ranap semasa bermain. Adakah saya akan kehilangan taruhan saya?",
+        "answer": "Keputusan taruhan anda masih direkodkan oleh penyedia permainan. Anda boleh masuk semula ke permainan atau hubungi sokongan untuk mengesahkan hasilnya."
       },
       {
         "question": "Bagaimana saya menghubungi sokongan pelanggan?",
-        "answer": "Ya. Ejen langsung kami dilatih untuk membantu anda dalam bahasa Inggeris, Cina, dan Melayu."
+        "answer": "Ya. Ejen langsung kami dilatih untuk membantu anda dalam Bahasa Inggeris, Cina, dan Melayu."
       },
       {
         "question": "Bolehkah saya bercakap dengan orang sebenar?",
-        "answer": "Sokongan sembang langsung tersedia 24/7 melalui laman web atau aplikasi mudah alih."
+        "answer": "Sokongan chat langsung tersedia 24/7 melalui laman web atau aplikasi mudah alih."
       },
       {
-        "question": "Di mana saya boleh mendapat kemas kini tentang ciri atau acara baru?",
+        "question": "Di mana saya boleh mendapat kemas kini mengenai ciri atau acara baru?",
         "answer": "Ikuti saluran Telegram rasmi kami atau semak bahagian Blog untuk pengumuman."
       }
     ],
     "finalNote": {
       "title": "Masih ada soalan?",
-      "content": "Lawati Pusat Bantuan kami atau bercakap dengan ejen sokongan bila-bila masa. HengOngBet komited untuk menyediakan permainan dalam talian yang selamat, telus, dan bermanfaat untuk semua pemain."
+      "content": "Lawati Pusat Bantuan kami atau bercakap dengan ejen sokongan bila-bila masa. HengOngBet komited untuk menyediakan permainan dalam talian yang selamat, telus, dan memberi ganjaran untuk semua pemain."
     }
   },
   "tutorial": {
-    "title": "Panduan Tutorial",
+    "title": "Panduan",
     "titleHighlight": "Tutorial",
-    "subtitle": "Mudah Untuk Diketahui & Hanya Ikut Langkah Tutorial",
+    "subtitle": "Mudah Untuk Tahu & Hanya Ikut Langkah Tutorial",
     "sections": {
       "redeemBonus": {
-        "title": "3 langkah mudah untuk {highlight} (bonus ahli baru)",
+        "title": "3 langkah mudah untuk",
         "highlight": "Tebus RM10",
+        "subtitle": "(bonus ahli baru)",
         "steps": [
           "Klik pada Terma di bahagian bawah kiri aplikasi",
           "Klik \"Tuntut Sekarang\" di halaman aktiviti",
-          "Klik \"Tebus Sekarang\" ikut arahan aktiviti"
+          "Klik \"Tebus Sekarang\" ikuti arahan aktiviti"
         ]
       },
       "queryHistory": {
-        "title": "Tutorial {highlight}",
+        "title": "Tutorial",
         "highlight": "Sejarah pertanyaan",
         "steps": [
           "Klik pada \"hari ini\" di bahagian bawah aplikasi",
@@ -973,37 +1314,192 @@
     },
     "alt": {
       "tutorialIcon": "Ikon Tutorial"
+    },
+    "guide": {
+      "introduction": {
+        "title": "Tutorial Pemain Baru <span class=\"title-highlight\">HengOngBet88</span>",
+        "subtitle": "Sama ada anda di sini untuk berputar slot, bermain 4D, atau menikmati meja kasino langsung, perjalanan <strong>Heng Ong Bet</strong> anda bermula dengan hanya beberapa langkah mudah."
+      },
+      "registration": {
+        "title": "Langkah 1: Cara Mendaftar & Muat Turun Aplikasi",
+        "steps": [
+          "Lawati laman rasmi: <router-link to=\"/\" class=\"official-link\">www.hengongbet88.com</router-link>",
+          "Ketik pada <strong>Muat Turun</strong> (pilih pilihan Android APK atau iOS).",
+          "Pasang <strong>Aplikasi Heng Ong Bet</strong> pada peranti mudah alih anda.",
+          "Buka aplikasi dan ketik <strong>Daftar</strong>."
+        ],
+        "details": {
+          "title": "Isi butiran anda:",
+          "username": "Nama Pengguna (cipta sendiri)",
+          "password": "Kata Laluan Selamat",
+          "referral": "Kod Rujukan (jika ada)",
+          "phone": "Nombor telefon (untuk pengesahan)"
+        },
+        "note": "Setelah dihantar, akaun anda dicipta serta-merta.",
+        "warning": "<strong>Sentiasa muat turun aplikasi dari laman rasmi untuk mengelakkan klon palsu.</strong>"
+      },
+      "login": {
+        "title": "Langkah 2: Log Masuk ke Akaun Anda",
+        "intro": "Setelah mendaftar:",
+        "steps": [
+          "Buka <strong>aplikasi Heng Ong Bet</strong>",
+          "Masukkan <strong>nama pengguna</strong> dan <strong>kata laluan</strong> anda",
+          "Ketik <strong>Log Masuk</strong>"
+        ],
+        "description": "Anda akan dibawa ke laman utama, di mana baki, permainan, dan promosi anda semuanya dalam satu papan pemuka.",
+        "reminder": {
+          "title": "Peringatan Log Masuk Kali Pertama:",
+          "text": "Anda mungkin diminta untuk mengesahkan nombor mudah alih anda atau mengemas kini profil anda. Lakukan awal untuk mengelakkan kelewatan pengeluaran kemudian."
+        }
+      },
+      "bonuses": {
+        "title": "Langkah 3: Tuntut Bonus & Rebat Aktif",
+        "intro": "Tidak seperti platform lain, <strong>Heng Ong Bet</strong> memfokuskan pada <strong>ganjaran tambah nilai bernilai tinggi</strong> daripada bonus selamat datang tetap. Berikut adalah <strong>promosi langsung</strong> yang boleh anda tuntut selepas mendaftar:",
+        "table": {
+          "headers": {
+            "promotion": "Promosi",
+            "details": "Butiran",
+            "claim": "Cara Menuntut"
+          },
+          "rows": {
+            "deposit": {
+              "name": "Bonus Deposit 200%",
+              "details": "Dapatkan <strong>bonus 200%</strong> pada tambah nilai anda, sehingga RM100",
+              "claim": "Buat deposit dan ketik \"Tuntut\" dalam tab <strong>Promosi</strong>"
+            },
+            "topup": {
+              "name": "Bonus Tambah Nilai 68%",
+              "details": "Bonus reload slot eksklusif, sehingga RM200",
+              "claim": "Deposit dan pilih permainan slot yang layak (Lucky365, Monkey King, dll.)"
+            },
+            "rebate": {
+              "name": "Rebat Tambah Nilai 0.5%",
+              "details": "Dapatkan rebat 0.5% pada setiap tambah nilai, <strong>tiada had</strong>",
+              "claim": "Dikreditkan secara automatik pada semua tambah nilai"
+            },
+            "daily": {
+              "name": "Rebat Harian Sehingga 3%",
+              "details": "Peroleh rebat semasa anda bermain, semakin anda taruh, semakin anda dapat",
+              "claim": "Tiada tindakan diperlukan — terpakai berdasarkan volum permainan"
+            }
+          }
+        },
+        "note": "Sentiasa baca T&C promosi penuh dalam <strong>halaman Promosi aplikasi</strong> untuk mengelakkan salah faham mengenai pertaruhan atau peraturan pengeluaran."
+      },
+      "games": {
+        "title": "Langkah 4: Mainkan Slot Kegemaran atau Permainan Kasino Langsung Anda",
+        "intro": "Selepas menuntut bonus anda:",
+        "steps": [
+          "Ketik pada <strong>\"Permainan\"</strong> dalam menu",
+          "Pilih kategori permainan anda:",
+          "Ketik untuk masuk ke permainan dan mula bermain!"
+        ],
+        "categories": {
+          "slots": "Permainan Slot (Lucky365, Monkey King)",
+          "live": "Kasino Langsung (Sexy Baccarat, Evolution)",
+          "lottery": "4D & Loteri"
+        },
+        "tip": "Anda boleh kegemaran permainan teratas anda untuk mengaksesnya dengan lebih pantas lain kali dengan <strong>Daftar HengongBet88</strong>. Selamat menikmati!"
+      },
+      "proTips": {
+        "title": "Tip Pro untuk Pemain Baru (Bermain Bijak, Bukan Hanya Keras)",
+        "intro": "Jadi anda telah melakukan <strong>pendaftaran Heng Ong Bet</strong> anda, menuntut bonus anda, dan anda bersedia untuk berputar. Tetapi tunggu, jangan hanya terjun secara membuta tuli. Berikut adalah 5 tip penting yang setiap pemula patut tahu sebelum bermain di Heng Ong Bet:",
+        "tips": {
+          "rtp": {
+            "title": "Semak RTP Sebelum Anda Bermain",
+            "description": "Cari permainan dengan kadar Return to Player (RTP) yang tinggi, <strong>idealnya 96% atau lebih.</strong><br><br>Mengapa? RTP yang lebih tinggi bermakna odds yang lebih baik dari masa ke masa. Permainan seperti <em>Lucky365</em> dan <em>Monkey King</em> sering memaparkan RTP mereka dalam maklumat permainan. Ia tidak menjamin kemenangan segera, tetapi membantu wang anda bertahan lebih lama."
+          },
+          "budget": {
+            "title": "Tetapkan Bajet dan Patuhi",
+            "description": "Tentukan bankroll anda sebelum anda mula berputar.<br><br>Sama ada RM50 atau RM500, mengetahui had anda membantu anda bermain dengan bertanggungjawab. Jangan tambah nilai hanya untuk mengejar kerugian, ini adalah hiburan, bukan hari gaji."
+          },
+          "volatility": {
+            "title": "Mulakan dengan Permainan Volatiliti Rendah",
+            "description": "Mulakan dengan permainan yang menawarkan kemenangan kecil yang kerap daripada pukulan besar yang jarang.<br><br>Slot volatiliti rendah membantu anda kekal dalam permainan lebih lama sambil mempelajari mekanik. Ia adalah cara yang bagus untuk membina keyakinan tanpa membakar bankroll anda terlalu cepat."
+          },
+          "bonuses": {
+            "title": "Tuntut Bonus Secara Strategik",
+            "description": "Gunakan promosi pada permainan yang benar-benar anda nikmati, bukan hanya kerana ia sedang trending.<br><br>Jika anda suka aksi reel-spinning, pasangkan bonus deposit anda dengan <em>Askmeslot</em>. Suka tema aksi tinggi? Gunakan pada <em>MicroGaming</em>. Sentiasa padankan bonus dengan gaya permainan anda untuk nilai maksimum."
+          },
+          "rules": {
+            "title": "Sentiasa Baca Peraturan Permainan Dahulu",
+            "description": "Setiap slot mempunyai ciri unik: reel berturut-turut, pengganda liar, pembelian bonus.<br><br>Memahami cara slot berfungsi, terutamanya pencetus bonus dan simbol boleh memberi anda kelebihan. Ketik ikon maklumat atau \"?\" dalam mana-mana permainan untuk pratonton mekaniknya sebelum meletakkan taruhan sebenar."
+          }
+        },
+        "quote": "\"Pemain bijak bertahan lebih lama dan menang dengan lebih bijak.\""
+      }
+    },
+    "faq": {
+      "title": "Soalan Lazim untuk Daftar HengOngBet88",
+      "questions": [
+        {
+          "question": "Bagaimana saya mendaftar untuk HengOngBet88?",
+          "answer": "Lawati laman rasmi Heng Ong Bet8 dan muat turun aplikasi, ketik \"Daftar,\" dan isi nama pengguna, kata laluan, dan nombor mudah alih anda untuk mencipta akaun anda."
+        },
+        {
+          "question": "Adakah terdapat bonus untuk pemain baru di HengOngBet88?",
+          "answer": "Ya. Pemain baru boleh menikmati sehingga <strong>bonus deposit 200%</strong>, <strong>bonus tambah nilai slot 68%</strong>, dan sehingga <strong>rebat harian 3%</strong> pada gameplay."
+        },
+        {
+          "question": "Permainan apa yang boleh saya mainkan selepas mendaftar?",
+          "answer": "Anda boleh bermain permainan slot seperti <strong>Lucky365</strong> dan <strong>Monkey King</strong>, permainan kasino langsung, dan <strong>permainan loteri 4D</strong> terus dari aplikasi."
+        },
+        {
+          "question": "Bolehkah saya bermain di telefon saya?",
+          "answer": "Ya. <strong>Heng Ong Bet adalah mobile-first</strong>. Hanya pasang versi APK atau iOS dari laman rasmi untuk gameplay yang lancar."
+        },
+        {
+          "question": "Adakah HengOngBet selamat dan sah?",
+          "answer": "Ya. <strong>Heng Ong Bet dipercayai secara meluas di Malaysia</strong> dan menggunakan log masuk selamat, pilihan pembayaran yang disahkan, dan ciri gameplay yang adil."
+        },
+        {
+          "question": "Tip apa yang patut saya ikuti sebagai pemula?",
+          "answer": "Semak RTP, tetapkan bajet, mulakan dengan slot volatiliti rendah, baca peraturan permainan, dan hanya gunakan bonus pada permainan yang benar-benar anda nikmati."
+        }
+      ]
     }
   },
-    "tutorialTabs": {
-    "titleH1": "Tambah Nilai & Pengeluaran",
-    "titleH1Part2": "Tutorial",
+  "tutorialTabs": {
+    "titleH1": "HengOngBet88",
+    "titleH1Part2": "Panduan Tambah Nilai",
     "tabs": {
-      "topup": "Top Up Segera",
+      "topup": "Tambah Nilai Segera",
       "transfer": "Pindahan Bank",
-      "withdraw": "Pengeluaran"
+      "withdraw": "Keluarkan"
     },
     "titles": {
-      "topup": "Bagaimana untuk top up melalui <span class=\"highlight\">Top Up Segera</span> di heng ong bet?",
-      "transfer": "Bagaimana untuk top up melalui <span class=\"highlight\">Pindahan Bank</span> di heng ong bet?",
-      "withdraw": "Bagaimana untuk <span class=\"highlight\">Pengeluaran</span> di heng ong bet?"
+      "topup": {
+        "prefix": "Cara tambah nilai melalui",
+        "highlight": "Tambah Nilai Segera",
+        "suffix": "di heng ong bet?"
+      },
+      "transfer": {
+        "prefix": "Cara tambah nilai melalui",
+        "highlight": "Pindahan Bank",
+        "suffix": "di heng ong bet?"
+      },
+      "withdraw": {
+        "prefix": "Cara",
+        "highlight": "Keluarkan",
+        "suffix": "di heng ong bet?"
+      }
     },
     "steps": {
       "topup": [
         "Log masuk HENG ONG BET",
-        "Klik \"Butang Top Up\"",
-        "Klik \"Top Up Segera\"",
+        "Klik \"Butang Tambah Nilai\"",
+        "Klik \"Tambah Nilai Segera\"",
         "Pilih bank yang anda ingin gunakan",
         "Masukkan jumlah anda",
         "Masukkan pindahan bank dan nama pengguna anda, dan klik \"Mohon\"",
         "Masukkan nombor OTP dan klik \"Teruskan\"",
-        "Jika halaman tidak menunjukkan kemas kini dalam 5 saat, maka klik \"Cuba Lagi\"",
-        "Top Up Segera berjaya"
+        "Jika halaman menunjukkan tiada kemas kini dalam 5 saat, kemudian klik \"Cuba Lagi\"",
+        "Tambah Nilai Segera berjaya"
       ],
       "transfer": [
-        "Pilih bank yang mudah untuk deposit, dari \"Satu tangan dalam akaun TOPICK anda atau layari untuk berubah serta-merta",
+        "Pilih bank yang mudah untuk deposit, dari \"Satu tangan dalam akaun TOPICK anda atau layari untuk ditukar serta-merta",
         "Klik \"Ya\"",
-        "Klik \"Top up\"",
+        "Klik \"Tambah nilai\"",
         "Klik \"Pindahan Bank\"",
         "Isi jumlah pertukaran, dan klik \"Hantar\"",
         "Klik \"+\" untuk muat naik dokumen deposit tunai atau pindahan dan klik \"Hantar\"",
@@ -1011,20 +1507,74 @@
         "Masukkan nombor OTP yang diterima di telefon anda, dan klik \"OK\"",
         "Masukkan jumlah dan klik \"Hantar\"",
         "Masukkan kata laluan pembayaran anda",
-        "Permintaan dihantar! Sedang diproses sekarang... sila tunggu"
+        "Permintaan dihantar! Memproses sekarang... telefon tunggu"
       ],
       "withdraw": [
         "Log masuk HENG ONG BET",
         "Klik \"Ya\"",
-        "Klik \"Pengeluaran\"",
-        "Pilih \"pengeluaran\" dan klik \"OK\"",
+        "Klik \"Keluarkan\"",
+        "Pilih \"keluarkan\" dan klik \"OK\"",
         "Masukkan nombor akaun anda, dan klik \"Seterusnya\"",
         "Masukkan nombor telefon anda dan klik \"Minta OTP\"",
         "Masukkan nombor OTP yang diterima di telefon anda, dan klik \"OK\"",
         "Masukkan jumlah dan klik \"Hantar\"",
         "Masukkan kata laluan pembayaran anda",
-        "Permintaan dihantar! Sedang diproses sekarang... sila tunggu"
+        "Permintaan dihantar! Memproses sekarang... telefon tunggu"
       ]
+    },
+    "guides": {
+      "topup": {
+        "title": {
+          "highlight": "HengOngBet88 E-Dompet",
+          "regular": " Tambah Nilai"
+        },
+        "steps": [
+          "Buka aplikasi HengOngBet dan pilih <strong>\"Tambah Nilai (E-Dompet)\"</strong>.",
+          "Pilih kaedah e-dompet anda: <strong>Touch 'n Go</strong> atau <strong>GrabPay</strong>.",
+          "Masukkan <strong>jumlah tambah nilai</strong> yang diingini.",
+          "Anda akan diberikan <strong>akaun bank atau kod QR</strong> untuk dipindahkan.",
+          "Buka aplikasi TNG atau GrabPay anda dan <strong>lengkapkan pindahan.</strong>",
+          "<strong>Ambil tangkapan skrin atau simpan resit transaksi.</strong>",
+          "Kembali ke aplikasi HengOngBet dan <strong>muat naik resit anda</strong> dalam medan yang disediakan.",
+          "Tunggu admin mengesahkan dan meluluskan, tambah nilai akan ditunjukkan tidak lama lagi."
+        ],
+        "note": "<strong>Sentiasa semak dua kali nombor akaun atau kod QR sebelum mengesahkan pembayaran anda dalam aplikasi e-dompet.</strong>"
+      },
+      "transfer": {
+        "title": {
+          "highlight": "HengOngBet88 Perbankan Dalam Talian",
+          "regular": " Tambah Nilai"
+        },
+        "steps": [
+          "Ketik <strong>\"Tambah Nilai (Pindahan Bank)\"</strong> dalam aplikasi.",
+          "Pilih <strong>akaun bank</strong> yang disediakan.",
+          "Masukkan <strong>jumlah tambah nilai</strong> anda dan pindahkan melalui aplikasi perbankan dalam talian anda menggunakan <strong>DuitNow</strong> atau pindahan biasa.",
+          "Simpan <strong>resit pembayaran</strong> atau ambil tangkapan skrin.",
+          "Kembali ke aplikasi dan <strong>muat naik resit</strong>.",
+          "Tunggu pengesahan, setelah diluluskan, dompet anda akan dikemas kini."
+        ],
+        "note": "<strong>Pastikan anda menggunakan butiran bank yang betul yang disediakan oleh platform untuk mengelakkan sebarang kelewatan pindahan.</strong>"
+      },
+      "withdraw": {
+        "title": {
+          "highlight": "HengOngBet88 Pengeluaran",
+          "regular": " Panduan"
+        },
+        "steps": [
+          "Pilih <strong>\"Keluarkan\" dalam Aplikasi</strong> <br>• Ketik pilihan <strong>\"Keluarkan\"</strong> di laman utama atau bahagian dompet. <br>• Ini akan membuka borang pengeluaran.",
+          "<strong>Masukkan Jumlah Pengeluaran & Hantar</strong> <br>• Taip jumlah yang anda ingin keluarkan <strong>(RM100)</strong>.<br>• Semak dua kali jumlah dan ketik <strong>\"Hantar.\"</strong>",
+          "<strong>Masukkan PIN Pembayaran 6-Digit Anda</strong><br>• Anda akan diminta untuk memasukkan <strong>PIN Pembayaran 6-digit</strong> anda untuk keselamatan. <br>• Ini adalah PIN yang sama yang anda cipta semasa persediaan akaun atau pengeluaran pertama.<br>Jika anda terlupa PIN anda, gunakan <strong>pilihan reset</strong> atau hubungi sokongan.",
+          "Tunggu Kelulusan. <br>• Setelah dihantar, permintaan pengeluaran anda akan disemak.<br>• Kebanyakan kelulusan berlaku dalam <strong>beberapa minit</strong>, tetapi mungkin mengambil masa lebih lama semasa waktu puncak.<br>• Anda akan mendapat notifikasi setelah pengeluaran anda berjaya. "
+        ],
+        "reminders": {
+          "title": "Peringatan Penting:",
+          "items": [
+            "Pengeluaran mesti mengikuti sebarang <strong>peraturan pusing ganti bonus</strong> jika berkenaan.",
+            "Pastikan <strong>butiran bank anda betul </strong>dan dikemas kini dalam profil anda.",
+            "Gunakan <strong>kaedah yang sama</strong> (akaun bank) yang anda gunakan untuk deposit untuk pemprosesan yang lebih pantas."
+          ]
+        }
+      }
     },
     "ui": {
       "step": "Langkah",
@@ -1032,14 +1582,49 @@
       "showLess": "Tunjukkan kurang langkah"
     },
     "alt": {
-      "stepImage": "Imej langkah {step}"
+      "stepImage": "Imej langkah {step}",
+      "topup": {
+        "step1": "Tutorial tambah nilai langkah 1 - Pilih pilihan Tambah Nilai E-Dompet dalam antara muka aplikasi HengOngBet",
+        "step2": "Tutorial tambah nilai langkah 2 - Pilih kaedah e-dompet Touch n Go atau skrin pemilihan GrabPay",
+        "step3": "Tutorial tambah nilai langkah 3 - Masukkan jumlah tambah nilai yang diingini dan lihat akaun bank atau kod QR",
+        "step4": "Tutorial tambah nilai langkah 4 - Lengkapkan pindahan menggunakan antara muka pembayaran aplikasi TNG atau GrabPay",
+        "step5": "Tutorial tambah nilai langkah 5 - Ambil tangkapan skrin atau simpan resit transaksi untuk pengesahan",
+        "step6": "Tutorial tambah nilai langkah 6 - Muat naik resit dalam antara muka medan muat naik aplikasi HengOngBet",
+        "step7": "Tutorial tambah nilai langkah 7 - Tunggu pengesahan admin dan skrin pengesahan kelulusan",
+        "step8": "Tutorial tambah nilai langkah 8 - Jumlah tambah nilai ditunjukkan dalam pengesahan baki dompet"
+      },
+      "transfer": {
+        "step1": "Tutorial pindahan bank langkah 1 - Pilih pilihan Tambah Nilai Pindahan Bank dalam antara muka aplikasi",
+        "step2": "Tutorial pindahan bank langkah 2 - Lihat butiran akaun bank yang disediakan untuk pindahan",
+        "step3": "Tutorial pindahan bank langkah 3 - Masukkan jumlah tambah nilai dan mulakan pindahan perbankan dalam talian",
+        "step4": "Tutorial pindahan bank langkah 4 - Lengkapkan DuitNow atau pindahan biasa melalui aplikasi perbankan",
+        "step5": "Tutorial pindahan bank langkah 5 - Simpan resit pembayaran atau ambil tangkapan skrin untuk bukti",
+        "step6": "Tutorial pindahan bank langkah 6 - Muat naik resit dalam aplikasi untuk pengesahan dan kelulusan",
+        "step7": "Tutorial pindahan bank langkah 7 - Tunggu pengesahan dan kemas kini baki dompet",
+        "step8": "Tutorial pindahan bank langkah 8 - Pindahan selesai dengan jayanya dengan baki yang dikemas kini"
+      },
+      "withdraw": {
+        "step1": "Tutorial pengeluaran langkah 1 - Pilih pilihan Keluarkan dari laman utama atau bahagian dompet",
+        "step2": "Tutorial pengeluaran langkah 2 - Masukkan jumlah pengeluaran RM100 dalam medan input",
+        "step3": "Tutorial pengeluaran langkah 3 - Semak dua kali jumlah dan ketik butang Hantar untuk meneruskan",
+        "step4": "Tutorial pengeluaran langkah 4 - Masukkan PIN Pembayaran 6-digit untuk pengesahan keselamatan",
+        "step5": "Tutorial pengeluaran langkah 5 - Permintaan pengeluaran dihantar untuk proses semakan admin"
+      }
     }
   },
-
+  "withdrawalReminders": {
+      "title": "Peringatan Pengeluaran",
+      "items": [
+        "Pengeluaran mesti mengikut sebarang <strong>peraturan pusing ganti bonus</strong> jika berkenaan.",
+        "Pastikan <strong>butiran bank anda betul dan dikemas kini</strong> dalam profil anda.",
+        "Gunakan kaedah yang sama <strong>(akaun bank)</strong> yang anda gunakan untuk deposit untuk pemprosesan yang lebih pantas.",
+        "Jika anda terlupa <strong>PIN</strong> anda, gunakan pilihan set semula atau hubungi sokongan."
+      ]
+    },
   "notice": {
     "title": "Notis Permainan Penting",
-    "shortText": "Notis: Permainan berikut tidak akan mengira jumlah kod yang dimainkan, hanya kemenangan dan kerugian sahaja: MONKEY KING - 'Dragon Tiger Blue', 'Dragon Tiger Red', 'Single Pick', 'Roulette73', 'Baccarat' EVOLUTION - 'First Person Craps', 'Craps'...",
-    "fullText": "Notis: Permainan berikut tidak akan mengira jumlah kod yang dimainkan, hanya kemenangan dan kerugian sahaja.\n\nMONKEY KING - \"Dragon Tiger Blue, Dragon Tiger Red, Single Pick, Roulette73, Baccarat\"\n\nEVOLUTION - \"First Person Craps, Craps, First Person Video Poker, Video Poker, Semua Permainan Blackjack\"\n\nJILI - \"Blackjack dan Blackjack Lucky Ladies\"\n\nPragmatic Play (Live) - \"Semua Permainan Blackjack\"\n\nPragmatic Play (Slot) - \"Roulette, Baccarat, Dragon Bonus Baccarat, Dragon Tiger\"\n\nJDB - \"Gamble\"\n\nTerima kasih atas pemahaman dan kerjasama anda, dan semoga anda menikmati permainan.",
+    "shortText": "Notis: Permainan berikut tidak akan mengira jumlah kod yang dimainkan hanya kemenangan dan kerugian: MONKEY KING - 'Dragon Tiger Blue', 'Dragon Tiger Red', 'Single Pick', 'Roulette73', 'Baccarat' EVOLUTION - 'First Person Craps', 'Craps'...",
+    "fullText": "Notis: Permainan berikut tidak akan mengira jumlah kod yang dimainkan hanya kemenangan dan kerugian.\n\nMONKEY KING - \"Dragon Tiger Blue, Dragon Tiger Red, Single Pick, Roulette73, Baccarat\"\n\nEVOLUTION - \"First Person Craps, Craps, First Person Video Poker, Video Poker, All Blackjack Games\"\n\nJILI - \"Blackjack and Blackjack Lucky Ladies\"\n\nPragmatic Play (Live) - \"All Blackjack Game\"\n\nPragmatic Play (Slot) - \"Roulette, Baccarat, Dragon Bonus Baccarat, Dragon Tiger\"\n\nJDB - \"Gamble\"\n\nTerima kasih atas pemahaman dan kerjasama anda, dan semoga anda selamat bermain.",
     "buttons": {
       "understand": "Saya Faham"
     }
