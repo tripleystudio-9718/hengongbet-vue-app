@@ -13,7 +13,7 @@
         <div class="content-container">
           <!-- Hero Section -->
           <div class="section-wrapper">
-            <div class="main-title" style="color: #FFFFFF;">{{ $t('home.hero.title') }}</div>
+            <h1 class="main-title" style="color: #FFFFFF;">{{ $t('home.hero.title') }}</h1>
             <p class="subtitle-text">{{ $t('home.hero.subtitle') }}</p>
             <p class="description-text">{{ $t('home.hero.description') }}</p>
             
@@ -26,7 +26,7 @@
 
           <!-- About Section -->
           <div class="section-wrapper">
-            <div class="main-title" style="color: #F2B240;">{{ $t('home.about.title') }}</div>
+            <h2 class="main-title" style="color: #F2B240;">{{ $t('home.about.title') }}</h2>
             <p class="description-text">{{ $t('home.about.description1') }} <strong>{{ $t('home.about.platformType') }}</strong></p>
             <div class="text-content">
               <p>{{ $t('home.about.description2') }}</p>
@@ -37,16 +37,16 @@
 
           <!-- Games Explore Section -->
           <div class="section-wrapper">
-            <div class="main-title" style="color: #F2B240;">{{ $t('home.games.title') }}</div>
+            <h2 class="main-title" style="color: #F2B240;">{{ $t('home.games.title') }}</h2>
             <p class="description-text">{{ $t('home.games.description') }}</p>
 
             <!-- Slot Games -->
             <div class="games-subsection">
-              <div class="subsection-title">{{ $t('home.games.slots.title') }}</div>
+              <h3 class="subsection-title">{{ $t('home.games.slots.title') }}</h3>
               <p class="text-content">{{ $t('home.games.slots.description') }}</p>
               <p class="text-content">{{ $t('home.games.slots.providers') }}</p>
               
-              <div class="subsection-subtitle">{{ $t('home.games.slots.whatToExpected') }}</div>
+              <h4 class="subsection-subtitle">{{ $t('home.games.slots.whatToExpect') }}</h4>
               <ul class="feature-list">
                 <li v-for="(feature, index) in $tm('home.games.slots.features')" :key="index">
                   • {{ feature }}
@@ -56,11 +56,11 @@
 
             <!-- Live Casino -->
             <div class="games-subsection">
-              <div class="subsection-title">{{ $t('home.games.liveCasino.title') }}</div>
+              <h3 class="subsection-title">{{ $t('home.games.liveCasino.title') }}</h3>
               <p class="text-content">{{ $t('home.games.liveCasino.description') }}</p>
               <p class="text-content">{{ $t('home.games.liveCasino.games') }}</p>
               
-              <div class="subsection-subtitle">{{ $t('home.games.liveCasino.whyPlayersLove') }}</div>
+              <p class="subsection-subtitle">{{ $t('home.games.liveCasino.whyPlayersLove') }}</p>
               <ul class="feature-list">
                 <li v-for="(feature, index) in $tm('home.games.liveCasino.features')" :key="index">
                   • {{ feature }}
@@ -71,10 +71,10 @@
 
             <!-- Sports Betting -->
             <div class="games-subsection">
-              <div class="subsection-title">{{ $t('home.games.sports.title') }}</div>
+              <h3 class="subsection-title">{{ $t('home.games.sports.title') }}</h3>
               <p class="text-content">{{ $t('home.games.sports.description') }}</p>
               
-              <div class="subsection-subtitle">{{ $t('home.games.sports.highlights') }}</div>
+              <p class="subsection-subtitle">{{ $t('home.games.sports.highlights') }}</p>
               <ul class="feature-list">
                 <li v-for="(feature, index) in $tm('home.games.sports.features')" :key="index">
                   • {{ feature }}
@@ -84,11 +84,11 @@
 
             <!-- 4D Lottery -->
             <div class="games-subsection">
-              <div class="subsection-title">{{ $t('home.games.lottery.title') }}</div>
+              <h3 class="subsection-title">{{ $t('home.games.lottery.title') }}</h3>
               <p class="text-content">{{ $t('home.games.lottery.description') }}</p>
               <p class="text-content">{{ $t('home.games.lottery.ekor') }}</p>
               
-              <div class="subsection-subtitle">{{ $t('home.games.lottery.howItWorks') }}</div>
+              <p class="subsection-subtitle">{{ $t('home.games.lottery.howItWorks') }}</p>
               <ul class="feature-list">
                 <li v-for="(feature, index) in $tm('home.games.lottery.steps')" :key="index">
                   • {{ feature }}
@@ -119,9 +119,9 @@
           <img :src="becomeAHengOngBetAffiliateToday" alt="become a heng ong bet affiliate" class="responsive-image" />
         </div>
         <div class="column-text">
-          <div class="main-title affiliate-main-title">
+          <h2 class="main-title affiliate-main-title">
             {{ $t('home.affiliate.becomeText') }} <span class="accent-color">{{ $t('home.affiliate.brand') }}</span> {{ $t('home.affiliate.affiliateToday') }}
-          </div>
+          </h2>
           <p class="subtitle-text-affiliate affiliate-description">{{ $t('home.affiliate.description') }}</p>
                     
           <ul class="feature-list-1 affiliate-features-list">

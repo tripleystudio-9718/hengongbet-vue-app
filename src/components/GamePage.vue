@@ -3,6 +3,7 @@
     <div class="game-banner">
       <img :src="bannerImage" :alt="$t('games.alt.gameBanner')" />
     </div>
+    <h1 class="main-page-title" v-html="$t('games.content.title')"></h1>
     <div class="game-tabs-container">
       <!-- Tab Navigation -->
       <div class="tabs">
@@ -98,14 +99,15 @@
 
     <!-- Game Information Section -->
     <div class="game-content-section">
+      <!-- Main Page Title -->  
       <!-- Slots Section -->
       <div class="content-section">
-        <div class="section-title" v-html="$t('games.content.slots.title')"></div>
+        <h2 class="section-title" v-html="$t('games.content.slots.title')"></h2>
         <div class="section-description" v-html="$t('games.content.slots.description')"></div>
         
         <div class="games-info-grid">
           <div v-for="(item, index) in slotsContent" :key="index" class="game-info-card">
-            <div class="game-info-title" v-html="$t(`games.content.slots.games.${item.key}.title`)"></div>
+            <h3 class="game-info-title" v-html="$t(`games.content.slots.games.${item.key}.title`)"></h3>
             <div class="game-info-description" v-html="$t(`games.content.slots.games.${item.key}.description`)"></div>
           </div>
         </div>
@@ -113,12 +115,12 @@
 
       <!-- Casino Section -->
       <div class="content-section">
-        <div class="section-title" v-html="$t('games.content.casino.title')"></div>
+        <h2 class="section-title" v-html="$t('games.content.casino.title')"></h2>
         <div class="section-description" v-html="$t('games.content.casino.description')"></div>
         
         <div class="games-info-grid">
           <div v-for="(item, index) in casinoContent" :key="index" class="game-info-card">
-            <div class="game-info-title" v-html="$t(`games.content.casino.games.${item.key}.title`)"></div>
+            <h3 class="game-info-title" v-html="$t(`games.content.casino.games.${item.key}.title`)"></h3>
             <div class="game-info-description" v-html="$t(`games.content.casino.games.${item.key}.description`)"></div>
           </div>
         </div>
@@ -126,12 +128,12 @@
 
       <!-- Sports Section -->
       <div class="content-section">
-        <div class="section-title" v-html="$t('games.content.sports.title')"></div>
+        <h2 class="section-title" v-html="$t('games.content.sports.title')"></h2>
         <div class="section-description" v-html="$t('games.content.sports.description')"></div>
         
         <div class="games-info-grid">
           <div v-for="(item, index) in sportsContent" :key="index" class="game-info-card">
-            <div class="game-info-title" v-html="$t(`games.content.sports.games.${item.key}.title`)"></div>
+            <h3 class="game-info-title" v-html="$t(`games.content.sports.games.${item.key}.title`)"></h3>
             <div class="game-info-description" v-html="$t(`games.content.sports.games.${item.key}.description`)"></div>
           </div>
         </div>
@@ -139,11 +141,11 @@
 
       <!-- Lottery Section -->
       <div class="content-section">
-        <div class="section-title" v-html="$t('games.content.lottery.title')"></div>
+        <h2 class="section-title" v-html="$t('games.content.lottery.title')"></h2>
         
         <div class="games-info-grid">
           <div v-for="(item, index) in lotteryContent" :key="index" class="game-info-card">
-            <div class="game-info-title" v-html="$t(`games.content.lottery.games.${item.key}.title`)"></div>
+            <h3 class="game-info-title" v-html="$t(`games.content.lottery.games.${item.key}.title`)"></h3>
             <div class="game-info-description">
               <!-- Main description text -->
               <span v-html="$t(`games.content.lottery.games.${item.key}.descriptionStart`)"></span>
@@ -170,7 +172,7 @@
 
       <!-- FAQ Section - Accordion Design -->
       <div class="content-section">
-        <div class="section-title" v-html="$t('games.content.faq.title')"></div>
+        <h2 class="section-title" v-html="$t('games.content.faq.title')"></h2>
         
         <div class="accordion-container">
           <div 
@@ -182,11 +184,11 @@
               @click="toggleContentItem('faq', index)"
               class="accordion-trigger"
             >
-              <span 
+              <h3 
                 class="trigger-text"
                 :class="{ 'text-active': openContentItems.faq[index] }"
                 v-html="$t(`games.content.faq.items.${item.key}.question`)"
-              ></span>
+              ></h3>
 
               <div class="trigger-icon-wrapper">
                 <!-- Use imported SVG icons -->
@@ -583,6 +585,18 @@ export default {
   margin-bottom: 0;
 }
 
+/* Main Page Title (H1) */
+.main-page-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #F2B240;
+  text-align: center;
+  margin: 0;
+  line-height: 1.2;
+  word-wrap: break-word;
+}
+
+/* Main Section Title (H2) */
 .section-title {
   font-size: 36px;
   font-weight: 700;
@@ -618,6 +632,7 @@ export default {
   padding: 0;
 }
 
+/* Game Info Title (H2) */
 .game-info-title {
   font-size: 24px;
   font-weight: 600;
@@ -681,6 +696,7 @@ export default {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+/* FAQ Question Title (H2) */
 .trigger-text {
   color: #ffffff;
   font-weight: 500;
@@ -689,6 +705,7 @@ export default {
   line-height: 1.4;
   transition: color 0.2s ease;
   text-align: left;
+  margin: 0;
 }
 
 .text-active {
@@ -754,6 +771,16 @@ export default {
 
   .game-content-section {
     padding: 40px 15px;
+  }
+
+  .main-page-title {
+    font-size: 36px;
+    margin: 0 0 40px 0;
+  }
+
+  .main-page-title {
+    font-size: 28px;
+    margin: 0 0 30px 0;
   }
 
   .section-title {

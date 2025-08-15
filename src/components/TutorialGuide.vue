@@ -2,18 +2,18 @@
   <section class="tutorial-guide">
     <!-- Header Section -->
     <div class="header-section">
-      <h1 class="header-title">
+      <div class="header-title">
         <span class="title-highlight">{{ $t('tutorial.titleHighlight') }}</span> {{ $t('tutorial.title') }}
-      </h1>
+      </div>
       <p class="header-subtitle">{{ $t('tutorial.subtitle') }}</p>
     </div>
     
     <div class="max-w-7xl mx-auto px-6 py-8">
       <!-- First Tutorial Section -->
       <div class="tutorial-section">
-        <h3 class="section-title">
+        <div class="section-title">
           {{ $t('tutorial.sections.redeemBonus.title') }} <span class="highlight">{{ $t('tutorial.sections.redeemBonus.highlight') }}</span> {{ $t('tutorial.sections.redeemBonus.subtitle') }}
-        </h3>
+        </div>
                 
         <div class="steps-container steps-3">
           <!-- Step 1 -->
@@ -63,9 +63,9 @@
       
       <!-- Second Tutorial Section -->
       <div class="tutorial-section">
-        <h3 class="section-title">
+        <div class="section-title">
           <span class="highlight">{{ $t('tutorial.sections.queryHistory.highlight') }}</span> {{ $t('tutorial.sections.queryHistory.title') }}
-        </h3>
+        </div>
                 
         <div class="steps-container steps-4">
           <!-- Step 1 -->

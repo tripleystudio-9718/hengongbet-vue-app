@@ -7,7 +7,7 @@
     
     <div class="affiliate-container">
       <!-- Main Title Section -->
-      <div class="main-title" v-html="$t('affiliate.brand_section.title')"></div>
+      <h1 class="main-title" v-html="$t('affiliate.brand_section.title')"></h1>
       <div class="description-text" v-html="$t('affiliate.brand_section.tagline')"></div>
       
       <!-- Additional paragraph under tagline -->
@@ -19,7 +19,7 @@
       </div>
       
       <!-- How It Works Title -->
-      <div class="how-it-works-title" v-html="$t('affiliate.how_it_works.title')"></div>
+      <h2 class="how-it-works-title" v-html="$t('affiliate.how_it_works.title')"></h2>
       
       <!-- Join Steps -->
       <div class="join-steps">
@@ -28,7 +28,7 @@
             <img :src="num1Icon" class="num-image" />
             <div class="steps-t">
               <div class="steps-p" v-html="`${$t('affiliate.steps.step')} ${$t('affiliate.steps.step1.number')}`"></div>
-              <div class="steps-h2" v-html="$t('affiliate.steps.step1.title')"></div>
+              <h3 class="steps-h2" v-html="$t('affiliate.steps.step1.title')"></h3>
               <div class="steps-description" v-html="$t('affiliate.steps.step1.description')"></div>
             </div>
           </div>
@@ -38,7 +38,7 @@
             <img :src="num2Icon" class="num-image" />
             <div class="steps-t">
               <div class="steps-p" v-html="`${$t('affiliate.steps.step')} ${$t('affiliate.steps.step2.number')}`"></div>
-              <div class="steps-h2" v-html="$t('affiliate.steps.step2.title')"></div>
+              <h3 class="steps-h2" v-html="$t('affiliate.steps.step2.title')"></h3>
               <div class="steps-description" v-html="$t('affiliate.steps.step2.description')"></div>
             </div>
           </div>
@@ -48,7 +48,7 @@
             <img :src="num3Icon" class="num-image" />
             <div class="steps-t">
               <div class="steps-p" v-html="`${$t('affiliate.steps.step')} ${$t('affiliate.steps.step3.number')}`"></div>
-              <div class="steps-h2" v-html="$t('affiliate.steps.step3.title')"></div>
+              <h3 class="steps-h2" v-html="$t('affiliate.steps.step3.title')"></h3>
               <div class="steps-description" v-html="$t('affiliate.steps.step3.description')"></div>
             </div>
           </div>
@@ -60,14 +60,14 @@
       
       <!-- Commission Section -->
       <div class="commission-section">
-        <div class="section-title" v-html="$t('affiliate.commission_section.title')"></div>
+        <h2 class="section-title" v-html="$t('affiliate.commission_section.title')"></h2>
         <div class="section-description" v-html="$t('affiliate.commission_section.description')"></div>
         <div class="commission-cards">
           <div class="commission-card" v-for="(model, index) in commissionModels" :key="index">
             <div class="commission-icon">
               <img :src="model.icon" :alt="model.altText" class="icon-image" />
             </div>
-            <div class="commission-title" v-html="model.title"></div>
+            <h3 class="commission-title" v-html="model.title"></h3>
             <div class="commission-description" v-html="model.description"></div>
           </div>
         </div>
@@ -75,7 +75,7 @@
       
       <!-- Levels Section -->
       <div class="levels-section">
-        <div class="section-title" v-html="$t('affiliate.levels_section.title')"></div>
+        <h2 class="section-title" v-html="$t('affiliate.levels_section.title')"></h2>
         
         <!-- Table (responsive for all devices) -->
         <div class="levels-table-container">
@@ -100,7 +100,7 @@
 
       <!-- Who Should Join Section -->
       <div class="who-should-join-section">
-        <div class="who-should-join-title" v-html="$t('affiliate.who_should_join.title')"></div>
+        <h2 class="who-should-join-title" v-html="$t('affiliate.who_should_join.title')"></h2>
         <ul class="who-should-join-list">
           <li v-for="(item, index) in whoShouldJoinItems" :key="index" v-html="item"></li>
         </ul>
@@ -109,7 +109,7 @@
 
       <!-- Final CTA Section -->
       <div class="cta-section">
-        <div class="cta-title" v-html="$t('affiliate.cta_section.title')"></div>
+        <h2 class="cta-title" v-html="$t('affiliate.cta_section.title')"></h2>
         <div class="cta-subtitle" v-html="$t('affiliate.cta_section.subtitle')"></div>
         <div class="cta-description" v-html="$t('affiliate.cta_section.description')"></div>
         <div class="cta-buttons">
@@ -278,7 +278,8 @@ export default {
   box-sizing: border-box;
 }
 
-.main-title {
+.main-title,
+h1.main-title {
   font-size: 40px;
   font-weight: 500;
   color: #FFFFFF;
@@ -311,7 +312,8 @@ export default {
   margin-right: auto;
 }
 
-.how-it-works-title {
+.how-it-works-title,
+h2.how-it-works-title {
   font-size: 36px;
   font-weight: 700;
   color: #FFFFFF;
@@ -350,7 +352,8 @@ export default {
   align-items: center;
 }
 
-.steps-h2 {
+.steps-h2,
+h3.steps-h2 {
   font-size: 40px;
   font-weight: 600;
   color: #F0FF21;
@@ -410,7 +413,8 @@ export default {
 }
 
 /* Section Titles */
-.section-title {
+.section-title,
+h2.section-title {
   font-size: 36px;
   font-weight: 700;
   color: #FFFFFF;
@@ -506,7 +510,8 @@ export default {
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
-.commission-title {
+.commission-title,
+h3.commission-title {
   font-size: 18px;
   font-weight: 700;
   color: #ffffff;
@@ -516,7 +521,8 @@ export default {
   word-wrap: break-word;
 }
 
-.commission-card:hover .commission-title {
+.commission-card:hover .commission-title,
+.commission-card:hover h3.commission-title {
   color: #1a1a1a;
   transform: translateY(-2px);
 }
@@ -604,7 +610,8 @@ export default {
   padding: 40px 0;
 }
 
-.who-should-join-title {
+.who-should-join-title,
+h2.who-should-join-title {
   font-size: 36px;
   font-weight: 700;
   color: #FFFFFF;
@@ -653,7 +660,8 @@ export default {
   width: 100%;
 }
 
-.cta-title {
+.cta-title,
+h2.cta-title {
   font-size: 40px;
   font-weight: 500;
   color: #F2B240;
@@ -734,7 +742,8 @@ export default {
     object-fit: cover;
   }
 
-  .main-title {
+  .main-title,
+  h1.main-title {
     font-size: 24px;
     margin: 20px 0 15px 0;
     padding: 0 10px;
@@ -752,7 +761,8 @@ export default {
     padding: 0 10px;
   }
 
-  .how-it-works-title {
+  .how-it-works-title,
+  h2.how-it-works-title {
     font-size: 24px;
     margin: 30px 0 20px 0;
     padding: 0 10px;
@@ -785,7 +795,8 @@ export default {
     text-align: center;
   }
 
-  .steps-h2 {
+  .steps-h2,
+  h3.steps-h2 {
     font-size: 24px;
   }
 
@@ -803,7 +814,8 @@ export default {
     width: 60px;
   }
 
-  .section-title {
+  .section-title,
+  h2.section-title {
     font-size: 24px;
     margin: 40px 0 15px 0;
     padding: 0 10px;
@@ -838,7 +850,8 @@ export default {
     width: 70px;
   }
 
-  .commission-title {
+  .commission-title,
+  h3.commission-title {
     font-size: 16px;
     margin-bottom: 8px;
   }
@@ -872,185 +885,6 @@ export default {
   .table-header .table-cell {
     font-size: 13px;
     font-weight: 700;
-  }
-
-  .who-should-join-section {
-    margin-top: 40px;
-    padding: 0 15px;
-  }
-  
-  .who-should-join-title {
-    font-size: 24px;
-    margin-bottom: 25px;
-  }
-  
-  .who-should-join-list li {
-    font-size: 15px;
-    margin-bottom: 10px;
-    padding-left: 20px;
-  }
-  
-  .who-should-join-list li::before {
-    font-size: 18px;
-  }
-  
-  .who-should-join-description {
-    font-size: 14px;
-  }
-
-  .cta-title {
-    font-size: 26px;
-    padding: 0 10px;
-  }
-
-  .cta-subtitle {
-    font-size: 16px;
-    padding: 0 15px;
-  }
-
-  .cta-description {
-    font-size: 20px;
-    padding: 0 15px;
-    margin-bottom: 30px;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 0 20px;
-  }
-
-  .cta-button {
-    width: 100%;
-    max-width: 280px;
-    padding: 15px 30px;
-    font-size: 16px;
-  }
-}
-
-/* Extra small devices */
-@media (max-width: 480px) {
-  .affiliate-container {
-    padding: 0 10px;
-  }
-
-  .main-title {
-    font-size: 20px;
-  }
-
-  .description-text {
-    font-size: 14px;
-  }
-
-  .tagline-paragraph {
-    font-size: 13px;
-  }
-
-  .how-it-works-title {
-    font-size: 20px;
-  }
-
-  .section-title {
-    font-size: 20px;
-  }
-
-  .commission-card {
-    max-width: 100%;
-  }
-
-  .cta-title {
-    font-size: 22px;
-  }
-
-  .cta-subtitle {
-    font-size: 14px;
-  }
-
-  .cta-description {
-    font-size: 18px;
-  }
-
-  .levels-table {
-    min-width: 300px;
-  }
-
-  .table-cell {
-    padding: 10px 5px;
-    font-size: 11px;
-  }
-
-  .who-should-join-section {
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-  
-  .who-should-join-title {
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .who-should-join-list li {
-    font-size: 14px;
-    margin-bottom: 8px;
-    padding-left: 18px;
-    text-align: center;
-  }
-  
-  .who-should-join-list li::before {
-    font-size: 16px;
-  }
-  
-  .who-should-join-description {
-    font-size: 13px;
-  }
-
-  /* Keep steps vertical and full-width on small screens */
-  .join-steps {
-    gap: 15px;
-  }
-
-  .steps-num {
-    height: 180px;
-  }
-
-  .steps-h2 {
-    font-size: 20px;
-  }
-
-  .steps-p {
-    font-size: 12px;
-  }
-
-  .steps-description {
-    font-size: 11px;
-    max-width: 200px;
-  }
-
-  .num-image {
-    width: 50px;
-  }
-}
-
-/* Large mobile devices */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .commission-cards {
-    gap: 25px;
-    flex-wrap: wrap;
-  }
-
-  .commission-card {
-    max-width: 300px;
-    flex: 0 1 calc(50% - 12.5px);
-  }
-
-  .levels-table {
-    width: 90%;
-  }
-
-  .table-cell {
-    padding: 15px;
-    font-size: 14px;
   }
 }
 </style>

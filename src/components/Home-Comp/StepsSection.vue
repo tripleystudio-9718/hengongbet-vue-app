@@ -15,7 +15,7 @@
           <div class="step-content">
             <img :src="stepNumbers[0]" alt="Step 1" class="num-img" />
             <div class="steps-desc">
-              <h2 class="steps-h2">{{ $t('how_it_works.steps.step1.title') }}</h2>
+              <p class="steps-h2">{{ $t('how_it_works.steps.step1.title') }}</p>
               <p class="steps-p">{{ $t('how_it_works.steps.step1.description') }}</p>
             </div>
           </div>
@@ -34,7 +34,7 @@
           <div class="step-content">
             <img :src="stepNumbers[1]" alt="Step 2" class="num-img" />
             <div class="steps-desc">
-              <h2 class="steps-h2">{{ $t('how_it_works.steps.step2.title') }}</h2>
+              <p class="steps-h2">{{ $t('how_it_works.steps.step2.title') }}</p>
               <p class="steps-p">{{ $t('how_it_works.steps.step2.description') }}</p>
             </div>
           </div>
@@ -53,7 +53,7 @@
           <div class="step-content">
             <img :src="stepNumbers[2]" alt="Step 3" class="num-img" />
             <div class="steps-desc">
-              <h2 class="steps-h2">{{ $t('how_it_works.steps.step3.title') }}</h2>
+              <p class="steps-h2">{{ $t('how_it_works.steps.step3.title') }}</p>
               <p class="steps-p">{{ $t('how_it_works.steps.step3.description') }}</p>
             </div>
           </div>
@@ -72,7 +72,7 @@
           <div class="step-content">
             <img :src="stepNumbers[3]" alt="Step 4" class="num-img" />
             <div class="steps-desc">
-              <h2 class="steps-h2">{{ $t('how_it_works.steps.step4.title') }}</h2>
+              <p class="steps-h2">{{ $t('how_it_works.steps.step4.title') }}</p>
               <p class="steps-p">{{ $t('how_it_works.steps.step4.description') }}</p>
             </div>
           </div>

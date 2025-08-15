@@ -107,7 +107,7 @@
                   </div>
                 </div>
                 
-                <div class="step-item" v-if="showAllSteps">
+                <div class="step-item">
                   <div class="step-indicator">
                     <div class="step-line"></div>
                   </div>
@@ -117,7 +117,7 @@
                   </div>
                 </div>
                 
-                <div class="step-item" v-if="showAllSteps">
+                <div class="step-item">
                   <div class="step-indicator">
                     <div class="step-line"></div>
                   </div>
@@ -127,7 +127,7 @@
                   </div>
                 </div>
                 
-                <div class="step-item" v-if="showAllSteps">
+                <div class="step-item">
                   <div class="step-indicator">
                     <div class="step-line"></div>
                   </div>
@@ -137,7 +137,7 @@
                   </div>
                 </div>
                 
-                <div class="step-item is-last" v-if="showAllSteps">
+                <div class="step-item is-last">
                   <div class="step-indicator">
                     <div class="step-line"></div>
                   </div>
@@ -148,15 +148,9 @@
                 </div>
               </div>
               
-              <div class="important-note" v-if="showAllSteps">
+              <div class="important-note">
                 <p v-html="$t('tutorialTabs.guides.topup.note')"></p>
               </div>
-              
-              <button class="show-more-btn" @click="toggleSteps">
-                <svg class="toggle-arrow" :class="{ rotated: showAllSteps }" width="12" height="8" viewBox="0 0 12 8" fill="none">
-                  <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
             </div>
 
             <!-- Transfer Content -->
@@ -208,7 +202,7 @@
                   </div>
                 </div>
                 
-                <div class="step-item" v-if="showAllSteps">
+                <div class="step-item">
                   <div class="step-indicator">
                     <div class="step-line"></div>
                   </div>
@@ -218,7 +212,7 @@
                   </div>
                 </div>
                 
-                <div class="step-item is-last" v-if="showAllSteps">
+                <div class="step-item is-last">
                   <div class="step-indicator">
                     <div class="step-line"></div>
                   </div>
@@ -228,16 +222,6 @@
                   </div>
                 </div>
               </div>
-              
-              <!-- <div class="important-note" v-if="showAllSteps">
-                <p v-html="$t('tutorialTabs.guides.transfer.note')"></p>
-              </div> -->
-              
-              <button class="show-more-btn" @click="toggleSteps">
-                <svg class="toggle-arrow" :class="{ rotated: showAllSteps }" width="12" height="8" viewBox="0 0 12 8" fill="none">
-                  <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
             </div>
 
             <!-- Withdraw Content -->
@@ -290,18 +274,12 @@
                 </div>
               </div>
               
-              <div class="withdrawal-reminders" v-if="showAllSteps">
+              <div class="withdrawal-reminders">
                 <h4>{{ $t('tutorialTabs.guides.withdraw.reminders.title') }}</h4>
                 <ul>
                   <li v-for="(reminder, index) in withdrawalReminders" :key="index" v-html="reminder"></li>
                 </ul>
               </div>
-              
-              <button class="show-more-btn" @click="toggleSteps">
-                <svg class="toggle-arrow" :class="{ rotated: showAllSteps }" width="12" height="8" viewBox="0 0 12 8" fill="none">
-                  <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
             </div>
           </div>
         </div>
@@ -316,7 +294,6 @@ import topupTutorialStepsFrame from '@/assets/topup-tutorial-steps-frame.png'
 
 // Reactive state
 const activeTab = ref('topup')
-const showAllSteps = ref(false)
 
 // Tab configuration
 const tabs = [
@@ -329,7 +306,7 @@ const tabs = [
 const tabsConfig = {
   topup: { stepCount: 9 },
   transfer: { stepCount: 11 },
-  withdraw: { stepCount: 7 } // Updated from 10 to 7 after removing steps 5, 6, 7
+  withdraw: { stepCount: 7 }
 }
 
 // Computed property for current tab data
@@ -339,7 +316,6 @@ const currentTabData = computed(() => ({
 
 // Computed property for withdrawal reminders
 const withdrawalReminders = computed(() => {
-  // Try to get from translation first, fallback to hardcoded
   try {
     return [
       "Withdrawals must follow any <strong>bonus turnover rules</strong> if applicable.",
@@ -377,10 +353,6 @@ const sliders = reactive({
 })
 
 // Methods
-const toggleSteps = () => {
-  showAllSteps.value = !showAllSteps.value
-}
-
 const setActiveTab = (tabId) => {
   // Clear all intervals
   Object.values(sliders).forEach(slider => {
@@ -391,7 +363,6 @@ const setActiveTab = (tabId) => {
   })
       
   activeTab.value = tabId
-  showAllSteps.value = false
       
   // Start auto-slide for new tab
   setTimeout(() => startAutoSlide(tabId), 100)
@@ -645,10 +616,6 @@ onUnmounted(() => {
   position: relative;
 }
 
-.step-item.hidden {
-  display: none;
-}
-
 /* Step Indicators */
 .step-indicator {
   display: flex;
@@ -706,40 +673,68 @@ onUnmounted(() => {
   margin: 0;
 }
 
-/* Show More Button */
-.show-more-btn {
-  background: none;
-  border: none;
+/* Tab Guide Content */
+.tab-guide-content {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Important Note */
+.important-note {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.important-note p {
+  color: #D1D5DB;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  font-style: normal;
+}
+
+.important-note strong {
   color: #F0AD3C;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.625rem;
-  border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
-  transition: all 0.3s ease;
-  position: relative;
-  margin-top: 1rem;
 }
 
-.show-more-btn:hover {
-  background-color: rgba(240, 173, 60, 0.1);
-  transform: scale(1.1);
+/* Withdrawal Reminders */
+.withdrawal-reminders {
+  margin-top: 1.5rem;
+  text-align: left;
 }
 
-.show-more-btn:focus {
-  outline: 2px solid #F0AD3C;
-  outline-offset: 2px;
+.withdrawal-reminders h4 {
+  color: #F0AD3C;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
 }
 
-.toggle-arrow {
-  transition: transform 0.3s ease;
+.withdrawal-reminders ul {
+  margin: 0;
+  padding-left: 1.25rem;
 }
 
-.toggle-arrow.rotated {
-  transform: rotate(180deg);
+.withdrawal-reminders li {
+  color: #D1D5DB;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.withdrawal-reminders li strong {
+  color: #F0AD3C;
 }
 
 /* Mobile Responsive Design */
@@ -827,10 +822,6 @@ onUnmounted(() => {
   .step-content p {
     font-size: 0.875rem;
   }
-    
-  .show-more-btn {
-    margin-left: 1.8125rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -890,13 +881,6 @@ onUnmounted(() => {
     font-size: 0.8125rem;
     line-height: 1.5;
   }
-    
-  .show-more-btn {
-    width: 2.25rem;
-    height: 2.25rem;
-    margin-left: 1.625rem;
-    margin-top: 0.75rem;
-  }
   
   .important-note {
     padding: 0 10px !important;
@@ -954,8 +938,6 @@ onUnmounted(() => {
 /* Accessibility improvements */
 @media (prefers-reduced-motion: reduce) {
   .image-slider-track,
-  .toggle-arrow,
-  .show-more-btn,
   .tab-button {
     transition: none;
   }
@@ -969,235 +951,8 @@ onUnmounted(() => {
   }
       
   .highlight,
-  .step-number,
-  .show-more-btn {
+  .step-number {
     color: #FFD700;
   }
-}
-
-/* Updated styles for dynamic PDF content section */
-.pdf-content-section {
-  margin-top: 3rem;
-  padding: 60px 20px;
-  background: transparent;
-  color: #ffffff;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.pdf-content-section .content-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  background: transparent;
-  padding: 0;
-}
-
-.guide-content {
-  opacity: 0;
-  animation: fadeIn 0.5s ease-in-out forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.pdf-title {
-  font-size: 36px;
-  font-weight: 700;
-  color: #F2B240;
-  text-align: center;
-  margin: 0 0 40px 0;
-  line-height: 1.2;
-}
-
-.guide-block {
-  background: transparent;
-  padding: 0;
-  margin-bottom: 40px;
-}
-
-.guide-block:last-child {
-  margin-bottom: 0;
-}
-
-.guide-block h2 {
-  font-size: 28px;
-  font-weight: 600;
-  color: #F2B240;
-  margin-bottom: 20px;
-  line-height: 1.3;
-}
-
-.guide-block h3 {
-  font-size: 24px;
-  font-weight: 600;
-  color: #F2B240;
-  margin-bottom: 15px;
-  line-height: 1.3;
-}
-
-.guide-steps {
-  margin: 0 0 20px 0;
-  padding-left: 20px;
-  color: #D1D5DB;
-  display: inline-block;
-  text-align: left;
-}
-
-.guide-steps li {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 8px;
-  color: #D1D5DB;
-}
-
-.guide-steps li strong {
-  color: #F2B240;
-}
-
-.important-note {
-  font-size: 16px;
-  color: #D1D5DB;
-  line-height: 1.6;
-  margin: 20px 0 0 0;
-  font-style: italic;
-}
-
-.important-note strong {
-  color: #F2B240;
-}
-
-.step-section {
-  background: transparent;
-  padding: 0;
-  margin-bottom: 30px;
-  text-align: left;
-}
-
-.step-section h4 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #F2B240;
-  margin-bottom: 10px;
-  line-height: 1.3;
-}
-
-.step-section ul {
-  margin: 0 0 15px 0;
-  padding-left: 20px;
-}
-
-.step-section li {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 6px;
-  color: #D1D5DB;
-}
-
-.step-section li strong {
-  color: #F2B240;
-}
-
-.note {
-  font-size: 16px;
-  color: #D1D5DB;
-  line-height: 1.6;
-  margin: 15px 0 0 0;
-  font-style: italic;
-}
-
-.note strong {
-  color: #F2B240;
-}
-
-.reminders-section {
-  background: transparent;
-  padding: 0;
-  margin-top: 30px;
-  text-align: left;
-}
-
-.reminders-section h4 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #F2B240;
-  margin-bottom: 10px;
-  line-height: 1.3;
-}
-
-.reminders-section ul {
-  margin: 0;
-  padding-left: 20px;
-}
-
-.reminders-section li {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 6px;
-  color: #D1D5DB;
-}
-
-.reminders-section li strong {
-  color: #F2B240;
-}
-
-/* Additional styles for new content structure */
-.tab-guide-content {
-  opacity: 0;
-  animation: fadeIn 0.5s ease-in-out forwards;
-}
-
-.important-note {
-  margin-top: 1.5rem;
-  text-align: left;
-}
-
-.important-note p {
-  color: #D1D5DB;
-  font-size: 1rem;
-  line-height: 1.6;
-  margin: 0;
-  font-style: normal;
-}
-
-.important-note strong {
-  color: #F0AD3C;
-}
-
-.withdrawal-reminders {
-  margin-top: 1.5rem;
-  text-align: left;
-}
-
-.withdrawal-reminders h4 {
-  color: #F0AD3C;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-}
-
-.withdrawal-reminders ul {
-  margin: 0;
-  padding-left: 1.25rem;
-}
-
-.withdrawal-reminders li {
-  color: #D1D5DB;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 0.5rem;
-}
-
-.withdrawal-reminders li strong {
-  color: #F0AD3C;
 }
 </style>

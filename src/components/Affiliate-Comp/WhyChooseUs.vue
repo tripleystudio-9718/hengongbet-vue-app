@@ -1,6 +1,6 @@
 <template>
   <div class="why-section">
-    <div class="section-title" v-html="$t('why_choose_us.title')"></div>
+    <h2 class="section-title" v-html="$t('why_choose_us.title')"></h2>
     
     <!-- Swiper Implementation -->
     <div class="swiper-container">
@@ -34,7 +34,7 @@
             <div class="feature-icon">
               <img :src="feature.icon" :alt="feature.title" class="icon-image" />
             </div>
-            <div class="feature-title" v-html="feature.title"></div>
+            <h3 class="feature-title" v-html="feature.title"></h3>
             <div class="feature-description" v-html="feature.description"></div>
           </div>
         </swiper-slide>

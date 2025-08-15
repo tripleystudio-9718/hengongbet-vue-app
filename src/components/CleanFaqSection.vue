@@ -1,8 +1,6 @@
 <template>
   <div class="clean-faq-section">
     <div class="max-w-7xl mx-auto px-6">
-      <!-- Removed entire header section with titles and button -->
-
       <div class="faq-content-wrapper">
         <div class="faq-accordion-container">
           <div 
@@ -14,12 +12,12 @@
               @click="toggleItem(index)"
               class="faq-accordion-trigger"
             >
-              <span 
+              <h3 
                 class="faq-trigger-text"
                 :class="{ 'faq-text-active': openItems[index] }"
               >
                 {{ item.question }}
-              </span>
+              </h3>
 
               <div class="faq-trigger-icon-wrapper">
                 <div class="faq-trigger-icon-circle">
@@ -42,7 +40,7 @@
             <transition name="faq-fade-slide">
               <div v-if="openItems[index]" class="faq-accordion-content">
                 <div class="faq-content-body">
-                  <p class="faq-content-text">{{ item.answer }}</p>
+                  <p class="faq-content-text" v-html="item.answer"></p>
                 </div>
               </div>
             </transition>
@@ -124,10 +122,6 @@ export default {
           {
             question: this.$t('faqSec.questions.q6.question'),
             answer: this.$t('faqSec.questions.q6.answer')
-          },
-          {
-            question: this.$t('faqSec.questions.q7.question'),
-            answer: this.$t('faqSec.questions.q7.answer')
           }
         ];
         
@@ -135,35 +129,31 @@ export default {
       } else {
         console.error('Translations not working. Using fallback data.');
         
-        // Fallback data for testing
+        // Fallback data for testing - using data from your JSON structure
         this.faqData = [
           {
-            question: "How Do I Register on Heng Ong Bet?",
-            answer: "Simply click the 'Register' button, fill in your details, and verify your phone number to get started"
+            question: "How do I register for HengOngBet88?",
+            answer: "Visit Heng Ong Bet8 official site and download the app, tap \"Register,\" and fill in your username, password, and mobile number to create your account."
           },
           {
-            question: "Is Heng Ong Bet Legal and Safe to Use?",
-            answer: "Yes, Heng Ong Bet operates under proper licensing and uses advanced security measures to protect your data and transactions."
+            question: "Is there a bonus for new players on HengOngBet88?",
+            answer: "Yes. New players can enjoy up to <strong>200% deposit bonus</strong>, <strong>68% slot top-up bonus</strong>, and up to <strong>3% daily rebate</strong> on gameplay."
           },
           {
-            question: "How can I Deposit or Withdraw money?",
-            answer: "You can deposit and withdraw money through various secure payment methods including bank transfers, e-wallets, and cryptocurrency."
+            question: "What games can I play after signing up?",
+            answer: "You can play slot games like <strong>Lucky365</strong> and <strong>Monkey King</strong>, live casino games, and <strong>4D lottery games</strong> directly from the app."
           },
           {
-            question: "What games are available on Heng Ong Bet?",
-            answer: "We offer a wide variety of games including live casino games, slot machines, sports betting, lottery games, and more."
+            question: "Can I play on my phone?",
+            answer: "Yes. <strong>Heng Ong Bet is mobile-first</strong>. Just install the APK or iOS version from the official site for smooth gameplay."
           },
           {
-            question: "Are there any Welcome Bonuses or Promotions?",
-            answer: "Yes! We offer generous welcome bonuses for new players, as well as ongoing promotions, loyalty rewards, and special bonuses."
+            question: "Is HengOngBet safe and legit?",
+            answer: "Yes. <strong>Heng Ong Bet is widely trusted in Malaysia</strong> and uses secure login, verified payment options, and fair gameplay features."
           },
           {
-            question: "What should I do if I forget my login details?",
-            answer: "If you forget your login details, simply click on the 'Forgot Password' link on the login page."
-          },
-          {
-            question: "Is there a mobile app for Heng Ong Bet?",
-            answer: "Yes, we have a mobile app available for both iOS and Android devices."
+            question: "What tips should I follow as a beginner?",
+            answer: "Check RTP, set a budget, start with low-volatility slots, read game rules, and only use bonuses on games you actually enjoy."
           }
         ];
       }
@@ -250,14 +240,17 @@ export default {
   outline: none;
 }
 
+/* H3 specific styling */
 .faq-trigger-text {
   color: #ffffff;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.125rem;
   padding-right: 1rem;
   line-height: 1.4;
   transition: color 0.2s ease;
   flex: 1;
+  margin: 0; /* Remove default h3 margins */
+  text-align: left;
 }
 
 .faq-text-active {

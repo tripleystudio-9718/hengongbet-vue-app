@@ -3,13 +3,13 @@
     <div class="max-w-7xl mx-auto px-6">
       <!-- Introduction -->
       <div class="content-section">
-        <div class="content-title" v-html="$t('tutorial.guide.introduction.title')"></div>
+        <h1 class="content-title" v-html="$t('tutorial.guide.introduction.title')"></h1>
         <p class="content-intro" v-html="$t('tutorial.guide.introduction.subtitle')"></p>
       </div>
 
       <!-- Step 1: Registration -->
       <div class="content-section">
-        <div class="step-title" v-html="$t('tutorial.guide.registration.title')"></div>
+        <h2 class="step-title" v-html="$t('tutorial.guide.registration.title')"></h2>
         <div class="step-content">
           <ol class="step-list">
             <li>
@@ -39,7 +39,7 @@
 
       <!-- Step 2: Login -->
       <div class="content-section">
-        <div class="step-title" v-html="$t('tutorial.guide.login.title')"></div>
+        <h2 class="step-title" v-html="$t('tutorial.guide.login.title')"></h2>
         <div class="step-content">
           <p v-html="$t('tutorial.guide.login.intro')"></p>
           <ul class="step-list">
@@ -57,7 +57,7 @@
 
       <!-- Step 3: Bonuses Table -->
       <div class="content-section">
-        <h3 class="step-title" v-html="$t('tutorial.guide.bonuses.title')"></h3>
+        <h2 class="step-title" v-html="$t('tutorial.guide.bonuses.title')"></h2>
         <div class="step-content">
           <p class="bonus-intro" v-html="$t('tutorial.guide.bonuses.intro')"></p>
           
@@ -104,7 +104,7 @@
 
       <!-- Step 4: Play Games -->
       <div class="content-section">
-        <div class="step-title" v-html="$t('tutorial.guide.games.title')"></div>
+        <h2 class="step-title" v-html="$t('tutorial.guide.games.title')"></h2>
         <div class="step-content">
           <p v-html="$t('tutorial.guide.games.intro')"></p>
           <ol class="step-list">
@@ -125,33 +125,33 @@
 
       <!-- Pro Tips Section -->
       <div class="content-section pro-tips-section">
-        <div class="step-title" v-html="$t('tutorial.guide.proTips.title')"></div>
+        <h2 class="step-title" v-html="$t('tutorial.guide.proTips.title')"></h2>
         <div class="step-content">
           <p class="tips-intro" v-html="$t('tutorial.guide.proTips.intro')"></p>
           
           <!-- Individual Tips -->
           <div class="tip-item">
-            <div class="tip-title" v-html="$t('tutorial.guide.proTips.tips.rtp.title')"></div>
+            <h3 class="tip-title" v-html="$t('tutorial.guide.proTips.tips.rtp.title')"></h3>
             <p v-html="$t('tutorial.guide.proTips.tips.rtp.description')"></p>
           </div>
           
           <div class="tip-item">
-            <div class="tip-title" v-html="$t('tutorial.guide.proTips.tips.budget.title')"></div>
+            <h3 class="tip-title" v-html="$t('tutorial.guide.proTips.tips.budget.title')"></h3>
             <p v-html="$t('tutorial.guide.proTips.tips.budget.description')"></p>
           </div>
           
           <div class="tip-item">
-            <div class="tip-title" v-html="$t('tutorial.guide.proTips.tips.volatility.title')"></div>
+            <h3 class="tip-title" v-html="$t('tutorial.guide.proTips.tips.volatility.title')"></h3>
             <p v-html="$t('tutorial.guide.proTips.tips.volatility.description')"></p>
           </div>
           
           <div class="tip-item">
-            <div class="tip-title" v-html="$t('tutorial.guide.proTips.tips.bonuses.title')"></div>
+            <h3 class="tip-title" v-html="$t('tutorial.guide.proTips.tips.bonuses.title')"></h3>
             <p v-html="$t('tutorial.guide.proTips.tips.bonuses.description')"></p>
           </div>
           
           <div class="tip-item">
-            <div class="tip-title" v-html="$t('tutorial.guide.proTips.tips.rules.title')"></div>
+            <h3 class="tip-title" v-html="$t('tutorial.guide.proTips.tips.rules.title')"></h3>
             <p v-html="$t('tutorial.guide.proTips.tips.rules.description')"></p>
           </div>
           
@@ -185,6 +185,7 @@ export default {
   width: 100%;
 }
 
+/* H1 - Main Title */
 .content-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -205,6 +206,7 @@ export default {
   margin-right: auto;
 }
 
+/* H2 - Section Titles */
 .step-title {
   font-size: 1.8rem;
   font-weight: 600;
@@ -466,6 +468,7 @@ export default {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* H3 - Individual Tips */
 .tip-title {
   color: #F2B240;
   font-size: 1.2rem;
@@ -496,6 +499,31 @@ export default {
   font-style: italic;
   margin: 0;
   text-align: center;
+}
+
+/* FAQ Section */
+.faq-item {
+  padding: 20px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* H3 - FAQ Questions */
+.faq-question {
+  color: #F2B240;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.faq-answer {
+  color: #ffffff;
+  line-height: 1.6;
+  margin: 0;
+  text-align: left;
+  padding-left: 20px;
 }
 
 /* Utility Classes */
@@ -543,6 +571,12 @@ export default {
     margin: 0;
   }
   
+  .tip-title,
+  .faq-question {
+    font-size: 12px !important;
+    padding-left: 15px;
+  }
+  
   .content-intro,
   .step-list li,
   .details-list li,
@@ -555,12 +589,12 @@ export default {
   .bonus-intro,
   .tip-item p,
   .tips-intro,
-  .table-note p {
+  .table-note p,
+  .faq-answer {
     font-size: 10px !important;
   }
   
-  .details-title,
-  .tip-title {
+  .details-title {
     font-size: 12px !important;
     padding-left: 15px;
   }
@@ -622,7 +656,8 @@ export default {
   
   .reminder-title,
   .reminder-box p,
-  .tip-item p {
+  .tip-item p,
+  .faq-answer {
     padding-left: 15px;
   }
 }
@@ -642,6 +677,12 @@ export default {
     padding-left: 10px;
   }
   
+  .tip-title,
+  .faq-question {
+    font-size: 10px !important;
+    padding-left: 10px;
+  }
+  
   .content-intro,
   .step-list li,
   .details-list li,
@@ -654,12 +695,12 @@ export default {
   .bonus-intro,
   .tip-item p,
   .tips-intro,
-  .table-note p {
+  .table-note p,
+  .faq-answer {
     font-size: 10px !important;
   }
   
-  .details-title,
-  .tip-title {
+  .details-title {
     font-size: 10px !important;
     padding-left: 10px;
   }
@@ -697,7 +738,8 @@ export default {
     margin-top: 0;
   }
   
-  .tip-item {
+  .tip-item,
+  .faq-item {
     padding: 15px 0;
     margin-bottom: 15px;
   }
@@ -730,7 +772,8 @@ export default {
   
   .reminder-title,
   .reminder-box p,
-  .tip-item p {
+  .tip-item p,
+  .faq-answer {
     padding-left: 10px;
   }
   

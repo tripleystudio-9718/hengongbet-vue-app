@@ -1,6 +1,7 @@
+
 <template>
   <div class="games-section">
-    <div class="section-title" v-html="$t('supported_games.title')"></div>
+    <h2 class="section-title" v-html="$t('supported_games.title')"></h2>
     <div class="section-subtitle" v-html="$t('supported_games.subtitle')"></div>
         
     <!-- Swiper Implementation -->
@@ -35,7 +36,7 @@
             <div class="game-icon">
               <img :src="game.icon" :alt="game.title" class="icon-image" />
             </div>
-            <div class="game-title" v-html="game.title"></div>
+            <h3 class="game-title" v-html="game.title"></h3>
             <div class="game-subtitle" v-html="game.subtitle"></div>
           </div>
         </swiper-slide>

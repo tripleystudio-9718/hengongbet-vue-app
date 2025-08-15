@@ -902,15 +902,34 @@
   },
   "download": {
     "why_download": {
-      "title": "Why Download the HengOngBet APK?",
-      "description": "Download the latest HengOngBet mobile app for iOS and Android, secure, seamless, and built for Malaysian players. Enjoy exclusive bonuses, instant payments, and 24/7 access to slots, sportsbook, 4D, and live casino games.",
+      "title": "HengOngBet App Download (2025)",
+      "title2": "Why Download the HengOngBet APK?",
+      "description": "Download the latest HengOngBet mobile app for iOS and Android, secure, seamless, and built for Malaysian players. <br>Enjoy exclusive bonuses, instant payments, and 24/7 access to slots, sportsbook, 4D, and live casino games.",
       "features": {
         "mobile_first": "Fast, mobile-first experience built for Android and iPhone",
         "one_tap_login": "One-tap login, instant access to your wallet",
         "exclusive_promotions": "Exclusive in-app promotions and affiliate tools",
         "secure_updates": "Secure updates, no third-party APKs"
       },
-      "brand_tagline": "HENGONGBET88 | DOWNLOAD ANDROID APK | FREE IOS IPHONE | LATEST 2025 APP VERSION"
+      "tagline": "HENGONGBET88 &#124; DOWNLOAD ANDROID APK &#124; FREE IOS IPHONE &#124; LATEST 2025 APP VERSION"
+    },
+    "steps": {
+      "title": "How to Install the HengOngBet App on Android",
+      "step1": "Step 1",
+      "step1Description": "Tap the <strong>three-dot menu</strong> at the top-right of your browser window.",
+      "step2": "Step 2",
+      "step2Description": "Select <strong>\"Add to Home Screen.\"</strong>",
+      "step3": "Step 3",
+      "step3Description": "Tap <strong>\"Install\"</strong> to save the app. Launch and enjoy!",
+      "ios_title": "How to Install the HengOngBet App on iOS",
+      "ios_step1": "Step 1",
+      "ios_step1Description": "Tap the <strong>\"iOS Download\"</strong> button above or scan the QR.",
+      "ios_step2": "Step 2",
+      "ios_step2Description": "When prompted, tap <strong>\"Install\"</strong> on the pop-up.",
+      "ios_step3": "Step 3",
+      "ios_step3Description": "Once the download is complete, return to your home screen and open the app.",
+      "ios_step4": "Step 4",
+      "ios_step4Description": "Log in and enjoy a full mobile casino experience."
     },
     "start_playing": {
       "title": "Start Playing Instantly",
@@ -1052,6 +1071,7 @@
     "clickToPlay": "Click to play {gameName}"
   },
   "content": {
+    "title": "Games",
     "slots": {
       "title": "Slot",
       "description": "Spin, win, and enjoy nonstop action with Malaysia's favourite <strong>online slot</strong> providers.<br><br>From classic 3-reel machines to cinematic bonus-packed adventures, HengOngBet brings you the best of slot games in one place. Here's a taste of what you can play:",
@@ -1275,7 +1295,7 @@
     }
   },
   "tutorial": {
-    "title": "Tutorial Guide",
+    "title": "Guide",
     "titleHighlight": "Tutorial",
     "subtitle": "Easy To Know & Just follow Step Of Tutorial",
     "sections": {
@@ -1448,8 +1468,8 @@
     }
   },
   "tutorialTabs": {
-    "titleH1": "Topup & Withdraw",
-    "titleH1Part2": "Tutorials",
+    "titleH1": "HengOngBet88",
+    "titleH1Part2": "Top-Up Guide",
     "tabs": {
       "topup": "Instant Top Up",
       "transfer": "Bank Transfer",

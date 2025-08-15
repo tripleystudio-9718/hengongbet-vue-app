@@ -1,63 +1,79 @@
 <template>
-  <!-- Title and Subtitle Section (Outside tabs) -->
-  <div class="features-header">
-    <div class="features-main-title">{{ $t('features.header.title') }}</div>
-    <p class="features-subtitle">{{ $t('features.header.subtitle') }}</p>
-  </div>
+  <div>
+    <!-- Title and Subtitle Section (Outside tabs) -->
+    <div class="features-header">
+      <h2 class="features-main-title">{{ $t('features.header.title') }}</h2>
+      <p class="features-subtitle">{{ $t('features.header.subtitle') }}</p>
+    </div>
 
-  <div class="features-section">
-    <!-- Tab Navigation -->
-    <div class="tab-navigation">
-      <button
-        v-for="tab in $tm('features.tabs')"
-        :key="tab.id"
-        @click="activeTab = tab.id"
-        :class="['tab-btn', { active: activeTab === tab.id }]"
-      >
-        {{ tab.title }}
-      </button>
+    <div class="features-section">
+      <!-- Tab Navigation -->
+      <div class="tab-navigation">
+        <button
+          @click="activeTab = 'safe-secure'"
+          :class="['tab-btn', { active: activeTab === 'safe-secure' }]"
+        >
+          {{ $tm('features.tabs')[0].title }}
+        </button>
+        <button
+          @click="activeTab = 'malaysians'"
+          :class="['tab-btn', { active: activeTab === 'malaysians' }]"
+        >
+          {{ $tm('features.tabs')[1].title }}
+        </button>
+        <button
+          @click="activeTab = 'entertainment'"
+          :class="['tab-btn', { active: activeTab === 'entertainment' }]"
+        >
+          {{ $tm('features.tabs')[2].title }}
+        </button>
+      </div>
+      
+      <div class="tab-content">
+        <!-- Tab 1: Safe, Licensed & Secure -->
+        <div v-if="activeTab === 'safe-secure'" class="tab-content-section">
+          <h3 class="tab-content-title">{{ $tm('features.tabs')[0].title }}</h3>
+          <p class="section-description">{{ $t('features.safeSecure.description') }}</p>
+          <ul class="feature-list">
+            <li v-for="(feature, index) in $tm('features.safeSecure.features')" :key="index">
+              <strong>{{ feature.title }}:</strong> {{ feature.description }}
+            </li>
+          </ul>
+        </div>
+              
+        <!-- Tab 2: Designed for Malaysians -->
+        <div v-else-if="activeTab === 'malaysians'" class="tab-content-section">
+          <h3 class="tab-content-title">{{ $tm('features.tabs')[1].title }}</h3>
+          <p class="section-description">{{ $t('features.malaysians.description') }}</p>
+          <ul class="feature-list">
+            <li v-for="(feature, index) in $tm('features.malaysians.features')" :key="index">
+              <strong>{{ feature.title }}:</strong> {{ feature.description }}
+            </li>
+          </ul>
+        </div>
+              
+        <!-- Tab 3: Value-Driven Entertainment -->
+        <div v-else class="tab-content-section">
+          <h3 class="tab-content-title">{{ $tm('features.tabs')[2].title }}</h3>
+          <p class="section-description">{{ $t('features.entertainment.description') }}</p>
+          <ul class="feature-list">
+            <li v-for="(feature, index) in $tm('features.entertainment.features')" :key="index">
+              <strong>{{ feature.title }}:</strong> {{ feature.description }}
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="tab-content">
-      <!-- Tab 1: Safe, Licensed & Secure -->
-      <div v-if="activeTab === 'safe-secure'" class="tab-content-section">
-        <p class="section-description">{{ $t('features.safeSecure.description') }}</p>
-        <ul class="feature-list">
-          <li v-for="(feature, index) in $tm('features.safeSecure.features')" :key="index">
-            <strong>{{ feature.title }}:</strong> {{ feature.description }}
-          </li>
-        </ul>
-      </div>
-            
-      <!-- Tab 2: Designed for Malaysians -->
-      <div v-else-if="activeTab === 'malaysians'" class="tab-content-section">
-        <p class="section-description">{{ $t('features.malaysians.description') }}</p>
-        <ul class="feature-list">
-          <li v-for="(feature, index) in $tm('features.malaysians.features')" :key="index">
-            <strong>{{ feature.title }}:</strong> {{ feature.description }}
-          </li>
-        </ul>
-      </div>
-            
-      <!-- Tab 3: Value-Driven Entertainment -->
-      <div v-else class="tab-content-section">
-        <p class="section-description">{{ $t('features.entertainment.description') }}</p>
-        <ul class="feature-list">
-          <li v-for="(feature, index) in $tm('features.entertainment.features')" :key="index">
-            <strong>{{ feature.title }}:</strong> {{ feature.description }}
-          </li>
-        </ul>
-      </div>
+      
+    <!-- Popular Games Section -->
+    <div class="platform-section">
+      <h2 class="platform-title">{{ $t('features.popularGames.title') }}</h2>
+      <ul class="popular-games-list">
+        <li v-for="(game, index) in $tm('features.popularGames.games')" :key="index">
+          {{ game }}
+        </li>
+      </ul>
     </div>
-  </div>
-    
-  <!-- Popular Games Section -->
-  <div class="platform-section">
-    <div class="platform-title">{{ $t('features.popularGames.title') }}</div>
-    <ul class="popular-games-list">
-      <li v-for="(game, index) in $tm('features.popularGames.games')" :key="index">
-        {{ game }}
-      </li>
-    </ul>
   </div>
 </template>
 
@@ -101,7 +117,8 @@ export default {
   padding: 0 20px;
 }
 
-.features-main-title {
+.features-main-title,
+h2.features-main-title {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 600;
   color: #FFFFFF;
@@ -179,6 +196,15 @@ export default {
   color: #C0BEBE;
 }
 
+.tab-content-title,
+h3.tab-content-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #F2B240;
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+}
+
 .section-description {
   font-size: 14px;
   font-weight: 400;
@@ -222,7 +248,8 @@ export default {
   margin-top: 60px;
 }
 
-.platform-title {
+.platform-title,
+h3.platform-title {
   color: #ffffff;
   font-size: 18px;
   font-weight: 600;
@@ -232,10 +259,12 @@ export default {
 .popular-games-list {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   padding: 0;
   margin: 0 auto;
   max-width: 400px;
-  text-align: left;
+  justify-content: center;
+  gap: 10px;
 }
 
 .popular-games-list li {
@@ -282,7 +311,8 @@ export default {
     padding: 0 16px;
   }
 
-  .features-main-title {
+  .features-main-title,
+  h2.features-main-title {
     font-size: clamp(1.5rem, 5vw, 2rem);
     margin-bottom: 12px;
   }
@@ -344,6 +374,12 @@ export default {
     max-height: 400px;
   }
   
+  .tab-content-title,
+  h3.tab-content-title {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  
   .section-description {
     font-size: 12px;
     margin-bottom: 16px;
@@ -360,13 +396,16 @@ export default {
     max-width: 600px;
   }
   
-  .platform-title {
+  .platform-title,
+  h3.platform-title {
     font-size: 20px;
     margin-bottom: 16px;
   }
   
   .popular-games-list {
     max-width: 300px;
+    flex-direction: column;
+    align-items: center;
   }
   
   .popular-games-list li {
@@ -398,6 +437,12 @@ export default {
     max-height: 350px;
   }
   
+  .tab-content-title,
+  h3.tab-content-title {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
   .section-description {
     font-size: 10px;
   }
@@ -411,7 +456,8 @@ export default {
     margin-top: 30px;
   }
   
-  .platform-title {
+  .platform-title,
+  h3.platform-title {
     font-size: 16px;
   }
   

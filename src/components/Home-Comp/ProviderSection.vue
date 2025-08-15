@@ -2,7 +2,7 @@
   <section>
     <!-- Global Header Section -->
     <div class="global-header-section">
-      <div class="global-title" v-html="$t('provider_showcase.global_header.title')"></div>
+      <h2 class="global-title" v-html="$t('provider_showcase.global_header.title')"></h2>
       <p class="global-description" v-html="$t('provider_showcase.global_header.description')"></p>
       <p class="global-cta" v-html="$t('provider_showcase.global_header.cta')"></p>
     </div>
@@ -43,7 +43,7 @@
 
     <!-- Bottom Section -->
     <div class="bottom-section">
-      <div class="bottom-title" v-html="$t('provider_showcase.bottom_section.title')"></div>
+      <h2 class="bottom-title" v-html="$t('provider_showcase.bottom_section.title')"></h2>
       <p class="bottom-description-line1" v-html="$t('provider_showcase.bottom_section.description_line1')"></p>
       <p class="bottom-description-line2" v-html="$t('provider_showcase.bottom_section.description_line2')"></p>
       <p class="bottom-description-line3" v-html="$t('provider_showcase.bottom_section.description_line3')"></p>

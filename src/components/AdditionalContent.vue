@@ -2,26 +2,51 @@
   <div class="additional-content-section">
     <!-- Why Download Section -->
     <div class="why-download-section">
-      <div class="main-section-title" v-html="$t('download.why_download.title')"></div>
+      <h1 class="main-section-title" v-html="$t('download.why_download.title')"></h1>
       <div class="section-description" v-html="$t('download.why_download.description')"></div>
+      <h3 class="brand-tagline" v-html="$t('download.why_download.title2')"></h3>
       <ul class="feature-list">
         <li v-for="(feature, index) in whyDownloadFeatures" :key="index" v-html="feature"></li>
       </ul>
-      <div class="brand-tagline" v-html="$t('download.why_download.brand_tagline')"></div>
+      <div class="section-description" v-html="$t('download.why_download.tagline')"></div>
+    </div>
+
+    <!-- Android Installation Steps Section -->
+    <div class="installation-section">
+      <h2 class="section-title" v-html="$t('download.steps.title')"></h2>
+      <h3 class="step-title" v-html="$t('download.steps.step1')"></h3>
+      <div class="section-description" v-html="$t('download.steps.step1Description')"></div>
+      <h3 class="step-title" v-html="$t('download.steps.step2')"></h3>
+      <div class="section-description" v-html="$t('download.steps.step2Description')"></div>
+      <h3 class="step-title" v-html="$t('download.steps.step3')"></h3>
+      <div class="section-description" v-html="$t('download.steps.step3Description')"></div>
+    </div>
+    
+    <!-- iOS Installation Steps Section -->
+    <div class="installation-section">
+      <h2 class="section-title" v-html="$t('download.steps.ios_title')"></h2>
+      <h3 class="step-title" v-html="$t('download.steps.ios_step1')"></h3>
+      <div class="section-description" v-html="$t('download.steps.ios_step1Description')"></div>
+      <h3 class="step-title" v-html="$t('download.steps.ios_step2')"></h3>
+      <div class="section-description" v-html="$t('download.steps.ios_step2Description')"></div>
+      <h3 class="step-title" v-html="$t('download.steps.ios_step3')"></h3>
+      <div class="section-description" v-html="$t('download.steps.ios_step3Description')"></div>
+      <h3 class="step-title" v-html="$t('download.steps.ios_step4')"></h3>
+      <div class="section-description" v-html="$t('download.steps.ios_step4Description')"></div>
     </div>
 
     <!-- Start Playing Section -->
     <div class="start-playing-section">
-      <div class="section-title" v-html="$t('download.start_playing.title')"></div>
+      <h2 class="section-title" v-html="$t('download.start_playing.title')"></h2>
       <div class="section-description" v-html="$t('download.start_playing.description')"></div>
       <ul class="game-list">
         <li v-for="(game, index) in startPlayingGames" :key="index" v-html="game"></li>
       </ul>
     </div>
 
-    <!-- Benefits Comparison Table -->
+    <!-- Benefits Comparison Table Section -->
     <div class="benefits-section">
-      <div class="section-title" v-html="$t('download.benefits.title')"></div>
+      <h2 class="section-title-2" v-html="$t('download.benefits.title')"></h2>
       
       <div class="benefits-table-container">
         <div class="benefits-table">
@@ -41,13 +66,13 @@
 
     <!-- Safety Section -->
     <div class="safety-section">
-      <div class="section-title" v-html="$t('download.safety.title')"></div>
+      <h2 class="section-title-2" v-html="$t('download.safety.title')"></h2>
       <div class="section-description" v-html="$t('download.safety.description')"></div>
     </div>
 
     <!-- FAQ Section -->
     <div class="faq-section">
-      <div class="section-title" v-html="$t('download.faq.title')"></div>
+      <h2 class="section-title-2" v-html="$t('download.faq.title')"></h2>
       
       <div class="accordion-container">
         <div 
@@ -59,11 +84,11 @@
             @click="toggleFaqItem(index)"
             class="accordion-trigger"
           >
-            <span 
+            <h3 
               class="trigger-text"
               :class="{ 'text-active': openFaqItems[index] }"
               v-html="faq.question"
-            ></span>
+            ></h3>
 
             <div class="trigger-icon-wrapper">
               <!-- Use imported SVG icons -->
@@ -229,7 +254,7 @@ export default {
   font-weight: 700;
   color: #FFFFFF;
   text-align: center;
-  margin: 60px 0 30px 0;
+  margin: 0 0 30px 0;
   line-height: 1.2;
   word-wrap: break-word;
 }
@@ -238,9 +263,30 @@ export default {
 .section-title {
   font-size: 36px;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #F2B240;
   text-align: center;
   margin: 60px 0 20px 0;
+  line-height: 1.2;
+  word-wrap: break-word;
+}
+
+.section-title-2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin: 60px 0 20px 0;
+  line-height: 1.2;
+  word-wrap: break-word;
+}
+
+/* Step Title (Smaller for Steps) */
+.step-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #F2B240;
+  text-align: center;
+  margin: 30px 0 10px 0;
   line-height: 1.2;
   word-wrap: break-word;
 }
@@ -489,6 +535,16 @@ export default {
     margin: 40px 0 15px 0;
   }
 
+  .section-title-2 {
+    font-size: 28px;
+    margin: 40px 0 15px 0;
+  }
+
+  .step-title {
+    font-size: 20px;
+    margin: 25px 0 8px 0;
+  }
+
   .section-description {
     font-size: 16px;
     padding: 0 10px;
@@ -509,6 +565,16 @@ export default {
   .section-title {
     font-size: 24px;
     margin: 30px 0 15px 0;
+  }
+
+  .section-title-2 {
+    font-size: 24px;
+    margin: 30px 0 15px 0;
+  }
+
+  .step-title {
+    font-size: 18px;
+    margin: 20px 0 6px 0;
   }
 
   .section-description {
@@ -610,6 +676,16 @@ export default {
   .section-title {
     font-size: 20px;
     margin: 25px 0 12px 0;
+  }
+
+  .section-title-2 {
+    font-size: 20px;
+    margin: 25px 0 12px 0;
+  }
+
+  .step-title {
+    font-size: 16px;
+    margin: 15px 0 5px 0;
   }
 
   .section-description {

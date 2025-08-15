@@ -2,13 +2,12 @@
   <div class="section-container">
     <!-- FAQ Header Section -->
     <div class="header-section">
-      <div class="header-label">{{ $t('faqSec.header.label') }}</div>
+      <h2 class="header-label">{{ $t('faqSec.header.label') }}</h2>
       <div class="main-title">{{ $t('faqSec.header.title') }}</div>
       <p class="header-description">{{ $t('faqSec.header.description') }}</p>
       <button class="cta-button" @click="goToFaqPage">
         {{ $t('faqSec.header.button_text') }}
       </button>
-
     </div>
 
     <div class="content-wrapper">
@@ -22,12 +21,12 @@
             @click="toggleItem(index)"
             class="accordion-trigger"
           >
-            <span 
+            <h3 
               class="trigger-text"
               :class="{ 'text-active': openItems[index] }"
             >
               {{ item.question }}
-            </span>
+            </h3>
 
             <div class="trigger-icon-wrapper">
               <div class="trigger-icon-circle">
@@ -214,7 +213,8 @@ export default {
 }
 
 /* Global Typography Classes */
-.header-label {
+.header-label,
+h2.header-label {
   color: #ffffff;
   font-size: 1.5rem;
   margin: 0 0 1rem 0;
@@ -289,16 +289,20 @@ export default {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.trigger-text {
+.trigger-text,
+h3.trigger-text {
   color: #ffffff;
   font-weight: 500;
   font-size: 1.125rem;
   padding-right: 1rem;
   line-height: 1.4;
   transition: color 0.2s ease;
+  margin: 0;
+  text-align: left;
 }
 
-.text-active {
+.text-active,
+h3.text-active {
   color: #F2B240;
 }
 
@@ -370,7 +374,8 @@ export default {
     padding: 0 1rem 1.25rem 1rem;
   }
   
-  .trigger-text {
+  .trigger-text,
+  h3.trigger-text {
     font-size: 1rem;
     padding-right: 0.75rem;
   }
@@ -403,7 +408,8 @@ export default {
     padding: 0 0.875rem 1rem 0.875rem;
   }
   
-  .trigger-text {
+  .trigger-text,
+  h3.trigger-text {
     font-size: 0.95rem;
   }
   
@@ -428,7 +434,8 @@ export default {
     margin: 0;
   }
   
-  .header-label {
+  .header-label,
+  h2.header-label {
     font-size: 16px;
     margin: 0;
   }
