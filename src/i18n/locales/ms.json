@@ -148,7 +148,8 @@
     "grab_alt": "Grab",
     "facebook_alt": "Facebook",
     "instagram_alt": "Instagram",
-    "whatsapp_alt": "WhatsApp"
+    "whatsapp_alt": "WhatsApp",
+    "anchor": "HengOngBet"
   },
   "home": {
     "hero": {
@@ -241,7 +242,9 @@
   "features": {
     "header": {
       "title": "Mengapa Pilih HengOngBet?",
-      "subtitle": "Dengan lebih 10 tahun dalam industri, HengOngBet telah menjadi platform terpercaya untuk pemain Malaysia yang mencari keselamatan, hiburan, dan ketelusan."
+      "subtitle1": "Dengan lebih 10 tahun dalam industri,",
+      "subtitle2": "HengOngBet",
+      "subtitle3": "telah menjadi platform dipercayai oleh pemain Malaysia yang mementingkan keselamatan, hiburan dan ketelusan."
     },
     "tabs": [
       {
@@ -684,7 +687,9 @@
     },
     "cta_section": {
       "title": "Ambil Kawalan Masa Depan Kewangan Anda Bersama Kami",
-      "subtitle": "Sertai <span style=\"color: #F2B240; font-weight: bold\">Rangkaian Ahli Gabungan HengOngBet</span> hari ini! Jadi bos sendiri. Dibayar mingguan. Kembangkan pendapatan seumur hidup.",
+      "subtitle1": "Sertai ",
+      "subtitle2": "HengOngBet",
+      "subtitle3": " Affiliate Network hari ini! Jadi bos anda sendiri. Terima bayaran setiap minggu. Jana pendapatan seumur hidup.",
       "description": "Keuntungan Anda. Peraturan Anda. Kawalan Anda.",
       "buttons": {
         "register": "Daftar"
@@ -754,7 +759,9 @@
       "title_prefix": "Promosi Berlimpah di",
       "brand": "Heng Ong Bet",
       "subtitle": "Buka Bonus Eksklusif & Maksimumkan Kemenangan Anda",
-      "description": "Di HengOngBet, kami membawakan anda platform terbaik untuk promosi permainan dalam talian di Malaysia dan Singapura. Bonus eksklusif kami disesuaikan untuk memberi ganjaran kepada anda untuk setiap taruhan yang anda letakkan — dari tawaran cashback yang murah hati hingga bonus berkaitan turnamen dan bonus Heng Ong yang menarik."
+      "description_part1": "Di ",
+      "description_part2": "HengOngBet",
+      "description_part3": ", kami membawakan anda platform muktamad untuk promosi permainan dalam talian di Malaysia dan Singapura. Bonus eksklusif kami direka khas untuk memberi ganjaran kepada setiap pertaruhan yang anda buat — daripada tawaran pulangan tunai yang murah hati kepada bonus berkaitan kejohanan dan bonus Heng Ong yang menarik."
     },
     "promotions": {
       "promo1": {
@@ -896,7 +903,9 @@
     "why_download": {
       "title": "Muat Turun Aplikasi HengOngBet (2025)",
       "title2": "Mengapa Muat Turun APK HengOngBet?",
-      "description": "Muat turun aplikasi mudah alih HengOngBet terkini untuk iOS dan Android, selamat, lancar, dan dibina untuk pemain Malaysia. <br>Nikmati bonus eksklusif, pembayaran segera, dan akses 24/7 kepada slot, buku sukan, 4D, dan permainan kasino langsung.",
+      "description_part1": "Muat turun aplikasi mudah alih ",
+      "description_part2": "HengOngBet",
+      "description_part3": " terkini untuk iOS dan Android, selamat, lancar dan dibina untuk pemain Malaysia. Nikmati bonus eksklusif, pembayaran segera dan akses 24/7 kepada slot, buku sukan, 4D dan permainan kasino langsung.",
       "features": {
         "mobile_first": "Pengalaman mobile-first yang pantas dibina untuk Android dan iPhone",
         "one_tap_login": "Log masuk satu ketukan, akses segera ke dompet anda",
@@ -1066,7 +1075,9 @@
       "title": "Permainan",
       "slots": {
         "title": "Slot",
-        "description": "Berputar, menang, dan nikmati aksi tanpa henti dengan penyedia <strong>slot dalam talian</strong> kegemaran Malaysia.<br><br>Dari mesin 3-reel klasik hingga pengembaraan sinematik yang penuh dengan bonus, HengOngBet membawakan anda yang terbaik dari permainan slot di satu tempat. Berikut adalah rasa apa yang boleh anda mainkan:",
+        "description_part1": "Putar, menang dan nikmati aksi tanpa henti dengan penyedia <strong>slot dalam talian</strong> kegemaran Malaysia.<br><br>Daripada mesin klasik 3-reel kepada pengembaraan sinematik yang penuh dengan bonus, ",
+        "description_part2": "HengOngBet",
+        "description_part3": " membawakan anda permainan slot terbaik dalam satu tempat. Berikut adalah rasa apa yang boleh anda mainkan:",
         "games": {
           "lucky365": {
             "title": "Lucky 365",
@@ -1283,7 +1294,9 @@
     ],
     "finalNote": {
       "title": "Masih ada soalan?",
-      "content": "Lawati Pusat Bantuan kami atau bercakap dengan ejen sokongan bila-bila masa. HengOngBet komited untuk menyediakan permainan dalam talian yang selamat, telus, dan memberi ganjaran untuk semua pemain."
+      "content_part1": "Lawati Pusat Bantuan kami atau bercakap dengan ejen sokongan bila-bila masa. ",
+      "content_part2": "HengOngBet",
+      "content_part3": " komited untuk menyediakan permainan dalam talian yang selamat, telus dan bermanfaat untuk semua pemain."
     }
   },
   "tutorial": {
@@ -1318,7 +1331,10 @@
     "guide": {
       "introduction": {
         "title": "Tutorial Pemain Baru <span class=\"title-highlight\">HengOngBet88</span>",
-        "subtitle": "Sama ada anda di sini untuk berputar slot, bermain 4D, atau menikmati meja kasino langsung, perjalanan <strong>Heng Ong Bet</strong> anda bermula dengan hanya beberapa langkah mudah."
+        "subtitle_part1": "Sama ada anda di sini untuk memutar slot, bermain 4D, atau menikmati meja kasino langsung, perjalanan <strong>",
+        "subtitle_part2": "Heng Ong Bet",
+        "subtitle_part3": "</strong> anda bermula dengan hanya beberapa langkah mudah.",
+        "visit": "Lawati laman web rasmi: "
       },
       "registration": {
         "title": "Langkah 1: Cara Mendaftar & Muat Turun Aplikasi",
@@ -1524,22 +1540,22 @@
     },
     "guides": {
       "topup": {
-        "title": {
-          "highlight": "HengOngBet88 E-Dompet",
-          "regular": " Tambah Nilai"
-        },
-        "steps": [
-          "Buka aplikasi HengOngBet dan pilih <strong>\"Tambah Nilai (E-Dompet)\"</strong>.",
-          "Pilih kaedah e-dompet anda: <strong>Touch 'n Go</strong> atau <strong>GrabPay</strong>.",
-          "Masukkan <strong>jumlah tambah nilai</strong> yang diingini.",
-          "Anda akan diberikan <strong>akaun bank atau kod QR</strong> untuk dipindahkan.",
-          "Buka aplikasi TNG atau GrabPay anda dan <strong>lengkapkan pindahan.</strong>",
-          "<strong>Ambil tangkapan skrin atau simpan resit transaksi.</strong>",
-          "Kembali ke aplikasi HengOngBet dan <strong>muat naik resit anda</strong> dalam medan yang disediakan.",
-          "Tunggu admin mengesahkan dan meluluskan, tambah nilai akan ditunjukkan tidak lama lagi."
-        ],
-        "note": "<strong>Sentiasa semak dua kali nombor akaun atau kod QR sebelum mengesahkan pembayaran anda dalam aplikasi e-dompet.</strong>"
+      "title": {
+        "highlight": "HengOngBet88 E-Wallet",
+        "regular": " Top-Up"
       },
+      "steps": [
+        "Buka aplikasi <a href=\"/ms\" class=\"hengongbet-link\" style='color: #F2B240;'>HengOngBet</a> dan pilih <strong>\"Top-Up (E-Wallet)\"</strong>.",
+        "Pilih kaedah e-wallet anda: <strong>Touch 'n Go</strong> atau <strong>GrabPay</strong>.",
+        "Masukkan <strong>jumlah top-up</strong> yang dikehendaki.",
+        "Anda akan diberikan <strong>akaun bank atau kod QR</strong> untuk dipindahkan.",
+        "Buka aplikasi TNG atau GrabPay anda dan <strong>lengkapkan pemindahan</strong>.",
+        "<strong>Ambil tangkapan skrin atau simpan resit transaksi.</strong>",
+        "Kembali ke aplikasi <a href=\"/\" class=\"hengongbet-link\">HengOngBet</a> dan <strong>muat naik resit anda</strong> di ruangan yang disediakan.",
+        "Tunggu admin mengesahkan dan meluluskan, top-up akan dipaparkan tidak lama lagi."
+      ],
+      "note": "<strong>Sentiasa semak semula nombor akaun atau kod QR sebelum mengesahkan pembayaran anda dalam aplikasi e-wallet.</strong>"
+    },
       "transfer": {
         "title": {
           "highlight": "HengOngBet88 Perbankan Dalam Talian",

@@ -297,16 +297,22 @@ export default {
       this.activeTab = tab;
     },
     goToRegisterPage() {
-      const locale = this.$i18n?.locale || 'en';
+  const locale = this.$i18n?.locale || 'en';
 
-      let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
+  let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
   if (locale === 'zh') {
     targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
   } else if (locale === 'ms') {
     targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
   }
-      // Redirect to external URL
-      window.location.href = targetUrl;
+
+  // Create link with nofollow attributes (same tab)
+  const link = document.createElement('a');
+  link.href = targetUrl;
+  link.rel = 'nofollow noopener';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
   },
   mounted() {

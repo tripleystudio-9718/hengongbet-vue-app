@@ -3,7 +3,10 @@
     <!-- Why Download Section -->
     <div class="why-download-section">
       <h1 class="main-section-title" v-html="$t('download.why_download.title')"></h1>
-      <div class="section-description" v-html="$t('download.why_download.description')"></div>
+      <div class="section-description">
+        {{ $t('download.why_download.description_part1') }}
+        <router-link :to="getLocalePath('/')" class="hengongbet-link">{{ $t('download.why_download.description_part2') }}</router-link>{{ $t('download.why_download.description_part3') }}
+      </div>
       <h3 class="brand-tagline" v-html="$t('download.why_download.title2')"></h3>
       <ul class="feature-list">
         <li v-for="(feature, index) in whyDownloadFeatures" :key="index" v-html="feature"></li>
@@ -230,6 +233,15 @@ export default {
     }
   },
   methods: {
+    // Custom method to get localized path using current locale
+    getLocalePath(path) {
+      const locale = this.$i18n?.locale || 'en';
+      if (locale === 'en') {
+        return path;
+      }
+      return `/${locale}${path}`;
+    },
+    
     toggleFaqItem(index) {
       this.openFaqItems = {
         ...this.openFaqItems,
@@ -303,6 +315,18 @@ export default {
   margin-left: auto;
   margin-right: auto;
   word-wrap: break-word;
+}
+
+.hengongbet-link {
+  color: #F2B240;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.hengongbet-link:hover {
+  color: #E5A535;
+  text-decoration: underline;
 }
 
 /* Brand Tagline */

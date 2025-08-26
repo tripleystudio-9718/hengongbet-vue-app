@@ -464,6 +464,20 @@ onUnmounted(() => {
   padding-bottom: 2rem;
 }
 
+/* Homepage Link Styles */
+.homepage-link {
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.homepage-link:hover {
+  opacity: 0.8;
+}
+
+.homepage-link:hover .highlight {
+  text-shadow: 0 0 10px rgba(240, 173, 60, 0.5);
+}
+
 /* Tab Navigation */
 .tabs-container {
   padding: 1.25rem;
@@ -593,6 +607,19 @@ onUnmounted(() => {
   margin-bottom: 1.875rem;
   color: white;
   line-height: 1.4;
+}
+
+/* HengOngBet Link in Step Content */
+.hengongbet-link {
+  color: #F0AD3C;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.hengongbet-link:hover {
+  color: #ED9326;
+  text-shadow: 0 0 8px rgba(240, 173, 60, 0.4);
 }
 
 /* Color Classes */
@@ -938,7 +965,8 @@ onUnmounted(() => {
 /* Accessibility improvements */
 @media (prefers-reduced-motion: reduce) {
   .image-slider-track,
-  .tab-button {
+  .tab-button,
+  .homepage-link {
     transition: none;
   }
 }

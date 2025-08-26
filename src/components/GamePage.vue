@@ -103,7 +103,11 @@
       <!-- Slots Section -->
       <div class="content-section">
         <h2 class="section-title" v-html="$t('games.content.slots.title')"></h2>
-        <div class="section-description" v-html="$t('games.content.slots.description')"></div>
+        <div class="section-description">
+          <span v-html="$t('games.content.slots.description_part1')"></span>
+          <router-link :to="getLocalePath('/')" class="hengongbet-link">{{ $t('games.content.slots.description_part2') }}</router-link>
+          <span v-html="$t('games.content.slots.description_part3')"></span>
+        </div>
         
         <div class="games-info-grid">
           <div v-for="(item, index) in slotsContent" :key="index" class="game-info-card">
@@ -393,6 +397,15 @@ export default {
     }
   },
   methods: {
+    // Custom method to get localized path using current locale
+    getLocalePath(path) {
+      const locale = this.$i18n?.locale || 'en';
+      if (locale === 'en') {
+        return path;
+      }
+      return `/${locale}${path}`;
+    },
+    
     setActiveTab(tabId) {
       this.activeTab = tabId;
     },
@@ -415,8 +428,14 @@ export default {
       } else if (locale === 'ms') {
         targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
       }
-      // Redirect to external URL
-      window.location.href = targetUrl;
+      
+      // Create link with nofollow attributes (same tab)
+      const link = document.createElement('a');
+      link.href = targetUrl;
+      link.rel = 'nofollow noopener';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     },
     get4DResultsRoute() {
       const locale = this.$i18n?.locale || 'en';
@@ -616,6 +635,18 @@ export default {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.hengongbet-link {
+  color: #F2B240;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.hengongbet-link:hover {
+  color: #E5A535;
+  text-decoration: underline;
 }
 
 /* Game Info Cards - Static Display */

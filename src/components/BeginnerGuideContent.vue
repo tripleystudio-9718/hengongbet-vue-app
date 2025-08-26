@@ -4,7 +4,11 @@
       <!-- Introduction -->
       <div class="content-section">
         <h1 class="content-title" v-html="$t('tutorial.guide.introduction.title')"></h1>
-        <p class="content-intro" v-html="$t('tutorial.guide.introduction.subtitle')"></p>
+        <p class="content-intro">
+          <span v-html="$t('tutorial.guide.introduction.subtitle_part1')"></span>
+          <router-link :to="getLocalePath('/')" class="hengongbet-link" v-html="$t('tutorial.guide.introduction.subtitle_part2')"></router-link>
+          <span v-html="$t('tutorial.guide.introduction.subtitle_part3')"></span>
+        </p>
       </div>
 
       <!-- Step 1: Registration -->
@@ -13,9 +17,9 @@
         <div class="step-content">
           <ol class="step-list">
             <li>
-              Visit the official site: 
-              <router-link to="/" class="official-link">www.hengongbet88.com</router-link>
-            </li>
+            {{ $t('tutorial.guide.introduction.visit') }}
+            <router-link :to="getLocalePath('/')" class="official-link">www.hengongbet88.com</router-link>
+          </li>
             <li v-html="$t('tutorial.guide.registration.steps.1')"></li>
             <li v-html="$t('tutorial.guide.registration.steps.2')"></li>
             <li v-html="$t('tutorial.guide.registration.steps.3')"></li>
@@ -166,7 +170,17 @@
 
 <script>
 export default {
-  name: 'BeginnerGuideContent'
+  name: 'BeginnerGuideContent',
+  methods: {
+    // Custom method to get localized path using current locale
+    getLocalePath(path) {
+      const locale = this.$i18n?.locale || 'en';
+      if (locale === 'en') {
+        return path;
+      }
+      return `/${locale}${path}`;
+    }
+  }
 }
 </script>
 
@@ -204,6 +218,18 @@ export default {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.hengongbet-link {
+  color: #F2B240;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.hengongbet-link:hover {
+  color: #E5A535;
+  text-decoration: underline;
 }
 
 /* H2 - Section Titles */

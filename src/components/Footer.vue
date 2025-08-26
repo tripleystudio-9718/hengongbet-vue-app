@@ -19,7 +19,7 @@
         
         <!-- Games Section -->
         <div class="footer-column">
-          <h3 class="footer-title">{{ $t('footer.games') }}</h3>
+          <div class="footer-title">{{ $t('footer.games') }}</div>
           <ul class="footer-links">
             <li><a href="" @click.prevent="handleLinkClick">{{ $t('footer.slots') }}</a></li>
             <li><a href="#" @click.prevent="handleLinkClick">{{ $t('footer.sports') }}</a></li>
@@ -65,13 +65,18 @@
         <div class="footer-column">
           <div class="footer-title">{{ $t('footer.follow_us') }}</div>
           <div class="social-links">
-            <a href="" @click.prevent="handleSocialClick('facebook')" class="social-icon">
+            <!-- Hidden Facebook and Instagram links -->
+            <a href="" @click.prevent="handleSocialClick('facebook')" class="social-icon" style="display: none;">
               <img :src="fbIcon" :alt="$t('footer.facebook_alt')" />
             </a>
-            <a href="" @click.prevent="handleSocialClick('instagram')" class="social-icon">
+            <a href="" @click.prevent="handleSocialClick('instagram')" class="social-icon" style="display: none;">
               <img :src="instagramIcon" :alt="$t('footer.instagram_alt')" />
             </a>
-            <a href="" @click.prevent="handleSocialClick('whatsapp')" class="social-icon">
+            <!-- WhatsApp link with noindex/nofollow -->
+            <a href="https://tinyurl.com/hobseolivechat" 
+               @click.prevent="handleSocialClick('whatsapp')" 
+               class="social-icon"
+               rel="noindex nofollow">
               <img :src="whatsappIcon" :alt="$t('footer.whatsapp_alt')" />
             </a>
           </div>
@@ -148,13 +153,18 @@
         <div class="mobile-social-section">
           <div class="footer-title">{{ $t('footer.follow_us') }}</div>
           <div class="social-links">
-            <a href="" @click.prevent="handleSocialClick('facebook')" class="social-icon">
+            <!-- Hidden Facebook and Instagram links -->
+            <a href="" @click.prevent="handleSocialClick('facebook')" class="social-icon" style="display: none;">
               <img :src="fbIcon" :alt="$t('footer.facebook_alt')" />
             </a>
-            <a href="" @click.prevent="handleSocialClick('instagram')" class="social-icon">
+            <a href="" @click.prevent="handleSocialClick('instagram')" class="social-icon" style="display: none;">
               <img :src="instagramIcon" :alt="$t('footer.instagram_alt')" />
             </a>
-            <a href="" @click.prevent="handleSocialClick('whatsapp')" class="social-icon">
+            <!-- WhatsApp link with noindex/nofollow -->
+            <a href="https://tinyurl.com/hobseolivechat" 
+               @click.prevent="handleSocialClick('whatsapp')" 
+               class="social-icon"
+               rel="noindex nofollow">
               <img :src="whatsappIcon" :alt="$t('footer.whatsapp_alt')" />
             </a>
           </div>
@@ -173,9 +183,9 @@
             class="home-anchor" 
             @click.prevent="handleHomeClick"
           >
-            Heng Ong Bet
+            {{ $t('footer.anchor') }}
           </a>
-          88 | Heng Ong Bet | {{ $t('footer.rights_reserved') }}
+          88 | {{ $t('footer.anchor') }} | {{ $t('footer.rights_reserved') }}
         </p>
       </div>
     </div>
@@ -221,8 +231,14 @@ export default {
     
     handleSocialClick(platform) {
       console.log(`Social link clicked: ${platform}`);
-      // Social media links also redirect to registration
-      this.goToRegisterPage();
+      
+      if (platform === 'whatsapp') {
+        // Redirect to the specific WhatsApp link
+        window.open('https://tinyurl.com/hobseolivechat', '_blank', 'noopener,noreferrer');
+      } else {
+        // Other social media links redirect to registration
+        this.goToRegisterPage();
+      }
     },
     
     goToRegisterPage() {
@@ -810,7 +826,6 @@ export default {
 .footer-links a:focus,
 .social-icon:focus,
 .home-anchor:focus {
-  outline: 2px solid #F1AE3D;
-  outline-offset: 2px;
+  outline: none;
 }
 </style>

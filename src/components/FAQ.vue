@@ -58,7 +58,12 @@
             </button>
           </div>
           <div v-if="item.isOpen" class="faq-answer">
-            <p>{{ $t(`faq.gettingStarted.${item.originalIndex}.answer`) }}</p>
+            <p v-if="needsSpecialHandling(item.originalIndex, 'gettingStarted')">
+              <span v-html="$t(`faq.gettingStarted.${item.originalIndex}.answer_part1`)"></span>
+              <router-link :to="getLocalePath('/')" class="hengongbet-link">{{ $t(`faq.gettingStarted.${item.originalIndex}.answer_part2`) }}</router-link>
+              <span v-html="$t(`faq.gettingStarted.${item.originalIndex}.answer_part3`)"></span>
+            </p>
+            <p v-else>{{ $t(`faq.gettingStarted.${item.originalIndex}.answer`) }}</p>
           </div>
         </div>
       </div>
@@ -90,7 +95,12 @@
             </button>
           </div>
           <div v-if="item.isOpen" class="faq-answer">
-            <p>{{ $t(`faq.loginSecurity.${item.originalIndex}.answer`) }}</p>
+            <p v-if="needsSpecialHandling(item.originalIndex, 'loginSecurity')">
+              <span v-html="$t(`faq.loginSecurity.${item.originalIndex}.answer_part1`)"></span>
+              <router-link :to="getLocalePath('/')" class="hengongbet-link">{{ $t(`faq.loginSecurity.${item.originalIndex}.answer_part2`) }}</router-link>
+              <span v-html="$t(`faq.loginSecurity.${item.originalIndex}.answer_part3`)"></span>
+            </p>
+            <p v-else>{{ $t(`faq.loginSecurity.${item.originalIndex}.answer`) }}</p>
           </div>
         </div>
       </div>
@@ -122,7 +132,12 @@
             </button>
           </div>
           <div v-if="item.isOpen" class="faq-answer">
-            <p>{{ $t(`faq.bonusPromotions.${item.originalIndex}.answer`) }}</p>
+            <p v-if="needsSpecialHandling(item.originalIndex, 'bonusPromotions')">
+              <span v-html="$t(`faq.bonusPromotions.${item.originalIndex}.answer_part1`)"></span>
+              <router-link :to="getLocalePath('/')" class="hengongbet-link">{{ $t(`faq.bonusPromotions.${item.originalIndex}.answer_part2`) }}</router-link>
+              <span v-html="$t(`faq.bonusPromotions.${item.originalIndex}.answer_part3`)"></span>
+            </p>
+            <p v-else>{{ $t(`faq.bonusPromotions.${item.originalIndex}.answer`) }}</p>
           </div>
         </div>
       </div>
@@ -130,11 +145,15 @@
       <!-- Final Note Section -->
       <div class="faq-section" v-if="!searchQuery">
         <h2 class="section-title">
-          <span class="highlight">{{ $t('faq.sections.finalNote').split(' ')[0] }} </span>{{ $t('faq.sections.finalNote').split(' ').slice(1).join(' ') }}
+          <span class="highlight">{{ $t('faq.sections.finalNote').split(' ')[0] }} </span> {{ $t('faq.sections.finalNote').split(' ').slice(1).join(' ') }}
         </h2>
         <div class="final-note-content">
           <p><strong>{{ $t('faq.finalNote.title') }}</strong></p>
-          <p>{{ $t('faq.finalNote.content') }}</p>
+          <p>
+            <span>{{ $t('faq.finalNote.content_part1') }}</span>
+            <router-link :to="getLocalePath('/')" class="hengongbet-link">{{ $t('faq.finalNote.content_part2') }}</router-link>
+            <span>{{ $t('faq.finalNote.content_part3') }}</span>
+          </p>
         </div>
       </div>
 
@@ -240,6 +259,15 @@ export default {
     }
   },
   methods: {
+    // Custom method to get localized path using current locale
+    getLocalePath(path) {
+      const locale = this.$i18n?.locale || 'en';
+      if (locale === 'en') {
+        return path;
+      }
+      return `/${locale}${path}`;
+    },
+    
     toggleFAQ(section, index) {
       if (section === 'getting') {
         this.gettingStartedFAQs[index].isOpen = !this.gettingStartedFAQs[index].isOpen;
@@ -249,8 +277,26 @@ export default {
         this.bonusPromotionsFAQs[index].isOpen = !this.bonusPromotionsFAQs[index].isOpen;
       }
     },
+    
     focusSearchInput() {
       this.$refs.searchInput.focus();
+    },
+    
+    // Check if a specific FAQ needs special handling for HengOngBet link
+    needsSpecialHandling(index, section) {
+      // Only return true for the specific FAQ that contains HengOngBet
+      // Update this to match your actual FAQ structure
+      if (section === 'loginSecurity' && index === 0) {
+        // Check if the translation keys exist for split version
+        try {
+          this.$t(`faq.loginSecurity.${index}.answer_part1`);
+          return true;
+        } catch {
+          return false;
+        }
+      }
+      // Add other specific cases as needed
+      return false;
     }
   }
 }
@@ -283,6 +329,18 @@ export default {
 
 .highlight {
   color: #F2B240;
+}
+
+.hengongbet-link {
+  color: #F2B240;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.hengongbet-link:hover {
+  color: #E5A535;
+  text-decoration: underline;
 }
 
 .search-container {

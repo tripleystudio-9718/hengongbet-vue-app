@@ -3,7 +3,11 @@
     <!-- Title and Subtitle Section (Outside tabs) -->
     <div class="features-header">
       <h2 class="features-main-title">{{ $t('features.header.title') }}</h2>
-      <p class="features-subtitle">{{ $t('features.header.subtitle') }}</p>
+      <p class="features-subtitle">
+        {{ $t('features.header.subtitle1') }}
+        <router-link :to="localizedHomePath" class="accent-color">{{ $t('features.header.subtitle2') }} </router-link>
+        {{ $t('features.header.subtitle3') }}
+      </p>
     </div>
 
     <div class="features-section">
@@ -78,15 +82,8 @@
 </template>
 
 <script>
-import { useRoute } from 'vue-router'
-import { getCurrentLocale } from '@/router'
-
 export default {
   name: 'FeaturesSection',
-  setup() {
-    const route = useRoute()
-    return { route, getCurrentLocale }
-  },
   data() {
     return {
       activeTab: 'safe-secure'
@@ -94,13 +91,16 @@ export default {
   },
   computed: {
     currentLocale() {
-      return this.getCurrentLocale(this.route)
+      return this.$i18n?.locale || 'en'
     }
   },
-  watch: {
-    '$route'() {
-      // Force reactivity when route changes
-      this.$forceUpdate()
+  methods: {
+    // Custom method to get localized path using current locale (matching header pattern)
+    getLocalePath(path) {
+      if (this.currentLocale === 'en') {
+        return path
+      }
+      return `/${this.currentLocale}${path}`
     }
   }
 }
@@ -147,6 +147,16 @@ h2.features-main-title {
   margin: auto;
   gap: 0;
   box-shadow: 0px 5.528px 5.528px 0px rgba(0, 0, 0, 0.25);
+}
+
+.accent-color {
+  color: #F2B240;
+  text-decoration: none;
+}
+
+.accent-color:hover {
+  color: #E5A535;
+  text-decoration: underline;
 }
 
 .tab-navigation {

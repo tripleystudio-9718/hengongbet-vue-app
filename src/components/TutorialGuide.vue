@@ -1,7 +1,7 @@
 <template>
   <section class="tutorial-guide">
     <!-- Header Section -->
-    <div class="header-section">
+    <!-- <div class="header-section">
       <div class="header-title">
         <span class="title-highlight">{{ $t('tutorial.titleHighlight') }}</span> {{ $t('tutorial.title') }}
       </div>
@@ -9,14 +9,14 @@
     </div>
     
     <div class="max-w-7xl mx-auto px-6 py-8">
-      <!-- First Tutorial Section -->
+
       <div class="tutorial-section">
         <div class="section-title">
           {{ $t('tutorial.sections.redeemBonus.title') }} <span class="highlight">{{ $t('tutorial.sections.redeemBonus.highlight') }}</span> {{ $t('tutorial.sections.redeemBonus.subtitle') }}
         </div>
                 
         <div class="steps-container steps-3">
-          <!-- Step 1 -->
+
           <div class="step-item">
             <div class="step-icon-wrapper">
               <img :src="tutorialIcon" :alt="$t('tutorial.alt.tutorialIcon')" class="tutorial-bg-icon" />
@@ -26,13 +26,13 @@
               </div>
             </div>
           </div>
-          <!-- Dotted Line 1 -->
+
           <div class="dotted-line-container">
             <div class="circle"></div>
             <div class="dotted-line"></div>
             <div class="circle"></div>
           </div>
-          <!-- Step 2 -->
+
           <div class="step-item">
             <div class="step-icon-wrapper">
               <img :src="tutorialIcon" :alt="$t('tutorial.alt.tutorialIcon')" class="tutorial-bg-icon" />
@@ -42,13 +42,13 @@
               </div>
             </div>
           </div>
-          <!-- Dotted Line 2 -->
+
           <div class="dotted-line-container">
             <div class="circle"></div>
             <div class="dotted-line"></div>
             <div class="circle"></div>
           </div>
-          <!-- Step 3 -->
+
           <div class="step-item">
             <div class="step-icon-wrapper">
               <img :src="tutorialIcon" :alt="$t('tutorial.alt.tutorialIcon')" class="tutorial-bg-icon" />
@@ -61,14 +61,14 @@
         </div>
       </div>
       
-      <!-- Second Tutorial Section -->
+
       <div class="tutorial-section">
         <div class="section-title">
           <span class="highlight">{{ $t('tutorial.sections.queryHistory.highlight') }}</span> {{ $t('tutorial.sections.queryHistory.title') }}
         </div>
                 
         <div class="steps-container steps-4">
-          <!-- Step 1 -->
+
           <div class="step-item">
             <div class="step-icon-wrapper">
               <img :src="tutorialIcon" :alt="$t('tutorial.alt.tutorialIcon')" class="tutorial-bg-icon" />
@@ -78,13 +78,13 @@
               </div>
             </div>
           </div>
-          <!-- Dotted Line 1 -->
+
           <div class="dotted-line-container">
             <div class="circle"></div>
             <div class="dotted-line"></div>
             <div class="circle"></div>
           </div>
-          <!-- Step 2 -->
+
           <div class="step-item">
             <div class="step-icon-wrapper">
               <img :src="tutorialIcon" :alt="$t('tutorial.alt.tutorialIcon')" class="tutorial-bg-icon" />
@@ -94,13 +94,13 @@
               </div>
             </div>
           </div>
-          <!-- Dotted Line 2 -->
+
           <div class="dotted-line-container">
             <div class="circle"></div>
             <div class="dotted-line"></div>
             <div class="circle"></div>
           </div>
-          <!-- Step 3 -->
+
           <div class="step-item">
             <div class="step-icon-wrapper">
               <img :src="tutorialIcon" :alt="$t('tutorial.alt.tutorialIcon')" class="tutorial-bg-icon" />
@@ -110,13 +110,13 @@
               </div>
             </div>
           </div>
-          <!-- Dotted Line 3 -->
+
           <div class="dotted-line-container">
             <div class="circle"></div>
             <div class="dotted-line"></div>
             <div class="circle"></div>
           </div>
-          <!-- Step 4 -->
+
           <div class="step-item">
             <div class="step-icon-wrapper">
               <img :src="tutorialIcon" :alt="$t('tutorial.alt.tutorialIcon')" class="tutorial-bg-icon" />
@@ -128,9 +128,8 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <!-- Import and use separate components -->
     <BeginnerGuideContent />
     <CleanFaqSection />
   </section>

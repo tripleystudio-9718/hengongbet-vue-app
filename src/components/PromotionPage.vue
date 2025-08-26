@@ -7,7 +7,8 @@
       </div>
       <div class="subtitle">{{ $t('promotion_section.header.subtitle') }}</div>
       <p class="description">
-        {{ $t('promotion_section.header.description') }}
+        {{ $t('promotion_section.header.description_part1') }}
+        <router-link :to="getLocalePath('/')" class="hengongbet-link">{{ $t('promotion_section.header.description_part2') }}</router-link>{{ $t('promotion_section.header.description_part3') }}
       </p>
     </div>
 
@@ -144,8 +145,18 @@ export default {
     checkMobile() {
       this.isMobile = window.innerWidth <= 768
     },
+    
+    // Custom method to get localized path using current locale
+    getLocalePath(path) {
+      const locale = this.$i18n?.locale || 'en';
+      if (locale === 'en') {
+        return path;
+      }
+      return `/${locale}${path}`;
+    },
+    
     handlePromoClick(promo) {
-      const locale = this.$i18n?.locale || 'en'
+      const locale = this.$i18n?.locale || 'en';
 
       let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
       if (locale === 'zh') {
@@ -154,7 +165,13 @@ export default {
         targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
       }
 
-      window.location.href = targetUrl;
+      // Create link with nofollow attributes (same tab)
+      const link = document.createElement('a');
+      link.href = targetUrl;
+      link.rel = 'nofollow noopener';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
   }
 }
@@ -202,6 +219,18 @@ export default {
   line-height: 1.6;
   max-width: 700px;
   margin: 0 auto;
+}
+
+.hengongbet-link {
+  color: #F2B240;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.hengongbet-link:hover {
+  color: #E5A535;
+  text-decoration: underline;
 }
 
 /* Desktop Promotion Cards */

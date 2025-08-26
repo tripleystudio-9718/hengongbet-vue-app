@@ -110,7 +110,11 @@
       <!-- Final CTA Section -->
       <div class="cta-section">
         <h2 class="cta-title" v-html="$t('affiliate.cta_section.title')"></h2>
-        <div class="cta-subtitle" v-html="$t('affiliate.cta_section.subtitle')"></div>
+        <div class="cta-subtitle">
+          <span v-html="$t('affiliate.cta_section.subtitle1')"></span>
+          <router-link :to="getLocalePath('/')" class="homepage-link" v-html="$t('affiliate.cta_section.subtitle2')"></router-link>
+          <span v-html="$t('affiliate.cta_section.subtitle3')"></span>
+        </div>
         <div class="cta-description" v-html="$t('affiliate.cta_section.description')"></div>
         <div class="cta-buttons">
           <button class="cta-button primary" @click="goToRegisterPage" v-html="$t('affiliate.cta_section.buttons.register')"></button>
@@ -179,21 +183,21 @@ export default {
       ]
     },
     commissionModels() {
-  return [
-    {
-      icon: this.revenueShareIcon,
-      title: this.$t('affiliate.commission_section.models.revenue_share.title'),
-      description: this.$t('affiliate.commission_section.models.revenue_share.description'),
-      altText: 'Revenue share model - Earn percentage of player losses with ongoing passive income'
+      return [
+        {
+          icon: this.revenueShareIcon,
+          title: this.$t('affiliate.commission_section.models.revenue_share.title'),
+          description: this.$t('affiliate.commission_section.models.revenue_share.description'),
+          altText: 'Revenue share model - Earn percentage of player losses with ongoing passive income'
+        },
+        {
+          icon: this.cpaModelIcon,
+          title: this.$t('affiliate.commission_section.models.cpa_model.title'),
+          description: this.$t('affiliate.commission_section.models.cpa_model.description'),
+          altText: 'CPA model - Cost per acquisition with fixed payout for each qualified player'
+        }
+      ]
     },
-    {
-      icon: this.cpaModelIcon,
-      title: this.$t('affiliate.commission_section.models.cpa_model.title'),
-      description: this.$t('affiliate.commission_section.models.cpa_model.description'),
-      altText: 'CPA model - Cost per acquisition with fixed payout for each qualified player'
-    }
-  ]
-},
     userLevels() {
       return [
         {
@@ -225,6 +229,15 @@ export default {
     }
   },
   methods: {
+    // Custom method to get localized path using current locale
+    getLocalePath(path) {
+      const locale = this.$i18n?.locale || 'en';
+      if (locale === 'en') {
+        return path;
+      }
+      return `/${locale}${path}`;
+    },
+    
     goToRegisterPage() {
       const locale = this.$i18n?.locale || 'en';
 
@@ -236,7 +249,14 @@ export default {
       }
 
       console.log('Redirecting to affiliate registration:', targetUrl);
-      window.location.href = targetUrl;
+      
+      // Create link with nofollow attributes (same tab)
+      const link = document.createElement('a');
+      link.href = targetUrl;
+      link.rel = 'nofollow noopener';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
   }
 }
@@ -677,6 +697,18 @@ h2.cta-title {
   word-wrap: break-word;
 }
 
+.homepage-link {
+  color: #F2B240;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.homepage-link:hover {
+  color: #E5A535;
+  text-decoration: underline;
+}
+
 .cta-description {
   font-size: 26px;
   color: #FFFFFF;
@@ -885,6 +917,32 @@ h2.cta-title {
   .table-header .table-cell {
     font-size: 13px;
     font-weight: 700;
+  }
+
+  .cta-title,
+  h2.cta-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+    padding: 0 10px;
+  }
+
+  .cta-subtitle {
+    font-size: 18px;
+    margin-bottom: 12px;
+    padding: 0 10px;
+  }
+
+  .cta-description {
+    font-size: 20px;
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 280px;
+    padding: 15px 30px;
+    font-size: 18px;
   }
 }
 </style>

@@ -166,7 +166,7 @@ export default {
         },
         {
           id: 2,
-          name: "Knesia Pang Suet Yin",
+          name: "Nana Lim",
           timeAgo: "1 week ago", 
           rating: 5,
           text: "—开始朋友介绍Winbox我还半信半疑，后来目己注册玩了才知道亮的不同。网站界面很清晰，不卡，玩起来很顺手。最重要的是他们的优惠活动很多，什么迎新奖励、返水、红包都有。几乎每次上线都会有惊喜，感觉他们真的在回馈玩家，不像别的网站只是吸钱。现在我介绍给几个朋友了，太象都说很值！",
@@ -174,7 +174,7 @@ export default {
         },
         {
           id: 3,
-          name: "Bolok Low Kai Xian",
+          name: "Bolokgu Tan",
           timeAgo: "3 mins ago",
           rating: 5,
           text: "Been using Winbox for a while now. What keeps me here is how easy everything is. The site runs smoothly and customer service responds fast and friendly. Withdrawals? Always quick. Other sites made cashing out a headache, but Winbox is hassle- free. Highly recommend.",

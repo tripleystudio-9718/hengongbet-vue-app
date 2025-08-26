@@ -24,14 +24,47 @@
             </div>
           </div>
 
-          <!-- About Section -->
+                    
+          <FeaturesSection />
+        </div>
+      </section>
+            
+      <GamesSection />
+      <StepsSection />
+      <AppGuide />
+      <WhySection />
+            
+      <!-- Become Affiliate Section -->
+      <div class="two-column-section">
+        <div class="column-image">
+          <img :src="becomeAHengOngBetAffiliateToday" alt="become a heng ong bet affiliate" class="responsive-image" />
+        </div>
+        <div class="column-text">
+          <h2 class="main-title affiliate-main-title">
+            {{ $t('home.affiliate.becomeText') }} <span class="accent-color">{{ $t('home.affiliate.brand') }}</span> {{ $t('home.affiliate.affiliateToday') }}
+          </h2>
+          <p class="subtitle-text-affiliate affiliate-description">{{ $t('home.affiliate.description') }}</p>
+                    
+          <ul class="feature-list-1 affiliate-features-list">
+            <li v-for="(benefit, index) in $tm('home.affiliate.benefits')" :key="index">
+              • {{ benefit }}
+            </li>
+          </ul>
+        </div>
+      </div>
+            
+      <ProviderSection />
+      <ReviewSection />
+      <FaqSection />
+
+      <!-- About Section -->
           <div class="section-wrapper">
             <h2 class="main-title" style="color: #F2B240;">{{ $t('home.about.title') }}</h2>
             <p class="description-text">{{ $t('home.about.description1') }} <strong>{{ $t('home.about.platformType') }}</strong></p>
             <div class="text-content">
               <p>{{ $t('home.about.description2') }}</p>
               <p>{{ $t('home.about.description3') }}</p>
-              <p>{{ $t('home.about.description4') }}</p>
+              <!-- <p>{{ $t('home.about.description4') }}</p> -->
             </div>
           </div>
 
@@ -103,38 +136,6 @@
               </p>
             </div>
           </div>
-                    
-          <FeaturesSection />
-        </div>
-      </section>
-            
-      <GamesSection />
-      <StepsSection />
-      <AppGuide />
-      <WhySection />
-            
-      <!-- Become Affiliate Section -->
-      <div class="two-column-section">
-        <div class="column-image">
-          <img :src="becomeAHengOngBetAffiliateToday" alt="become a heng ong bet affiliate" class="responsive-image" />
-        </div>
-        <div class="column-text">
-          <h2 class="main-title affiliate-main-title">
-            {{ $t('home.affiliate.becomeText') }} <span class="accent-color">{{ $t('home.affiliate.brand') }}</span> {{ $t('home.affiliate.affiliateToday') }}
-          </h2>
-          <p class="subtitle-text-affiliate affiliate-description">{{ $t('home.affiliate.description') }}</p>
-                    
-          <ul class="feature-list-1 affiliate-features-list">
-            <li v-for="(benefit, index) in $tm('home.affiliate.benefits')" :key="index">
-              • {{ benefit }}
-            </li>
-          </ul>
-        </div>
-      </div>
-            
-      <ProviderSection />
-      <ReviewSection />
-      <FaqSection />
     </div>
   </div>
 </template>
@@ -205,17 +206,28 @@ export default {
   },
   methods: {
     handleRegisterClick() {
-      const locale = this.$i18n?.locale || 'en'
+  const locale = this.$i18n?.locale || 'en'
 
-      let targetUrl = 'https://hengongbet.com/en-my?regRef=player'
-      if (locale === 'zh') {
-        targetUrl = 'https://hengongbet.com/zh-my?regRef=player'
-      } else if (locale === 'ms') {
-        targetUrl = 'https://hengongbet.com/ms-my?regRef=player'
-      }
+  let targetUrl = 'https://hengongbet.com/en-my?regRef=player'
+  if (locale === 'zh') {
+    targetUrl = 'https://hengongbet.com/zh-my?regRef=player'
+  } else if (locale === 'ms') {
+    targetUrl = 'https://hengongbet.com/ms-my?regRef=player'
+  }
 
-      window.location.href = targetUrl
-    },
+  // Create link element and let router process it
+  const link = document.createElement('a')
+  link.href = targetUrl
+  document.body.appendChild(link)
+  
+  // Trigger your router's external link handler
+  if (this.processExternalLinks) {
+    this.processExternalLinks()
+  }
+  
+  link.click()
+  document.body.removeChild(link)
+},
     handlePromotionClick() {
       const locale = this.$i18n?.locale || 'en'
       this.$router.push(`/${locale}/promotion`)
@@ -336,11 +348,12 @@ export default {
 }
 
 .cta-btn {
-  background: #F2B240;
+  background: linear-gradient(#F2B240 0%, #ED9226 100%);
   color: #000;
   border: none;
   padding: 0.8rem 1.5rem;
   border-radius: 5px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -658,7 +671,7 @@ export default {
 
   .cta-btn {
     flex: 1 1 auto;
-    max-width: 110px;
+    max-width: 120px;
     padding: 10px 6px;
     font-size: 11px;
     min-height: 40px;

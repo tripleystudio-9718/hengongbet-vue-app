@@ -24,15 +24,15 @@ const defaultLocale = 'en'
 const metaContent = {
   Home: {
     en: { 
-      title: 'HengOngBet88 - Malaysia\'s Trusted Online Casino Site', 
+      title: 'HengOngbet | HengOngbet88 - Welcome Bonus Up to 200%', 
       description: 'Play at HengOngBet88, Malaysia\'s trusted online casino. Enjoy slots, live dealers, sports betting, fast payouts, and secure gaming, anytime, anywhere.' 
     },
     zh: { 
-      title: 'HengOngBet88 - 马来西亚值得信赖的在线赌博网站', 
+      title: 'HengOngbet | HengOngbet88 - 欢迎奖金高达200%', 
       description: '在 HengOngBet88 玩吧，马来西亚值得信赖的在线赌场。随时随地畅玩老虎机，真人发牌，体育博彩，享受快速出款与安全游戏体验。' 
     },
     ms: { 
-      title: 'HengOngBet88 - Laman Kasino Dalam Talian yang Dipercayai di Malaysia', 
+      title: 'HengOngbet | HengOngbet88 - Bonus Selamat Datang Sehingga 200%', 
       description: 'Main di HengOngBet88, kasino dalam talian yang dipercayai di Malaysia. Nikmati slot, permainan dealer langsung, pertaruhan sukan, pembayaran pantas dan permainan selamat bila-bila masa, di mana jua.' 
     }
   },
@@ -304,121 +304,121 @@ const updateSchemaOrg = (to) => {
       case 'Home':
         schema = {
           "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "WebSite",
-              "@id": "https://www.hengongbet88.com/#website",
-              "url": "https://www.hengongbet88.com/",
-              "name": "Hengongbet88",
-              "alternateName": "Hengongbet",
-              "publisher": { "@id": "https://www.hengongbet88.com/#organization" }
-            },
-            {
-              "@type": "Organization",
-              "@id": "https://www.hengongbet88.com/#organization",
-              "name": "Hengongbet88",
-              "url": "https://www.hengongbet88.com/",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.hengongbet88.com/assets/hengongbet-CbOFDCLB.png"
-              }
-            },
-            {
-              "@type": ["Organization", "LocalBusiness"],
-              "@id": "https://www.hengongbet88.com/#localbusiness",
-              "name": "Hengongbet88",
-              "image": "https://www.hengongbet88.com/assets/hengongbet-CbOFDCLB.png",
-              "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "MY"
-              },
-              "url": "https://www.hengongbet88.com/",
-              "openingHours": "Mo-Su 00:00-23:59",
-              "paymentAccepted": ["WireTransfer", "CreditCard", "DebitCard", "Cryptocurrency"],
-              "description": "Play at HengOngBet88, Malaysia's trusted online casino. Enjoy slots, live dealers, sports betting, fast payouts, and secure gaming, anytime, anywhere."
-            },
-            {
-              "@type": "WebPage",
-              "@id": `${url}#webpage`,
-              "url": url,
-              "name": title,
-              "description": description,
-              "isPartOf": { "@id": "https://www.hengongbet88.com/#website" },
-              "breadcrumb": { "@id": `${url}#breadcrumb` },
-              "mainEntity": { "@id": `${url}#faq` }
-            },
-            {
-              "@type": "BreadcrumbList",
-              "@id": `${url}#breadcrumb`,
-              "itemListElement": [
-                {
-                  "@type": "ListItem",
-                  "position": 1,
-                  "name": "Home",
-                  "item": "https://www.hengongbet88.com/"
-                },
-                {
-                  "@type": "ListItem",
-                  "position": 2,
-                  "name": "Hengongbet Login",
-                  "item": "https://www.hengongbet88.com/login"
-                },
-                {
-                  "@type": "ListItem",
-                  "position": 3,
-                  "name": "Hengongbet Register",
-                  "item": "https://www.hengongbet88.com/register"
-                },
-                {
-                  "@type": "ListItem",
-                  "position": 4,
-                  "name": "Hengongbet Download",
-                  "item": "https://www.hengongbet88.com/download"
-                }
-              ]
-            },
-            {
-              "@type": "FAQPage",
-              "@id": `${url}#faq`,
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "Is HengOngBet88 legal in Malaysia?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "HengOngBet88 operates under a valid Curacao Gaming License (GCB) with strict player safety and responsible gaming measures. It is up to players to decide the legal boundaries."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What games can I play on HengOngBet88?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "You can enjoy 1000+ slots, live casino games, sports betting, and 4D lottery all on one platform."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How do I deposit and withdraw money?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Deposit via FPX or e-wallets for instant top-ups, and withdraw in-app with fast approval times."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Is HengOngBet88 safe for online transactions?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, all transactions are SSL-encrypted and games are RNG-certified for fair play."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "How do I register on HengOngBet88?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Click 'Register,' fill in your mobile number and password, verify your account, and you're ready to play."
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.hengongbet88.com/#website",
+      "url": "https://www.hengongbet88.com/",
+      "name": "Hengongbet88",
+      "alternateName": "Hengongbet",
+      "publisher": { "@id": "https://www.hengongbet88.com/#organization" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.hengongbet88.com/#organization",
+      "name": "Hengongbet88",
+      "url": "https://www.hengongbet88.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.hengongbet88.com/assets/hengongbet-CbOFDCLB.png"
+      }
+    },
+    {
+      "@type": ["Organization", "LocalBusiness"],
+      "@id": "https://www.hengongbet88.com/#localbusiness",
+      "name": "Hengongbet88",
+      "image": "https://www.hengongbet88.com/assets/hengongbet-CbOFDCLB.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "MY"
+      },
+      "url": "https://www.hengongbet88.com/",
+      "openingHours": "Mo-Su 00:00-23:59",
+      "paymentAccepted": ["WireTransfer", "CreditCard", "DebitCard", "Cryptocurrency"],
+      "description": "Play at HengOngBet88, Malaysia’s trusted online casino. Enjoy slots, live dealers, sports betting, fast payouts, and secure gaming, anytime, anywhere."
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.hengongbet88.com/#webpage",
+      "url": "https://www.hengongbet88.com/",
+      "name": "HengOngbet | HengOngbet88 - Welcome Bonus Up to 200%",
+      "description": "Play at HengOngBet88, Malaysia’s trusted online casino. Enjoy slots, live dealers, sports betting, fast payouts, and secure gaming, anytime, anywhere",
+      "isPartOf": { "@id": "https://www.hengongbet88.com/#website" },
+      "breadcrumb": { "@id": "https://www.hengongbet88.com/#breadcrumb" },
+      "mainEntity": { "@id": "https://www.hengongbet88.com/#faq" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.hengongbet88.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.hengongbet88.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Hengongbet Login",
+          "item": "https://www.hengongbet88.com/login"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Hengongbet Register",
+          "item": "https://www.hengongbet88.com/register"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Hengongbet Download",
+          "item": "https://www.hengongbet88.com/download"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.hengongbet88.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is HengOngBet88 legal in Malaysia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HengOngBet88 operates under a valid Curacao Gaming License (GCB) with strict player safety and responsible gaming measures. It is up to players to decide the legal boundaries."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What games can I play on HengOngBet88?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can enjoy 1000+ slots, live casino games, sports betting, and 4D lottery all on one platform."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I deposit and withdraw money?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Deposit via FPX or e-wallets for instant top-ups, and withdraw in-app with fast approval times."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is HengOngBet88 safe for online transactions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, all transactions are SSL-encrypted and games are RNG-certified for fair play."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I register on HengOngBet88?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Click “Register,” fill in your mobile number and password, verify your account, and you’re ready to play."
                   }
                 }
               ]

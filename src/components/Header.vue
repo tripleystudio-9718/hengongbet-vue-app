@@ -301,21 +301,33 @@ export default {
     targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
   }
 
-  window.location.href = targetUrl;
+  // Create link with nofollow attributes (same tab)
+  const link = document.createElement('a');
+  link.href = targetUrl;
+  link.rel = 'nofollow noopener';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 },
-    goToLogin() {
+
+goToLogin() {
   const locale = this.$i18n?.locale || 'en';
 
   let targetUrl = 'https://hengongbet.com/en-my';
   if (locale === 'zh') {
     targetUrl = 'https://hengongbet.com/zh-my';
-  }else if (locale === 'ms') {
+  } else if (locale === 'ms') {
     targetUrl = 'https://hengongbet.com/ms-my';
   }
 
-  window.location.href = targetUrl;
-}
-,
+  // Create link with nofollow attributes (same tab)
+  const link = document.createElement('a');
+  link.href = targetUrl;
+  link.rel = 'nofollow noopener';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+},
     closeLanguageDropdown(event) {
       if (!event.target.closest('.language-selector-container') && !event.target.closest('.mobile-language-selector')) {
         this.showLanguageDropdown = false

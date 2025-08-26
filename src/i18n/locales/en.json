@@ -150,7 +150,8 @@
     "grab_alt": "Grab",
     "facebook_alt": "Facebook",
     "instagram_alt": "Instagram",
-    "whatsapp_alt": "WhatsApp"
+    "whatsapp_alt": "WhatsApp",
+    "anchor": "HengOngBet"
   },
   "home": {
     "hero": {
@@ -243,7 +244,9 @@
   "features": {
     "header": {
       "title": "Why Choose HengOngBet?",
-      "subtitle": "With over 10 years in the industry, HengOngBet has become a trusted platform for Malaysian players seeking safety, entertainment, and transparency."
+      "subtitle1": "With over 10 years in the industry, ",
+      "subtitle2": "HengOngBet ",
+      "subtitle3": "has become a trusted platform for Malaysian players seeking safety, entertainment, and transparency."
     },
     "tabs": [
       {
@@ -692,7 +695,9 @@
     },
     "cta_section": {
       "title": "Take Control of Your Financial Future With Us",
-      "subtitle": "Join the <span style=\"color: #F2B240; font-weight: bold\">HengOngBet Affiliate Network</span> today! Be your own boss. Get paid weekly. Grow a lifetime income.",
+      "subtitle1": "Join the ",
+      "subtitle2": "HengOngBet",
+      "subtitle3": " Affiliate Network today! Be your own boss. Get paid weekly. Grow a lifetime income.",
       "description": "Your Profits. Your Rules. Your Control.",
       "buttons": {
         "register": "Register"
@@ -762,7 +767,9 @@
       "title_prefix": "Promotion Galore at",
       "brand": "Heng Ong Bet",
       "subtitle": "Unlock Exclusive Bonuses & Maximize Your Wins",
-      "description": "At HengOngBet, we bring you the ultimate platform for online gaming promotions in Malaysia and Singapore. Our exclusive bonuses are tailored to reward you for every bet you place — from generous cashback offers to tournament-related bonuses and exciting Heng Ong bonuses."
+      "description_part1": "At ",
+      "description_part2": "HengOngBet",
+      "description_part3": ", we bring you the ultimate platform for online gaming promotions in Malaysia and Singapore. Our exclusive bonuses are tailored to reward you for every bet you place — from generous cashback offers to tournament-related bonuses and exciting Heng Ong bonuses."
     },
     "promotions": {
       "promo1": {
@@ -904,7 +911,9 @@
     "why_download": {
       "title": "HengOngBet App Download (2025)",
       "title2": "Why Download the HengOngBet APK?",
-      "description": "Download the latest HengOngBet mobile app for iOS and Android, secure, seamless, and built for Malaysian players. <br>Enjoy exclusive bonuses, instant payments, and 24/7 access to slots, sportsbook, 4D, and live casino games.",
+      "description_part1": "Download the latest ",
+      "description_part2": "HengOngBet",
+      "description_part3": " mobile app for iOS and Android, secure, seamless, and built for Malaysian players. Enjoy exclusive bonuses, instant payments, and 24/7 access to slots, sportsbook, 4D, and live casino games.",
       "features": {
         "mobile_first": "Fast, mobile-first experience built for Android and iPhone",
         "one_tap_login": "One-tap login, instant access to your wallet",
@@ -1074,7 +1083,9 @@
     "title": "Games",
     "slots": {
       "title": "Slot",
-      "description": "Spin, win, and enjoy nonstop action with Malaysia's favourite <strong>online slot</strong> providers.<br><br>From classic 3-reel machines to cinematic bonus-packed adventures, HengOngBet brings you the best of slot games in one place. Here's a taste of what you can play:",
+      "description_part1": "Spin, win, and enjoy nonstop action with Malaysia's favourite <strong>online slot</strong> providers.<br><br>From classic 3-reel machines to cinematic bonus-packed adventures, ",
+        "description_part2": "HengOngBet",
+        "description_part3": " brings you the best of slot games in one place. Here's a taste of what you can play:",
       "games": {
         "lucky365": {
           "title": "Lucky 365",
@@ -1210,7 +1221,7 @@
       },
       {
         "question": "How do I create an account on HengOngBet?",
-        "answer": "Visit https://hengongbet88.net, click \"Register,\" fill in your mobile number, username, password, and verification code. Make sure to enter a valid referral code to claim your welcome bonus."
+        "answer": "Visit https://hengongbet88.com, click \"Register,\" fill in your mobile number, username, password, and verification code. Make sure to enter a valid referral code to claim your welcome bonus."
       },
       {
         "question": "Can I register using someone else's phone number?",
@@ -1291,7 +1302,9 @@
     ],
     "finalNote": {
       "title": "Still have questions?",
-      "content": "Visit our Help Center or speak with a support agent anytime. HengOngBet is committed to providing safe, transparent, and rewarding online gaming for all players."
+      "content_part1": "Visit our Help Center or speak with a support agent anytime. ",
+      "content_part2": "HengOngBet",
+      "content_part3": " is committed to providing safe, transparent, and rewarding online gaming for all players."
     }
   },
   "tutorial": {
@@ -1325,8 +1338,11 @@
     },
     "guide": {
       "introduction": {
-        "title": "<span class=\"title-highlight\">HengOngBet88</span> New Player Tutorial",
-        "subtitle": "Whether you're here to spin slots, play 4D, or enjoy live casino tables, your <strong>Heng Ong Bet</strong> journey starts with just a few easy steps."
+        "title": "<span class=\"title-highlight\" style=\"color:#F2B240\">HengOngBet88</span> New Player Tutorial",
+        "subtitle_part1": "Whether you're here to spin slots, play 4D, or enjoy live casino tables, your <strong>",
+        "subtitle_part2": "Heng Ong Bet",
+        "subtitle_part3": "</strong> journey starts with just a few easy steps.",
+        "visit": "Visit the official site:"
       },
       "registration": {
         "title": "Step 1: How to Register & Download the App",
@@ -1537,13 +1553,13 @@
           "regular": " Top-Up"
         },
         "steps": [
-          "Open the HengOngBet app and select <strong>\"Top-Up (E-Wallet)\"</strong>.",
+          "Open the <a href='/' class='hengongbet-link' style='color: #F2B240;'>HengOngBet</a> app and select <strong>\"Top-Up (E-Wallet)\"</strong>.",
           "Choose your e-wallet method: <strong>Touch 'n Go</strong> or <strong>GrabPay</strong>.",
           "Enter your desired <strong>top-up amount.</strong>",
           "You'll be given a <strong>bank account or QR code</strong> to transfer to.",
           "Open your TNG or GrabPay app and <strong>complete the transfer.</strong>",
           "<strong>Take a screenshot or save the transaction receipt.</strong>",
-          "Return to the HengOngBet app and <strong>upload your receipt</strong> in the provided field.",
+          "Return to the <a href=\"/\" class=\"hengongbet-link\">HengOngBet</a> app and <strong>upload your receipt</strong> in the provided field.",
           "Wait for the admin to verify and approve, top-up will reflect shortly."
         ],
         "note": "<strong>Always double-check the account number or QR code before confirming your payment in the e-wallet app.</strong>"
@@ -1554,12 +1570,14 @@
           "regular": " Top-Up"
         },
         "steps": [
-          "Tap <strong>\"Top-Up (Bank Transfer)\"</strong> in the app.",
-          "Select the <strong>bank account</strong> provided.",
-          "Enter your <strong>top-up amount</strong> and transfer it via your online banking app using <strong>DuitNow</strong> or normal transfer.",
-          "Save the <strong>payment receipt</strong> or take a screenshot.",
-          "Return to the app and <strong>upload the receipt</strong>.",
-          "Wait for confirmation, once approved, your wallet will be updated."
+          "Open the <a href=\"/\" class=\"hengongbet-link\">HengOngBet</a> app and select <strong>\"Top-Up (E-Wallet)\"</strong>.",
+          "Choose your e-wallet method: <strong>Touch 'n Go</strong> or <strong>GrabPay</strong>.",
+          "Enter your desired <strong>top-up amount.</strong>",
+          "You'll be given a <strong>bank account or QR code</strong> to transfer to.",
+          "Open your TNG or GrabPay app and <strong>complete the transfer.</strong>",
+          "<strong>Take a screenshot or save the transaction receipt.</strong>",
+          "Return to the <a href=\"/\" class=\"hengongbet-link\">HengOngBet</a> app and <strong>upload your receipt</strong> in the provided field.",
+          "Wait for the admin to verify and approve, top-up will reflect shortly."
         ],
         "note": "<strong>Ensure you use the correct bank details provided by the platform to avoid any transfer delays.</strong>"
       },
