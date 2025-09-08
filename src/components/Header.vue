@@ -82,6 +82,8 @@
               </router-link>
             </div>
           </div>
+
+          <router-link :to="getLocalePath('/blog')" class="nav-item">{{ $t('nav.blog') }}</router-link>
         </nav>
         
         <div class="header-right-section">

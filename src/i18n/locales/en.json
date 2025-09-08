@@ -11,7 +11,8 @@
     "tutorial": "Beginner Tutorial",
     "topup_tutorial": "Top-up & Withdrawal Tutorial",
     "login": "Login",
-    "register": "Register"
+    "register": "Register",
+    "blog": "Blog"
   },
   "common": {
     "welcome": "Welcome",

@@ -12,6 +12,8 @@ import DownloadPage from '@/components/DownloadPage.vue'
 import Register from '@/components/Register.vue'
 import TutorialGuide from '@/components/TutorialGuide.vue'
 import TutorialTopUpWithDraw from '@/components/TopWithTutorial.vue'
+import Blog from '@/components/Blog.vue'
+import Post from '@/components/Post.vue'
 
 // Base URL for your website
 const BASE_URL = 'https://www.hengongbet88.com'
@@ -175,19 +177,45 @@ const metaContent = {
       title: 'Cara Tambah Nilai & Keluarkan Wang', 
       description: 'Pelajari cara tambah nilai dompet anda atau keluarkan kemenangan daripada HengOngBet88 dengan selamat. Ikuti tutorial mudah kami untuk tambah dana atau keluar wang dengan pantas.' 
     }
+  },
+  Blog: {
+    en: { 
+      title: 'HengOngBet88 Blog - Latest Casino News, Tips & Guides', 
+      description: 'Stay updated with the latest casino news, gaming tips, strategies, and expert guides at HengOngBet88 blog. Learn how to maximize your winning potential.' 
+    },
+    zh: { 
+      title: 'HengOngBet88 博客 - 最新赌场新闻、技巧与指南', 
+      description: '在 HengOngBet88 博客中了解最新的赌场新闻、游戏技巧、策略和专家指南。学习如何最大化您的获胜潜力。' 
+    },
+    ms: { 
+      title: 'Blog HengOngBet88 - Berita Kasino Terkini, Tips & Panduan', 
+      description: 'Kekal terkini dengan berita kasino terbaru, tip permainan, strategi dan panduan pakar di blog HengOngBet88. Pelajari cara memaksimumkan potensi kemenangan anda.' 
+    }
+  },
+  Post: {
+    en: { 
+      title: 'HengOngBet88 Blog Post', 
+      description: 'Read the latest insights, tips, and guides from HengOngBet88 experts to enhance your gaming experience and winning strategies.' 
+    },
+    zh: { 
+      title: 'HengOngBet88 博客文章', 
+      description: '阅读来自 HengOngBet88 专家的最新见解、技巧和指南，提升您的游戏体验和获胜策略。' 
+    },
+    ms: { 
+      title: 'Artikel Blog HengOngBet88', 
+      description: 'Baca pandangan terkini, tip dan panduan daripada pakar HengOngBet88 untuk meningkatkan pengalaman permainan dan strategi kemenangan anda.' 
+    }
   }
 };
 
-// Improved helper function to update or create meta tags
+// Helper function to update or create meta tags
 const updateMetaTag = (property, content, useProperty = false) => {
   try {
     const selector = useProperty ? `meta[property="${property}"]` : `meta[name="${property}"]`;
     
-    // Remove all existing meta tags with this property/name to avoid duplicates
     const existingMetas = document.querySelectorAll(selector);
     existingMetas.forEach(meta => meta.remove());
     
-    // Create new meta tag
     const meta = document.createElement('meta');
     if (useProperty) {
       meta.setAttribute('property', property);
@@ -214,10 +242,11 @@ const getPageImage = (routeName) => {
     'DownloadPage': 'https://www.hengongbet88.com/assets/download-banner.jpg',
     'Register': 'https://www.hengongbet88.com/assets/register-banner.jpg',
     'TutorialGuide': 'https://www.hengongbet88.com/assets/tutorial-banner.jpg',
-    'TutorialTopUpWithDraw': 'https://www.hengongbet88.com/assets/topup-banner.jpg'
+    'TutorialTopUpWithDraw': 'https://www.hengongbet88.com/assets/topup-banner.jpg',
+    'Blog': 'https://www.hengongbet88.com/assets/blog-banner.jpg',
+    'Post': 'https://www.hengongbet88.com/assets/blog-post-banner.jpg'
   };
   
-  // Extract base route name (remove locale suffix)
   const baseName = routeName.replace(/-[a-z]{2}$/, '');
   return images[baseName] || 'https://www.hengongbet88.com/assets/default-og-image.jpg';
 };
@@ -226,10 +255,9 @@ const getPageImage = (routeName) => {
 const updateSocialMetaTags = (to) => {
   const title = to.meta.title || 'HengOngBet88';
   const description = to.meta.description || 'Play at HengOngBet88, Malaysia\'s trusted online casino.';
-  const image = getPageImage(to.name);
+  const image = to.meta.image || getPageImage(to.name);
   const url = `${BASE_URL}${to.path}`;
   
-  // Open Graph Meta Tags
   updateMetaTag('og:title', title, true);
   updateMetaTag('og:description', description, true);
   updateMetaTag('og:image', image, true);
@@ -237,7 +265,6 @@ const updateSocialMetaTags = (to) => {
   updateMetaTag('og:type', 'website', true);
   updateMetaTag('og:site_name', 'HENGONGBET88', true);
   
-  // Twitter Card Meta Tags
   updateMetaTag('twitter:card', 'summary_large_image');
   updateMetaTag('twitter:title', title);
   updateMetaTag('twitter:description', description);
@@ -245,16 +272,14 @@ const updateSocialMetaTags = (to) => {
   updateMetaTag('twitter:site', '@hengongbet88');
 };
 
-// Improved function to update page title and meta description
+// Function to update page title and meta description
 const updateBasicMetaTags = (to) => {
   try {
     const title = to.meta.title || 'HengOngBet88';
     const description = to.meta.description || 'Play at HengOngBet88, Malaysia\'s trusted online casino. Enjoy slots, live dealers, sports betting, fast payouts, and secure gaming, anytime, anywhere.';
     
-    // Update page title
     document.title = title;
     
-    // Remove existing description meta tags and create new one
     const existingDescriptions = document.querySelectorAll('meta[name="description"]');
     existingDescriptions.forEach(meta => meta.remove());
     
@@ -263,12 +288,10 @@ const updateBasicMetaTags = (to) => {
     descriptionMeta.setAttribute('content', description);
     document.head.appendChild(descriptionMeta);
     
-    // Update viewport meta tag if not exists
     if (!document.querySelector('meta[name="viewport"]')) {
       updateMetaTag('viewport', 'width=device-width, initial-scale=1.0');
     }
     
-    // Update charset if not exists
     if (!document.querySelector('meta[charset]')) {
       const charset = document.createElement('meta');
       charset.setAttribute('charset', 'UTF-8');
@@ -283,7 +306,6 @@ const updateBasicMetaTags = (to) => {
 // Helper function to create and update JSON-LD schema
 const updateSchemaOrg = (to) => {
   try {
-    // Remove existing schema
     const existingSchema = document.querySelector('script[type="application/ld+json"]');
     if (existingSchema) {
       existingSchema.remove();
@@ -294,136 +316,202 @@ const updateSchemaOrg = (to) => {
     const url = `${BASE_URL}${to.path}`;
     const locale = to.meta.locale || defaultLocale;
     
-    // Get base route name for schema type determination
     const baseName = to.name.replace(/-[a-z]{2}$/, '');
     
     let schema = {};
 
-    // Page-specific schema based on route
     switch (baseName) {
       case 'Home':
         schema = {
           "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://www.hengongbet88.com/#website",
-      "url": "https://www.hengongbet88.com/",
-      "name": "Hengongbet88",
-      "alternateName": "Hengongbet",
-      "publisher": { "@id": "https://www.hengongbet88.com/#organization" }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://www.hengongbet88.com/#organization",
-      "name": "Hengongbet88",
-      "url": "https://www.hengongbet88.com/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.hengongbet88.com/assets/hengongbet-CbOFDCLB.png"
-      }
-    },
-    {
-      "@type": ["Organization", "LocalBusiness"],
-      "@id": "https://www.hengongbet88.com/#localbusiness",
-      "name": "Hengongbet88",
-      "image": "https://www.hengongbet88.com/assets/hengongbet-CbOFDCLB.png",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "MY"
-      },
-      "url": "https://www.hengongbet88.com/",
-      "openingHours": "Mo-Su 00:00-23:59",
-      "paymentAccepted": ["WireTransfer", "CreditCard", "DebitCard", "Cryptocurrency"],
-      "description": "Play at HengOngBet88, Malaysia’s trusted online casino. Enjoy slots, live dealers, sports betting, fast payouts, and secure gaming, anytime, anywhere."
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://www.hengongbet88.com/#webpage",
-      "url": "https://www.hengongbet88.com/",
-      "name": "HengOngbet | HengOngbet88 - Welcome Bonus Up to 200%",
-      "description": "Play at HengOngBet88, Malaysia’s trusted online casino. Enjoy slots, live dealers, sports betting, fast payouts, and secure gaming, anytime, anywhere",
-      "isPartOf": { "@id": "https://www.hengongbet88.com/#website" },
-      "breadcrumb": { "@id": "https://www.hengongbet88.com/#breadcrumb" },
-      "mainEntity": { "@id": "https://www.hengongbet88.com/#faq" }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://www.hengongbet88.com/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.hengongbet88.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Hengongbet Login",
-          "item": "https://www.hengongbet88.com/login"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Hengongbet Register",
-          "item": "https://www.hengongbet88.com/register"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Hengongbet Download",
-          "item": "https://www.hengongbet88.com/download"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.hengongbet88.com/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Is HengOngBet88 legal in Malaysia?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "HengOngBet88 operates under a valid Curacao Gaming License (GCB) with strict player safety and responsible gaming measures. It is up to players to decide the legal boundaries."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What games can I play on HengOngBet88?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You can enjoy 1000+ slots, live casino games, sports betting, and 4D lottery all on one platform."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do I deposit and withdraw money?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Deposit via FPX or e-wallets for instant top-ups, and withdraw in-app with fast approval times."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is HengOngBet88 safe for online transactions?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, all transactions are SSL-encrypted and games are RNG-certified for fair play."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do I register on HengOngBet88?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Click “Register,” fill in your mobile number and password, verify your account, and you’re ready to play."
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "@id": "https://www.hengongbet88.com/#website",
+              "url": "https://www.hengongbet88.com/",
+              "name": "Hengongbet88",
+              "alternateName": "Hengongbet",
+              "publisher": { "@id": "https://www.hengongbet88.com/#organization" }
+            },
+            {
+              "@type": "Organization",
+              "@id": "https://www.hengongbet88.com/#organization",
+              "name": "Hengongbet88",
+              "url": "https://www.hengongbet88.com/",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.hengongbet88.com/assets/hengongbet-CbOFDCLB.png"
+              }
+            },
+            {
+              "@type": ["Organization", "LocalBusiness"],
+              "@id": "https://www.hengongbet88.com/#localbusiness",
+              "name": "Hengongbet88",
+              "image": "https://www.hengongbet88.com/assets/hengongbet-CbOFDCLB.png",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "MY"
+              },
+              "url": "https://www.hengongbet88.com/",
+              "openingHours": "Mo-Su 00:00-23:59",
+              "paymentAccepted": ["WireTransfer", "CreditCard", "DebitCard", "Cryptocurrency"],
+              "description": "Play at HengOngBet88, Malaysia's trusted online casino. Enjoy slots, live dealers, sports betting, fast payouts, and secure gaming, anytime, anywhere."
+            },
+            {
+              "@type": "WebPage",
+              "@id": "https://www.hengongbet88.com/#webpage",
+              "url": "https://www.hengongbet88.com/",
+              "name": "HengOngbet | HengOngbet88 - Welcome Bonus Up to 200%",
+              "description": "Play at HengOngBet88, Malaysia's trusted online casino. Enjoy slots, live dealers, sports betting, fast payouts, and secure gaming, anytime, anywhere",
+              "isPartOf": { "@id": "https://www.hengongbet88.com/#website" },
+              "breadcrumb": { "@id": "https://www.hengongbet88.com/#breadcrumb" },
+              "mainEntity": { "@id": "https://www.hengongbet88.com/#faq" }
+            },
+            {
+              "@type": "BreadcrumbList",
+              "@id": "https://www.hengongbet88.com/#breadcrumb",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://www.hengongbet88.com/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Hengongbet Login",
+                  "item": "https://www.hengongbet88.com/login"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Hengongbet Register",
+                  "item": "https://www.hengongbet88.com/register"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 4,
+                  "name": "Hengongbet Download",
+                  "item": "https://www.hengongbet88.com/download"
+                }
+              ]
+            },
+            {
+              "@type": "FAQPage",
+              "@id": "https://www.hengongbet88.com/#faq",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "Is HengOngBet88 legal in Malaysia?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "HengOngBet88 operates under a valid Curacao Gaming License (GCB) with strict player safety and responsible gaming measures. It is up to players to decide the legal boundaries."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What games can I play on HengOngBet88?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can enjoy 1000+ slots, live casino games, sports betting, and 4D lottery all on one platform."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I deposit and withdraw money?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Deposit via FPX or e-wallets for instant top-ups, and withdraw in-app with fast approval times."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is HengOngBet88 safe for online transactions?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, all transactions are SSL-encrypted and games are RNG-certified for fair play."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I register on HengOngBet88?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Click \"Register,\" fill in your mobile number and password, verify your account, and you're ready to play."
                   }
                 }
               ]
             }
           ]
+        };
+        break;
+
+      case 'Blog':
+        schema = {
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "@id": `${url}#blog`,
+          "url": url,
+          "name": title,
+          "description": description,
+          "inLanguage": locale,
+          "publisher": { "@id": "https://www.hengongbet88.com/#organization" },
+          "isPartOf": { "@id": "https://www.hengongbet88.com/#website" },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.hengongbet88.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": url
+              }
+            ]
+          }
+        };
+        break;
+
+      case 'Post':
+        schema = {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "@id": `${url}#blogpost`,
+          "url": url,
+          "headline": title,
+          "description": description,
+          "inLanguage": locale,
+          "publisher": { "@id": "https://www.hengongbet88.com/#organization" },
+          "isPartOf": { "@id": "https://www.hengongbet88.com/blog#blog" },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.hengongbet88.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://www.hengongbet88.com/blog"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": title,
+                "item": url
+              }
+            ]
+          }
         };
         break;
 
@@ -710,7 +798,6 @@ const updateSchemaOrg = (to) => {
         };
     }
 
-    // Create and append the schema script
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.textContent = JSON.stringify(schema, null, 2);
@@ -751,7 +838,6 @@ const addHreflangLinks = (basePath) => {
       link.rel = 'alternate';
       link.hreflang = locale;
       
-      // Generate the correct URL for each locale
       if (locale === defaultLocale) {
         link.href = `${BASE_URL}${basePath}`;
       } else {
@@ -761,7 +847,6 @@ const addHreflangLinks = (basePath) => {
       document.head.appendChild(link);
     });
 
-    // Add x-default hreflang pointing to the default language version
     const defaultLink = document.createElement('link');
     defaultLink.rel = 'alternate';
     defaultLink.hreflang = 'x-default';
@@ -784,7 +869,6 @@ const getBasePath = (path, locale) => {
   if (locale === defaultLocale) {
     return path;
   }
-  // Remove locale prefix to get base path
   return path.replace(new RegExp(`^/${locale}`), '') || '/';
 };
 
@@ -798,7 +882,7 @@ const createLocalizedRoute = (path, name, component) => {
       component,
       meta: {
         locale,
-        basePath: path, // Store the base path for SEO link generation
+        basePath: path,
         title: routeMeta?.title || 'HengOngBet88',
         description: routeMeta?.description || 'Play at HengOngBet88, Malaysia\'s trusted online casino. Enjoy slots, live dealers, sports betting, fast payouts, and secure gaming, anytime, anywhere.'
       }
@@ -806,6 +890,25 @@ const createLocalizedRoute = (path, name, component) => {
   });
 };
 
+// Function to handle dynamic meta updates for blog posts
+const updateBlogPostMeta = (postData, locale = defaultLocale) => {
+  if (!postData) return;
+  
+  const meta = {
+    title: postData.meta_title || postData.title || 'HengOngBet88 Blog Post',
+    description: postData.meta_description || postData.excerpt || 'Read the latest insights from HengOngBet88 experts.',
+    image: postData.featured_image ? 
+      (postData.featured_image.startsWith('http') ? 
+        postData.featured_image : 
+        `https://www.hengongbet88.com/${postData.featured_image}`) : 
+      'https://www.hengongbet88.com/assets/blog-post-banner.jpg',
+    locale
+  };
+  
+  return meta;
+};
+
+// Define all routes
 const routes = [
   ...createLocalizedRoute('/', 'Home', Home),
   ...createLocalizedRoute('/affiliate', 'Affiliate', Affiliate),
@@ -818,10 +921,34 @@ const routes = [
   ...createLocalizedRoute('/register', 'Register', Register),
   ...createLocalizedRoute('/beginner-tutorial', 'TutorialGuide', TutorialGuide),
   ...createLocalizedRoute('/topup-withdraw-tutorial', 'TutorialTopUpWithDraw', TutorialTopUpWithDraw),
+  
+  // Blog routes
+  ...createLocalizedRoute('/blog', 'Blog', Blog),
+  
+  // Dynamic blog post routes with slug parameter
+  ...supportedLocales.map(locale => {
+    const routeMeta = metaContent['Post']?.[locale];
+    return {
+      path: locale === defaultLocale ? '/blog/:slug' : `/${locale}/blog/:slug`,
+      name: locale === defaultLocale ? 'Post' : `Post-${locale}`,
+      component: Post,
+      props: true,
+      meta: {
+        locale,
+        basePath: '/blog/:slug',
+        title: routeMeta?.title || 'HengOngBet88 Blog Post',
+        description: routeMeta?.description || 'Read the latest insights from HengOngBet88 experts.',
+        isDynamic: true
+      }
+    };
+  }),
+  
+  // Redirect routes
   { path: '/en', redirect: '/' },
   { path: '/en/:pathMatch(.*)*', redirect: to => `/${to.params.pathMatch}` }
 ];
 
+// Create router instance
 const router = createRouter({
   history: createWebHistory(),
   routes,
@@ -830,26 +957,18 @@ const router = createRouter({
   }
 });
 
-// Improved router beforeEach with better error handling
+// Router beforeEach with error handling and blog post support
 router.beforeEach((to, from, next) => {
   try {
     const locale = to.meta.locale || defaultLocale;
     
-    // Set locale for i18n
     setLocale(locale);
     
-    // Use nextTick to ensure DOM is ready
     setTimeout(() => {
-      // Update basic meta tags (title and description)
       updateBasicMetaTags(to);
-      
-      // Add Open Graph and Twitter Card meta tags
       updateSocialMetaTags(to);
-      
-      // Add Schema.org structured data
       updateSchemaOrg(to);
       
-      // Add canonical and hreflang links
       const basePath = to.meta.basePath || getBasePath(to.path, locale);
       addSEOLinks(basePath);
     }, 0);
@@ -861,6 +980,7 @@ router.beforeEach((to, from, next) => {
   next();
 });
 
+// Export helper functions
 export const getCurrentLocale = route => route.meta?.locale || defaultLocale;
 
 export const localePath = (path, locale = null) => {
@@ -878,6 +998,9 @@ export const switchLocale = (router, newLocale) => {
   if (newPath === '') newPath = '/';
   router.push(newPath);
 };
+
+// Export the blog meta update function for use in components
+export const updateBlogPostMetaTags = updateBlogPostMeta;
 
 export { supportedLocales, defaultLocale };
 export default router;
