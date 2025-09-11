@@ -98,6 +98,13 @@
             </router-link>
           </div>
         </div>
+
+        <router-link :to="getLocalePath('/blog')" @click="closeMobileMenu" class="mobile-nav-item" :class="{ 'mobile-nav-active': isCurrentRoute('/blog') }">
+          <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path>
+          </svg>
+          <span>{{ $t('nav.blog') }}</span>
+        </router-link>
       </nav>
     </div>
   </div>

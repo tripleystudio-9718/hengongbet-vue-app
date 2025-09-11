@@ -1271,19 +1271,97 @@ export default {
     word-break: break-all;
   }
   
-  .post-content :deep(table) {
-    font-size: 0.75rem;
+.post-content :deep(table) {
     display: block;
     overflow-x: auto;
     white-space: nowrap;
     max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #F0AD3C rgba(255, 255, 255, 0.1);
+    margin: 1.5rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Custom scrollbar for mobile tables */
+  .post-content :deep(table)::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .post-content :deep(table)::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+  
+  .post-content :deep(table)::-webkit-scrollbar-thumb {
+    background: #F0AD3C;
+    border-radius: 4px;
+  }
+  
+  .post-content :deep(table)::-webkit-scrollbar-thumb:hover {
+    background: #FFD700;
+  }
+  
+  /* Preserve table structure and prevent text cutting */
+  .post-content :deep(thead),
+  .post-content :deep(tbody) {
+    display: table-row-group;
+  }
+  
+  .post-content :deep(tr) {
+    display: table-row;
   }
   
   .post-content :deep(th),
   .post-content :deep(td) {
-    padding: 0.5rem 0.75rem;
-    min-width: 80px;
-    max-width: 150px;
+    display: table-cell;
+    padding: 0.75rem 1rem;
+    min-width: 150px; /* Increased minimum width */
+    max-width: none; /* Remove max-width to prevent cutting */
+    white-space: normal; /* Allow text wrapping */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    vertical-align: top;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+  }
+  
+  .post-content :deep(th) {
+    padding: 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    min-width: 160px; /* Slightly larger for headers */
+    white-space: normal;
+    word-wrap: break-word;
+  }
+  
+  /* Remove text truncation styles */
+  .post-content :deep(td) {
+    text-overflow: initial; /* Remove ellipsis */
+    overflow: visible; /* Show full content */
+  }
+  
+  /* Enhanced scroll indicator */
+  .post-content :deep(table)::after {
+    content: "← Scroll horizontally to view all columns →";
+    display: block;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #A1A1AA;
+    padding: 0.75rem;
+    font-style: italic;
+    background: rgba(240, 173, 60, 0.05);
+    margin-top: -1px;
+    border-radius: 0 0 0.5rem 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Better hover effects for mobile */
+  .post-content :deep(tbody tr:hover) {
+    background: rgba(240, 173, 60, 0.15);
+    transform: none;
+    box-shadow: 0 2px 8px rgba(240, 173, 60, 0.3);
   }
   
   /* Ensure all elements fit within mobile width */
