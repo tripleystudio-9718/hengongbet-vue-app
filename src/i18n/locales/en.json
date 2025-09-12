@@ -1657,5 +1657,66 @@
     "buttons": {
       "understand": "I Understand"
     }
+  },
+
+  "blog": {
+    "title": "HengOngBet Blog",
+    "subTitle": "Latest casino insights, gaming strategies & expert tips",
+    "searchPlaceholder": "Search articles, tips, and guides...",
+    "loadingTitle": "Loading Articles",
+    "loadingText": "Fetching the latest insights for you...",
+    "errorTitle": "Unable to Load Articles", 
+    "tryAgain": "Try Again",
+    "noArticlesFound": "No Articles Found",
+    "noArticlesYet": "No Articles Yet",
+    "tryAdjustingSearch": "Try adjusting your search terms",
+    "checkBackSoon": "Check back soon for fresh content!",
+    "clearSearch": "Clear Search",
+    "searchResults": "{count} result{count, plural, one {} other {s}} for \"{query}\"",
+    "articlesAvailable": "articles available",
+    "defaultAuthor": "HengOngBet Team",
+    "readTime": "{minutes} min read",
+    "readArticle": "Read Article",
+    "previous": "Previous", 
+    "next": "Next",
+    "showingResults": "Showing {start} - {end} of {total} articles",
+    "defaultExcerpt": "Discover expert insights and strategies...",
+    "loadError": "Failed to load blog posts",
+    "categories": {
+      "slots": "Slots",
+      "casino": "Casino", 
+      "sports": "Sports",
+      "betting": "Betting",
+      "tips": "Tips",
+      "guide": "Guide",
+      "strategy": "Strategy",
+      "bonus": "Bonus",
+      "promotion": "Promotion",
+      "gaming": "Gaming"
+    }
+  },
+  "post": {
+    "backToBlog": "Back to Blog",
+    "loadingPost": "Loading blog post...",
+    "postNotFound": "Post Not Found", 
+    "defaultAuthor": "HengOngBet Team",
+    "updatedOn": "Updated {date}",
+    "shareTitle": "Share this article",
+    "shareSubtitle": "Help others discover this gaming content",
+    "shareOnTwitter": "Share on Twitter",
+    "shareOnFacebook": "Share on Facebook", 
+    "shareOnLinkedIn": "Share on LinkedIn",
+    "copyLinkToClipboard": "Copy link to clipboard",
+    "twitter": "Twitter",
+    "shareOnX": "Share on X",
+    "facebook": "Facebook",
+    "shareWithFriends": "Share with friends",
+    "linkedin": "LinkedIn", 
+    "shareProfessionally": "Share professionally",
+    "copyLink": "Copy Link",
+    "copied": "Copied!",
+    "linkCopiedToClipboard": "Link copied to clipboard",
+    "copyToClipboard": "Copy to clipboard",
+    "shareStatsText": "Share and help others discover great gaming content"
   }
 }

@@ -4,8 +4,8 @@
     <header class="blog-hero">
       <div class="hero-content">
         <div class="hero-text">
-          <h1 class="hero-title">HengOngBet Blog</h1>
-          <p class="hero-subtitle">Latest casino insights, gaming strategies & expert tips</p>
+          <h1 class="hero-title" v-html="$t('blog.title')"></h1>
+          <p class="hero-subtitle" v-html="$t('blog.subTitle')"></p>
         </div>
         
         <!-- Search Section -->
@@ -16,7 +16,7 @@
               v-model="searchQuery"
               @input="handleSearch"
               type="text"
-              placeholder="Search articles, tips, and guides..."
+              :placeholder="$t('blog.searchPlaceholder')"
               class="search-input"
             />
             <button @click="clearSearch" v-if="searchQuery" class="clear-btn">×</button>
@@ -41,8 +41,8 @@
       <div v-if="loading" class="loading-state">
         <div class="loading-content">
           <div class="spinner"></div>
-          <h3>Loading Articles</h3>
-          <p>Fetching the latest insights for you...</p>
+          <h3 v-html="$t('blog.loadingTitle')"></h3>
+          <p v-html="$t('blog.loadingText')"></p>
         </div>
       </div>
 
@@ -50,11 +50,11 @@
       <div v-else-if="error" class="error-state">
         <div class="error-content">
           <div class="error-icon">⚠️</div>
-          <h3>Unable to Load Articles</h3>
+          <h3 v-html="$t('blog.errorTitle')"></h3>
           <p>{{ error }}</p>
           <button @click="loadBlogs" class="retry-btn">
             <span class="btn-icon">🔄</span>
-            Try Again
+            <span v-html="$t('blog.tryAgain')"></span>
           </button>
         </div>
       </div>
@@ -63,10 +63,9 @@
       <div v-else-if="paginatedBlogs.length === 0 && !loading" class="empty-state">
         <div class="empty-content">
           <div class="empty-icon">📝</div>
-          <h3>{{ searchQuery ? 'No Articles Found' : 'No Articles Yet' }}</h3>
-          <p>{{ searchQuery ? 'Try adjusting your search terms' : 'Check back soon for fresh content!' }}</p>
-          <button v-if="searchQuery" @click="clearSearch" class="clear-search-btn">
-            Clear Search
+          <h3 v-html="searchQuery ? $t('blog.noArticlesFound') : $t('blog.noArticlesYet')"></h3>
+          <p v-html="searchQuery ? $t('blog.tryAdjustingSearch') : $t('blog.checkBackSoon')"></p>
+          <button v-if="searchQuery" @click="clearSearch" class="clear-search-btn" v-html="$t('blog.clearSearch')">
           </button>
         </div>
       </div>
@@ -77,7 +76,8 @@
         <div class="results-info">
           <p>
             <span class="results-count">{{ filteredBlogs.length }}</span>
-            {{ searchQuery ? `result${filteredBlogs.length !== 1 ? 's' : ''} for "${searchQuery}"` : 'articles available' }}
+            <span v-if="searchQuery" v-html="$t('blog.searchResults', { count: filteredBlogs.length, query: searchQuery })"></span>
+            <span v-else v-html="$t('blog.articlesAvailable')"></span>
           </p>
         </div>
 
@@ -115,7 +115,7 @@
               <div class="card-meta">
                 <div class="meta-item">
                   <span class="meta-icon">👤</span>
-                  <span>{{ blog.author || 'HengOngBet Team' }}</span>
+                  <span>{{ blog.author || $t('blog.defaultAuthor') }}</span>
                 </div>
                 <div class="meta-item">
                   <span class="meta-icon">📅</span>
@@ -123,7 +123,7 @@
                 </div>
                 <div class="meta-item">
                   <span class="meta-icon">⏱️</span>
-                  <span>{{ getReadTime(blog.content) }} min read</span>
+                  <span v-html="$t('blog.readTime', { minutes: getReadTime(blog.content) })"></span>
                 </div>
               </div>
               
@@ -133,7 +133,7 @@
               
               <div class="card-footer">
                 <div class="read-more-btn">
-                  <span>Read Article</span>
+                  <span v-html="$t('blog.readArticle')"></span>
                   <span class="arrow">→</span>
                 </div>
               </div>
@@ -150,7 +150,7 @@
               class="page-btn prev-btn"
             >
               <span class="btn-icon">←</span>
-              Previous
+              <span v-html="$t('blog.previous')"></span>
             </button>
             
             <div class="page-numbers">
@@ -173,15 +173,17 @@
               :disabled="currentPage >= totalPages"
               class="page-btn next-btn"
             >
-              Next
+              <span v-html="$t('blog.next')"></span>
               <span class="btn-icon">→</span>
             </button>
           </div>
           
           <div class="pagination-info">
-            Showing {{ ((currentPage - 1) * itemsPerPage) + 1 }} - 
-            {{ Math.min(currentPage * itemsPerPage, filteredBlogs.length) }} 
-            of {{ filteredBlogs.length }} articles
+            <span v-html="$t('blog.showingResults', { 
+              start: ((currentPage - 1) * itemsPerPage) + 1,
+              end: Math.min(currentPage * itemsPerPage, filteredBlogs.length),
+              total: filteredBlogs.length
+            })"></span>
           </div>
         </div>
       </div>
@@ -248,7 +250,7 @@ export default {
           this.pagination = data.pagination || this.pagination
           this.filterBlogs()
         } else {
-          throw new Error(data.error || 'Failed to load blog posts')
+          throw new Error(data.error || this.$t('blog.loadError'))
         }
       } catch (error) {
         console.error('Error loading blogs:', error)
@@ -356,7 +358,7 @@ export default {
     },
     
     formatDate(dateString) {
-      return new Date(dateString).toLocaleDateString('en-US', {
+      return new Date(dateString).toLocaleDateString(this.$i18n.locale, {
         year: 'numeric',
         month: 'short',
         day: 'numeric'
@@ -364,7 +366,7 @@ export default {
     },
     
     getContentExcerpt(content) {
-      if (!content) return 'Discover expert insights and strategies...'
+      if (!content) return this.$t('blog.defaultExcerpt')
       const text = content.replace(/<[^>]*>/g, '')
       return text.length > 120 ? text.substring(0, 120) + '...' : text
     },
@@ -377,15 +379,15 @@ export default {
     
     getCategoryFromTitle(title) {
       const categories = {
-        'slot': 'Slots',
-        'casino': 'Casino',
-        'sport': 'Sports',
-        'bet': 'Betting',
-        'tip': 'Tips',
-        'guide': 'Guide',
-        'strategy': 'Strategy',
-        'bonus': 'Bonus',
-        'promo': 'Promotion'
+        'slot': this.$t('blog.categories.slots'),
+        'casino': this.$t('blog.categories.casino'),
+        'sport': this.$t('blog.categories.sports'),
+        'bet': this.$t('blog.categories.betting'),
+        'tip': this.$t('blog.categories.tips'),
+        'guide': this.$t('blog.categories.guide'),
+        'strategy': this.$t('blog.categories.strategy'),
+        'bonus': this.$t('blog.categories.bonus'),
+        'promo': this.$t('blog.categories.promotion')
       }
       
       const lowerTitle = title.toLowerCase()
@@ -394,7 +396,7 @@ export default {
           return value
         }
       }
-      return 'Gaming'
+      return this.$t('blog.categories.gaming')
     }
   }
 }
@@ -552,14 +554,6 @@ export default {
   transform: rotate(18deg);
 }
 
-.left-card-3 {
-  width: 110px;
-  height: 70px;
-  top: 75%;
-  left: 7%;
-  transform: rotate(-8deg);
-}
-
 /* Right side decorative cards */
 .right-card-1 {
   width: 130px;
@@ -575,14 +569,6 @@ export default {
   top: 40%;
   right: 5%;
   transform: rotate(-10deg);
-}
-
-.right-card-3 {
-  width: 115px;
-  height: 75px;
-  top: 70%;
-  right: 7%;
-  transform: rotate(20deg);
 }
 
 /* Main Content */

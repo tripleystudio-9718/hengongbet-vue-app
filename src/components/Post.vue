@@ -1,3 +1,4 @@
+
 <template>
   <div class="blog-post-page">
     <div class="container">
@@ -6,26 +7,26 @@
         <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <path d="m15 18-6-6 6-6"/>
         </svg>
-        Back to Blog
+        <span v-html="$t('post.backToBlog')"></span>
       </button>
 
       <!-- Loading State -->
       <div v-if="loading" class="loading-container">
         <div class="spinner"></div>
-        <p class="loading-text">Loading blog post...</p>
+        <p class="loading-text" v-html="$t('post.loadingPost')"></p>
       </div>
 
       <!-- Error State -->
       <div v-else-if="error" class="error-container">
         <div class="error-card">
           <div class="error-icon">⚠️</div>
-          <h3 class="error-title">Post Not Found</h3>
+          <h3 class="error-title" v-html="$t('post.postNotFound')"></h3>
           <p class="error-message">{{ error }}</p>
           <button @click="goBack" class="error-back-button">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
               <path d="m15 18-6-6 6-6"/>
             </svg>
-            Back to Blog
+            <span v-html="$t('post.backToBlog')"></span>
           </button>
         </div>
       </div>
@@ -43,7 +44,7 @@
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
                 <circle cx="12" cy="7" r="4"/>
               </svg>
-              <span>{{ post.author || 'HengOngBet Team' }}</span>
+              <span>{{ post.author || $t('post.defaultAuthor') }}</span>
             </div>
             <div class="meta-item">
               <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -59,7 +60,7 @@
                 <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
                 <path d="m18.5 2.5 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
               </svg>
-              <span>Updated {{ formatDate(post.updated_at) }}</span>
+              <span v-html="$t('post.updatedOn', { date: formatDate(post.updated_at) })"></span>
             </div>
             <!-- SEO URL Display -->
             <div v-if="post.slug" class="meta-item slug-display">
@@ -102,8 +103,8 @@
           <div class="share-container">
             <div class="share-header">
               <div class="share-text-content">
-                <h3 class="share-title">Share this article</h3>
-                <p class="share-subtitle">Help others discover this gaming content</p>
+                <h3 class="share-title" v-html="$t('post.shareTitle')"></h3>
+                <p class="share-subtitle" v-html="$t('post.shareSubtitle')"></p>
               </div>
             </div>
 
@@ -114,7 +115,7 @@
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="share-btn twitter-btn"
-                aria-label="Share on Twitter"
+                :aria-label="$t('post.shareOnTwitter')"
               >
                 <div class="btn-icon-wrapper">
                   <svg class="share-icon" viewBox="0 0 24 24" fill="currentColor">
@@ -122,8 +123,8 @@
                   </svg>
                 </div>
                 <div class="btn-content">
-                  <span class="btn-label">Twitter</span>
-                  <span class="btn-description">Share on X</span>
+                  <span class="btn-label" v-html="$t('post.twitter')"></span>
+                  <span class="btn-description" v-html="$t('post.shareOnX')"></span>
                 </div>
               </a>
 
@@ -133,7 +134,7 @@
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="share-btn facebook-btn"
-                aria-label="Share on Facebook"
+                :aria-label="$t('post.shareOnFacebook')"
               >
                 <div class="btn-icon-wrapper">
                   <svg class="share-icon" viewBox="0 0 24 24" fill="currentColor">
@@ -141,8 +142,8 @@
                   </svg>
                 </div>
                 <div class="btn-content">
-                  <span class="btn-label">Facebook</span>
-                  <span class="btn-description">Share with friends</span>
+                  <span class="btn-label" v-html="$t('post.facebook')"></span>
+                  <span class="btn-description" v-html="$t('post.shareWithFriends')"></span>
                 </div>
               </a>
 
@@ -152,7 +153,7 @@
                 target="_blank" 
                 rel="noopener noreferrer"
                 class="share-btn linkedin-btn"
-                aria-label="Share on LinkedIn"
+                :aria-label="$t('post.shareOnLinkedIn')"
               >
                 <div class="btn-icon-wrapper">
                   <svg class="share-icon" viewBox="0 0 24 24" fill="currentColor">
@@ -160,8 +161,8 @@
                   </svg>
                 </div>
                 <div class="btn-content">
-                  <span class="btn-label">LinkedIn</span>
-                  <span class="btn-description">Share professionally</span>
+                  <span class="btn-label" v-html="$t('post.linkedin')"></span>
+                  <span class="btn-description" v-html="$t('post.shareProfessionally')"></span>
                 </div>
               </a>
 
@@ -170,7 +171,7 @@
                 @click="copyLink" 
                 class="share-btn copy-btn"
                 :class="{ 'copied': linkCopied }"
-                aria-label="Copy link to clipboard"
+                :aria-label="$t('post.copyLinkToClipboard')"
               >
                 <div class="btn-icon-wrapper">
                   <svg v-if="!linkCopied" class="share-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -182,15 +183,15 @@
                   </svg>
                 </div>
                 <div class="btn-content">
-                  <span class="btn-label">{{ linkCopied ? 'Copied!' : 'Copy Link' }}</span>
-                  <span class="btn-description">{{ linkCopied ? 'Link copied to clipboard' : 'Copy to clipboard' }}</span>
+                  <span class="btn-label" v-html="linkCopied ? $t('post.copied') : $t('post.copyLink')"></span>
+                  <span class="btn-description" v-html="linkCopied ? $t('post.linkCopiedToClipboard') : $t('post.copyToClipboard')"></span>
                 </div>
               </button>
             </div>
 
             <!-- Share Stats -->
             <div class="share-stats">
-              <p class="stats-text">Share and help others discover great gaming content</p>
+              <p class="stats-text" v-html="$t('post.shareStatsText')"></p>
             </div>
           </div>
         </div>

@@ -817,10 +817,20 @@ const removeExistingLinks = () => {
   }
 };
 
-// Helper function to add canonical link
-const addCanonicalLink = (basePath) => {
+// Helper function to add canonical link - FIXED FOR DYNAMIC ROUTES
+const addCanonicalLink = (to) => {
   try {
-    const canonicalUrl = `${BASE_URL}${basePath}`;
+    let canonicalUrl;
+    
+    // Handle dynamic routes with parameters (like blog posts)
+    if (to.params && Object.keys(to.params).length > 0) {
+      canonicalUrl = `${BASE_URL}${to.path}`;
+    } else {
+      // Handle static routes
+      const basePath = to.meta.basePath || getBasePath(to.path, to.meta.locale || defaultLocale);
+      canonicalUrl = `${BASE_URL}${basePath}`;
+    }
+    
     const canonicalLink = document.createElement('link');
     canonicalLink.rel = 'canonical';
     canonicalLink.href = canonicalUrl;
@@ -830,38 +840,82 @@ const addCanonicalLink = (basePath) => {
   }
 };
 
-// Helper function to add hreflang links
-const addHreflangLinks = (basePath) => {
+// Helper function to add hreflang links - FIXED FOR DYNAMIC ROUTES
+const addHreflangLinks = (to) => {
   try {
-    supportedLocales.forEach(locale => {
-      const link = document.createElement('link');
-      link.rel = 'alternate';
-      link.hreflang = locale;
-      
-      if (locale === defaultLocale) {
-        link.href = `${BASE_URL}${basePath}`;
-      } else {
-        link.href = `${BASE_URL}/${locale}${basePath}`;
-      }
-      
-      document.head.appendChild(link);
-    });
+    const basePath = to.meta.basePath || getBasePath(to.path, to.meta.locale || defaultLocale);
+    
+    // For dynamic routes, we need to handle them differently
+    if (to.params && Object.keys(to.params).length > 0) {
+      // For blog posts with slugs, create hreflang for each language
+      supportedLocales.forEach(locale => {
+        const link = document.createElement('link');
+        link.rel = 'alternate';
+        link.hreflang = locale;
+        
+        // Build the localized path with the actual slug
+        let localizedPath;
+        if (locale === defaultLocale) {
+          localizedPath = to.path;
+        } else {
+          // Replace the current locale prefix if it exists, or add the new locale prefix
+          const currentLocale = to.meta.locale || defaultLocale;
+          if (currentLocale !== defaultLocale && to.path.startsWith(`/${currentLocale}`)) {
+            localizedPath = to.path.replace(`/${currentLocale}`, `/${locale}`);
+          } else {
+            localizedPath = `/${locale}${to.path}`;
+          }
+        }
+        
+        link.href = `${BASE_URL}${localizedPath}`;
+        document.head.appendChild(link);
+      });
+    } else {
+      // Handle static routes as before
+      supportedLocales.forEach(locale => {
+        const link = document.createElement('link');
+        link.rel = 'alternate';
+        link.hreflang = locale;
+        
+        if (locale === defaultLocale) {
+          link.href = `${BASE_URL}${basePath}`;
+        } else {
+          link.href = `${BASE_URL}/${locale}${basePath}`;
+        }
+        
+        document.head.appendChild(link);
+      });
+    }
 
+    // Add x-default hreflang
     const defaultLink = document.createElement('link');
     defaultLink.rel = 'alternate';
     defaultLink.hreflang = 'x-default';
-    defaultLink.href = `${BASE_URL}${basePath}`;
+    
+    if (to.params && Object.keys(to.params).length > 0) {
+      // For dynamic routes, use the current path but ensure it's the default locale version
+      const currentLocale = to.meta.locale || defaultLocale;
+      let defaultPath = to.path;
+      if (currentLocale !== defaultLocale && to.path.startsWith(`/${currentLocale}`)) {
+        defaultPath = to.path.replace(`/${currentLocale}`, '') || '/';
+      }
+      defaultLink.href = `${BASE_URL}${defaultPath}`;
+    } else {
+      const basePath = to.meta.basePath || getBasePath(to.path, to.meta.locale || defaultLocale);
+      defaultLink.href = `${BASE_URL}${basePath}`;
+    }
+    
     document.head.appendChild(defaultLink);
   } catch (error) {
     console.warn('Failed to add hreflang links:', error);
   }
 };
 
-// Helper function to add all SEO links (canonical + hreflang)
-const addSEOLinks = (basePath) => {
+// Helper function to add all SEO links (canonical + hreflang) - UPDATED
+const addSEOLinks = (to) => {
   removeExistingLinks();
-  addCanonicalLink(basePath);
-  addHreflangLinks(basePath);
+  addCanonicalLink(to);
+  addHreflangLinks(to);
 };
 
 // Helper function to get base path from localized route
@@ -957,7 +1011,7 @@ const router = createRouter({
   }
 });
 
-// Router beforeEach with error handling and blog post support
+// Router beforeEach with error handling and blog post support - UPDATED
 router.beforeEach((to, from, next) => {
   try {
     const locale = to.meta.locale || defaultLocale;
@@ -969,8 +1023,8 @@ router.beforeEach((to, from, next) => {
       updateSocialMetaTags(to);
       updateSchemaOrg(to);
       
-      const basePath = to.meta.basePath || getBasePath(to.path, locale);
-      addSEOLinks(basePath);
+      // Pass the full 'to' object instead of just basePath
+      addSEOLinks(to);
     }, 0);
     
   } catch (error) {
