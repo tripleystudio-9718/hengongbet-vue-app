@@ -398,6 +398,7 @@ export default {
 .game-info-card {
   background: transparent;
   padding: 0;
+  text-align: center;
 }
 
 /* Game Info Title (H3) */
@@ -407,6 +408,7 @@ export default {
   color: #F2B240;
   margin-bottom: 15px;
   line-height: 1.3;
+  text-align: center;
 }
 
 .game-info-description {
@@ -414,6 +416,7 @@ export default {
   color: #D1D5DB;
   line-height: 1.6;
   margin-bottom: 0;
+  text-align: center;
 }
 
 /* Expert Note Styling */
@@ -426,6 +429,7 @@ export default {
   max-width: 800px;
   font-style: italic;
   color: #E5E7EB;
+  text-align: center;
 }
 
 .expert-note strong {
@@ -456,13 +460,14 @@ export default {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1.5rem 1.25rem;
-  text-align: left;
+  text-align: center;
   background: transparent;
   border: none;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  gap: 1rem;
 }
 
 .accordion-trigger:hover {
@@ -474,11 +479,11 @@ export default {
   color: #ffffff;
   font-weight: 500;
   font-size: 1.125rem;
-  padding-right: 1rem;
   line-height: 1.4;
   transition: color 0.2s ease;
-  text-align: left;
+  text-align: center;
   margin: 0;
+  flex: 1;
 }
 
 .text-active {
@@ -487,7 +492,6 @@ export default {
 
 .trigger-icon-wrapper {
   flex-shrink: 0;
-  margin-left: 1rem;
 }
 
 .trigger-icon-image {
@@ -513,7 +517,7 @@ export default {
   color: #D1D5DB;
   line-height: 1.6;
   margin: 0;
-  text-align: left;
+  text-align: center;
 }
 
 /* Transition animations */
