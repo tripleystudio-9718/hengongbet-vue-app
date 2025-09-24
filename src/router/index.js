@@ -6,6 +6,7 @@ import Affiliate from '@/components/Affiliate.vue'
 import Login from '@/components/Login.vue'
 import GamePage from '@/components/GamePage.vue'
 import Maxbet from '@/components/games/maxbet.vue'
+import Rcb988 from '@/components/games/rcb988.vue'
 import PromotionPage from '@/components/PromotionPage.vue'
 import FAQ from '@/components/FAQ.vue'
 import FourDResult from '@/components/FourDResult.vue'
@@ -93,6 +94,20 @@ const metaContent = {
     ms: { 
       title: 'Pertaruhan Sukan Maxbet | Hengongbet',
       description: 'Sertai pertaruhan sukan Maxbet di Hengongbet. Pertaruhan bola sepak, bola keranjang dan banyak lagi di platform dipercayai dengan keselamatan terjamin dan pembayaran pantas.'
+    }
+  },
+  Rcb988: {
+    en: { 
+      title: 'RCB988 Live Betting | Hengongbet',
+      description: 'Enjoy RCB988 live betting with Hengongbet. Play your favorite matches, enjoy smooth gameplay, and experience quick withdrawals every time you win.'
+    },
+    zh: { 
+      title: 'RCB988 现场投注 | Hengongbet',
+      description: '通过亨公博彩享受RCB988的现场投注。玩您喜欢的比赛，享受流畅的游戏体验，每次获胜都能快速取款。'
+    },
+    ms: { 
+      title: 'Pertaruhan Live RCB988 | Hengongbet',
+      description: 'Nikmati pertaruhan langsung RCB988 dengan Hengongbet. Mainkan perlawanan kegemaran anda, nikmati permainan yang lancar, dan alami pengeluaran cepat setiap kali anda menang.'
     }
   },
   PromotionPage: {
@@ -984,6 +999,7 @@ const routes = [
   ...createLocalizedRoute('/login', 'Login', Login),
   ...createLocalizedRoute('/games', 'GamePage', GamePage),
   ...createLocalizedRoute('/games/maxbet', 'Maxbet', Maxbet),
+  ...createLocalizedRoute('/games/rcb988', 'Rcb988', Rcb988),
   ...createLocalizedRoute('/promotion', 'PromotionPage', PromotionPage),
   ...createLocalizedRoute('/faqs', 'FAQ', FAQ),
   ...createLocalizedRoute('/4d-results', 'FourDResult', FourDResult),

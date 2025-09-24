@@ -59,10 +59,33 @@
           <router-link :to="getLocalePath('/affiliate')" class="nav-item">{{ $t('nav.affiliate') }}</router-link>
           <router-link :to="getLocalePath('/promotion')" class="nav-item">{{ $t('nav.promotion') }}</router-link>
           <router-link :to="getLocalePath('/download')" class="nav-item">{{ $t('nav.download') }}</router-link>
-          <router-link :to="getLocalePath('/games')" class="nav-item">{{ $t('nav.games') }}</router-link>
+         <!-- Games Dropdown -->
+<div class="games-dropdown-container" 
+     @mouseenter="showGamesDropdown = true" 
+     @mouseleave="showGamesDropdown = false">
+
+  <a href="#" class="nav-item games-item" @click.prevent>
+    {{ $t('nav.games') }}
+    <svg class="games-arrow" :class="{ 'games-arrow-rotated': showGamesDropdown }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </a>
+
+  <!-- Games Dropdown Menu -->
+  <div v-if="showGamesDropdown" class="games-dropdown-menu">
+    <router-link :to="getLocalePath('/games/maxbet')" class="games-dropdown-item">
+      <span>{{ $t('nav.maxbet') }}</span>
+    </router-link>
+    <router-link :to="getLocalePath('/games/rcb988')" class="games-dropdown-item">
+      <span>{{ $t('nav.rcb988') }}</span>
+    </router-link>
+  </div>
+</div>
+
           <router-link :to="getLocalePath('/4d-results')" class="nav-item">{{ $t('nav.4d_results') }}</router-link>
           <router-link :to="getLocalePath('/faqs')" class="nav-item">{{ $t('nav.faq') }}</router-link>
                     
+
           <!-- Help Dropdown -->
           <div class="help-dropdown-container" @mouseenter="showHelpDropdown = true" @mouseleave="showHelpDropdown = false">
             <a href="#" class="nav-item help-item" @click.prevent>
@@ -174,6 +197,8 @@ export default {
       showMobileMenu: false,
       showHelpDropdown: false,
       showLanguageDropdown: false,
+      showHelpDropdown: false,
+    showGamesDropdown: false, // ✅ add this
       currentLocale: 'en', // Track current locale in component state
       selectedLanguage: {
         code: 'en',
@@ -747,6 +772,55 @@ goToLogin() {
   align-items: center;
   justify-content: center;
 }
+
+/* Games Dropdown */
+.games-dropdown-container {
+  position: relative;
+}
+
+.games-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  background: #2d3748;
+  border: 1px solid #4a5568;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  min-width: 220px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.games-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.games-dropdown-item:hover {
+  background: #4a5568;
+  color: #F1AE3D;
+}
+
+.games-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+  margin-left: 6px;
+  flex-shrink: 0;
+}
+
+.games-arrow-rotated {
+  transform: rotate(180deg);
+}
+
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
