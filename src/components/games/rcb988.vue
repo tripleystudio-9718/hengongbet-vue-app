@@ -290,13 +290,11 @@ export default {
 
 <style scoped>
 .rcb988-overall {
-  width: 100%;
+  width:1420px;
   height: auto;
   font-family: "Afacad", sans-serif !important;
-  position: relative;
-  background-image: url('@/assets/tutorial-guide-bg.png');
   background-repeat: no-repeat;
-  background-position: top;
+  background-position:top;
   background-size: auto;
 }
 
@@ -367,6 +365,7 @@ export default {
   color: #F2B240;
   margin-bottom: 15px;
   line-height: 1.3;
+  text-align: center;
 }
 
 .rcb988-info-list {
@@ -374,6 +373,7 @@ export default {
   color: #D1D5DB;
   line-height: 1.6;
   margin-bottom: 0;
+  text-align: center;
 }
 
 .rcb988-expert-note {

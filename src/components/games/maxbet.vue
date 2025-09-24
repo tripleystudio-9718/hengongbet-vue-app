@@ -311,6 +311,7 @@ export default {
   height: auto;
   background-color: #27272A;
   font-family: "Afacad",sans-serif !important;
+  min-height: 100vh;
 }
 
 .game-banner {
@@ -325,7 +326,6 @@ export default {
 
 /* Game Content Section */
 .game-content-section {
-  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
   padding: 60px 20px;
   color: white;
 }
@@ -421,7 +421,6 @@ export default {
 
 /* Expert Note Styling */
 .expert-note {
-  background-color: rgba(242, 178, 64, 0.1);
   border-left: 4px solid #F2B240;
   padding: 20px;
   margin: 40px auto;
@@ -450,6 +449,7 @@ export default {
   background-color: #242424;
   border-radius: 0.5rem;
   overflow: hidden;
+  margin-bottom: 1rem;
 }
 
 .accordion-item:last-child {
@@ -460,14 +460,13 @@ export default {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 1.5rem 1.25rem;
-  text-align: center;
+  text-align: left;
   background: transparent;
   border: none;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  gap: 1rem;
 }
 
 .accordion-trigger:hover {
@@ -481,9 +480,9 @@ export default {
   font-size: 1.125rem;
   line-height: 1.4;
   transition: color 0.2s ease;
-  text-align: center;
+  text-align: left;
   margin: 0;
-  flex: 1;
+  padding-right: 1rem;
 }
 
 .text-active {
@@ -492,6 +491,7 @@ export default {
 
 .trigger-icon-wrapper {
   flex-shrink: 0;
+  margin-left: 1rem;
 }
 
 .trigger-icon-image {
@@ -517,7 +517,7 @@ export default {
   color: #D1D5DB;
   line-height: 1.6;
   margin: 0;
-  text-align: center;
+  text-align: left;
 }
 
 /* Transition animations */
