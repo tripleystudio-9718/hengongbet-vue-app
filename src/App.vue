@@ -60,7 +60,7 @@ body {
 
 /* Colors */
 .bg-gray-800 { background-color: #1f2937; }
-.bg-gray-900 { background-color: #111827; }
+.bg-gray-900 { background-color: #27272A; }
 .bg-gray-600 { background-color: #4b5563; }
 .bg-gray-700 { background-color: #374151; }
 .bg-yellow-500 { background-color: #eab308; }
