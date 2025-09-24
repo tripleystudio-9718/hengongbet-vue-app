@@ -5,6 +5,7 @@ import Home from '../views/Home.vue'
 import Affiliate from '@/components/Affiliate.vue'
 import Login from '@/components/Login.vue'
 import GamePage from '@/components/GamePage.vue'
+import Maxbet from '@/components/games/maxbet.vue'
 import PromotionPage from '@/components/PromotionPage.vue'
 import FAQ from '@/components/FAQ.vue'
 import FourDResult from '@/components/FourDResult.vue'
@@ -78,6 +79,20 @@ const metaContent = {
     ms: { 
       title: 'Permainan Kasino Dalam Talian - slot, kasino langsung, pertaruhan sukan & banyak lagi', 
       description: 'Main permainan kasino dalam talian berkaraf tinggi, slot, kasino langsung dan pertaruhan 4D di Heng Ong Bet. Pembayaran pantas, permainan lancar, dipercayai rakyat Malaysia.' 
+    }
+  },
+  Maxbet: {
+    en: { 
+      title: 'Maxbet Sports Betting | Hengongbet',
+      description: 'Join Maxbet sports betting on Hengongbet. Bet on football, basketball, and more with a trusted platform that keeps your play secure and payouts fast.'
+    },
+    zh: { 
+      title: 'Maxbet体育博彩 | Hengongbet',
+      description: '在Hengongbet加入Maxbet体育博彩。投注足球、篮球等项目，值得信赖的平台保障您的游戏安全并快速支付奖金。'
+    },
+    ms: { 
+      title: 'Pertaruhan Sukan Maxbet | Hengongbet',
+      description: 'Sertai pertaruhan sukan Maxbet di Hengongbet. Pertaruhan bola sepak, bola keranjang dan banyak lagi di platform dipercayai dengan keselamatan terjamin dan pembayaran pantas.'
     }
   },
   PromotionPage: {
@@ -968,6 +983,7 @@ const routes = [
   ...createLocalizedRoute('/affiliate', 'Affiliate', Affiliate),
   ...createLocalizedRoute('/login', 'Login', Login),
   ...createLocalizedRoute('/games', 'GamePage', GamePage),
+  ...createLocalizedRoute('/games/maxbet', 'Maxbet', Maxbet),
   ...createLocalizedRoute('/promotion', 'PromotionPage', PromotionPage),
   ...createLocalizedRoute('/faqs', 'FAQ', FAQ),
   ...createLocalizedRoute('/4d-results', 'FourDResult', FourDResult),

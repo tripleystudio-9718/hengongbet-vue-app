@@ -330,19 +330,20 @@ export default {
     },
     
     openBlog(blog) {
-      if (this.$router) {
-        try {
-          this.$router.push({
-            name: 'Post',
-            params: { slug: blog.slug }
-          })
-        } catch (error) {
-          this.$router.push(`/blog/${blog.slug}`)
-        }
-      } else {
-        window.location.href = `/blog/${blog.slug}`
-      }
-    },
+  const locale = this.$i18n.locale || 'en'
+  const routeName = locale === 'en' ? 'Post' : `Post-${locale}`
+
+  if (this.$router) {
+    this.$router.push({
+      name: routeName,
+      params: { slug: blog.slug }
+    })
+  } else {
+    // Fallback if router isn’t available
+    const prefix = locale === 'en' ? '' : `/${locale}`
+    window.location.href = `${prefix}/blog/${blog.slug}`
+  }
+},
     
     getImageUrl(imagePath) {
       if (!imagePath) return ''

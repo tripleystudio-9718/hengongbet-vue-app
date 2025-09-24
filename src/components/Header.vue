@@ -668,7 +668,7 @@ goToLogin() {
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
-  padding: 8px 12px;
+  padding: 8px 9px;
   border-radius: 4px;
   transition: all 0.2s ease;
   position: relative;

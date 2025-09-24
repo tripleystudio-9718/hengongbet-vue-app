@@ -1223,8 +1223,10 @@
     ],
     "loginSecurity": [
       {
-        "question": "Saya tidak menerima kod pengesahan SMS saya. Apa yang patut saya lakukan?",
-        "answer": "Semak isyarat telefon anda, pastikan anda memasukkan nombor yang betul, dan cuba hantar semula kod. Jika masalah berterusan, hubungi sokongan langsung."
+        "question": "Saya tidak menerima kod pengesahan SMS. Apa yang perlu saya lakukan?",
+        "answer_part1": "Periksa isyarat telefon anda, pastikan anda memasukkan nombor yang betul, dan cuba hantar semula kod tersebut. Jika masalah berterusan, hubungi",
+        "answer_part2": "sokongan langsung",
+        "answer_part3": "."
       },
       {
         "question": "Saya terlupa kata laluan saya. Bagaimana saya boleh menetapkannya semula?",

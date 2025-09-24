@@ -410,7 +410,10 @@ export default {
     }
     
     const goBack = () => {
-      router.push('/blog')
+      const locale = route.meta?.locale || 'en'
+      const routeName = locale === 'en' ? 'Blog' : `Blog-${locale}`
+
+      router.push({ name: routeName })
     }
     
     // Cleanup meta tags on unmount

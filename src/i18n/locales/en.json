@@ -1210,9 +1210,9 @@
       "tryDifferent": "Try searching with different keywords or browse all questions above."
     },
     "sections": {
-      "gettingStarted": "Getting Started",
-      "loginSecurity": "Login & Account Security",
-      "bonusPromotions": "Bonuses & Promotions",
+      "gettingStarted": "Getting  Started",
+      "loginSecurity": "Login & Account  Security",
+      "bonusPromotions": "Bonuses  & Promotions",
       "finalNote": "Final Note"
     },
     "gettingStarted": [
@@ -1232,7 +1232,9 @@
     "loginSecurity": [
       {
         "question": "I didn't receive my SMS verification code. What should I do?",
-        "answer": "Check your phone signal, make sure you entered the correct number, and try resending the code. If the issue persists, contact live support."
+        "answer_part1": "Check your phone signal, make sure you entered the correct number, and try resending the code. If the issue persists, contact ",
+        "answer_part2": "live support",
+        "answer_part3": "."
       },
       {
         "question": "I forgot my password. How can I reset it?",
@@ -1718,5 +1720,264 @@
     "linkCopiedToClipboard": "Link copied to clipboard",
     "copyToClipboard": "Copy to clipboard",
     "shareStatsText": "Share and help others discover great gaming content"
-  }
+  },
+
+  "maxbet": {
+      "alt": {
+        "gameBanner": "Maxbet Sports Betting Banner"
+      },
+      "content": {
+        "title": "Maxbet Sports Betting | Hengongbet",
+        "intro": {
+          "part1": "Looking for a trusted way to bet on sports online? With Maxbet ",
+          "linkText": "sports betting",
+          "part2": " at Hengongbet, players gain access to one of Asia's most established platforms for football, basketball, tennis, and more. This platform has built its reputation on fair play, fast payouts, and a wide range of sports markets that cater to both casual fans and serious bettors."
+        },
+        "whyChoose": {
+          "title": "Why Choose Maxbet for Sports Betting?",
+          "description": "The strength of Maxbet lies in its balance of variety, reliability, and speed. Bettors can enjoy:",
+          "items": {
+            "extensiveMarkets": {
+              "title": "Extensive Markets",
+              "description": "Across global and regional sports"
+            },
+            "liveBetting": {
+              "title": "Live Betting",
+              "description": "With real-time odds updates"
+            },
+            "secureTransactions": {
+              "title": "Secure Transactions",
+              "description": "Backed by proven technology"
+            },
+            "fastPayouts": {
+              "title": "Fast Payout Processes",
+              "description": "Trusted by long-term users"
+            }
+          },
+          "expertNote": {
+            "label": "Expert note:",
+            "text": " Maxbet has become a go-to platform for Asian players due to its stable odds, consistent service, and long-standing presence in the industry."
+          }
+        },
+        "popularSports": {
+          "title": "Popular Sports Covered by Maxbet",
+          "description": "Sports enthusiasts are never short of options. Maxbet provides betting opportunities on both international and local matches.",
+          "items": {
+            "football": {
+              "title": "Football Betting on Maxbet",
+              "description": "Football is the most popular market. Players can bet on English Premier League (EPL), La Liga, Serie A, UEFA Champions League, and Regional Asian tournaments. Bet types include match results, Asian handicap, over/under goals, and first-half markets."
+            },
+            "basketball": {
+              "title": "Basketball Betting",
+              "description": "From NBA games to FIBA World Cup tournaments, Maxbet ensures bettors can follow their favorite teams. Popular wagers include point spreads, totals, and player-specific props."
+            },
+            "otherSports": {
+              "title": "Tennis, Badminton, and Other Sports",
+              "description": "Tennis Grand Slams and ATP/WTA tours, Badminton Asian championships and international matches, Esports competitive gaming markets, and Horse Racing from local and international tracks."
+            }
+          }
+        },
+        "betTypes": {
+          "title": "Types of Bets Available on Maxbet",
+          "description": "Understanding the types of bets is crucial for building a strategy. Below is a quick reference:",
+          "items": {
+            "oneXTwo": {
+              "title": "1X2",
+              "description": "Traditional win-draw-win market"
+            },
+            "asianHandicap": {
+              "title": "Asian Handicap",
+              "description": "Balances match odds by giving one team a virtual advantage"
+            },
+            "overUnder": {
+              "title": "Over/Under",
+              "description": "Bet on the total number of goals, points, or scores in a game"
+            },
+            "correctScore": {
+              "title": "Correct Score",
+              "description": "Predicting the exact final score"
+            },
+            "parlay": {
+              "title": "Parlay/Combo",
+              "description": "Multiple bets combined for higher payout potential"
+            },
+            "inPlay": {
+              "title": "In-Play",
+              "description": "Live betting with shifting odds as the match progresses"
+            }
+          },
+          "definition": {
+            "label": "Definition:",
+            "text": " Asian Handicap betting is designed to eliminate the possibility of a draw, creating a more balanced market for unevenly matched teams."
+          }
+        },
+        "liveBetting": {
+          "title": "Live Betting with Maxbet",
+          "description": "Live betting is one of the most engaging features. With constantly updated odds, players can react in real time to match events such as goals, fouls, or momentum shifts.",
+          "benefits": {
+            "betterValue": {
+              "title": "Better Value Odds",
+              "description": "When predicting match swings"
+            },
+            "hedging": {
+              "title": "Ability to Hedge",
+              "description": "Pre-match bets for risk management"
+            },
+            "interactive": {
+              "title": "Interactive Experience",
+              "description": "More engaging betting experience"
+            }
+          }
+        },
+        "security": {
+          "title": "How Maxbet Ensures Secure and Fast Betting",
+          "description": "Security and reliability are non-negotiable in online betting. Hengongbet integrates Maxbet with features such as:",
+          "items": {
+            "encryption": {
+              "title": "Encrypted Transactions",
+              "description": "For deposits and withdrawals"
+            },
+            "monitoring": {
+              "title": "24/7 Monitoring",
+              "description": "To prevent fraud or account misuse"
+            },
+            "licensed": {
+              "title": "Licensed Platform",
+              "description": "That complies with strict gaming regulations"
+            },
+            "instantPayouts": {
+              "title": "Instant Payout Systems",
+              "description": "For approved methods"
+            }
+          }
+        },
+        "strategies": {
+          "title": "Strategies for Smarter Sports Betting on Maxbet",
+          "description": "While betting always carries risk, a few approaches can help bettors manage their play responsibly:",
+          "items": {
+            "research": {
+              "title": "Research Before Placing Bets",
+              "description": "Check team form, injuries, and head-to-head stats"
+            },
+            "bankroll": {
+              "title": "Use Bankroll Management",
+              "description": "Never wager more than you can afford to lose"
+            },
+            "handicap": {
+              "title": "Leverage Asian Handicap",
+              "description": "Markets for fairer odds"
+            },
+            "parlays": {
+              "title": "Start Small with Parlays",
+              "description": "Before building higher-value combinations"
+            },
+            "liveOdds": {
+              "title": "Monitor Live Odds",
+              "description": "For value betting opportunities"
+            }
+          },
+          "note": {
+            "label": "Note:",
+            "text": " Consistent profit comes from discipline and information, not luck alone."
+          }
+        },
+        "userExperience": {
+          "title": "The User Experience on Hengongbet's Maxbet",
+          "description": "A smooth experience is just as important as odds. Hengongbet provides:",
+          "items": {
+            "mobileFriendly": {
+              "title": "Mobile-Friendly Design",
+              "description": "For betting on the go"
+            },
+            "multiLanguage": {
+              "title": "Multiple Language Options",
+              "description": "For international players"
+            },
+            "customerSupport": {
+              "title": "Dedicated Customer Support",
+              "description": "To resolve queries quickly"
+            },
+            "clearInterface": {
+              "title": "Clear Interface",
+              "description": "That simplifies odds selection"
+            }
+          }
+        },
+        "paymentMethods": {
+          "title": "Payment Methods and Payouts",
+          "description": "Maxbet supports a variety of payment options through Hengongbet:",
+          "items": {
+            "bankTransfers": {
+              "title": "Local Bank Transfers",
+              "description": "Fast and secure local banking"
+            },
+            "eWallets": {
+              "title": "E-Wallets",
+              "description": "Digital wallet solutions"
+            },
+            "cards": {
+              "title": "Credit and Debit Cards",
+              "description": "Major card providers accepted"
+            },
+            "crypto": {
+              "title": "Cryptocurrency Support",
+              "description": "Selected regions only"
+            }
+          },
+          "processingTime": "Most withdrawals are processed within 24 hours, ensuring faster access to winnings."
+        },
+        "responsibleGambling": {
+          "title": "Responsible Gambling on Maxbet",
+          "description": "Hengongbet encourages responsible play by giving members the right tools to manage their betting habits. The platform offers:",
+          "appInfo": {
+            "part1": "For added convenience, players can also ",
+            "linkText": "download Hengongbet app",
+            "part2": ", making it easier to access responsible gaming features and place bets securely from their mobile devices."
+          },
+          "items": {
+            "depositLimits": {
+              "title": "Deposit Limits",
+              "description": "To control spending"
+            },
+            "selfExclusion": {
+              "title": "Self-Exclusion Tools",
+              "description": "For players who need a break"
+            },
+            "awarenessResources": {
+              "title": "Awareness Resources",
+              "description": "For those seeking support"
+            }
+          }
+        },
+        "faq": {
+          "title": "Frequently Asked Questions",
+          "items": {
+            "what": {
+              "question": "What is Maxbet sports betting?",
+              "answer": "Maxbet is an established online sportsbook that offers betting on football, basketball, tennis, horse racing, and more. It is trusted across Asia for reliable odds and secure payouts."
+            },
+            "payouts": {
+              "question": "How do payouts work on Maxbet via Hengongbet?",
+              "answer": "Withdrawals are processed quickly, usually within 24 hours, depending on the payment method. Local bank transfers and e-wallets are the fastest options."
+            },
+            "liveBetting": {
+              "question": "Can I bet live on Maxbet games?",
+              "answer": "Yes. Maxbet provides a live betting feature that updates odds in real time as the match unfolds. This allows players to react instantly to game developments."
+            },
+            "safety": {
+              "question": "Is Maxbet safe to use?",
+              "answer": "Yes. Maxbet is licensed and integrated into Hengongbet with encryption technology, ensuring player data and transactions remain secure."
+            }
+          }
+        },
+        "finalThoughts": {
+          "title": "Final Thoughts",
+          "description": {
+            "part1": "Maxbet sports betting at ",
+            "linkText": "Hengongbet",
+            "part2": " delivers a complete experience for fans who value variety, trust, and speed. With strong markets in football, basketball, and niche sports, combined with fast payouts and live betting options, it remains a leading choice for online players seeking both excitement and reliability."
+          }
+        }
+      }
+    }
 }
