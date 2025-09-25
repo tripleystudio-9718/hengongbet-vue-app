@@ -326,12 +326,12 @@ export default {
 
 /* Game Content Section */
 .game-content-section {
-  padding: 60px 20px;
+  padding: 0 20px;
   color: white;
 }
 
 .content-section {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -367,7 +367,7 @@ export default {
   font-weight: 400;
   color: #ffffff;
   text-align: center;
-  margin: 0 0 40px 0;
+  margin: 0 0 30px 0;
   line-height: 1.5;
   max-width: 800px;
   margin-left: auto;
@@ -390,7 +390,7 @@ export default {
 .games-info-grid {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -423,7 +423,7 @@ export default {
 .expert-note {
   border-left: 4px solid #F2B240;
   padding: 20px;
-  margin: 40px auto;
+  margin: 30px auto;
   border-radius: 8px;
   max-width: 800px;
   font-style: italic;

@@ -7,6 +7,10 @@ import Login from '@/components/Login.vue'
 import GamePage from '@/components/GamePage.vue'
 import Maxbet from '@/components/games/maxbet.vue'
 import Rcb988 from '@/components/games/rcb988.vue'
+import Sv388 from '@/components/games/sv388.vue'
+import MonkeyKing from '@/components/games/monkeyKing.vue'
+import Microslot from '@/components/games/Microslot.vue'
+import Lucky365 from '@/components/games/lucky365.vue'
 import PromotionPage from '@/components/PromotionPage.vue'
 import FAQ from '@/components/FAQ.vue'
 import FourDResult from '@/components/FourDResult.vue'
@@ -108,6 +112,62 @@ const metaContent = {
     ms: { 
       title: 'Pertaruhan Live RCB988 | Hengongbet',
       description: 'Nikmati pertaruhan langsung RCB988 dengan Hengongbet. Mainkan perlawanan kegemaran anda, nikmati permainan yang lancar, dan alami pengeluaran cepat setiap kali anda menang.'
+    }
+  },
+  SV388: {
+    en: { 
+      title: 'SV388 Cockfight Betting | Hengongbet',
+      description: 'Bet on live SV388 cockfighting matches at Hengongbet. Simple signup, fast payouts, and a safe place to play your favorite cockfight bets online.'
+    },
+    zh: { 
+      title: 'SV388 斗鸡投注 | Hengongbet',
+      description: '在亨公博彩下注SV388现场斗鸡比赛。简单注册，快速提款，让您在安全的平台上畅玩最喜欢的斗鸡投注。'
+    },
+    ms: { 
+      title: 'Pertaruhan Sabung Ayam SV388 | Hengongbet',
+      description: 'Bertaruh pada perlawanan sabung ayam SV388 secara langsung di Hengongbet. Daftar mudah, pembayaran pantas, dan tempat selamat untuk bermain pertaruhan sabung ayam kegemaran anda secara online.'
+    }
+  },
+  MonkeyKing: {
+    en: { 
+      title: 'Monkey King Slots | Hengongbet',
+      description: 'Play Monkey King slots on Hengongbet. Smooth spins, fun features, and rewarding wins made for mobile and desktop players.'
+    },
+    zh: { 
+      title: '猴王老虎机 | Hengongbet',
+      description: '在亨公博彩玩猴王老虎机。流畅的旋转、有趣的功能和丰厚的奖励，适合移动端和桌面玩家。'
+    },
+    ms: { 
+      title: 'Slot Monkey King | Hengongbet',
+      description: 'Main slot Monkey King di Hengongbet. Putaran lancar, ciri menyeronokkan, dan kemenangan lumayan untuk pemain mudah alih dan desktop.'
+    }
+  },
+  Microslot: {
+    en: { 
+      title: 'Microslot Games | Hengongbet',
+      description: 'Hengongbet has established itself as a preferred platform for Microslot enthusiasts, combining a wide game library with reliability.'
+    },
+    zh: { 
+      title: 'Microslot 游戏 | Hengongbet',
+      description: '亨公博彩已成为Microslot爱好者的首选平台，结合了丰富的游戏库和可靠性。'
+    },
+    ms: { 
+      title: 'Permainan Microslot | Hengongbet',
+      description: 'Hengongbet telah menjadi platform pilihan untuk peminat Microslot, menggabungkan perpustakaan permainan yang luas dengan kebolehpercayaan.'
+    }
+  },
+  Lucky365: {
+    en: { 
+      title: 'Hengongbet | Lucky365 Demo',
+      description: 'The Lucky365 demo on Hengongbet makes this possible, offering a way to explore gameplay features, payout styles, and bonus structures.'
+    },
+    zh: { 
+      title: 'Hengongbet | Lucky365 演示',
+      description: '在亨公博彩的Lucky365演示让这一切成为可能，提供了一种探索游戏功能、支付方式和奖励结构的方式。'
+    },
+    ms: { 
+      title: 'Hengongbet | Demo Lucky365',
+      description: 'Demo Lucky365 di Hengongbet menjadikannya mungkin, menawarkan cara untuk meneroka ciri permainan, gaya pembayaran, dan struktur bonus.'
     }
   },
   PromotionPage: {
@@ -1000,6 +1060,10 @@ const routes = [
   ...createLocalizedRoute('/games', 'GamePage', GamePage),
   ...createLocalizedRoute('/games/maxbet', 'Maxbet', Maxbet),
   ...createLocalizedRoute('/games/rcb988', 'Rcb988', Rcb988),
+  ...createLocalizedRoute('/games/sv388', 'Sv388', Sv388),
+  ...createLocalizedRoute('/games/monkey-king', 'MonkeyKing', MonkeyKing),
+  ...createLocalizedRoute('/games/microslot', 'Microslot', Microslot),
+  ...createLocalizedRoute('/games/lucky365', 'Lucky365', Lucky365),
   ...createLocalizedRoute('/promotion', 'PromotionPage', PromotionPage),
   ...createLocalizedRoute('/faqs', 'FAQ', FAQ),
   ...createLocalizedRoute('/4d-results', 'FourDResult', FourDResult),

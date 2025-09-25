@@ -64,12 +64,13 @@
      @mouseenter="showGamesDropdown = true" 
      @mouseleave="showGamesDropdown = false">
 
-  <a href="#" class="nav-item games-item" @click.prevent>
+  <!-- Make the main Games link clickable to /games -->
+  <router-link :to="getLocalePath('/games')" class="nav-item games-item">
     {{ $t('nav.games') }}
     <svg class="games-arrow" :class="{ 'games-arrow-rotated': showGamesDropdown }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
     </svg>
-  </a>
+  </router-link>
 
   <!-- Games Dropdown Menu -->
   <div v-if="showGamesDropdown" class="games-dropdown-menu">
@@ -778,6 +779,24 @@ goToLogin() {
   position: relative;
 }
 
+.games-dropdown-container::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: transparent;
+  z-index: 999;
+}
+
+.games-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px; /* Add consistent spacing between text and arrow */
+}
+
 .games-dropdown-menu {
   position: absolute;
   top: calc(100% + 2px);
@@ -813,8 +832,8 @@ goToLogin() {
   width: 16px;
   height: 16px;
   transition: transform 0.2s ease;
-  margin-left: 6px;
-  flex-shrink: 0;
+  flex-shrink: 0; /* Prevent arrow from shrinking */
+  color: currentColor; /* Inherit color from parent */
 }
 
 .games-arrow-rotated {
