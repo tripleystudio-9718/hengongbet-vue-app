@@ -1,6 +1,7 @@
 <template>
   <div class="game-overall">
     <div class="game-banner">
+      <img :src="hotRoadBanner" alt="Hot Road Banner" />
     </div>
     
     <!-- Main Page Title -->
@@ -210,6 +211,7 @@
 // Import the SVG icons
 import openIcon from '@/assets/open-icon.svg'
 import closeIcon from '@/assets/close-icon.svg'
+import hotRoadBanner from '@/assets/hot-road-banner.jpg'
 
 export default {
   name: 'HotroadCasino',
@@ -218,6 +220,7 @@ export default {
       // Make icons available to template
       openIcon,
       closeIcon,
+      hotRoadBanner,
       openFaqItems: { 0: true },
       whyChooseItems: [
         { key: 'dealerAvailability' },

@@ -1,6 +1,7 @@
 <template>
   <div class="game-overall">
     <div class="game-banner">
+      <img :src="rcb988Banner" alt="RCB 988 Banner" />
     </div>
     
     <!-- Main Page Title -->
@@ -251,6 +252,7 @@
 // Import the SVG icons
 import openIcon from '@/assets/open-icon.svg'
 import closeIcon from '@/assets/close-icon.svg'
+import rcb988Banner from '@/assets/rcb988-banner.jpg'
 
 export default {
   name: 'Rcb988',
@@ -259,6 +261,7 @@ export default {
       // Make icons available to template
       openIcon,
       closeIcon,
+      rcb988Banner,
       openFaqItems: { 0: true },
       keyFeaturesItems: [
         { key: 'instantOdds' },

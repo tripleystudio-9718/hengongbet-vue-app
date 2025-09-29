@@ -1,6 +1,7 @@
 <template>
   <div class="game-overall">
     <div class="game-banner">
+      <img :src="sv388Banner" alt="SV388 Banner" />
     </div>
     
     <!-- Main Page Title -->
@@ -197,6 +198,7 @@
 // Import the SVG icons
 import openIcon from '@/assets/open-icon.svg'
 import closeIcon from '@/assets/close-icon.svg'
+import sv388Banner from '@/assets/sv388-banner.jpg'
 
 export default {
   name: 'Sv388',
@@ -205,6 +207,7 @@ export default {
       // Make icons available to template
       openIcon,
       closeIcon,
+      sv388Banner,
       openFaqItems: { 0: true },
       keyFeaturesItems: [
         { key: 'liveVideo' },

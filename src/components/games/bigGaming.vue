@@ -1,6 +1,7 @@
 <template>
   <div class="game-overall">
     <div class="game-banner">
+     <img :src="bigGamingBanner" alt="Big Gaming Banner" />
     </div>
     
     <!-- Main Page Title -->
@@ -217,6 +218,7 @@
 // Import the SVG icons
 import openIcon from '@/assets/open-icon.svg'
 import closeIcon from '@/assets/close-icon.svg'
+import bigGamingBanner from '@/assets/big-gaming-banner.jpg'
 
 export default {
   name: 'BigGaming',
@@ -225,6 +227,7 @@ export default {
       // Make icons available to template
       openIcon,
       closeIcon,
+      bigGamingBanner,
       openFaqItems: { 0: true },
       standOutItems: [
         { key: 'licensedDealers' },

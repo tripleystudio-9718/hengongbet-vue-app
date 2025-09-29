@@ -1,6 +1,7 @@
 <template>
   <div class="game-overall">
     <div class="game-banner">
+      <img :src="pragmaticPlayBanner" alt="Pragmatic Play Banner" />
     </div>
     
     <!-- Main Page Title -->
@@ -210,6 +211,7 @@
 // Import the SVG icons
 import openIcon from '@/assets/open-icon.svg'
 import closeIcon from '@/assets/close-icon.svg'
+import pragmaticPlayBanner from '@/assets/pragmatic-play-banner.jpg'
 
 export default {
   name: 'PragmaticPlayCasino',
@@ -218,6 +220,7 @@ export default {
       // Make icons available to template
       openIcon,
       closeIcon,
+      pragmaticPlayBanner,
       openFaqItems: { 0: true },
       whyChooseItems: [
         { key: 'streaming247' },

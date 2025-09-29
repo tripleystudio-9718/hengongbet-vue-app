@@ -1,6 +1,7 @@
 <template>
   <div class="game-overall">
     <div class="game-banner">
+      <img :src="sexyBanner" alt="Sexy Banner" />
     </div>
     
     <!-- Main Page Title -->
@@ -196,6 +197,7 @@
 // Import the SVG icons
 import openIcon from '@/assets/open-icon.svg'
 import closeIcon from '@/assets/close-icon.svg'
+import sexyBanner from '@/assets/sexy-banner.jpg'
 
 export default {
   name: 'SexyCasino',
@@ -204,6 +206,7 @@ export default {
       // Make icons available to template
       openIcon,
       closeIcon,
+      sexyBanner,
       openFaqItems: { 0: true },
       topGamesTableData: [
         'sexyBaccarat',
