@@ -8,7 +8,15 @@ import GamePage from '@/components/GamePage.vue'
 import Maxbet from '@/components/games/maxbet.vue'
 import Rcb988 from '@/components/games/rcb988.vue'
 import Sv388 from '@/components/games/sv388.vue'
-import MonkeyKing from '@/components/games/monkeyKing.vue'
+import MonkeyKing from '@/components/games/MonkeyKing.vue'
+import Jili from '@/components/games/jili.vue'
+import Jdb from '@/components/games/jdb.vue'
+import Askmeslot from '@/components/games/askmeslot.vue'
+import PragmaticPlay from '@/components/games/pragmaticPlay.vue'
+import AeSexy from '@/components/games/AeSexy.vue'
+import HotRoad from '@/components/games/hotRoad.vue'
+import Evolution from '@/components/games/evolution.vue'
+import BigGaming from '@/components/games/bigGaming.vue'
 import Microslot from '@/components/games/Microslot.vue'
 import Lucky365 from '@/components/games/lucky365.vue'
 import PromotionPage from '@/components/PromotionPage.vue'
@@ -168,6 +176,104 @@ const metaContent = {
     ms: { 
       title: 'Hengongbet | Demo Lucky365',
       description: 'Demo Lucky365 di Hengongbet menjadikannya mungkin, menawarkan cara untuk meneroka ciri permainan, gaya pembayaran, dan struktur bonus.'
+    }
+  },
+  Jili: {
+    en: { 
+      title: 'Jili Slots | Hengongbet',
+      description: 'Enjoy Jili slots on Hengongbet. Easy gameplay, exciting rewards, and smooth spins ready for you anytime, anywhere.'
+    },
+    zh: { 
+      title: 'Jili 老虎机 | Hengongbet',
+      description: '在亨公博彩畅玩Jili老虎机。简单的游戏方式、刺激的奖励和流畅的旋转，随时随地为您准备。'
+    },
+    ms: { 
+      title: 'Slot Jili | Hengongbet',
+      description: 'Nikmati slot Jili di Hengongbet. Permainan mudah, ganjaran menarik, dan putaran lancar tersedia untuk anda bila-bila masa, di mana sahaja.'
+    }
+  },
+  Jdb: {
+    en: { 
+      title: 'JDB Slots | Hengongbet',
+      description: 'Spin JDB slots with Hengongbet. Simple play, bonus rewards, and smooth designs created for both new and experienced players.'
+    },
+    zh: { 
+      title: 'JDB 老虎机 | Hengongbet',
+      description: '在亨公博彩畅玩JDB老虎机。简单的玩法、丰厚的奖励以及流畅的设计，适合新手和有经验的玩家。'
+    },
+    ms: { 
+      title: 'Slot JDB | Hengongbet',
+      description: 'Putar slot JDB di Hengongbet. Permainan mudah, ganjaran bonus, dan reka bentuk lancar dicipta untuk pemain baru dan berpengalaman.'
+    }
+  },
+  PragmaticPlay: {
+    en: { 
+      title: 'Pragmatic Play Casino - Hengongbet',
+      description: 'Explore Pragmatic Play live casino at Hengongbet. Simple sign-up, exciting games, and easy play across all devices.'
+    },
+    zh: { 
+      title: 'Pragmatic Play 赌场 - Hengongbet',
+      description: '在亨公博彩体验Pragmatic Play真人赌场。简单注册、刺激游戏，以及跨所有设备的轻松畅玩体验。'
+    },
+    ms: { 
+      title: 'Pragmatic Play Casino - Hengongbet',
+      description: 'Terokai kasino langsung Pragmatic Play di Hengongbet. Daftar mudah, permainan menarik, dan pengalaman bermain lancar di semua peranti.'
+    }
+  },
+  AeSexy: {
+    en: { 
+      title: 'Sexy Live Casino - Hengongbet',
+      description: 'Enjoy Sexy Casino live games at Hengongbet. Play with real hosts and smooth action every session.'
+    },
+    zh: { 
+      title: 'Sexy 真人赌场 - Hengongbet',
+      description: '在亨公博彩畅玩Sexy真人赌场游戏。与真人荷官互动，每一局都流畅刺激。'
+    },
+    ms: { 
+      title: 'Sexy Live Casino - Hengongbet',
+      description: 'Nikmati permainan kasino langsung Sexy di Hengongbet. Bermain dengan hos sebenar dan aksi lancar setiap sesi.'
+    }
+  },
+  Hotroad: {
+    en: { 
+      title: 'Hotroad Live Casino - Hengongbet',
+      description: 'Play Hotroad games at Hengongbet. Enjoy real dealers, secure betting, and 24/7 entertainment with seamless streaming.'
+    },
+    zh: { 
+      title: 'Hotroad 真人赌场 - Hengongbet',
+      description: '在亨公博彩畅玩 Hotroad 游戏。体验真人荷官、安全投注和 24/7 不间断的流媒体娱乐。'
+    },
+    ms: { 
+      title: 'Hotroad Live Casino - Hengongbet',
+      description: 'Main permainan Hotroad di Hengongbet. Nikmati dealer sebenar, pertaruhan selamat, dan hiburan 24/7 dengan penstriman lancar.'
+    }
+  },
+  Evolution: {
+    en: { 
+      title: 'Evolution Live Games - Hengongbet',
+      description: 'Try Evolution live games at Hengongbet. Trusted providers, top tables, and smooth play online.'
+    },
+    zh: { 
+      title: 'Evolution 真人游戏 - Hengongbet',
+      description: '在亨公博彩体验 Evolution 真人游戏。值得信赖的提供商、顶级桌台以及流畅的线上体验。'
+    },
+    ms: { 
+      title: 'Permainan Langsung Evolution - Hengongbet',
+      description: 'Cuba permainan langsung Evolution di Hengongbet. Penyedia dipercayai, meja teratas, dan pengalaman permainan lancar dalam talian.'
+    }
+  },
+  BigGaming: {
+    en: { 
+      title: 'Big Gaming Live Games - Hengongbet',
+      description: 'Play Big Gaming live casino games at Hengongbet. Fun choices, fair odds, and easy access 24/7.'
+    },
+    zh: { 
+      title: 'Big Gaming 真人游戏 - Hengongbet',
+      description: '在亨公博彩畅玩 Big Gaming 真人娱乐场游戏。丰富选择、公平赔率，全天候 24/7 轻松畅玩。'
+    },
+    ms: { 
+      title: 'Permainan Langsung Big Gaming - Hengongbet',
+      description: 'Main permainan kasino langsung Big Gaming di Hengongbet. Pilihan menyeronokkan, peluang adil, dan akses mudah 24/7.'
     }
   },
   PromotionPage: {
@@ -1064,6 +1170,14 @@ const routes = [
   ...createLocalizedRoute('/games/monkey-king', 'MonkeyKing', MonkeyKing),
   ...createLocalizedRoute('/games/microslot', 'Microslot', Microslot),
   ...createLocalizedRoute('/games/lucky365', 'Lucky365', Lucky365),
+  ...createLocalizedRoute('/games/jili', 'Jili', Jili),
+  ...createLocalizedRoute('/games/jdb', 'Jdb', Jdb),
+  ...createLocalizedRoute('/games/askmeslot', 'Askmeslot', Askmeslot),
+  ...createLocalizedRoute('/games/pragmatic-play', 'PragmaticPlay', PragmaticPlay),
+  ...createLocalizedRoute('/games/sexy', 'AeSexy', AeSexy),
+  ...createLocalizedRoute('/games/hotroad', 'HotRoad', HotRoad),
+  ...createLocalizedRoute('/games/evolution', 'Evolution', Evolution),
+  ...createLocalizedRoute('/games/big-gaming', 'BigGaming', BigGaming),
   ...createLocalizedRoute('/promotion', 'PromotionPage', PromotionPage),
   ...createLocalizedRoute('/faqs', 'FAQ', FAQ),
   ...createLocalizedRoute('/4d-results', 'FourDResult', FourDResult),

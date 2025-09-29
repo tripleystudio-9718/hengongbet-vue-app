@@ -28,7 +28,25 @@ const routes = [
   { path: '/download', priority: '0.7', changefreq: 'weekly', name: 'Download' },
   { path: '/register', priority: '0.8', changefreq: 'monthly', name: 'Register' },
   { path: '/tutorial-guide', priority: '0.6', changefreq: 'monthly', name: 'Tutorial Guide' },
-  { path: '/topup-withdraw-tutorial', priority: '0.6', changefreq: 'monthly', name: 'Top-up & Withdraw Tutorial' }
+  { path: '/topup-withdraw-tutorial', priority: '0.6', changefreq: 'monthly', name: 'Top-up & Withdraw Tutorial' },
+  { path: '/beginner-tutorial', priority: '0.6', changefreq: 'monthly', name: 'Beginner Tutorial' },
+  { path: '/blog', priority: '0.7', changefreq: 'weekly', name: 'Blog' },
+  
+  // Individual Game Pages
+  { path: '/games/lucky365', priority: '0.8', changefreq: 'weekly', name: 'Lucky365 Games' },
+  { path: '/games/microslot', priority: '0.8', changefreq: 'weekly', name: 'Microslot Games' },
+  { path: '/games/monkey-king', priority: '0.8', changefreq: 'weekly', name: 'Monkey King Games' },
+  { path: '/games/jili', priority: '0.8', changefreq: 'weekly', name: 'Jili Games' },
+  { path: '/games/jdb', priority: '0.8', changefreq: 'weekly', name: 'JDB Games' },
+  { path: '/games/askmeslot', priority: '0.8', changefreq: 'weekly', name: 'Askmeslot Games' },
+  { path: '/games/maxbet', priority: '0.8', changefreq: 'weekly', name: 'Maxbet Games' },
+  { path: '/games/rcb988', priority: '0.8', changefreq: 'weekly', name: 'RCB988 Games' },
+  { path: '/games/sv388', priority: '0.8', changefreq: 'weekly', name: 'SV388 Games' },
+  { path: '/games/pragmatic-play', priority: '0.8', changefreq: 'weekly', name: 'Pragmatic Play Games' },
+  { path: '/games/sexy', priority: '0.8', changefreq: 'weekly', name: 'Sexy Live Casino' },
+  { path: '/games/hotroad', priority: '0.8', changefreq: 'weekly', name: 'Hotroad Live Casino' },
+  { path: '/games/evolution', priority: '0.8', changefreq: 'weekly', name: 'Evolution Live Games' },
+  { path: '/games/big-gaming', priority: '0.8', changefreq: 'weekly', name: 'Big Gaming Live Games' }
 ];
 
 console.log(`📋 Found ${routes.length} routes to process`);

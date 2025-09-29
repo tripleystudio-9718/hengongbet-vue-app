@@ -47,12 +47,66 @@
         </router-link>
         
         <!-- Game -->
-        <router-link :to="getLocalePath('/games')" @click="closeMobileMenu" class="mobile-nav-item" :class="{ 'mobile-nav-active': isCurrentRoute('/games') }">
+      <div class="mobile-games-section">
+        <button @click="toggleGamesMenu" class="mobile-nav-item games-item" :class="{ 'mobile-nav-active': isGamesPageActive() }">
           <svg class="mobile-nav-icon" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z" clip-rule="evenodd"></path>
           </svg>
           <span>{{ $t('nav.games') }}</span>
-        </router-link>
+          <svg class="games-arrow" :class="{ 'games-arrow-rotated': showGamesMenu }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+
+        <!-- Games Submenu - Direct Page Navigation -->
+        <div v-if="showGamesMenu" class="games-submenu">
+          <router-link :to="getLocalePath('/games')" @click="closeMobileMenu" class="games-sub-item">
+            <span>{{ $t('nav.games') || 'All Games' }}</span>
+          </router-link>
+          <router-link :to="getLocalePath('/games/lucky365')" @click="closeMobileMenu" class="games-sub-item">
+            <span>{{ $t('nav.lucky365') }}</span>
+          </router-link>
+          <router-link :to="getLocalePath('/games/microslot')" @click="closeMobileMenu" class="games-sub-item">
+            <span>{{ $t('nav.microslot') }}</span>
+          </router-link>
+          <router-link :to="getLocalePath('/games/monkey-king')" @click="closeMobileMenu" class="games-sub-item">
+            <span>{{ $t('nav.monkeyKing') }}</span>
+          </router-link>
+          <router-link :to="getLocalePath('/games/jili')" @click="closeMobileMenu" class="games-sub-item">
+            <span>{{ $t('nav.jili') }}</span>
+          </router-link>
+          <router-link :to="getLocalePath('/games/jdb')" @click="closeMobileMenu" class="games-sub-item">
+            <span>{{ $t('nav.jdb') }}</span>
+          </router-link>
+          <router-link :to="getLocalePath('/games/askmeslot')" @click="closeMobileMenu" class="games-sub-item">
+            <span>{{ $t('nav.askmeslot') }}</span>
+          </router-link>
+          <router-link :to="getLocalePath('/games/maxbet')" @click="closeMobileMenu" class="games-sub-item">
+            <span>{{ $t('nav.maxbet') }}</span>
+          </router-link>
+          <router-link :to="getLocalePath('/games/rcb988')" @click="closeMobileMenu" class="games-sub-item">
+            <span>{{ $t('nav.rcb988') }}</span>
+          </router-link>
+          <router-link :to="getLocalePath('/games/sv388')" @click="closeMobileMenu" class="games-sub-item">
+            <span>{{ $t('nav.sv388') }}</span>
+          </router-link>
+          <router-link :to="getLocalePath('/games/pragmatic-play')" @click="closeMobileMenu" class="games-sub-item">
+            <span>{{ $t('nav.pragmaticPlay') }}</span>
+          </router-link>
+          <router-link :to="getLocalePath('/games/sexy')" @click="closeMobileMenu" class="games-sub-item">
+            <span>{{ $t('nav.sexy') }}</span>
+          </router-link>
+          <router-link :to="getLocalePath('/games/hotroad')" @click="closeMobileMenu" class="games-sub-item">
+            <span>{{ $t('nav.hotroad') }}</span>
+          </router-link>
+          <router-link :to="getLocalePath('/games/evolution')" @click="closeMobileMenu" class="games-sub-item">
+            <span>{{ $t('nav.evolution') }}</span>
+          </router-link>
+          <router-link :to="getLocalePath('/games/big-gaming')" @click="closeMobileMenu" class="games-sub-item">
+            <span>{{ $t('nav.bigGaming') }}</span>
+          </router-link>
+        </div>
+      </div>
         
         <!-- 4D Results -->
         <router-link :to="getLocalePath('/4d-results')" @click="closeMobileMenu" class="mobile-nav-item" :class="{ 'mobile-nav-active': isCurrentRoute('/4d-results') }">
@@ -144,7 +198,8 @@ export default {
   data() {
     return {
       logoImage,
-      showHelpMenu: false
+      showHelpMenu: false,
+      showGamesMenu: false
     }
   },
   methods: {
@@ -157,12 +212,20 @@ export default {
     },
     closeMobileMenu() {
       this.showHelpMenu = false
+      this.showGamesMenu = false
       document.body.style.overflow = ''
       this.$emit('close-mobile-menu')
     },
     toggleHelpMenu() {
       this.showHelpMenu = !this.showHelpMenu
       this.$emit('toggle-help-menu', this.showHelpMenu)
+    },
+    toggleGamesMenu() {
+      this.showGamesMenu = !this.showGamesMenu
+    },
+    // Check if any games page is currently active
+    isGamesPageActive() {
+      return this.$route.path.startsWith(this.getLocalePath('/games'))
     },
     // Check if current route matches the given path
     isCurrentRoute(path) {
@@ -339,6 +402,49 @@ export default {
 .chevron-right {
   width: 14px;
   height: 14px;
+}
+
+.mobile-games-section {
+  position: relative;
+}
+
+.games-item {
+  justify-content: center;
+  align-items: center;
+}
+
+.games-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+  margin-left: auto;
+}
+
+.games-arrow-rotated {
+  transform: rotate(180deg);
+}
+
+.games-submenu {
+  background: rgba(0, 0, 0, 0.2);
+  margin: 8px 16px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.games-sub-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  color: #cbd5e0;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.games-sub-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #F1AE3D;
 }
 
 /* Mobile Responsive */

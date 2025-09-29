@@ -804,14 +804,14 @@ export default {
     padding: 40px 15px;
   }
 
-  .main-page-title {
+  /* .main-page-title {
     font-size: 36px;
-    margin: 0 0 40px 0;
-  }
+    margin: 0;
+  } */
 
   .main-page-title {
     font-size: 28px;
-    margin: 0 0 30px 0;
+    margin: 0;
   }
 
   .section-title {
@@ -836,6 +836,10 @@ export default {
     max-width: 100%;
     box-sizing: border-box;
     overflow-x: hidden;
+  }
+
+  .game-name {
+    font-size: 16px;
   }
   
   .tabs {

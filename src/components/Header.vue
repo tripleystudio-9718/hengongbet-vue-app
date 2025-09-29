@@ -60,28 +60,64 @@
           <router-link :to="getLocalePath('/promotion')" class="nav-item">{{ $t('nav.promotion') }}</router-link>
           <router-link :to="getLocalePath('/download')" class="nav-item">{{ $t('nav.download') }}</router-link>
          <!-- Games Dropdown -->
-<div class="games-dropdown-container" 
-     @mouseenter="showGamesDropdown = true" 
-     @mouseleave="showGamesDropdown = false">
+      <div class="games-dropdown-container" 
+          @mouseenter="showGamesDropdown = true" 
+          @mouseleave="showGamesDropdown = false">
 
-  <!-- Make the main Games link clickable to /games -->
-  <router-link :to="getLocalePath('/games')" class="nav-item games-item">
-    {{ $t('nav.games') }}
-    <svg class="games-arrow" :class="{ 'games-arrow-rotated': showGamesDropdown }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </router-link>
+        <!-- Make the main Games link clickable to /games -->
+        <router-link :to="getLocalePath('/games')" class="nav-item games-item">
+          {{ $t('nav.games') }}
+          <svg class="games-arrow" :class="{ 'games-arrow-rotated': showGamesDropdown }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </router-link>
 
-  <!-- Games Dropdown Menu -->
-  <div v-if="showGamesDropdown" class="games-dropdown-menu">
-    <router-link :to="getLocalePath('/games/maxbet')" class="games-dropdown-item">
-      <span>{{ $t('nav.maxbet') }}</span>
-    </router-link>
-    <router-link :to="getLocalePath('/games/rcb988')" class="games-dropdown-item">
-      <span>{{ $t('nav.rcb988') }}</span>
-    </router-link>
-  </div>
-</div>
+        <!-- Games Dropdown Menu -->
+        <div v-if="showGamesDropdown" class="games-dropdown-menu">
+        <router-link :to="getLocalePath('/games/lucky365')" class="games-dropdown-item">
+          <span>{{ $t('nav.lucky365') }}</span>
+        </router-link>
+        <router-link :to="getLocalePath('/games/microslot')" class="games-dropdown-item">
+          <span>{{ $t('nav.microslot') }}</span>
+        </router-link>
+        <router-link :to="getLocalePath('/games/monkey-king')" class="games-dropdown-item">
+          <span>{{ $t('nav.monkeyKing') }}</span>
+        </router-link>
+        <router-link :to="getLocalePath('/games/jili')" class="games-dropdown-item">
+          <span>{{ $t('nav.jili') }}</span>
+        </router-link>
+        <router-link :to="getLocalePath('/games/jdb')" class="games-dropdown-item">
+          <span>{{ $t('nav.jdb') }}</span>
+        </router-link>
+        <router-link :to="getLocalePath('/games/askmeslot')" class="games-dropdown-item">
+          <span>{{ $t('nav.askmeslot') }}</span>
+        </router-link>
+        <router-link :to="getLocalePath('/games/maxbet')" class="games-dropdown-item">
+          <span>{{ $t('nav.maxbet') }}</span>
+        </router-link>
+        <router-link :to="getLocalePath('/games/rcb988')" class="games-dropdown-item">
+          <span>{{ $t('nav.rcb988') }}</span>
+        </router-link>
+        <router-link :to="getLocalePath('/games/sv388')" class="games-dropdown-item">
+          <span>{{ $t('nav.sv388') }}</span>
+        </router-link>
+        <router-link :to="getLocalePath('/games/pragmatic-play')" class="games-dropdown-item">
+          <span>{{ $t('nav.pragmaticPlay') }}</span>
+        </router-link>
+        <router-link :to="getLocalePath('/games/sexy')" class="games-dropdown-item">
+          <span>{{ $t('nav.sexy') }}</span>
+        </router-link>
+        <router-link :to="getLocalePath('/games/hotroad')" class="games-dropdown-item">
+          <span>{{ $t('nav.hotroad') }}</span>
+        </router-link>
+        <router-link :to="getLocalePath('/games/evolution')" class="games-dropdown-item">
+          <span>{{ $t('nav.evolution') }}</span>
+        </router-link>
+        <router-link :to="getLocalePath('/games/big-gaming')" class="games-dropdown-item">
+          <span>{{ $t('nav.bigGaming') }}</span>
+        </router-link>
+      </div>
+      </div>
 
           <router-link :to="getLocalePath('/4d-results')" class="nav-item">{{ $t('nav.4d_results') }}</router-link>
           <router-link :to="getLocalePath('/faqs')" class="nav-item">{{ $t('nav.faq') }}</router-link>

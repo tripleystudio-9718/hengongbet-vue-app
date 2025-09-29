@@ -53,34 +53,34 @@
           
           <div class="game-specs-grid">
             <div class="spec-item">
-              <strong>RTP:</strong> <span v-html="$t(`lucky365.content.featuredGames.games.${game.key}.rtp`)"></span>
+              <span class="spec-label" v-html="$t('lucky365.content.featuredGames.labels.rtp')"></span> <span v-html="$t(`lucky365.content.featuredGames.games.${game.key}.rtp`)"></span>
             </div>
             <div class="spec-item">
-              <strong>Bonus:</strong> <span v-html="$t(`lucky365.content.featuredGames.games.${game.key}.bonus`)"></span>
+              <span class="spec-label" v-html="$t('lucky365.content.featuredGames.labels.bonus')"></span> <span v-html="$t(`lucky365.content.featuredGames.games.${game.key}.bonus`)"></span>
             </div>
             <div class="spec-item">
-              <strong>Kill Rate:</strong> <span v-html="$t(`lucky365.content.featuredGames.games.${game.key}.killRate`)"></span>
+              <span class="spec-label" v-html="$t('lucky365.content.featuredGames.labels.killRate')"></span> <span v-html="$t(`lucky365.content.featuredGames.games.${game.key}.killRate`)"></span>
             </div>
             <div class="spec-item">
-              <strong>Free Spins:</strong> <span v-html="$t(`lucky365.content.featuredGames.games.${game.key}.freeSpins`)"></span>
+              <span class="spec-label" v-html="$t('lucky365.content.featuredGames.labels.freeSpins')"></span> <span v-html="$t(`lucky365.content.featuredGames.games.${game.key}.freeSpins`)"></span>
             </div>
             <div class="spec-item">
-              <strong>Bet Size:</strong> <span v-html="$t(`lucky365.content.featuredGames.games.${game.key}.betSize`)"></span>
+              <span class="spec-label" v-html="$t('lucky365.content.featuredGames.labels.betSize')"></span> <span v-html="$t(`lucky365.content.featuredGames.games.${game.key}.betSize`)"></span>
             </div>
             <div class="spec-item">
-              <strong>Max Bet:</strong> <span v-html="$t(`lucky365.content.featuredGames.games.${game.key}.maxBet`)"></span>
+              <span class="spec-label" v-html="$t('lucky365.content.featuredGames.labels.maxBet')"></span> <span v-html="$t(`lucky365.content.featuredGames.games.${game.key}.maxBet`)"></span>
             </div>
             <div class="spec-item">
-              <strong>High Roller Potential:</strong> <span v-html="$t(`lucky365.content.featuredGames.games.${game.key}.highRollerPotential`)"></span>
+              <span class="spec-label" v-html="$t('lucky365.content.featuredGames.labels.highRollerPotential')"></span> <span v-html="$t(`lucky365.content.featuredGames.games.${game.key}.highRollerPotential`)"></span>
             </div>
             <div class="spec-item">
-              <strong>Paylines:</strong> <span v-html="$t(`lucky365.content.featuredGames.games.${game.key}.paylines`)"></span>
+              <span class="spec-label" v-html="$t('lucky365.content.featuredGames.labels.paylines')"></span> <span v-html="$t(`lucky365.content.featuredGames.games.${game.key}.paylines`)"></span>
             </div>
             <div class="spec-item">
-              <strong>Progressive Jackpot:</strong> <span v-html="$t(`lucky365.content.featuredGames.games.${game.key}.progressiveJackpot`)"></span>
+              <span class="spec-label" v-html="$t('lucky365.content.featuredGames.labels.progressiveJackpot')"></span> <span v-html="$t(`lucky365.content.featuredGames.games.${game.key}.progressiveJackpot`)"></span>
             </div>
             <div class="spec-item">
-              <strong>Multiplier:</strong> <span v-html="$t(`lucky365.content.featuredGames.games.${game.key}.multiplier`)"></span>
+              <span class="spec-label" v-html="$t('lucky365.content.featuredGames.labels.multiplier')"></span> <span v-html="$t(`lucky365.content.featuredGames.games.${game.key}.multiplier`)"></span>
             </div>
           </div>
         </div>
@@ -475,7 +475,7 @@ export default {
   background: linear-gradient(90deg, #F2B240 0%, #E5A535 100%);
 }
 
-.spec-item strong {
+.spec-item .spec-label {
   color: #F2B240;
   display: block;
   font-weight: 600;
@@ -738,18 +738,22 @@ export default {
   }
 
   .game-details {
-    padding: 20px;
-    margin-bottom: 30px;
+    padding: 25px 20px;
+    margin-bottom: 35px;
+  }
+
+  .game-specs-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
   }
 
   .spec-item {
-    padding: 10px;
-    font-size: 13px;
+    padding: 16px 18px;
+    font-size: 14px;
   }
 
-  .spec-item strong {
-    min-width: 100px;
-    display: block;
+  .spec-item .spec-label {
+    font-size: 12px;
     margin-bottom: 5px;
   }
 
