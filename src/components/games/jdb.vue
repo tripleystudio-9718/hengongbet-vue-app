@@ -1,6 +1,7 @@
 <template>
   <div class="game-overall">
     <div class="game-banner">
+      <img :src="jdbBanner" alt="JDB Banner" />
     </div>
     
     <!-- Main Page Title -->
@@ -262,6 +263,7 @@
 // Import the SVG icons
 import openIcon from '@/assets/open-icon.svg'
 import closeIcon from '@/assets/close-icon.svg'
+import jdbBanner from '@/assets/jdb-banner.jpg'
 
 export default {
   name: 'JdbSlots',
@@ -270,6 +272,7 @@ export default {
       // Make icons available to template
       openIcon,
       closeIcon,
+      jdbBanner,
       openFaqItems: { 0: true },
       popularReasonsItems: [
         { key: 'wideVariety' },

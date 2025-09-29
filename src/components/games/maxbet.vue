@@ -1,6 +1,7 @@
 <template>
   <div class="game-overall">
     <div class="game-banner">
+      <img :src="maxbetBanner" alt="Maxbet Banner" />
     </div>
     
     <!-- Main Page Title -->
@@ -214,6 +215,7 @@
 // Import the SVG icons
 import openIcon from '@/assets/open-icon.svg'
 import closeIcon from '@/assets/close-icon.svg'
+import maxbetBanner from '@/assets/maxbet-banner.jpg'
 
 export default {
   name: 'Maxbet',
@@ -222,6 +224,7 @@ export default {
       // Make icons available to template
       openIcon,
       closeIcon,
+      maxbetBanner,
       openFaqItems: { 0: true },
       whyChooseItems: [
         { key: 'extensiveMarkets' },

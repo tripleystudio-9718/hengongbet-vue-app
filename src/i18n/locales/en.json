@@ -4365,5 +4365,168 @@
         }
       }
     }
+  },
+
+  "4d_results": {
+    "hero": {
+      "title": "Latest 4D Results at Hengongbet",
+      "description_part1": "Are you searching for the ",
+      "description_part2": "latest 4D results",
+      "description_part3": " and wondering how to check them quickly and accurately? At ",
+      "description_part4": "Hengongbet",
+      "description_part5": ", we provide up-to-date 4D results so players can verify winning numbers, track historical draws, and make informed decisions for future bets."
+    },
+    "what_is_4d": {
+      "title": "What Is 4D?",
+      "description": "<strong>4D</strong> stands for <em>4-Digit Lottery</em>. It is one of the most popular number-based games in Malaysia, Singapore, and other parts of Southeast Asia. Players select a 4-digit number ranging from <strong>0000 to 9999</strong>, and prizes are awarded based on the drawn results.",
+      "definition": "<strong>Definition:</strong> 4D is a fixed-odds numbers game where outcomes are determined by random draws of 4-digit numbers."
+    },
+    "why_matters": {
+      "title": "Why 4D Results Matter",
+      "description": "Checking the latest results is essential for three reasons:",
+      "reasons": {
+        "verification": "<strong>Prize Verification</strong> -- Confirm if your selected number has won.",
+        "tracking": "<strong>Pattern Tracking</strong> -- Identify frequently drawn numbers.",
+        "strategies": "<strong>Betting Strategies</strong> -- Use past results as a guide for future selections."
+      }
+    },
+    "how_to_check": {
+      "title": "How to Check 4D Results at Hengongbet",
+      "description": "We make it straightforward for members to check results in real time.",
+      "subtitle": "Step-by-Step:",
+      "steps": {
+        "step1": "Visit the <strong>4D Results page</strong>.",
+        "step2": "Find the most recent draw date and listed numbers.",
+        "step3": "Cross-check your chosen number with the prize categories.",
+        "step4": "Review historical results for additional insights."
+      },
+      "note": "<strong>Note:</strong> Results are updated immediately after official draws, ensuring accuracy and reliability."
+    },
+    "prize_categories": {
+      "title": "Breakdown of 4D Prize Categories",
+      "description": "Here is how prizes are typically structured:",
+      "table": {
+        "headers": {
+          "type": "Prize Type",
+          "description": "Description",
+          "example": "Example"
+        },
+        "rows": {
+          "first": {
+            "type": "1st Prize",
+            "description": "Top reward for exact match",
+            "example": "Winning No: 5678 → Ticket: 5678"
+          },
+          "second": {
+            "type": "2nd Prize",
+            "description": "Second-highest reward",
+            "example": "Winning No: 4321 → Ticket: 4321"
+          },
+          "third": {
+            "type": "3rd Prize",
+            "description": "Third-highest reward",
+            "example": "Winning No: 7890 → Ticket: 7890"
+          },
+          "special": {
+            "type": "Special Prize",
+            "description": "Secondary category with fixed odds",
+            "example": "Multiple numbers qualify"
+          },
+          "consolation": {
+            "type": "Consolation Prize",
+            "description": "Minor reward for matching numbers",
+            "example": "Multiple numbers qualify"
+          }
+        }
+      }
+    },
+    "example_listing": {
+      "title": "Example of a 4D Result Listing",
+      "description": "Here's an example of how results are displayed:",
+      "draw_date": "<strong>Draw Date: 25 September 2025</strong>",
+      "results": {
+        "first": "<strong>1st Prize:</strong> 3724",
+        "second": "<strong>2nd Prize:</strong> 9801",
+        "third": "<strong>3rd Prize:</strong> 6147",
+        "special": "<strong>Special Prizes:</strong> 0921, 4883, 7302, 2215, 8054",
+        "consolation": "<strong>Consolation Prizes:</strong> 1390, 5728, 4026, 8103, 6912"
+      },
+      "footer": "This format allows players to check results quickly and clearly."
+    },
+    "reading_tips": {
+      "title": "Tips for Reading 4D Results",
+      "tips": {
+        "exact_match": "<strong>Exact Match Required</strong> -- Unlike some lotteries, 4D requires the full 4-digit number to match.",
+        "prize_tiers": "<strong>Prize Tiers Differ</strong> -- Higher prizes are limited to one winning number, while special and consolation categories cover more.",
+        "track_trends": "<strong>Track Trends</strong> -- Some players monitor hot and cold numbers (frequent vs. rare results)."
+      }
+    },
+    "strategies": {
+      "title": "Popular 4D Strategies",
+      "description_part1": "While 4D is ultimately a ",
+      "description_part2": "game",
+      "description_part3": " of chance, players often use strategies to guide their picks:",
+      "hot_cold": {
+        "title": "1. Hot and Cold Numbers",
+        "hot": "<strong>Hot Numbers</strong> -- Digits that appear often in recent draws.",
+        "cold": "<strong>Cold Numbers</strong> -- Digits that haven't appeared for a while."
+      },
+      "patterns": {
+        "title": "2. Number Patterns",
+        "description": "Players sometimes select repeating patterns like:",
+        "consecutive": "Consecutive digits: 1234, 4567.",
+        "mirrored": "Mirrored numbers: 1221, 3443.",
+        "meaningful": "Birthdays, anniversaries, or meaningful dates."
+      },
+      "statistical": {
+        "title": "3. Statistical Tracking",
+        "description": "Some players maintain records of past draws to predict future outcomes, although results are random."
+      },
+      "reminder": "<strong>Reminder:</strong> Strategies can guide choices but do not guarantee success."
+    },
+    "why_hengongbet": {
+      "title": "Why Check 4D Results at Hengongbet?",
+      "reasons": {
+        "accuracy": "<strong>Accuracy</strong> -- Results are updated immediately after official announcements.",
+        "convenience": "<strong>Convenience</strong> -- Access results anytime, anywhere.",
+        "historical": "<strong>Historical Records</strong> -- Review past results to analyze trends.",
+        "trusted": "<strong>Trusted Platform</strong> -- Hengongbet ensures reliable data for fair play."
+      }
+    },
+    "responsible_play": {
+      "title": "Responsible Play in 4D",
+      "description": "It's important to approach 4D with responsibility.",
+      "guidelines": {
+        "budget": "<strong>Set a budget</strong> before placing bets.",
+        "entertainment": "<strong>View 4D as entertainment</strong>, not income.",
+        "moderate": "<strong>Play moderately</strong> and avoid chasing losses."
+      },
+      "expert_note": "<strong>Expert Note:</strong> Responsible betting ensures that 4D remains enjoyable without creating unnecessary risks."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": {
+        "frequency": {
+          "question": "How often are 4D draws held?",
+          "answer": "Draws are typically conducted <strong>three times a week</strong> by official operators, though exact schedules may vary."
+        },
+        "past_results": {
+          "question": "Can I check past 4D results?",
+          "answer": "Yes, Hengongbet provides a history of results so players can view both recent and older draws."
+        },
+        "minimum_bet": {
+          "question": "What is the smallest bet in 4D?",
+          "answer": "Minimum bets are usually <strong>RM1</strong>, but players can choose higher stakes depending on preference."
+        },
+        "guarantee": {
+          "question": "Do strategies guarantee a win?",
+          "answer": "No. Strategies may help guide number selection, but 4D outcomes are completely random."
+        }
+      }
+    },
+    "summary": {
+      "title": "Summary",
+      "description": "The <strong>4D results page at Hengongbet</strong> is your reliable source for up-to-date winning numbers. By reviewing the latest results, exploring prize categories, and applying thoughtful number selection, players can make informed decisions while keeping entertainment at the forefront."
+    }
   }
 }

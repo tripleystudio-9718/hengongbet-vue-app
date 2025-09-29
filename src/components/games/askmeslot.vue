@@ -1,6 +1,7 @@
 <template>
   <div class="game-overall">
     <div class="game-banner">
+      <img :src="askmeslotBanner" alt="Askmeslot Banner" />
     </div>
     
     <!-- Main Page Title -->
@@ -242,6 +243,7 @@
 // Import the SVG icons
 import openIcon from '@/assets/open-icon.svg'
 import closeIcon from '@/assets/close-icon.svg'
+import askmeslotBanner from '@/assets/askmeslot-banner.jpg'
 
 export default {
   name: 'AskmeslotGames',
@@ -250,6 +252,7 @@ export default {
       // Make icons available to template
       openIcon,
       closeIcon,
+      askmeslotBanner,
       openFaqItems: { 0: true },
       strongFollowingItems: [
         { key: 'extensiveLibrary' },

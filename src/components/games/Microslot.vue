@@ -1,6 +1,7 @@
 <template>
   <div class="game-overall">
     <div class="game-banner">
+      <img :src="microslotBanner" alt="Microslot Banner" />
     </div>
     
     <!-- Main Page Title -->
@@ -218,6 +219,7 @@
 // Import the SVG icons
 import openIcon from '@/assets/open-icon.svg'
 import closeIcon from '@/assets/close-icon.svg'
+import microslotBanner from '@/assets/microslot-banner.jpg'
 
 export default {
   name: 'Microslot',
@@ -226,6 +228,7 @@ export default {
       // Make icons available to template
       openIcon,
       closeIcon,
+      microslotBanner,
       openFaqItems: { 0: true },
       microslotAttributes: [
         'reels',

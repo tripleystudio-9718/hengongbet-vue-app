@@ -1,6 +1,7 @@
 <template>
   <div class="game-overall">
     <div class="game-banner">
+      <img :src="lucky365banner" alt="Lucky 365 Banner" />
     </div>
     
     <!-- Main Page Title -->
@@ -222,6 +223,7 @@
 // Import the SVG icons
 import openIcon from '@/assets/open-icon.svg'
 import closeIcon from '@/assets/close-icon.svg'
+import lucky365banner from '@/assets/lucky-365-banner.jpg'
 
 export default {
   name: 'Lucky365',
@@ -230,6 +232,7 @@ export default {
       // Make icons available to template
       openIcon,
       closeIcon,
+      lucky365banner,
       openFaqItems: { 0: true },
       worthTryingFeatures: [
         'rtpAccuracy',

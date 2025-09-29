@@ -1,7 +1,7 @@
 <template>
   <div class="game-overall">
     <div class="game-banner">
-      <!-- Add banner image here -->
+      <img :src="jiliBanner" alt="Jili Banner" />
     </div>
     
     <!-- Main Page Title -->
@@ -238,6 +238,7 @@
 // Import the SVG icons
 import openIcon from '@/assets/open-icon.svg'
 import closeIcon from '@/assets/close-icon.svg'
+import jiliBanner from '@/assets/jili-banner.jpg'
 
 export default {
   name: 'JiliSlots',
@@ -246,6 +247,7 @@ export default {
       // Make icons available to template
       openIcon,
       closeIcon,
+      jiliBanner,
       openFaqItems: { 0: true },
       coreCharacteristics: [
         'highRtp',

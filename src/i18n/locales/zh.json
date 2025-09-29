@@ -4360,6 +4360,169 @@
       }
     }
   }
-}
+},
+
+"4d_results": {
+    "hero": {
+      "title": "兴旺博最新4D开彩成绩",
+      "description_part1": "您是否正在搜索",
+      "description_part2": "最新4D开彩成绩",
+      "description_part3": "，并想知道如何快速准确地查看？在",
+      "description_part4": "兴旺博",
+      "description_part5": "，我们提供最新的4D开彩成绩，让玩家可以验证中奖号码、追踪历史开彩记录，并为未来的投注做出明智的决定。"
+    },
+    "what_is_4d": {
+      "title": "什么是4D？",
+      "description": "<strong>4D</strong>代表<em>四位数字彩票</em>。它是马来西亚、新加坡和东南亚其他地区最受欢迎的数字游戏之一。玩家选择一个从<strong>0000到9999</strong>的四位数字号码，奖金根据开彩结果发放。",
+      "definition": "<strong>定义：</strong>4D是一种固定赔率数字游戏，结果由四位数字的随机抽取决定。"
+    },
+    "why_matters": {
+      "title": "为什么4D开彩成绩很重要",
+      "description": "查看最新结果至关重要，原因有三：",
+      "reasons": {
+        "verification": "<strong>奖金验证</strong> -- 确认您选择的号码是否中奖。",
+        "tracking": "<strong>规律追踪</strong> -- 识别经常开出的号码。",
+        "strategies": "<strong>投注策略</strong> -- 使用过去的结果作为未来选择的指南。"
+      }
+    },
+    "how_to_check": {
+      "title": "如何在兴旺博查看4D开彩成绩",
+      "description": "我们让会员可以直接实时查看结果。",
+      "subtitle": "分步指南：",
+      "steps": {
+        "step1": "访问<strong>4D开彩成绩页面</strong>。",
+        "step2": "查找最新的开彩日期和列出的号码。",
+        "step3": "将您选择的号码与奖项类别进行比对。",
+        "step4": "查看历史结果以获得更多见解。"
+      },
+      "note": "<strong>注意：</strong>结果在官方开彩后立即更新，确保准确性和可靠性。"
+    },
+    "prize_categories": {
+      "title": "4D奖项类别明细",
+      "description": "以下是奖金的典型结构：",
+      "table": {
+        "headers": {
+          "type": "奖项类型",
+          "description": "说明",
+          "example": "示例"
+        },
+        "rows": {
+          "first": {
+            "type": "头奖",
+            "description": "完全匹配的最高奖励",
+            "example": "开奖号码：5678 → 彩票：5678"
+          },
+          "second": {
+            "type": "二奖",
+            "description": "第二高的奖励",
+            "example": "开奖号码：4321 → 彩票：4321"
+          },
+          "third": {
+            "type": "三奖",
+            "description": "第三高的奖励",
+            "example": "开奖号码：7890 → 彩票：7890"
+          },
+          "special": {
+            "type": "特别奖",
+            "description": "固定赔率的次级类别",
+            "example": "多个号码符合资格"
+          },
+          "consolation": {
+            "type": "安慰奖",
+            "description": "匹配号码的小额奖励",
+            "example": "多个号码符合资格"
+          }
+        }
+      }
+    },
+    "example_listing": {
+      "title": "4D开彩成绩列表示例",
+      "description": "以下是结果的显示示例：",
+      "draw_date": "<strong>开彩日期：2025年9月25日</strong>",
+      "results": {
+        "first": "<strong>头奖：</strong>3724",
+        "second": "<strong>二奖：</strong>9801",
+        "third": "<strong>三奖：</strong>6147",
+        "special": "<strong>特别奖：</strong>0921、4883、7302、2215、8054",
+        "consolation": "<strong>安慰奖：</strong>1390、5728、4026、8103、6912"
+      },
+      "footer": "这种格式让玩家可以快速清晰地查看结果。"
+    },
+    "reading_tips": {
+      "title": "阅读4D开彩成绩的提示",
+      "tips": {
+        "exact_match": "<strong>需要完全匹配</strong> -- 与某些彩票不同，4D需要完整的四位数字匹配。",
+        "prize_tiers": "<strong>奖项等级不同</strong> -- 较高奖项限于一个中奖号码，而特别奖和安慰奖类别涵盖更多。",
+        "track_trends": "<strong>追踪趋势</strong> -- 一些玩家监控热门和冷门号码（频繁出现与罕见出现的结果）。"
+      }
+    },
+    "strategies": {
+      "title": "流行的4D策略",
+      "description_part1": "虽然4D最终是一种机会",
+      "description_part2": "游戏",
+      "description_part3": "，但玩家通常使用策略来指导他们的选择：",
+      "hot_cold": {
+        "title": "1. 热门和冷门号码",
+        "hot": "<strong>热门号码</strong> -- 在最近的开彩中经常出现的数字。",
+        "cold": "<strong>冷门号码</strong> -- 有一段时间没有出现的数字。"
+      },
+      "patterns": {
+        "title": "2. 数字规律",
+        "description": "玩家有时会选择重复规律，如：",
+        "consecutive": "连续数字：1234、4567。",
+        "mirrored": "镜像数字：1221、3443。",
+        "meaningful": "生日、纪念日或有意义的日期。"
+      },
+      "statistical": {
+        "title": "3. 统计追踪",
+        "description": "一些玩家保留过去开彩的记录以预测未来结果，尽管结果是随机的。"
+      },
+      "reminder": "<strong>提醒：</strong>策略可以指导选择，但不能保证成功。"
+    },
+    "why_兴旺博": {
+      "title": "为什么在兴旺博查看4D开彩成绩？",
+      "reasons": {
+        "accuracy": "<strong>准确性</strong> -- 结果在官方公布后立即更新。",
+        "convenience": "<strong>便利性</strong> -- 随时随地访问结果。",
+        "historical": "<strong>历史记录</strong> -- 查看过去的结果以分析趋势。",
+        "trusted": "<strong>可信平台</strong> -- 兴旺博确保可靠的数据以实现公平游戏。"
+      }
+    },
+    "responsible_play": {
+      "title": "负责任地玩4D",
+      "description": "以负责任的态度对待4D很重要。",
+      "guidelines": {
+        "budget": "在下注前<strong>设定预算</strong>。",
+        "entertainment": "<strong>将4D视为娱乐</strong>，而非收入。",
+        "moderate": "<strong>适度游戏</strong>，避免追逐损失。"
+      },
+      "expert_note": "<strong>专家提示：</strong>负责任的投注确保4D保持愉快而不会造成不必要的风险。"
+    },
+    "faq": {
+      "title": "常见问题",
+      "items": {
+        "frequency": {
+          "question": "4D开彩多久举行一次？",
+          "answer": "开彩通常由官方运营商<strong>每周三次</strong>进行，但具体时间表可能有所不同。"
+        },
+        "past_results": {
+          "question": "我可以查看过去的4D开彩成绩吗？",
+          "answer": "是的，兴旺博提供结果历史记录，因此玩家可以查看最近和较旧的开彩。"
+        },
+        "minimum_bet": {
+          "question": "4D的最小投注额是多少？",
+          "answer": "最低投注通常为<strong>RM1</strong>，但玩家可以根据偏好选择更高的赌注。"
+        },
+        "guarantee": {
+          "question": "策略能保证获胜吗？",
+          "answer": "不能。策略可能有助于指导号码选择，但4D结果完全是随机的。"
+        }
+      }
+    },
+    "summary": {
+      "title": "总结",
+      "description": "<strong>兴旺博的4D开彩成绩页面</strong>是您获取最新中奖号码的可靠来源。通过查看最新结果、探索奖项类别和应用周到的号码选择，玩家可以做出明智的决定，同时将娱乐放在首位。"
+    }
+  }
 
 }

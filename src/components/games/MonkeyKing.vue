@@ -1,6 +1,7 @@
 <template>
   <div class="game-overall">
     <div class="game-banner">
+      <img :src="monkeyKingBanner" alt="Monkey King Banner" />
     </div>
     
     <!-- Main Page Title -->
@@ -210,6 +211,7 @@
 // Import the SVG icons
 import openIcon from '@/assets/open-icon.svg'
 import closeIcon from '@/assets/close-icon.svg'
+import monkeyKingBanner from '@/assets/monkey-king-banner.jpg'
 
 export default {
   name: 'MonkeyKing',
@@ -218,6 +220,7 @@ export default {
       // Make icons available to template
       openIcon,
       closeIcon,
+      monkeyKingBanner,
       openFaqItems: { 0: true },
       slotFeatures: [
         { key: 'richStorylines' },

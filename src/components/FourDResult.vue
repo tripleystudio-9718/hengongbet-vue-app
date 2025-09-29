@@ -6,10 +6,11 @@
       allowfullscreen
     ></iframe>
   </div>
+  <ResultAdditionalContent />
 </template>
 
 <script setup>
-// No logic needed – iframe is always visible
+import ResultAdditionalContent from './ResultAdditionalContent.vue';
 </script>
 
 <style scoped>
