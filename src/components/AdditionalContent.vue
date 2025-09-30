@@ -2,63 +2,123 @@
   <div class="additional-content-section">
     <!-- Why Download Section -->
     <div class="why-download-section">
-      <h1 class="main-section-title" v-html="$t('download.why_download.title')"></h1>
+      <h1
+        class="main-section-title"
+        v-html="$t('download.why_download.title')"
+      ></h1>
       <div class="section-description">
-        {{ $t('download.why_download.description_part1') }}
-        <router-link :to="getLocalePath('/')" class="hengongbet-link">{{ $t('download.why_download.description_part2') }}</router-link>{{ $t('download.why_download.description_part3') }}
+        {{ $t("download.why_download.description_part1") }}
+        <router-link :to="getLocalePath('/')" class="hengongbet-link">{{
+          $t("download.why_download.description_part2")
+        }}</router-link
+        >{{ $t("download.why_download.description_part3") }}
       </div>
-      <h3 class="brand-tagline" v-html="$t('download.why_download.title2')"></h3>
+      <h3
+        class="brand-tagline"
+        v-html="$t('download.why_download.title2')"
+      ></h3>
       <ul class="feature-list">
-        <li v-for="(feature, index) in whyDownloadFeatures" :key="index" v-html="feature"></li>
+        <li
+          v-for="(feature, index) in whyDownloadFeatures"
+          :key="index"
+          v-html="feature"
+        ></li>
       </ul>
-      <div class="section-description" v-html="$t('download.why_download.tagline')"></div>
+      <div
+        class="section-description"
+        v-html="$t('download.why_download.tagline')"
+      ></div>
     </div>
 
     <!-- Android Installation Steps Section -->
     <div class="installation-section">
       <h2 class="section-title" v-html="$t('download.steps.title')"></h2>
       <h3 class="step-title" v-html="$t('download.steps.step1')"></h3>
-      <div class="section-description" v-html="$t('download.steps.step1Description')"></div>
+      <div
+        class="section-description"
+        v-html="$t('download.steps.step1Description')"
+      ></div>
       <h3 class="step-title" v-html="$t('download.steps.step2')"></h3>
-      <div class="section-description" v-html="$t('download.steps.step2Description')"></div>
+      <div
+        class="section-description"
+        v-html="$t('download.steps.step2Description')"
+      ></div>
       <h3 class="step-title" v-html="$t('download.steps.step3')"></h3>
-      <div class="section-description" v-html="$t('download.steps.step3Description')"></div>
+      <div
+        class="section-description"
+        v-html="$t('download.steps.step3Description')"
+      ></div>
     </div>
-    
+
     <!-- iOS Installation Steps Section -->
     <div class="installation-section">
       <h2 class="section-title" v-html="$t('download.steps.ios_title')"></h2>
       <h3 class="step-title" v-html="$t('download.steps.ios_step1')"></h3>
-      <div class="section-description" v-html="$t('download.steps.ios_step1Description')"></div>
+      <div
+        class="section-description"
+        v-html="$t('download.steps.ios_step1Description')"
+      ></div>
       <h3 class="step-title" v-html="$t('download.steps.ios_step2')"></h3>
-      <div class="section-description" v-html="$t('download.steps.ios_step2Description')"></div>
+      <div
+        class="section-description"
+        v-html="$t('download.steps.ios_step2Description')"
+      ></div>
       <h3 class="step-title" v-html="$t('download.steps.ios_step3')"></h3>
-      <div class="section-description" v-html="$t('download.steps.ios_step3Description')"></div>
+      <div
+        class="section-description"
+        v-html="$t('download.steps.ios_step3Description')"
+      ></div>
       <h3 class="step-title" v-html="$t('download.steps.ios_step4')"></h3>
-      <div class="section-description" v-html="$t('download.steps.ios_step4Description')"></div>
+      <div
+        class="section-description"
+        v-html="$t('download.steps.ios_step4Description')"
+      ></div>
     </div>
 
     <!-- Start Playing Section -->
     <div class="start-playing-section">
-      <h2 class="section-title" v-html="$t('download.start_playing.title')"></h2>
-      <div class="section-description" v-html="$t('download.start_playing.description')"></div>
+      <h2
+        class="section-title"
+        v-html="$t('download.start_playing.title')"
+      ></h2>
+      <div
+        class="section-description"
+        v-html="$t('download.start_playing.description')"
+      ></div>
       <ul class="game-list">
-        <li v-for="(game, index) in startPlayingGames" :key="index" v-html="game"></li>
+        <li
+          v-for="(game, index) in startPlayingGames"
+          :key="index"
+          v-html="game"
+        ></li>
       </ul>
     </div>
 
     <!-- Benefits Comparison Table Section -->
     <div class="benefits-section">
       <h2 class="section-title-2" v-html="$t('download.benefits.title')"></h2>
-      
+
       <div class="benefits-table-container">
         <div class="benefits-table">
           <div class="table-header">
-            <div class="table-cell" v-html="$t('download.benefits.table.headers.feature')"></div>
-            <div class="table-cell" v-html="$t('download.benefits.table.headers.app')"></div>
-            <div class="table-cell" v-html="$t('download.benefits.table.headers.website')"></div>
+            <div
+              class="table-cell"
+              v-html="$t('download.benefits.table.headers.feature')"
+            ></div>
+            <div
+              class="table-cell"
+              v-html="$t('download.benefits.table.headers.app')"
+            ></div>
+            <div
+              class="table-cell"
+              v-html="$t('download.benefits.table.headers.website')"
+            ></div>
           </div>
-          <div class="table-row" v-for="(benefit, index) in benefitsComparison" :key="index">
+          <div
+            class="table-row"
+            v-for="(benefit, index) in benefitsComparison"
+            :key="index"
+          >
             <div class="table-cell" v-html="benefit.feature"></div>
             <div class="table-cell" v-html="benefit.app"></div>
             <div class="table-cell" v-html="benefit.website"></div>
@@ -70,24 +130,24 @@
     <!-- Safety Section -->
     <div class="safety-section">
       <h2 class="section-title-2" v-html="$t('download.safety.title')"></h2>
-      <div class="section-description" v-html="$t('download.safety.description')"></div>
+      <div
+        class="section-description"
+        v-html="$t('download.safety.description')"
+      ></div>
     </div>
 
     <!-- FAQ Section -->
     <div class="faq-section">
       <h2 class="section-title-2" v-html="$t('download.faq.title')"></h2>
-      
+
       <div class="accordion-container">
-        <div 
-          v-for="(faq, index) in faqItems" 
-          :key="index" 
+        <div
+          v-for="(faq, index) in faqItems"
+          :key="index"
           class="accordion-item"
         >
-          <button
-            @click="toggleFaqItem(index)"
-            class="accordion-trigger"
-          >
-            <h3 
+          <button @click="toggleFaqItem(index)" class="accordion-trigger">
+            <h3
               class="trigger-text"
               :class="{ 'text-active': openFaqItems[index] }"
               v-html="faq.question"
@@ -95,14 +155,14 @@
 
             <div class="trigger-icon-wrapper">
               <!-- Use imported SVG icons -->
-              <img 
+              <img
                 :src="openFaqItems[index] ? closeIcon : openIcon"
                 :alt="openFaqItems[index] ? 'Close' : 'Open'"
                 class="trigger-icon-image"
               />
             </div>
           </button>
-          
+
           <transition name="fade-slide">
             <div v-if="openFaqItems[index]" class="accordion-content">
               <div class="content-body">
@@ -118,138 +178,162 @@
 
 <script>
 // Import the SVG icons
-import openIcon from '@/assets/open-icon.svg'
-import closeIcon from '@/assets/close-icon.svg'
+import openIcon from "@/assets/open-icon.svg";
+import closeIcon from "@/assets/close-icon.svg";
 
 export default {
-  name: 'AdditionalContent',
+  name: "AdditionalContent",
   data() {
     return {
       openFaqItems: { 0: true }, // First FAQ item open by default
       // Make icons available to template
       openIcon,
-      closeIcon
-    }
+      closeIcon,
+    };
   },
   computed: {
     whyDownloadFeatures() {
       return [
-        this.$t('download.why_download.features.mobile_first'),
-        this.$t('download.why_download.features.one_tap_login'),
-        this.$t('download.why_download.features.exclusive_promotions'),
-        this.$t('download.why_download.features.secure_updates')
-      ]
+        this.$t("download.why_download.features.mobile_first"),
+        this.$t("download.why_download.features.one_tap_login"),
+        this.$t("download.why_download.features.exclusive_promotions"),
+        this.$t("download.why_download.features.secure_updates"),
+      ];
     },
     startPlayingGames() {
       return [
-        this.$t('download.start_playing.games.slots'),
-        this.$t('download.start_playing.games.live_casino'),
-        this.$t('download.start_playing.games.sports_racing'),
-        this.$t('download.start_playing.games.lottery'),
-        this.$t('download.start_playing.games.real_time')
-      ]
+        this.$t("download.start_playing.games.slots"),
+        this.$t("download.start_playing.games.live_casino"),
+        this.$t("download.start_playing.games.sports_racing"),
+        this.$t("download.start_playing.games.lottery"),
+        this.$t("download.start_playing.games.real_time"),
+      ];
     },
     benefitsComparison() {
       return [
         {
-          feature: this.$t('download.benefits.table.rows.touchscreen.feature'),
-          app: this.$t('download.benefits.table.rows.touchscreen.app'),
-          website: this.$t('download.benefits.table.rows.touchscreen.website')
+          feature: this.$t("download.benefits.table.rows.touchscreen.feature"),
+          app: this.$t("download.benefits.table.rows.touchscreen.app"),
+          website: this.$t("download.benefits.table.rows.touchscreen.website"),
         },
         {
-          feature: this.$t('download.benefits.table.rows.biometric.feature'),
-          app: this.$t('download.benefits.table.rows.biometric.app'),
-          website: this.$t('download.benefits.table.rows.biometric.website')
+          feature: this.$t("download.benefits.table.rows.biometric.feature"),
+          app: this.$t("download.benefits.table.rows.biometric.app"),
+          website: this.$t("download.benefits.table.rows.biometric.website"),
         },
         {
-          feature: this.$t('download.benefits.table.rows.notifications.feature'),
-          app: this.$t('download.benefits.table.rows.notifications.app'),
-          website: this.$t('download.benefits.table.rows.notifications.website')
+          feature: this.$t(
+            "download.benefits.table.rows.notifications.feature"
+          ),
+          app: this.$t("download.benefits.table.rows.notifications.app"),
+          website: this.$t(
+            "download.benefits.table.rows.notifications.website"
+          ),
         },
         {
-          feature: this.$t('download.benefits.table.rows.exclusive_promotions.feature'),
-          app: this.$t('download.benefits.table.rows.exclusive_promotions.app'),
-          website: this.$t('download.benefits.table.rows.exclusive_promotions.website')
+          feature: this.$t(
+            "download.benefits.table.rows.exclusive_promotions.feature"
+          ),
+          app: this.$t("download.benefits.table.rows.exclusive_promotions.app"),
+          website: this.$t(
+            "download.benefits.table.rows.exclusive_promotions.website"
+          ),
         },
         {
-          feature: this.$t('download.benefits.table.rows.home_screen.feature'),
-          app: this.$t('download.benefits.table.rows.home_screen.app'),
-          website: this.$t('download.benefits.table.rows.home_screen.website')
+          feature: this.$t("download.benefits.table.rows.home_screen.feature"),
+          app: this.$t("download.benefits.table.rows.home_screen.app"),
+          website: this.$t("download.benefits.table.rows.home_screen.website"),
         },
         {
-          feature: this.$t('download.benefits.table.rows.rebate_alerts.feature'),
-          app: this.$t('download.benefits.table.rows.rebate_alerts.app'),
-          website: this.$t('download.benefits.table.rows.rebate_alerts.website')
+          feature: this.$t(
+            "download.benefits.table.rows.rebate_alerts.feature"
+          ),
+          app: this.$t("download.benefits.table.rows.rebate_alerts.app"),
+          website: this.$t(
+            "download.benefits.table.rows.rebate_alerts.website"
+          ),
         },
         {
-          feature: this.$t('download.benefits.table.rows.affiliate_tools.feature'),
-          app: this.$t('download.benefits.table.rows.affiliate_tools.app'),
-          website: this.$t('download.benefits.table.rows.affiliate_tools.website')
+          feature: this.$t(
+            "download.benefits.table.rows.affiliate_tools.feature"
+          ),
+          app: this.$t("download.benefits.table.rows.affiliate_tools.app"),
+          website: this.$t(
+            "download.benefits.table.rows.affiliate_tools.website"
+          ),
         },
         {
-          feature: this.$t('download.benefits.table.rows.gameplay.feature'),
-          app: this.$t('download.benefits.table.rows.gameplay.app'),
-          website: this.$t('download.benefits.table.rows.gameplay.website')
+          feature: this.$t("download.benefits.table.rows.gameplay.feature"),
+          app: this.$t("download.benefits.table.rows.gameplay.app"),
+          website: this.$t("download.benefits.table.rows.gameplay.website"),
         },
         {
-          feature: this.$t('download.benefits.table.rows.offline_preview.feature'),
-          app: this.$t('download.benefits.table.rows.offline_preview.app'),
-          website: this.$t('download.benefits.table.rows.offline_preview.website')
+          feature: this.$t(
+            "download.benefits.table.rows.offline_preview.feature"
+          ),
+          app: this.$t("download.benefits.table.rows.offline_preview.app"),
+          website: this.$t(
+            "download.benefits.table.rows.offline_preview.website"
+          ),
         },
         {
-          feature: this.$t('download.benefits.table.rows.wallet_integration.feature'),
-          app: this.$t('download.benefits.table.rows.wallet_integration.app'),
-          website: this.$t('download.benefits.table.rows.wallet_integration.website')
-        }
-      ]
+          feature: this.$t(
+            "download.benefits.table.rows.wallet_integration.feature"
+          ),
+          app: this.$t("download.benefits.table.rows.wallet_integration.app"),
+          website: this.$t(
+            "download.benefits.table.rows.wallet_integration.website"
+          ),
+        },
+      ];
     },
     faqItems() {
       return [
         {
-          question: this.$t('download.faq.items.safe.question'),
-          answer: this.$t('download.faq.items.safe.answer')
+          question: this.$t("download.faq.items.safe.question"),
+          answer: this.$t("download.faq.items.safe.answer"),
         },
         {
-          question: this.$t('download.faq.items.both_platforms.question'),
-          answer: this.$t('download.faq.items.both_platforms.answer')
+          question: this.$t("download.faq.items.both_platforms.question"),
+          answer: this.$t("download.faq.items.both_platforms.answer"),
         },
         {
-          question: this.$t('download.faq.items.latest_apk.question'),
-          answer: this.$t('download.faq.items.latest_apk.answer')
+          question: this.$t("download.faq.items.latest_apk.question"),
+          answer: this.$t("download.faq.items.latest_apk.answer"),
         },
         {
-          question: this.$t('download.faq.items.permissions.question'),
-          answer: this.$t('download.faq.items.permissions.answer')
+          question: this.$t("download.faq.items.permissions.question"),
+          answer: this.$t("download.faq.items.permissions.answer"),
         },
         {
-          question: this.$t('download.faq.items.games_access.question'),
-          answer: this.$t('download.faq.items.games_access.answer')
+          question: this.$t("download.faq.items.games_access.question"),
+          answer: this.$t("download.faq.items.games_access.answer"),
         },
         {
-          question: this.$t('download.faq.items.app_promotions.question'),
-          answer: this.$t('download.faq.items.app_promotions.answer')
-        }
-      ]
-    }
+          question: this.$t("download.faq.items.app_promotions.question"),
+          answer: this.$t("download.faq.items.app_promotions.answer"),
+        },
+      ];
+    },
   },
   methods: {
     // Custom method to get localized path using current locale
     getLocalePath(path) {
-      const locale = this.$i18n?.locale || 'en';
-      if (locale === 'en') {
+      const locale = this.$i18n?.locale || "en";
+      if (locale === "en") {
         return path;
       }
       return `/${locale}${path}`;
     },
-    
+
     toggleFaqItem(index) {
       this.openFaqItems = {
         ...this.openFaqItems,
-        [index]: !this.openFaqItems[index]
+        [index]: !this.openFaqItems[index],
       };
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -264,7 +348,7 @@ export default {
 .main-section-title {
   font-size: 48px;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: center;
   margin: 0 0 30px 0;
   line-height: 1.2;
@@ -275,7 +359,7 @@ export default {
 .section-title {
   font-size: 36px;
   font-weight: 700;
-  color: #F2B240;
+  color: #f2b240;
   text-align: center;
   margin: 60px 0 20px 0;
   line-height: 1.2;
@@ -296,7 +380,7 @@ export default {
 .step-title {
   font-size: 24px;
   font-weight: 600;
-  color: #F2B240;
+  color: #f2b240;
   text-align: center;
   margin: 30px 0 10px 0;
   line-height: 1.2;
@@ -318,14 +402,14 @@ export default {
 }
 
 .hengongbet-link {
-  color: #F2B240;
+  color: #f2b240;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
 .hengongbet-link:hover {
-  color: #E5A535;
+  color: #e5a535;
   text-decoration: underline;
 }
 
@@ -333,7 +417,7 @@ export default {
 .brand-tagline {
   font-size: 24px;
   font-weight: 600;
-  color: #F2B240;
+  color: #f2b240;
   text-align: center;
   margin: 30px 0;
   line-height: 1.3;
@@ -357,7 +441,7 @@ export default {
 .feature-list li,
 .game-list li {
   font-size: 16px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 12px;
   padding-left: 25px;
   position: relative;
@@ -369,8 +453,8 @@ export default {
 
 .feature-list li::before,
 .game-list li::before {
-  content: '•';
-  color: #F2B240;
+  content: "•";
+  color: #f2b240;
   font-size: 20px;
   font-weight: bold;
   position: absolute;
@@ -399,7 +483,7 @@ export default {
 .table-header {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  background: linear-gradient(180deg, #F1AF3E 52.88%, #ED8F23 100%);
+  background: linear-gradient(180deg, #f1af3e 52.88%, #ed8f23 100%);
   box-shadow: 0 3.466px 3.466px 0 rgba(0, 0, 0, 0.25);
   font-weight: 700;
   color: #000;
@@ -408,7 +492,7 @@ export default {
 .table-row {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  border-bottom: 1px solid #F1AF3E;
+  border-bottom: 1px solid #f1af3e;
 }
 
 .table-row:last-child {
@@ -418,9 +502,13 @@ export default {
 .table-cell {
   padding: 20px;
   text-align: center;
-  color: #FFF;
-  border-right: 1px solid #F1AF3E;
-  background: linear-gradient(180deg, rgba(241, 175, 62, 0.10) 52.88%, rgba(237, 143, 35, 0.10) 100%);
+  color: #fff;
+  border-right: 1px solid #f1af3e;
+  background: linear-gradient(
+    180deg,
+    rgba(241, 175, 62, 0.1) 52.88%,
+    rgba(237, 143, 35, 0.1) 100%
+  );
   box-shadow: 0 3.466px 3.466px 0 rgba(0, 0, 0, 0.25);
   word-wrap: break-word;
   overflow-wrap: break-word;
@@ -490,7 +578,7 @@ export default {
 }
 
 .text-active {
-  color: #F2B240;
+  color: #f2b240;
 }
 
 .trigger-icon-wrapper {
@@ -518,7 +606,7 @@ export default {
 }
 
 .content-text {
-  color: #D1D5DB;
+  color: #d1d5db;
   line-height: 1.6;
   margin: 0;
   text-align: left;
@@ -633,23 +721,23 @@ export default {
   .accordion-trigger {
     padding: 1rem 0.875rem;
   }
-  
+
   .accordion-content {
     padding: 0 0.875rem 1rem 0.875rem;
   }
-  
+
   .trigger-text {
     font-size: 0.95rem;
   }
-  
+
   .content-body {
     padding: 0.875rem;
   }
-  
+
   .content-text {
     font-size: 10px;
   }
-  
+
   .trigger-icon-image {
     width: 14px;
     height: 14px;
@@ -658,16 +746,16 @@ export default {
   .accordion-trigger {
     padding: 1.25rem 1rem;
   }
-  
+
   .accordion-content {
     padding: 0 1rem 1.25rem 1rem;
   }
-  
+
   .trigger-text {
     font-size: 14px;
     padding-right: 0.75rem;
   }
-  
+
   .trigger-icon-image {
     width: 16px;
     height: 16px;

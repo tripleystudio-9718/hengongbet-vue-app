@@ -3,24 +3,30 @@
     <!-- Header Section -->
     <div class="promotion-header">
       <div class="main-title">
-        {{ $t('promotion_section.header.title_prefix') }} <span class="highlight">{{ $t('promotion_section.header.brand') }}</span>
+        {{ $t("promotion_section.header.title_prefix") }}
+        <span class="highlight">{{
+          $t("promotion_section.header.brand")
+        }}</span>
       </div>
-      <div class="subtitle">{{ $t('promotion_section.header.subtitle') }}</div>
+      <div class="subtitle">{{ $t("promotion_section.header.subtitle") }}</div>
       <p class="description">
-        {{ $t('promotion_section.header.description_part1') }}
-        <router-link :to="getLocalePath('/')" class="hengongbet-link">{{ $t('promotion_section.header.description_part2') }}</router-link>{{ $t('promotion_section.header.description_part3') }}
+        {{ $t("promotion_section.header.description_part1") }}
+        <router-link :to="getLocalePath('/')" class="hengongbet-link">{{
+          $t("promotion_section.header.description_part2")
+        }}</router-link
+        >{{ $t("promotion_section.header.description_part3") }}
       </p>
     </div>
 
     <!-- Desktop Promotion Cards -->
     <div v-if="!isMobile" class="promotion-cards">
-      <div 
-        v-for="(promo, index) in promotions" 
+      <div
+        v-for="(promo, index) in promotions"
         :key="index"
         class="promotion-card"
         :class="`card-${index + 1}`"
       >
-        <div 
+        <div
           class="card-content"
           :style="{ backgroundImage: `url(${promo.image})` }"
         >
@@ -28,7 +34,7 @@
             <div class="bonus-label">{{ promo.bonusLabel }}</div>
             <div class="bonus-amount">{{ promo.bonusAmount }}</div>
             <div class="bonus-subtitle">{{ promo.bonusSubtitle }}</div>
-            <button 
+            <button
               class="promo-button"
               :class="`button-${index + 1}`"
               @click="handlePromoClick(promo)"
@@ -42,14 +48,14 @@
 
     <!-- Mobile Promotion Cards with Text Overlays -->
     <div v-if="isMobile" class="mobile-promotion-grid">
-      <div 
-        v-for="(promo, index) in promotions" 
+      <div
+        v-for="(promo, index) in promotions"
         :key="index"
         class="mobile-promo-card"
         :class="`mobile-card-${index + 1}`"
         @click="handlePromoClick(promo)"
       >
-        <div 
+        <div
           class="mobile-card-content"
           :style="{ backgroundImage: `url(${promo.mobileImage})` }"
         >
@@ -62,7 +68,7 @@
               <div class="mobile-bonus-subtitle">{{ promo.bonusSubtitle }}</div>
             </div>
             <div class="mobile-button-container">
-              <button 
+              <button
                 class="mobile-promo-button"
                 :class="`mobile-button-${index + 1}`"
               >
@@ -73,108 +79,165 @@
         </div>
       </div>
     </div>
+    <PromotionAdditionalContent />
   </div>
 </template>
 
 <script>
+import PromotionAdditionalContent from "./PromotionAdditionalContent.vue";
 export default {
-  name: 'PromotionSection',
+  name: "PromotionSection",
+  components: {
+    PromotionAdditionalContent,
+  },
   data() {
     return {
       isMobile: false,
       basePromotions: [
         {
-          translationKey: 'promo1',
-          image: new URL('@/assets/top-up-bonus-68-promotion.png', import.meta.url).href,
-          mobileImage: new URL('@/assets/mobile-top-up-bonus-68.png', import.meta.url).href,
-          desktopAltText: 'Top up bonus 68% promotion - Desktop banner for special deposit bonus offer',
-          mobileAltText: 'Top up bonus 68% promotion - Mobile banner for special deposit bonus offer'
+          translationKey: "promo1",
+          image: new URL(
+            "@/assets/top-up-bonus-68-promotion.png",
+            import.meta.url
+          ).href,
+          mobileImage: new URL(
+            "@/assets/mobile-top-up-bonus-68.png",
+            import.meta.url
+          ).href,
+          desktopAltText:
+            "Top up bonus 68% promotion - Desktop banner for special deposit bonus offer",
+          mobileAltText:
+            "Top up bonus 68% promotion - Mobile banner for special deposit bonus offer",
         },
         {
-          translationKey: 'promo2',
-          image: new URL('@/assets/top-up-rebate-05-promotion.png', import.meta.url).href,
-          mobileImage: new URL('@/assets/mobile-top-up-rebate-05.png', import.meta.url).href,
-          desktopAltText: 'Top up rebate 0.5% promotion - Desktop banner for cashback rebate offer',
-          mobileAltText: 'Top up rebate 0.5% promotion - Mobile banner for cashback rebate offer'
+          translationKey: "promo2",
+          image: new URL(
+            "@/assets/top-up-rebate-05-promotion.png",
+            import.meta.url
+          ).href,
+          mobileImage: new URL(
+            "@/assets/mobile-top-up-rebate-05.png",
+            import.meta.url
+          ).href,
+          desktopAltText:
+            "Top up rebate 0.5% promotion - Desktop banner for cashback rebate offer",
+          mobileAltText:
+            "Top up rebate 0.5% promotion - Mobile banner for cashback rebate offer",
         },
         {
-          translationKey: 'promo3',
-          image: new URL('@/assets/top-up-bonus-200-promotion.png', import.meta.url).href,
-          mobileImage: new URL('@/assets/mobile-top-up-bonus-200.png', import.meta.url).href,
-          desktopAltText: 'Top up bonus 200% promotion - Desktop banner for maximum deposit bonus offer',
-          mobileAltText: 'Top up bonus 200% promotion - Mobile banner for maximum deposit bonus offer'
+          translationKey: "promo3",
+          image: new URL(
+            "@/assets/top-up-bonus-200-promotion.png",
+            import.meta.url
+          ).href,
+          mobileImage: new URL(
+            "@/assets/mobile-top-up-bonus-200.png",
+            import.meta.url
+          ).href,
+          desktopAltText:
+            "Top up bonus 200% promotion - Desktop banner for maximum deposit bonus offer",
+          mobileAltText:
+            "Top up bonus 200% promotion - Mobile banner for maximum deposit bonus offer",
         },
         {
-          translationKey: 'promo4',
-          image: new URL('@/assets/daily-rebate-up-to-3-promotion.png', import.meta.url).href,
-          mobileImage: new URL('@/assets/mobile-daily-rebate-up-to-3.png', import.meta.url).href,
-          desktopAltText: 'Daily rebate up to 3% promotion - Desktop banner for daily cashback rewards',
-          mobileAltText: 'Daily rebate up to 3% promotion - Mobile banner for daily cashback rewards'
+          translationKey: "promo4",
+          image: new URL(
+            "@/assets/daily-rebate-up-to-3-promotion.png",
+            import.meta.url
+          ).href,
+          mobileImage: new URL(
+            "@/assets/mobile-daily-rebate-up-to-3.png",
+            import.meta.url
+          ).href,
+          desktopAltText:
+            "Daily rebate up to 3% promotion - Desktop banner for daily cashback rewards",
+          mobileAltText:
+            "Daily rebate up to 3% promotion - Mobile banner for daily cashback rewards",
         },
         {
-          translationKey: 'promo5',
-          image: new URL('@/assets/referral-rebate-up-to-10-promotion.png', import.meta.url).href,
-          mobileImage: new URL('@/assets/mobile-referral-rebate-up-to-10.png', import.meta.url).href,
-          desktopAltText: 'Referral rebate up to 10% promotion - Desktop banner for friend referral rewards',
-          mobileAltText: 'Referral rebate up to 10% promotion - Mobile banner for friend referral rewards'
-        }
-      ]
-    }
+          translationKey: "promo5",
+          image: new URL(
+            "@/assets/referral-rebate-up-to-10-promotion.png",
+            import.meta.url
+          ).href,
+          mobileImage: new URL(
+            "@/assets/mobile-referral-rebate-up-to-10.png",
+            import.meta.url
+          ).href,
+          desktopAltText:
+            "Referral rebate up to 10% promotion - Desktop banner for friend referral rewards",
+          mobileAltText:
+            "Referral rebate up to 10% promotion - Mobile banner for friend referral rewards",
+        },
+      ],
+    };
   },
   computed: {
     promotions() {
-      return this.basePromotions.map(promo => ({
+      return this.basePromotions.map((promo) => ({
         ...promo,
-        bonusLabel: this.$t(`promotion_section.promotions.${promo.translationKey}.bonus_label`),
-        bonusAmount: this.$t(`promotion_section.promotions.${promo.translationKey}.bonus_amount`),
-        bonusSubtitle: this.$t(`promotion_section.promotions.${promo.translationKey}.bonus_subtitle`),
-        title: this.$t(`promotion_section.promotions.${promo.translationKey}.title`),
-        description: this.$t(`promotion_section.promotions.${promo.translationKey}.description`),
-        buttonText: this.$t(`promotion_section.promotions.${promo.translationKey}.button_text`)
-      }))
-    }
+        bonusLabel: this.$t(
+          `promotion_section.promotions.${promo.translationKey}.bonus_label`
+        ),
+        bonusAmount: this.$t(
+          `promotion_section.promotions.${promo.translationKey}.bonus_amount`
+        ),
+        bonusSubtitle: this.$t(
+          `promotion_section.promotions.${promo.translationKey}.bonus_subtitle`
+        ),
+        title: this.$t(
+          `promotion_section.promotions.${promo.translationKey}.title`
+        ),
+        description: this.$t(
+          `promotion_section.promotions.${promo.translationKey}.description`
+        ),
+        buttonText: this.$t(
+          `promotion_section.promotions.${promo.translationKey}.button_text`
+        ),
+      }));
+    },
   },
   mounted() {
-    this.checkMobile()
-    window.addEventListener('resize', this.checkMobile)
+    this.checkMobile();
+    window.addEventListener("resize", this.checkMobile);
   },
   beforeUnmount() {
-    window.removeEventListener('resize', this.checkMobile)
+    window.removeEventListener("resize", this.checkMobile);
   },
   methods: {
     checkMobile() {
-      this.isMobile = window.innerWidth <= 768
+      this.isMobile = window.innerWidth <= 768;
     },
-    
+
     // Custom method to get localized path using current locale
     getLocalePath(path) {
-      const locale = this.$i18n?.locale || 'en';
-      if (locale === 'en') {
+      const locale = this.$i18n?.locale || "en";
+      if (locale === "en") {
         return path;
       }
       return `/${locale}${path}`;
     },
-    
-    handlePromoClick(promo) {
-      const locale = this.$i18n?.locale || 'en';
 
-      let targetUrl = 'https://hengongbet.com/en-my?regRef=player';
-      if (locale === 'zh') {
-        targetUrl = 'https://hengongbet.com/zh-my?regRef=player';
-      } else if (locale === 'ms') {
-        targetUrl = 'https://hengongbet.com/ms-my?regRef=player';
+    handlePromoClick(promo) {
+      const locale = this.$i18n?.locale || "en";
+
+      let targetUrl = "https://hengongbet.com/en-my?regRef=player";
+      if (locale === "zh") {
+        targetUrl = "https://hengongbet.com/zh-my?regRef=player";
+      } else if (locale === "ms") {
+        targetUrl = "https://hengongbet.com/ms-my?regRef=player";
       }
 
       // Create link with nofollow attributes (same tab)
-      const link = document.createElement('a');
+      const link = document.createElement("a");
       link.href = targetUrl;
-      link.rel = 'nofollow noopener';
+      link.rel = "nofollow noopener";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -182,7 +245,7 @@ export default {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
   min-height: 100vh;
   padding: 40px 20px;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
 /* Header Section */
@@ -203,7 +266,7 @@ export default {
 }
 
 .highlight {
-  color: #F2B240;
+  color: #f2b240;
 }
 
 .subtitle {
@@ -222,14 +285,14 @@ export default {
 }
 
 .hengongbet-link {
-  color: #F2B240;
+  color: #f2b240;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
 .hengongbet-link:hover {
-  color: #E5A535;
+  color: #e5a535;
   text-decoration: underline;
 }
 
@@ -304,27 +367,27 @@ export default {
 
 .card-1 .bonus-label,
 .card-1 .bonus-subtitle {
-  color: #14C570;
+  color: #14c570;
 }
 
 .card-2 .bonus-label,
 .card-2 .bonus-subtitle {
-  color: #FAC701;
+  color: #fac701;
 }
 
 .card-3 .bonus-label,
 .card-3 .bonus-subtitle {
-  color: #DC60DF;
+  color: #dc60df;
 }
 
 .card-4 .bonus-label,
 .card-4 .bonus-subtitle {
-  color: #0BE7FF;
+  color: #0be7ff;
 }
 
 .card-5 .bonus-label,
 .card-5 .bonus-subtitle {
-  color: #8A64FF;
+  color: #8a64ff;
 }
 
 /* CTA Button */
@@ -466,31 +529,41 @@ export default {
 
 /* Mobile Color Schemes - Amount gets specific colors */
 .mobile-card-1 .mobile-bonus-amount {
-  color: #14C570;
+  color: #14c570;
 }
 
 .mobile-card-2 .mobile-bonus-amount {
-  color: #FAC701;
+  color: #fac701;
 }
 
 .mobile-card-3 .mobile-bonus-amount {
-  color: #DC60DF;
+  color: #dc60df;
 }
 
 .mobile-card-4 .mobile-bonus-amount {
-  color: #0BE7FF;
+  color: #0be7ff;
 }
 
 .mobile-card-5 .mobile-bonus-amount {
-  color: #8A64FF;
+  color: #8a64ff;
 }
 
 /* Mobile Button Colors */
-.mobile-button-1 { color: #ffffff; }
-.mobile-button-2 { color: #ffffff; }
-.mobile-button-3 { color: #ffffff; }
-.mobile-button-4 { color: #ffffff; }
-.mobile-button-5 { color: #ffffff; }
+.mobile-button-1 {
+  color: #ffffff;
+}
+.mobile-button-2 {
+  color: #ffffff;
+}
+.mobile-button-3 {
+  color: #ffffff;
+}
+.mobile-button-4 {
+  color: #ffffff;
+}
+.mobile-button-5 {
+  color: #ffffff;
+}
 
 @media (min-width: 1441px) and (max-width: 1680px) {
   .card-content {
@@ -517,32 +590,32 @@ export default {
   .promotion-cards {
     width: 75%;
   }
-  
+
   .card-content {
     height: 190px;
   }
-  
+
   .overlay-left {
     width: 32%;
     padding: 0 15px;
     gap: 8px;
   }
-  
+
   .bonus-label {
     font-size: 0.8rem;
     margin-top: 8px;
   }
-  
+
   .bonus-amount {
     font-size: 64px;
     line-height: 0.9;
   }
-  
+
   .bonus-subtitle {
     font-size: 0.8rem;
     margin-bottom: 8px;
   }
-  
+
   .promo-button {
     padding: 20px 12px;
     font-size: 16px;
