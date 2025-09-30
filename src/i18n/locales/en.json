@@ -14,7 +14,7 @@
     "register": "Register",
     "blog": "Blog",
     "lucky365": "Lucky365",
-    "microslot": "Microslot", 
+    "microslot": "Microslot",
     "monkeyKing": "Monkey King",
     "jili": "Jili",
     "jdb": "JDB",
@@ -141,7 +141,7 @@
     "games": "Games",
     "slots": "Slots",
     "sports": "Sports",
-    "lottery": "Lottery", 
+    "lottery": "Lottery",
     "casino": "Casino",
     "info": "Info",
     "promotions": "Promotions",
@@ -153,9 +153,9 @@
     "certification": "Certification",
     "security": "Security",
     "follow_us": "Follow Us",
-    
+
     "rights_reserved": "All Rights Reserved.",
-    
+
     "gcb_license_alt": "GCB License",
     "itech_certification_alt": "iTech Certification",
     "threatmetrix_security_alt": "ThreatMetrix Security",
@@ -171,7 +171,7 @@
   "home": {
     "hero": {
       "title": "Play Your Way at HengOngBet88",
-      "subtitle": "Malaysia's Trusted Online Casino Platform", 
+      "subtitle": "Malaysia's Trusted Online Casino Platform",
       "description": "Join a new kind of online casino in Malaysia, one built for entertainment, trust, and real convenience.",
       "registerNow": "Register Now",
       "unlockBonus": "Unlock Exclusive Bonus",
@@ -269,7 +269,7 @@
         "title": "1. Safe, Licensed & Secure"
       },
       {
-        "id": "malaysians", 
+        "id": "malaysians",
         "title": "2. Designed for Malaysians"
       },
       {
@@ -348,7 +348,7 @@
       "title": "Popular Games on HengOngBet",
       "games": [
         "Super Ace",
-        "Boxing King", 
+        "Boxing King",
         "Panther Moon",
         "Crazy 777",
         "FaFaFa"
@@ -356,8 +356,8 @@
     }
   },
   "mobileGameSec": {
-      "title": "Hot Games"
-    },
+    "title": "Hot Games"
+  },
   "gameSec": {
     "title": "Hot Games",
     "categories": {
@@ -622,7 +622,7 @@
         "description": "Sign up as an agent, member, or shareholder, no fees or obligations."
       },
       "step2": {
-        "number": "2", 
+        "number": "2",
         "title": "Promote",
         "description": "Share your referral link via social media, WhatsApp, or communities."
       },
@@ -641,7 +641,7 @@
           "description": "Earn a percentage of player losses, long-term, scalable passive income."
         },
         "cpa_model": {
-          "title": "CPA Model", 
+          "title": "CPA Model",
           "description": "Earn a fixed amount per qualified player, ideal for promoters who convert fast."
         }
       }
@@ -651,7 +651,7 @@
       "table": {
         "headers": {
           "user_level": "User Level",
-          "benefits": "Benefits", 
+          "benefits": "Benefits",
           "rebate": "Rebate"
         },
         "levels": {
@@ -661,7 +661,7 @@
             "rebate": "-----"
           },
           "referrer": {
-            "name": "Referrer", 
+            "name": "Referrer",
             "benefits": "Earn 0.3% on player bets",
             "rebate": "0.5% on own bets"
           },
@@ -684,7 +684,7 @@
         "description": "Monitor your earnings live"
       },
       "weekly_payouts": {
-        "title": "Weekly Payouts", 
+        "title": "Weekly Payouts",
         "description": "Fast and reliable payments"
       },
       "dedicated_support": {
@@ -1062,158 +1062,158 @@
       }
     }
   },
-"games": {
-  "tabs": {
-    "all": "All",
-    "slots": "Slots",
-    "casino": "Casino",
-    "sports": "Sports",
-    "lottery": "Lottery"
-  },
-  "names": {
-    "lucky365": "Lucky 365",
-    "askmeslot": "Askmeslot",
-    "jdb": "JDB",
-    "monkeyKing": "Monkey King",
-    "hotRoad": "Hot Road",
-    "maxbet": "Maxbet",
-    "sv388": "Sv388",
-    "rcb988": "Rcb988",
-    "jili": "Jili",
-    "microslot": "Microslot",
-    "evolution": "Evolution",
-    "sexy": "Sexy",
-    "ekor": "Ekor",
-    "bigGaming": "Big Gaming",
-    "pragmaticPlay": "Pragmatic Play"
-  },
-  "alt": {
-    "gameBanner": "Game Banner",
-    "gameImage": "Game Image"
-  },
-  "actions": {
-    "clickToPlay": "Click to play {gameName}"
-  },
-  "content": {
-    "title": "Games",
-    "slots": {
-      "title": "Slot",
-      "description_part1": "Spin, win, and enjoy nonstop action with Malaysia's favourite <strong>online slot</strong> providers.<br><br>From classic 3-reel machines to cinematic bonus-packed adventures, ",
+  "games": {
+    "tabs": {
+      "all": "All",
+      "slots": "Slots",
+      "casino": "Casino",
+      "sports": "Sports",
+      "lottery": "Lottery"
+    },
+    "names": {
+      "lucky365": "Lucky 365",
+      "askmeslot": "Askmeslot",
+      "jdb": "JDB",
+      "monkeyKing": "Monkey King",
+      "hotRoad": "Hot Road",
+      "maxbet": "Maxbet",
+      "sv388": "Sv388",
+      "rcb988": "Rcb988",
+      "jili": "Jili",
+      "microslot": "Microslot",
+      "evolution": "Evolution",
+      "sexy": "Sexy",
+      "ekor": "Ekor",
+      "bigGaming": "Big Gaming",
+      "pragmaticPlay": "Pragmatic Play"
+    },
+    "alt": {
+      "gameBanner": "Game Banner",
+      "gameImage": "Game Image"
+    },
+    "actions": {
+      "clickToPlay": "Click to play {gameName}"
+    },
+    "content": {
+      "title": "Games",
+      "slots": {
+        "title": "Slot",
+        "description_part1": "Spin, win, and enjoy nonstop action with Malaysia's favourite <strong>online slot</strong> providers.<br><br>From classic 3-reel machines to cinematic bonus-packed adventures, ",
         "description_part2": "HengOngBet",
         "description_part3": " brings you the best of slot games in one place. Here's a taste of what you can play:",
-      "games": {
-        "lucky365": {
-          "title": "Lucky 365",
-          "description": "Step into a world of myth and magic with Lucky 365. These high-payout slots are inspired by legendary gods, epic quests, and ancient powers, perfect for players who enjoy immersive visuals and the chance to unlock major jackpots with every spin."
-        },
-        "askmeslot": {
-          "title": "Askmeslot",
-          "description": "Askmeslot delivers casual fun with bright animations and lighthearted storylines. Whether you're new to slots or just want a relaxing experience, its user-friendly interface and smooth graphics make it easy to enjoy, even on short breaks."
-        },
-        "jdb": {
-          "title": "JDB",
-          "description": "Known for its arcade-style mechanics and creative game formats, JDB stands out with fishing games, fast reels, and interactive bonus features. It's ideal for players who enjoy a mix of skill and luck, all in one tap."
-        },
-        "monkeyKing": {
-          "title": "Monkey King",
-          "description": "This collection pays homage to one of Asia's most iconic characters, the Monkey King. Influenced by Stephen Chow's cult films and titles like Black Myth Wukong, the games deliver action-packed spins, cinematic visuals, and rich bonus gameplay that keep you coming back."
-        },
-        "jili": {
-          "title": "JILI",
-          "description": "JILI is a staple in the world of online slots and for good reason. Featuring cascading wins, bonus rounds, and progressive features, JILI offers something for every kind of player. If you're unsure where to start, start with JILI."
-        },
-        "microslot": {
-          "title": "Microslot",
-          "description": "Sleek, smart, and mobile-first Microslot is built for modern players who want a premium slot experience on any device. With sci-fi inspired visuals and crisp animations, it's perfect for players who value performance and design without compromise.<br><br>All games are mobile-optimised, fairness-certified, and available 24/7 with secure access."
+        "games": {
+          "lucky365": {
+            "title": "Lucky 365",
+            "description": "Step into a world of myth and magic with Lucky 365. These high-payout slots are inspired by legendary gods, epic quests, and ancient powers, perfect for players who enjoy immersive visuals and the chance to unlock major jackpots with every spin."
+          },
+          "askmeslot": {
+            "title": "Askmeslot",
+            "description": "Askmeslot delivers casual fun with bright animations and lighthearted storylines. Whether you're new to slots or just want a relaxing experience, its user-friendly interface and smooth graphics make it easy to enjoy, even on short breaks."
+          },
+          "jdb": {
+            "title": "JDB",
+            "description": "Known for its arcade-style mechanics and creative game formats, JDB stands out with fishing games, fast reels, and interactive bonus features. It's ideal for players who enjoy a mix of skill and luck, all in one tap."
+          },
+          "monkeyKing": {
+            "title": "Monkey King",
+            "description": "This collection pays homage to one of Asia's most iconic characters, the Monkey King. Influenced by Stephen Chow's cult films and titles like Black Myth Wukong, the games deliver action-packed spins, cinematic visuals, and rich bonus gameplay that keep you coming back."
+          },
+          "jili": {
+            "title": "JILI",
+            "description": "JILI is a staple in the world of online slots and for good reason. Featuring cascading wins, bonus rounds, and progressive features, JILI offers something for every kind of player. If you're unsure where to start, start with JILI."
+          },
+          "microslot": {
+            "title": "Microslot",
+            "description": "Sleek, smart, and mobile-first Microslot is built for modern players who want a premium slot experience on any device. With sci-fi inspired visuals and crisp animations, it's perfect for players who value performance and design without compromise.<br><br>All games are mobile-optimised, fairness-certified, and available 24/7 with secure access."
+          }
         }
-      }
-    },
-    "casino": {
-      "title": "Casino",
-      "description": "Experience real-time excitement with Malaysia's top <strong>live dealer games.</strong><br><br>Our <strong>Live Casino</strong> brings the energy of a real casino floor straight to your screen, all hosted by professional, friendly dealers in high-definition streaming. Play from the comfort of your couch or during a Grab ride, we got you covered!",
-      "games": {
-        "hotRoad": {
-          "title": "Hot Road",
-          "description": "Hot Road redefines the live casino experience with futuristic design and cutting-edge automation. Featuring robotic arms as live dealers, it brings a sci-fi twist to traditional games like Dragon Tiger and Baccarat. This is a great option for players looking for something different, visually striking, and still fully interactive."
-        },
-        "evolution": {
-          "title": "Evolution",
-          "description": "Evolution is the industry leader in live casino entertainment, offering world-class live Baccarat, Roulette, and their signature Lightning series. With high-quality streaming, professional hosts, and game show-style titles like <strong>Crazy Time</strong> and <strong>Monopoly Live</strong>, Evolution delivers an immersive and trusted live gaming experience for Malaysian players."
-        },
-        "sexy": {
-          "title": "Sexy",
-          "description": "That's right, we are bringing sexy back with our lovely dealers dressed in bikinis and lingerie. But beyond our charming dealers, they are also skilled at blackjack, roulette and other card games. Beauties and Brains!"
-        },
-        "bigGaming": {
-          "title": "Big Gaming",
-          "description": "Big Gaming offers a dynamic <strong>HD live casino</strong> experience that's built for speed and local preferences. With fast-paced betting rounds, easy-to-use interfaces, and familiar games like Baccarat, Dragon Tiger, and Roulette, it's perfect for Malaysian players who value quick action."
-        },
-        "pragmaticPlay": {
-          "title": "Pragmatic Play",
-          "description": "Pragmatic Play blends elegant design with real-time excitement. Known for its clean interface and reliable performance, this provider offers a wide range of live games in multiple languages, including Malay, Mandarin, and English. From classic card tables to game show-inspired formats like <strong>Mega Wheel</strong> and <strong>Sweet Bonanza Live</strong>, it's built for players who enjoy variety with a modern twist."
+      },
+      "casino": {
+        "title": "Casino",
+        "description": "Experience real-time excitement with Malaysia's top <strong>live dealer games.</strong><br><br>Our <strong>Live Casino</strong> brings the energy of a real casino floor straight to your screen, all hosted by professional, friendly dealers in high-definition streaming. Play from the comfort of your couch or during a Grab ride, we got you covered!",
+        "games": {
+          "hotRoad": {
+            "title": "Hot Road",
+            "description": "Hot Road redefines the live casino experience with futuristic design and cutting-edge automation. Featuring robotic arms as live dealers, it brings a sci-fi twist to traditional games like Dragon Tiger and Baccarat. This is a great option for players looking for something different, visually striking, and still fully interactive."
+          },
+          "evolution": {
+            "title": "Evolution",
+            "description": "Evolution is the industry leader in live casino entertainment, offering world-class live Baccarat, Roulette, and their signature Lightning series. With high-quality streaming, professional hosts, and game show-style titles like <strong>Crazy Time</strong> and <strong>Monopoly Live</strong>, Evolution delivers an immersive and trusted live gaming experience for Malaysian players."
+          },
+          "sexy": {
+            "title": "Sexy",
+            "description": "That's right, we are bringing sexy back with our lovely dealers dressed in bikinis and lingerie. But beyond our charming dealers, they are also skilled at blackjack, roulette and other card games. Beauties and Brains!"
+          },
+          "bigGaming": {
+            "title": "Big Gaming",
+            "description": "Big Gaming offers a dynamic <strong>HD live casino</strong> experience that's built for speed and local preferences. With fast-paced betting rounds, easy-to-use interfaces, and familiar games like Baccarat, Dragon Tiger, and Roulette, it's perfect for Malaysian players who value quick action."
+          },
+          "pragmaticPlay": {
+            "title": "Pragmatic Play",
+            "description": "Pragmatic Play blends elegant design with real-time excitement. Known for its clean interface and reliable performance, this provider offers a wide range of live games in multiple languages, including Malay, Mandarin, and English. From classic card tables to game show-inspired formats like <strong>Mega Wheel</strong> and <strong>Sweet Bonanza Live</strong>, it's built for players who enjoy variety with a modern twist."
+          }
         }
-      }
-    },
-    "sports": {
-      "title": "Sports",
-      "description": "Your all-access pass to real-time sports betting across every arena.<br><br>Whether it's football, basketball, e-sports, or even cockfighting and horse racing, HengOngBet connects you to top sportsbook providers with live odds, instant updates, and seamless bets.",
-      "games": {
-        "maxbet": {
-          "title": "Maxbet",
-          "description": "One of Asia's most trusted names in <strong>sports betting</strong>, Maxbet offers extensive coverage on international football leagues, NBA, tennis, and more. With real-time stats, multi-bet options, and easy cashout, it's a solid choice for both new and seasoned bettors.<br><br>Coverage includes:<br>• International football (EPL, La Liga, Serie A, World Cup qualifiers)<br>• Basketball (NBA, EuroLeague, FIBA)<br>• Tennis (ATP, WTA, Grand Slams)<br>• E-sports (Dota 2, League of Legends, CS:GO)<br>• Badminton and table tennis<br>• American football (NFL)<br>• Baseball (MLB, NPB)<br>• Ice hockey (NHL, KHL)<br>• Live betting on ongoing matches<br>• Handicap, over/under, 1X2, correct score, and mix parlay bets"
-        },
-        "sv388": {
-          "title": "SV388",
-          "description": "Specialising in legalised <strong>online cockfighting</strong>, SV388 delivers high-definition streams, transparent results, and secure betting for a niche but highly popular vertical in Southeast Asia. Matches run daily with detailed odds and result tracking."
-        },
-        "rcb988": {
-          "title": "RCB988",
-          "description": "RCB988 caters to horse racing and niche sports fans with a sleek <strong>horse betting</strong> platform focused on precision and speed. Whether you're betting on local or international races, the interface is fast, intuitive, and backed by trusted payouts.<br><br>All sportsbook providers are mobile-ready, feature multilingual support, and operate under strict gaming fairness standards."
+      },
+      "sports": {
+        "title": "Sports",
+        "description": "Your all-access pass to real-time sports betting across every arena.<br><br>Whether it's football, basketball, e-sports, or even cockfighting and horse racing, HengOngBet connects you to top sportsbook providers with live odds, instant updates, and seamless bets.",
+        "games": {
+          "maxbet": {
+            "title": "Maxbet",
+            "description": "One of Asia's most trusted names in <strong>sports betting</strong>, Maxbet offers extensive coverage on international football leagues, NBA, tennis, and more. With real-time stats, multi-bet options, and easy cashout, it's a solid choice for both new and seasoned bettors.<br><br>Coverage includes:<br>• International football (EPL, La Liga, Serie A, World Cup qualifiers)<br>• Basketball (NBA, EuroLeague, FIBA)<br>• Tennis (ATP, WTA, Grand Slams)<br>• E-sports (Dota 2, League of Legends, CS:GO)<br>• Badminton and table tennis<br>• American football (NFL)<br>• Baseball (MLB, NPB)<br>• Ice hockey (NHL, KHL)<br>• Live betting on ongoing matches<br>• Handicap, over/under, 1X2, correct score, and mix parlay bets"
+          },
+          "sv388": {
+            "title": "SV388",
+            "description": "Specialising in legalised <strong>online cockfighting</strong>, SV388 delivers high-definition streams, transparent results, and secure betting for a niche but highly popular vertical in Southeast Asia. Matches run daily with detailed odds and result tracking."
+          },
+          "rcb988": {
+            "title": "RCB988",
+            "description": "RCB988 caters to horse racing and niche sports fans with a sleek <strong>horse betting</strong> platform focused on precision and speed. Whether you're betting on local or international races, the interface is fast, intuitive, and backed by trusted payouts.<br><br>All sportsbook providers are mobile-ready, feature multilingual support, and operate under strict gaming fairness standards."
+          }
         }
-      }
-    },
-    "lottery": {
-      "title": "Lottery",
-      "games": {
-        "ekor": {
-          "title": "Ekor",
-          "descriptionStart": "Pick your 4 digits and see where luck takes you. Heng Ong Bet connects you to local and <strong>4D</strong> draws with transparent results and instant payout processing, right from your phone with Ekor.<br><br>You can bet on your favourite numbers, check past results, and follow live draws in one secure platform. It supports standard, iBox, and Big/Small bet types, all with a clean interface and fast result updates.<br><br>Bet big, bet small, come bet it all, with our instant ",
-          "linkText": "4D results ",
-          "descriptionEnd": "on Ekor."
+      },
+      "lottery": {
+        "title": "Lottery",
+        "games": {
+          "ekor": {
+            "title": "Ekor",
+            "descriptionStart": "Pick your 4 digits and see where luck takes you. Heng Ong Bet connects you to local and <strong>4D</strong> draws with transparent results and instant payout processing, right from your phone with Ekor.<br><br>You can bet on your favourite numbers, check past results, and follow live draws in one secure platform. It supports standard, iBox, and Big/Small bet types, all with a clean interface and fast result updates.<br><br>Bet big, bet small, come bet it all, with our instant ",
+            "linkText": "4D results ",
+            "descriptionEnd": "on Ekor."
+          }
         }
-      }
-    },
-    "faq": {
-      "title": "Frequently Asked Questions About HengOngBet Games",
-      "items": {
-        "popular": {
-          "question": "What Are The Most Popular Slot Games On HengOngBet?",
-          "answer": "Top picks include Super Ace, Boxing King, FaFaFa and Panther Moon. All mobile-friendly with high RTP and themed features."
-        },
-        "realTime": {
-          "question": "Is The Live Casino Experience Real-Time?",
-          "answer": "Yes. Heng Ong Bet offers real-time games with HD video and real dealers from providers like Evolution, Sexy, Big Gaming, and Hot Road."
-        },
-        "sports": {
-          "question": "Can I Bet On Sports Like Football Or E-Sports?",
-          "answer": "Absolutely. Heng Ong Bet's sportsbook includes Maxbet, SV388, and RCB988, covering football, basketball, cockfighting, and more."
-        },
-        "ekor4d": {
-          "question": "What Is Ekor 4D And How Does It Work?",
-          "answer": "Ekor lets you place 4D bets online, check results instantly, and choose from standard, iBox, Big/Small bets. Results are updated live."
-        },
-        "fair": {
-          "question": "Are Heng Ong Bet Games Fair And Licensed?",
-          "answer": "Yes. All games are licensed and fairness-certified, using RNG or live-dealer verification from trusted global providers."
-        },
-        "mobile": {
-          "question": "Can I Play All Games On Mobile?",
-          "answer": "Yes. Slots, live casino, 4D, and sports betting are fully available via the Heng Ong Bet app, with faster load times and app-only perks."
+      },
+      "faq": {
+        "title": "Frequently Asked Questions About HengOngBet Games",
+        "items": {
+          "popular": {
+            "question": "What Are The Most Popular Slot Games On HengOngBet?",
+            "answer": "Top picks include Super Ace, Boxing King, FaFaFa and Panther Moon. All mobile-friendly with high RTP and themed features."
+          },
+          "realTime": {
+            "question": "Is The Live Casino Experience Real-Time?",
+            "answer": "Yes. Heng Ong Bet offers real-time games with HD video and real dealers from providers like Evolution, Sexy, Big Gaming, and Hot Road."
+          },
+          "sports": {
+            "question": "Can I Bet On Sports Like Football Or E-Sports?",
+            "answer": "Absolutely. Heng Ong Bet's sportsbook includes Maxbet, SV388, and RCB988, covering football, basketball, cockfighting, and more."
+          },
+          "ekor4d": {
+            "question": "What Is Ekor 4D And How Does It Work?",
+            "answer": "Ekor lets you place 4D bets online, check results instantly, and choose from standard, iBox, Big/Small bets. Results are updated live."
+          },
+          "fair": {
+            "question": "Are Heng Ong Bet Games Fair And Licensed?",
+            "answer": "Yes. All games are licensed and fairness-certified, using RNG or live-dealer verification from trusted global providers."
+          },
+          "mobile": {
+            "question": "Can I Play All Games On Mobile?",
+            "answer": "Yes. Slots, live casino, 4D, and sports betting are fully available via the Heng Ong Bet app, with faster load times and app-only perks."
+          }
         }
       }
     }
-  }
-},
+  },
   "faq": {
     "title": "Frequently Asked Question (FAQ)",
     "appName": "Heng Ong Bet",
@@ -1657,14 +1657,14 @@
   },
 
   "withdrawalReminders": {
-      "title": "Withdrawal Reminders",
-      "items": [
-        "Withdrawals must follow any <strong>bonus turnover rules</strong> if applicable.",
-        "Make sure your <strong>bank details are correct and updated</strong> in your profile.",
-        "Use the same method <strong>(bank account)</strong> that you used to deposit for faster processing.",
-        "If you've forgotten your <strong>PIN</strong>, use the reset option or contact support."
-      ]
-    },
+    "title": "Withdrawal Reminders",
+    "items": [
+      "Withdrawals must follow any <strong>bonus turnover rules</strong> if applicable.",
+      "Make sure your <strong>bank details are correct and updated</strong> in your profile.",
+      "Use the same method <strong>(bank account)</strong> that you used to deposit for faster processing.",
+      "If you've forgotten your <strong>PIN</strong>, use the reset option or contact support."
+    ]
+  },
 
   "notice": {
     "title": "Important Gaming Notice",
@@ -1681,7 +1681,7 @@
     "searchPlaceholder": "Search articles, tips, and guides...",
     "loadingTitle": "Loading Articles",
     "loadingText": "Fetching the latest insights for you...",
-    "errorTitle": "Unable to Load Articles", 
+    "errorTitle": "Unable to Load Articles",
     "tryAgain": "Try Again",
     "noArticlesFound": "No Articles Found",
     "noArticlesYet": "No Articles Yet",
@@ -1693,14 +1693,14 @@
     "defaultAuthor": "HengOngBet Team",
     "readTime": "{minutes} min read",
     "readArticle": "Read Article",
-    "previous": "Previous", 
+    "previous": "Previous",
     "next": "Next",
     "showingResults": "Showing {start} - {end} of {total} articles",
     "defaultExcerpt": "Discover expert insights and strategies...",
     "loadError": "Failed to load blog posts",
     "categories": {
       "slots": "Slots",
-      "casino": "Casino", 
+      "casino": "Casino",
       "sports": "Sports",
       "betting": "Betting",
       "tips": "Tips",
@@ -1714,20 +1714,20 @@
   "post": {
     "backToBlog": "Back to Blog",
     "loadingPost": "Loading blog post...",
-    "postNotFound": "Post Not Found", 
+    "postNotFound": "Post Not Found",
     "defaultAuthor": "HengOngBet Team",
     "updatedOn": "Updated {date}",
     "shareTitle": "Share this article",
     "shareSubtitle": "Help others discover this gaming content",
     "shareOnTwitter": "Share on Twitter",
-    "shareOnFacebook": "Share on Facebook", 
+    "shareOnFacebook": "Share on Facebook",
     "shareOnLinkedIn": "Share on LinkedIn",
     "copyLinkToClipboard": "Copy link to clipboard",
     "twitter": "Twitter",
     "shareOnX": "Share on X",
     "facebook": "Facebook",
     "shareWithFriends": "Share with friends",
-    "linkedin": "LinkedIn", 
+    "linkedin": "LinkedIn",
     "shareProfessionally": "Share professionally",
     "copyLink": "Copy Link",
     "copied": "Copied!",
@@ -1737,1023 +1737,1023 @@
   },
 
   "maxbet": {
-      "alt": {
-        "gameBanner": "Maxbet Sports Betting Banner"
+    "alt": {
+      "gameBanner": "Maxbet Sports Betting Banner"
+    },
+    "content": {
+      "title": "Maxbet Sports Betting &#124; Hengongbet",
+      "intro": {
+        "part1": "Looking for a trusted way to bet on sports online? With Maxbet ",
+        "linkText": "sports betting",
+        "part2": " at Hengongbet, players gain access to one of Asia's most established platforms for football, basketball, tennis, and more. This platform has built its reputation on fair play, fast payouts, and a wide range of sports markets that cater to both casual fans and serious bettors."
       },
-      "content": {
-        "title": "Maxbet Sports Betting &#124; Hengongbet",
-        "intro": {
-          "part1": "Looking for a trusted way to bet on sports online? With Maxbet ",
-          "linkText": "sports betting",
-          "part2": " at Hengongbet, players gain access to one of Asia's most established platforms for football, basketball, tennis, and more. This platform has built its reputation on fair play, fast payouts, and a wide range of sports markets that cater to both casual fans and serious bettors."
-        },
-        "whyChoose": {
-          "title": "Why Choose Maxbet for Sports Betting?",
-          "description": "The strength of Maxbet lies in its balance of variety, reliability, and speed. Bettors can enjoy:",
-          "items": {
-            "extensiveMarkets": {
-              "title": "Extensive Markets",
-              "description": "Across global and regional sports"
-            },
-            "liveBetting": {
-              "title": "Live Betting",
-              "description": "With real-time odds updates"
-            },
-            "secureTransactions": {
-              "title": "Secure Transactions",
-              "description": "Backed by proven technology"
-            },
-            "fastPayouts": {
-              "title": "Fast Payout Processes",
-              "description": "Trusted by long-term users"
-            }
+      "whyChoose": {
+        "title": "Why Choose Maxbet for Sports Betting?",
+        "description": "The strength of Maxbet lies in its balance of variety, reliability, and speed. Bettors can enjoy:",
+        "items": {
+          "extensiveMarkets": {
+            "title": "Extensive Markets",
+            "description": "Across global and regional sports"
           },
-          "expertNote": {
-            "label": "Expert note:",
-            "text": " Maxbet has become a go-to platform for Asian players due to its stable odds, consistent service, and long-standing presence in the industry."
-          }
-        },
-        "popularSports": {
-          "title": "Popular Sports Covered by Maxbet",
-          "description": "Sports enthusiasts are never short of options. Maxbet provides betting opportunities on both international and local matches.",
-          "items": {
-            "football": {
-              "title": "Football Betting on Maxbet",
-              "description": "Football is the most popular market. Players can bet on English Premier League (EPL), La Liga, Serie A, UEFA Champions League, and Regional Asian tournaments. Bet types include match results, Asian handicap, over/under goals, and first-half markets."
-            },
-            "basketball": {
-              "title": "Basketball Betting",
-              "description": "From NBA games to FIBA World Cup tournaments, Maxbet ensures bettors can follow their favorite teams. Popular wagers include point spreads, totals, and player-specific props."
-            },
-            "otherSports": {
-              "title": "Tennis, Badminton, and Other Sports",
-              "description": "Tennis Grand Slams and ATP/WTA tours, Badminton Asian championships and international matches, Esports competitive gaming markets, and Horse Racing from local and international tracks."
-            }
-          }
-        },
-        "betTypes": {
-          "title": "Types of Bets Available on Maxbet",
-          "description": "Understanding the types of bets is crucial for building a strategy. Below is a quick reference:",
-          "items": {
-            "oneXTwo": {
-              "title": "1X2",
-              "description": "Traditional win-draw-win market"
-            },
-            "asianHandicap": {
-              "title": "Asian Handicap",
-              "description": "Balances match odds by giving one team a virtual advantage"
-            },
-            "overUnder": {
-              "title": "Over/Under",
-              "description": "Bet on the total number of goals, points, or scores in a game"
-            },
-            "correctScore": {
-              "title": "Correct Score",
-              "description": "Predicting the exact final score"
-            },
-            "parlay": {
-              "title": "Parlay/Combo",
-              "description": "Multiple bets combined for higher payout potential"
-            },
-            "inPlay": {
-              "title": "In-Play",
-              "description": "Live betting with shifting odds as the match progresses"
-            }
+          "liveBetting": {
+            "title": "Live Betting",
+            "description": "With real-time odds updates"
           },
-          "definition": {
-            "label": "Definition:",
-            "text": " Asian Handicap betting is designed to eliminate the possibility of a draw, creating a more balanced market for unevenly matched teams."
-          }
-        },
-        "liveBetting": {
-          "title": "Live Betting with Maxbet",
-          "description": "Live betting is one of the most engaging features. With constantly updated odds, players can react in real time to match events such as goals, fouls, or momentum shifts.",
-          "benefits": {
-            "betterValue": {
-              "title": "Better Value Odds",
-              "description": "When predicting match swings"
-            },
-            "hedging": {
-              "title": "Ability to Hedge",
-              "description": "Pre-match bets for risk management"
-            },
-            "interactive": {
-              "title": "Interactive Experience",
-              "description": "More engaging betting experience"
-            }
-          }
-        },
-        "security": {
-          "title": "How Maxbet Ensures Secure and Fast Betting",
-          "description": "Security and reliability are non-negotiable in online betting. Hengongbet integrates Maxbet with features such as:",
-          "items": {
-            "encryption": {
-              "title": "Encrypted Transactions",
-              "description": "For deposits and withdrawals"
-            },
-            "monitoring": {
-              "title": "24/7 Monitoring",
-              "description": "To prevent fraud or account misuse"
-            },
-            "licensed": {
-              "title": "Licensed Platform",
-              "description": "That complies with strict gaming regulations"
-            },
-            "instantPayouts": {
-              "title": "Instant Payout Systems",
-              "description": "For approved methods"
-            }
-          }
-        },
-        "strategies": {
-          "title": "Strategies for Smarter Sports Betting on Maxbet",
-          "description": "While betting always carries risk, a few approaches can help bettors manage their play responsibly:",
-          "items": {
-            "research": {
-              "title": "Research Before Placing Bets",
-              "description": "Check team form, injuries, and head-to-head stats"
-            },
-            "bankroll": {
-              "title": "Use Bankroll Management",
-              "description": "Never wager more than you can afford to lose"
-            },
-            "handicap": {
-              "title": "Leverage Asian Handicap",
-              "description": "Markets for fairer odds"
-            },
-            "parlays": {
-              "title": "Start Small with Parlays",
-              "description": "Before building higher-value combinations"
-            },
-            "liveOdds": {
-              "title": "Monitor Live Odds",
-              "description": "For value betting opportunities"
-            }
+          "secureTransactions": {
+            "title": "Secure Transactions",
+            "description": "Backed by proven technology"
           },
-          "note": {
-            "label": "Note:",
-            "text": " Consistent profit comes from discipline and information, not luck alone."
+          "fastPayouts": {
+            "title": "Fast Payout Processes",
+            "description": "Trusted by long-term users"
           }
         },
-        "userExperience": {
-          "title": "The User Experience on Hengongbet's Maxbet",
-          "description": "A smooth experience is just as important as odds. Hengongbet provides:",
-          "items": {
-            "mobileFriendly": {
-              "title": "Mobile-Friendly Design",
-              "description": "For betting on the go"
-            },
-            "multiLanguage": {
-              "title": "Multiple Language Options",
-              "description": "For international players"
-            },
-            "customerSupport": {
-              "title": "Dedicated Customer Support",
-              "description": "To resolve queries quickly"
-            },
-            "clearInterface": {
-              "title": "Clear Interface",
-              "description": "That simplifies odds selection"
-            }
-          }
-        },
-        "paymentMethods": {
-          "title": "Payment Methods and Payouts",
-          "description": "Maxbet supports a variety of payment options through Hengongbet:",
-          "items": {
-            "bankTransfers": {
-              "title": "Local Bank Transfers",
-              "description": "Fast and secure local banking"
-            },
-            "eWallets": {
-              "title": "E-Wallets",
-              "description": "Digital wallet solutions"
-            },
-            "cards": {
-              "title": "Credit and Debit Cards",
-              "description": "Major card providers accepted"
-            },
-            "crypto": {
-              "title": "Cryptocurrency Support",
-              "description": "Selected regions only"
-            }
+        "expertNote": {
+          "label": "Expert note:",
+          "text": " Maxbet has become a go-to platform for Asian players due to its stable odds, consistent service, and long-standing presence in the industry."
+        }
+      },
+      "popularSports": {
+        "title": "Popular Sports Covered by Maxbet",
+        "description": "Sports enthusiasts are never short of options. Maxbet provides betting opportunities on both international and local matches.",
+        "items": {
+          "football": {
+            "title": "Football Betting on Maxbet",
+            "description": "Football is the most popular market. Players can bet on English Premier League (EPL), La Liga, Serie A, UEFA Champions League, and Regional Asian tournaments. Bet types include match results, Asian handicap, over/under goals, and first-half markets."
           },
-          "processingTime": "Most withdrawals are processed within 24 hours, ensuring faster access to winnings."
-        },
-        "responsibleGambling": {
-          "title": "Responsible Gambling on Maxbet",
-          "description": "Hengongbet encourages responsible play by giving members the right tools to manage their betting habits. The platform offers:",
-          "appInfo": {
-            "part1": "For added convenience, players can also ",
-            "linkText": "download Hengongbet app",
-            "part2": ", making it easier to access responsible gaming features and place bets securely from their mobile devices."
+          "basketball": {
+            "title": "Basketball Betting",
+            "description": "From NBA games to FIBA World Cup tournaments, Maxbet ensures bettors can follow their favorite teams. Popular wagers include point spreads, totals, and player-specific props."
           },
-          "items": {
-            "depositLimits": {
-              "title": "Deposit Limits",
-              "description": "To control spending"
-            },
-            "selfExclusion": {
-              "title": "Self-Exclusion Tools",
-              "description": "For players who need a break"
-            },
-            "awarenessResources": {
-              "title": "Awareness Resources",
-              "description": "For those seeking support"
-            }
-          }
-        },
-        "faq": {
-          "title": "Frequently Asked Questions",
-          "items": {
-            "what": {
-              "question": "What is Maxbet sports betting?",
-              "answer": "Maxbet is an established online sportsbook that offers betting on football, basketball, tennis, horse racing, and more. It is trusted across Asia for reliable odds and secure payouts."
-            },
-            "payouts": {
-              "question": "How do payouts work on Maxbet via Hengongbet?",
-              "answer": "Withdrawals are processed quickly, usually within 24 hours, depending on the payment method. Local bank transfers and e-wallets are the fastest options."
-            },
-            "liveBetting": {
-              "question": "Can I bet live on Maxbet games?",
-              "answer": "Yes. Maxbet provides a live betting feature that updates odds in real time as the match unfolds. This allows players to react instantly to game developments."
-            },
-            "safety": {
-              "question": "Is Maxbet safe to use?",
-              "answer": "Yes. Maxbet is licensed and integrated into Hengongbet with encryption technology, ensuring player data and transactions remain secure."
-            }
-          }
-        },
-        "finalThoughts": {
-          "title": "Final Thoughts",
-          "description": {
-            "part1": "Maxbet sports betting at ",
-            "linkText": "Hengongbet",
-            "part2": " delivers a complete experience for fans who value variety, trust, and speed. With strong markets in football, basketball, and niche sports, combined with fast payouts and live betting options, it remains a leading choice for online players seeking both excitement and reliability."
+          "otherSports": {
+            "title": "Tennis, Badminton, and Other Sports",
+            "description": "Tennis Grand Slams and ATP/WTA tours, Badminton Asian championships and international matches, Esports competitive gaming markets, and Horse Racing from local and international tracks."
           }
         }
-      }
-    },
-
-    "rcb988": {
-      "meta": {
-        "title": "RCB988 Live Betting | Hengongbet",
-        "description": "Enjoy RCB988 live betting with Hengongbet. Play your favorite matches, enjoy smooth gameplay, and experience quick withdrawals every time you win.",
-        "urlSlug": "https://www.hengongbet88.com/games/rcb988"
       },
-      "content": {
-        "title": "RCB988 Live Betting &#124; Hengongbet",
-        "intro": {
-          "part1": "Why do bettors choose RCB988 live betting for real-time action? The answer lies in its seamless design, competitive odds, and user-first experience. At",
-          "linkText": " Hengongbet",
-          "part2": ", we provide a platform where sports enthusiasts can wager while the match unfolds, giving every decision an added layer of excitement."
-        },
-        "whatMakesDifferent": {
-          "title": "What Makes RCB988 Live Betting Different?",
-          "description": "When compared to standard pre-match wagers, live betting allows you to respond to game-changing moments as they happen. This flexibility gives bettors the chance to act on momentum shifts, injury updates, or tactical changes.",
-          "expertNote": {
-            "label": "Expert note:",
-            "text": " Live betting transforms passive watching into an interactive strategy, where timing and knowledge directly affect outcomes."
+      "betTypes": {
+        "title": "Types of Bets Available on Maxbet",
+        "description": "Understanding the types of bets is crucial for building a strategy. Below is a quick reference:",
+        "items": {
+          "oneXTwo": {
+            "title": "1X2",
+            "description": "Traditional win-draw-win market"
           },
-          "keyFeatures": {
-            "title": "Key Features of RCB988 Live Betting",
-            "instantOdds": "Instant odds updates reflecting the flow of play",
-            "smoothInterface": "Smooth interface with minimal lag",
-            "quickWithdrawals": "Quick withdrawals after winning bets",
-            "multipleSports": "Coverage of multiple sports, from football to basketball"
+          "asianHandicap": {
+            "title": "Asian Handicap",
+            "description": "Balances match odds by giving one team a virtual advantage"
+          },
+          "overUnder": {
+            "title": "Over/Under",
+            "description": "Bet on the total number of goals, points, or scores in a game"
+          },
+          "correctScore": {
+            "title": "Correct Score",
+            "description": "Predicting the exact final score"
+          },
+          "parlay": {
+            "title": "Parlay/Combo",
+            "description": "Multiple bets combined for higher payout potential"
+          },
+          "inPlay": {
+            "title": "In-Play",
+            "description": "Live betting with shifting odds as the match progresses"
           }
         },
-        "popularSports": {
-          "title": "Popular Sports Covered by RCB988 Live Betting",
-          "description": "RCB988 caters to a wide variety of sports. Below is a quick overview of what you can expect:",
-          "tableHeaders": {
-            "sport": "Sport",
-            "bettingOptions": "Example Betting Options",
-            "liveAvailability": "Live Availability"
+        "definition": {
+          "label": "Definition:",
+          "text": " Asian Handicap betting is designed to eliminate the possibility of a draw, creating a more balanced market for unevenly matched teams."
+        }
+      },
+      "liveBetting": {
+        "title": "Live Betting with Maxbet",
+        "description": "Live betting is one of the most engaging features. With constantly updated odds, players can react in real time to match events such as goals, fouls, or momentum shifts.",
+        "benefits": {
+          "betterValue": {
+            "title": "Better Value Odds",
+            "description": "When predicting match swings"
           },
-          "tableRows": {
-            "football": {
-              "sport": "Football",
-              "options": "Next goal, total corners, yellow cards",
-              "available": "Yes"
-            },
-            "basketball": {
-              "sport": "Basketball",
-              "options": "Quarter winner, over/under points",
-              "available": "Yes"
-            },
-            "tennis": {
-              "sport": "Tennis",
-              "options": "Next set winner, double faults",
-              "available": "Yes"
-            },
-            "esports": {
-              "sport": "Esports",
-              "options": "Map winner, kill totals",
-              "available": "Yes"
+          "hedging": {
+            "title": "Ability to Hedge",
+            "description": "Pre-match bets for risk management"
+          },
+          "interactive": {
+            "title": "Interactive Experience",
+            "description": "More engaging betting experience"
+          }
+        }
+      },
+      "security": {
+        "title": "How Maxbet Ensures Secure and Fast Betting",
+        "description": "Security and reliability are non-negotiable in online betting. Hengongbet integrates Maxbet with features such as:",
+        "items": {
+          "encryption": {
+            "title": "Encrypted Transactions",
+            "description": "For deposits and withdrawals"
+          },
+          "monitoring": {
+            "title": "24/7 Monitoring",
+            "description": "To prevent fraud or account misuse"
+          },
+          "licensed": {
+            "title": "Licensed Platform",
+            "description": "That complies with strict gaming regulations"
+          },
+          "instantPayouts": {
+            "title": "Instant Payout Systems",
+            "description": "For approved methods"
+          }
+        }
+      },
+      "strategies": {
+        "title": "Strategies for Smarter Sports Betting on Maxbet",
+        "description": "While betting always carries risk, a few approaches can help bettors manage their play responsibly:",
+        "items": {
+          "research": {
+            "title": "Research Before Placing Bets",
+            "description": "Check team form, injuries, and head-to-head stats"
+          },
+          "bankroll": {
+            "title": "Use Bankroll Management",
+            "description": "Never wager more than you can afford to lose"
+          },
+          "handicap": {
+            "title": "Leverage Asian Handicap",
+            "description": "Markets for fairer odds"
+          },
+          "parlays": {
+            "title": "Start Small with Parlays",
+            "description": "Before building higher-value combinations"
+          },
+          "liveOdds": {
+            "title": "Monitor Live Odds",
+            "description": "For value betting opportunities"
+          }
+        },
+        "note": {
+          "label": "Note:",
+          "text": " Consistent profit comes from discipline and information, not luck alone."
+        }
+      },
+      "userExperience": {
+        "title": "The User Experience on Hengongbet's Maxbet",
+        "description": "A smooth experience is just as important as odds. Hengongbet provides:",
+        "items": {
+          "mobileFriendly": {
+            "title": "Mobile-Friendly Design",
+            "description": "For betting on the go"
+          },
+          "multiLanguage": {
+            "title": "Multiple Language Options",
+            "description": "For international players"
+          },
+          "customerSupport": {
+            "title": "Dedicated Customer Support",
+            "description": "To resolve queries quickly"
+          },
+          "clearInterface": {
+            "title": "Clear Interface",
+            "description": "That simplifies odds selection"
+          }
+        }
+      },
+      "paymentMethods": {
+        "title": "Payment Methods and Payouts",
+        "description": "Maxbet supports a variety of payment options through Hengongbet:",
+        "items": {
+          "bankTransfers": {
+            "title": "Local Bank Transfers",
+            "description": "Fast and secure local banking"
+          },
+          "eWallets": {
+            "title": "E-Wallets",
+            "description": "Digital wallet solutions"
+          },
+          "cards": {
+            "title": "Credit and Debit Cards",
+            "description": "Major card providers accepted"
+          },
+          "crypto": {
+            "title": "Cryptocurrency Support",
+            "description": "Selected regions only"
+          }
+        },
+        "processingTime": "Most withdrawals are processed within 24 hours, ensuring faster access to winnings."
+      },
+      "responsibleGambling": {
+        "title": "Responsible Gambling on Maxbet",
+        "description": "Hengongbet encourages responsible play by giving members the right tools to manage their betting habits. The platform offers:",
+        "appInfo": {
+          "part1": "For added convenience, players can also ",
+          "linkText": "download Hengongbet app",
+          "part2": ", making it easier to access responsible gaming features and place bets securely from their mobile devices."
+        },
+        "items": {
+          "depositLimits": {
+            "title": "Deposit Limits",
+            "description": "To control spending"
+          },
+          "selfExclusion": {
+            "title": "Self-Exclusion Tools",
+            "description": "For players who need a break"
+          },
+          "awarenessResources": {
+            "title": "Awareness Resources",
+            "description": "For those seeking support"
+          }
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "items": {
+          "what": {
+            "question": "What is Maxbet sports betting?",
+            "answer": "Maxbet is an established online sportsbook that offers betting on football, basketball, tennis, horse racing, and more. It is trusted across Asia for reliable odds and secure payouts."
+          },
+          "payouts": {
+            "question": "How do payouts work on Maxbet via Hengongbet?",
+            "answer": "Withdrawals are processed quickly, usually within 24 hours, depending on the payment method. Local bank transfers and e-wallets are the fastest options."
+          },
+          "liveBetting": {
+            "question": "Can I bet live on Maxbet games?",
+            "answer": "Yes. Maxbet provides a live betting feature that updates odds in real time as the match unfolds. This allows players to react instantly to game developments."
+          },
+          "safety": {
+            "question": "Is Maxbet safe to use?",
+            "answer": "Yes. Maxbet is licensed and integrated into Hengongbet with encryption technology, ensuring player data and transactions remain secure."
+          }
+        }
+      },
+      "finalThoughts": {
+        "title": "Final Thoughts",
+        "description": {
+          "part1": "Maxbet sports betting at ",
+          "linkText": "Hengongbet",
+          "part2": " delivers a complete experience for fans who value variety, trust, and speed. With strong markets in football, basketball, and niche sports, combined with fast payouts and live betting options, it remains a leading choice for online players seeking both excitement and reliability."
+        }
+      }
+    }
+  },
+
+  "rcb988": {
+    "meta": {
+      "title": "RCB988 Live Betting | Hengongbet",
+      "description": "Enjoy RCB988 live betting with Hengongbet. Play your favorite matches, enjoy smooth gameplay, and experience quick withdrawals every time you win.",
+      "urlSlug": "https://www.hengongbet88.com/games/rcb988"
+    },
+    "content": {
+      "title": "RCB988 Live Betting &#124; Hengongbet",
+      "intro": {
+        "part1": "Why do bettors choose RCB988 live betting for real-time action? The answer lies in its seamless design, competitive odds, and user-first experience. At",
+        "linkText": " Hengongbet",
+        "part2": ", we provide a platform where sports enthusiasts can wager while the match unfolds, giving every decision an added layer of excitement."
+      },
+      "whatMakesDifferent": {
+        "title": "What Makes RCB988 Live Betting Different?",
+        "description": "When compared to standard pre-match wagers, live betting allows you to respond to game-changing moments as they happen. This flexibility gives bettors the chance to act on momentum shifts, injury updates, or tactical changes.",
+        "expertNote": {
+          "label": "Expert note:",
+          "text": " Live betting transforms passive watching into an interactive strategy, where timing and knowledge directly affect outcomes."
+        },
+        "keyFeatures": {
+          "title": "Key Features of RCB988 Live Betting",
+          "instantOdds": "Instant odds updates reflecting the flow of play",
+          "smoothInterface": "Smooth interface with minimal lag",
+          "quickWithdrawals": "Quick withdrawals after winning bets",
+          "multipleSports": "Coverage of multiple sports, from football to basketball"
+        }
+      },
+      "popularSports": {
+        "title": "Popular Sports Covered by RCB988 Live Betting",
+        "description": "RCB988 caters to a wide variety of sports. Below is a quick overview of what you can expect:",
+        "tableHeaders": {
+          "sport": "Sport",
+          "bettingOptions": "Example Betting Options",
+          "liveAvailability": "Live Availability"
+        },
+        "tableRows": {
+          "football": {
+            "sport": "Football",
+            "options": "Next goal, total corners, yellow cards",
+            "available": "Yes"
+          },
+          "basketball": {
+            "sport": "Basketball",
+            "options": "Quarter winner, over/under points",
+            "available": "Yes"
+          },
+          "tennis": {
+            "sport": "Tennis",
+            "options": "Next set winner, double faults",
+            "available": "Yes"
+          },
+          "esports": {
+            "sport": "Esports",
+            "options": "Map winner, kill totals",
+            "available": "Yes"
+          }
+        }
+      },
+      "howOddsWork": {
+        "title": "How Odds Work in RCB988 Live Betting",
+        "description": "Understanding <strong>odds movement</strong> is critical for success in real-time wagering.",
+        "fallingOdds": "<strong>Falling odds</strong> usually indicate rising confidence in that outcome.",
+        "risingOdds": "<strong>Rising odds</strong> may reflect underdog potential or shifts in momentum.",
+        "inPlayStats": "<strong>In-play stats</strong> like possession, shots, and fouls influence these changes."
+      },
+      "strategies": {
+        "title": "Strategies for Smarter Live Betting",
+        "description": "To improve success rates, experienced bettors rely on <strong>discipline and timing</strong>.",
+        "subtitle": "Proven Tactics",
+        "followOneSport": "<strong>Follow one sport closely</strong> – specialization builds expertise.",
+        "waitForMomentum": "<strong>Wait for momentum swings</strong> before placing high-value bets.",
+        "useCashOut": "<strong>Use cash-out options</strong> when available to secure profits early.",
+        "setBudget": "<strong>Set a budget</strong> and avoid chasing losses.",
+        "definition": {
+          "label": "Definition:",
+          "text": " A \"cash-out\" lets you settle a bet before the match ends, often used to lock in partial winnings."
+        }
+      },
+      "whyChooseHengongbet": {
+        "title": "Why Choose Hengongbet for RCB988 Live Betting?",
+        "description": "We ensure a secure, smooth, and rewarding environment:",
+        "licensedPlatform": "Licensed platform with advanced security measures",
+        "userFriendly": "User-friendly interface suitable for both beginners and professionals",
+        "customerSupport": "24/7 customer support ready to assist with any betting queries",
+        "fastWithdrawals": "Fast withdrawals ensuring players enjoy their winnings without delays",
+        "mobileApp": {
+          "text": "Access to the ",
+          "linkText": "Hengongbet app ",
+          "continuation": "for convenient live betting anytime, anywhere"
+        }
+      },
+      "keyDifferences": {
+        "title": "RCB988 vs Traditional Betting: Key Differences",
+        "tableHeaders": {
+          "aspect": "Aspect",
+          "liveBetting": "Live Betting",
+          "preMatchBetting": "Pre-Match Betting"
+        },
+        "tableRows": {
+          "flexibility": {
+            "aspect": "Flexibility",
+            "live": "Bet anytime during the match",
+            "preMatch": "Only before the event starts"
+          },
+          "oddsMovement": {
+            "aspect": "Odds Movement",
+            "live": "Adjusts instantly",
+            "preMatch": "Fixed once placed"
+          },
+          "engagement": {
+            "aspect": "Engagement",
+            "live": "Interactive and reactive",
+            "preMatch": "Predictive and static"
+          },
+          "riskFactor": {
+            "aspect": "Risk Factor",
+            "live": "Can increase due to fast changes",
+            "preMatch": "More stable"
+          }
+        }
+      },
+      "mobileExperience": {
+        "title": "Mobile Experience with RCB988 Live Betting",
+        "description": "Modern bettors demand mobility. Hengongbet ensures that <strong>RCB988 live betting</strong> runs flawlessly on both Android and iOS devices.",
+        "subtitle": "Benefits on Mobile:",
+        "accessAnywhere": "Access from anywhere with internet",
+        "optimizedDesign": "Optimized design for smaller screens",
+        "pushNotifications": "Push notifications for score and odds updates"
+      },
+      "bankrollManagement": {
+        "title": "Bankroll Management for Live Betting",
+        "description": "One of the most overlooked aspects of live betting is <strong>money management</strong>.",
+        "subtitle": "Best Practices",
+        "stakeLimit": "Stake no more than <strong>5% of your bankroll per bet</strong>",
+        "avoidDoubling": "Avoid doubling stakes after losses",
+        "keepRecords": "Keep records of wagers to track performance",
+        "expertTip": {
+          "label": "Expert tip:",
+          "text": " Treat live betting as a long-term strategy, not a quick profit chase."
+        }
+      },
+      "commonMistakes": {
+        "title": "Common Mistakes to Avoid in RCB988 Live Betting",
+        "overreacting": "<strong>Overreacting</strong> to a single event (like a red card)",
+        "ignoringFatigue": "<strong>Ignoring fatigue factors</strong> in long matches",
+        "bettingEmotionally": "<strong>Betting emotionally</strong> on favorite teams",
+        "skippingResearch": "<strong>Skipping research</strong> on head-to-head statistics"
+      },
+      "future": {
+        "title": "Future of RCB988 Live Betting",
+        "description": "The future looks promising with the integration of:",
+        "aiPredictions": "<strong>AI-powered odds predictions</strong>",
+        "vrStreaming": "<strong>VR match streaming</strong>",
+        "enhancedStats": "<strong>Enhanced statistics dashboards</strong>",
+        "additionalInfo": {
+          "text": "These features aim to provide bettors with more control and insight when playing the ",
+          "linkText": "game",
+          "continuation": "."
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "whatIsLiveBetting": {
+          "question": "What is RCB988 live betting?",
+          "answer": "It is a real-time betting option where odds update continuously during a match, allowing you to place wagers while the action unfolds."
+        },
+        "isRiskier": {
+          "question": "Is live betting riskier than pre-match betting?",
+          "answer": "Yes, because odds fluctuate quickly. However, with proper strategy and bankroll management, bettors can control risks effectively."
+        },
+        "withdrawalSpeed": {
+          "question": "How fast are withdrawals with RCB988 live betting at Hengongbet?",
+          "answer": "Withdrawals are processed quickly, ensuring winnings reach your account without unnecessary delays."
+        },
+        "mobileUsage": {
+          "question": "Can I use my mobile phone for RCB988 live betting?",
+          "answer": "Absolutely. The platform is optimized for smartphones, giving you a seamless betting experience on the go."
+        }
+      },
+      "summary": {
+        "title": "Summary",
+        "description1": "<strong>RCB988 live betting with Hengongbet</strong> offers more than just odds—it creates an interactive environment where timing, analysis, and strategy matter. With real-time updates, mobile compatibility, and smooth withdrawals, it provides a reliable space for both casual and seasoned bettors.",
+        "essence": "The essence of live betting is simple: make informed choices in the moment, and let smart strategies guide your wagers.",
+        "description2": "As the industry continues to evolve with AI-driven tools and enhanced statistics, Hengongbet ensures that RCB988 remains a trusted choice for those who value both excitement and control in their betting journey."
+      }
+    }
+  },
+
+  "sv388": {
+    "meta": {
+      "title": "SV388 Cockfight Betting | Hengongbet",
+      "description": "Bet on live SV388 cockfighting matches at Hengongbet. Simple signup, fast payouts, and a safe place to play your favorite cockfight bets online.",
+      "urlSlug": "https://www.hengongbet88.com/games/sv388"
+    },
+    "content": {
+      "title": "SV388 Cockfight Betting &#124; Hengongbet",
+      "intro": "Why is SV388 cockfight betting gaining so much attention among players in Asia? The answer lies in the platform's mix of tradition, technology, and competitive wagering. At Hengongbet, we bring this experience online with real-time SV388 cockfighting streams and fast, transparent betting options.",
+      "whatIsSv388": {
+        "title": "What is SV388 Cockfight Betting?",
+        "description": "SV388 is a licensed online cockfighting platform that broadcasts live matches from arenas across Southeast Asia. It gives bettors a chance to wager on outcomes in real time while watching the action through high-quality video streams.",
+        "expertNote": {
+          "label": "Expert note:",
+          "text": " SV388 is widely regarded as the leading online cockfight provider due to its secure match hosting and verified event coverage."
+        },
+        "keyFeatures": {
+          "title": "Key Features of SV388:",
+          "liveVideo": "<strong>Live video streaming</strong> of cockfights",
+          "bettingOdds": "<strong>Betting odds updated instantly</strong>",
+          "multipleWager": "<strong>Multiple wager types</strong> to suit casual and advanced bettors",
+          "licensed": "<strong>Licensed and regulated operations</strong>"
+        }
+      },
+      "whyBetWithHengongbet": {
+        "title": "Why Bet on SV388 with Hengongbet?",
+        "description": "At Hengongbet, we prioritise a smooth betting experience that makes <strong>SV388 cockfight betting accessible and secure</strong>.",
+        "subtitle": "Benefits of choosing Hengongbet:",
+        "simpleSignup": "<strong>Simple signup</strong> process",
+        "fastPayments": "<strong>Fast deposits and withdrawals</strong>",
+        "mobileFriendly": "<strong>Mobile-friendly betting interface</strong>",
+        "customerSupport": "<strong>24/7 customer support</strong>",
+        "tableHeaders": {
+          "feature": "Feature",
+          "advantage": "Hengongbet Advantage"
+        },
+        "tableRows": {
+          "registration": {
+            "feature": "Registration",
+            "advantage": "Quick, user-friendly"
+          },
+          "payment": {
+            "feature": "Payment",
+            "advantage": "Local banks + e-wallets"
+          },
+          "streaming": {
+            "feature": "Streaming",
+            "advantage": "High-definition video"
+          },
+          "security": {
+            "feature": "Security",
+            "advantage": "Licensed and encrypted"
+          }
+        }
+      },
+      "howToPlaceBets": {
+        "title": "How to Place Bets on SV388 Cockfights",
+        "description": {
+          "text": "Betting on SV388 at Hengongbet can be done in just a few steps, making it easy for both new and experienced players. For the smoothest experience, many users start with the ",
+          "linkText": "Hengongbet download ",
+          "continuation": ", ensuring quick access to the SV388 lobby anytime."
+        },
+        "steps": {
+          "step1": {
+            "title": "Step 1: Register an Account",
+            "description": "Sign up with your basic details and verify your account to get started."
+          },
+          "step2": {
+            "title": "Step 2: Deposit Funds",
+            "description": "Choose from local bank transfers, e-wallets, or instant payment methods to fund your betting wallet."
+          },
+          "step3": {
+            "title": "Step 3: Access SV388 Lobby",
+            "description": "Navigate to <strong>SV388 Cockfight Betting</strong> and open the live match schedule."
+          },
+          "step4": {
+            "title": "Step 4: Choose a Bet Type",
+            "description": "Common wagers include:",
+            "betTypes": {
+              "meron": "<strong>Meron</strong> -- betting on the red corner rooster",
+              "wala": "<strong>Wala</strong> -- betting on the blue corner rooster",
+              "bdd": "<strong>BDD (Both Die Draw)</strong> -- rare outcome with high odds"
             }
-          }
-        },
-        "howOddsWork": {
-          "title": "How Odds Work in RCB988 Live Betting",
-          "description": "Understanding <strong>odds movement</strong> is critical for success in real-time wagering.",
-          "fallingOdds": "<strong>Falling odds</strong> usually indicate rising confidence in that outcome.",
-          "risingOdds": "<strong>Rising odds</strong> may reflect underdog potential or shifts in momentum.",
-          "inPlayStats": "<strong>In-play stats</strong> like possession, shots, and fouls influence these changes."
-        },
-        "strategies": {
-          "title": "Strategies for Smarter Live Betting",
-          "description": "To improve success rates, experienced bettors rely on <strong>discipline and timing</strong>.",
-          "subtitle": "Proven Tactics",
-          "followOneSport": "<strong>Follow one sport closely</strong> – specialization builds expertise.",
-          "waitForMomentum": "<strong>Wait for momentum swings</strong> before placing high-value bets.",
-          "useCashOut": "<strong>Use cash-out options</strong> when available to secure profits early.",
-          "setBudget": "<strong>Set a budget</strong> and avoid chasing losses.",
-          "definition": {
-            "label": "Definition:",
-            "text": " A \"cash-out\" lets you settle a bet before the match ends, often used to lock in partial winnings."
-          }
-        },
-        "whyChooseHengongbet": {
-          "title": "Why Choose Hengongbet for RCB988 Live Betting?",
-          "description": "We ensure a secure, smooth, and rewarding environment:",
-          "licensedPlatform": "Licensed platform with advanced security measures",
-          "userFriendly": "User-friendly interface suitable for both beginners and professionals",
-          "customerSupport": "24/7 customer support ready to assist with any betting queries",
-          "fastWithdrawals": "Fast withdrawals ensuring players enjoy their winnings without delays",
-          "mobileApp": {
-            "text": "Access to the ",
-            "linkText": "Hengongbet app ",
-            "continuation": "for convenient live betting anytime, anywhere"
-          }
-        },
-        "keyDifferences": {
-          "title": "RCB988 vs Traditional Betting: Key Differences",
-          "tableHeaders": {
-            "aspect": "Aspect",
-            "liveBetting": "Live Betting",
-            "preMatchBetting": "Pre-Match Betting"
           },
-          "tableRows": {
-            "flexibility": {
-              "aspect": "Flexibility",
-              "live": "Bet anytime during the match",
-              "preMatch": "Only before the event starts"
-            },
-            "oddsMovement": {
-              "aspect": "Odds Movement",
-              "live": "Adjusts instantly",
-              "preMatch": "Fixed once placed"
-            },
-            "engagement": {
-              "aspect": "Engagement",
-              "live": "Interactive and reactive",
-              "preMatch": "Predictive and static"
-            },
-            "riskFactor": {
-              "aspect": "Risk Factor",
-              "live": "Can increase due to fast changes",
-              "preMatch": "More stable"
-            }
+          "step5": {
+            "title": "Step 5: Confirm Your Wager",
+            "description": "Place your bet, watch the fight live, and enjoy the result in real time."
           }
-        },
-        "mobileExperience": {
-          "title": "Mobile Experience with RCB988 Live Betting",
-          "description": "Modern bettors demand mobility. Hengongbet ensures that <strong>RCB988 live betting</strong> runs flawlessly on both Android and iOS devices.",
-          "subtitle": "Benefits on Mobile:",
-          "accessAnywhere": "Access from anywhere with internet",
-          "optimizedDesign": "Optimized design for smaller screens",
-          "pushNotifications": "Push notifications for score and odds updates"
+        }
+      },
+      "bettingStrategies": {
+        "title": "Betting Strategies for SV388 Cockfights",
+        "description": "While cockfighting outcomes can be unpredictable, many players apply strategies to increase their chances.",
+        "observingRoosters": {
+          "title": "Observing Roosters",
+          "conditionCheck": "<strong>Condition check:</strong> Look at weight, stamina, and agility.",
+          "previousRecord": "<strong>Previous record:</strong> Roosters with consistent wins often attract stronger odds."
         },
         "bankrollManagement": {
-          "title": "Bankroll Management for Live Betting",
-          "description": "One of the most overlooked aspects of live betting is <strong>money management</strong>.",
-          "subtitle": "Best Practices",
-          "stakeLimit": "Stake no more than <strong>5% of your bankroll per bet</strong>",
-          "avoidDoubling": "Avoid doubling stakes after losses",
-          "keepRecords": "Keep records of wagers to track performance",
-          "expertTip": {
-            "label": "Expert tip:",
-            "text": " Treat live betting as a long-term strategy, not a quick profit chase."
-          }
+          "title": "Bankroll Management",
+          "setBettingLimit": "Set a betting limit per session.",
+          "divideFunds": "Divide funds across multiple bets to minimise risk."
         },
-        "commonMistakes": {
-          "title": "Common Mistakes to Avoid in RCB988 Live Betting",
-          "overreacting": "<strong>Overreacting</strong> to a single event (like a red card)",
-          "ignoringFatigue": "<strong>Ignoring fatigue factors</strong> in long matches",
-          "bettingEmotionally": "<strong>Betting emotionally</strong> on favorite teams",
-          "skippingResearch": "<strong>Skipping research</strong> on head-to-head statistics"
-        },
-        "future": {
-          "title": "Future of RCB988 Live Betting",
-          "description": "The future looks promising with the integration of:",
-          "aiPredictions": "<strong>AI-powered odds predictions</strong>",
-          "vrStreaming": "<strong>VR match streaming</strong>",
-          "enhancedStats": "<strong>Enhanced statistics dashboards</strong>",
-          "additionalInfo": {
-            "text": "These features aim to provide bettors with more control and insight when playing the ",
-            "linkText": "game",
-            "continuation": "."
-          }
-        },
-        "faq": {
-          "title": "Frequently Asked Questions",
-          "whatIsLiveBetting": {
-            "question": "What is RCB988 live betting?",
-            "answer": "It is a real-time betting option where odds update continuously during a match, allowing you to place wagers while the action unfolds."
-          },
-          "isRiskier": {
-            "question": "Is live betting riskier than pre-match betting?",
-            "answer": "Yes, because odds fluctuate quickly. However, with proper strategy and bankroll management, bettors can control risks effectively."
-          },
-          "withdrawalSpeed": {
-            "question": "How fast are withdrawals with RCB988 live betting at Hengongbet?",
-            "answer": "Withdrawals are processed quickly, ensuring winnings reach your account without unnecessary delays."
-          },
-          "mobileUsage": {
-            "question": "Can I use my mobile phone for RCB988 live betting?",
-            "answer": "Absolutely. The platform is optimized for smartphones, giving you a seamless betting experience on the go."
-          }
-        },
-        "summary": {
-          "title": "Summary",
-          "description1": "<strong>RCB988 live betting with Hengongbet</strong> offers more than just odds—it creates an interactive environment where timing, analysis, and strategy matter. With real-time updates, mobile compatibility, and smooth withdrawals, it provides a reliable space for both casual and seasoned bettors.",
-          "essence": "The essence of live betting is simple: make informed choices in the moment, and let smart strategies guide your wagers.",
-          "description2": "As the industry continues to evolve with AI-driven tools and enhanced statistics, Hengongbet ensures that RCB988 remains a trusted choice for those who value both excitement and control in their betting journey."
+        "oddsAwareness": {
+          "title": "Odds Awareness",
+          "learnOdds": "Learn how SV388 odds reflect rooster performance and historical data.",
+          "valueBets": "Look for value bets when odds do not align with real fighting potential."
         }
-      }
-    },
-
-    "sv388": {
-      "meta": {
-        "title": "SV388 Cockfight Betting | Hengongbet",
-        "description": "Bet on live SV388 cockfighting matches at Hengongbet. Simple signup, fast payouts, and a safe place to play your favorite cockfight bets online.",
-        "urlSlug": "https://www.hengongbet88.com/games/sv388"
       },
-      "content": {
-        "title": "SV388 Cockfight Betting &#124; Hengongbet",
-        "intro": "Why is SV388 cockfight betting gaining so much attention among players in Asia? The answer lies in the platform's mix of tradition, technology, and competitive wagering. At Hengongbet, we bring this experience online with real-time SV388 cockfighting streams and fast, transparent betting options.",
-        "whatIsSv388": {
-          "title": "What is SV388 Cockfight Betting?",
-          "description": "SV388 is a licensed online cockfighting platform that broadcasts live matches from arenas across Southeast Asia. It gives bettors a chance to wager on outcomes in real time while watching the action through high-quality video streams.",
-          "expertNote": {
-            "label": "Expert note:",
-            "text": " SV388 is widely regarded as the leading online cockfight provider due to its secure match hosting and verified event coverage."
-          },
-          "keyFeatures": {
-            "title": "Key Features of SV388:",
-            "liveVideo": "<strong>Live video streaming</strong> of cockfights",
-            "bettingOdds": "<strong>Betting odds updated instantly</strong>",
-            "multipleWager": "<strong>Multiple wager types</strong> to suit casual and advanced bettors",
-            "licensed": "<strong>Licensed and regulated operations</strong>"
-          }
+      "responsibleBetting": {
+        "title": "Responsible Cockfight Betting",
+        "description": "Hengongbet encourages all players to <strong>practice responsible gambling</strong>. Betting should remain an entertainment activity, not a financial burden.",
+        "setDepositLimits": "Set deposit limits",
+        "takeBreaks": "Take regular breaks",
+        "reachSupport": "Reach out to support if you feel you're overplaying"
+      },
+      "whyStandsOut": {
+        "title": "Why SV388 Stands Out Among Other Platforms",
+        "description": "Unlike smaller cockfight platforms, <strong>SV388 offers</strong>:",
+        "licensedCoverage": "Licensed international coverage",
+        "transparentMonitoring": "Transparent fight monitoring to prevent match-fixing",
+        "largeBettingPools": "Large betting pools, leading to better odds and payout opportunities",
+        "exclusivePromotions": {
+          "text": "In addition, Hengongbet often provides ",
+          "linkText": "exclusive promotion ",
+          "continuation": "deals for SV388 players, giving bettors extra value when joining matches or topping up their accounts."
         },
-        "whyBetWithHengongbet": {
-          "title": "Why Bet on SV388 with Hengongbet?",
-          "description": "At Hengongbet, we prioritise a smooth betting experience that makes <strong>SV388 cockfight betting accessible and secure</strong>.",
-          "subtitle": "Benefits of choosing Hengongbet:",
-          "simpleSignup": "<strong>Simple signup</strong> process",
-          "fastPayments": "<strong>Fast deposits and withdrawals</strong>",
-          "mobileFriendly": "<strong>Mobile-friendly betting interface</strong>",
-          "customerSupport": "<strong>24/7 customer support</strong>",
-          "tableHeaders": {
-            "feature": "Feature",
-            "advantage": "Hengongbet Advantage"
-          },
-          "tableRows": {
-            "registration": {
-              "feature": "Registration",
-              "advantage": "Quick, user-friendly"
-            },
-            "payment": {
-              "feature": "Payment",
-              "advantage": "Local banks + e-wallets"
-            },
-            "streaming": {
-              "feature": "Streaming",
-              "advantage": "High-definition video"
-            },
-            "security": {
-              "feature": "Security",
-              "advantage": "Licensed and encrypted"
-            }
-          }
+        "quote": "SV388 has become the benchmark for online cockfight betting, trusted across multiple countries."
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "whatIsSv388Betting": {
+          "question": "What is SV388 cockfight betting?",
+          "answer": "It is the practice of wagering on live cockfighting matches streamed online via the SV388 platform, available at Hengongbet."
         },
-        "howToPlaceBets": {
-          "title": "How to Place Bets on SV388 Cockfights",
-          "description": {
-            "text": "Betting on SV388 at Hengongbet can be done in just a few steps, making it easy for both new and experienced players. For the smoothest experience, many users start with the ",
-            "linkText": "Hengongbet download ",
-            "continuation": ", ensuring quick access to the SV388 lobby anytime."
-          },
-          "steps": {
-            "step1": {
-              "title": "Step 1: Register an Account",
-              "description": "Sign up with your basic details and verify your account to get started."
-            },
-            "step2": {
-              "title": "Step 2: Deposit Funds",
-              "description": "Choose from local bank transfers, e-wallets, or instant payment methods to fund your betting wallet."
-            },
-            "step3": {
-              "title": "Step 3: Access SV388 Lobby",
-              "description": "Navigate to <strong>SV388 Cockfight Betting</strong> and open the live match schedule."
-            },
-            "step4": {
-              "title": "Step 4: Choose a Bet Type",
-              "description": "Common wagers include:",
-              "betTypes": {
-                "meron": "<strong>Meron</strong> -- betting on the red corner rooster",
-                "wala": "<strong>Wala</strong> -- betting on the blue corner rooster",
-                "bdd": "<strong>BDD (Both Die Draw)</strong> -- rare outcome with high odds"
-              }
-            },
-            "step5": {
-              "title": "Step 5: Confirm Your Wager",
-              "description": "Place your bet, watch the fight live, and enjoy the result in real time."
-            }
-          }
+        "isLegal": {
+          "question": "Is SV388 legal?",
+          "answer": "Yes, SV388 operates under proper gaming licenses and adheres to strict regulations for fair play and transparency."
         },
-        "bettingStrategies": {
-          "title": "Betting Strategies for SV388 Cockfights",
-          "description": "While cockfighting outcomes can be unpredictable, many players apply strategies to increase their chances.",
-          "observingRoosters": {
-            "title": "Observing Roosters",
-            "conditionCheck": "<strong>Condition check:</strong> Look at weight, stamina, and agility.",
-            "previousRecord": "<strong>Previous record:</strong> Roosters with consistent wins often attract stronger odds."
-          },
-          "bankrollManagement": {
-            "title": "Bankroll Management",
-            "setBettingLimit": "Set a betting limit per session.",
-            "divideFunds": "Divide funds across multiple bets to minimise risk."
-          },
-          "oddsAwareness": {
-            "title": "Odds Awareness",
-            "learnOdds": "Learn how SV388 odds reflect rooster performance and historical data.",
-            "valueBets": "Look for value bets when odds do not align with real fighting potential."
-          }
+        "betTypes": {
+          "question": "What types of bets can I place?",
+          "answer": "You can bet on <strong>Meron (red corner), Wala (blue corner), or BDD (draw)</strong>. Each option comes with different odds and payouts."
         },
-        "responsibleBetting": {
-          "title": "Responsible Cockfight Betting",
-          "description": "Hengongbet encourages all players to <strong>practice responsible gambling</strong>. Betting should remain an entertainment activity, not a financial burden.",
-          "setDepositLimits": "Set deposit limits",
-          "takeBreaks": "Take regular breaks",
-          "reachSupport": "Reach out to support if you feel you're overplaying"
-        },
-        "whyStandsOut": {
-          "title": "Why SV388 Stands Out Among Other Platforms",
-          "description": "Unlike smaller cockfight platforms, <strong>SV388 offers</strong>:",
-          "licensedCoverage": "Licensed international coverage",
-          "transparentMonitoring": "Transparent fight monitoring to prevent match-fixing",
-          "largeBettingPools": "Large betting pools, leading to better odds and payout opportunities",
-          "exclusivePromotions": {
-            "text": "In addition, Hengongbet often provides ",
-            "linkText": "exclusive promotion ",
-            "continuation": "deals for SV388 players, giving bettors extra value when joining matches or topping up their accounts."
-          },
-          "quote": "SV388 has become the benchmark for online cockfight betting, trusted across multiple countries."
-        },
-        "faq": {
-          "title": "Frequently Asked Questions",
-          "whatIsSv388Betting": {
-            "question": "What is SV388 cockfight betting?",
-            "answer": "It is the practice of wagering on live cockfighting matches streamed online via the SV388 platform, available at Hengongbet."
-          },
-          "isLegal": {
-            "question": "Is SV388 legal?",
-            "answer": "Yes, SV388 operates under proper gaming licenses and adheres to strict regulations for fair play and transparency."
-          },
-          "betTypes": {
-            "question": "What types of bets can I place?",
-            "answer": "You can bet on <strong>Meron (red corner), Wala (blue corner), or BDD (draw)</strong>. Each option comes with different odds and payouts."
-          },
-          "withdrawWinnings": {
-            "question": "How do I withdraw winnings?",
-            "answer": "Winnings can be withdrawn instantly through Hengongbet's banking partners or e-wallet systems, ensuring fast access to your funds."
-          }
-        },
-        "finalThoughts": {
-          "title": "Final Thoughts on SV388 at Hengongbet",
-          "description": {
-            "text": "SV388 provides a secure and engaging cockfight betting platform, and ",
-            "linkText": "Hengongbet ",
-            "continuation": "enhances the experience with reliable payments, smooth streaming, and dedicated support. Whether you are new to online cockfighting or an experienced bettor, this is where traditional sport meets modern betting convenience."
-          }
+        "withdrawWinnings": {
+          "question": "How do I withdraw winnings?",
+          "answer": "Winnings can be withdrawn instantly through Hengongbet's banking partners or e-wallet systems, ensuring fast access to your funds."
         }
-      }
-    },
-
-    "monkeyKing": {
-      "meta": {
-        "title": "Monkey King Slots | Hengongbet",
-        "description": "Play Monkey King slots on Hengongbet. Smooth spins, fun features, and rewarding wins made for mobile and desktop players.",
-        "urlSlug": "https://www.hengongbet88.com/games/monkey-king"
       },
-      "content": {
-        "title": "Monkey King Slots &#124; Hengongbet",
-        "intro": {
-          "text": "Why are Monkey King slots so popular among online players? The legendary figure from Chinese folklore has long been a source of inspiration for game developers. At ",
+      "finalThoughts": {
+        "title": "Final Thoughts on SV388 at Hengongbet",
+        "description": {
+          "text": "SV388 provides a secure and engaging cockfight betting platform, and ",
           "linkText": "Hengongbet ",
-          "continuation": ", players can access a variety of Monkey King-themed slot games that combine engaging narratives, strong payout potential, and appealing visuals. This guide explores what makes these games worth playing and how they fit within your overall online slot strategy."
+          "continuation": "enhances the experience with reliable payments, smooth streaming, and dedicated support. Whether you are new to online cockfighting or an experienced bettor, this is where traditional sport meets modern betting convenience."
+        }
+      }
+    }
+  },
+
+  "monkeyKing": {
+    "meta": {
+      "title": "Monkey King Slots | Hengongbet",
+      "description": "Play Monkey King slots on Hengongbet. Smooth spins, fun features, and rewarding wins made for mobile and desktop players.",
+      "urlSlug": "https://www.hengongbet88.com/games/monkey-king"
+    },
+    "content": {
+      "title": "Monkey King Slots &#124; Hengongbet",
+      "intro": {
+        "text": "Why are Monkey King slots so popular among online players? The legendary figure from Chinese folklore has long been a source of inspiration for game developers. At ",
+        "linkText": "Hengongbet ",
+        "continuation": ", players can access a variety of Monkey King-themed slot games that combine engaging narratives, strong payout potential, and appealing visuals. This guide explores what makes these games worth playing and how they fit within your overall online slot strategy."
+      },
+      "whatAreMonkeyKingSlots": {
+        "title": "What Are Monkey King Slots?",
+        "description": {
+          "text": "<strong>Monkey King slots</strong> are online ",
+          "linkText": "slot games ",
+          "continuation": "inspired by Sun Wukong, the rebellious trickster from *Journey to the West*. Game developers such as <strong>PG Soft, Playtech, and JDB</strong> have each created their own adaptations. These games often feature:"
         },
-        "whatAreMonkeyKingSlots": {
-          "title": "What Are Monkey King Slots?",
-          "description": {
-            "text": "<strong>Monkey King slots</strong> are online ",
-            "linkText": "slot games ",
-            "continuation": "inspired by Sun Wukong, the rebellious trickster from *Journey to the West*. Game developers such as <strong>PG Soft, Playtech, and JDB</strong> have each created their own adaptations. These games often feature:"
+        "features": {
+          "richStorylines": "<strong>Rich storylines</strong> based on mythology",
+          "specialSymbols": "<strong>Special symbols</strong> like expanding wilds or sticky wilds",
+          "bonusRounds": "<strong>Bonus rounds</strong> tied to Monkey King's magical staff or transformations",
+          "highVolatility": "<strong>High volatility mechanics</strong> that attract risk-seeking players"
+        },
+        "expertNote": {
+          "label": "Expert note:",
+          "text": " Monkey King-themed slots are especially popular in Asian markets because they blend cultural storytelling with modern gaming mechanics."
+        }
+      },
+      "popularGames": {
+        "title": "Popular Monkey King Slot Games at Hengongbet",
+        "description": "At Hengongbet, players can try several versions of the <strong>Monkey King slot</strong>, each with unique mechanics and payout structures.",
+        "tableHeaders": {
+          "game": "Game",
+          "developer": "Developer",
+          "rtp": "RTP",
+          "keyFeatures": "Key Features"
+        },
+        "tableRows": {
+          "playtechMonkey": {
+            "game": "Monkey King (Playtech)",
+            "developer": "Playtech",
+            "rtp": "96%",
+            "features": "Free spins, stacked symbols, multipliers"
+          },
+          "legendaryMonkey": {
+            "game": "Legendary Monkey King",
+            "developer": "PG Soft",
+            "rtp": "96.7%",
+            "features": "5x5 reels, expanding wilds, tumbling wins"
+          },
+          "monkeyTreasure": {
+            "game": "Monkey King Treasure",
+            "developer": "JDB",
+            "rtp": "95.5%",
+            "features": "Bonus game, jackpot potential"
+          },
+          "wuKong": {
+            "game": "Wu Kong",
+            "developer": "Spadegaming",
+            "rtp": "96.5%",
+            "features": "Multiple free spin modes, random wilds"
+          }
+        },
+        "conclusion": "These variations ensure that players can pick a style that suits their preferences, whether they prefer high RTP slots or feature-heavy designs."
+      },
+      "coreFeatures": {
+        "title": "Core Features of Monkey King Slots",
+        "expandingWilds": {
+          "title": "1. Expanding Wilds and Sticky Wilds",
+          "description": "The Monkey King is often represented as the <strong>wild symbol</strong>. In many games, this expands across reels or locks in place during bonus rounds."
+        },
+        "freeSpinMultipliers": {
+          "title": "2. Free Spin Multipliers",
+          "description": "Most versions include <strong>free spin rounds</strong> where multipliers increase winnings. These are often triggered by Scatter symbols like golden staffs or enchanted peaches."
+        },
+        "tumblingReels": {
+          "title": "3. Tumbling Reels",
+          "description": "Some developers add <strong>tumbling reel mechanics</strong>, where winning combinations disappear and allow new symbols to fall, increasing win potential."
+        }
+      },
+      "whyAppealToPlayers": {
+        "title": "Why Monkey King Slots Appeal to Players",
+        "description": "The attraction of Monkey King slots comes from a mix of <strong>mythology and modern slot design</strong>. Players enjoy:",
+        "culturalFamiliarity": "<strong>Cultural familiarity</strong> with the Journey to the West tale",
+        "visuallyRich": "<strong>Visually rich themes</strong> with dragons, palaces, and celestial backdrops",
+        "rewardStructures": "<strong>Reward structures</strong> that keep gameplay engaging",
+        "compatibility": "<strong>Compatibility</strong> with mobile platforms, ideal for on-the-go play",
+        "conclusion": "By offering a mix of entertainment and payout opportunities, Monkey King slots help Hengongbet strengthen its <strong>online slots portfolio</strong>."
+      },
+      "playingOnHengongbet": {
+        "title": "Playing Monkey King Slots on Hengongbet",
+        "description": "Hengongbet ensures a <strong>smooth and secure experience</strong> when playing Monkey King slots:",
+        "steps": {
+          "step1": "<strong>Log in</strong> to your Hengongbet account",
+          "step2": "<strong>Search</strong> for \"Monkey King\" in the slot section",
+          "step3": "<strong>Choose</strong> from Playtech, PG Soft, or JDB games",
+          "step4": "<strong>Adjust</strong> your bet size according to your bankroll",
+          "step5": "<strong>Spin</strong> and watch for wild staff symbols to trigger bonuses"
+        },
+        "additionalInfo": "Players can also explore other themed slots in the main Hengongbet slots hub (internal linking cue to the pillar page)."
+      },
+      "strategyTips": {
+        "title": "Strategy Tips for Monkey King Slots",
+        "description": "While slots are chance-based, some strategies can help manage play more effectively:",
+        "setBudget": "<strong>Set a budget:</strong> Define how much you're willing to spend",
+        "lookAtRtp": "<strong>Look at RTP:</strong> Choose games with higher RTP for better long-term returns",
+        "tryDemo": "<strong>Try demo mode:</strong> Many Monkey King slots allow practice before wagering real money",
+        "balanceVolatility": "<strong>Balance volatility:</strong> Pick a game that matches your risk appetite—high volatility means fewer but larger wins",
+        "proTip": {
+          "label": "Pro tip:",
+          "text": " Games like PG Soft's *Legendary Monkey King* offer both tumbling reels and free spins, making them suitable for players who prefer feature-packed mechanics."
+        }
+      },
+      "comparedToOtherThemes": {
+        "title": "Monkey King Slots Compared to Other Mythical Themes",
+        "description": "Monkey King slots stand out from other mythology-based games due to their <strong>cultural symbolism</strong> and <strong>unique mechanics</strong>.",
+        "tableHeaders": {
+          "theme": "Theme",
+          "exampleSlot": "Example Slot",
+          "uniqueHook": "Unique Hook"
+        },
+        "tableRows": {
+          "monkeyKing": {
+            "theme": "Monkey King",
+            "example": "Legendary Monkey King",
+            "hook": "Chinese folklore, magical staff wilds"
+          },
+          "greekGods": {
+            "theme": "Greek Gods",
+            "example": "Age of the Gods (Playtech)",
+            "hook": "Zeus and Athena multipliers"
+          },
+          "norseMyths": {
+            "theme": "Norse Myths",
+            "example": "Thunderstruck II (Microgaming)",
+            "hook": "Valkyrie bonus spins"
+          }
+        },
+        "conclusion": "This variety shows how Monkey King slots hold a <strong>distinct niche</strong> within the broader category of mythical slots."
+      },
+      "responsiblePlay": {
+        "title": "Responsible Play",
+        "description": "At Hengongbet, we encourage all players to enjoy Monkey King slots responsibly. Always set <strong>limits on time and budget</strong>, and view slots as entertainment rather than income."
+      },
+      "faq": {
+        "title": "FAQs About Monkey King Slots",
+        "whatIsRtp": {
+          "question": "What is the RTP of Monkey King slots?",
+          "answer": "Most Monkey King slots offer an RTP between <strong>95% and 97%</strong>, depending on the developer. PG Soft's Legendary Monkey King tends to have the highest RTP at around 96.7%."
+        },
+        "mobileAvailable": {
+          "question": "Are Monkey King slots available on mobile?",
+          "answer": "Yes. All Monkey King slots on Hengongbet are <strong>mobile-friendly</strong>, optimized for both iOS and Android devices."
+        },
+        "haveJackpots": {
+          "question": "Do Monkey King slots have jackpots?",
+          "answer": "Some versions, such as JDB's Monkey King Treasure, include <strong>jackpot features</strong> where players can win large fixed or progressive prizes."
+        },
+        "triggerFreeSpins": {
+          "question": "How do I trigger free spins in Monkey King slots?",
+          "answer": "Free spins are usually triggered by <strong>Scatter symbols</strong>, often represented by the Monkey King's staff, peach, or temple icon. Collecting three or more activates the bonus rounds."
+        }
+      },
+      "summary": {
+        "title": "Summary",
+        "description": "Monkey King slots remain a <strong>cornerstone of themed online slots</strong> thanks to their cultural significance, rewarding mechanics, and variety of adaptations. At Hengongbet, players can enjoy multiple versions that cater to different playstyles. For a complete overview of slot categories and more recommended games, head over to the main Hengongbet slots page."
+      }
+    }
+  },
+
+  "microslot": {
+    "meta": {
+      "title": "Microslot Games | Hengongbet",
+      "description": "Hengongbet has established itself as a preferred platform for Microslot enthusiasts, combining a wide game library with reliability.",
+      "urlSlug": "https://www.hengongbet88.com/games/microslot"
+    },
+    "content": {
+      "title": "Microslot Games &#124; Hengongbet",
+      "intro": {
+        "text": "What makes a casino game engaging enough to attract both casual players and seasoned bettors? For many, the answer lies in <strong>Microslot</strong> games --- fast, simple, and built to deliver results in just a few spins. ",
+        "linkText": "Hengongbet ",
+        "continuation": "has established itself as a preferred platform for Microslot enthusiasts, combining a wide game library with reliability, security, and round-the-clock availability."
+      },
+      "whyCapturedAttention": {
+        "title": "Why Microslot Has Captured Attention",
+        "description": "Microslot games are designed with a <strong>compact reel format</strong> and rapid play cycles. They are less complex than large-scale slot machines but retain strong payout structures. Their growing popularity stems from accessibility, shorter play sessions, and strong adaptability for mobile play.",
+        "subtitle": "Defining Microslot Attributes:",
+        "tableHeaders": {
+          "element": "Element",
+          "coreFeature": "Core Feature"
+        },
+        "tableRows": {
+          "reels": {
+            "element": "Reels",
+            "feature": "Smaller, often 3x3 or 3x4, designed for speed."
+          },
+          "playTime": {
+            "element": "Play Time",
+            "feature": "Quick spins that resolve in seconds."
+          },
+          "bettingOptions": {
+            "element": "Betting Options",
+            "feature": "Broad, covering entry-level wagers and advanced stakes."
           },
           "features": {
-            "richStorylines": "<strong>Rich storylines</strong> based on mythology",
-            "specialSymbols": "<strong>Special symbols</strong> like expanding wilds or sticky wilds",
-            "bonusRounds": "<strong>Bonus rounds</strong> tied to Monkey King's magical staff or transformations",
-            "highVolatility": "<strong>High volatility mechanics</strong> that attract risk-seeking players"
+            "element": "Features",
+            "feature": "Free spins, multipliers, bonus rounds, and jackpots depending on the game."
           },
-          "expertNote": {
-            "label": "Expert note:",
-            "text": " Monkey King-themed slots are especially popular in Asian markets because they blend cultural storytelling with modern gaming mechanics."
+          "accessibility": {
+            "element": "Accessibility",
+            "feature": "Optimized for smartphones, tablets, and desktop browsers."
           }
         },
-        "popularGames": {
-          "title": "Popular Monkey King Slot Games at Hengongbet",
-          "description": "At Hengongbet, players can try several versions of the <strong>Monkey King slot</strong>, each with unique mechanics and payout structures.",
-          "tableHeaders": {
-            "game": "Game",
-            "developer": "Developer",
-            "rtp": "RTP",
-            "keyFeatures": "Key Features"
-          },
-          "tableRows": {
-            "playtechMonkey": {
-              "game": "Monkey King (Playtech)",
-              "developer": "Playtech",
-              "rtp": "96%",
-              "features": "Free spins, stacked symbols, multipliers"
-            },
-            "legendaryMonkey": {
-              "game": "Legendary Monkey King",
-              "developer": "PG Soft",
-              "rtp": "96.7%",
-              "features": "5x5 reels, expanding wilds, tumbling wins"
-            },
-            "monkeyTreasure": {
-              "game": "Monkey King Treasure",
-              "developer": "JDB",
-              "rtp": "95.5%",
-              "features": "Bonus game, jackpot potential"
-            },
-            "wuKong": {
-              "game": "Wu Kong",
-              "developer": "Spadegaming",
-              "rtp": "96.5%",
-              "features": "Multiple free spin modes, random wilds"
-            }
-          },
-          "conclusion": "These variations ensure that players can pick a style that suits their preferences, whether they prefer high RTP slots or feature-heavy designs."
-        },
-        "coreFeatures": {
-          "title": "Core Features of Monkey King Slots",
-          "expandingWilds": {
-            "title": "1. Expanding Wilds and Sticky Wilds",
-            "description": "The Monkey King is often represented as the <strong>wild symbol</strong>. In many games, this expands across reels or locks in place during bonus rounds."
-          },
-          "freeSpinMultipliers": {
-            "title": "2. Free Spin Multipliers",
-            "description": "Most versions include <strong>free spin rounds</strong> where multipliers increase winnings. These are often triggered by Scatter symbols like golden staffs or enchanted peaches."
-          },
-          "tumblingReels": {
-            "title": "3. Tumbling Reels",
-            "description": "Some developers add <strong>tumbling reel mechanics</strong>, where winning combinations disappear and allow new symbols to fall, increasing win potential."
-          }
-        },
-        "whyAppealToPlayers": {
-          "title": "Why Monkey King Slots Appeal to Players",
-          "description": "The attraction of Monkey King slots comes from a mix of <strong>mythology and modern slot design</strong>. Players enjoy:",
-          "culturalFamiliarity": "<strong>Cultural familiarity</strong> with the Journey to the West tale",
-          "visuallyRich": "<strong>Visually rich themes</strong> with dragons, palaces, and celestial backdrops",
-          "rewardStructures": "<strong>Reward structures</strong> that keep gameplay engaging",
-          "compatibility": "<strong>Compatibility</strong> with mobile platforms, ideal for on-the-go play",
-          "conclusion": "By offering a mix of entertainment and payout opportunities, Monkey King slots help Hengongbet strengthen its <strong>online slots portfolio</strong>."
-        },
-        "playingOnHengongbet": {
-          "title": "Playing Monkey King Slots on Hengongbet",
-          "description": "Hengongbet ensures a <strong>smooth and secure experience</strong> when playing Monkey King slots:",
-          "steps": {
-            "step1": "<strong>Log in</strong> to your Hengongbet account",
-            "step2": "<strong>Search</strong> for \"Monkey King\" in the slot section",
-            "step3": "<strong>Choose</strong> from Playtech, PG Soft, or JDB games",
-            "step4": "<strong>Adjust</strong> your bet size according to your bankroll",
-            "step5": "<strong>Spin</strong> and watch for wild staff symbols to trigger bonuses"
-          },
-          "additionalInfo": "Players can also explore other themed slots in the main Hengongbet slots hub (internal linking cue to the pillar page)."
-        },
-        "strategyTips": {
-          "title": "Strategy Tips for Monkey King Slots",
-          "description": "While slots are chance-based, some strategies can help manage play more effectively:",
-          "setBudget": "<strong>Set a budget:</strong> Define how much you're willing to spend",
-          "lookAtRtp": "<strong>Look at RTP:</strong> Choose games with higher RTP for better long-term returns",
-          "tryDemo": "<strong>Try demo mode:</strong> Many Monkey King slots allow practice before wagering real money",
-          "balanceVolatility": "<strong>Balance volatility:</strong> Pick a game that matches your risk appetite—high volatility means fewer but larger wins",
-          "proTip": {
-            "label": "Pro tip:",
-            "text": " Games like PG Soft's *Legendary Monkey King* offer both tumbling reels and free spins, making them suitable for players who prefer feature-packed mechanics."
-          }
-        },
-        "comparedToOtherThemes": {
-          "title": "Monkey King Slots Compared to Other Mythical Themes",
-          "description": "Monkey King slots stand out from other mythology-based games due to their <strong>cultural symbolism</strong> and <strong>unique mechanics</strong>.",
-          "tableHeaders": {
-            "theme": "Theme",
-            "exampleSlot": "Example Slot",
-            "uniqueHook": "Unique Hook"
-          },
-          "tableRows": {
-            "monkeyKing": {
-              "theme": "Monkey King",
-              "example": "Legendary Monkey King",
-              "hook": "Chinese folklore, magical staff wilds"
-            },
-            "greekGods": {
-              "theme": "Greek Gods",
-              "example": "Age of the Gods (Playtech)",
-              "hook": "Zeus and Athena multipliers"
-            },
-            "norseMyths": {
-              "theme": "Norse Myths",
-              "example": "Thunderstruck II (Microgaming)",
-              "hook": "Valkyrie bonus spins"
-            }
-          },
-          "conclusion": "This variety shows how Monkey King slots hold a <strong>distinct niche</strong> within the broader category of mythical slots."
-        },
-        "responsiblePlay": {
-          "title": "Responsible Play",
-          "description": "At Hengongbet, we encourage all players to enjoy Monkey King slots responsibly. Always set <strong>limits on time and budget</strong>, and view slots as entertainment rather than income."
-        },
-        "faq": {
-          "title": "FAQs About Monkey King Slots",
-          "whatIsRtp": {
-            "question": "What is the RTP of Monkey King slots?",
-            "answer": "Most Monkey King slots offer an RTP between <strong>95% and 97%</strong>, depending on the developer. PG Soft's Legendary Monkey King tends to have the highest RTP at around 96.7%."
-          },
-          "mobileAvailable": {
-            "question": "Are Monkey King slots available on mobile?",
-            "answer": "Yes. All Monkey King slots on Hengongbet are <strong>mobile-friendly</strong>, optimized for both iOS and Android devices."
-          },
-          "haveJackpots": {
-            "question": "Do Monkey King slots have jackpots?",
-            "answer": "Some versions, such as JDB's Monkey King Treasure, include <strong>jackpot features</strong> where players can win large fixed or progressive prizes."
-          },
-          "triggerFreeSpins": {
-            "question": "How do I trigger free spins in Monkey King slots?",
-            "answer": "Free spins are usually triggered by <strong>Scatter symbols</strong>, often represented by the Monkey King's staff, peach, or temple icon. Collecting three or more activates the bonus rounds."
-          }
-        },
-        "summary": {
-          "title": "Summary",
-          "description": "Monkey King slots remain a <strong>cornerstone of themed online slots</strong> thanks to their cultural significance, rewarding mechanics, and variety of adaptations. At Hengongbet, players can enjoy multiple versions that cater to different playstyles. For a complete overview of slot categories and more recommended games, head over to the main Hengongbet slots page."
-        }
-      }
-    },
-
-    "microslot": {
-      "meta": {
-        "title": "Microslot Games | Hengongbet",
-        "description": "Hengongbet has established itself as a preferred platform for Microslot enthusiasts, combining a wide game library with reliability.",
-        "urlSlug": "https://www.hengongbet88.com/games/microslot"
+        "conclusion": "Microslot removes unnecessary complexity, making it suitable for players who prefer straightforward mechanics with the potential for significant rewards."
       },
-      "content": {
-        "title": "Microslot Games &#124; Hengongbet",
-        "intro": {
-          "text": "What makes a casino game engaging enough to attract both casual players and seasoned bettors? For many, the answer lies in <strong>Microslot</strong> games --- fast, simple, and built to deliver results in just a few spins. ",
-          "linkText": "Hengongbet ",
-          "continuation": "has established itself as a preferred platform for Microslot enthusiasts, combining a wide game library with reliability, security, and round-the-clock availability."
+      "whyHengongbetExcels": {
+        "title": "Why Hengongbet Excels in Microslot",
+        "description": "Our platform ensures that Microslot sessions are smooth, rewarding, and consistent. With curated game providers and industry-grade security, Hengongbet guarantees fairness while offering a rich experience.",
+        "subtitle": "Key Advantages of Playing at Hengongbet:",
+        "regulatedGaming": "<strong>Regulated Gaming:</strong> Only certified Microslot developers are featured.",
+        "flexibleBetting": "<strong>Flexible Betting Ranges:</strong> Whether starting small or testing higher stakes, options are open.",
+        "platformAccess": "<strong>24/7 Platform Access:</strong> Games are available anytime, with technical stability ensured.",
+        "deviceCompatibility": "<strong>Device Compatibility:</strong> Games run seamlessly across all major devices.",
+        "rewardStructures": {
+          "text": "<strong>Reward Structures:</strong> ",
+          "linkText": "Promotions ",
+          "continuation": "and bonuses regularly increase player value."
+        }
+      },
+      "mechanicsInPractice": {
+        "title": "Microslot Mechanics in Practice",
+        "description": "Understanding the mechanics behind Microslot is essential before engaging. Unlike traditional slot formats that span 25 or more paylines, Microslot typically features fewer paylines with concise reels, allowing for quicker results.",
+        "rtp": {
+          "title": "RTP (Return to Player)",
+          "description": "Microslot games typically operate with RTP percentages between <strong>95% and 97%</strong>, balancing fair returns with engaging volatility."
         },
-        "whyCapturedAttention": {
-          "title": "Why Microslot Has Captured Attention",
-          "description": "Microslot games are designed with a <strong>compact reel format</strong> and rapid play cycles. They are less complex than large-scale slot machines but retain strong payout structures. Their growing popularity stems from accessibility, shorter play sessions, and strong adaptability for mobile play.",
-          "subtitle": "Defining Microslot Attributes:",
-          "tableHeaders": {
-            "element": "Element",
-            "coreFeature": "Core Feature"
-          },
-          "tableRows": {
-            "reels": {
-              "element": "Reels",
-              "feature": "Smaller, often 3x3 or 3x4, designed for speed."
-            },
-            "playTime": {
-              "element": "Play Time",
-              "feature": "Quick spins that resolve in seconds."
-            },
-            "bettingOptions": {
-              "element": "Betting Options",
-              "feature": "Broad, covering entry-level wagers and advanced stakes."
-            },
-            "features": {
-              "element": "Features",
-              "feature": "Free spins, multipliers, bonus rounds, and jackpots depending on the game."
-            },
-            "accessibility": {
-              "element": "Accessibility",
-              "feature": "Optimized for smartphones, tablets, and desktop browsers."
-            }
-          },
-          "conclusion": "Microslot removes unnecessary complexity, making it suitable for players who prefer straightforward mechanics with the potential for significant rewards."
+        "volatility": {
+          "title": "Volatility (Kill Rate)",
+          "lowKillRate": "<strong>Low Kill Rate:</strong> Frequent but smaller payouts.",
+          "mediumKillRate": "<strong>Medium Kill Rate:</strong> Balanced gameplay with steady results.",
+          "highKillRate": "<strong>High Kill Rate:</strong> Larger but less frequent wins, suited for risk-takers."
         },
-        "whyHengongbetExcels": {
-          "title": "Why Hengongbet Excels in Microslot",
-          "description": "Our platform ensures that Microslot sessions are smooth, rewarding, and consistent. With curated game providers and industry-grade security, Hengongbet guarantees fairness while offering a rich experience.",
-          "subtitle": "Key Advantages of Playing at Hengongbet:",
-          "regulatedGaming": "<strong>Regulated Gaming:</strong> Only certified Microslot developers are featured.",
-          "flexibleBetting": "<strong>Flexible Betting Ranges:</strong> Whether starting small or testing higher stakes, options are open.",
-          "platformAccess": "<strong>24/7 Platform Access:</strong> Games are available anytime, with technical stability ensured.",
-          "deviceCompatibility": "<strong>Device Compatibility:</strong> Games run seamlessly across all major devices.",
-          "rewardStructures": {
-            "text": "<strong>Reward Structures:</strong> ",
-            "linkText": "Promotions ",
-            "continuation": "and bonuses regularly increase player value."
-          }
+        "featuresTitle": "Features That Shape Gameplay",
+        "freeSpins": "<strong>Free Spins:</strong> Offer no-cost rounds to increase winning chances.",
+        "multipliers": "<strong>Multipliers:</strong> Boost payouts by 2x, 5x, or even 20x depending on the game.",
+        "progressiveJackpots": "<strong>Progressive Jackpots:</strong> Certain Microslot selections pool bets across players to create growing prize funds.",
+        "betSizing": "<strong>Bet Sizing:</strong> Wide ranges accommodate different bankrolls, from casual to high roller play."
+      },
+      "popularGames": {
+        "title": "Hengongbet's Most Popular Microslot Games",
+        "description": "Below is a closer look at standout Microslot games available at Hengongbet, analyzed across key features like RTP, free spins, bet size, and jackpot potential.",
+        "jungleFortune": {
+          "title": "Jungle Fortune Microslot",
+          "rtp": "<strong>RTP</strong>: 96.4%, offering steady long-term returns.",
+          "bonusFeatures": "<strong>Bonus Features</strong>: Hidden temple icons trigger cascading wins.",
+          "killRate": "<strong>Kill Rate</strong>: Medium volatility; a fair balance of risk and reward.",
+          "freeSpins": "<strong>Free Spins</strong>: 12 spins with expanding wild vines.",
+          "betSize": "<strong>Bet Size</strong>: Starting at 0.15 credits.",
+          "maxBet": "<strong>Max Bet</strong>: 80 credits.",
+          "highRollerPotential": "<strong>High Roller Potential</strong>: Moderate; can scale for steady growth.",
+          "paylines": "<strong>Paylines</strong>: 25 paylines, rewarding across multiple directions.",
+          "progressiveJackpot": "<strong>Progressive Jackpot</strong>: Not available.",
+          "multiplier": "<strong>Multiplier</strong>: Up to 10x during cascading sequences."
         },
-        "mechanicsInPractice": {
-          "title": "Microslot Mechanics in Practice",
-          "description": "Understanding the mechanics behind Microslot is essential before engaging. Unlike traditional slot formats that span 25 or more paylines, Microslot typically features fewer paylines with concise reels, allowing for quicker results.",
-          "rtp": {
-            "title": "RTP (Return to Player)",
-            "description": "Microslot games typically operate with RTP percentages between <strong>95% and 97%</strong>, balancing fair returns with engaging volatility."
-          },
-          "volatility": {
-            "title": "Volatility (Kill Rate)",
-            "lowKillRate": "<strong>Low Kill Rate:</strong> Frequent but smaller payouts.",
-            "mediumKillRate": "<strong>Medium Kill Rate:</strong> Balanced gameplay with steady results.",
-            "highKillRate": "<strong>High Kill Rate:</strong> Larger but less frequent wins, suited for risk-takers."
-          },
-          "featuresTitle": "Features That Shape Gameplay",
-          "freeSpins": "<strong>Free Spins:</strong> Offer no-cost rounds to increase winning chances.",
-          "multipliers": "<strong>Multipliers:</strong> Boost payouts by 2x, 5x, or even 20x depending on the game.",
-          "progressiveJackpots": "<strong>Progressive Jackpots:</strong> Certain Microslot selections pool bets across players to create growing prize funds.",
-          "betSizing": "<strong>Bet Sizing:</strong> Wide ranges accommodate different bankrolls, from casual to high roller play."
+        "neonRush": {
+          "title": "Neon Rush Microslot",
+          "rtp": "<strong>RTP</strong>: 95.8%, designed for short, fast-paced sessions.",
+          "bonusFeatures": "<strong>Bonus Features</strong>: Neon wilds trigger re-spin streaks.",
+          "killRate": "<strong>Kill Rate</strong>: Low volatility, frequent smaller wins.",
+          "freeSpins": "<strong>Free Spins</strong>: 6 spins with sticky wild reels.",
+          "betSize": "<strong>Bet Size</strong>: Entry point of 0.10 credits.",
+          "maxBet": "<strong>Max Bet</strong>: 50 credits.",
+          "highRollerPotential": "<strong>High Roller Potential</strong>: Limited --- fits casual players best.",
+          "paylines": "<strong>Paylines</strong>: 10 paylines, easy to follow.",
+          "progressiveJackpot": "<strong>Progressive Jackpot</strong>: None included.",
+          "multiplier": "<strong>Multiplier</strong>: Up to 6x, stackable in re-spin rounds."
         },
-        "popularGames": {
-          "title": "Hengongbet's Most Popular Microslot Games",
-          "description": "Below is a closer look at standout Microslot games available at Hengongbet, analyzed across key features like RTP, free spins, bet size, and jackpot potential.",
+        "dragonsVault": {
+          "title": "Dragon's Vault Microslot",
+          "rtp": "<strong>RTP</strong>: 97.1%, strong for extended bankroll play.",
+          "bonusFeatures": "<strong>Bonus Features</strong>: Dragon egg scatters unlock bonus vaults.",
+          "killRate": "<strong>Kill Rate</strong>: High volatility; rare wins but substantial payouts.",
+          "freeSpins": "<strong>Free Spins</strong>: 18 free spins with fire wilds.",
+          "betSize": "<strong>Bet Size</strong>: From 0.25 credits.",
+          "maxBet": "<strong>Max Bet</strong>: 200 credits.",
+          "highRollerPotential": "<strong>High Roller Potential</strong>: Excellent; scales with aggressive wagers.",
+          "paylines": "<strong>Paylines</strong>: 30 paylines, high coverage for advanced players.",
+          "progressiveJackpot": "<strong>Progressive Jackpot</strong>: Yes, tied to dragon vault bonus.",
+          "multiplier": "<strong>Multiplier</strong>: Up to 25x during vault jackpots."
+        },
+        "pirateWaves": {
+          "title": "Pirate Waves Microslot",
+          "rtp": "<strong>RTP</strong>: 95.9%, close to industry average.",
+          "bonusFeatures": "<strong>Bonus Features</strong>: Treasure map scatters unlock hidden coin rewards.",
+          "killRate": "<strong>Kill Rate</strong>: Medium; steady flow of wins with occasional spikes.",
+          "freeSpins": "<strong>Free Spins</strong>: 10 spins with expanding sails as wilds.",
+          "betSize": "<strong>Bet Size</strong>: Starting at 0.05 credits.",
+          "maxBet": "<strong>Max Bet</strong>: 25 credits.",
+          "highRollerPotential": "<strong>High Roller Potential</strong>: Minimal --- designed for casual entertainment.",
+          "paylines": "<strong>Paylines</strong>: 12 paylines, straightforward for easy play.",
+          "progressiveJackpot": "<strong>Progressive Jackpot</strong>: Not present.",
+          "multiplier": "<strong>Multiplier</strong>: Capped at 7x during treasure rounds."
+        }
+      },
+      "comparativeTable": {
+        "title": "Comparative Table of Microslot Games",
+        "tableHeaders": {
+          "game": "Game",
+          "rtp": "RTP",
+          "bonusFeatures": "Bonus Features",
+          "killRate": "Kill Rate",
+          "freeSpins": "Free Spins",
+          "betSizeRange": "Bet Size Range",
+          "maxBet": "Max Bet",
+          "highRollerPotential": "High Roller Potential"
+        },
+        "tableRows": {
           "jungleFortune": {
-            "title": "Jungle Fortune Microslot",
-            "rtp": "<strong>RTP</strong>: 96.4%, offering steady long-term returns.",
-            "bonusFeatures": "<strong>Bonus Features</strong>: Hidden temple icons trigger cascading wins.",
-            "killRate": "<strong>Kill Rate</strong>: Medium volatility; a fair balance of risk and reward.",
-            "freeSpins": "<strong>Free Spins</strong>: 12 spins with expanding wild vines.",
-            "betSize": "<strong>Bet Size</strong>: Starting at 0.15 credits.",
-            "maxBet": "<strong>Max Bet</strong>: 80 credits.",
-            "highRollerPotential": "<strong>High Roller Potential</strong>: Moderate; can scale for steady growth.",
-            "paylines": "<strong>Paylines</strong>: 25 paylines, rewarding across multiple directions.",
-            "progressiveJackpot": "<strong>Progressive Jackpot</strong>: Not available.",
-            "multiplier": "<strong>Multiplier</strong>: Up to 10x during cascading sequences."
+            "game": "Jungle Fortune",
+            "rtp": "96.4%",
+            "bonusFeatures": "Cascading temple wins",
+            "killRate": "Medium",
+            "freeSpins": "12",
+            "betSizeRange": "0.15 - 80",
+            "maxBet": "80",
+            "highRollerPotential": "Moderate"
           },
           "neonRush": {
-            "title": "Neon Rush Microslot",
-            "rtp": "<strong>RTP</strong>: 95.8%, designed for short, fast-paced sessions.",
-            "bonusFeatures": "<strong>Bonus Features</strong>: Neon wilds trigger re-spin streaks.",
-            "killRate": "<strong>Kill Rate</strong>: Low volatility, frequent smaller wins.",
-            "freeSpins": "<strong>Free Spins</strong>: 6 spins with sticky wild reels.",
-            "betSize": "<strong>Bet Size</strong>: Entry point of 0.10 credits.",
-            "maxBet": "<strong>Max Bet</strong>: 50 credits.",
-            "highRollerPotential": "<strong>High Roller Potential</strong>: Limited --- fits casual players best.",
-            "paylines": "<strong>Paylines</strong>: 10 paylines, easy to follow.",
-            "progressiveJackpot": "<strong>Progressive Jackpot</strong>: None included.",
-            "multiplier": "<strong>Multiplier</strong>: Up to 6x, stackable in re-spin rounds."
+            "game": "Neon Rush",
+            "rtp": "95.8%",
+            "bonusFeatures": "Neon wild re-spin streaks",
+            "killRate": "Low",
+            "freeSpins": "6",
+            "betSizeRange": "0.10 - 50",
+            "maxBet": "50",
+            "highRollerPotential": "Limited"
           },
           "dragonsVault": {
-            "title": "Dragon's Vault Microslot",
-            "rtp": "<strong>RTP</strong>: 97.1%, strong for extended bankroll play.",
-            "bonusFeatures": "<strong>Bonus Features</strong>: Dragon egg scatters unlock bonus vaults.",
-            "killRate": "<strong>Kill Rate</strong>: High volatility; rare wins but substantial payouts.",
-            "freeSpins": "<strong>Free Spins</strong>: 18 free spins with fire wilds.",
-            "betSize": "<strong>Bet Size</strong>: From 0.25 credits.",
-            "maxBet": "<strong>Max Bet</strong>: 200 credits.",
-            "highRollerPotential": "<strong>High Roller Potential</strong>: Excellent; scales with aggressive wagers.",
-            "paylines": "<strong>Paylines</strong>: 30 paylines, high coverage for advanced players.",
-            "progressiveJackpot": "<strong>Progressive Jackpot</strong>: Yes, tied to dragon vault bonus.",
-            "multiplier": "<strong>Multiplier</strong>: Up to 25x during vault jackpots."
+            "game": "Dragon's Vault",
+            "rtp": "97.1%",
+            "bonusFeatures": "Dragon vault bonus",
+            "killRate": "High",
+            "freeSpins": "18",
+            "betSizeRange": "0.25 - 200",
+            "maxBet": "200",
+            "highRollerPotential": "Excellent"
           },
           "pirateWaves": {
-            "title": "Pirate Waves Microslot",
-            "rtp": "<strong>RTP</strong>: 95.9%, close to industry average.",
-            "bonusFeatures": "<strong>Bonus Features</strong>: Treasure map scatters unlock hidden coin rewards.",
-            "killRate": "<strong>Kill Rate</strong>: Medium; steady flow of wins with occasional spikes.",
-            "freeSpins": "<strong>Free Spins</strong>: 10 spins with expanding sails as wilds.",
-            "betSize": "<strong>Bet Size</strong>: Starting at 0.05 credits.",
-            "maxBet": "<strong>Max Bet</strong>: 25 credits.",
-            "highRollerPotential": "<strong>High Roller Potential</strong>: Minimal --- designed for casual entertainment.",
-            "paylines": "<strong>Paylines</strong>: 12 paylines, straightforward for easy play.",
-            "progressiveJackpot": "<strong>Progressive Jackpot</strong>: Not present.",
-            "multiplier": "<strong>Multiplier</strong>: Capped at 7x during treasure rounds."
+            "game": "Pirate Waves",
+            "rtp": "95.9%",
+            "bonusFeatures": "Treasure map coin rewards",
+            "killRate": "Medium",
+            "freeSpins": "10",
+            "betSizeRange": "0.05 - 25",
+            "maxBet": "25",
+            "highRollerPotential": "Minimal"
           }
-        },
-        "comparativeTable": {
-          "title": "Comparative Table of Microslot Games",
-          "tableHeaders": {
-            "game": "Game",
-            "rtp": "RTP",
-            "bonusFeatures": "Bonus Features",
-            "killRate": "Kill Rate",
-            "freeSpins": "Free Spins",
-            "betSizeRange": "Bet Size Range",
-            "maxBet": "Max Bet",
-            "highRollerPotential": "High Roller Potential"
-          },
-          "tableRows": {
-            "jungleFortune": {
-              "game": "Jungle Fortune",
-              "rtp": "96.4%",
-              "bonusFeatures": "Cascading temple wins",
-              "killRate": "Medium",
-              "freeSpins": "12",
-              "betSizeRange": "0.15 - 80",
-              "maxBet": "80",
-              "highRollerPotential": "Moderate"
-            },
-            "neonRush": {
-              "game": "Neon Rush",
-              "rtp": "95.8%",
-              "bonusFeatures": "Neon wild re-spin streaks",
-              "killRate": "Low",
-              "freeSpins": "6",
-              "betSizeRange": "0.10 - 50",
-              "maxBet": "50",
-              "highRollerPotential": "Limited"
-            },
-            "dragonsVault": {
-              "game": "Dragon's Vault",
-              "rtp": "97.1%",
-              "bonusFeatures": "Dragon vault bonus",
-              "killRate": "High",
-              "freeSpins": "18",
-              "betSizeRange": "0.25 - 200",
-              "maxBet": "200",
-              "highRollerPotential": "Excellent"
-            },
-            "pirateWaves": {
-              "game": "Pirate Waves",
-              "rtp": "95.9%",
-              "bonusFeatures": "Treasure map coin rewards",
-              "killRate": "Medium",
-              "freeSpins": "10",
-              "betSizeRange": "0.05 - 25",
-              "maxBet": "25",
-              "highRollerPotential": "Minimal"
-            }
-          }
-        },
-        "choosingRightMicroslot": {
-          "title": "Choosing the Right Microslot for Your Style",
-          "description": "Not every Microslot caters to the same type of player. Hengongbet ensures there is balance across all profiles:",
-          "budgetPlayers": "<strong>For Budget Players:</strong> *Quick Spin Microslot* provides steady action with low entry bets.",
-          "balancedPlay": "<strong>For Balanced Play:</strong> *Classic Reels Microslot* offers consistent RTP and straightforward paylines.",
-          "highRollers": "<strong>For High Rollers:</strong> *Royal Spin Microslot* rewards risk with larger bet ceilings and strong multipliers.",
-          "jackpotSeekers": "<strong>For Jackpot Seekers:</strong> *Ancient Riches Microslot* combines high RTP with progressive jackpot opportunities.",
-          "downloadPrompt": {
-            "linkText": "Download Hengongbet ",
-            "continuation": "App now to start playing your favourite Microslot games."
-          }
-        },
-        "playerTestimonials": {
-          "title": "Player Testimonials",
-          "adrian": "\"Hengongbet's Microslot games fit perfectly into my schedule --- short, rewarding, and easy to navigate.\" -- Adrian L.",
-          "siti": "\"The balance between casual selections and high-volatility games makes it easy to switch between low risk and big-win potential.\" -- Siti M.",
-          "kelvin": "\"Progressive jackpots in Microslot games add a layer of excitement without overcomplicating the play.\" -- Kelvin H."
-        },
-        "faq": {
-          "title": "FAQs on Microslot Games at Hengongbet",
-          "whatIsRtp": {
-            "question": "What is the RTP for Microslot games?",
-            "answer": "Most Microslot games operate within <strong>95% to 97% RTP</strong>, offering fair chances compared to larger slot formats."
-          },
-          "doAllHaveFreeSpins": {
-            "question": "Do all Microslot games feature free spins?",
-            "answer": "Not all, but many games on Hengongbet include free spin bonuses, often triggered by scatter or bonus symbols."
-          },
-          "jackpotsAvailable": {
-            "question": "Are Microslot jackpots available?",
-            "answer": "Yes. Select Microslot games feature <strong>progressive jackpots</strong>, where the prize pool grows until claimed."
-          },
-          "canPlayOnPhone": {
-            "question": "Can I play Microslot on my phone?",
-            "answer": "Yes. Hengongbet's platform is fully optimized for Android and iOS devices, ensuring smooth mobile play."
-          },
-          "betSizes": {
-            "question": "What bet sizes are available in Microslot?",
-            "answer": "Bet sizes range from as little as <strong>0.05 credits</strong> up to <strong>200 credits</strong>, catering to casual players and high rollers alike."
-          }
-        },
-        "summary": {
-          "title": "Summary",
-          "description": "Microslot games at Hengongbet merge fast-paced entertainment with rewarding payout structures. With features like multipliers, progressive jackpots, and free spins, our platform ensures that every type of player --- from casual participants to high rollers --- can find a Microslot game that suits their goals. Hengongbet continues to stand as a trusted destination for players seeking a reliable and engaging Microslot experience."
         }
+      },
+      "choosingRightMicroslot": {
+        "title": "Choosing the Right Microslot for Your Style",
+        "description": "Not every Microslot caters to the same type of player. Hengongbet ensures there is balance across all profiles:",
+        "budgetPlayers": "<strong>For Budget Players:</strong> *Quick Spin Microslot* provides steady action with low entry bets.",
+        "balancedPlay": "<strong>For Balanced Play:</strong> *Classic Reels Microslot* offers consistent RTP and straightforward paylines.",
+        "highRollers": "<strong>For High Rollers:</strong> *Royal Spin Microslot* rewards risk with larger bet ceilings and strong multipliers.",
+        "jackpotSeekers": "<strong>For Jackpot Seekers:</strong> *Ancient Riches Microslot* combines high RTP with progressive jackpot opportunities.",
+        "downloadPrompt": {
+          "linkText": "Download Hengongbet ",
+          "continuation": "App now to start playing your favourite Microslot games."
+        }
+      },
+      "playerTestimonials": {
+        "title": "Player Testimonials",
+        "adrian": "\"Hengongbet's Microslot games fit perfectly into my schedule --- short, rewarding, and easy to navigate.\" -- Adrian L.",
+        "siti": "\"The balance between casual selections and high-volatility games makes it easy to switch between low risk and big-win potential.\" -- Siti M.",
+        "kelvin": "\"Progressive jackpots in Microslot games add a layer of excitement without overcomplicating the play.\" -- Kelvin H."
+      },
+      "faq": {
+        "title": "FAQs on Microslot Games at Hengongbet",
+        "whatIsRtp": {
+          "question": "What is the RTP for Microslot games?",
+          "answer": "Most Microslot games operate within <strong>95% to 97% RTP</strong>, offering fair chances compared to larger slot formats."
+        },
+        "doAllHaveFreeSpins": {
+          "question": "Do all Microslot games feature free spins?",
+          "answer": "Not all, but many games on Hengongbet include free spin bonuses, often triggered by scatter or bonus symbols."
+        },
+        "jackpotsAvailable": {
+          "question": "Are Microslot jackpots available?",
+          "answer": "Yes. Select Microslot games feature <strong>progressive jackpots</strong>, where the prize pool grows until claimed."
+        },
+        "canPlayOnPhone": {
+          "question": "Can I play Microslot on my phone?",
+          "answer": "Yes. Hengongbet's platform is fully optimized for Android and iOS devices, ensuring smooth mobile play."
+        },
+        "betSizes": {
+          "question": "What bet sizes are available in Microslot?",
+          "answer": "Bet sizes range from as little as <strong>0.05 credits</strong> up to <strong>200 credits</strong>, catering to casual players and high rollers alike."
+        }
+      },
+      "summary": {
+        "title": "Summary",
+        "description": "Microslot games at Hengongbet merge fast-paced entertainment with rewarding payout structures. With features like multipliers, progressive jackpots, and free spins, our platform ensures that every type of player --- from casual participants to high rollers --- can find a Microslot game that suits their goals. Hengongbet continues to stand as a trusted destination for players seeking a reliable and engaging Microslot experience."
       }
-    },
+    }
+  },
 
-    "lucky365": {
+  "lucky365": {
     "meta": {
       "title": "Hengongbet | Lucky365 Demo",
       "description": "The Lucky365 demo on Hengongbet makes this possible, offering a way to explore gameplay features, payout styles, and bonus structures."
@@ -4364,6 +4364,367 @@
           "part2": " combine fair odds, professional dealers, and uninterrupted access. With a wide selection of baccarat, roulette, dragon tiger, sic bo, and poker, players gain a casino experience that is both reliable and engaging. For those looking to enjoy 24/7 real dealer action, Hengongbet remains the trusted choice for Big Gaming enthusiasts."
         }
       }
+    }
+  },
+  "Promotion": {
+    "reward_player": {
+      "title": "How Do Hengongbet Promotions Reward Players?",
+      "title2": "The Role of Promotions in Online Gaming",
+      "title3": "Key Benefits of Promotions",
+      "description_part1": "When exploring online casinos, one common question arises:",
+      "description_part1_a": " What promotions provide the greatest value? ",
+      "description_part1_b": "At",
+      "description_part2": "HengOngBet",
+      "description_part3": ", our promotions are designed to balance short-term excitement with long-term sustainability. From welcome bonuses to rebates and referrals, every offer is structured to reward both new and existing members.",
+      "description_T2_part1": "Promotions serve two purposes: they encourage new members to register and they give loyal players ongoing incentives to continue playing. At Hengongbet, we see them as ",
+      "description_T2_part2": "reward mechanisms",
+      "description_T2_part3": "rather than simple advertising.",
+
+      "Promotionfeatures": {
+        "feature1": "<strong>Extended playtime </strong> without additional cost.",
+        "feature2": "<strong>Cashback protection </strong> against potential losses.",
+        "feature3": "<strong>Community growth </strong> through referrals."
+      },
+      "tagline": "<strong>Definition: </strong> A promotion is an offer where the casino provides additional value—either as bonus funds or rebates—in exchange for play or deposits."
+    },
+    "Categeories": {
+      "title": "Categories of Promotions at Hengongbet",
+      "subtitle": "To make navigation simple, here are the five categories of promotions currently active:",
+      "OfferTitle": "Offer",
+      "MainBenefit": "Main Benefit",
+      "PlayerType": "Player Type",
+
+      "CategeoriesList": {
+        "list-1": "68% Deposit Bonus",
+        "list-2": "200% Deposit Bonus",
+        "list-3": "0.50% Top Up Rebate",
+        "list-4": "Daily Rebate up to 3%",
+        "list-5": "Referral Rebate up to 10%"
+      },
+
+      "MainBenefitList": {
+        "list-1": "Moderate reload boost",
+        "list-2": "Triple value on deposits",
+        "list-3": "Cashback on every deposit",
+        "list-4": "Cashback tied to betting volume",
+        "list-5": "Earnings from friends’ activity"
+      },
+      "PlayerTypeList": {
+        "list-1": "Consistent slot players",
+        "list-2": "New slot enthusiasts",
+        "list-3": "High-frequency players",
+        "list-4": "Active daily bettors",
+        "list-5": "Community-driven players"
+      },
+      "subtitle-cat": "Each of these offers plays a role in helping members maximize their balance in different ways."
+    },
+    "Bonus": {
+      "title": "A Closer Look at the 68% Deposit Bonus",
+      "subtitle": "The <strong> 68% Deposit Bonus </strong> is a reliable way to boost deposits without inflating wagering requirements too much.",
+      "decsription_part1": "For members who enjoy regular slot sessions, the 68% boost helps maintain a steady bankroll across multiple days, especially when you download",
+      "description_part2": "HengOngBet",
+      "description_part3": "and play directly from the platform.",
+
+      "DepositBonus": {
+        "list-1": "Example: Deposit RM200 → Bonus RM136 → Playable RM336.",
+        "list-2": "This bonus is straightforward, making it popular with players who prefer predictability."
+      }
+    },
+    "BonusExplain": {
+      "title": "The 200% Deposit Bonus Explained",
+      "title2": "Scenario:",
+      "decsription_part1": "Few promotions are as attention-grabbing as the <strong> 200% Deposit Bonus.</strong> This is best suited for new players or casual players who want to explore the slot catalog with a larger balance.",
+      "decsription_part2": "<strong>Expert Insight:</strong> Large bonuses can increase playtime quickly, but wagering conditions are usually stricter. Always review requirements before opting in.",
+
+      "BonusExplainList": {
+        "list-1": "Deposit RM100 → Receive RM200 bonus → Total RM300 balance."
+      }
+    },
+    "TopUpRebate": {
+      "title": "Why Frequent Players Prefer the 0.50% Top Up Rebate",
+      "decsription_part1": "Some promotions are not about size but about <strong>consistency</strong>. The <strong>Top Up Rebate 0.50%</strong> rewards those who deposit regularly.",
+      "decsription_part2": "This is the best option for those who prefer smaller, regular deposits instead of one-off large top-ups.",
+      "list-1": "Every recharge earns cashback.",
+      "list-2": "The percentage may seem small, but over dozens of deposits, the total value adds up significantly.",
+      "list-3": "Since it’s automatic, players don’t need to activate it manually."
+    },
+    "DailyRebate": {
+      "title": "How Daily Rebates Up to 3% Work",
+      "title2": "Tiered Example",
+      "decsription_part1": "The <strong>Daily Rebate</strong> is structured to scale with activity. The more you play, the higher the percentage earned.",
+      "list-1": "RM1,000 play volume → 0.5% rebate = RM5.",
+      "list-2": "RM5,000 play volume → 2% rebate = RM100.",
+      "list-3": "RM10,000 play volume → 3% rebate = RM300.",
+      "decsription_part2": "This system directly connects player engagement to value earned, rewarding consistent participation across multiple categories."
+    },
+    "ReferralRebate": {
+      "title": "Referral Rebates and Community Value",
+      "decsription_part1": "Inviting friends to join Hengongbet is not only social but profitable. The <strong>Referral Rebate up to 10%</strong> creates an opportunity for members to generate a passive return.",
+      "list-1": "For every friend invited, the inviter earns a percentage of the friend’s betting volume.",
+      "list-2": "Rebates increase as more friends are referred.",
+      "list-3": "Both inviter and invitee gain access to other promotions, reinforcing long-term engagement.",
+      "decsription_part2": "This program is particularly popular among players who enjoy building gaming communities."
+    },
+    "Comparing": {
+      "title": "Comparing Promotions: Which Suits You Best?",
+      "subtitle": "Different promotions suit different goals. Here’s a comparison table for clarity:",
+      "Promotion": "Promotion",
+      "BestFeature": "Best Feature",
+      "BestSuited": "Best Suited For",
+
+      "PromotionList": {
+        "list-1": "Deposit 68%",
+        "list-2": "Deposit 200%",
+        "list-3": "Top Up 0.50%",
+        "list-4": "Daily Up to 3%",
+        "list-5": "Referral Up to 10%"
+      },
+      "BestFeatureList": {
+        "list-1": "Balanced boost",
+        "list-2": "High upfront bonus",
+        "list-3": "Steady accumulation",
+        "list-4": "High cashback on volume",
+        "list-5": "Earnings from social network"
+      },
+      "BestSuitedList": {
+        "list-1": "Medium-term slot players",
+        "list-2": "New or casual players",
+        "list-3": "Frequent depositors",
+        "list-4": "Consistent high rollers",
+        "list-5": "Community-oriented players"
+      }
+    },
+    "Import": {
+      "title": "The Importance of Understanding Wagering Requirements",
+      "title2": "Example Calculation",
+      "decsription_part1": "Every bonus comes with <strong>playthrough conditions.</strong> Ignoring them often leads to disappointment, so clarity is key.",
+      "decsription_part2": "These requirements ensure fair play, but they also highlight why players must choose promotions that match their natural betting frequency.",
+      "decsription_part3": "<strong>Tip:</strong> If you play casually, choose rebates over high-percentage deposit bonuses to avoid unmet conditions.",
+
+      "ImportList": {
+        "list-1": "Medium-term slot players",
+        "list-2": "New or casual players",
+        "list-3": "Frequent depositors",
+        "list-4": "Consistent high rollers",
+        "list-5": "Community-oriented players"
+      }
+    },
+    "Practical": {
+      "title": "Practical Strategies to Maximize Promotions",
+      "decsription_part1": "Players can increase value by combining promotions smartly:",
+      "decsription_part2": "This layered system builds a cycle of rewards without overextending deposits.",
+
+      "PracticalList": {
+        "list-1": "Use the 200% bonus for an initial balance boost.",
+        "list-2": "Switch to 68% bonuses for regular play.",
+        "list-3": "Rely on daily rebates to cushion losses.",
+        "list-4": "Refer friends for passive income."
+      }
+    },
+    "LongTerm": {
+      "title": "Long-Term Value of Rebates",
+      "decsription_part1": "Bonuses may provide big short-term excitement, but rebates build long-term sustainability.",
+      "decsription_part2": "<strong>Note:</strong> For serious players, rebates matter more than one-off bonuses because they create balance over months rather than days.",
+
+      "LongTermList": {
+        "list-1": "Rebates accumulate steadily.",
+        "list-2": "They can offset losing streaks.",
+        "list-3": "They apply to multiple categories, including slots, live casino, and sports."
+      }
+    },
+    "AvoidPromotion": {
+      "title": "Common Mistakes to Avoid with Promotions",
+      "decsription_part1": "Avoiding these mistakes ensures smoother use of the reward system.",
+
+      "AvoidPromotionList": {
+        "list-1": "<strong>Ignoring terms </strong> – Always read wagering requirements.",
+        "list-2": "<strong>Chasing every offer </strong> - Pick the one that matches your playing style. ",
+        "list-3": "<strong>Over-depositing for bonuses </strong> – Deposit only what you’re comfortable with.",
+        "list-4": "<strong>Forgetting expiry dates </strong> – Some promotions run on limited schedules."
+      }
+    },
+    "faq": {
+      "title": "FAQs About Hengongbet Promotions",
+      "items": {
+        "safe": {
+          "question": "What is the easiest promotion to use?",
+          "answer": "The <strong>Top Up Rebate 0.50% </strong> is the simplest, as it applies automatically and has no complex requirements."
+        },
+        "both_platforms": {
+          "question": "Can I combine rebates with deposit bonuses?",
+          "answer": "Yes, rebates usually run in the background, even when a deposit bonus is active."
+        },
+        "latest_apk": {
+          "question": "Which promotion provides the highest percentage?",
+          "answer": "The <strong> 200% Deposit Bonus </strong> offers the largest percentage boost, but it comes with higher wagering conditions."
+        },
+        "permissions": {
+          "question": "Do referral rebates have limits?",
+          "answer": "There is generally no strict cap on referral earnings—the more friends invited, the more rebates you can collect."
+        }
+      }
+    },
+    "Summary": {
+      "title": "Summary",
+      "decsription_part1": "Promotions are a central part of the Hengongbet experience. From first-time deposit bonuses to loyalty-based rebates, every offer is designed to reward different types of players. By understanding how each promotion works and choosing the ones that fit your betting style, you can maximize both immediate and long-term value."
+    }
+  },
+  "FDResult": {
+    "Result": {
+      "title": "Latest 4D Results at Hengongbet",
+      "description_part1": "Are you searching for the latest 4D results and wondering how to check them quickly and accurately? At",
+      "description_part2": " Hengongbet",
+      "description_part3": ", we provide up-to-date 4D results so players can verify winning numbers, track historical draws, and make informed decisions for future bets."
+    },
+    "What": {
+      "title": "What Is 4D?",
+      "description_part1": "<strong>4D </strong> stands for 4-Digit Lottery. It is one of the most popular number-based games in Malaysia, Singapore, and other parts of Southeast Asia. Players select a 4-digit number ranging from <strong> 0000 to 9999 </strong>, and prizes are awarded based on the drawn results.",
+      "description_part2": "<strong>Definition:</strong> 4D is a fixed-odds numbers game where outcomes are determined by random draws of 4-digit numbers."
+    },
+    "Why": {
+      "title": "Why 4D Results Matter",
+      "description_part1": "Checking the latest results is essential for three reasons:",
+
+      "WhyList": {
+        "list-1": "1. Prize Verification – Confirm if your selected number has won.",
+        "list-2": "2. Pattern Tracking – Identify frequently drawn numbers.",
+        "list-3": "3. Betting Strategies – Use past results as a guide for future selections."
+      }
+    },
+    "FDHOB": {
+      "title": "How to Check 4D Results at Hengongbet",
+      "title2": "Step-by-Step:",
+      "description_part1": "We make it straightforward for members to check results in real time.",
+      "description_part2": "<strong>Note:</strong> Results are updated immediately after official draws, ensuring accuracy and reliability.",
+
+      "FDHOBList": {
+        "list-1": "1. Visit the 4D Results page.",
+        "list-2": "2. Find the most recent draw date and listed numbers.",
+        "list-3": "3. Cross-check your chosen number with the prize categories.",
+        "list-4": "4. Review historical results for additional insights"
+      }
+    },
+    "Bdown": {
+      "title": "Breakdown of 4D Prize Categories",
+      "description_part1": "Here is how prizes are typically structured:",
+
+      "tableHeader": {
+        "type": "Prize Type",
+        "desc": "Description",
+        "example": "Example"
+      },
+      "Bdownlist": {
+        "1": {
+          "type": "1st Prize",
+          "desc": "Top reward for exact match",
+          "example": "Winning No: 5678 → Ticket: 5678"
+        },
+        "2": {
+          "type": "2nd Prize",
+          "desc": "Second-highest reward",
+          "example": "Winning No: 4321 → Ticket: 4321"
+        },
+        "3": {
+          "type": "3rd Prize",
+          "desc": "Third-highest reward",
+          "example": "Winning No: 7890 → Ticket: 7890"
+        },
+        "4": {
+          "type": "Special Prize",
+          "desc": "Secondary category with fixed odds",
+          "example": "Multiple numbers qualify"
+        },
+        "5": {
+          "type": "Consolation Prize",
+          "desc": "Minor reward for matching numbers",
+          "example": "Multiple numbers qualify"
+        }
+      }
+    },
+    "Example": {
+      "title": "Example of a 4D Result Listing",
+      "title2": "Draw Date: 25 September 2025",
+      "description_part1": "Here’s an example of how results are displayed:",
+      "description_part2": "This format allows players to check results quickly and clearly.",
+
+      "ExampleList": {
+        "list-1": "1st Prize: 3724",
+        "list-2": "2nd Prize: 9801",
+        "list-3": "3rd Prize: 6147",
+        "list-4": "Special Prizes: 0921, 4883, 7302, 2215, 8054",
+        "list-5": "Consolation Prizes: 1390, 5728, 4026, 8103, 6912"
+      }
+    },
+    "Tips": {
+      "title": "Tips for Reading 4D Results",
+      "TipsList": {
+        "list-1": "<strong>Exact Match Required </strong> – Unlike some lotteries, 4D requires the full 4-digit number to match.",
+        "list-2": "<strong>Prize Tiers Differ </strong> – Higher prizes are limited to one winning number, while special and consolation categories cover more.",
+        "list-3": "<strong>Track Trends </strong> – Some players monitor hot and cold numbers (frequent vs. rare results)."
+      }
+    },
+    "Popular": {
+      "title": "Popular 4D Strategies",
+      "title2": "1. Hot and Cold Numbers",
+      "title3": "2. Number Patterns",
+      "title4": "3. Statistical Tracking",
+      "title5": "Why Check 4D Results at Hengongbet?",
+      "description_part1": "While 4D is ultimately a <strong>game</strong> of chance, players often use strategies to guide their picks:",
+      "description_part2": "Players sometimes select repeating patterns like:",
+      "description_part3": "Some players maintain records of past draws to predict future outcomes, although results are random.",
+      "description_part4": "<strong>Reminder: </strong> Strategies can guide choices but do not guarantee success.",
+
+      "HCNoList": {
+        "list-1": "<strong>Hot Numbers </strong> – Digits that appear often in recent draws.",
+        "list-2": "<strong>Cold Numbers </strong> – Digits that haven’t appeared for a while."
+      },
+      "NPList": {
+        "list-1": "Consecutive digits: 1234, 4567.",
+        "list-2": "Mirrored numbers: 1221, 3443.",
+        "list-3": "Birthdays, anniversaries, or meaningful dates."
+      },
+      "WhyCheckList": {
+        "list-1": "<strong>Accuracy </strong> – Results are updated immediately after official announcements.",
+        "list-2": "<strong>Convenience </strong> – Access results anytime, anywhere.",
+        "list-3": "<strong>Historical Records </strong> – Review past results to analyze trends.",
+        "list-4": "<strong>Trusted Platform </strong> – Hengongbet ensures reliable data for fair play."
+      }
+    },
+    "Responsive": {
+      "title": "Responsible Play in 4D",
+      "description_part1": "It’s important to approach 4D with responsibility.",
+      "description_part2": "Expert Note: Responsible betting ensures that 4D remains enjoyable without creating unnecessary risks.",
+
+      "ResponsiveList": {
+        "list-1": "<strong>Set a budget </strong> before placing bets.",
+        "list-2": "<strong>View 4D as entertainment </strong>, not income.",
+        "list-3": "<strong>Play moderately </strong> and avoid chasing losses."
+      }
+    },
+    "faqItems": {
+      "title": "Frequently Asked Questions",
+      "items": {
+        "safe": {
+          "question": "How often are 4D draws held?",
+          "answer": "Draws are typically conducted <strong> three times a week </strong> by official operators, though exact schedules may vary."
+        },
+        "both_platforms": {
+          "question": "Can I check past 4D results?",
+          "answer": "Yes, Hengongbet provides a history of results so players can view both recent and older draws."
+        },
+        "latest_apk": {
+          "question": "What is the smallest bet in 4D?",
+          "answer": "Minimum bets are usually <strong>RM1 </strong>, but players can choose higher stakes depending on preference."
+        },
+        "permissions": {
+          "question": "Do strategies guarantee a win?",
+          "answer": "No. Strategies may help guide number selection, but 4D outcomes are completely random."
+        }
+      }
+    },
+    "Summary": {
+      "title": "Summary",
+      "description_part1": "The <strong>4D results page at Hengongbet </strong> is your reliable source for up-to-date winning numbers. By reviewing the latest results, exploring prize categories, and applying thoughtful number selection, players can make informed decisions while keeping entertainment at the forefront."
     }
   }
 }
