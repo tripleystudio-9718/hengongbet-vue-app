@@ -3,6 +3,13 @@
     <div class="game-banner">
       <img :src="jdbBanner" alt="JDB Banner" />
     </div>
+
+    <iframe 
+      src="https://www.jdbgaming.com/en/games/list" 
+      class="jdb-iframe" 
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
     
     <!-- Main Page Title -->
     <h1 class="main-page-title" v-html="$t('jdb.content.title')"></h1>
@@ -371,6 +378,13 @@ export default {
   min-height: 100vh;
 }
 
+.jdb-iframe {
+  display: flex;
+  width: 1200px;
+  height: 1000px;
+  margin: 0 auto;
+}
+
 .game-banner {
   width: 100%;
   height: auto;
@@ -662,6 +676,13 @@ export default {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+  .jdb-iframe {
+    display: flex;
+    width: 1000px;
+    height: 1000px;
+    margin: 0 auto;
+  }
+
   .game-content-section {
     padding: 40px 15px;
   }
@@ -681,6 +702,13 @@ export default {
 }
 
 @media (max-width: 768px) {
+  .jdb-iframe {
+    display: flex;
+    width: 100%;
+    height: 1000px;
+    margin: 0 auto;
+  }
+
   .main-page-title {
     font-size: 28px;
     margin: 20px 0;

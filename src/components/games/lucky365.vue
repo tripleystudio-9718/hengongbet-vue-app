@@ -3,6 +3,13 @@
     <div class="game-banner">
       <img :src="lucky365banner" alt="Lucky 365 Banner" />
     </div>
+
+      <iframe 
+        src="https://www.lucky365demo.com/demolobby/web-mobile/#/" 
+        class="lucky-iframe" 
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
     
     <!-- Main Page Title -->
     <h1 class="main-page-title" v-html="$t('lucky365.content.title')"></h1>
@@ -323,6 +330,13 @@ export default {
 .game-banner img {
   width: 100%;
   height: auto;
+}
+
+.lucky-iframe {
+  display: flex;
+  width: 1200px;
+  height: 1000px;
+  margin: 0 auto;
 }
 
 /* Game Content Section */
@@ -679,6 +693,13 @@ export default {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+  .lucky-iframe {
+    display: flex;
+    width: 1000px;
+    height: 1000px;
+    margin: 0 auto;
+  }
+
   .game-content-section {
     padding: 40px 15px;
   }
@@ -709,6 +730,13 @@ export default {
   .main-page-title {
     font-size: 28px;
     margin: 20px 0;
+  }
+
+  .lucky-iframe {
+    display: flex;
+    width: 100%;
+    height: 1000px;
+    margin: 0 auto;
   }
 
   .section-title {

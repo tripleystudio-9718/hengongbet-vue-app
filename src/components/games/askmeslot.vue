@@ -3,6 +3,13 @@
     <div class="game-banner">
       <img :src="askmeslotBanner" alt="Askmeslot Banner" />
     </div>
+
+    <iframe 
+      src="https://askmeslot.io/" 
+      class="askmeslot-iframe" 
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
     
     <!-- Main Page Title -->
     <h1 class="main-page-title" v-html="$t('askmeslot.content.title')"></h1>
@@ -350,6 +357,13 @@ export default {
   height: auto;
 }
 
+.askmeslot-iframe {
+  display: flex;
+  width: 1200px;
+  height: 1000px;
+  margin: 0 auto;
+}
+
 /* Game Content Section */
 .game-content-section {
   padding: 0 20px;
@@ -631,6 +645,13 @@ export default {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+  .lucky-iframe {
+    display: flex;
+    width: 1000px;
+    height: 1000px;
+    margin: 0 auto;
+  }
+
   .game-content-section {
     padding: 40px 15px;
   }
@@ -653,6 +674,13 @@ export default {
   .main-page-title {
     font-size: 28px;
     margin: 20px 0;
+  }
+
+  .askmeslot-iframe {
+    display: flex;
+    width: 100%;
+    height: 1000px;
+    margin: 0 auto;
   }
 
   .section-title {

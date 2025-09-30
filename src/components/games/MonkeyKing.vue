@@ -3,6 +3,13 @@
     <div class="game-banner">
       <img :src="monkeyKingBanner" alt="Monkey King Banner" />
     </div>
+
+    <iframe 
+      src="https://www.mking888.com/mkdemolobby/web-mobile/#/" 
+      class="monkey-iframe"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
     
     <!-- Main Page Title -->
     <h1 class="main-page-title" v-html="$t('monkeyKing.content.title')"></h1>
@@ -298,6 +305,13 @@ export default {
   background-color: #27272A;
   font-family: "Afacad",sans-serif !important;
   min-height: 100vh;
+}
+
+.monkey-iframe {
+  display: flex;
+  width: 1200px;
+  height: 1000px;
+  margin: 0 auto;
 }
 
 .game-banner {
@@ -609,6 +623,13 @@ export default {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+  .monkey-iframe {
+    display: flex;
+    width: 1000px;
+    height: 1000px;
+    margin: 0 auto;
+  }
+
   .game-content-section {
     padding: 40px 15px;
   }
@@ -631,6 +652,13 @@ export default {
   .main-page-title {
     font-size: 28px;
     margin: 20px 0;
+  }
+
+  .monkey-iframe {
+    display: flex;
+    width: 100%;
+    height: 1000px;
+    margin: 0 auto;
   }
 
   .section-title {

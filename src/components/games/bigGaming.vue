@@ -3,6 +3,13 @@
     <div class="game-banner">
      <img :src="bigGamingBanner" alt="Big Gaming Banner" />
     </div>
+
+    <iframe 
+        src="https://www.bg789.com/demo.html#/" 
+        class="bigGaming-iframe" 
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
     
     <!-- Main Page Title -->
     <h1 class="main-page-title" v-html="$t('bigGaming.content.title')"></h1>
@@ -328,6 +335,13 @@ export default {
   height: auto;
 }
 
+.bigGaming-iframe {
+  display: flex;
+  width: 1200px;
+  height: 1000px;
+  margin: 0 auto;
+}
+
 /* Game Content Section */
 .game-content-section {
   padding: 0 20px;
@@ -613,6 +627,13 @@ export default {
     padding: 40px 15px;
   }
 
+  .bigGaming-iframe {
+    display: flex;
+    width: 1000px;
+    height: 1000px;
+    margin: 0 auto;
+  }
+
   .main-page-title {
     font-size: 36px;
     margin: 30px 0;
@@ -631,6 +652,13 @@ export default {
   .main-page-title {
     font-size: 28px;
     margin: 20px 0;
+  }
+
+  .bigGaming-iframe {
+    display: flex;
+    width: 100%;
+    height: 1000px;
+    margin: 0 auto;
   }
 
   .section-title {
