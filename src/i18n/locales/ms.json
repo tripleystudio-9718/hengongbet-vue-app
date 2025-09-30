@@ -4563,5 +4563,164 @@
       "title": "Ringkasan",
       "decsription_part1": "Promosi adalah bahagian utama pengalaman Hengongbet. Dari bonus deposit pertama hingga rebat kesetiaan, setiap tawaran direka untuk memberi ganjaran kepada jenis pemain yang berbeza. Dengan memahami cara setiap promosi berfungsi dan memilih yang sesuai dengan gaya pertaruhan anda, anda boleh memaksimumkan nilai jangka pendek dan jangka panjang."
     }
+  },
+
+  "FDResult": {
+  "Result": {
+    "title": "Keputusan 4D Terkini di Hengongbet",
+    "description_part1": "Adakah anda sedang mencari keputusan 4D terkini dan ingin tahu cara menyemaknya dengan cepat dan tepat? Di",
+    "description_part2": " Hengongbet",
+    "description_part3": ", kami menyediakan keputusan 4D terkini supaya pemain boleh menyemak nombor kemenangan, menjejaki cabutan terdahulu, dan membuat keputusan bijak untuk pertaruhan akan datang."
+  },
+  "What": {
+    "title": "Apa Itu 4D?",
+    "description_part1": "<strong>4D </strong> bermaksud Loteri 4 Digit. Ia adalah salah satu permainan nombor paling popular di Malaysia, Singapura, dan sebahagian Asia Tenggara. Pemain memilih nombor 4 digit antara <strong>0000 hingga 9999</strong>, dan hadiah diberikan berdasarkan keputusan cabutan.",
+    "description_part2": "<strong>Definisi:</strong> 4D ialah permainan nombor dengan odds tetap di mana keputusan ditentukan melalui cabutan rawak nombor 4 digit."
+  },
+  "Why": {
+    "title": "Mengapa Keputusan 4D Penting",
+    "description_part1": "Menyemak keputusan terkini adalah penting kerana tiga sebab:",
+
+    "WhyList": {
+      "list-1": "1. Pengesahan Hadiah – Sahkan sama ada nombor pilihan anda menang.",
+      "list-2": "2. Penjejakan Corak – Kenal pasti nombor yang kerap muncul.",
+      "list-3": "3. Strategi Pertaruhan – Gunakan keputusan lepas sebagai panduan untuk pilihan masa depan."
+    }
+  },
+  "FDHOB": {
+    "title": "Cara Menyemak Keputusan 4D di Hengongbet",
+    "title2": "Langkah demi langkah:",
+    "description_part1": "Kami memudahkan ahli untuk menyemak keputusan secara masa nyata.",
+    "description_part2": "<strong>Nota:</strong> Keputusan dikemas kini sebaik sahaja selepas cabutan rasmi, memastikan ketepatan dan kebolehpercayaan.",
+
+    "FDHOBList": {
+      "list-1": "1. Lawati halaman Keputusan 4D.",
+      "list-2": "2. Cari tarikh cabutan terbaru dan nombor yang disenaraikan.",
+      "list-3": "3. Bandingkan nombor pilihan anda dengan kategori hadiah.",
+      "list-4": "4. Semak keputusan terdahulu untuk rujukan tambahan."
+    }
+  },
+  "Bdown": {
+    "title": "Pecahan Kategori Hadiah 4D",
+    "description_part1": "Berikut adalah cara hadiah biasanya distrukturkan:",
+
+    "tableHeader": {
+      "type": "Jenis Hadiah",
+      "desc": "Penerangan",
+      "example": "Contoh"
+    },
+    "Bdownlist": {
+      "1": {
+        "type": "Hadiah Pertama",
+        "desc": "Ganjaran tertinggi untuk padanan tepat",
+        "example": "Nombor Menang: 5678 → Tiket: 5678"
+      },
+      "2": {
+        "type": "Hadiah Kedua",
+        "desc": "Ganjaran kedua tertinggi",
+        "example": "Nombor Menang: 4321 → Tiket: 4321"
+      },
+      "3": {
+        "type": "Hadiah Ketiga",
+        "desc": "Ganjaran ketiga tertinggi",
+        "example": "Nombor Menang: 7890 → Tiket: 7890"
+      },
+      "4": {
+        "type": "Hadiah Khas",
+        "desc": "Kategori sekunder dengan odds tetap",
+        "example": "Beberapa nombor layak"
+      },
+      "5": {
+        "type": "Hadiah Saguhati",
+        "desc": "Ganjaran kecil untuk nombor yang sepadan",
+        "example": "Beberapa nombor layak"
+      }
+    }
+  },
+  "Example": {
+    "title": "Contoh Senarai Keputusan 4D",
+    "title2": "Tarikh Cabutan: 25 September 2025",
+    "description_part1": "Berikut ialah contoh cara keputusan dipaparkan:",
+    "description_part2": "Format ini membolehkan pemain menyemak keputusan dengan cepat dan jelas.",
+
+    "ExampleList": {
+      "list-1": "Hadiah Pertama: 3724",
+      "list-2": "Hadiah Kedua: 9801",
+      "list-3": "Hadiah Ketiga: 6147",
+      "list-4": "Hadiah Khas: 0921, 4883, 7302, 2215, 8054",
+      "list-5": "Hadiah Saguhati: 1390, 5728, 4026, 8103, 6912"
+    }
+  },
+  "Tips": {
+    "title": "Tip Membaca Keputusan 4D",
+    "TipsList": {
+      "list-1": "<strong>Padanan Tepat Diperlukan</strong> – Tidak seperti sesetengah loteri, 4D memerlukan keseluruhan nombor 4 digit sepadan.",
+      "list-2": "<strong>Tahap Hadiah Berbeza</strong> – Hadiah utama terhad kepada satu nombor menang, manakala kategori khas dan saguhati meliputi lebih banyak nombor.",
+      "list-3": "<strong>Jejak Tren</strong> – Sesetengah pemain memantau nombor panas dan sejuk (sering muncul vs. jarang muncul)."
+    }
+  },
+  "Popular": {
+    "title": "Strategi 4D Popular",
+    "title2": "1. Nombor Panas dan Sejuk",
+    "title3": "2. Corak Nombor",
+    "title4": "3. Penjejakan Statistik",
+    "title5": "Mengapa Semak Keputusan 4D di Hengongbet?",
+    "description_part1": "Walaupun 4D akhirnya adalah <strong>permainan</strong> berasaskan nasib, pemain sering menggunakan strategi untuk membimbing pilihan mereka:",
+    "description_part2": "Pemain kadangkala memilih corak yang berulang seperti:",
+    "description_part3": "Ada juga pemain yang menyimpan rekod keputusan lalu untuk meramal hasil masa depan, walaupun keputusan adalah rawak.",
+    "description_part4": "<strong>Peringatan:</strong> Strategi boleh membimbing pilihan tetapi tidak menjamin kemenangan.",
+
+    "HCNoList": {
+      "list-1": "<strong>Nombor Panas</strong> – Digit yang kerap muncul dalam cabutan terkini.",
+      "list-2": "<strong>Nombor Sejuk</strong> – Digit yang tidak muncul dalam tempoh tertentu."
+    },
+    "NPList": {
+      "list-1": "Digit berturutan: 1234, 4567.",
+      "list-2": "Nombor cermin: 1221, 3443.",
+      "list-3": "Tarikh lahir, ulang tahun, atau tarikh bermakna."
+    },
+    "WhyCheckList": {
+      "list-1": "<strong>Ketepatan</strong> – Keputusan dikemas kini segera selepas pengumuman rasmi.",
+      "list-2": "<strong>Keselesaan</strong> – Akses keputusan bila-bila masa, di mana sahaja.",
+      "list-3": "<strong>Rekod Sejarah</strong> – Semak keputusan lepas untuk analisis tren.",
+      "list-4": "<strong>Platform Dipercayai</strong> – Hengongbet memastikan data yang boleh dipercayai untuk permainan adil."
+    }
+  },
+  "Responsive": {
+    "title": "Bermain 4D Secara Bertanggungjawab",
+    "description_part1": "Adalah penting untuk mendekati 4D dengan tanggungjawab.",
+    "description_part2": "Nota Pakar: Pertaruhan bertanggungjawab memastikan 4D kekal menyeronokkan tanpa mencipta risiko yang tidak perlu.",
+
+    "ResponsiveList": {
+      "list-1": "<strong>Tetapkan bajet</strong> sebelum membuat pertaruhan.",
+      "list-2": "<strong>Anggap 4D sebagai hiburan</strong>, bukan pendapatan.",
+      "list-3": "<strong>Bermain secara sederhana</strong> dan elakkan mengejar kerugian."
+    }
+  },
+  "faqItems": {
+    "title": "Soalan Lazim",
+    "items": {
+      "safe": {
+        "question": "Berapa kerap cabutan 4D diadakan?",
+        "answer": "Cabutan biasanya dijalankan <strong>tiga kali seminggu</strong> oleh pengendali rasmi, walaupun jadual sebenar mungkin berbeza."
+      },
+      "both_platforms": {
+        "question": "Bolehkah saya menyemak keputusan 4D terdahulu?",
+        "answer": "Ya, Hengongbet menyediakan sejarah keputusan supaya pemain boleh melihat cabutan terbaru dan lama."
+      },
+      "latest_apk": {
+        "question": "Apakah pertaruhan minimum dalam 4D?",
+        "answer": "Pertaruhan minimum biasanya <strong>RM1</strong>, tetapi pemain boleh memilih jumlah yang lebih tinggi bergantung pada pilihan."
+      },
+      "permissions": {
+        "question": "Adakah strategi menjamin kemenangan?",
+        "answer": "Tidak. Strategi mungkin membantu membimbing pemilihan nombor, tetapi keputusan 4D adalah sepenuhnya rawak."
+      }
+    }
+  },
+  "Summary": {
+    "title": "Ringkasan",
+    "description_part1": "Halaman <strong>keputusan 4D di Hengongbet</strong> ialah sumber boleh dipercayai anda untuk nombor kemenangan terkini. Dengan menyemak keputusan terbaru, meneroka kategori hadiah, dan menggunakan pemilihan nombor yang bijak, pemain boleh membuat keputusan yang lebih baik sambil memastikan hiburan sentiasa diutamakan."
   }
+}
 }

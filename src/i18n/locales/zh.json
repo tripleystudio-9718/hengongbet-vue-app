@@ -4563,5 +4563,164 @@
       "title": "总结",
       "decsription_part1": "优惠是 Hengongbet 体验的核心。从首次存款红利到基于忠诚度的返利，每一项都旨在奖励不同类型的玩家。理解每个优惠的运作方式，并选择符合自己投注风格的活动，就能同时最大化短期和长期的价值。"
     }
+  },
+
+  "FDResult": {
+  "Result": {
+    "title": "Hengongbet 最新 4D 开奖结果",
+    "description_part1": "您是否正在寻找最新的 4D 开奖结果，并想知道如何快速准确地查询？在",
+    "description_part2": " Hengongbet",
+    "description_part3": "，我们提供最新的 4D 开奖结果，方便玩家核对中奖号码、追踪历史开奖，并为未来投注做出明智决策。"
+  },
+  "What": {
+    "title": "什么是 4D？",
+    "description_part1": "<strong>4D </strong> 代表四位数彩票。它是马来西亚、新加坡和东南亚其他地区最受欢迎的数字类游戏之一。玩家选择一个 <strong>0000 至 9999</strong> 范围内的四位数字，奖金根据开奖结果发放。",
+    "description_part2": "<strong>定义：</strong> 4D 是一种固定赔率的数字游戏，开奖结果由随机抽取的四位数字决定。"
+  },
+  "Why": {
+    "title": "为什么 4D 开奖结果很重要",
+    "description_part1": "查看最新开奖结果有三个重要原因：",
+
+    "WhyList": {
+      "list-1": "1. 奖金核对 – 确认您选择的号码是否中奖。",
+      "list-2": "2. 模式追踪 – 找出经常出现的号码。",
+      "list-3": "3. 投注策略 – 使用历史开奖结果作为未来选择的参考。"
+    }
+  },
+  "FDHOB": {
+    "title": "如何在 Hengongbet 查看 4D 开奖结果",
+    "title2": "步骤：",
+    "description_part1": "我们让会员能够实时轻松查看开奖结果。",
+    "description_part2": "<strong>注意：</strong> 开奖结果会在官方开奖后立即更新，确保准确性和可靠性。",
+
+    "FDHOBList": {
+      "list-1": "1. 访问 4D 开奖结果页面。",
+      "list-2": "2. 查找最近的开奖日期和号码。",
+      "list-3": "3. 将您选择的号码与奖项类别进行比对。",
+      "list-4": "4. 查看历史开奖结果以获得更多参考。"
+    }
+  },
+  "Bdown": {
+    "title": "4D 奖项类别说明",
+    "description_part1": "以下是奖金的典型结构：",
+
+    "tableHeader": {
+      "type": "奖项类型",
+      "desc": "说明",
+      "example": "示例"
+    },
+    "Bdownlist": {
+      "1": {
+        "type": "一等奖",
+        "desc": "完全匹配的最高奖金",
+        "example": "开奖号码: 5678 → 票: 5678"
+      },
+      "2": {
+        "type": "二等奖",
+        "desc": "次高奖金",
+        "example": "开奖号码: 4321 → 票: 4321"
+      },
+      "3": {
+        "type": "三等奖",
+        "desc": "第三高奖金",
+        "example": "开奖号码: 7890 → 票: 7890"
+      },
+      "4": {
+        "type": "特别奖",
+        "desc": "固定赔率的次要奖项",
+        "example": "多个号码符合条件"
+      },
+      "5": {
+        "type": "安慰奖",
+        "desc": "匹配号码的小额奖励",
+        "example": "多个号码符合条件"
+      }
+    }
+  },
+  "Example": {
+    "title": "4D 开奖结果示例",
+    "title2": "开奖日期: 2025年9月25日",
+    "description_part1": "以下是开奖结果的示例：",
+    "description_part2": "这种格式让玩家能够快速清晰地查看结果。",
+
+    "ExampleList": {
+      "list-1": "一等奖: 3724",
+      "list-2": "二等奖: 9801",
+      "list-3": "三等奖: 6147",
+      "list-4": "特别奖: 0921, 4883, 7302, 2215, 8054",
+      "list-5": "安慰奖: 1390, 5728, 4026, 8103, 6912"
+    }
+  },
+  "Tips": {
+    "title": "阅读 4D 开奖结果的小贴士",
+    "TipsList": {
+      "list-1": "<strong>必须完全匹配</strong> – 不同于其他彩票，4D 需要完整的四位数字完全一致。",
+      "list-2": "<strong>奖项等级不同</strong> – 高额奖金仅限于一个中奖号码，而特别奖和安慰奖覆盖更多号码。",
+      "list-3": "<strong>追踪趋势</strong> – 有些玩家会追踪热门号码和冷门号码（频繁出现 vs. 少见结果）。"
+    }
+  },
+  "Popular": {
+    "title": "常见的 4D 策略",
+    "title2": "1. 热号与冷号",
+    "title3": "2. 数字模式",
+    "title4": "3. 统计追踪",
+    "title5": "为什么在 Hengongbet 查看 4D 结果？",
+    "description_part1": "虽然 4D 最终是一种<strong>运气</strong>游戏，但玩家经常使用策略来指导选择：",
+    "description_part2": "玩家有时会选择重复出现的模式，例如：",
+    "description_part3": "一些玩家会保存过往开奖结果来预测未来结果，尽管开奖结果是随机的。",
+    "description_part4": "<strong>提醒：</strong> 策略可以提供参考，但不能保证中奖。",
+
+    "HCNoList": {
+      "list-1": "<strong>热号</strong> – 最近开奖中经常出现的数字。",
+      "list-2": "<strong>冷号</strong> – 一段时间未出现的数字。"
+    },
+    "NPList": {
+      "list-1": "连续数字: 1234, 4567。",
+      "list-2": "对称数字: 1221, 3443。",
+      "list-3": "生日、纪念日或有意义的日期。"
+    },
+    "WhyCheckList": {
+      "list-1": "<strong>准确性</strong> – 结果会在官方公布后立即更新。",
+      "list-2": "<strong>便利性</strong> – 随时随地访问结果。",
+      "list-3": "<strong>历史记录</strong> – 查看过往开奖结果以分析趋势。",
+      "list-4": "<strong>可信平台</strong> – Hengongbet 确保提供可靠数据，公平公正。"
+    }
+  },
+  "Responsive": {
+    "title": "4D 的负责任游戏",
+    "description_part1": "以负责任的态度参与 4D 十分重要。",
+    "description_part2": "专家提示：负责任的投注能确保 4D 保持娱乐性，同时避免不必要的风险。",
+
+    "ResponsiveList": {
+      "list-1": "<strong>设定预算</strong> 在下注前。",
+      "list-2": "<strong>将 4D 视为娱乐</strong>，而不是收入。",
+      "list-3": "<strong>适度游戏</strong>，避免盲目追逐亏损。"
+    }
+  },
+  "faqItems": {
+    "title": "常见问题解答",
+    "items": {
+      "safe": {
+        "question": "4D 开奖多久举行一次？",
+        "answer": "官方运营商通常每周举行<strong>三次</strong>开奖，但具体时间可能有所不同。"
+      },
+      "both_platforms": {
+        "question": "我可以查看过去的 4D 开奖结果吗？",
+        "answer": "可以，Hengongbet 提供历史开奖记录，方便玩家查看近期及早期结果。"
+      },
+      "latest_apk": {
+        "question": "4D 的最小投注额是多少？",
+        "answer": "最低投注额通常为<strong>RM1</strong>，玩家可根据喜好选择更高金额。"
+      },
+      "permissions": {
+        "question": "策略能保证中奖吗？",
+        "answer": "不能。策略可以帮助选择号码，但 4D 结果完全随机。"
+      }
+    }
+  },
+  "Summary": {
+    "title": "总结",
+    "description_part1": "<strong>Hengongbet 的 4D 开奖结果页面</strong> 是您获取最新中奖号码的可靠来源。通过查看最新结果、探索奖项类别并应用合理的选号方法，玩家可以在保持娱乐性的同时做出更明智的决定。"
   }
+}
 }
