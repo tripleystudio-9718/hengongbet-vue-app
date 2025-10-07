@@ -9,11 +9,11 @@
       <h1 class="section-title" v-html="$t('FDResult.Result.title')"></h1>
 
       <div class="section-description">
-        {{ $t("FDResult.Result.description_part1") }}
+        <span v-html="$t('FDResult.Result.description_part1')"></span>
         <router-link :to="getLocalePath('/')" class="hengongbet-link">
-          {{ $t("FDResult.Result.description_part2") }}
+          {{ $t('FDResult.Result.description_part2') }}
         </router-link>
-        {{ $t("FDResult.Result.description_part3") }}
+        {{ $t('FDResult.Result.description_part3') }}
       </div>
     </div>
     <!-- What Section -->
@@ -149,10 +149,13 @@
     <!-- Popular 4D Strategies-->
     <div>
       <h2 class="section-title" v-html="$t('FDResult.Popular.title')"></h2>
-      <div
-        class="section-description"
-        v-html="$t('FDResult.Popular.description_part1')"
-      ></div>
+      <div class="section-description">
+        {{ $t('FDResult.Popular.description_part1') }}
+        <router-link :to="getLocalePath('/games')" class="hengongbet-link">
+          {{ $t('FDResult.Popular.game-link') }}
+        </router-link>
+        {{ $t('FDResult.Popular.description_part1-1') }}
+      </div>
 
       <div class="section-title-3" v-html="$t('FDResult.Popular.title2')"></div>
       <div class="section-description">
@@ -350,6 +353,7 @@ export default {
         this.$t("FDResult.Popular.WhyCheckList.list-1"),
         this.$t("FDResult.Popular.WhyCheckList.list-2"),
         this.$t("FDResult.Popular.WhyCheckList.list-3"),
+        this.$t("FDResult.Popular.WhyCheckList.list-4"),
       ];
     },
     responsiveList() {

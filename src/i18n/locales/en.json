@@ -4572,7 +4572,7 @@
   "FDResult": {
     "Result": {
       "title": "Latest 4D Results at Hengongbet",
-      "description_part1": "Are you searching for the latest 4D results and wondering how to check them quickly and accurately? At",
+      "description_part1": "Are you searching for the <strong>latest 4D results</strong> and wondering how to check them quickly and accurately? At",
       "description_part2": " Hengongbet",
       "description_part3": ", we provide up-to-date 4D results so players can verify winning numbers, track historical draws, and make informed decisions for future bets."
     },
@@ -4586,9 +4586,9 @@
       "description_part1": "Checking the latest results is essential for three reasons:",
 
       "WhyList": {
-        "list-1": "1. Prize Verification – Confirm if your selected number has won.",
-        "list-2": "2. Pattern Tracking – Identify frequently drawn numbers.",
-        "list-3": "3. Betting Strategies – Use past results as a guide for future selections."
+        "list-1": "1. <strong>Prize Verification</strong> – Confirm if your selected number has won.",
+        "list-2": "2. <strong>Pattern Tracking</strong> – Identify frequently drawn numbers.",
+        "list-3": "3. <strong>Betting Strategies</strong> – Use past results as a guide for future selections."
       }
     },
     "FDHOB": {
@@ -4598,7 +4598,7 @@
       "description_part2": "<strong>Note:</strong> Results are updated immediately after official draws, ensuring accuracy and reliability.",
 
       "FDHOBList": {
-        "list-1": "1. Visit the 4D Results page.",
+        "list-1": "1. Visit the <strong>4D Results page</strong>.",
         "list-2": "2. Find the most recent draw date and listed numbers.",
         "list-3": "3. Cross-check your chosen number with the prize categories.",
         "list-4": "4. Review historical results for additional insights"
@@ -4648,11 +4648,11 @@
       "description_part2": "This format allows players to check results quickly and clearly.",
 
       "ExampleList": {
-        "list-1": "1st Prize: 3724",
-        "list-2": "2nd Prize: 9801",
-        "list-3": "3rd Prize: 6147",
-        "list-4": "Special Prizes: 0921, 4883, 7302, 2215, 8054",
-        "list-5": "Consolation Prizes: 1390, 5728, 4026, 8103, 6912"
+        "list-1": "<strong>1st Prize</strong>: 3724",
+        "list-2": "<strong>2nd Prize</strong>: 9801",
+        "list-3": "<strong>3rd Prize</strong>: 6147",
+        "list-4": "<strong>Special Prizes</strong>: 0921, 4883, 7302, 2215, 8054",
+        "list-5": "<strong>Consolation Prizes</strong>: 1390, 5728, 4026, 8103, 6912"
       }
     },
     "Tips": {
@@ -4669,7 +4669,9 @@
       "title3": "2. Number Patterns",
       "title4": "3. Statistical Tracking",
       "title5": "Why Check 4D Results at Hengongbet?",
-      "description_part1": "While 4D is ultimately a <strong>game</strong> of chance, players often use strategies to guide their picks:",
+      "description_part1": "While 4D is ultimately a ",
+      "game-link": "game",
+      "description_part1-1": " of chance, players often use strategies to guide their picks:",
       "description_part2": "Players sometimes select repeating patterns like:",
       "description_part3": "Some players maintain records of past draws to predict future outcomes, although results are random.",
       "description_part4": "<strong>Reminder: </strong> Strategies can guide choices but do not guarantee success.",
@@ -4693,7 +4695,7 @@
     "Responsive": {
       "title": "Responsible Play in 4D",
       "description_part1": "It’s important to approach 4D with responsibility.",
-      "description_part2": "Expert Note: Responsible betting ensures that 4D remains enjoyable without creating unnecessary risks.",
+      "description_part2": "<strong>Expert Note</strong>: Responsible betting ensures that 4D remains enjoyable without creating unnecessary risks.",
 
       "ResponsiveList": {
         "list-1": "<strong>Set a budget </strong> before placing bets.",

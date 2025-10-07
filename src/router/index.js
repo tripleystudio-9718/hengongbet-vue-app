@@ -234,7 +234,7 @@ const metaContent = {
       description: 'Nikmati permainan kasino langsung Sexy di Hengongbet. Bermain dengan hos sebenar dan aksi lancar setiap sesi.'
     }
   },
-  Hotroad: {
+  HotRoad: {
     en: { 
       title: 'Hotroad Live Casino - Hengongbet',
       description: 'Play Hotroad games at Hengongbet. Enjoy real dealers, secure betting, and 24/7 entertainment with seamless streaming.'
@@ -276,6 +276,48 @@ const metaContent = {
       description: 'Main permainan kasino langsung Big Gaming di Hengongbet. Pilihan menyeronokkan, peluang adil, dan akses mudah 24/7.'
     }
   },
+  Askmeslot: {
+    en: {
+      title: "Askmeslot Games | Hengongbet",
+      description: "Play Askmeslot games with Hengongbet. Smooth spins, fun features, and rewarding wins designed for both new and experienced players."
+    },
+    zh: {
+      title: "Askmeslot 游戏 | Hengongbet",
+      description: "在 Hengongbet 畅玩 Askmeslot 游戏。流畅旋转、趣味功能与丰厚奖励，适合新手与资深玩家。"
+    },
+    ms: {
+      title: "Permainan Askmeslot | Hengongbet",
+      description: "Main permainan Askmeslot di Hengongbet. Putaran lancar, ciri menyeronokkan, dan ganjaran lumayan direka untuk pemain baharu dan berpengalaman."
+    }
+  },
+  Sv388: {
+    en: {
+      title: "SV388 Cockfight Betting | Hengongbet",
+      description: "Bet on live SV388 cockfighting matches at Hengongbet. Simple signup, fast payouts, and a safe place to play your favorite cockfight bets online."
+    },
+    zh: {
+      title: "SV388 斗鸡投注 | Hengongbet",
+      description: "在 Hengongbet 投注 SV388 真人斗鸡比赛。注册简单、提款快捷，让您在安全的平台畅享线上斗鸡投注乐趣。"
+    },
+    ms: {
+      title: "Pertaruhan Sabung Ayam SV388 | Hengongbet",
+      description: "Buat pertaruhan secara langsung pada perlawanan sabung ayam SV388 di Hengongbet. Daftar mudah, pembayaran pantas, dan platform selamat untuk bermain dalam talian."
+    }
+  },
+  // hotRoad: {
+  //   en: {
+  //     title: "Hotroad Live Casino - Hengongbet",
+  //     description: "Play Hotroad games at Hengongbet. Enjoy real dealers, secure betting, and 24/7 entertainment with seamless streaming."
+  //   },
+  //   zh: {
+  //     title: "Hotroad 真人娱乐场 - Hengongbet",
+  //     description: "在 Hengongbet 畅玩 Hotroad 真人娱乐场游戏。真实荷官、安全投注、全天候娱乐与流畅直播体验。"
+  //   },
+  //   ms: {
+  //     title: "Kasino Langsung Hotroad - Hengongbet",
+  //     description: "Main permainan Hotroad di Hengongbet. Nikmati dealer sebenar, pertaruhan selamat, dan hiburan 24/7 dengan penstriman lancar."
+  //   }
+  // },
   PromotionPage: {
     en: { 
       title: 'Heng Ong Bet Promotions & Bonuses', 
