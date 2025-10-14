@@ -18,7 +18,7 @@
     </div>
     <!-- What Section -->
     <div class="why-download-section">
-      <h1 class="brand-tagline" v-html="$t('FDResult.What.title')"></h1>
+      <h2 class="brand-tagline" v-html="$t('FDResult.What.title')"></h2>
 
       <div
         class="section-description"
