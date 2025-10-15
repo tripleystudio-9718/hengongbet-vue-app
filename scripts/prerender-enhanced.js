@@ -497,73 +497,75 @@ async function prerender() {
   const failedRoutes = []
 
   for (const route of routesToRender) {
+  try {
+    completed++;
+    console.log(`\n[${completed}/${routesToRender.length}] 📄 Pre-rendering: ${route.path}`);
+
+    const page = await browser.newPage();
+    await page.goto(`${baseUrl}${route.path}`, {
+      waitUntil: 'networkidle0',
+      timeout: 60000
+    });
+
+    // Wait for Vue to finish rendering meta tags
     try {
-      completed++
-      console.log(`\n[${completed}/${routesToRender.length}] 📄 Pre-rendering: ${route.path}`)
-      
-      const page = await browser.newPage()
-      
-      await page.goto(`${baseUrl}${route.path}`, {
-        waitUntil: 'networkidle0',
-        timeout: 60000
-      })
-
-      // Wait for Vue to mount and render content
-      await new Promise(resolve => setTimeout(resolve, 3000))
-      
-      // Wait for actual content to appear (look for common elements)
-      try {
-        await page.waitForSelector('h1, h2, .game-card, .promo-card, main, article', {
-          timeout: 5000
-        })
-      } catch (e) {
-        console.log('   ⚠️  No main content selectors found, but continuing...')
-      }
-      
-      // Additional wait to ensure everything is rendered
-      await new Promise(resolve => setTimeout(resolve, 2000))
-
-      // Get the rendered HTML
-      let html = await page.content()
-
-      // Get meta information
-      const meta = metaContent[route.name]?.[route.locale] || {
-        title: 'HengOngBet88',
-        description: 'Play at HengOngBet88, Malaysia\'s trusted online casino.'
-      }
-
-      // Inject proper meta tags if they're missing
-      html = injectMetaTags(html, route, meta)
-
-      // Determine the output path
-      let outputPath
-      if (route.path === '/') {
-        outputPath = path.join(distPath, 'index.html')
-      } else {
-        const routePath = route.path.endsWith('/') ? route.path.slice(0, -1) : route.path
-        outputPath = path.join(distPath, routePath, 'index.html')
-      }
-
-      // Create directory if it doesn't exist
-      const dir = path.dirname(outputPath)
-      if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true })
-      }
-
-      // Write the HTML file
-      fs.writeFileSync(outputPath, html)
-      console.log(`✅ Saved: ${outputPath.replace(distPath, '')}`)
-
-      await page.close()
-      
-      // Add delay between pages to avoid overwhelming the server
-      await new Promise(resolve => setTimeout(resolve, 500))
-      
-    } catch (error) {
-      console.error(`❌ Error pre-rendering ${route.path}:`, error.message)
-      failedRoutes.push(route)
+      await page.waitForFunction(() => {
+        const title = document.title?.trim();
+        const desc = document.querySelector('meta[name="description"]');
+        return title && desc && desc.content.trim().length > 0;
+      }, { timeout: 20000 });
+    } catch {
+      console.warn(`⚠️ Meta not ready for ${route.path}, continuing...`);
     }
+
+    // Capture fully rendered HTML from Vue
+    let html = await page.content();
+
+    // Extract final meta values from DOM
+    const title = await page.title();
+    const desc = await page.$eval('meta[name="description"]', el => el.content).catch(() => '');
+
+    // Clean all duplicate or stale meta before reinserting
+    html = html
+      .replace(/<title>.*?<\/title>/gi, '')
+      .replace(/<meta[^>]+name=["']description["'][^>]*>/gi, '');
+
+    // Insert the correct single meta set
+    const metaBlock = `
+      <title>${title}</title>
+      <meta name="description" content="${desc}">
+    `;
+    html = html.replace(/<\/head>/i, `${metaBlock}\n</head>`);
+
+    // Compute output path
+    const outputPath = route.path === '/'
+      ? path.join(distPath, 'index.html')
+      : path.join(distPath, route.path.replace(/\/$/, ''), 'index.html');
+
+    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+    fs.writeFileSync(outputPath, html);
+
+    console.log(`✅ Saved: ${outputPath.replace(distPath, '')}`);
+
+    await page.close();
+    await new Promise(r => setTimeout(r, 300));
+  } catch (err) {
+    console.error(`❌ Error pre-rendering ${route.path}: ${err.message}`);
+    failedRoutes.push(route);
   }
+}
+
+if (route.path === '/') {
+  html = injectMetaTags(html, {
+    title: 'HengOngBet88 | Welcome Bonus Up to 200%',
+    description: 'Play at HengOngBet88, Malaysia\'s trusted online casino. Enjoy slots, live dealers, sports betting, and more.'
+  });
+} else {
+  // Remove any leftover homepage meta accidentally rendered
+  html = html
+    .replace(/<title>.*?<\/title>/gi, '')
+    .replace(/<meta[^>]+name=["']description["'][^>]*>/gi, '');
+}
 
   await browser.close()
   console.log('\n🎉 Pre-rendering complete!')
@@ -588,34 +590,21 @@ async function prerender() {
   console.log(`\n📊 Summary: ${completed - failedRoutes.length}/${routes.length} pages successfully pre-rendered`)
 }
 
-function injectMetaTags(html, route, meta) {
-  const url = `${BASE_URL}${route.path}`
-  const image = `${BASE_URL}/assets/home-banner.jpg`
+function injectMetaTags(html, meta) {
+  // Remove duplicates
+  html = html
+    .replace(/<title>.*?<\/title>/gi, '')
+    .replace(/<meta[^>]+name=["']description["'][^>]*>/gi, '');
 
-  // Replace the comment about no title tag
-  html = html.replace(
-    /<!-- NO title tag here - Vue Router will create it dynamically -->/,
-    `<title>${escapeHtml(meta.title)}</title>
-    <meta name="description" content="${escapeHtml(meta.description)}" />
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="${url}" />
-    <meta property="og:title" content="${escapeHtml(meta.title)}" />
-    <meta property="og:description" content="${escapeHtml(meta.description)}" />
-    <meta property="og:image" content="${image}" />
-    <meta property="og:site_name" content="HENGONGBET88" />
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="${escapeHtml(meta.title)}" />
-    <meta name="twitter:description" content="${escapeHtml(meta.description)}" />
-    <meta name="twitter:image" content="${image}" />
-    <meta name="twitter:site" content="@hengongbet88" />`
-  )
-
-  return html
+  // Add new ones
+  const metaBlock = `
+    <title>${meta.title}</title>
+    <meta name="description" content="${meta.description}">
+  `;
+  html = html.replace(/<\/head>/i, `${metaBlock}\n</head>`);
+  return html;
 }
+
 
 function escapeHtml(unsafe) {
   return unsafe

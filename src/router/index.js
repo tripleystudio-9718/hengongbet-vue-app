@@ -1266,25 +1266,28 @@ const router = createRouter({
 // Router beforeEach with error handling and blog post support - UPDATED
 router.beforeEach((to, from, next) => {
   try {
-    const locale = to.meta.locale || defaultLocale;
-    
-    setLocale(locale);
-    
-    setTimeout(() => {
-      updateBasicMetaTags(to);
-      updateSocialMetaTags(to);
-      updateSchemaOrg(to);
-      
-      // Pass the full 'to' object instead of just basePath
-      addSEOLinks(to);
-    }, 0);
-    
-  } catch (error) {
-    console.warn('Router beforeEach error:', error);
+    const locale = to.meta.locale || (to.params.locale ?? 'en')
+    setLocale(locale)
+  } catch (err) {
+    console.warn('Locale setup failed:', err)
   }
-  
-  next();
-});
+  next()
+})
+
+// ============================
+// 🧠 Handle meta updates after render
+// ============================
+router.afterEach((to) => {
+  try {
+    updateBasicMetaTags(to)
+    updateSocialMetaTags(to)
+    updateSchemaOrg(to)
+    addSEOLinks(to)
+  } catch (err) {
+    console.warn('afterEach meta update failed:', err)
+  }
+})
+
 
 // Export helper functions
 export const getCurrentLocale = route => route.meta?.locale || defaultLocale;
