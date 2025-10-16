@@ -97,7 +97,6 @@ async function prerenderSingle() {
     { label: "load", waitUntil: "load", timeout: 60000 },
   ];
 
-  let html = "";
   let success = false;
 
   for (const [i, strat] of strategies.entries()) {
@@ -120,10 +119,7 @@ async function prerenderSingle() {
     console.warn(`⚠️ All loading strategies failed, proceeding with partial render...`);
   }
 
-  // Wait extra for Vue hydration
-  await new Promise((r) => setTimeout(r, 8000));
-
-  // Wait for at least title + description if possible
+  // Wait for Vue to finish rendering meta tags
   try {
     await page.waitForFunction(() => {
       const title = document.title?.trim();
@@ -134,22 +130,26 @@ async function prerenderSingle() {
     console.warn("⚠️ Meta tags not fully ready, continuing...");
   }
 
+  // Extra wait for hydration
+  await new Promise((r) => setTimeout(r, 2000));
+
   // Capture rendered HTML
-  html = await page.content();
+  let html = await page.content();
 
-  const title = await page.title();
-  const desc = await page
-    .$eval('meta[name="description"]', (el) => el.content)
-    .catch(() => "");
+  // Extract final meta values from DOM (these are what Vue Router set)
+  const finalTitle = await page.title();
+  const finalDesc = await page.$eval('meta[name="description"]', el => el.content).catch(() => '');
 
-  const meta =
-    metaContent[pageName]?.[locale] ||
-    metaContent.Home?.[locale] || {
-      title: title || "HengOngBet88",
-      description: desc || "Play at HengOngBet88, Malaysia's trusted online casino.",
-    };
+  console.log(`📄 Extracted title: ${finalTitle}`);
+  console.log(`📄 Extracted desc: ${finalDesc.substring(0, 80)}...`);
 
-  // Clean up & inject proper meta
+  // Get the correct meta from our config
+  const meta = metaContent[pageName]?.[locale] || {
+    title: finalTitle || 'HengOngBet88',
+    description: finalDesc || "Play at HengOngBet88, Malaysia's trusted online casino.",
+  };
+
+  // Clean HTML and inject proper meta tags
   html = injectMetaTags(html, meta, routePath);
 
   // Save file
@@ -163,6 +163,7 @@ async function prerenderSingle() {
 
   console.log(`✅ Saved: ${outputPath.replace(distPath, "")}`);
   console.log(`📄 Final title: ${meta.title}`);
+  console.log(`📄 Final desc: ${meta.description.substring(0, 80)}...`);
 
   await browser.close();
   console.log("🎉 Done!");
@@ -173,10 +174,31 @@ function injectMetaTags(html, meta, routePath) {
   const url = `${BASE_URL}${routePath}`;
   const image = `${BASE_URL}/assets/home-banner.jpg`;
 
+  // ✅ CRITICAL: Remove ALL existing meta tags more aggressively
   html = html
-    .replace(/<title>.*?<\/title>/gi, "")
-    .replace(/<meta[^>]+name=["']description["'][^>]*>/gi, "");
+    // Remove title
+    .replace(/<title>.*?<\/title>/gis, "")
+    
+    // Remove ALL description metas (any format)
+    .replace(/<meta[^>]*name\s*=\s*["']description["'][^>]*>/gi, "")
+    .replace(/<meta[^>]*content\s*=\s*["'][^"']*["'][^>]*name\s*=\s*["']description["'][^>]*>/gi, "")
+    
+    // Remove ALL og: metas
+    .replace(/<meta[^>]*property\s*=\s*["']og:title["'][^>]*>/gi, "")
+    .replace(/<meta[^>]*property\s*=\s*["']og:description["'][^>]*>/gi, "")
+    .replace(/<meta[^>]*property\s*=\s*["']og:image["'][^>]*>/gi, "")
+    .replace(/<meta[^>]*property\s*=\s*["']og:url["'][^>]*>/gi, "")
+    .replace(/<meta[^>]*property\s*=\s*["']og:type["'][^>]*>/gi, "")
+    .replace(/<meta[^>]*property\s*=\s*["']og:site_name["'][^>]*>/gi, "")
+    
+    // Remove ALL twitter: metas
+    .replace(/<meta[^>]*name\s*=\s*["']twitter:title["'][^>]*>/gi, "")
+    .replace(/<meta[^>]*name\s*=\s*["']twitter:description["'][^>]*>/gi, "")
+    .replace(/<meta[^>]*name\s*=\s*["']twitter:image["'][^>]*>/gi, "")
+    .replace(/<meta[^>]*name\s*=\s*["']twitter:card["'][^>]*>/gi, "")
+    .replace(/<meta[^>]*name\s*=\s*["']twitter:site["'][^>]*>/gi, "");
 
+  // ✅ Insert clean, single set of meta tags
   const metaBlock = `
     <title>${escapeHtml(meta.title)}</title>
     <meta name="description" content="${escapeHtml(meta.description)}">
@@ -185,10 +207,12 @@ function injectMetaTags(html, meta, routePath) {
     <meta property="og:title" content="${escapeHtml(meta.title)}">
     <meta property="og:description" content="${escapeHtml(meta.description)}">
     <meta property="og:image" content="${image}">
+    <meta property="og:site_name" content="HENGONGBET88">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${escapeHtml(meta.title)}">
     <meta name="twitter:description" content="${escapeHtml(meta.description)}">
     <meta name="twitter:image" content="${image}">
+    <meta name="twitter:site" content="@hengongbet88">
   `;
 
   return html.replace(/<\/head>/i, `${metaBlock}\n</head>`);

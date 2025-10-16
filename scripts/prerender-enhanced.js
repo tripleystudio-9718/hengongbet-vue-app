@@ -462,151 +462,170 @@ const routes = [
 
 const baseUrl = 'http://localhost:4173'
 const distPath = path.resolve(__dirname, '../dist')
-const BASE_URL = 'https://www.hengongbet88.com'
 
-// Pages that consistently timeout - skip them
-const skipPages = [
+// Heavy pages that need special handling
+const heavyPages = [
   '/games/microslot',
   '/games/jdb',
   '/4d-results',
   '/zh/games/microslot',
+  '/zh/games/jdb',
   '/zh/4d-results',
   '/ms/games/microslot',
+  '/ms/games/jdb',
   '/ms/4d-results'
 ]
 
-async function prerender() {
-  console.log('🚀 Starting enhanced pre-rendering...')
-  console.log(`📊 Total routes: ${routes.length}`)
+async function prerenderRoute(browser, route, retryCount = 0) {
+  const maxRetries = 2
+  const isHeavyPage = heavyPages.includes(route.path)
   
-  // Filter out skip pages
-  const routesToRender = routes.filter(route => !skipPages.includes(route.path))
-  const skippedCount = routes.length - routesToRender.length
-  
-  if (skippedCount > 0) {
-    console.log(`⏭️  Skipping ${skippedCount} problematic pages`)
-  }
-  console.log(`✅ Will render ${routesToRender.length} pages\n`)
-  
-  const browser = await puppeteer.launch({
-    headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
-  })
-
-  let completed = 0
-  const failedRoutes = []
-
-  for (const route of routesToRender) {
   try {
-    completed++;
-    console.log(`\n[${completed}/${routesToRender.length}] 📄 Pre-rendering: ${route.path}`);
+    console.log(`\n📄 Pre-rendering: ${route.path}${isHeavyPage ? ' (heavy page)' : ''}`);
 
-    const page = await browser.newPage();
+    const page = await browser.newPage()
+    
+    // Optimize for heavy pages
+    if (isHeavyPage) {
+      await page.setRequestInterception(true)
+      page.on('request', (req) => {
+        // Block unnecessary resources for faster loading
+        if (['image', 'stylesheet', 'font', 'media'].includes(req.resourceType())) {
+          req.abort()
+        } else {
+          req.continue()
+        }
+      })
+    }
+
+    // Extended timeout for heavy pages
+    const timeout = isHeavyPage ? 90000 : 60000
+    
     await page.goto(`${baseUrl}${route.path}`, {
-      waitUntil: 'networkidle0',
-      timeout: 60000
-    });
+      waitUntil: 'networkidle2', // Less strict than networkidle0
+      timeout: timeout
+    })
 
     // Wait for Vue to finish rendering meta tags
     try {
       await page.waitForFunction(() => {
-        const title = document.title?.trim();
-        const desc = document.querySelector('meta[name="description"]');
-        return title && desc && desc.content.trim().length > 0;
-      }, { timeout: 20000 });
-    } catch {
-      console.warn(`⚠️ Meta not ready for ${route.path}, continuing...`);
+        const title = document.title?.trim()
+        const desc = document.querySelector('meta[name="description"]')
+        return title && title.length > 0 && desc && desc.content.trim().length > 0
+      }, { timeout: isHeavyPage ? 30000 : 20000 })
+    } catch (err) {
+      console.warn(`⚠️  Meta tags not ready for ${route.path}, using fallback...`)
+    }
+
+    // Small delay for heavy pages to ensure full render
+    if (isHeavyPage) {
+      await new Promise(r => setTimeout(r, 2000))
     }
 
     // Capture fully rendered HTML from Vue
-    let html = await page.content();
+    let html = await page.content()
 
     // Extract final meta values from DOM
-    const title = await page.title();
-    const desc = await page.$eval('meta[name="description"]', el => el.content).catch(() => '');
+    const title = await page.title().catch(() => '')
+    const desc = await page.$eval('meta[name="description"]', el => el.content).catch(() => '')
+
+    // Use fallback meta if DOM meta is empty
+    const finalTitle = title || metaContent[route.name]?.[route.locale]?.title || 'HengOngBet88'
+    const finalDesc = desc || metaContent[route.name]?.[route.locale]?.description || ''
 
     // Clean all duplicate or stale meta before reinserting
     html = html
       .replace(/<title>.*?<\/title>/gi, '')
-      .replace(/<meta[^>]+name=["']description["'][^>]*>/gi, '');
+      .replace(/<meta[^>]+name=["']description["'][^>]*>/gi, '')
 
     // Insert the correct single meta set
     const metaBlock = `
-      <title>${title}</title>
-      <meta name="description" content="${desc}">
-    `;
-    html = html.replace(/<\/head>/i, `${metaBlock}\n</head>`);
+    <title>${escapeHtml(finalTitle)}</title>
+    <meta name="description" content="${escapeHtml(finalDesc)}">
+  `
+    html = html.replace(/<\/head>/i, `${metaBlock}\n</head>`)
 
     // Compute output path
     const outputPath = route.path === '/'
       ? path.join(distPath, 'index.html')
-      : path.join(distPath, route.path.replace(/\/$/, ''), 'index.html');
+      : path.join(distPath, route.path.replace(/\/$/, ''), 'index.html')
 
-    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-    fs.writeFileSync(outputPath, html);
+    fs.mkdirSync(path.dirname(outputPath), { recursive: true })
+    fs.writeFileSync(outputPath, html)
 
-    console.log(`✅ Saved: ${outputPath.replace(distPath, '')}`);
+    console.log(`✅ Saved: ${outputPath.replace(distPath, '')}`)
 
-    await page.close();
-    await new Promise(r => setTimeout(r, 300));
+    await page.close()
+    
+    // Longer delay for heavy pages
+    await new Promise(r => setTimeout(r, isHeavyPage ? 1000 : 300))
+    
+    return { success: true, route }
+    
   } catch (err) {
-    console.error(`❌ Error pre-rendering ${route.path}: ${err.message}`);
-    failedRoutes.push(route);
+    if (retryCount < maxRetries) {
+      console.warn(`⚠️  Retry ${retryCount + 1}/${maxRetries} for ${route.path}...`)
+      await new Promise(r => setTimeout(r, 2000))
+      return prerenderRoute(browser, route, retryCount + 1)
+    }
+    
+    console.error(`❌ Failed after ${maxRetries} retries: ${route.path}`)
+    console.error(`   Error: ${err.message}`)
+    return { success: false, route, error: err.message }
   }
 }
 
-if (route.path === '/') {
-  html = injectMetaTags(html, {
-    title: 'HengOngBet88 | Welcome Bonus Up to 200%',
-    description: 'Play at HengOngBet88, Malaysia\'s trusted online casino. Enjoy slots, live dealers, sports betting, and more.'
-  });
-} else {
-  // Remove any leftover homepage meta accidentally rendered
-  html = html
-    .replace(/<title>.*?<\/title>/gi, '')
-    .replace(/<meta[^>]+name=["']description["'][^>]*>/gi, '');
-}
+async function prerender() {
+  console.log('🚀 Starting enhanced pre-rendering with heavy page support...')
+  console.log(`📊 Total routes: ${routes.length}`)
+  console.log(`⚡ Heavy pages: ${heavyPages.length}\n`)
+  
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--disable-accelerated-2d-canvas',
+      '--disable-gpu'
+    ]
+  })
+
+  const results = []
+  let completed = 0
+
+  for (const route of routes) {
+    completed++
+    console.log(`[${completed}/${routes.length}]`)
+    const result = await prerenderRoute(browser, route)
+    results.push(result)
+  }
 
   await browser.close()
+  
+  const successful = results.filter(r => r.success).length
+  const failed = results.filter(r => !r.success)
+  
   console.log('\n🎉 Pre-rendering complete!')
-  console.log(`✅ Successfully rendered ${completed - failedRoutes.length} pages`)
+  console.log(`✅ Successfully rendered: ${successful}/${routes.length} pages`)
   
-  if (skippedCount > 0) {
-    console.log(`\n⏭️  Skipped pages (${skippedCount}):`)
-    skipPages.forEach(page => console.log(`   - ${page}`))
-  }
-  
-  if (failedRoutes.length > 0) {
-    console.log(`\n⚠️  Failed routes (${failedRoutes.length}):`)
-    failedRoutes.forEach(route => {
-      console.log(`   - ${route.path} (${route.locale})`)
-    })
-    console.log('\n💡 To retry failed pages, run:')
-    failedRoutes.forEach(route => {
-      console.log(`   node scripts/prerender-single.js "${route.path}" ${route.name} ${route.locale}`)
+  if (failed.length > 0) {
+    console.log(`\n❌ Failed routes (${failed.length}):`)
+    failed.forEach(result => {
+      console.log(`   - ${result.route.path} (${result.route.locale})`)
+      console.log(`     Error: ${result.error}`)
     })
   }
   
-  console.log(`\n📊 Summary: ${completed - failedRoutes.length}/${routes.length} pages successfully pre-rendered`)
+  console.log(`\n📊 Final Summary: ${successful}/${routes.length} pages successfully pre-rendered`)
+  
+  if (failed.length > 0) {
+    process.exit(1) // Exit with error code if any pages failed
+  }
 }
-
-function injectMetaTags(html, meta) {
-  // Remove duplicates
-  html = html
-    .replace(/<title>.*?<\/title>/gi, '')
-    .replace(/<meta[^>]+name=["']description["'][^>]*>/gi, '');
-
-  // Add new ones
-  const metaBlock = `
-    <title>${meta.title}</title>
-    <meta name="description" content="${meta.description}">
-  `;
-  html = html.replace(/<\/head>/i, `${metaBlock}\n</head>`);
-  return html;
-}
-
 
 function escapeHtml(unsafe) {
+  if (!unsafe) return ''
   return unsafe
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
